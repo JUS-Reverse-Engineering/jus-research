@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "probes": [
+    {
+      "captures": [
+        {
+          "lr": "0x215ac74",
+          "r1": "0xfffffe80"
+        },
+        {
+          "lr": "0x215ac74",
+          "r1": "0xfffffe80"
+        },
+        {
+          "lr": "0x215ac74",
+          "r1": "0xfffffe80"
+        },
+        {
+          "lr": "0x215ac74",
+          "r1": "0xfffffe80"
+        }
+      ],
+      "control": {
+        "after": 9472,
+        "before": 9728
+      },
+      "health": {
+        "after": {
+          "heartbeat": {
+            "framecount": 6134,
+            "session": "1787631224-173016",
+            "state": "idle",
+            "wallclock": 1787631258
+          },
+          "state": "idle"
+        },
+        "before": {
+          "heartbeat": {
+            "framecount": 24,
+            "session": "1787631224-173016",
+            "state": "idle",
+            "wallclock": 1787631224
+          },
+          "state": "idle"
+        }
+      },
+      "hits": 4,
+      "id": "hp-delta-apply",
+      "outcome": "passed",
+      "plan": {
+        "epoch": "1787631224-173016",
+        "id": 75,
+        "ok": true,
+        "result": {
+          "fc_end": 6134,
+          "fc_start": 4114,
+          "frames": 2020,
+          "log": "/tmp/jus_emu/runs/g3_hp_delta_seek-75/log.jsonl",
+          "observed_frames": 2020
+        }
+      },
+      "status": "valid"
+    }
+  ],
+  "resume_from": null,
+  "session_id": "g3-hp-delta-dry-run"
+}

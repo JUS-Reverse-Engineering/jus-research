@@ -1,0 +1,146 @@
+{
+  "character": "Ichigo Kurosaki",
+  "series": "Bleach",
+  "chr_b": 39,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; null if the character is not in the table",
+  "source": {"file": "46858-ichigo-kurosaki.txt", "gamefaqs_id": 46858, "author": "Lunar Twilight", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter", "knowledge"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "It increases the special amount gained when you attack or block when placed next to a Battle Koma.",
+      "quote": "It increases the special amount gained when you attack or block when placed next to a Battle Koma."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "It summons him to throw Kon, a stuffed animal, for no damage what so ever. The good thing about it is that it causes the opponant to not be able to switch their Battle Character for a short time.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "It summons him to come and give you a boost rather than do something detrimental to your foes. It gives you the great ability to reduce the damage you take by half for a short time.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["Air dashing", "gaining more SP energy while you fight", "UA: a shout, increasing the potency of his Y-Attacks"],
+      "specials": [
+        {"input": "X", "name": "Getsuga Tenshou", "description": "A Getsuga Tenshou.", "damage": "30 damage, 45 damage", "hits": null, "properties": ["projectile"], "quote": "X: A Getsuga Tenshou. 30 damage, 45 damage."},
+        {"input": "^X", "name": null, "description": "A Getsuga Tenshou shot above Ichigo's head.", "damage": "33 damage, 49 damage", "hits": null, "properties": ["projectile"], "quote": "^X: A Getsuga Tenshou shot above Ichigo's head.  33 damage, 49 damage."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["Air dashing", "gaining more SP energy while you fight", "UA: a shout, increasing the potency of his Y-Attacks"],
+      "specials": [
+        {"input": "X", "name": "Getsuga Tenshou", "description": "A bigger, longer distanced Getsuga Tenshou.", "damage": "38 damage, 57 damage", "hits": null, "properties": ["projectile"], "quote": "X: A bigger, longer distanced Getsuga Tenshou.  38 damage, 57 damage."},
+        {"input": "^X", "name": null, "description": "Ichigo says something, then increases his attack power for a short time though you can't change Battle Koma until it wears off.", "damage": null, "hits": null, "properties": ["status:attack boost"], "quote": "^X: Ichigo says something, then increases his attack power for a short time though you can't change Battle Koma until it wears off."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["Air dashing", "gaining more SP energy while you fight", "UA: a shout, increasing the potency of his Y-Attacks"],
+      "specials": [
+        {"input": "X", "name": "Getsuga Tenshou", "description": "Zangetsu appears to help Ichigo fire off a giant Getsuga Tenshou.", "damage": "45 damage, 67 damage", "hits": null, "properties": ["projectile"], "quote": "X: Zangetsu appears to help Ichigo fire off a giant Getsuga Tenshou. 45 damage, 67 damage."},
+        {"input": "^X", "name": null, "description": "Ichigo points and gains a longer lasting attack boost without the side effect.", "damage": null, "hits": null, "properties": ["status:attack boost"], "quote": "^X: Ichigo points and gains a longer lasting attack boost without the side effect."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["Air dashing", "gaining more SP energy while you fight", "UA: rips off his Hollow mask, gaining energy but losing some of his health", "Bankai moveset (faster, entire moveset changes)"],
+      "specials": [
+        {"input": "X", "name": "Tensa Zangetsu Getsuga Tenshou", "description": "A special Tensa Zangetsu version of his normal Getsuga Tenshou. It travels farther. Randomly Ichigo's inner Hollow will take over and shoot a gigantic version, giving an energy degeneration status effect. Each use refills some special energy.", "damage": "50, 75 (normal); 75, 112 (inner Hollow gigantic version)", "hits": null, "properties": ["projectile", "status:energy degeneration"], "quote": "X: A special Tensa Zangetsu version of his normal Getsuga Tenshou.  It travels farther and hits for 50, 75 .  Randomly Ichigo's inner Hollow will take over and shoot a gigantic version hitting for 75,112 , but giving you an energy degeneration status effect.  Each use refills some special energy"},
+        {"input": "^X", "name": null, "description": "Ichigo flashsteps diagonally, and annihilates anyone in the way with a crazy aerial sword combo. Hits a wide area for damage depending on hits.", "damage": "51, 74", "hits": null, "properties": ["multi-hit"], "quote": "^X: Ichigo flashsteps diagonally, and annhilates anyone in the way with a crazy aerial sword combo.  Hits a wide area for damage depending on hits. 51, 74."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["Air dashing", "gaining more SP energy while you fight", "UA: rips off his Hollow mask, gaining energy but losing some of his health", "Bankai moveset (faster, entire moveset changes)"],
+      "specials": [
+        {"input": "X", "name": null, "description": "Ichigo puts on his Hollow mask and shoots a TREMENDOUS Getsuga Tenshou. Long start-up time.", "damage": "55, 82", "hits": null, "properties": ["projectile", "charge"], "quote": "X: Ichigo puts on his Hollow mask and shoots a TREMENDOUS Getsuga Tenshou, hitting for 55, 82."},
+        {"input": "^X", "name": null, "description": "Ichigo puts on his Hollow mask and does his 7-Koma ^X. The only good thing about this is that it can hit a grounded foe if they are right in front of you, rather than being strictly for enemies in the air. Long start-up time.", "damage": "65, 97", "hits": null, "properties": ["charge"], "quote": "^X: Ichigo puts on his Hollow mask and does his 7-Koma ^X.  The only good thing about this is that it can hit a grounded foe if they are right in front of you, rather than being strictly for enemies in the air.  65, 97."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {"input": "B", "name": null, "description": "A simple, horizontal sword slash. (4-6 Koma, non-Bankai)", "damage": "10 damage, 15 damage", "hits": null, "properties": [], "quote": "B: A simple, horizontal sword slash.  10 damage, 15 damage."},
+    {"input": "side B", "name": null, "description": "Ichigo steps and does a vertical slash. (4-6 Koma, non-Bankai)", "damage": "10 damage, 15 damage", "hits": null, "properties": [], "quote": "> or <B: Ichigo steps and does a vertical slash.  10 damage, 15 damage."},
+    {"input": "up B", "name": null, "description": "Ichigo slashes in a wide sweep, hitting around him. (4-6 Koma, non-Bankai)", "damage": "9 damage, 13 damage", "hits": null, "properties": [], "quote": "^B: Ichigo slashes in a wide sweep, hitting around him.  9 damage, 13damage"},
+    {"input": "down B", "name": null, "description": "Ichigo yells, and makes an energy wave around him. Forces the enemy to change their Battle Koma if they get hit. (4-6 Koma, non-Bankai)", "damage": "10 damage, 15 damage", "hits": null, "properties": ["forced switch"], "quote": "vB: Ichigo yells, and makes an energy wave around him.  Forces the enemy to change their Battle Koma if they get hit.  10 damage, 15 damage."},
+    {"input": "Y", "name": null, "description": "Ichigo spins his sword over his head, which can hit more if Y rapidly pressed. (4-6 Koma, non-Bankai)", "damage": "6-14, 9-21", "hits": null, "properties": ["mash-extend", "multi-hit"], "quote": "Y: Ichigo spins his sword over his head, which can hit more if Y rapidly pressed.  Damage from 6-14, 9-21."},
+    {"input": "side Y", "name": null, "description": "Ichigo slashes and shoots off a small Getsuga Tenshou, which can travel for a small distance. (4-6 Koma, non-Bankai)", "damage": "15 damage, 22 damage", "hits": null, "properties": ["projectile"], "quote": "> or <Y: Ichigo slashes and shoots off a small Getsuga Tenshou, which can travel for a small distance.  15 damage, 22 damage."},
+    {"input": "up Y", "name": null, "description": "Ichigo slashes and shoots off a small Getsuga Tenshou, hitting to his upper diagonal. (4-6 Koma, non-Bankai)", "damage": "15 damage, 22 damage", "hits": null, "properties": ["projectile"], "quote": "^Y: Ichigo slashes and shoots off a small Getsuga Tenshou, hitting to his upper diagnol.  15 damage, 22 damage/"},
+    {"input": "down Y", "name": null, "description": "Ichigo makes a small shockwave by thrusting his sword into the ground. Breaks guards. (4-6 Koma, non-Bankai)", "damage": "18 damage, 27 damage", "hits": null, "properties": ["guard break"], "quote": "vY: Ichigo makes a small shockwave by thrusting his sword into the ground. Breaks guards.  18 damage, 27 damage."},
+    {"input": "B", "name": null, "description": "Still a standard horizontal slash. (Bankai, 7-8 Koma)", "damage": "9 damage, 13 damage", "hits": null, "properties": [], "quote": "B: Still a standard horizontal slash.  9 damage, 13 damage."},
+    {"input": "side B", "name": null, "description": "Ichigo steps foward and slashes. (Bankai, 7-8 Koma)", "damage": "9 damage, 13 damage", "hits": null, "properties": [], "quote": "< or >B: Ichigo steps foward and slashes.  9 damage, 13 damage."},
+    {"input": "up B", "name": null, "description": "Ichigo stabs above him, hitting them slightly into the air. (Bankai, 7-8 Koma)", "damage": "9 damage, 13 damage", "hits": null, "properties": ["launcher", "pop"], "quote": "^B: Ichigo stabs above him, hitting them slightly into the air. 9 damage, 13 damage/"},
+    {"input": "down B", "name": null, "description": "Ichigo yells, making a shockwave that causes a forced change. (Bankai, 7-8 Koma)", "damage": "9 damage, 13 damage", "hits": null, "properties": ["forced switch"], "quote": "vB: Ichigo yells, making a shockwave that causes a forced change.  9 damage 13 damage."},
+    {"input": "Y", "name": null, "description": "Ichigo slashes all around him, which can hit many times if you keep pressing Y. Sends anyone affected flying. (Bankai, 7-8 Koma)", "damage": "11-20, 16-30", "hits": null, "properties": ["mash-extend", "multi-hit", "launcher"], "quote": "Y: Ichigo slashes all around him, which can hit many times if you keep pressing Y.  Sends anyone affected flying.  11-20, 16-30."},
+    {"input": "side Y", "name": null, "description": "Ichigo flashsteps foward, and if he finds an enemy he turns and slashes it once. (Bankai, 7-8 Koma)", "damage": "18 damage, 27 damage", "hits": null, "properties": [], "quote": "< or >Y: Ichigo flashsteps foward, and if he finds an enemy he turns and slashes it once.  18 damage, 27 damage/"},
+    {"input": "up Y", "name": null, "description": "Ichigo flashsteps up, and if he finds an enemy he'll slash them down to the stage. (Bankai, 7-8 Koma)", "damage": null, "hits": null, "properties": ["knockdown"], "quote": "^Y: Ichigo flashsteps up, and if he finds an enemy he'll slash them down to the stage."},
+    {"input": "down Y", "name": null, "description": "Ichigo stabs into the stage, releasing energy that breaks guards. (Bankai, 7-8 Koma)", "damage": "18, 27 damage", "hits": null, "properties": ["guard break"], "quote": "vY: Ichigo stabs into the stage, releasing energy that breaks guards.  Hits for 18, 27 damage."},
+    {"input": "select", "name": "Ultimate Action (shout)", "description": "A shout that increases the potency of Ichigo's Y-Attacks. Used by his 4-6 Koma.", "damage": null, "hits": null, "properties": ["status:attack boost"], "quote": "Ichigo's UA is a shout, increasing the potency of his Y-Attacks."},
+    {"input": "select", "name": "Ultimate Action (Hollow mask)", "description": "Ichigo rips off his Hollow mask, gaining energy but losing some of his health. Used by his 7 and 8 Battle Koma.", "damage": null, "hits": null, "properties": ["status:health loss"], "quote": "Ichigo's 7 and 8 Battle Koma have a different UA, where he rips off his Hollow mask, gaining energy but losing some of his health."}
+  ],
+  "combos": [
+    "B, ^B, ^X(7-Koma) - Ichigo slashes twice, followed by his aerial attack. These link easily, and it can be done with >B rather than ^B.",
+    "vB, ^X(7-Koma) - Ichigo breaks their guard, which knockes them up into the air in front of you. He then chains them into his aerial attack. This does just as much damage as the chain above, only it takes longer due to the guard break.",
+    "Y, ^X(7-Koma) - Ichigo slashes them in a frenzy, hitting for just a bit more damage than the above combos. Don't fully use the Y, only a little will do.",
+    "B, >B, Y, ^Y, Aerial Y - Ichigo slashes them up into the air, which is followed by a flashstepped slash, linking into a flashstep to the ground, where he'll slash them onto their back. Hits for a good amount of damage.",
+    "B, >B, Y(only one tap), >Y - Ichigo slashes them fowards and back again."
+  ],
+  "unresolved": [
+    "Koma tree diagram shows Help feeding into two support Koma (2, 3) and five battle Koma (4-8), but the guide never gives HP values for any koma size.",
+    "The 3-Koma support description says it is 'shaped as [][] / []' — schema field for koma shape/size is just a number; the visual shape note doesn't fit any field.",
+    "The guide states damage pairs as '(Power/Laughter) (Knowledge)' for the 4-6 Koma table but does not clarify whether Bankai (7-8 Koma) damage pairs follow the same nature-column convention; assumed same format.",
+    "5-Koma ^X and 6-Koma ^X give no damage numbers (they are buff moves), consistent with no direct damage, but the guide doesn't explicitly say 'no damage.'",
+    "Up Y for Bankai (7-8 Koma) gives no damage number at all, unlike its non-Bankai counterpart.",
+    "The author is unsure of a support Koma character's name: 'Satsuki(?  Anyone who submits name gets credit)' for the 2-Koma health-regen support — kept as written in Supports section, not modeled in schema since it's another character's koma, not Ichigo's.",
+    "Guide format has a typo/garbled line break: '^Y: ... 15 damage, 22 damage/' and '9 damage, 13 damage/' — trailing slash appears to be an OCR/formatting artifact, kept in quotes as written.",
+    "The Supports section describes support Koma belonging to OTHER characters (Shishio, Hitsugaya, Trunks, Sena, Gyro, Yahiko, etc.) that pair well with Ichigo — these are not Ichigo's own koma and are not included in the koma array, only referenced in this unresolved note for completeness.",
+    "'Playing as Ichigo' section (teleport-dash ability, recommended help Koma pairings like Piccolo/Orochimaru for HP regen or Yusuke for energy regen) is general strategy advice, not a specific move/koma stat, so not modeled in the schema.",
+    "The guide never states whether the 4-6 Koma have distinct HP values from each other or from the 7-8 Koma; no HP numbers are given anywhere in the guide."
+  ]
+}

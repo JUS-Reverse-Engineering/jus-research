@@ -1,0 +1,8 @@
+{
+ "name": "flp3_creation_probe_600",
+ "segments": [
+  {"from": 0, "to": 2, "buttons": ["START"]},
+  {"from": 602, "to": 604, "buttons": ["START"]}
+ ],
+ "tail_frames": 0
+}

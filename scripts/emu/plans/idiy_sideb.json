@@ -1,0 +1,12 @@
+{
+  "name": "idiy_sideb",
+  "segments": [
+    {"from": 0, "to": 15, "buttons": ["Right", "B"]},
+    {"from": 25, "to": 40, "buttons": ["Left", "B"]},
+    {"from": 50, "to": 65, "buttons": ["Right", "B"]},
+    {"from": 75, "to": 90, "buttons": ["Left", "B"]},
+    {"from": 100, "to": 115, "buttons": ["Right", "B"]}
+  ],
+  "tail_frames": 20,
+  "watches": ["battle"]
+}

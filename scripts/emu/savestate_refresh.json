@@ -1,0 +1,28 @@
+{
+  "states": [
+    {
+      "state": "ds8t_deck3_battle_noheal",
+      "deck": 3,
+      "label": "EDA / Edajima, Don Patch, Luffy",
+      "roster": [66, 48, 12]
+    },
+    {
+      "state": "ds8t_rao_battle_noheal",
+      "deck": 4,
+      "label": "RAO / Raoh, Nami, Franky",
+      "roster": [62, 15, 17]
+    },
+    {
+      "state": "ds8t_jj_battle_noheal",
+      "deck": 5,
+      "label": "JJ / Jotaro, Sanji, Kenshin, Lenalee",
+      "roster": [28, 14, 36, 46]
+    },
+    {
+      "state": "ds8t_momo_battle_noheal",
+      "deck": 6,
+      "label": "MOMO / Momotaro ALT, Taikoubou, Yusuke",
+      "roster": [67, 68, 32]
+    }
+  ]
+}

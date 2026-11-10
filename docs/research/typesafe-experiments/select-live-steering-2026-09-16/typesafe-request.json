@@ -1,0 +1,123 @@
+{
+  "state": {
+    "review_task": "Judge whether the frozen live experiment can distinguish the listed behavior alternatives. Do not infer game facts beyond the packet.",
+    "alternatives": {
+      "A1_one_hit": "SELECT protects only the first qualifying incoming hit and that hit consumes protection.",
+      "A2_timed_multi_hit": "SELECT protects qualifying incoming hits for a duration, allowing more than one protected hit.",
+      "A3_not_reproduced": "The prior contrast came from a stale HP address, auto-heal, attack selection, or another fixture difference; protection is not reproduced.",
+      "A4_fixture_inadequate": "The fixture cannot produce matched damaging hits, so the behavior remains unknown.",
+      "A5_owner_conflict": "A valid measurement conflicts with owner testimony and must return to the owner."
+    },
+    "known_facts": [
+      {
+        "status": "observed",
+        "text": "SELECT enters state 12 at input plus 3 and plays a 60-frame activation with no measured hitbox or SP cost.",
+        "source": "earlier Kakashi capture notes"
+      },
+      {
+        "status": "observed",
+        "text": "The previous fight-CPU batch recorded hit reactions but the fixed P1 HP address never decreased through about 7,500 frames.",
+        "source": "docs/research/feel-captures/kakashi-4.10-2026-09-14/RESULTS.md"
+      },
+      {
+        "status": "derived",
+        "text": "The previous batch did not validate its fixed P1 HP address with a damaging P1-side positive control.",
+        "source": "jus-n4io"
+      },
+      {
+        "status": "observed",
+        "text": "obj+0xF6 and obj+0x11B are not SELECT-specific status or expiry fields.",
+        "source": "earlier Kakashi capture notes"
+      },
+      {
+        "status": "testimony",
+        "text": "SELECT is a timed substitution status.",
+        "source": "owner testimony"
+      }
+    ],
+    "probe_coverage": [
+      "Derive the battle root and side HP blocks at runtime.",
+      "Verify active side identity and Kakashi identity.",
+      "Poke P1 HP down, require immediate read-back, and prove no regeneration after auto-heal is disabled.",
+      "Capture P1 and P2 state, per-frame P1 HP, hit reactions, and teleport fields.",
+      "Require state 12 entry in each SELECT trial."
+    ],
+    "experiments": [
+      {
+        "id": "setup",
+        "design": "Resolve and validate identities and P1 HP; disable auto-heal and prove the poked value remains lowered.",
+        "distinguishing_outcome": "Failure blocks every later interpretation."
+      },
+      {
+        "id": "C0_no_select",
+        "design": "From a fresh fixture, require a real CPU hit that lowers P1 HP without SELECT.",
+        "distinguishing_outcome": "A drop proves the watched field can record CPU damage in this fixture."
+      },
+      {
+        "id": "C1_select_first_hit",
+        "design": "Reload the fixture, enter state 12, and compare the first qualifying CPU hit with C0.",
+        "distinguishing_outcome": "No HP drop after a corresponding real hit supports SELECT-associated first-hit protection; an HP drop fails to reproduce it."
+      },
+      {
+        "id": "C2_later_hits",
+        "design": "Keep observing later real hits after the same SELECT activation.",
+        "distinguishing_outcome": "A damaging second hit after a protected first hit supports A1; more than one protected hit supports A2 within the observed window."
+      },
+      {
+        "id": "D_delay_sweep",
+        "design": "Reload the fixture and increase the delay between SELECT and the observed CPU hit until protection no longer appears. The frozen baseline does not require a no-SELECT control at every tested delay.",
+        "distinguishing_outcome": "A later damaging hit after earlier protected hits can bracket timed behavior only if the hit is qualifying and comparable."
+      }
+    ],
+    "candidate_actions": {
+      "run_as_written": "The frozen experiment distinguishes the alternatives with adequate controls.",
+      "redesign_matched_delays": "Add a fresh no-SELECT comparison at each delay or otherwise prove each delayed attack would damage without SELECT.",
+      "defer": "Current behavior and owner testimony are sufficient; the remaining uncertainty is not worth a live run.",
+      "stop_failed_control": "A deterministic control fails, so do not interpret or continue the batch.",
+      "ask_owner": "A valid result conflicts with owner testimony or reveals a choice that the evidence cannot settle.",
+      "unknown_omitted_alternative": "The packet omits an alternative that could change the experiment."
+    },
+    "constraints": [
+      "Keep observation, attribution, and mechanism separate.",
+      "A state-8 transition without an HP decrease is not a damaging-hit control.",
+      "A SELECT press without state-12 entry is an invalid precondition, not a negative result.",
+      "Do not use obj+0xF6 or obj+0x11B as a SELECT status or expiry marker.",
+      "TypeSafe output cannot override owner testimony or establish a game fact."
+    ]
+  },
+  "model": "jev-latest",
+  "questions": {
+    "experiment_discrimination": {
+      "type": "choice",
+      "instructions": "Can the full frozen experiment distinguish A1 one-hit protection, A2 timed multi-hit protection, A3 failure to reproduce, and A4 an inadequate fixture?",
+      "criteria": {
+        "distinguishes_as_written": "The listed trials and outcomes separate the alternatives without another comparison.",
+        "needs_matched_delay_controls": "The first-hit comparison is useful, but delayed outcomes need matched no-SELECT damage controls or equivalent proof.",
+        "indistinguishable_other": "A different missing variable prevents the experiment from separating the alternatives.",
+        "unknown_omitted_alternative": "An important unlisted alternative prevents a defensible judgment."
+      }
+    },
+    "control_adequacy": {
+      "type": "choice",
+      "instructions": "What is the strongest judgment about attribution and controls for interpreting P1 HP changes as SELECT-associated protection?",
+      "criteria": {
+        "adequate": "Root, identity, auto-heal, P1 HP, damaging-hit, and SELECT activation controls are sufficient as written.",
+        "adequate_only_for_first_hit": "Controls support the first-hit comparison, but not the delay sweep without matched delay controls.",
+        "inadequate_identity_or_signal": "Identity, side, HP, or damaging-hit attribution remains inadequate.",
+        "inadequate_attack_matching": "The compared attacks are not shown to be equivalent enough for causal attribution.",
+        "unknown": "The packet lacks enough detail to judge control adequacy."
+      }
+    },
+    "supported_claim_scope": {
+      "type": "choice",
+      "instructions": "If setup and C0 pass and C1 records a real corresponding hit with no P1 HP decrease, what is the strongest claim scope supported by that result alone?",
+      "criteria": {
+        "first_hit_behavior": "Under these recorded conditions, SELECT is associated with protection from the first qualifying hit.",
+        "one_hit_consumption": "The result proves that protection is consumed by the first hit.",
+        "timed_duration": "The result proves a time-bounded status and its duration.",
+        "internal_mechanism": "The result identifies the internal protection mechanism.",
+        "inconclusive": "Even first-hit behavior is not supported."
+      }
+    }
+  }
+}

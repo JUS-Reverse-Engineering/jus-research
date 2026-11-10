@@ -1,0 +1,309 @@
+{
+  "character": "Nami",
+  "series": "One Piece",
+  "chr_b": 15,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; base (Clima-Tact) Nami. PCT Nami is a separate chr_b (19) and is not the primary subject of this file; see unresolved.",
+  "source": {"file": "46921-nami.txt", "gamefaqs_id": 46921, "author": "puTTytHiEF09", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["knowledge", "laughter"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "Increases Special Gauge When Breaking Item Boxes"
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": null,
+          "description": "Nami dashes forward for about half the screen, stealing special meter from opponents she passes through and giving it back to the player.",
+          "damage": "0",
+          "hits": null,
+          "properties": [],
+          "quote": "Nami quickly dashes forward for about half the screen, stealing 2 bars of special meter(or all thats availible if your opponent has less than 2 bars of special meter)from every opponent she dashes through, giving back though stolen SP to you. Damage: 0"
+        }
+      ],
+      "support_effect": "Great support koma overall. You can easily set this koma up in a very basic combo and literally destroy your opponent's special without too much effort, while maintaining your own."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": null,
+          "description": "Nami appears wrapped in a towel and flashes, producing an expanding heart-shaped zone that steals special bars and applies Battle Seal.",
+          "damage": "0",
+          "hits": null,
+          "properties": ["status:battle seal"],
+          "quote": "Nami appears wrapped in a towel. She quickly flashes herself, which causes a heart-shapped zone to come out and quickly expand. Those hit by the heart lose 2 special bars andare afflicted with the Battle Seal status. Damage: 0"
+        }
+      ],
+      "support_effect": "Not worth using, ever, especially when you have Nami's 2-koma. The battle seal is kind of nice, and the move itself is nice and quick, but there are so many better ways to use your deckspace."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "128",
+      "passives": [
+        "Innate Ability to Air-Dash",
+        "Gain More SP From Coins",
+        "Gain SP Enegry From Breaking Treasure Chests"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Trouble",
+          "description": "Nami always gains a minimum 1 SP bar from every opponent she steals from, no matter how much SP the opponent has. Does no physical damage.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "More or less the same as her 2-koma, with one major difference, no matter how much SP her opponent has, she always gains a minimum 1 SP bar from every opponent she steals from. Extremely easy to combo into. ... Doesn't do any physical damage."
+        },
+        {
+          "input": "up X",
+          "name": "Mirage Tempo",
+          "description": "Nami causes her current position to look like a mirage, granting her the Invisibility status effect.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:invisibility"],
+          "quote": "Nami says something for a couple of seconds, and then she causes her current position to look like a mirage, granter her the Invisibility status effect."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": "128",
+      "passives": [
+        "Innate Ability to Air-Dash",
+        "Gain More SP From Coins",
+        "Gain SP Enegry From Breaking Treasure Chests"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Trouble",
+          "description": "Nami always gains a minimum 1 SP bar from every opponent she steals from, no matter how much SP the opponent has. Does no physical damage.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "More or less the same as her 2-koma, with one major difference, no matter how much SP her opponent has, she always gains a minimum 1 SP bar from every opponent she steals from. Extremely easy to combo into. ... Doesn't do any physical damage."
+        },
+        {
+          "input": "up X",
+          "name": "Mirage Tempo",
+          "description": "Nami causes her current position to look like a mirage, granting her the Invisibility status effect.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:invisibility"],
+          "quote": "Nami says something for a couple of seconds, and then she causes her current position to look like a mirage, granter her the Invisibility status effect."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "144",
+      "passives": [
+        "Innate Ability to Air-Dash",
+        "Gain More SP From Coins",
+        "Gain SP Enegry From Breaking Treasure Chests"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Tornado Tempo",
+          "description": "Nami's rods hit the opponent with mechanical birds that twist around them, then one rod detaches and sends the opponent flying backwards; can sweep multiple grouped opponents.",
+          "damage": "Power/Knowledge: Max Hits: 26, Damage per Hit: 2 for the first 6 hits, 1 for every hit afterwards, Total Damage: 32. Laughter: Max Hits: 26, Damage per Hit: 3 for the first 6 hits, 1-2 for every hit afterwards, Total Damage: 48",
+          "hits": "26",
+          "properties": ["knockdown"],
+          "quote": "Nami moves slightly forward, with her Clima-Tact in a position so that one of the rods is connected horizonatally with the other two rods. If an opponent is hit by the rods, mechanical birds attached to wires pop put and twist around the opponent. After a second or two, the one rod detaches itself from the other two rods and sends the opponent flying backwards quite a ways. If multiple opponents are next to each other as the rod piece is flying, there's a chance that they maybe be swept away together by the attack."
+        },
+        {
+          "input": "up X",
+          "name": "Thunder Bolt Tempo",
+          "description": "A black thundercloud appears above and in front of Nami; she uses a Thunder Ball on it, causing a chain of 3 lightning bolts to rain down, each successive cloud further and higher from Nami. Causes shock.",
+          "damage": "Power/Knowledge: Max Hits: 2, Damage per Hit: 10, Total Damage: 20. Laughter: Max Hits: 2, Damage per Hit: 15, Total Damage: 30",
+          "hits": "2",
+          "properties": ["status:shock"],
+          "quote": "A black thundercloud appears above and in front of Nami. She uses a Thunder Ball on it, and causes a chain of 3 thind blots to rain down, each subsequent thunder cloud being futher and high from Nami. Causes the shock status effect."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "160",
+      "passives": [
+        "Innate Ability to Air-Dash",
+        "Gain More SP From Coins",
+        "Gain SP Enegry From Breaking Treasure Chests"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Thunder Tempo",
+          "description": "Nami creates a thunder cloud and charges it (charge attack); the longer X is held, the further it flies. Cloud flies out then pulls back, creating an electric current between it and the Clima-Tact for several seconds. Causes shock on contact.",
+          "damage": "Power/Knowledge: Max Hits: 26, Damage per Hit: 1-2 per cloud hit, 2-4 per electricity hit, Total Damage: 63. Laughter: Max Hits: 26, Damage per Hit: 1-3 per cloud hit, 8-11 per electricity hit, Total Damage: 91",
+          "hits": "26",
+          "properties": ["charge", "status:shock"],
+          "quote": "Nami creates a thunder cloud and begins charging it. The longer X is held, the further it will go when released, up to a certain point. When released, the cloud will fly out a certain distance, and then will be pull slightly backwards though Nami's Thunder Charged Perfect Clima-Tact and will create an electric current that connect the two together for a few seconds. Causes the shock status effect when the electricity hits the opponent."
+        },
+        {
+          "input": "up X",
+          "name": "Thunder Tempest",
+          "description": "Nami creates a thunder cloud over her head that grows, then uses a Thunder Ball on it and lightning strikes as she trips. Causes stun. Can break guards.",
+          "damage": "Power/Knowledge: Max Hits: 1, Damage per Hit: 40, Total Damage: 40. Laughter: Max Hits: 1, Damage per Hit: 60, Total Damage: 60",
+          "hits": "1",
+          "properties": ["guard break", "status:stun"],
+          "quote": "Nami creates a thunder cloud over her head. The cloud quickly grows, Nami uses a Thunder Ball on the cloud, and then trips as the lightning starts striking. Causes the stun status effect. ... One of the great things about this move is that is can break guards pretty easily"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Neutral B",
+      "description": "Nami swings the Clima-Tact a little bit forward; used for basic poking, chains smoothly into other attacks.",
+      "damage": "Power/Knowledge: 6; Laughter: 9",
+      "hits": null,
+      "properties": [],
+      "quote": "Nami just swings the Clima-Tact a little bit forward. Mostly used for basic poking, since if the move connects, it can quickly and smoothly flow into many her regular attacks."
+    },
+    {
+      "input": "side B",
+      "name": "Thunder Tempo",
+      "description": "Nami shoots a boxing glove attached to a spring forward; decent pushback, chains into neutral B, but has a long recovery unless chained into neutral Y quickly.",
+      "damage": "Power/Knowledge: 6; Laughter: 9",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Nami uses Thunder Tempo, which shoots out boxing glove attached to a spring forward. Somewhat decent push back, and can quickly be chained easily into her neutral B attack, however it has a long recovery time for the most part, unless you immediately chain it into her neutral Y."
+    },
+    {
+      "input": "up B",
+      "name": "Rain Tempo",
+      "description": "Nami places a rod of the Clima-Tact on her left hand, head, and right hand respectively; no longer multi-hits (lost from Jump! SuperStars), but hits both sides of Nami.",
+      "damage": "Power/Knowledge: 6; Laughter: 9",
+      "hits": null,
+      "properties": [],
+      "quote": "Nami uses Rain Tempo, Whhere she places a rod of the Clima-Tact one her left hand, head, and right hand respectively. It loses one of the things that made it great in Jump! SuperStars, namely the multi-hitting properties. It's still a decent move, as you can hit people on both to the left and right of Nami, which is always nice."
+    },
+    {
+      "input": "down B",
+      "name": "Cloudy Tempo",
+      "description": "Nami forms the Clima-Tact like a rifle and fires a bouquet of flowers forward. Forcibly switches the opponent's character, like all down B attacks. Somewhat crappy range and hard to combo into, but comes out quick.",
+      "damage": "Power/Knowledge: 6; Laughter: 9",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Nami uses Cloudy Tempo, where she forms the Clima-Tact like a rifle and fires a boquet of flowers forward. Has the property to forcibly change your opponents characters, like all down B attacks. Somewhat crappy range, and can't be really comboed into it too well. However, the attack does come out pretty quick."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Nami does a downward strike with the Clima-Tact, which knocks an opponent down through platforms. Quick start-up and recovery.",
+      "damage": "Power/Knowledge: 6; Laughter: 9",
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "Nami does a downward strke with the Clima-Tact, which knocks an opponent down through platforms, which is really about all there is to it. Quick start-up and recovery though."
+    },
+    {
+      "input": "Y",
+      "name": "Neutral Y",
+      "description": "Nami spins the Clima-Tact around in front of her. Basic version only does 3 hits, but pressing X along with the attack extends the number of hits up to 15.",
+      "damage": "Power/Knowledge: 1 damage per hit, 3-15 hits, max damage of 15 in total; Laughter: 1-2 damage per hit, 3-15 hits, max damage of 22 in total",
+      "hits": "3-15",
+      "properties": ["multi-hit", "mash-extend"],
+      "quote": "Nami spins the Clima-Tact around in front of her. Basic version of the attack only does 3 hits, but pressing X along with the attack can extend the number of hits to 15 in total. Comes out realatively quick, but there is a small amount of recovery time afterwards, and can easily be chained into."
+    },
+    {
+      "input": "side Y",
+      "name": "Cyclone Tempo",
+      "description": "Nami throws a small rod of the Clima-Tact at her opponent like a frisbee; can hit up to 4 times (twice going out, twice returning) and can hit multiple opponents in a line.",
+      "damage": "Power/Knowledge: 6 per hit, 4-hits max, 24 damage total; Laughter: 9 per hit, 4-hits max, 36 damage total",
+      "hits": "4",
+      "properties": ["projectile", "multi-hit"],
+      "quote": "Nami uses Cyclone Tempo, where she throws one of the small rods of the Clima-Tact of her opponent like a frizbee. Can hit opponents up to 4 times(twice throwing it forward, twice as it's coming back), can hit multiple opponents in a line, and can quickly be chained into."
+    },
+    {
+      "input": "up Y",
+      "name": "Fine Tempo",
+      "description": "Nami forms a triangle with her Clima-Tact and causes three doves to fly out (upper-left, straight up, upper-right). Slow start-up and recovery, but good projectile against higher platforms since it fans out.",
+      "damage": "Power/Knowledge: 5 per bird, 15 if all three hit at the same time; Laughter: 7 per bird, 22 if all three hit at the same time",
+      "hits": "3",
+      "properties": ["projectile", "multi-hit"],
+      "quote": "Nami uses Fine Tempo, where she forms a triangle with her Clima-Tact and causes three doves to fly out, one to the upper-left, one straight up, and one to the upper-right. Pretty slow start-up and recovery time, but it makes for a great projectile to aim at people on higher platforms, especially since it fans out."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Nami gets on a waver and dashes forward with it. Breaks guards like all down Y attacks; can hit from about half a screen away and moves fast.",
+      "damage": "Power/Knowledge: 12; Laughter: 18",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Nami gets on a waver, and dashes forward with it. Breaks guards like all down Y attacks. One of the better ones, since you can use this from about half a screen away and still have it hit, and it move pretty fast forward."
+    },
+    {
+      "input": "air Y",
+      "name": "Thunder Ball",
+      "description": "Nami sends out a ball of electricity slowly forward for about half the screen, pushing the opponent back with every hit; two can be sent out at once. Nami also rises upward and moves back a bit when used.",
+      "damage": "(deals up to 4 hits) Power/Knowledge: 2 damage per hit, 8 damage in total; Laughter: 3 damage per hit, 12 damage per hit",
+      "hits": "4",
+      "properties": ["projectile", "multi-hit"],
+      "quote": "Nami uses Thunder Ball, which sends out a ball of electricity slowly forward for about half the screen. Pretty good attack keep away attack, since the opponent is constantly getting pushed backwards with every hit, and you can send two out at a time, making it hard to move forward."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Nami taunts her opponent and points at them; anyone close enough who is not blocking loses some special bar and takes 1 point of damage.",
+      "damage": "1",
+      "hits": null,
+      "properties": [],
+      "quote": "Nami taunts her opponent and points at them. Those that are close enough that is not blocking loses some of thier special bar and are dealt 1 point of damage."
+    }
+  ],
+  "combos": [
+    "B->Forward B->Y",
+    "B->Y->Forward Y",
+    "B->Y",
+    "B->(Forward B)->Y->X->Kagura 3-koma/Gaoh 2-koma (4-koma Nami only; uses 2 special bars)",
+    "B->Y->Kanda 2-koma->X (uses 2 special bars)",
+    "B->Y->Rouji 3-koma",
+    "X(Tornado Tempo)->Horizontal Beam Support Attack (5-koma Nami only; uses 2 special bars)"
+  ],
+  "unresolved": [
+    "The guide covers two Nami variants sharing this single file: base 'Clima-Tact Nami' (chr_b 15, this file's focus) and 'Perfect Clima-Tact Nami' (PCT Nami, chr_b 19). The PCT variant has its own basic-attack set (different side B 'Swing Arm', up B 'Thunder Charge', up Y 'Thunderbolt Tempo', down Y tornado dash, and reduced hits on side Y) and its own combo list (B->Up B->Up Y; B->(Up B)->Y; B->Forward B->Forward Y->Gokudera 3-koma/Kuroro 3-koma->X; B->Y->Gokudera 3-koma/Kuroro 3-koma->X; Shun 3-koma->Up X). None of that PCT-specific moveset data is captured in this file's moves/combos arrays since chr_b 15 is the base variant; it belongs in a separate PCT Nami (chr_b 19) extraction.",
+    "The guide's note at the top of section 5 says: for 4-koma laughter Nami, swap the power damage values with the laughter damage values and vice-versa. This file records the damage numbers exactly as labeled in the guide's Power/Knowledge and Laughter columns without applying that swap, since it's unclear which basic-attack instances (if any beyond the 4-koma) this applies to.",
+    "Both the 4-koma (Knowledge) and 4-koma (Laughter) sections in the guide list 'Special Attack Nature: Knowledge' for both Trouble and Mirage Tempo, even under the Laughter-labeled koma heading; this looks like a copy-paste error in the source guide but is reproduced as written since no correction is stated.",
+    "The 5-koma and 6-koma sections do not explicitly state a nature label the way the 4-koma sections do (no 'Special Attack Nature:' line); this file assumes 'knowledge' for those komas based on the evolution chart context, but the guide does not say so directly.",
+    "Ultimate Action text says opponents lose 'some' of their special bar with no numeric value given; recorded as null/unspecified in the description.",
+    "Guide states forward Y (Cyclone Tempo) 'can hit multiple opponents in a line' but doesn't quantify how many; not included as a numeric property.",
+    "Section 4 (Evolution Chart) and section 7 (Ally Boosts / suggested koma) and section 10 (Sample Decks) contain deck-building, gem-cost, and ally-boost content that is explicitly out of scope per the battle-mechanics-only extraction rule and is not represented in this file."
+  ]
+}

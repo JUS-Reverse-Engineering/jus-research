@@ -1,0 +1,394 @@
+Neutral second-opinion request: ARM reading of excerpts from Jump Ultimate
+Stars (Nintendo DS; ARM9 main binary + overlay 6). Read the disassembly cold
+and describe the mechanism. Do not assume internal names; derive the data
+flow from the instructions.
+
+Background facts only: a "fighter object" (call it obj) has an input word at
+obj+0x6C (bit 0x10 = A button; bits 0x04 and 0x08 are the two horizontal
+d-pad directions, which is which is for you to reason about if possible;
+bit 0x02 = Down). obj+0x18 is a state byte. [[obj+0x1a8]+0x10] is a per-fighter
+block M; [M+0x5C] is a physics element whose s16 at +0x2C is a horizontal
+per-frame acceleration input consumed later by an integrator, and s16 +0x2E
+a vertical impulse. obj+0xB8 is a per-character s16 constant. 0x02157494 is
+called as (obj, stateNumber, handlerA, handlerB, 0) and installs a new state.
+Function 0x0215DF18 is installed as a handler for state 6 (at 0x0215DEF8 and
+0x0215DC7C). 0x0206CEAC is a callback elsewhere that, when a byte at
+Q+0x48 (Q = [[x+4]+0x64]) differs from another object's byte, calls
+Q->vtable[+0x5C](Q, newByte) and then negates one s32 of a 3-word vector.
+
+Questions:
+1. What does 0x0215EFC0(obj, r1, r2) compute and write? Under what
+   conditions does it call 0x02083950, and with what argument?
+2. What does 0x0215E91C return? What does 0x02083950 do?
+3. What does 0x0215EF58 add on top of 0x0215EFC0? What are the gates?
+4. In 0x0215DF18, on which paths is 0x0215EF58 reached, and what runs
+   before it? Is there any delay/counter before the 0x02083950 call can
+   happen, or is it same-call?
+5. When the 0x02083950 call happens, is the value written to [M+0x5C]+0x2C
+   any different from when it does not happen? Does anything in these
+   excerpts change velocity or momentum as a consequence of the byte change
+   (as opposed to the direction input itself)?
+6. 0x0215A2D0..0x0215A2FC is a second call site of 0x0215EFC0. What
+   decides r1/r2 there, who writes those fields (0x0215A130..0x0215A140,
+   0x0215A968, 0x02157D90..0x02157DB0), and what are the defaults?
+7. Excerpts G/H: what is written to obj+0x1D4 at 0x0215F044, and what is
+   the role of that value?
+Give a confidence (high/medium/low) for each answer and flag anything you
+cannot tell from these excerpts.
+
+EXCERPT A: ov6 0x0215E91C..0x0215E934
+0x0215E91C: 080090e5  ldr r0, [r0, #8]
+0x0215E920: 000050e3  cmp r0, #0
+0x0215E924: 04009015  ldrne r0, [r0, #4]
+0x0215E928: 64009015  ldrne r0, [r0, #0x64]
+0x0215E92C: 4800d015  ldrbne r0, [r0, #0x48]
+0x0215E930: 0100a003  moveq r0, #1
+0x0215E934: 1eff2fe1  bx lr
+
+EXCERPT B: ov6 0x0215EF58..0x0215F04C
+0x0215EF50: b210c0e1  strh r1, [r0, #2]
+0x0215EF54: 1eff2fe1  bx lr
+0x0215EF58: 38402de9  push {r3, r4, r5, lr}
+0x0215EF5C: 0050a0e1  mov r5, r0
+0x0215EF60: 0140a0e1  mov r4, r1
+0x0215EF64: 71eaffeb  bl #0x2159930
+0x0215EF68: 000050e3  cmp r0, #0
+0x0215EF6C: 0000a013  movne r0, #0
+0x0215EF70: 3880bd18  popne {r3, r4, r5, pc}
+0x0215EF74: 6c0095e5  ldr r0, [r5, #0x6c]
+0x0215EF78: 0c0010e3  tst r0, #0xc
+0x0215EF7C: 0700001a  bne #0x215efa0
+0x0215EF80: 0500a0e1  mov r0, r5
+0x0215EF84: 61eaffeb  bl #0x2159910
+0x0215EF88: 000050e3  cmp r0, #0
+0x0215EF8C: 0300001a  bne #0x215efa0
+0x0215EF90: 0500a0e1  mov r0, r5
+0x0215EF94: 8deaffeb  bl #0x21599d0
+0x0215EF98: 000050e3  cmp r0, #0
+0x0215EF9C: 0500000a  beq #0x215efb8
+0x0215EFA0: 0500a0e1  mov r0, r5
+0x0215EFA4: 0410a0e1  mov r1, r4
+0x0215EFA8: 0120a0e3  mov r2, #1
+0x0215EFAC: 030000eb  bl #0x215efc0
+0x0215EFB0: 0100a0e3  mov r0, #1
+0x0215EFB4: 3880bde8  pop {r3, r4, r5, pc}
+0x0215EFB8: 0000a0e3  mov r0, #0
+0x0215EFBC: 3880bde8  pop {r3, r4, r5, pc}
+0x0215EFC0: f8402de9  push {r3, r4, r5, r6, r7, lr}
+0x0215EFC4: 0070a0e1  mov r7, r0
+0x0215EFC8: 6c0097e5  ldr r0, [r7, #0x6c]
+0x0215EFCC: 0160a0e1  mov r6, r1
+0x0215EFD0: 0250a0e1  mov r5, r2
+0x0215EFD4: 0c0010e3  tst r0, #0xc
+0x0215EFD8: 0300000a  beq #0x215efec
+0x0215EFDC: 080010e3  tst r0, #8
+0x0215EFE0: 0040a013  movne r4, #0
+0x0215EFE4: 0140a003  moveq r4, #1
+0x0215EFE8: 020000ea  b #0x215eff8
+0x0215EFEC: a80197e5  ldr r0, [r7, #0x1a8]
+0x0215EFF0: 49feffeb  bl #0x215e91c
+0x0215EFF4: 0040a0e1  mov r4, r0
+0x0215EFF8: 000054e3  cmp r4, #0
+0x0215EFFC: 0000e013  mvnne r0, #0
+0x0215F000: 86006011  smulbbne r0, r6, r0
+0x0215F004: 0008a011  lslne r0, r0, #0x10
+0x0215F008: 4068a011  asrne r6, r0, #0x10
+0x0215F00C: a80197e5  ldr r0, [r7, #0x1a8]
+0x0215F010: 000055e3  cmp r5, #0
+0x0215F014: 100090e5  ldr r0, [r0, #0x10]
+0x0215F018: 5c0090e5  ldr r0, [r0, #0x5c]
+0x0215F01C: bc62c0e1  strh r6, [r0, #0x2c]
+0x0215F020: f880bd08  popeq {r3, r4, r5, r6, r7, pc}
+0x0215F024: a80197e5  ldr r0, [r7, #0x1a8]
+0x0215F028: 3bfeffeb  bl #0x215e91c
+0x0215F02C: 000054e1  cmp r4, r0
+0x0215F030: f880bd08  popeq {r3, r4, r5, r6, r7, pc}
+0x0215F034: a80197e5  ldr r0, [r7, #0x1a8]
+0x0215F038: 0410a0e1  mov r1, r4
+0x0215F03C: 4392fceb  bl #0x2083950
+0x0215F040: 04009fe5  ldr r0, [pc, #4]
+0x0215F044: d40187e5  str r0, [r7, #0x1d4]
+0x0215F048: f880bde8  pop {r3, r4, r5, r6, r7, pc}
+
+EXCERPT C: arm9 0x02083950..0x020839A4
+0x02083950: 38402de9  push {r3, r4, r5, lr}
+0x02083954: 0050a0e1  mov r5, r0
+0x02083958: 080095e5  ldr r0, [r5, #8]
+0x0208395C: 0140a0e1  mov r4, r1
+0x02083960: 000050e3  cmp r0, #0
+0x02083964: 3880bd08  popeq {r3, r4, r5, pc}
+0x02083968: 040090e5  ldr r0, [r0, #4]
+0x0208396C: 640090e5  ldr r0, [r0, #0x64]
+0x02083970: 002090e5  ldr r2, [r0]
+0x02083974: 5c2092e5  ldr r2, [r2, #0x5c]
+0x02083978: 32ff2fe1  blx r2
+0x0208397C: 140095e5  ldr r0, [r5, #0x14]
+0x02083980: 000050e3  cmp r0, #0
+0x02083984: 0100000a  beq #0x2083990
+0x02083988: 081095e5  ldr r1, [r5, #8]
+0x0208398C: 23dcffeb  bl #0x207aa20
+0x02083990: 200095e5  ldr r0, [r5, #0x20]
+0x02083994: 000050e3  cmp r0, #0
+0x02083998: 3880bd08  popeq {r3, r4, r5, pc}
+0x0208399C: 0410a0e1  mov r1, r4
+0x020839A0: b1c5ffeb  bl #0x207506c
+0x020839A4: 3880bde8  pop {r3, r4, r5, pc}
+
+EXCERPT D: ov6 0x0215DF18..0x0215E0C8 (state 6 handler)
+0x0215DF18: 10402de9  push {r4, lr}
+0x0215DF1C: 0040a0e1  mov r4, r0
+0x0215DF20: 6efdffeb  bl #0x215d4e0
+0x0215DF24: 000050e3  cmp r0, #0
+0x0215DF28: 1600000a  beq #0x215df88
+0x0215DF2C: a80194e5  ldr r0, [r4, #0x1a8]
+0x0215DF30: a01194e5  ldr r1, [r4, #0x1a0]
+0x0215DF34: 100090e5  ldr r0, [r0, #0x10]
+0x0215DF38: bc1191e5  ldr r1, [r1, #0x1bc]
+0x0215DF3C: 5c0090e5  ldr r0, [r0, #0x5c]
+0x0215DF40: 340090e5  ldr r0, [r0, #0x34]
+0x0215DF44: 040010e3  tst r0, #4
+0x0215DF48: 0700000a  beq #0x215df6c
+0x0215DF4C: 060051e3  cmp r1, #6
+0x0215DF50: 0200000a  beq #0x215df60
+0x0215DF54: 0400a0e1  mov r0, r4
+0x0215DF58: 0610a0e3  mov r1, #6
+0x0215DF5C: 3be5ffeb  bl #0x2157450
+0x0215DF60: 0000a0e3  mov r0, #0
+0x0215DF64: e701c4e5  strb r0, [r4, #0x1e7]
+0x0215DF68: 060000ea  b #0x215df88
+0x0215DF6C: 040051e3  cmp r1, #4
+0x0215DF70: 0200000a  beq #0x215df80
+0x0215DF74: 0400a0e1  mov r0, r4
+0x0215DF78: 0410a0e3  mov r1, #4
+0x0215DF7C: 33e5ffeb  bl #0x2157450
+0x0215DF80: 0100a0e3  mov r0, #1
+0x0215DF84: e701c4e5  strb r0, [r4, #0x1e7]
+0x0215DF88: a80194e5  ldr r0, [r4, #0x1a8]
+0x0215DF8C: 5cfeffeb  bl #0x215d904
+0x0215DF90: 000050e3  cmp r0, #0
+0x0215DF94: 0400000a  beq #0x215dfac
+0x0215DF98: 0110a0e3  mov r1, #1
+0x0215DF9C: 0400a0e1  mov r0, r4
+0x0215DFA0: e611c4e5  strb r1, [r4, #0x1e6]
+0x0215DFA4: cefcffeb  bl #0x215d2e4
+0x0215DFA8: 1080bde8  pop {r4, pc}
+0x0215DFAC: 0400a0e1  mov r0, r4
+0x0215DFB0: 2e0100eb  bl #0x215e470
+0x0215DFB4: 000050e3  cmp r0, #0
+0x0215DFB8: 1080bd18  popne {r4, pc}
+0x0215DFBC: 0400a0e1  mov r0, r4
+0x0215DFC0: 5b0100eb  bl #0x215e534
+0x0215DFC4: 000050e3  cmp r0, #0
+0x0215DFC8: 1080bd18  popne {r4, pc}
+0x0215DFCC: da00d4e5  ldrb r0, [r4, #0xda]
+0x0215DFD0: 020050e3  cmp r0, #2
+0x0215DFD4: 0100a023  movhs r0, #1
+0x0215DFD8: 0000a033  movlo r0, #0
+0x0215DFDC: 000050e3  cmp r0, #0
+0x0215DFE0: 0700001a  bne #0x215e004
+0x0215DFE4: 0400a0e1  mov r0, r4
+0x0215DFE8: 0110a0e3  mov r1, #1
+0x0215DFEC: 62efffeb  bl #0x2159d7c
+0x0215DFF0: 000050e3  cmp r0, #0
+0x0215DFF4: db00d415  ldrbne r0, [r4, #0xdb]
+0x0215DFF8: 0c008012  addne r0, r0, #0xc
+0x0215DFFC: db00c415  strbne r0, [r4, #0xdb]
+0x0215E000: 1080bd18  popne {r4, pc}
+0x0215E004: 0400a0e1  mov r0, r4
+0x0215E008: 2f0000eb  bl #0x215e0cc
+0x0215E00C: 000050e3  cmp r0, #0
+0x0215E010: 1080bd18  popne {r4, pc}
+0x0215E014: 0400a0e1  mov r0, r4
+0x0215E018: 6c0000eb  bl #0x215e1d0
+0x0215E01C: 000050e3  cmp r0, #0
+0x0215E020: 1080bd18  popne {r4, pc}
+0x0215E024: 280194e5  ldr r0, [r4, #0x128]
+0x0215E028: 080010e3  tst r0, #8
+0x0215E02C: 0300000a  beq #0x215e040
+0x0215E030: 0400a0e1  mov r0, r4
+0x0215E034: 09feffeb  bl #0x215d860
+0x0215E038: 000050e3  cmp r0, #0
+0x0215E03C: 1080bd18  popne {r4, pc}
+0x0215E040: a80194e5  ldr r0, [r4, #0x1a8]
+0x0215E044: 100090e5  ldr r0, [r0, #0x10]
+0x0215E048: 5c0090e5  ldr r0, [r0, #0x5c]
+0x0215E04C: 340090e5  ldr r0, [r0, #0x34]
+0x0215E050: 040010e3  tst r0, #4
+0x0215E054: 010c8412  addne r0, r4, #0x100
+0x0215E058: d70ed011  ldrsbne r0, [r0, #0xe7]
+0x0215E05C: 00005013  cmpne r0, #0
+0x0215E060: 1400000a  beq #0x215e0b8
+0x0215E064: 010050e3  cmp r0, #1
+0x0215E068: 0200000a  beq #0x215e078
+0x0215E06C: 0c0050e3  cmp r0, #0xc
+0x0215E070: 0b00000a  beq #0x215e0a4
+0x0215E074: 070000ea  b #0x215e098
+0x0215E078: 0400a0e1  mov r0, r4
+0x0215E07C: 0510a0e3  mov r1, #5
+0x0215E080: f2e4ffeb  bl #0x2157450
+0x0215E084: 010c84e2  add r0, r4, #0x100
+0x0215E088: d70ed0e1  ldrsb r0, [r0, #0xe7]
+0x0215E08C: 010080e2  add r0, r0, #1
+0x0215E090: e701c4e5  strb r0, [r4, #0x1e7]
+0x0215E094: 070000ea  b #0x215e0b8
+0x0215E098: 010080e2  add r0, r0, #1
+0x0215E09C: e701c4e5  strb r0, [r4, #0x1e7]
+0x0215E0A0: 040000ea  b #0x215e0b8
+0x0215E0A4: 0400a0e1  mov r0, r4
+0x0215E0A8: 0610a0e3  mov r1, #6
+0x0215E0AC: e7e4ffeb  bl #0x2157450
+0x0215E0B0: 0000a0e3  mov r0, #0
+0x0215E0B4: e701c4e5  strb r0, [r4, #0x1e7]
+0x0215E0B8: f81bd4e1  ldrsh r1, [r4, #0xb8]
+0x0215E0BC: 0400a0e1  mov r0, r4
+0x0215E0C0: a40300eb  bl #0x215ef58
+0x0215E0C4: 1080bde8  pop {r4, pc}
+0x0215E0C8: 1eff2fe1  bx lr
+
+EXCERPT E: ov6 0x0215A0FC..0x0215A144 and 0x0215A2D0..0x0215A300
+0x0215A100: 0400001a  bne #0x215a118
+0x0215A104: 44159fe5  ldr r1, [pc, #0x544]
+0x0215A108: 0600a0e1  mov r0, r6
+0x0215A10C: 0120a0e3  mov r2, #1
+0x0215A110: 731500eb  bl #0x215f6e4
+0x0215A114: 050000ea  b #0x215a130
+0x0215A118: 080054e3  cmp r4, #8
+0x0215A11C: 0300001a  bne #0x215a130
+0x0215A120: 2c159fe5  ldr r1, [pc, #0x52c]
+0x0215A124: 0600a0e1  mov r0, r6
+0x0215A128: 0120a0e3  mov r2, #1
+0x0215A12C: 6c1500eb  bl #0x215f6e4
+0x0215A130: 0010a0e3  mov r1, #0
+0x0215A134: bc1cc6e1  strh r1, [r6, #0xcc]
+0x0215A138: 0100a0e3  mov r0, #1
+0x0215A13C: f600c6e5  strb r0, [r6, #0xf6]
+0x0215A140: f710c6e5  strb r1, [r6, #0xf7]
+...
+0x0215A2D0: fc1cd6e1  ldrsh r1, [r6, #0xcc]
+0x0215A2D4: 000051e3  cmp r1, #0
+0x0215A2D8: 0800000a  beq #0x215a300
+0x0215A2DC: f700d6e5  ldrb r0, [r6, #0xf7]
+0x0215A2E0: 000050e3  cmp r0, #0
+0x0215A2E4: 0200000a  beq #0x215a2f4
+0x0215A2E8: 6c0096e5  ldr r0, [r6, #0x6c]
+0x0215A2EC: 0c0010e3  tst r0, #0xc
+0x0215A2F0: 0200000a  beq #0x215a300
+0x0215A2F4: f620d6e5  ldrb r2, [r6, #0xf6]
+0x0215A2F8: 0600a0e1  mov r0, r6
+0x0215A2FC: 2f1300eb  bl #0x215efc0
+0x0215A300: a80196e5  ldr r0, [r6, #0x1a8]
+
+EXCERPT F: ov6 0x0215A968..0x0215A974 and its only caller 0x02157D90..0x02157DB4 (case 22 of a 73-case script-command dispatcher)
+0x0215A968: bc1cc0e1  strh r1, [r0, #0xcc]
+0x0215A96C: f620c0e5  strb r2, [r0, #0xf6]
+0x0215A970: f730c0e5  strb r3, [r0, #0xf7]
+0x0215A974: 1eff2fe1  bx lr
+0x02157D88: df3900eb  bl #0x216650c
+0x02157D8C: 7f0000ea  b #0x2157f90
+0x02157D90: 000053e3  cmp r3, #0
+0x02157D94: 0120a003  moveq r2, #1
+0x02157D98: 0020a013  movne r2, #0
+0x02157D9C: 000056e3  cmp r6, #0
+0x02157DA0: 0130a003  moveq r3, #1
+0x02157DA4: 0030a013  movne r3, #0
+0x02157DA8: 0500a0e1  mov r0, r5
+0x02157DAC: 0410a0e1  mov r1, r4
+0x02157DB0: ec0a00eb  bl #0x215a968
+0x02157DB4: 750000ea  b #0x2157f90
+
+EXCERPT G: ov6 0x0215DA84..0x0215DB20 (target of the value stored at 0x0215F044; it lives in the same file)
+0x0215DA80: 0880bde8  pop {r3, pc}
+0x0215DA84: 10402de9  push {r4, lr}
+0x0215DA88: 0040a0e1  mov r4, r0
+0x0215DA8C: 64f3ffeb  bl #0x215a824
+0x0215DA90: 000050e3  cmp r0, #0
+0x0215DA94: 0010a013  movne r1, #0
+0x0215DA98: 0c009f15  ldrne r0, [pc, #0xc]
+0x0215DA9C: de11c415  strbne r1, [r4, #0x1de]
+0x0215DAA0: d4018415  strne r0, [r4, #0x1d4]
+0x0215DAA4: 0000a0e3  mov r0, #0
+0x0215DAA8: 1080bde8  pop {r4, pc}
+0x0215DAAC: b0da1502  andseq sp, r5, #176, #20
+0x0215DAB0: 6c1090e5  ldr r1, [r0, #0x6c]
+0x0215DAB4: 0c0011e3  tst r1, #0xc
+0x0215DAB8: 08109f05  ldreq r1, [pc, #8]
+0x0215DABC: d4118005  streq r1, [r0, #0x1d4]
+0x0215DAC0: 0000a0e3  mov r0, #0
+0x0215DAC4: 1eff2fe1  bx lr
+0x0215DAC8: ccda1502  andseq sp, r5, #204, #20
+0x0215DACC: 10402de9  push {r4, lr}
+0x0215DAD0: 0040a0e1  mov r4, r0
+0x0215DAD4: 011c84e2  add r1, r4, #0x100
+0x0215DAD8: de2dd1e1  ldrsb r2, [r1, #0xde]
+0x0215DADC: 012082e2  add r2, r2, #1
+0x0215DAE0: de21c4e5  strb r2, [r4, #0x1de]
+0x0215DAE4: de1dd1e1  ldrsb r1, [r1, #0xde]
+0x0215DAE8: 0c0051e3  cmp r1, #0xc
+0x0215DAEC: 060000aa  bge #0x215db0c
+0x0215DAF0: 4bf3ffeb  bl #0x215a824
+0x0215DAF4: 000050e3  cmp r0, #0
+0x0215DAF8: 0010a013  movne r1, #0
+0x0215DAFC: 18009f15  ldrne r0, [pc, #0x18]
+0x0215DB00: de11c415  strbne r1, [r4, #0x1de]
+0x0215DB04: d4018415  strne r0, [r4, #0x1d4]
+0x0215DB08: 010000ea  b #0x215db14
+0x0215DB0C: 0c009fe5  ldr r0, [pc, #0xc]
+0x0215DB10: d40184e5  str r0, [r4, #0x1d4]
+0x0215DB14: 0000a0e3  mov r0, #0
+0x0215DB18: 1080bde8  pop {r4, pc}
+0x0215DB1C: 24db1502  andseq sp, r5, #36, #22
+0x0215DB20: 84da1502  .word 0x0215DA84
+0x0215DB24: 011c80e2  add r1, r0, #0x100
+0x0215DB28: de2dd1e1  ldrsb r2, [r1, #0xde]
+
+EXCERPT H: states' walk handler 0x0215D760..0x0215D828 (third caller of 0x0215EF58)
+0x0215D760: 10402de9  push {r4, lr}
+0x0215D764: 0040a0e1  mov r4, r0
+0x0215D768: 5cffffeb  bl #0x215d4e0
+0x0215D76C: 000050e3  cmp r0, #0
+0x0215D770: 0500000a  beq #0x215d78c
+0x0215D774: 0400a0e1  mov r0, r4
+0x0215D778: 0110a0e3  mov r1, #1
+0x0215D77C: 33e7ffeb  bl #0x2157450
+0x0215D780: a40194e5  ldr r0, [r4, #0x1a4]
+0x0215D784: 0110a0e3  mov r1, #1
+0x0215D788: 270000eb  bl #0x215d82c
+0x0215D78C: 0400a0e1  mov r0, r4
+0x0215D790: cc0100eb  bl #0x215dec8
+0x0215D794: 000050e3  cmp r0, #0
+0x0215D798: 1080bd18  popne {r4, pc}
+0x0215D79C: 0400a0e1  mov r0, r4
+0x0215D7A0: 0210a0e3  mov r1, #2
+0x0215D7A4: 74f1ffeb  bl #0x2159d7c
+0x0215D7A8: 000050e3  cmp r0, #0
+0x0215D7AC: 1080bd18  popne {r4, pc}
+0x0215D7B0: 0400a0e1  mov r0, r4
+0x0215D7B4: 0010a0e3  mov r1, #0
+0x0215D7B8: 6ff1ffeb  bl #0x2159d7c
+0x0215D7BC: 000050e3  cmp r0, #0
+0x0215D7C0: 1080bd18  popne {r4, pc}
+0x0215D7C4: 0400a0e1  mov r0, r4
+0x0215D7C8: 370100eb  bl #0x215dcac
+0x0215D7CC: 000050e3  cmp r0, #0
+0x0215D7D0: 1080bd18  popne {r4, pc}
+0x0215D7D4: 0400a0e1  mov r0, r4
+0x0215D7D8: 700400eb  bl #0x215e9a0
+0x0215D7DC: 000050e3  cmp r0, #0
+0x0215D7E0: 1080bd18  popne {r4, pc}
+0x0215D7E4: 0400a0e1  mov r0, r4
+0x0215D7E8: d80000eb  bl #0x215db50
+0x0215D7EC: 000050e3  cmp r0, #0
+0x0215D7F0: 1080bd18  popne {r4, pc}
+0x0215D7F4: 0400a0e1  mov r0, r4
+0x0215D7F8: 180000eb  bl #0x215d860
+0x0215D7FC: 000050e3  cmp r0, #0
+0x0215D800: 1080bd18  popne {r4, pc}
+0x0215D804: 0400a0e1  mov r0, r4
+0x0215D808: 96ecffeb  bl #0x2158a68
+0x0215D80C: 0010a0e1  mov r1, r0
+0x0215D810: 0400a0e1  mov r0, r4
+0x0215D814: cf0500eb  bl #0x215ef58
+0x0215D818: 000050e3  cmp r0, #0
+0x0215D81C: 1080bd18  popne {r4, pc}
+0x0215D820: 0400a0e1  mov r0, r4
+0x0215D824: aefeffeb  bl #0x215d2e4

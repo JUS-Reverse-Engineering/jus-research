@@ -1,0 +1,298 @@
+{
+  "character": "Don Patch",
+  "series": "Bobobo",
+  "chr_b": 48,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "49910-don-patch.txt", "gamefaqs_id": 49910, "author": "Sam Tillin", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["laughter"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Increase SP Gauge when using multiple Special Attacks in a short time."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Nandokakantokapatoroonamu. Don Patch appears and points a magic stick forwards; a cheesy beam removes any status ailments from whoever is touched by it. Guide notes it can neglect the user and remove status ailments from the opponent if they're standing too close.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Bakabooru (Idiot ball). Don Patch appears and holds a ball above his head before throwing it straight forward. Doesn't do any damage but causes confusion and leaves the target unable to react for a fraction of a second.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Attack up when health is low",
+        "Gain more SP energy when using multiple Special Attacks in a row",
+        "Take more damage from Special Attacks"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Umareta te oyabin bazuuka",
+          "description": "The Don falls forwards on to his face, then bursts out of his own back, strikes a pose, and launches into a headbutt. Takes a while to start up; the start of it can work as a dodge but it's too obvious to fool anyone but the computer. Ok for ring outs but not as effective as specials from characters like Luffy and Gon.",
+          "damage": "48 to power, 32 to knowledge & comedy",
+          "hits": null,
+          "properties": [],
+          "quote": "4 koma X: Umareta te oyabin bazuuka [Something about a gang boss' birth and a bazooka]. Unfortunately this attack isn't too great, it takes a while to start up and even though the start of it can work as a dodge it's far too obvious to fool anyone other than the computer."
+        },
+        {
+          "input": "up X",
+          "name": "Jigoku no toge rooraa (Hell's thorn roller)",
+          "description": "The Don turns into a drill-like shape with spikes and jumps while spinning quickly, hitting the opponent multiple times. Only effective if the opponent is above (falling or just knocked airborne); easy to dodge or block if they're on a platform above. Can be comboed into with up-B.",
+          "damage": "1 hit: 13 power/9 knowledge&comedy; 4 hits: 27/18; 5 hits: 37/25; 6 hits: 46/31; 8 hits: 61/41; 2, 3, and 7 hits: unknown, guide says it will update",
+          "hits": "varies, 1 to 8",
+          "properties": ["multi-hit"],
+          "quote": "4 koma up + X: jigoku no toge rooraa [Hell's thorn roller] ... hitting the opponent multiple times ... Damage: Varies depending on how many times it hits."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Attack up when health is low",
+        "Gain more SP energy when using multiple Special Attacks in a row",
+        "Take more damage from Special Attacks"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hasshin tsukune dan (Dispatch meatloaf bullet)",
+          "description": "The Don jumps into the air; 2 round missiles appear above and below him, and he flies forward with them, both of which follow the opponent somewhat. Both missiles and the Don explode on impact. Optimal range is with the opponent just about on screen; too far and only missiles hit, too close and it's easy to counter.",
+          "damage": "24, 48, 66 or 72 to power (depends on how the explosions connect); 16, 32, 44 or 48 to knowledge & comedy",
+          "hits": null,
+          "properties": [],
+          "quote": "5 koma X: Hasshin tsukune dan [Dispatch meatloaf bullet...] ... Both missiles and the Don explode on impact sending the opponent flying."
+        },
+        {
+          "input": "up X",
+          "name": "Fukkatsu no Don Pacchi mandara (Don Patch mandala of Revival)",
+          "description": "The Don jumps straight up, faces the camera, spikes turn white, and he laughs maniacally with a mandala behind him. Deals a single hit, knocks the opponent back quite a ways, comes out quickly, decent damage for a 5 koma special, and has an area of effect useful in FFA. Easy to combo into.",
+          "damage": "54 to power, 36 to knowledge & comedy",
+          "hits": "1",
+          "properties": ["launcher"],
+          "quote": "5 koma up + X: Fukkatsu no Don Pacchi mandara [Don Patch mandala of Revival] ... It deals a single hit and knocks the opponent back quite a ways ... It's worth noting how easy it is to combo in to this special."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Attack up when health is low",
+        "Gain more SP energy when using multiple Special Attacks in a row",
+        "Take more damage from Special Attacks"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hajike Shyooto (Snap shot)",
+          "description": "Hatenkou appears behind the Don and kicks him with tremendous force, sending him far forward surrounded by a huge yellow aura, appearing to split into 4. Opponents in his way are knocked down and dealt damage. Activates fairly quickly and works well with supports.",
+          "damage": "42, 66, 78 or 84 to power (depends on how far away you start from); 26, 44, 52 or 56 to knowledge & comedy",
+          "hits": null,
+          "properties": ["knockdown"],
+          "quote": "6 koma X: Hajike Shyooto [Snap shot] ... Any opponents who happen to get in his way are knocked flat on their bottoms and dealt a nice amount of damage."
+        },
+        {
+          "input": "up X",
+          "name": "Toge toge daishyarin (Thorn thorn frenzy)",
+          "description": "The Don leans back facing up, flattens his spikes into a sunflower shape, and the rapidly rotating spikes cause a tornado above his face. Hits anything within the screen above him; lasts about 4/5 of a second and launches the opponent about half a stage upwards. Easily comboed into, like all of Patch's up-X attacks, and can catch multiple opponents.",
+          "damage": "50-75 to power, 33-50 to knowledge & comedy",
+          "hits": null,
+          "properties": ["launcher"],
+          "quote": "6 koma up + X: Toge toge daishyarin [Thorn thorn frenzy] ... The tornado lasts for about 4/5 of a second and launches the opponent about half a stage upwards."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": 192,
+      "passives": [
+        "Attack up when health is low",
+        "Gain more SP energy when using multiple Special Attacks in a row",
+        "Take more damage from Special Attacks",
+        "Named Ikarin Patch in this transformed 7-koma state"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Oyabin Rasshyu (Oyabin Rush)",
+          "description": "Ikarin Patch braces, sprouts angel wings, gains a silvery glow, then unleashes a flurry of punches from above, below, and in front. This is the only Patch special that can be extended by rapidly tapping X. After the last hit connects, the opponent is sent flying backwards similar to being hit by Luffy 7's X.",
+          "damage": "51-87 to power, 34-58 to knowledge & comedy",
+          "hits": null,
+          "properties": ["mash-extend"],
+          "quote": "7 koma X: Oyabin Rasshyu [Oyabin Rush] ... This is the only Patch special that can be extended by rapidly tapping X. After the last hit connects the opponent is sent flying backwards in the same way as when they're hit by Luffy 7's X."
+        },
+        {
+          "input": "up X",
+          "name": "Takesoko soodo (bamboo shoot sword)",
+          "description": "Ikarin pulls out a bamboo shoot, screams, and jumps straight up while holding it. Can hit anyone within half a stage above Ikarin. Knocks them slightly sideways, though they can recover before hitting the ground so it isn't ideal for comboing into supports.",
+          "damage": "90 to power, 60 to knowledge & comedy",
+          "hits": null,
+          "properties": [],
+          "quote": "7 koma up + X: Takesoko soodo [bamboo shoot sword] ... It does a delicious amount of damage and can nail anyone within half a stage above Ikarin. If it connects with somebody it knocks them slightly sideways although they can recover before hitting the ground so it isn't ideal for combing in to supports."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A simple punch with pretty good range considering his size. Used to start most combos.",
+      "damage": "13 to power, 9 to knowledge & comedy",
+      "hits": null,
+      "properties": [],
+      "quote": "B: A simple punch with pretty good range considering his size. You'll be using this to start most (If not all) of his combos."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "The Don does 3 sumo-esque slaps, shouting 'DOSKOI!' at each impact. Very useful for keeping the opponent at bay while a support starts up and works well as an edge guard.",
+      "damage": "6 per hit to power (18 total), 4 per hit to knowledge & comedy (12 total)",
+      "hits": "3",
+      "properties": ["multi-hit"],
+      "quote": "Foward + B: The Don does 3 sumo-esque slaps, shouting \"DOSKOI!\" at the moment of each impact. Very useful for keeping the opponent at bay while a support starts up and also works quite well as an edge guard."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "The Don sprouts yellow spikes and hops holding two fans. Juggles the opponent slightly; would be excellent against airborne foes or those on a platform above if he jumped a bit higher.",
+      "damage": "13 to power, 9 to knowledge & comedy",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Up + B: ... Not bad as far as ^B attacks go. It juggles the opponent ever-so-slightly, if he jumped a tiny bit higher it would be excellent for fighting opponents who are airbourne or standing on a platform above you."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "A strange transformation attack; forces the opponent to switch battle characters like everyone else's down-B, but the Don takes a small step back before leaping forward, which can dodge a hit by a hair and can hit people standing behind him too.",
+      "damage": "13 to power, 9 to knowledge & comedy",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Down + B: ... forces the opponent to switch battle characters just like everybody else's but this has a distinct difference, the Don takes a small step back before leaping forward to perform the attack."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "A simple machine gun punch. The first 4 hits do pathetic damage but the last makes up for it; comes out very quickly with all hits in about half a second. Knocks the opponent over afterward, destroying combo potential without a support or wall, but is a fantastic way to ring out.",
+      "damage": "7 for the first 4 hits, 23 for the last to power (30 total); 5 for the first 4 hits, 15 for the last to knowledge & comedy (20 total)",
+      "hits": "5",
+      "properties": ["multi-hit", "knockdown"],
+      "quote": "Y: A simple machine gun punch ... After it's finished the victi- er, opponent, is knocked over which destroys any chance of comboing without a support or a wall, but it does nice damage and is a fantastic way to RO someone."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "The Don turns his back and launches himself backwards. If used next to the opponent he ends up behind them; from a step or two away, he lands right in front of their face for a follow-up, and the opponent doesn't get knocked down.",
+      "damage": "37 to power, 25 to knowledge & comedy",
+      "hits": null,
+      "properties": [],
+      "quote": "Forward + Y: ... If used while next to the opponent you will end up standing behind them, if you're a step or two away from them you'll land right in front of their face, perfect for a follow up attack as the opponent doesn't get knocked down."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "The Don does an uppercut, spinning halfway through with a demented look. Good for setting up aerial supports or knocking someone into a slow starting support, and can lead into aerial B/Y for extra damage.",
+      "damage": "30 to power, 20 to knowledge & comedy",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Up + Y: The Don does an uppercut, spinning half way through and revealing a demented look on his face. ... It's a nice move for setting up aerial supports or to knock someone in to a slow starting support."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "The Don crosses his arms, then opens them violently while sprouting 16 spikes pointing in all directions, breaking guard. Takes a second to activate like all guard breaks but hits opponents in all directions.",
+      "damage": "30 to power, 20 to knowledge & comedy",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down + Y: ... As with all guard breaks it takes a second to activate but it has the added bonus of hitting opponents in all directions, so it can come in useful in an FFA where everybody's turtling."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "The Don braces then launches himself forward in a short burst with a yellow glow. Ok knockback, not as good as most but better than nothing; also an ok recovery move against edge guarding.",
+      "damage": "13 to power, 9 to knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial B: ... It has ok knockback, not as good as most but it's better than nothing. It's also an ok recovery move if somebody's edge guarding as you can knock them flat on their backside and make it safely on to solid ground."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "The Don turns into a shuriken with an angry face and launches himself diagonally down/forward while spinning rapidly. Doesn't stop until hitting solid ground or a solid fist, so it can theoretically catch 3 people; risks self-ringout ('committing suicide').",
+      "damage": "Anything from 4 to 58 to power; anything from 3 to 39 to knowledge & comedy (guide notes it only ever managed enough hits for 25 damage, but basic math shows 39 is the ceiling)",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "Aerial Y: ... It can hit the opponent multiple times and doesn't stop until you hit solid ground or a solid fist so in theory you can catch 3 people in it."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Causes the Don to don a Vegeta costume and hold a doll while charging up Dragonball Z style. Regenerates SP at an ok rate; good if you've just ringed out your opponent and have a second to spare.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "His UA (Select) causes him to don a Vegeta costume and hold a doll in one of his hands while charging up Dragonball Z style. This regenerates SP at an ok rate, it's good if you've just ROd your opponent and have a second to spare."
+    }
+  ],
+  "combos": [
+    "B >B Y - The standard combo, knocks the opponent over so there's little to no comboability. Damage: 61 to power, 41 to knowledge & comedy.",
+    "B >B >Y - Works well against walls to keep pressure on the opponent and can lead into a super. Damage: 69 to power, 46 to knowledge & comedy.",
+    "B ^B ^Y (Delay for a fraction of a second) Y - Useful to knock the opponent off a platform or escape. Damage: 88 to power, 59 to knowledge & comedy.",
+    "B ^B >Y - The Don's bread and butter combo. Juggles the opponent without knocking them over, allowing a support to come in. Damage: 64 to power, 43 to knowledge & comedy.",
+    "Combo 1 (Don Patch 6, Tennousuke 2, Luffy 3): B, >B, Tenousuke 2, dash forwards, ^B, ^X, Luffy 3. Damage: 138 to power, 125 to knowledge, 99 to laughter (varies depending on when you launch Luffy).",
+    "Combo 2 (Don Patch 6, Hien 3, Luffy 3): B, >B, Hien 3, Y, Hien connects, dash forwards, ^B, ^X, Luffy 3. Damage: 175 to power, 168 to knowledge, 164 to laughter (varies based on timing & attacks chosen).",
+    "Combo 3 (Tsuna 6, Don Patch 5, Buffaloman 3): [Tsuna] B, >B, Y, Buffaloman 3, ^X, (switch to Patch), ^X. Damage: 209 to power, 173 to knowledge, 161 to laughter.",
+    "Combo 4 (Tsuna 6, Don Patch 5, Buffaloman 3, Yamamoto 3, untested): [Tsuna] B, >B, Y, Buffaloman 3, ^X, Switch to Patch, Yamamoto 3, ^X. Damage: 242 to power, 242 to knowledge, 194 to laughter.",
+    "Combo 5 (Tsuna 6, Don Patch 5, Buffaloman 3, Mero 3): [Tsuna] B, >B, Y, Buffaloman 3, ^X, Switch to Patch, Mero 3, ^X. Damage: 242 to power, 226 to knowledge, 210 to laughter.",
+    "Combo 6 (Tsuna 6, Don Patch 5, Buffaloman 3, Mero 3): [Tsuna] B, >B, Y, Buffaloman 3, ^X, Switch to Patch, Mero 3, ^X, X. Damage: 314 to power, 274 to knowledge, 258 to laughter (varies depending on how many missiles connect).",
+    "Combo 7 (Don Patch 7, Takenori 3, Zoro 3): B, ^B, Takenori 3, B, >B, Y, Zoro 3, ^X. Damage: 253 to power, 220 to knowledge, 193 to laughter.",
+    "Combo 8 (Don Patch 5, Okita 2, Sanosuke 2, friend-submitted by SnipeySnipes): B, ^B, X + Okita 2, ^B, ^X + Sanosuke 2. Damage: 212 to power, 168 to knowledge, 165 to laughter."
+  ],
+  "unresolved": [
+    "The guide's Table of Contents lists items IV through XI but doesn't give a numeric version string in the header; the version note at the end credits section doesn't state a version either, so 'version' is set to null.",
+    "The guide's koma section (PAT4) lists koma shapes/costs for 1/2/3/4/5/6/7-koma but gives HP only for the 7-koma (192, per the deck-building section: \"his 7 koma has 192HP\"); no per-koma HP is given for 4/5/6-koma, so those are null.",
+    "Passive abilities (Attack up when health is low; Gain more SP energy when using multiple Special Attacks in a row; Take more damage from Special Attacks) are listed once under section V for 'the Don' generally, not per specific koma size, so they are duplicated across all battle koma entries (4/5/6/7) since the guide doesn't distinguish.",
+    "Move damage numbers are given as 'X to power' / 'Y to knowledge & comedy' pairs (not separate laughter numbers) for base moves, but combo/support-combo sections give separate 'power/knowledge/laughter' triples; both are preserved as written per the schema rule against inventing/computing numbers.",
+    "Deck-building section (PAT7) lists multiple full sample decks (Deck 1-5, Solo deck 1-3) featuring many other characters (Bobobo, Hekkun, Tennosuke, Vegeta, Brocken Jr., etc.) as supports/allies; these describe deck synergy and other characters' effects, not Don Patch's own moves, so only Don-Patch-specific combo sequences were captured under 'combos'.",
+    "The guide mentions a sidekick 'Ko Patch' unlocked via a separate mission (SP: Do not use Special attacks) but gives no moveset info for him; out of scope for this schema.",
+    "Ikarin Patch (the transformed 7-koma state) is treated by the guide as simply Don Patch's 7-koma, not a separate character entry, consistent with chr_b 48 covering all of Don Patch's koma as one row."
+  ]
+}

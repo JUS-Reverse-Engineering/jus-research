@@ -1,0 +1,10 @@
+{
+  "name": "lxyt_kakashi_downb_y_downy",
+  "segments": [
+    {"from": 0, "to": 3, "buttons": ["Down", "B"]},
+    {"from": 55, "to": 58, "buttons": ["Y"]},
+    {"from": 115, "to": 118, "buttons": ["Down", "Y"]}
+  ],
+  "tail_frames": 30,
+  "watches": ["battle"]
+}

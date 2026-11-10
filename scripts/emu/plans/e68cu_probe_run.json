@@ -1,0 +1,19 @@
+{
+  "name": "e68cu_probe_run",
+  "segments": [
+    {"from": 0, "to": 40, "buttons": []},
+    {"from": 41, "to": 44, "buttons": ["RIGHT", "Y"]},
+    {"from": 45, "to": 90, "buttons": []},
+    {"from": 91, "to": 94, "buttons": ["LEFT", "Y"]},
+    {"from": 95, "to": 140, "buttons": []},
+    {"from": 141, "to": 144, "buttons": ["RIGHT", "X"]},
+    {"from": 145, "to": 190, "buttons": []},
+    {"from": 191, "to": 194, "buttons": ["LEFT", "X"]},
+    {"from": 195, "to": 240, "buttons": []},
+    {"from": 241, "to": 244, "buttons": ["RIGHT", "Y"]},
+    {"from": 245, "to": 290, "buttons": []},
+    {"from": 291, "to": 294, "buttons": ["LEFT", "X"]},
+    {"from": 295, "to": 340, "buttons": []}
+  ],
+  "tail_frames": 20
+}

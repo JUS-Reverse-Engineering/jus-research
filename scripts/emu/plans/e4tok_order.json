@@ -1,0 +1,10 @@
+{
+  "name": "e4tok_order",
+  "segments": [
+    {"from": 0, "to": 1, "buttons": ["START"]},
+    {"from": 2, "to": 60, "buttons": []},
+    {"from": 61, "to": 62, "buttons": ["START"]}
+  ],
+  "tail_frames": 20,
+  "watches": ["battle"]
+}

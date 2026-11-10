@@ -1,0 +1,250 @@
+{
+  "character": "Train Heartnet",
+  "series": "Black Cat",
+  "chr_b": 38,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {
+    "file": "46141-train-heartnet.txt",
+    "gamefaqs_id": 46141,
+    "author": "FFandMMfan",
+    "version": "2.0"
+  },
+  "kit_type": "standard",
+  "natures_available": ["power", "knowledge"],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": 136,
+      "passives": [
+        "Train can Wall Jump",
+        "Train is immune to Shock effect"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Rail gun (Special Attack A)",
+          "description": "Train fires his Rail gun forward. Has a bit of charge time, and lag time after the shot. Induces Shock effect.",
+          "damage": "Against Power: 28 Damage / Against Knowledge: 42 Damage / Against Laughter: 28 Damage",
+          "hits": null,
+          "properties": ["projectile", "charge", "status:shock"],
+          "quote": "Special Attack A: Train fires his Rail gun forward, and has a bit of charge time, and lag time after the shot. Induces Shock effect."
+        },
+        {
+          "input": "X + Up",
+          "name": "Spinning charge strike (Special Attack B)",
+          "description": "Train charges forward while spinning and strikes the enemy physically with his gun. Does consistent damage unless the enemy is protected or flashing from hit recovery during part of the attack.",
+          "damage": "Against Power: 31 Damage / Against Knowledge: 46 Damage / Against Laughter: 31 Damage",
+          "hits": null,
+          "properties": [],
+          "quote": "Special Attack B: Train charges forward while spinning and strikes the enemy physically with his gun. Unless the enemy is protected, or flashing from hit recovery during part of the attack, it will do consistant damage."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": 152,
+      "passives": [
+        "Train can Wall Jump",
+        "Train is immune to Shock effect"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Rail Gun (Special Attack A, held by Saya)",
+          "description": "Train charges his Rail Gun while being held by Minatsuki Saya and fires the massive shot. Huge attack with large knockback effect and inflicts Shock status on the enemy.",
+          "damage": "Against Power: Low 50s / Against Knowledge: Mid 70s/Low 80s / Against Laughter: Low 50s",
+          "hits": null,
+          "properties": ["projectile", "charge", "status:shock"],
+          "quote": "Special Attack A: Train charges his Rail Gun, while being held by a good friend of his, Minatsuki Saya, and fires the massive shot. Huge attack, with large knockback effect and inflicts Shock status upon the enemy."
+        },
+        {
+          "input": "X + Up",
+          "name": "Aerial spin attack (Special Attack B)",
+          "description": "Train jumps into the air at an angle, spinning around. Deals consistent damage, but is much weaker than the Rail Gun.",
+          "damage": "Against Power: 32 / Against Knowledge: 55 / Against Laughter: 32",
+          "hits": null,
+          "properties": [],
+          "quote": "Special Attack B: Train jumps into the air at an angle, spinning around. Deals consistant damage, but is much weaker than the Rail Gun."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 152,
+      "passives": [
+        "Train can Wall Jump",
+        "Train is immune to Shock effect"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Rail Gun (Special Attack A)",
+          "description": "Same as his other 5 Koma, the Rail Gun.",
+          "damage": "Against Power: Low 50s / Against Knowledge: Mid 70s/Low 80s / Against Laughter: Low 50s",
+          "hits": null,
+          "properties": ["projectile", "charge", "status:shock"],
+          "quote": "Special Attack A: Same as his other 5 Koma, the Rail Gun."
+        },
+        {
+          "input": "X + Up",
+          "name": "Aerial spin attack (Special Attack B)",
+          "description": "Same as his other 5 Koma. Damage is a bit different.",
+          "damage": "Against Power: 35 / Against Knowledge: 52 / Against Laughter: 35",
+          "hits": null,
+          "properties": [],
+          "quote": "Special Attack B: Same as his other 5 Koma. Damage is a bit different."
+        }
+      ]
+    },
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "Gives a nearby character an immunity to the Shock status effect. You have to point the arrow at the character whom you want to give the immunity to, otherwise it will do nothing."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Train appears and throws a bomb, that causes Blindness to whoever it hits. It also deals some damage. Against Power Characters: 12 Damage. Against Knowledge Characters: 18 Damage. Against Laughter Characters: 12 Damage."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Train appears and fires his Rail Gun in a straight line and causes Shock effect. It deals multiple hits, so actual damage depends on how many hits connect with the enemy; farther away from the enemy means fewer hits connect. Against Power Characters: 23 Damage. Against Knowledge Characters: 34 Damage. Against Laughter Characters: 23 Damage. Guide notes these may be a few points higher in practice."
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Weak attack. All B button attacks do 7 damage to Power and Laughter characters and 10 damage to Knowledge characters (figures are for Train's Power-based 4 and 5 Koma; for the Knowledge Koma, swap the heavier damage to Laughter instead of Knowledge).",
+      "damage": "7 (Power/Laughter), 10 (Knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "B button attacks - All of them do 7 Damage to Power and Laughter characters and 10 damage to Knowledge characters."
+    },
+    {
+      "input": "side B",
+      "name": "Gunfire",
+      "description": "B + Left/Right is Train's side attack, his gunfire.",
+      "damage": "7 (Power/Laughter), 10 (Knowledge)",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "B/Y + Left/Right - Side Attack (Or in Train's Case, gunfire)"
+    },
+    {
+      "input": "up B",
+      "name": "Ground/Second Upwards attack",
+      "description": "B + Up performs Train's ground/second upwards attack.",
+      "damage": "7 (Power/Laughter), 10 (Knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "B + Up - Ground/Second Upwards attack"
+    },
+    {
+      "input": "down B",
+      "name": "Forced Change Attack",
+      "description": "Forces the opponent's battle character to switch. Long range, and can be fired from across the screen, though the target has to be within visible range. Takes a second to charge like everyone else's.",
+      "damage": "7 (Power/Laughter), 10 (Knowledge)",
+      "hits": null,
+      "properties": ["forced switch", "charge"],
+      "quote": "B + Down - Forced Change Attack (Changes the opponent's battle character) ... it should be noted that B + Down (which is the move that anyone can use to force an opponent's battle character to switch)is long range, and can be fired from acros the screen, though they have to be within visible range."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "B used in the air (Aerial Attack).",
+      "damage": "7 (Power/Laughter), 10 (Knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "B/Y in the air - Aerial Attack"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Strong attack. Hits the opponent physically with his gun.",
+      "damage": "15 (Power/Laughter), 22 (Knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y - Hits the opponent physically with his gun. 15 damage to Power and Laughter, and 22 to Knowledge."
+    },
+    {
+      "input": "side Y",
+      "name": "Gunshots",
+      "description": "Fired with Y + Left/Right. Each shot against a Power/Laughter character does a flat amount; against a Knowledge character the first shot does more and every following shot does 1 more damage than the last. Ultimate Action increases the number of shots from 3 to 6. Ricochets off the ground.",
+      "damage": "5 per shot (Power/Laughter); 7 first shot then +1 per following shot (Knowledge, e.g. shot 2 = 8, shot 3 = 9)",
+      "hits": "3 (6 with Ultimate Action)",
+      "properties": ["projectile", "mash-extend"],
+      "quote": "Gunshots - Fired with Y + Left/Right, Y + Up and Y in the air. Each shot against a Power/Laughter character will do 5 damage, and against a Knowledge will first do 7 damage, and every following shot will do 1 more damage than the last shot (for example: Shot 2 does 8 damage, shot 3 does 9 damage). Let's not forget that Train's Ultimate Action allows his next round of shots to deal 6 shots instead of the standard 3. Train's Gunshots will also ricochet off of the ground."
+    },
+    {
+      "input": "up Y",
+      "name": "Gunshots",
+      "description": "Fired with Y + Up, same gunshot mechanics as side Y.",
+      "damage": "5 per shot (Power/Laughter); 7 first shot then +1 per following shot (Knowledge)",
+      "hits": "3 (6 with Ultimate Action)",
+      "properties": ["projectile", "mash-extend"],
+      "quote": "Gunshots - Fired with Y + Left/Right, Y + Up and Y in the air."
+    },
+    {
+      "input": "down Y",
+      "name": "Guard Break",
+      "description": "Deals damage and is a Guard Break attack; also long range.",
+      "damage": "14 (Power/Laughter), 21 (Knowledge)",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Y + Down - Deals 14 damage to Power and Laughter characters, and 21 damage to Knowledge. This is a Guard Break attack, and is also long range."
+    },
+    {
+      "input": "air Y",
+      "name": "Gunshots (Reflect Shot)",
+      "description": "Fires shots downward at an angle in the air, which bounce off the ground and travel back up ('Reflect Shot'). Same gunshot damage mechanics; usable without being planted on the ground.",
+      "damage": "5 per shot (Power/Laughter); 7 first shot then +1 per following shot (Knowledge)",
+      "hits": "3 (6 with Ultimate Action)",
+      "properties": ["projectile", "mash-extend"],
+      "quote": "Reflect Shot. Train's Aerial Y attack will fire Shots downward at an angle, but they bounce off the ground and travel back up."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Train throws his gun into the air and catches it. This makes his standard gunshot moves able to fire for 6 hits instead of 3, but only for the next set of shots he makes.",
+      "damage": null,
+      "hits": null,
+      "properties": ["mash-extend"],
+      "quote": "Ultimate Action: Train throws his gun into the air and catches it. This will make his standard gunshot moves able to fire for 6 hits instead of 3. However, it only lasts for the next set of shots he makes."
+    }
+  ],
+  "combos": [
+    "Cross-Shot: catch an enemy between the Rail Gun and a Vegeta 3 Koma support blast for extra damage.",
+    "Solid Wall tactic: back the enemy into a solid wall with another character, switch to Train, and Rail Gun them at close range for full-force damage.",
+    "Ultimate Action setup vs weaker nature: use Ultimate Action, force switch (and guard break if they turtle), let 6 shots loose on the weaker-natured character, then finish with the Rail Gun.",
+    "Hyoga 3 Koma setup: call out Hyoga to freeze/knockback with an ice beam, optionally stun first with a shot or two, then Rail Gun the frozen enemy.",
+    "Ohara 3 Koma setup: use Ohara to hold enemies in its attack wave near the stage edge while charging the Rail Gun, or to extend Train's physical or shot combos."
+  ],
+  "unresolved": [
+    "The guide states Train's Special Attacks are all Power nature regardless of which Koma he's using, even for his Knowledge 5 Koma; this is a stated fact, not a contradiction, but is worth flagging since it affects how the Knowledge Koma's specials should be read (damage against Knowledge and Laughter targets is swapped relative to the Power Koma).",
+    "Rail Gun (X) damage for both 5 Koma is given only as ranges ('Low 50s', 'Mid 70s/Low 80s') rather than exact numbers, and the guide explicitly says these are approximate/maximum figures since it does multiple hits and range-dependent damage reduction; hit counts for the Rail Gun are never given as a number.",
+    "Support Koma 3 (Rail Gun support) damage figures are explicitly flagged by the guide author as possibly a few points low ('These are only the numbers I've got, so the actual max damage may be a few points more').",
+    "The guide does not give exact hit counts for any Rail Gun attack (X specials) or for the physical Special Attack B moves, only calling them 'multiple hits' generically for the Rail Gun.",
+    "Section TH7 (Fighting Against Train) states 'Train cannot knock anyone into the air. None of his attacks are capable of getting you more than a few inches off the ground' — a general character-wide note that doesn't map to a single move entry but is relevant context for launcher/pop properties (none of Train's moves should be tagged launcher or pop).",
+    "The guide never explicitly labels Down+A (drop below platform) or Down,Down (fall faster) or dash inputs as Train-specific moves; they're generic game controls listed in TH2 and are not included as Train-specific 'moves' entries.",
+    "No numeric HP values are given for Help/Support-only koma (they don't have HP in this game's help/support koma model); left null intentionally."
+  ]
+}

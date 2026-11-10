@@ -1,0 +1,200 @@
+{
+  "character": "Majin Buu",
+  "series": "Dragon Ball",
+  "chr_b": 10,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "49253-majin-buu.txt", "gamefaqs_id": 49253, "author": "shinyspark", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": ["Character gains HP regeneration."],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Character gains HP regeneration."
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["J-Soul: 192"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Kamehame Ha",
+          "description": "A beam attack, basically the same as any DBZ character's beam. Can be combo'd into like other beams, but the guide says it's not as good as Goku's Kamehameha due to lack of teleporting.",
+          "damage": "44-90(against wall)",
+          "hits": "14",
+          "properties": [],
+          "quote": "Special A: Kamehame Ha / Attack Nature: Power / Hits: 14 / Damage: 44-90(against wall) / Decent beam attack.  Basically the same as any DBZ's beam.  Can be nicely combo'd into like other beams.  Not as good as Goku's KamehameHa due to lack of teleporting."
+        },
+        {
+          "input": "up X",
+          "name": "Henka Beam",
+          "description": "Buu shoots a beam from his head tentacle, turns the opponent into food, eats them, and spits them out. The move restores some of Buu's health and has decent ringout potential.",
+          "damage": "36-66",
+          "hits": "6",
+          "properties": ["status:heal"],
+          "quote": "Special B: Henka Beam (Restores some health) / Attack Nature: Power / Hits: 6 / Damage: 36-66 / Buu shoots a beam from his head tentacle, turns opponent into food, eats them,and spits them out.  Decent ringout potential.  This move connects well with a combo discussed later."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": ["J-Soul: 192"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Kamehame Ha",
+          "description": "Same Special A beam attack listed once for this 6-koma pair; the guide gives one shared specials list under Buu's Koma section covering both the power and laughter 6-koma.",
+          "damage": "44-90(against wall)",
+          "hits": "14",
+          "properties": [],
+          "quote": "Special A: Kamehame Ha / Attack Nature: Power / Hits: 14 / Damage: 44-90(against wall)"
+        },
+        {
+          "input": "up X",
+          "name": "Henka Beam",
+          "description": "Same Special B listed once for this koma pair; see power koma entry.",
+          "damage": "36-66",
+          "hits": "6",
+          "properties": ["status:heal"],
+          "quote": "Special B: Henka Beam (Restores some health) / Attack Nature: Power / Hits: 6 / Damage: 36-66"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Punch, one hit.",
+      "damage": "9",
+      "hits": 1,
+      "properties": [],
+      "quote": "B Punch 1 9 13"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Head tentacle whips, one hit.",
+      "damage": "9",
+      "hits": 1,
+      "properties": [],
+      "quote": ">B Head tentacle whips 1 9 13"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Kicks up, one hit. The guide's combo notes describe this as a great launcher.",
+      "damage": "9",
+      "hits": 1,
+      "properties": ["launcher"],
+      "quote": "^B Kicks up 1 9 13 ... ^B is a great launcher to kick off many a combo."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Arms slam down, one hit.",
+      "damage": "9",
+      "hits": 1,
+      "properties": [],
+      "quote": "B in air Arms slam down 1 9 13"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Buu screams something, forcing a character change.",
+      "damage": "9",
+      "hits": 1,
+      "properties": ["forced switch"],
+      "quote": "vB Buu screams something (forces character change) 1 9 13"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Two long punches followed by a long kick, three hits.",
+      "damage": "18",
+      "hits": 3,
+      "properties": ["multi-hit"],
+      "quote": "Y 2 long punches followed by a long kick 3 18 27"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Buu kicks underground; press Y for more kicks, up to a max of 4.",
+      "damage": "24",
+      "hits": 4,
+      "properties": ["multi-hit", "mash-extend"],
+      "quote": ">Y Buu kicks underground (Press Y for more kicks. Max: 4) 4 24 36"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Rips off his arm, which proceeds to maul the opponent, nine hits. The guide notes this move takes a while to finish.",
+      "damage": "18",
+      "hits": 9,
+      "properties": ["multi-hit"],
+      "quote": "^Y Rips off his arm, which proceeds to maul opponent 9 18 27 ... Best for when you've got some support that you can activate while doing this, as Buu's ^Y takes a while to finish."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Performs a cartwheel in the air, five hits.",
+      "damage": "24",
+      "hits": 5,
+      "properties": ["multi-hit"],
+      "quote": "Y in air Performs a cart-wheel in the air 5 24 30"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Head smack, a guard-break.",
+      "damage": "18",
+      "hits": 1,
+      "properties": ["guard break"],
+      "quote": "vY Head smack (Guard-break) 1 18 27"
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Beats his chest to restore a tiny bit of HP.",
+      "damage": null,
+      "hits": null,
+      "properties": ["status:heal"],
+      "quote": "Ultimate Action Beats his chest to restore a tiny bit of HP."
+    }
+  ],
+  "combos": [
+    "B, >B, Y, >Y - Your most basic combo. Does 60 damage, 90 damage max.",
+    "B, ^B, ^Y Does 36 damage, 54 damage max. Best for when you've got some support that you can activate while doing this, as Buu's ^Y takes a while to finish.",
+    "B, ^B, X Does 62 damage, 93 max. Hit them in the air then hit them as they fall with a Kamehame Ha.",
+    "B, ^B, ^X Does 70 damage, 105 max. Same as above, only this time, you eat them as they fall. Generally much better.",
+    "Tap Buu + Basic Combo Does 69 damage, 103 max. Not quite a combo, since your opponent can block in between.",
+    "vY, X or ^X - Guardbreak + special is a combo that works for a great many characters.",
+    "B, >B, Y, Piccolo during Y, ^X or X",
+    "B, ^B, ^Y, Piccolo, ^X - On the last step of your Y attack, use Piccolo. Your opponent will be pulled to you, where you can eat him and throw him back out.",
+    "Usopp 3-koma (One Piece) B, >B, Y, ^X Deals 118 damage, Max: 150+",
+    "B, ^B, ^Y, 3-koma Takeshi Yamamoto[Katekyo Hitman Reborn], X or ^X Does 113 damage, 151 max",
+    "Semi-Infinite Combo: ^X + Piccolo 68 damage per cycle, max 102. When you're going to spit the opponent out, summon piccolo. He will grab your opponent and pull him back into you. While this is happening, use another ^X. Rinse and repeat till your opponent is dead."
+  ],
+  "unresolved": [
+    "The guide lists Buu's two specials (Special A: Kamehame Ha, Special B: Henka Beam) once under section III 'Buu's Koma', immediately after describing both the 6-koma Power and 6-koma Laughter koma, without clearly separating which specials belong to which koma's X inputs; both koma entries above duplicate the same specials list because the guide does not disambiguate.",
+    "The guide gives no per-koma HP values (only J-Soul 192, which is listed identically for both 6-koma).",
+    "The 1-koma help entry has no explicit koma shape/J-Soul info beyond 'Character gains HP regeneration.'",
+    "The evolution-chart section mentions unlocking a 'EP' (Evolution Path) and a second 5-koma Gotenks tie-in, but gives no moveset data for those and is out of scope for this schema.",
+    "Deck-building section (Help Koma: Neuro, Gintoki, Mr. Satan, Ichigo, Ishida; Support Koma: Big 3, Satsuki Kitaooji, Neuro 2-koma; Battle Koma: Gintoki, Neuro) describes OTHER characters' effects when paired with Buu, not Buu's own moves/koma, so it was not captured as Buu koma/moves."
+  ]
+}

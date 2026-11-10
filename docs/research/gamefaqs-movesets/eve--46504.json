@@ -1,0 +1,258 @@
+{
+  "character": "Eve",
+  "series": "Black Cat",
+  "chr_b": 37,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md, row chr_b=37, bc_b_01, Eve, Black Cat; E0 roster pin 2026-10-18",
+  "source": {"file": "46504-eve.txt", "gamefaqs_id": 46504, "author": "Taoto", "version": "1.0 per title header; body text (section 11) says updated to v.2.0 with damage numbers added"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Lets your character jump three times, instead of the normal two, aiding recovery or escape from danger.",
+      "quote": "Eve's Help Koma lets your character jump three times, instead of the normal two.  This aids your character by allowing him/her a greater chance of making it back to the platform if your character is knocked/thrown off the edge, or your character can flee danger more easily."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Makes Eve appear in front of you with a shield; a gray tile appears above your character's head, cutting all damage taken in half.",
+      "help_effect": null,
+      "quote": "This support Koma, when activated, makes Eve appear in front of you with a shield.  A gray tile will appear above your character's head, which makes it so all damage you take is cut in half."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": null,
+          "description": "Eve's head pops up out of the ground; you choose an opponent on the touch screen, Eve jumps up behind them appearing as a mermaid, punches with her hair, then dives back into the ground.",
+          "damage": "32 to Power/Knowledge, 48 to Laughter",
+          "hits": null,
+          "properties": [],
+          "quote": "When used, Eve's head will pop up out of the ground, and you'll get to choose one of your opponents, on the touch screen.  Eve will then jump up behind the enemy, appearing as a mermaid, and punches the enemy with her hair, then dives back into the ground.\nDamage to Power/Knowledge: 32\nDamage to Laughter: 48"
+        }
+      ],
+      "support_effect": "Eve appears behind a chosen opponent as a mermaid and punches them with her hair, then dives back into the ground.",
+      "help_effect": null,
+      "quote": "3 space Support Koma - When used, Eve's head will pop up out of the ground, and you'll get to choose one of your opponents, on the touch screen."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 128,
+      "passives": [
+        "Eve's health automatically regenerates, over time, thanks to her nanomachines healing her.",
+        "Eve can jump a max of three times (triple jump)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Eve turns her hair into several fists and attacks with a barrage of punches; repeatedly tapping X makes the barrage last longer and moves Eve forward. About seven to eight fists appear on screen at a time, for a max of 10 hits.",
+          "damage": "18 for 4 hits, 24 for 7, 30 for 10 to Power/Knowledge; 27 for 4 hits, 36 for 7, 45 for 10 to Laughter",
+          "hits": "up to 10 (most common counts: 4, 7, 10)",
+          "properties": ["mash-extend", "multi-hit"],
+          "quote": "X - Eve turns her hair into several fists, and starts to attack with a barrage of punches.  Repeatedly tap X to make the barrage last longer, and to make Eve move forward in the process.  At any given time, there will be about seven to eight fists on the screen.  You'll get a max of 10 hits from this.\nDamage to Power/Knowledge: 18 for 4 hits, 24 for 7, 30 for 10.\nDamage to Laughter: 27 for 4 hits, 36 for 7, 45 for 10."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Eve raises a wing and shoots off six feather blades in front of herself, hitting the enemy up to six times.",
+          "damage": "each hit does 5 for a max of 30 to Power/Knowledge; 5 hits do 6 damage each (guide notes an unclear number for a 7th hit) for a total of 37 to Laughter",
+          "hits": "up to 6",
+          "properties": ["projectile", "multi-hit"],
+          "quote": "Up + X - Eve raises a wing and shoots off six feather blades in front of herself, hitting the enemy up to six times.\nDamage to Power/Knowledge: each hit does 5 damage, for a max of 30.\nDamage to Laughter: 5 hits do 6 damage, number for doing 7 instead, for a total of 37 damage."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "4 koma Eve's HP starts at 128, then goes to 136, 144, and 152 with each boost."
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 144,
+      "passives": [
+        "Eve's health automatically regenerates, over time, thanks to her nanomachines healing her.",
+        "Eve can jump a max of three times (triple jump)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Lance",
+          "description": "Eve bends down, her wings come out, turns one hand into a large lance, then dashes forward skewering any enemy in front of her; when she stops moving, the enemy is flung off the lance. Damages once on the skewer and once when flung; good for ring-outs since the flung enemy spins as they fall.",
+          "damage": "10 on the first hit, 26 on the second, 36 total to Power/Knowledge; 12 on the first hit, 33 on the second, 45 total to Laughter",
+          "hits": 2,
+          "properties": ["launcher"],
+          "quote": "x - Eve bends down, has her wings come out, and turns one of her hands into a large lance.  She then dashes forward, skewering any enemy in front of her with the lance.  When she stops moving, the enemy is flung off the lance.  The attack will damage twice, once when they are skewered on the lance, and once when they are flung from the lance.  This is an effective move for getting a Ring Out on the enemy, as being flung off the lance causes the enemy to spin as he/she falls, making it harder to recover when knocked off the stage's platform."
+        },
+        {
+          "input": "up X",
+          "name": "Nanoslicer",
+          "description": "Eve turns her hair into two large spear heads and starts to spin, jumping in the process. Tapping X gets more hits, to a maximum of 8; the last hit flings the enemy a short distance away. Good for clearing space around herself.",
+          "damage": "14 for 2 hits, 22 for 4, 26 for 5, 34 for 7, 38 for 8 to Power/Knowledge; 17 for 2 hits, 27 for 4, 32 for 5, 42 for 7, 47 for 8 to Laughter",
+          "hits": "up to 8 (most common counts: 2, 4, 5, 7, 8)",
+          "properties": ["mash-extend", "multi-hit"],
+          "quote": "Up + X - Eve turns her hair into two large spear heads, and starts to spin, jumping in the process.  If you tap X, you get more hits out of this attack, to a maximum of 8 hits.  The last hit will cause the enemy to be flung a short distance away."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "5 koma Eve's HP starts at 144, then goes to 152, 160, and 168 with each boost."
+    }
+  ],
+  "moves": [
+    {
+      "input": "other",
+      "name": "A (Jump)",
+      "description": "Eve can jump a max of three times using wings she gives herself; this is her second passive ability.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "A - Jump.  By using the wings she gives herself, Eve can jump a max of three times, which is her second passive ability."
+    },
+    {
+      "input": "select",
+      "name": "Super Jump",
+      "description": "Eve's Ultimate Action: she bends down, gives herself wings, and jumps to the height of a triple jump. Combined with her normal triple jump, she can effectively reach a height as if she'd jumped five times.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Select - Eve's Ultimate Action is to perform a \"Super Jump\".  With this, she bends down and gives herself her wings, then jumps to the same hight that she would if she had jumped three times.  Combined with her normal ability to triple jump, Eve can effectively reach a hight as if she'd jumped five times."
+    },
+    {
+      "input": "other",
+      "name": "Guard",
+      "description": "Eve turns one of her hands into a shield, using her other hand to support it. This is the standard guard move.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Down - Eve turns one of her hands into a shield, using her other hand to support it.  This is the standard guard move."
+    },
+    {
+      "input": "B",
+      "name": null,
+      "description": "Eve punches forward with her hair, hitting about two character widths in front of herself.",
+      "damage": "7 to Power/Knowledge, 10 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "B - Eve punches forward with her hair, hitting about two character widths in front of herself.\nDamage to Power/Knowledge: 7\nDamage to Laughter: 10"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Eve punches forward with her hair, hitting about four character widths in front of herself.",
+      "damage": "8 to Power/Knowledge, 12 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "Forward + B - Eve punches forward with her hair, hitting about four character widths in front of herself\nDamage to Power/Knowledge: 8\nDamage to Laughter: 12"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Eve bends down and turns her hair into spikes, hitting anybody above or next to her within close range.",
+      "damage": "8 to Power/Knowledge, 12 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "Up + B - Eve bends down and turns her hair into spikes, hitting anybody above or next to her within close range.\nDamage to Power/Knowledge: 8\nDamage to Laughter: 12"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Eve turns one of her hands into a mace, takes a step forward, and attacks with it. Like everybody's down+B, this forces the opponent to change characters when struck, if able.",
+      "damage": "7 to Power/Knowledge, 10 to Laughter",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Down + B - Eve turns one of her hands into a mace, takes a step forward,and attacks with it.  This attack, like everybody else's Down + B attack, forces the opponent to change characters when struck, if able.\nDamage to Power/Knowledge: 7\nDamage to Laughter: 10"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Eve turns her hand into a giant knife, steps forward, and slashes with it.",
+      "damage": "16 to Power/Knowledge, 24 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "Y - Eve turns her hand into a giant knife, steps forward, and slashes with it.\nDamage to Power/Knowledge: 16\nDamage to Laughter: 24"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Eve thrusts forward, throwing her hair forward about four character widths. If the enemy is about three to four character widths away, Eve grabs the enemy with her hair and throws him/her over her head about the same distance. If the enemy is too close or too far, the attack does nothing; a successful grab sets the enemy up for other attacks, especially specials.",
+      "damage": "14 to Power/Knowledge, 21 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "Forward + Y - Eve thrusts forward, throwing her hair forward about four character widths.  If the enemy is about three to four character widths away, Eve will grab the enemy with her hair, throwing him/her over her head, about the same distance away.  If the enemy is too close or too far, this attack won't do anything to the enemy.\nDamage to Power/Knowledge: 14\nDamage to Laughter: 21"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Eve bends down, her wings come out with one looking like a fist and one hand also in a fist; she jumps up and performs an uppercut with both her fist and wing, counting as one hit. Lifts the enemy into the air, leaving them prone to her aerial Y attack.",
+      "damage": "16 to Power/Knowledge, 24 to Laughter",
+      "hits": 1,
+      "properties": ["launcher"],
+      "quote": "Up + Y - Eve will bend down and her wings will come out, with one looking like a fist.  Eve will have one of her hands in a fist as well.  She will then jump up and perform an uppercut with both her fist and her wing, but it will only count as one hit.  This will lift the enemy into the air as well, leaving him/her prone to Eve's aerial Y attack.\nDamage to Power/Knowledge: 16\nDamage to Laughter: 24"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Eve turns one of her hands into a giant mallet, grabs it with her other hand, takes a few steps forward, and slams it down on the enemy. Like everybody's down+Y, this attack breaks guards.",
+      "damage": "16 to Power/Knowledge, 24 to Laughter",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down + Y - Eve turns one of her hands into a giant mallet, grabs it with her other hand, takes a few steps forward, and slams it down on the enemy.  Like everybody else's Down + Y, this attack will break guards.\nDamage to Power/Knowledge: 16\nDamage to Laughter: 24"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "In the air, Eve turns her hair into a fist, punching at a 45 degree angle downwards. Has about the same range as her forward B attack, only at a downward angle.",
+      "damage": "8 to Power/Knowledge, 12 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial B - In the air, Eve will turn her hair into a fist, punching at a 45 degree angle downwards.  This attack has about the same range as her forward B attack, only at a downward angle.\nDamage to Power/Knowledge: 8\nDamage to Laughter: 12"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "In the air, Eve turns her hair into a fist, punching straight ahead. This attack reaches almost to the edge of the top screen, in a straight line.",
+      "damage": "16 to Power/Knowledge, 24 to Laughter",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial Y - In the air, Eve will turn her hair into a fist, punching straight ahead.  This attack will reach almost to the edge of your top screen, in a straight line."
+    }
+  ],
+  "combos": [
+    "B, Forward B, Y, Forward Y",
+    "Forward Y, Four koma Eve's X special",
+    "B, Forward B, Y, Forward Y, Four koma Eve's X special",
+    "B, Up B, Y, Forward Y, Four koma Eve's X special",
+    "Down B, Y",
+    "Down B, Four koma Eve's X special",
+    "Down B, Y, Forward Y, Four koma Eve's X special",
+    "Up Y, Aerial Y",
+    "Up B, Up Y, Aerial Y"
+  ],
+  "unresolved": [
+    "Version conflict: the guide's title header says 'v.1.0' but section 11 (Version Info) describes a v.2.0 update that added the damage numbers used throughout this extraction. Recorded both in source.version.",
+    "The guide names the 4 koma X special's max-hit damage breakpoints as 4/7/10 hits but never gives a name for the move; likewise the 4 koma Up+X (feather shoot) is unnamed in the Move List section though referenced as 'Feather Shoot' in the Combos section.",
+    "Section 5's Up+X Laughter damage line is garbled: 'Damage to Laughter: 5 hits do 6 damage, number for doing 7 instead, for a total of 37 damage.' The sentence appears to be missing words (possibly meaning some hits do 7 damage instead of 6); copied verbatim since the intended number cannot be confirmed.",
+    "4 koma and 5 koma base HP (128 and 144) are stated only as the pre-boost values in the Ally Boost section; the Move List/Special Attacks sections do not restate per-koma HP directly.",
+    "The 3 space Support Koma special's exact input/trigger isn't a button the player presses on Eve herself (it's activated as a support koma by another character), so 'input: support' is a placeholder, not one of the schema's listed inputs.",
+    "The A (Jump) and guard (Down) entries are not attacks; they are included per the task's instruction to capture every move, using input:'other' since the schema's input enum has no jump/guard option."
+  ]
+}

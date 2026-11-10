@@ -1,0 +1,9 @@
+{
+  "name": "u7to_resume",
+  "segments": [
+    {"from": 0, "to": 1, "buttons": ["A"]},
+    {"from": 2, "to": 65, "buttons": []}
+  ],
+  "tail_frames": 10,
+  "watches": ["battle"]
+}

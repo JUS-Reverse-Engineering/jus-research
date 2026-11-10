@@ -1,0 +1,219 @@
+{
+  "character": "Gohan",
+  "series": "Dragon Ball",
+  "chr_b": null,
+  "chr_b_note": "chr_b-Complete-Mapping.md has no plain 'Gohan' row, only 'Gohan (SSJ)' at chr_b=4 and 'Gohan (SSJ2)' at chr_b=5. This guide covers a single evolving character card titled 'Gohan' whose Battle Koma 4 is explicitly labeled '(SSJ1)' and whose Battle Koma 5 is explicitly labeled '(SSJ2)' -- i.e. the guide spans both mapped chr_b entries rather than matching one. Left null rather than guessing which one; see unresolved.",
+  "source": {"file": "46542-gohan.txt", "gamefaqs_id": 46542, "author": "BlueAlchem1st", "version": "1.1"},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter", "knowledge"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Gohan's Help Koma increase the SP gauge when multi hitting. This description however can be a bit misleading. When you use a multi hit attack you gain a small chunk SP at the beginning and the amount drastically decreases right away for the next few hits although no matter how long the attack goes on for, you will stop gaining SP after the first few hits. All this Koma does is increase that amount of SP you gain at the beginning, NOT the amount you gain for the remaining hits. You will still stop gaining SP after a certain point regardless of how long the attacks goes on for."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Attacks with Kamehameha. Amount of Damage: Power/Laughter 20, Knowledge 30.",
+      "help_effect": null,
+      "quote": "Support Koma 2 ... Type: Power. Effect: Attacks with Kamehameha. Amount of Damage: Power/Laughter 20, Knowledge 30"
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Masenko upward at 45 degree Angle. Amount of Damage: Power/Laughter 28, Knowledge 42.",
+      "help_effect": null,
+      "quote": "Support Koma 3 ... Type: Power. Effect: Masenko upward at 45 degree Angle. Amount of Damage: Power/Laughter 28, Knowledge 42"
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": "136",
+      "passives": ["When KO'd, Max SP and Max HP and SP increase"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special A - Kamehameha Wave",
+          "description": "Kamehameha wave that lasts 1/2 a second.",
+          "damage": "Power/Laughter 36, Knowledge 54",
+          "hits": null,
+          "properties": [],
+          "quote": "Special A - Kamehameha Wave. Type: Power. Effect: Kamehameha wave that lasts 1/2 a second. Amount of Damage: Power/Laughter 36, Knowledge 54"
+        },
+        {
+          "input": "X",
+          "name": "Special B - Masenko",
+          "description": "Fire a Masenko upward at a 45-degree angle.",
+          "damage": "Power/Laughter 28, Knowledge 42",
+          "hits": null,
+          "properties": [],
+          "quote": "Special B - Masenko. Type Power. Effect: Fire a Masenko upward at a 45-degree angle. Amount of Damage: Power/Laughter 28, Knowledge 42"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "Battle Koma 4 (SSJ1) HP: 136. Type: Power. Passive Ability- When KO'd, Max SP and Max HP and SP increase. Ultimate Action- Hold Select to Regain SP"
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": "152",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special A - Father & Son Kamehameha",
+          "description": "Fire a Strong Kamehameha wave that pushes your opponent back. Also hits characters hanging on ledges.",
+          "damage": "Power/Laughter 42, Knowledge 62",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A - Father & Son Kamehameha. Type: Power. Effect: Fire a Strong Kamehameha wave that pushes your opponent back. Also hits characters hanging on ledges. Amount of Damage: Power/Laughter 42, Knowledge 62"
+        },
+        {
+          "input": "X",
+          "name": "Special B - Burst of Anger",
+          "description": "Increase amount of damage done by 25%, lasts for 5 seconds. Note: Does NOT affect Gohan's Forward +Y.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:damage-up"],
+          "quote": "Special B - Burst of Anger. Type: Power. Effect: Increase amount of damage done by 25%, lasts for 5 seconds. Note: Does NOT affect Gohan's Forward +Y"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "Battle Koma 5 (SSJ2) HP: 152. Type: Power"
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Chop",
+      "description": "Standard B attack, a chop.",
+      "damage": "Power/Laughter 8, Knowledge 12",
+      "hits": null,
+      "properties": [],
+      "quote": "B / Chop / Damage PWR/Laugh 8 Know 12"
+    },
+    {
+      "input": "side B",
+      "name": "Sliding Kick",
+      "description": "Forward + B, a sliding kick.",
+      "damage": "Power/Laughter 8, Knowledge 12",
+      "hits": null,
+      "properties": [],
+      "quote": "Forward + B / Sliding Kick / Damage PWR/Laugh 8 Know 12"
+    },
+    {
+      "input": "up B",
+      "name": "Upward Chop",
+      "description": "Up + B, a chop aimed upward.",
+      "damage": "Power/Laughter 8, Knowledge 12",
+      "hits": null,
+      "properties": [],
+      "quote": "Up + B / Upward Chop / Damage PWR/Laugh 8 Know 12"
+    },
+    {
+      "input": "down B",
+      "name": "Push aside with Ki",
+      "description": "Down + B pushes the opponent aside with Ki and changes Gohan's battle character (forced switch).",
+      "damage": "Power/Laughter 8, Knowledge 12",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Down + B / Push aside with Ki (Changes Battle Character) / Damage PWR/Laugh 8 Know 12"
+    },
+    {
+      "input": "air B",
+      "name": "Kick (Spike attack)",
+      "description": "A+B, a kick used as a spike attack. The guide also describes an aerial B as slightly risky: if it misses you are left open, but hitting an opponent near a ledge with it sends them off the stage for edge guarding.",
+      "damage": "Power/Laughter 8, Knowledge 12",
+      "hits": null,
+      "properties": [],
+      "quote": "A + B / Kick (Spike attack) / Damage PWR/Laugh 8 Know 12; His aerial B is slightly more risky. If you miss, you leave yourself open for an attack but if you hit them with it near a ledge, it will send them off the stage and you can set up for edge guarding."
+    },
+    {
+      "input": "Y",
+      "name": "5 Rapid Punches",
+      "description": "Standard Y attack, five rapid punches.",
+      "damage": "Power/Laughter 17, Knowledge 25",
+      "hits": 5,
+      "properties": ["multi-hit"],
+      "quote": "Y / 5 Rapid Punches / Damage PWR/Laugh 17 Know 25"
+    },
+    {
+      "input": "side Y",
+      "name": "4 Rapid Ki Blasts",
+      "description": "Forward + Y fires rapid Ki blasts; keep pressing Y to continuously fire blasts up to 16 times, with a slight pause when the attack ends. It hits characters holding on a ledge and can interfere with recovery, though there is a delay after 16 beams.",
+      "damage": "4 (if all hit) Power/Laughter, 6 (if all hit) Knowledge",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Forward + Y / 4 Rapid Ki Blasts (Keep pressing Y to continuously fire blasts up to 16 times, there is a slight pause when the attack ends) / Damage PWR/Laugh 4(If All hit) Know 6(If All Hit); His forward Y can be quite annoying to deal with when you are trying to get back to the stage. The attack hits characters holding on the ledge and if the opponent tries to jump back up, the attack may still be in effect, hitting the character and preventing a recovery."
+    },
+    {
+      "input": "up Y",
+      "name": "Ki blast upward at 45-degree angle",
+      "description": "Up + Y fires a Ki blast upward at a 45-degree angle.",
+      "damage": "Power/Laughter 15, Knowledge 22",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Up + Y / Ki blast upward at 45-degree angle / Damage PWR/Laugh 15 Know 22"
+    },
+    {
+      "input": "down Y",
+      "name": "Forward Charge",
+      "description": "Down + Y is a forward charge that guard breaks.",
+      "damage": "Power/Laughter 16, Knowledge 24",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down + Y / Forward Charge (Guard Break) / Damage PWR/Laugh 16 Know 24"
+    },
+    {
+      "input": "air Y",
+      "name": "Ki blast downward at 45-degree angle",
+      "description": "A+Y fires a Ki blast downward at a 45-degree angle. This is Gohan's main aerial attack; the second blast can be fired almost immediately after the first, even if the first missed or was blocked.",
+      "damage": "Power/Laughter 16, Knowledge 24",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "A + Y / Ki blast downward at 45-degree angle / Damage PWR/Laugh 16 Know 24; Gohan's main attack would be Y in the air, which fires a Ki blast down at a 45-degree angle. ... The good thing about this attack is that the second blast can be shot almost immediately after the first."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action - Regain SP",
+      "description": "Hold Select to regain SP. This is the Battle Koma 4 Ultimate Action.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action- Hold Select to Regain SP"
+    }
+  ],
+  "combos": [
+    "B, Up + B, Up + Y -- a simple hit followed by one that sends the opponent up and finish with an upward Ki blast",
+    "Forward +B, Y -- Kick sends the opponent forward and finish with rapid punch. Does not work with all characters since Forward + B sends some characters farther away than others, which causes Y to miss. Works well on the edges since Y stuns an opponent and may cause a ring out. Forward + B can be repeated (about 2, sometimes 3 times depending on the character) to lengthen the combo before Y",
+    "Up + B, Forward + B, Y -- send the opponent up, hit them with forward + B before they hit the ground and finish with Y",
+    "The Chain Combo: Forward + B, Y, Up + Y, repeat -- has the potential to keep the opponent airborne for a while; author reports managing 3 repetitions in a row before the opponent was sent too far to continue"
+  ],
+  "unresolved": [
+    "chr_b ambiguity: Battle Koma 4 is labeled '(SSJ1)' and Battle Koma 5 is labeled '(SSJ2)' in the guide, which line up in name with chr_b=4 'Gohan (SSJ)' and chr_b=5 'Gohan (SSJ2)' in chr_b-Complete-Mapping.md, but the mapping table's HP values (258 for both) do not match this guide's per-koma HP (136 for koma 4, 152 for koma 5), so the two cannot be confidently equated to a single chr_b id for this whole file. Left chr_b null.",
+    "The guide's 'A + B' and 'A + Y' inputs for the aerial Kick (Spike attack) and aerial Ki blast are not spelled out as 'air B'/'air Y' by the guide itself; mapped them to 'air B'/'air Y' per schema input vocabulary, but the guide's own notation is 'A + B' / 'A + Y'.",
+    "Help Koma's koma size (number of panels) is never stated by the guide for Gohan's own help koma; left size null. The '4Koma Only!!' and '5Koma Only!!' headers in Ally Boosts refer to Krillin's and Piccolo's own help koma sizes, not Gohan's.",
+    "Support Koma 2 and 3's koma size fields were inferred from their section headers ('Support Koma 2', 'Support Koma 3'), which the guide uses as both the koma's display name and, apparently, its size.",
+    "Guide gives a single 'Standard Attacks' table (B/Y strings) without stating whether these differ between Battle Koma 4 and Battle Koma 5 (SSJ1 vs SSJ2 forms); treated them as top-level moves shared across the character rather than duplicating per koma, since the guide does not say they change.",
+    "Special B - Burst of Anger has no listed damage/hit count (it's a self-buff), consistent with the guide not stating one; left damage/hits null.",
+    "Guide credits 'Genroh' for an unspecified prior guide it relied on; not otherwise relevant to moveset data."
+  ]
+}

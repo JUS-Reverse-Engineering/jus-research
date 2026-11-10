@@ -1,0 +1,47 @@
+{
+  "state": {
+    "review_task": "Classify the strongest defensible behavior claim from one synchronized matched capture. Do not infer game facts beyond this packet and do not override owner testimony.",
+    "owner_testimony": "Kakashi SELECT creates a timed substitution status.",
+    "matched_design": [
+      "Both trials loaded the same fight-CPU savestate, used the same 500-frame schedule, and had zero dropped or gapped tail frames.",
+      "Both held DOWN through relative frame 210 so Kakashi remained active through early attacks; only the treatment pressed SELECT at relative frames 220-221.",
+      "No pause menu or COM-setting change occurred after SELECT.",
+      "Kakashi was character 23 in active P1 slot 0 throughout both trials."
+    ],
+    "observations": [
+      "The traces matched through relative frame 383 except for SELECT activation state 12 at frames 233-292 and treatment-only candidate fields.",
+      "At relative frame 384 the control entered hit state 8 and HP fell 9216 to 9024; the SELECT trial instead entered state 20 and HP remained 9216.",
+      "The control continued losing HP in that attack sequence. The SELECT trial first lost HP at relative frame 461 and entered hit state 8.",
+      "After the frame-384 divergence the fighters' states and positions no longer matched, so the later hits are not a matched attack comparison."
+    ],
+    "constraints": [
+      "Separate observed behavior, attribution, and internal mechanism.",
+      "State 20 is an observed treatment-only transition, not an independently identified internal mechanism.",
+      "A later damaging hit after trajectories diverge cannot by itself distinguish one-hit consumption from timer expiry."
+    ]
+  },
+  "model": "jev-latest",
+  "questions": {
+    "attribution": {
+      "type": "choice",
+      "instructions": "What is the strongest attribution supported at the first corresponding CPU hit?",
+      "criteria": {
+        "select_associated_protection": "The matched contrast supports SELECT-associated protection from that hit under the recorded conditions.",
+        "correlation_only": "The contrast is recorded but an uncontrolled pre-hit difference prevents attribution to SELECT.",
+        "inadequate_signal": "Identity, HP, attack, or capture integrity is inadequate.",
+        "unknown_omitted_alternative": "An important omitted alternative prevents judgment."
+      }
+    },
+    "claim_scope": {
+      "type": "choice",
+      "instructions": "What is the strongest behavior claim supported by the whole capture?",
+      "criteria": {
+        "one_corresponding_hit": "SELECT protected one corresponding hit in this fixture and the protection was not indefinite.",
+        "one_hit_consumption": "The first protected hit consumed the status.",
+        "timed_duration_bracket": "The capture establishes a specific duration or reliable duration bracket.",
+        "internal_mechanism": "The capture identifies the internal substitution mechanism.",
+        "inconclusive": "No protection claim is supported."
+      }
+    }
+  }
+}

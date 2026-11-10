@@ -1,0 +1,8 @@
+__pycache__/
+.DS_Store
+# Ghidra project build artifacts (reproducible from import_project.sh)
+scripts/ghidra/project/
+scripts/ghidra/project.old.*/
+scripts/ghidra/build.log
+scripts/ghidra/.overlay_imports
+scripts/ghidra/.analyzeHeadless.path

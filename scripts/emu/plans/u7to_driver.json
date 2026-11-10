@@ -1,0 +1,9 @@
+{
+  "name": "u7to_driver",
+  "segments": [
+    {"from": 0, "to": 1, "buttons": ["START"]},
+    {"from": 2, "to": 61, "buttons": []}
+  ],
+  "tail_frames": 20,
+  "watches": ["battle"]
+}

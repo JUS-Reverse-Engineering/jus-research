@@ -1,0 +1,17 @@
+{
+  "name": "idiy_approach2",
+  "segments": [
+    {"from": 0, "to": 60, "buttons": ["Left"]},
+    {"from": 61, "to": 64, "buttons": ["B"]},
+    {"from": 75, "to": 78, "buttons": ["B"]},
+    {"from": 90, "to": 93, "buttons": ["Up", "B"]},
+    {"from": 105, "to": 108, "buttons": ["B"]},
+    {"from": 120, "to": 123, "buttons": ["Down", "B"]},
+    {"from": 130, "to": 150, "buttons": ["Left"]},
+    {"from": 151, "to": 154, "buttons": ["B"]},
+    {"from": 165, "to": 168, "buttons": ["Up", "B"]},
+    {"from": 180, "to": 183, "buttons": ["B"]}
+  ],
+  "tail_frames": 20,
+  "watches": ["battle"]
+}

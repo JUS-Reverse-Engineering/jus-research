@@ -1,0 +1,238 @@
+{
+  "character": "Bankai Ichigo Kurosaki",
+  "series": "Bleach",
+  "chr_b": 40,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; distinct from base Ichigo (chr_b 39)",
+  "source": {"file": "47060-bankai-ichigo.txt", "gamefaqs_id": 47060, "author": "Prottain", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter", "knowledge"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Gives an extra jump (shared effect noted for Eve, Devil Bat, Hanamichi Sakuragi, Gajira Norimaki, and Sipuxiang; having more than one does not raise total jumps past three; also enables an extra air dash)."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": []
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": []
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": []
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["This is Ichigo's Bankai form, shaped like: [] / [][] / [][][][] "],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Getsuga Tenshou",
+          "description": "Ichigo shoots a black arc of energy known as Getsuga Tenshou. Has about a second delay to shoot and a second delay after he shoots, for a combined 2 seconds total delay. Takes up about half the screen.",
+          "damage": "50",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "Ichigo shoots a black arc of energy. It is known as a Getsuga Tenshou. It has about a second delay to shoot and a second delay after he shoots for a combined total of 2 seconds delay. The attack takes up about half the screen. 50 damage to Power/Laughter, 75 damage to Knowledge"
+        },
+        {
+          "input": "X",
+          "name": "Getsuga Tenshou (Random / mask variant)",
+          "description": "A random variant of the X special where Ichigo has half a mask on and must pull it off after shooting his Getsuga Tenshou. Causes extra damage, extra delay, and a larger arc, plus an energy degeneration status effect that slowly decreases SP over time. Total delay about 2.5 seconds.",
+          "damage": "75",
+          "hits": null,
+          "properties": ["projectile", "charge", "status:energy degeneration"],
+          "quote": "Ichigo does the same thing as in his X attack except this time he has half a mask on and he needs to pull it off after he shoots his Getsuga Tenshou. It causes extra damage, extra delay and increases the size of the arc. It also causes an energy degeneration status effect, which decreases your SP over time. (Not very much though) The total delay is about 2 and a half seconds. 75 damage to Power/Laughter, 112 damage to Knowledge"
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Ichigo flashsteps diagonally, slashing enemies in the range he travels multiple times at high speed. If the enemy blocks, they are not caught and Ichigo ends up in the air about a fourth of the screen forward and a third up. There is a one-second delay after the combo finishes, and it subtracts one from Ichigo's total jumps.",
+          "damage": "49",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Ichigo will flashstep diagonally this time and like the Side B and the Up Y attack, will attack enemies in the range of the distance he travels. Of course, since it is a special, you will see him slashing the enemy multiply times at an insane speed just like in the anime/manga. Note that if the enemy blocks, they will not be caught up in the attack and Ichigo will just end up in the air approximately a forth of the screen horizontally foward and a third of the screen vertically up. (That is the distance he travels) Enemies that are a little bit in front of Ichigo will be caught up in this special if they do not block. Amount of damage depends on hits. There is a one second delay after he finishes the combo where Ichigo stands in the air and this special also subtracts one from the total amount of jumps Ichigo can do. 49 max damage to Power/Laughter, 73 max damage to Knowledge"
+        }
+      ]
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": ["Bankai battle koma shaped like: [][][][] / [][][][]", "Guide's author does not recommend the 8 Koma version due to added delay, despite slightly more damage and range; recommends it 'purely for style.'"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Getsuga Tenshou (8 Koma)",
+          "description": "Same as the 7 Koma X but a lot bigger, about two thirds of the screen. Adds a second to the total delay since Ichigo must put on his Hollow mask before attacking. No random mask-removal X variant exists in this version, since he embraces putting the mask on instead.",
+          "damage": "55",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "Same as the 7 Koma Version except a lot bigger. Two thirds of the screen approximately. Also, add a second to the total delay as Ichigo needs to put on his Hollow mask before pulling off the attack. This time, there is no random X where Ichigo pulls off his mask as he embraces putting it on. 55 damage to Power/Laughter, 82 damage to Knowledge"
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Same as the 7 Koma up X except the distance traveled is a lot further: about two thirds of the screen vertically and a bit more than a fourth of the screen horizontally. Adds a second of delay since Ichigo must put on his Hollow mask first.",
+          "damage": "65",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Same as the 7 Koma Version except the distance he travels is a lot further. Vertically he goes up about two thirds of the screen and horizontally he goes foward a bit more than a forth of the screen. Also, add a second of delay to the total delay once again as Ichigo needs to put on his Hollow mask before pulling off the attack. 65 damage to Power/Laughter, 97 damage to Knowledge"
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A horizontal slash that shifts Ichigo forward a bit.",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "A horizontal slash that shifts Ichigo foward a bit. 9 damage to Power/Laughter, 13 damage to Knowledge"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "A downward slash that covers an arc in front of him, stepping forward, with pretty decent range.",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "A downward slash that covers an arc in front of him. Also causes Ichigo to steps foward. Has a pretty decent range. 9 damage to Power/Laughter, 13 damage to Knowledge"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "A diagonal stab that lifts an enemy slightly.",
+      "damage": "9",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "A diagonal stab that will lift an enemy slightly. 9 damage to Power/Laughter, 13 damage to Knowledge"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Has a second delay to use. A black shockwave forms and forces the character to change, if they have a second battle character in their deck. This is the down+B forced switch attack.",
+      "damage": "9",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Has a second delay to use. A black shockwave forms and forces the character to change. (If they have a second battle character in their deck) 9 damage to Power/Laughter, 13 damage to Knowledge"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "A blur of slashes appears with a black aura around Ichigo; any enemy close by is slashed and sent flying into the air. Damage is based on how many slashes are pulled off, and can be increased by repeatedly pressing Y. The closer the enemy generally the more slashes.",
+      "damage": "20",
+      "hits": null,
+      "properties": ["launcher", "mash-extend", "multi-hit"],
+      "quote": "A blur of slashes will appear and Ichigo will have a black aura around him. Basically any enemy close by will be slashed and sent into the air flying. Damage is based on how many slashes you pull off. (You can increase it if you keep pressing Y) The closer you are the more slashes will be pulled off generally. 20 max damage to Power/Laughter, 30 max damage to Knowledge"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Ichigo travels as far as his dash and immediately stops and turns around to slash the enemy if they are in his path (not if they are on the floor). Range appears to be a down-to-up slash like the Side B slash. There is a half-second delay after use regardless of whether he finds a target.",
+      "damage": "18",
+      "hits": null,
+      "properties": [],
+      "quote": "Ichigo will travel as far as his dash and will immediately stop and turn around to slash the enemy if they are in his path (not if they are on the floor though) The range of the slash appears to be a down to up slash of the Side B slash. Note that there is a half a second delay after he uses this move regardless of whether he finds a target or not. 18 damage to Power/Laughter, 27 damage to Knowledge"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Ichigo flashsteps up, and like Side Y, slashes an enemy down if one is in the distance traveled. The flashstep up goes higher than his regular jump (A button once). Unlike Side Y, there is no delay regardless of whether he finds an enemy. If a directional button is pressed immediately after and he hit an enemy, he will immediately perform his Down Y air attack. Subtracts one from total jumps.",
+      "damage": "18",
+      "hits": null,
+      "properties": [],
+      "quote": "Ichigo will flashstep up, and like the Side Y attack, if there is an enemy in the distance he has traveled, he will slash them down. The flashstep up goes higher than his regular jump. (pushing the A button once) Unlike Side Y, there is no delay regardless of whether he finds an enemy or not. You should note however that if you press a directional button immediately after using it, if he has hit an enemy with it, he will immediately perform his Down Y air attack. Up Y will subtract one from the total amount of jumps Ichigo can perform. 18 damage to Power/Laughter, 27 damage to Knowledge"
+    },
+    {
+      "input": "air Y",
+      "name": "Down Y air",
+      "description": "Ichigo flashsteps straight down to the ground then slashes horizontally, hitting both his left and right side for as much horizontal range as his Side B attack. Has a 1 second delay after he slashes.",
+      "damage": "18",
+      "hits": null,
+      "properties": [],
+      "quote": "Ichigo will flashstep straight down to the ground and then slash horizontally hitting both his left and right side for as much horizontal range as his Side B attack. This has a 1 second delay after he slashes. 18 damage to Power/Laughter, 27 damage to Knowledge"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Ichigo stabs his sword into the ground, creating a shockwave that breaks the enemy's guard. Radius as wide as the Down B shockwave. Has about a second delay like most guard breaks.",
+      "damage": "18",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Ichigo stabs his sword into the ground, creating a shockwave that will break the enemies guard. The radius is as wide as the Down B shockwave. This attack like most guard breaks has about a second delay. 18 damage to Power/Laughter, 27 damage to Knowledge"
+    },
+    {
+      "input": "select",
+      "name": "Mask removal / SP regen",
+      "description": "Ichigo struggles to pull off his mask, regaining a bit of SP gauge. Has about a second delay to fully finish.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ichigo struggles to pull off his mask. Regain a bit of your SP gauge. It has about a second delay to fully finish the move."
+    }
+  ],
+  "combos": [
+    "B, Side B, and Up X. Side slash, downward slash, then connects to the aerial special. 67 max damage to Power/Laughter, 100 max damage to Knowledge",
+    "B, Side B, Y, and Up X. Side slash, downward slash, then fast multiple slashes tossing the enemy into the air allowing a catch with Up X special; does not work if the enemy is thrown behind or above Ichigo after the Y attack. 87 max damage to Power/Laughter, 130 max damage to Knowledge",
+    "Down Y + Combo 1 or 2, guard breaking then leading into Combo 1 or 2. With Combo 1: 85 max damage to Power/Laughter, 127 max damage to Knowledge. With Combo 2: 105 max damage to Power/Laughter, 157 max damage to Knowledge",
+    "Y, X (Y used to maximum hits to launch high enough for the X special; X can be replaced with Up X). 70 max damage to Power/Laughter, 105 max damage to Knowledge (95 max damage to Power/Laughter, 142 max damage to Knowledge if random X mask-pull happens)",
+    "B, Side B, Side Y. Regular sideway then downward slashes, then dash to the other side of the enemy for another slash; not a perfect connection, slight delay between the last Side B attack and the Side Y. 36 max damage to Power/Laughter, 54 max damage to Knowledge",
+    "B, Side B, Y, Up Y, directional button immediately after. Like Combo 2 but finishes with a downward slash toward the ground and a dash to the ground for another slash instead of a special; requires the enemy directly above after the Y attack; can be modified with an air dash away after Up Y but requires a wait. Non-modded damage: 72 max damage to Power/Laughter, 108 max damage to Knowledge"
+  ],
+  "unresolved": [
+    "The guide gives no HP values for any koma size (4 through 8) and does not name a nature per koma size, only stating damage split by 'Power/Laughter' vs 'Knowledge' for every move, implying nature affects damage rather than being fixed per koma; natures_available is inferred from this pattern, not stated as a list anywhere.",
+    "Koma sizes 4, 5, and 6 (battle) have no distinct moveset or passive text in the guide; only sizes 7 and 8 get an explicit X-special writeup labeled '7 Koma Version' and '8 Koma Version'. It's unclear whether 4-6 have different specials, weaker specials, or none at all -- the guide only says Ichigo must evolve to 7/8 to reach 'Bankai form', implying 4-6 are a different (non-Bankai) moveset not covered by this guide, but this isn't stated outright.",
+    "The 2-koma and 3-koma support forms are only referenced in the evolution-cost table (IK4); the guide gives no support_effect text for them at all.",
+    "The Help Koma entry (size/hp unknown) is described functionally (extra jump) but the guide never gives it a koma size number.",
+    "IK7 describes generic Support Koma advice (Big Three: 3 Koma Trunks, 3 Koma Seiya, 3 Koma Sena; also Yoruichi) but these are other characters' support koma, not Bankai Ichigo's own support koma -- included here only as deck-building context, not as Ichigo moveset data.",
+    "Directional/system moves (dash/flashstep, block, fast-fall, jump/double jump, air-dash-jump) are documented in the guide under 'Directional Buttons + A + Select' but are movement mechanics, not attacks, so they were not added to the moves array; flagging here in case they're wanted elsewhere.",
+    "No 'version' string is given for this guide (unlike some GameFAQs guides); source.version left null.",
+    "The X special's 'Random' mask variant is described as a variant that occurs only in the 7 Koma version and is explicitly said not to exist in the 8 Koma version -- captured as a separate special entry under koma size 7 rather than as a property of the base X move."
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "character": "Hitsugaya",
+  "series": "Bleach",
+  "chr_b": 43,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; row '43 | bl_b_05 | Hitsugaya'",
+  "source": {
+    "file": "46708-hitsugaya.txt",
+    "gamefaqs_id": 46708,
+    "author": "FFandMMfan",
+    "version": "1.3"
+  },
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Grants whoever he is attached to an Immunity to Freeze effect."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": null,
+          "description": "Hitsugaya appears and stabs his sword into the ground. An icy shockwave appears around Hitsugaya and anyone nearby gets frozen.",
+          "damage": "22 Damage (Power/Knowledge) / 33 Damage (Laughter)",
+          "hits": null,
+          "properties": ["status:freeze"],
+          "quote": "Hitsugaya appears and stabs his sword into the ground. An icy shockwave appears around Hitsugaya and anyone nearby gets frozen. Damage Output: Against Power and Knowledge Characters: 22 Damage plus Freeze effect. Against Laughter Characters: 33 Damage plus Freeze effect."
+        }
+      ],
+      "support_effect": "Fires a circular icy shockwave around Hitsugaya that freezes anyone nearby, above, below, or to the sides. No real knockback ability, but great range.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": null,
+          "description": "Hitsugaya appears, and after a moment of charging, fires an ice beam forwards. Damage depends on how long the character is caught within the beam. Best used against an enemy near a wall.",
+          "damage": "30 Damage (Power/Knowledge) / 45 Damage (Laughter)",
+          "hits": null,
+          "properties": ["status:freeze", "charge"],
+          "quote": "Hitsugaya appears, and after a moment of charging, fires an ice beam forwards. Causes Freeze effect. The damage output depends on how long the character is caught within the beam. Fire at an enemy near a wall for the best effect. Damage Output: Against Power and Knowledger Characters: 30 Damage Against Laughter Characters: 45 Damage"
+        }
+      ],
+      "support_effect": "Stronger than the 2 Koma support, with nice ringout potential, but easy to see coming and only freezes directly ahead.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "Hitsugaya can always Air Dash",
+        "Hitsugaya is Immune to Freeze",
+        "Hitsugaya is Immune to Burn"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special Attack A",
+          "description": "Fires a large ice beam straight ahead of him. As with most of Hitsugaya's attacks (and beams in general) the damage it does is tied to how many times it hits the enemy. Pretty much the same thing as his 3 Koma Support, but stronger.",
+          "damage": "49 (Laughter) / 33 (Power/Knowledge)",
+          "hits": "10 (maximum)",
+          "properties": ["status:freeze", "projectile", "multi-hit"],
+          "quote": "Special Attack A: Fires a large ice beam straight ahead of him. As with most of Hitsugaya's attacks (and beams in general) the damage it does is tied to how many times it hits the enemy. Deals a maximum of 10 hits. It's pretty much the same thing as his 3 Koma Support, but stronger. Inflicts Freeze status. Max Damage: Against Laughter: 49 Against Power/Knowledge: 33"
+        },
+        {
+          "input": "X",
+          "name": "Special Attack B",
+          "description": "Stabs the ground and creates a shockwave of ice that freezes everything nearby. Pretty much the same as his 2 Koma Support.",
+          "damage": "36 (Laughter) / 24 (Power/Knowledge)",
+          "hits": "1",
+          "properties": ["status:freeze"],
+          "quote": "Special Attack B: Stabs the ground and creates a shockwave of ice that freezes everything nearby. Pretty much the same as his 2 Koma Support, and yes, it inflicts Freeze Status. Deals 1 hit. Damage Output: Against Laughter: 36 Against Power/Knowledge: 24"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "Hitsugaya can always Air Dash",
+        "Hitsugaya is Immune to Freeze",
+        "Hitsugaya is Immune to Burn"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special Attack A",
+          "description": "Creates a blast of ice that spikes up and covers a fair area both upwards and outwards. Pretty quick.",
+          "damage": "48 (Laughter) / 32 (Power/Knowledge)",
+          "hits": null,
+          "properties": ["status:freeze"],
+          "quote": "Special Attack A: Creates a blast of ice that spikes up and covers a fair area both upwards and outwards. Also pretty quick. Inflicts Freeze status. Damage Output: Against Laughter: 48 Against Power/Knowledge: 32"
+        },
+        {
+          "input": "X",
+          "name": "Special Attack B",
+          "description": "Matsumoto, Hitsugaya's Vice-Captain, appears and creates a veil of smoke that causes Blind effect on the enemy and deals heavy damage. The veil appears where the enemy was standing when she was summoned, and has a high chance of being evaded.",
+          "damage": "48 (Laughter) / 32 (Power/Knowledge)",
+          "hits": null,
+          "properties": ["status:blind"],
+          "quote": "Special Attack B: Matsumoto, Hitsugaya's Vice-Captain appears and creates a veil of smoke that causes Blind effect on the enemy and deals some heavy damage. However, the veil appears where they were standing when she was summoned, and has a high chance of being evaded. Damage Output: Against Laughter: 48 Against Power/Knowledge: 32"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "Hitsugaya can always Air Dash",
+        "Hitsugaya is Immune to Freeze",
+        "Hitsugaya is Immune to Burn"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special Attack A",
+          "description": "Hitsugaya calls out his Bankai and dashes forward to pierce his foe with a lance of ice and freeze them. Despite being his Bankai, guide calls it easily his worst Special among all his Koma: slow to appear, slow to dash forward, deals good damage, but way too easy to see coming and will be blocked.",
+          "damage": "72 (Laughter) / 48 (Power/Knowledge)",
+          "hits": null,
+          "properties": ["status:freeze"],
+          "quote": "Special Attack A: Hitsugaya calls out his Bankai and dashes forward to pierce his foe with a lance of ice and freeze them. Despite being his Bankai, it's easily his worst Special among all of his Koma. It's slow to appear, slow to dash forward to attack, deals good damage, but WAY to easy to see coming. It WILL be blocked, and by the time the Freeze has run out, you're halfway across the screen from them and you'll get at most, one or two hits in while they are frozen. Damage Output: Against Laughter: 72 Against Power/Knowledge: 48"
+        },
+        {
+          "input": "X",
+          "name": "Special Attack B",
+          "description": "Same as his 5 Koma, calls out Matsumoto. Deals a bit more damage though. Still causes Blind, still easy to block.",
+          "damage": "60 (Laughter) / 40 (Power/Knowledge)",
+          "hits": null,
+          "properties": ["status:blind"],
+          "quote": "Special Attack B: Same as his 5 Koma, calls out Matsumoto. Deals a bit more damage though. Still causes Blind, still easy to block. Damage Output: Against Laughter: 60 Against Power/Knowledge: 40"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Simple slash.",
+      "damage": "9 damage to P/K and 13 to L",
+      "hits": null,
+      "properties": [],
+      "quote": "B, B + left/right, B + Up = Simple slashes, 9 damage to P/K and 13 to L."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Simple slash.",
+      "damage": "9 damage to P/K and 13 to L",
+      "hits": null,
+      "properties": [],
+      "quote": "B, B + left/right, B + Up = Simple slashes, 9 damage to P/K and 13 to L."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Simple slash.",
+      "damage": "9 damage to P/K and 13 to L",
+      "hits": null,
+      "properties": [],
+      "quote": "B, B + left/right, B + Up = Simple slashes, 9 damage to P/K and 13 to L."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Slashes horizontally in the air.",
+      "damage": "9 Damage to P/K and 13 Damage to L",
+      "hits": null,
+      "properties": [],
+      "quote": "B in the Air = Slashes horizontally in the air. 9 Damage to P/K and 13 Damage to L."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Creates a shockwave below him that force switches the opponent's Battle Character. Fair range and pretty quick.",
+      "damage": "18 damage to P/K and 27 to L",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "B + Down = Creates a shockwave below him that force switches the opponent's Battle Character. Fair range and pretty quick. 18 damage to P/K and 27 damage to L."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Slashes downwards and creates a wave of Ice in his path. Can be charged. Charging does not increase damage, but increases how long the Ice wave stays in the air.",
+      "damage": "18 Damage to P/K and 27 damage to L (with maximum hits)",
+      "hits": 2,
+      "properties": ["charge"],
+      "quote": "Y = Slashes downwards and creates a wave of Ice in his path. Can be charged. Deals 2 hits. With maximum hits, deals 18 Damage to P/K and 27 damage to L. Charging does not increase damage, but rather increases the length of time the Ice wave stays in the air."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Dashes forward and slashes as he moves to create a trail of Ice in his wake. Can be charged; charging increases the dash distance. Deals up to 3 hits, but the third hit's hitbox is small so 2 hits is usual.",
+      "damage": "3 hits: 14 damage to P/K and 21 to L. 2 hits: 13 damage to P/K and 19 damage to L",
+      "hits": "up to 3 (usually 2)",
+      "properties": ["charge", "multi-hit"],
+      "quote": "Y + left/right = Dashes forward and slashes as he moves to create a trail of Ice in his wake. Can be charged. Deals up to 3 hits, but the third hit's hitbox is small and you'll usually do 2 hits. 3 hits do 14 damage to P/K and 21 to L. 2 hits do 13 damage to P/K and 19 damage to L. Charging increases the dash distance."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Jumps and slashes upwards, creating a trail of Ice as he goes. Can be charged; charging does not increase damage but increases jump height and therefore the chance of landing all 8 hits.",
+      "damage": "first hit: 12 damage to P/K and 18 to L. Maximum at 8 hits: 19 to P/K and 28 to L",
+      "hits": "between 1 and 8",
+      "properties": ["charge", "multi-hit"],
+      "quote": "Y + Up = Jumps and slashes upwards, creating a trail of Ice as he goes. Can be charged. Deals between 1 and 8 hits. The first hit deals 12 damage to P/K and 18 to L. Maximum damage at 8 hits is 19 to P/K and 28 to L. Charging does not increase damage, but rather increases jump height and therefore a greater chance of inflicting all 8 hits."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Swings a rope with a hook on it that guard breaks the enemy.",
+      "damage": "18 to P/K and 27 to L",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Y + Down = Swings a rope with a hook on it that guard breaks the enemy. Deals 18 to P/K and 27 to L."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Slashes downwards and creates an arc of Ice in the air below him. Can be charged; charging gives aerial hang-time, increases the size of the Ice wave, and increases how long it remains in the air.",
+      "damage": "18 to P/K and 27 to L (maximum, both hits)",
+      "hits": 2,
+      "properties": ["charge"],
+      "quote": "Y in the Air = Slashes downwards and creates an arc of Ice in the air below him. Can be charged. Deals 2 hits. Maximum damage with both hits is 18 to P/K and 27 to L. Charging gives you some aerial hang-time, increases the size of the Ice wave and increases the length of time it remains in the air."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Hitsugaya puts his sword away, sighs, and says something within a text bubble. If either his breath or the text bubble hit an enemy, he regains some SP and they are stunned for a second.",
+      "damage": null,
+      "hits": null,
+      "properties": ["status:stun"],
+      "quote": "Hitsugaya puts his sword away, sighs, and says something within a text bubble. If either his breath or the text bubble hit an enemy, he'll regain some SP and they'll be stunned for a second."
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "B into B+forward or B+up. Both deal the same damage; very quick.",
+      "damage": "18 damage to P/K and 27 to L",
+      "hits": null,
+      "properties": [],
+      "quote": "B -> B+forward/B+up = Both deal 18 damage to P/K and 27 to L. Very quick."
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "B or B+up into Y with no charge. Only worth it if all 3 hits connect. Described as his strongest basic combo; either of the first two moves work.",
+      "damage": "27 to P/K and 40 to L",
+      "hits": 3,
+      "properties": ["multi-hit"],
+      "quote": "B/B+up - > Y (no charge) = Only worth it if all 3 hits connect. 27 to P/K and 40 to L. His strongest basic combo. Either of the first two moves work."
+    }
+  ],
+  "combos": [
+    "B -> B+forward/B+up = Both deal 18 damage to P/K and 27 to L. Very quick.",
+    "B/B+up -> Y (no charge) = Only worth it if all 3 hits connect. 27 to P/K and 40 to L. His strongest basic combo. Either of the first two moves work."
+  ],
+  "unresolved": [
+    "Guide's damage/hit note says Hitsugaya's attacks vary hugely in actual damage depending on how much of a hit connects (e.g. as low as 1 damage on a grazing hit), and the listed numbers are only the 'best possible' damage assuming every piece connects — treat listed move damage as maximums, not fixed values.",
+    "Guide explicitly notes Y attacks appear to inflict Freeze visually on hit but do NOT actually apply Freeze status, even fully charged — this contradicts the general 'his attacks cause Freeze' framing in the Introduction section.",
+    "Guide states the three passive effects (always Air Dash, Immune to Freeze, Immune to Burn) are innate and always on for Hitsugaya as a Battle Character; text notes it 'puzzles' the author that they can't be doubled up even though two of his Boosters' Help Koma grant duplicate immunities.",
+    "Battle Koma HP values are never given anywhere in the guide (only J-Soul: 136/152/168 for Koma 4/5/6).",
+    "Koma shapes for Battle Koma 4/5/6 are described only via ASCII art, not converted to a numeric grid; recorded shape here only as koma size.",
+    "Help Koma size is not explicitly stated as '1' in the guide; inferred as 1 since it's a Help Koma (standard convention) — guide never gives an explicit size number for it.",
+    "Support Koma 2 and 3 sizes (2 and 3) are taken from their ASCII shape diagrams (2 squares vertical, 3 squares horizontal) and their section labels ('Support Koma 2', 'Support Koma 3'), not from an explicit stated integer elsewhere.",
+    "The Y-attack 'freeze' note under HT4 appears to directly contradict move-level Freeze status that might be assumed from other guides/sources — flagging per schema rules since Y moves are NOT tagged with status:freeze here, unlike the X specials which do inflict Freeze."
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "character": "Hiei",
+  "series": "Yu Yu Hakusho",
+  "chr_b": 34,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; null if the character is not in the table",
+  "source": {"file": "46926-hiei.txt", "gamefaqs_id": 46926, "author": "Adam Miller (AKA Actawesome)", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": [],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "A quick purple lightning-like sword attack, lunging forward. Good for finishing combos.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "A quick purple lightnign like attack, with your sword. You lunge forward, and it's great. Perfect for finishing combo's."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "A weaker version of the 5 Koma's up+X special. Not very good except against people getting up from the edge.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Basically a crappier version of Hiei's 5 Koma up+X special. Not very good to use in any situation unless they're getting up from the edge."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "A bunch of slashes that quickly launch the enemy into the air. Also a good combo finisher.",
+          "damage": null,
+          "hits": null,
+          "properties": ["launcher"],
+          "quote": "A bunch of slashes quickly launching the enemy into the air. This is also another perfect finishing combo."
+        },
+        {
+          "input": "up X",
+          "name": "Dragon of the Darkness Flame",
+          "description": "A good, long-lasting version of Dragon of the Darkness Flame, great for hitting people off the edge or chasing them around the level. Can power Hiei up if it hits him, making his attacks purple and 'twice as strong'.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:power-up-if-self-hit"],
+          "quote": "Woot, a good version of Dragon of the Darkness Flame. This lasts for quite awhile, and it's great for hitting people off the edge, or like, chasing them around the level. It can also be used to power Hiei up if it hits him, making his attacks purple. You all know what that means right? TWICE AS STRONG."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "Y",
+      "name": "Strong Attack",
+      "description": "Sends a barrage of punches out, comboing up the enemy, and allowing you to do another attack.",
+      "damage": null,
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "Y - Strong Attack: Sends a barrage of punches out, comboing up the enemy, and allowing you to do another attack."
+    },
+    {
+      "input": "side Y",
+      "name": "Strong left/right attack",
+      "description": "A quick lunge forward and flame sword attack. Does fourteen damage and is a great fast attack.",
+      "damage": "fourteen",
+      "hits": null,
+      "properties": [],
+      "quote": "Left/Right+Y - Strong left/right attack: A quick lunge forward and flame sword attack. Does fourteen damage, and great for a fast attack."
+    },
+    {
+      "input": "up Y",
+      "name": "Strong Up Attack",
+      "description": "A quick glide upwards, allowing you to hit the enemy again with regular B or Y.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Up+Y - Strong Up Attack: A quick glide upwards, allowing you to hit the enemy again with regular B or Y"
+    },
+    {
+      "input": "down Y",
+      "name": "Guard Break",
+      "description": "A quick sword uppercut. Not the best guard break, but does some damage and looks like Hiei is doing another attack, so it lands often on Wi-Fi.",
+      "damage": null,
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down+Y - Guard Break: A quick sword, uppercut, thing. Not the best guardbreak, but it does some damage, and it looks like hiei is doing another attack, so it hits quite often on wi-fi."
+    },
+    {
+      "input": "B",
+      "name": "Weak attack",
+      "description": "Quick sword attack pushing the enemy.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B - Weak attack: Quick sword attack pushing the enemy."
+    },
+    {
+      "input": "side B",
+      "name": "Weak Side Attack",
+      "description": "Lunge and sword. Not a very good attack, but can work for combos.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Left/Right+B - Weak Side Attack: Lunge, and sword. Not a very good attack, but it can work for combo's."
+    },
+    {
+      "input": "up B",
+      "name": "Weak Up Attack",
+      "description": "One of Hiei's worst attacks; a quick sword motion in the air. Also useful to force people off the edge to ride the Darkness of the Dragon Flame to death.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Up+B - Weak Up Attack: One of hiei's worst attacks. QUick sword motion in the air. / use his up+B to basically make them ride the darkness of the dragon flame to death."
+    },
+    {
+      "input": "down B",
+      "name": "ALMOST Guard Break",
+      "description": "Quick flame punch.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Down+B - ALMOST Guard Break: Quick flame punch. Nuff said."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Hiei turns around, gaining very little SP, but if someone hits him while turned around he teleports behind them as a surprise counter.",
+      "damage": null,
+      "hits": null,
+      "properties": ["counter"],
+      "quote": "Select - Ultimate Action: Hiei turns around gaining very little SP, BUT if someone hits you they're in for a surprise. Hiei teleports behind them."
+    },
+    {
+      "input": "other",
+      "name": "Jump (A)",
+      "description": "Guide calls this the best attack ever, but gives no further detail.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "A - Jump WHOAMG best attack ever."
+    }
+  ],
+  "combos": [
+    "Use regular B attacks to start and Y to end, racking up damage; finish combos with Y up followed by regular Y for massive damage."
+  ],
+  "unresolved": [
+    "Guide does not describe an 'air B' or 'air Y' move for Hiei at all; not stated as absent, just never mentioned.",
+    "No per-koma HP values, nature, or passives are given anywhere in the guide.",
+    "'A - Jump' is listed under the move list alongside B/Y/Select inputs but is a jump button, not a standard special; kept as 'other' per instructions since the guide treats it as part of the moveset list.",
+    "Help koma effects (immune to poison, immune to blindness, see invisible characters, slow SP regen while idle, boosts Kakashi/Kurama/Yusuke) are described as one combined 'help' effect without the guide clearly splitting help vs support koma sizes; support specials are explicitly tied to '2 Koma' and '3 Koma' sizes but the guide's battle koma specials section only covers 4 and 5 Koma, so the support/help koma sizes (2 and 3) are recorded separately from the battle koma sizes (4 and 5) without an explicit HP/nature stated for any of them.",
+    "The guide spells the character's ally boosts as 'Kakashi Hatake (Naruto), Yusuke Uramashi, Kurama' powering up Hiei, seemingly the reverse pairing from the help-koma text which says Hiei's help 'boosts kakashi, Kurama, and Yusuke' -- direction of the boost (who boosts whom) is not entirely clear/consistent."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "idiy_mash",
+  "segments": [
+    {"from": 0, "to": 3, "buttons": ["B"]},
+    {"from": 10, "to": 13, "buttons": ["B"]},
+    {"from": 20, "to": 23, "buttons": ["Up", "B"]},
+    {"from": 30, "to": 33, "buttons": ["B"]},
+    {"from": 45, "to": 48, "buttons": ["Left", "B"]},
+    {"from": 60, "to": 63, "buttons": ["B"]},
+    {"from": 75, "to": 78, "buttons": ["Up", "B"]},
+    {"from": 90, "to": 93, "buttons": ["B"]},
+    {"from": 105, "to": 108, "buttons": ["Left", "B"]},
+    {"from": 120, "to": 123, "buttons": ["B"]},
+    {"from": 135, "to": 138, "buttons": ["Up", "B"]},
+    {"from": 150, "to": 153, "buttons": ["B"]},
+    {"from": 165, "to": 168, "buttons": ["Left", "B"]},
+    {"from": 180, "to": 183, "buttons": ["B"]},
+    {"from": 195, "to": 198, "buttons": ["Up", "B"]},
+    {"from": 210, "to": 213, "buttons": ["B"]},
+    {"from": 225, "to": 228, "buttons": ["Left", "B"]},
+    {"from": 240, "to": 243, "buttons": ["B"]},
+    {"from": 255, "to": 258, "buttons": ["Up", "B"]},
+    {"from": 270, "to": 273, "buttons": ["B"]},
+    {"from": 285, "to": 288, "buttons": ["Left", "B"]}
+  ],
+  "tail_frames": 20,
+  "watches": ["battle"]
+}

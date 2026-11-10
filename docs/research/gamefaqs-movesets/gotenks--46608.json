@@ -1,0 +1,229 @@
+{
+  "character": "Gotenks",
+  "series": "Dragon Ball",
+  "chr_b": 6,
+  "chr_b_note": "Guide treats Gotenks as one character across the fusion/transformation: base Gotenks is 4 Koma, and Super Saiyan 3 Gotenks (reached via evolving to 5 Koma) is described as the same character's higher form, not a separate slot. chr_b-Complete-Mapping.md row 6 = 'Gotenks' (base), row 7 = 'Gotenks (SSJ)'. Using chr_b: 6 for the base entry; the 5-Koma SSJ3 forms (Laughter and Power variants) likely correspond to chr_b: 7 but the guide does not distinguish a separate character slot, so this is noted here rather than assigned.",
+  "source": {"file": "46608-gotenks.txt", "gamefaqs_id": 46608, "author": "fuzzylittlbunny", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["laughter", "power"],
+  "koma": [
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Super Saiyan 3 Gotenks appears and fires a beam of energy from his mouth. Pretty much identical to his five Koma X special. Damage: 32 to Knowledge/Laughter, 48 to Power.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "An overall great support, Super Saiyan 3 Gotenks jumps and fires eight blasts of energy diagonally down. This can be used in the air. Damage: 32 to Knowledge/Laughter, 48 to Power.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Galactic Donuts",
+          "description": "Gotenks goes Super Saiyan and fires five rings forward. If they all hit, the opponent is temporarily immobile in a little golden ball. The ball remains off the ground, which stops the opponent from combo breaking with most supports.",
+          "damage": "30 to Knowledge/Laughter, 45 to Power",
+          "hits": null,
+          "properties": ["status:immobile"],
+          "quote": "Gotenks goes Super Saiyan and fires five rings forward. If they all hit, the opponent is temporarily immobile in a little golden ball. A good thing about this is that the ball remains off the ground, which stops them from combo breaking with most supports."
+        },
+        {
+          "input": "up X",
+          "name": "Super Hitsusawazafurukosu",
+          "description": "Gotenks does an eleven-hit combo, yelling stuff along the way. It starts up pretty quickly and is stronger than his Galactic Donuts. There is no way to cancel the move once started, so missing leaves him wide open.",
+          "damage": "35 to Knowledge/Laughter, 52 to Power",
+          "hits": "eleven-hit combo",
+          "properties": ["multi-hit"],
+          "quote": "What a name... Gotenks does an eleven-hit combo, yelling stuff along the way. It starts up pretty quickly, and is stronger than his Galactic Donuts. However, there's no way to cancel the move one you start it, so if you miss, you'll be wide open for a beating."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Saiko No Kogeki (AKA Victory Cannon)",
+          "description": "Gotenks turns Super Saiyan 3, opens his mouth and lets out a blast of energy. A standard beam special; the guide's author uses this in most matches for its fast start and good knock back.",
+          "damage": "36 to Knowledge/Laughter, 54 to Power",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Gotenks turns Super Saiyan 3, opens his mouth and lets out a blast of energy. Pretty much a standard beam special, this is my X-move to use in most matches because of its fast start and good knock back."
+        },
+        {
+          "input": "up X",
+          "name": "Super Ghost Kamikaze Attack",
+          "description": "Gotenks turns Super Saiyan 3 and spits out a little ghost clone of himself that is sent toward an opponent and explodes on contact. Holding X charges out up to three more ghosts (up to four total), based on how many times his cheeks visibly expand before release. Long start-up makes it risky at close range.",
+          "damage": "12-48 to Knowledge/Laughter, 18-72 to Power",
+          "hits": null,
+          "properties": ["charge", "status:explode-on-contact"],
+          "quote": "I love this move. Gotenks will turn Super Saiyan 3 and yell \"Super Ghost Kamikaze Attack!!!\" (In Japanese, of course), and spit out a little ghost that looks just like him. He will then yell something else in Japanese and point forward, sending his crazy little clone away. You can hold X to have Gotenks spit out up to three more ghosts. Each ghost will stay by each other and search out an opponent. When they come into contact with an opponent, the ghosts will blow themselves up. Due to the long start up time, it's nothing short of insane to use this attack at close range. Just a little something to note: watch how many times Gotenks' cheeks expand if you hold X to make more ghosts. If you release X... ...immediately - 1 ghost will come out ...after his cheeks expand once - 2 ghosts will come out ...after his cheeks expand 2-5 times - 3 ghosts will come out Or, if you don't let go of X, Gotenks will automatically release 4 ghosts when he's done charging."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Saiko No Kogeki (AKA Victory Cannon)",
+          "description": "Gotenks turns Super Saiyan 3, opens his mouth and lets out a blast of energy. A standard beam special; the guide's author uses this in most matches for its fast start and good knock back.",
+          "damage": "36 to Knowledge/Laughter, 54 to Power",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Gotenks turns Super Saiyan 3, opens his mouth and lets out a blast of energy. Pretty much a standard beam special, this is my X-move to use in most matches because of its fast start and good knock back."
+        },
+        {
+          "input": "up X",
+          "name": "Super Ghost Kamikaze Attack",
+          "description": "Gotenks turns Super Saiyan 3 and spits out a little ghost clone of himself that is sent toward an opponent and explodes on contact. Holding X charges out up to three more ghosts (up to four total), based on how many times his cheeks visibly expand before release. Long start-up makes it risky at close range.",
+          "damage": "12-48 to Knowledge/Laughter, 18-72 to Power",
+          "hits": null,
+          "properties": ["charge", "status:explode-on-contact"],
+          "quote": "I love this move. Gotenks will turn Super Saiyan 3 and yell \"Super Ghost Kamikaze Attack!!!\" (In Japanese, of course), and spit out a little ghost that looks just like him. He will then yell something else in Japanese and point forward, sending his crazy little clone away. You can hold X to have Gotenks spit out up to three more ghosts. Each ghost will stay by each other and search out an opponent. When they come into contact with an opponent, the ghosts will blow themselves up. Due to the long start up time, it's nothing short of insane to use this attack at close range. Just a little something to note: watch how many times Gotenks' cheeks expand if you hold X to make more ghosts. If you release X... ...immediately - 1 ghost will come out ...after his cheeks expand once - 2 ghosts will come out ...after his cheeks expand 2-5 times - 3 ghosts will come out Or, if you don't let go of X, Gotenks will automatically release 4 ghosts when he's done charging."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A standard jab. Not particularly fast or strong, but a useful combo starter.",
+      "damage": "10 to Knowledge/Laughter, 15 to Power",
+      "hits": null,
+      "properties": [],
+      "quote": "B: A standard jab. Not particularly fast or strong, but a useful combo starter."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Gotenks flies headfirst into the opponent. He doesn't travel too far, but it has pretty good priority.",
+      "damage": "10 to Knowledge/Laughter, 15 to Power",
+      "hits": null,
+      "properties": [],
+      "quote": "Forward+B: Gotenks flies headfirst into the opponent. He doesn't travel too far, but it has pretty good priority."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "A flurry of quick punches; you can tap Y to do more hits.",
+      "damage": "9 to Knowledge/Laughter, 13 to Power",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Y: A flurry of quick punches; you can tap Y to do more hits."
+    },
+    {
+      "input": "side Y",
+      "name": "Galactic Donuts",
+      "description": "Gotenks makes a golden ring over his head and throws it forward. If it hits the opponent, it temporarily stuns them for about one second. It can't repeatedly hit them for an infinite combo.",
+      "damage": "10 to Knowledge/Laughter, 15 to Power",
+      "hits": null,
+      "properties": ["projectile", "status:stun"],
+      "quote": "Forward+Y: Galactic Donuts. Gotenks makes a golden ring over his head and throws it forward. If it hits the opponent, it temporarily stuns them for about one second. Unfortunately, you can't repeatedly hit them with this for an infinite combo..."
+    },
+    {
+      "input": "down B",
+      "name": "Forced Change",
+      "description": "He winds up and delivers a left punch that hits three times and changes their current battle character.",
+      "damage": "10 to Knowledge/Laughter, 15 to Power",
+      "hits": "3",
+      "properties": ["forced switch"],
+      "quote": "Down+B: Gotenks' Forced Change. He winds up and delivers a left punch that hits three times and changes their current battle character."
+    },
+    {
+      "input": "down Y",
+      "name": "Guard Break",
+      "description": "He takes a deep breath and yells something in scratchy Hiragana letters.",
+      "damage": "20 to Knowledge/Laughter, 30 to Power",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down+Y: Gotenks' Guard Break. He takes a deep breath and yells something in scratchy Hiragana letters."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Gotenks jumps diagonally up/forward and delivers a kick at the peak of his jump.",
+      "damage": "10 to Knowledge/Laughter, 15 to Power",
+      "hits": null,
+      "properties": [],
+      "quote": "Up+B: Gotenks jumps diagonally up/forward and delivers a kick at the peak of his jump."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Gotenks does a back flip and launches himself diagonally up/forward, using the same animation as his side+B attack.",
+      "damage": "20 to Knowledge/Laughter, 30 to Power",
+      "hits": null,
+      "properties": [],
+      "quote": "Up+Y: Gotenks does a back flip and launches himself diagonally up/forward in the same animation as his Forward+B attack."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Gotenks uses his fist to knock the opponent back to the ground. It's a great spike in terms of speed, but it has pretty bad range. It will also knock standing opponents through platforms that you can drop through.",
+      "damage": "10 to Knowledge/Laughter, 15 to Power",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial+B: Gotenks uses his fist to knock the opponent back to the ground. It's a great spike in terms of speed, but it has pretty bad range. It will also knock standing opponents through platforms that you can drop through."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Basically an aerial version of his side+B attack, except you can control its path by holding a direction on the D-Pad. This can also be used as a third jump for recovery if your double jump is used. It can also be used to surprise an opponent waiting to edge-guard while you're hanging on a ledge, by letting go and using this move upward.",
+      "damage": "18 to Knowledge/Laughter, 27 to Power",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial+Y: Basically an aerial version of his Forward+B attack, except you can control its path by holding a direction on the D-Pad. This can also be used as a third jump for recovery if your double jump is used. Speaking of recovery, you can use this move to surprise an opponent who's waiting to EG you while you're hanging on the ledge. Let go, and immediately use this move upwards to hit your opponent. That should knock them down and give you just enough time to climb back on the stage."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "He powers up in the traditional DBZ style, slowly gaining SP while you hold Select.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Select: Gotenks' Ultimate Action. He powers up in the traditional DBZ style, slowly gaining SP while you hold Select."
+    }
+  ],
+  "combos": [],
+  "unresolved": [
+    "chr_b ambiguity: the guide describes Gotenks as one continuous character whose 4-Koma form is base and 5-Koma form is Super Saiyan 3 (via evolution), not as two separately selectable characters. chr_b-Complete-Mapping.md splits base Gotenks (row 6) from Gotenks (SSJ) (row 7). Assigned chr_b: 6 for the overall file; the 5-Koma Laughter/Power entries in the koma array may map to chr_b: 7 instead, but the guide gives no basis to split them into a separate JSON entry.",
+    "The guide states 'Only his four Koma can combo into a special without a counterhit, so there won't be any long, flashy combos' and 'He can't link the basic B, forward+B, Y, forward+Y combo' -- this is general strategy commentary about the character overall, not a specific move or combo, so it isn't captured as a 'combos' entry.",
+    "'Help Koma: Increase SP Gauge when using multiple Special Attacks in a short time' is stated in the Evolving Koma section as a general property of a Help Koma slot for this character, but the guide never states which Koma size (if any, beyond the 2/3/4/5 listed) is the Help Koma, or gives it a distinct entry in the evolution cost list. Not added as a separate koma entry due to missing size.",
+    "Damage figures throughout are given as pairs, e.g. '10 to Knowledge/Laughter' and '15 to Power' -- these appear to be damage dealt TO opponents of those natures, not Gotenks' own nature, per the guide's own framing note: 'the damage is using the Laughter Gotenks. If you're using the Power Gotenks, just switch the higher damage to Knowledge characters and the lower damage to Power and Laughter characters.' This is preserved verbatim in each move/special 'damage' field as written, but the target-audience convention is unresolved/confusing as written by the guide's author himself.",
+    "'Gotenks gets a boost from Goku, Vegeta, Vegetto, and Bobobo' is stated in the moveset intro but does not fit any schema field (it describes support-boost synergy from other characters' support koma, not Gotenks' own support/help effects).",
+    "No explicit HP values are given anywhere in the guide for any Koma size.",
+    "No B string (multi-hit B combo chain) is separately described beyond the single B move; the guide explicitly says Gotenks cannot chain B -> side B -> Y -> side Y as a combo."
+  ]
+}

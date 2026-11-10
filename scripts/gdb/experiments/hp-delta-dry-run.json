@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "session_id": "g3-hp-delta-dry-run",
+  "gdb": {
+    "host": "localhost",
+    "port": 3333
+  },
+  "probes": [
+    {
+      "id": "hp-delta-apply",
+      "name": "Known-positive HP delta apply",
+      "breakpoint": {
+        "overlay": "arm9",
+        "address": "0x02078488",
+        "condition": "($r1 & 0x80000000) != 0"
+      },
+      "captures": {
+        "registers": ["r1", "lr"],
+        "memory": []
+      },
+      "savestate": "g3_verified",
+      "lua_plan": "scripts/emu/plans/g3_hp_delta_seek.json",
+      "expected_hit": {
+        "min": 1
+      },
+      "timeout_seconds": 180,
+      "positive_control": {
+        "kind": "plan_watch_change",
+        "watch": "hp_all.o1"
+      }
+    }
+  ]
+}

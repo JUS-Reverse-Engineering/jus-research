@@ -1,0 +1,320 @@
+{
+  "character": "Goku",
+  "series": "Dragon Ball",
+  "chr_b": 0,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; base Goku (db_b_01) is chr_b 0. Guide treats 4-koma base Goku, 5/6/7-koma Super Saiyan Goku (chr_b 1, db_b_02), and 8-koma Vegetto (chr_b 11, db_b_12 per the E0 roster pin 2026-10-18) as one continuous 'Goku' character progression via the evolution chart, so this file's top-level chr_b is set to base Goku per instructions; see unresolved for the SSJ/Vegetto split.",
+  "source": {"file": "47182-goku.txt", "gamefaqs_id": 47182, "author": "Terminus_Est90 (Azor)", "version": "1.01"},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter", "knowledge"],
+  "koma": [
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Kamehame ha. Damage: 29 to power/laughter, 43 to knowledge.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Warp kamehame ha. Damage: 29 to power/laughter, 43 to knowledge.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power/laughter (dual-listed)",
+      "hp": "152",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Kamehame ha",
+          "description": "Special A. No listed effect.",
+          "damage": "28 to power/laughter       42 to knowledge",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A: Kamehame ha\nEffects: no\nDamage: 28 to power/laughter       42 to knowledge"
+        },
+        {
+          "input": "X",
+          "name": "Dashare - Cheap Joke",
+          "description": "Special B. Causes a freeze effect and drains 1 SP bar from the opponent.",
+          "damage": "0",
+          "hits": null,
+          "properties": ["status:freeze"],
+          "quote": "Special B: Dashare – Cheap Joke\nEffects: causes freeze effect and drains 1 SP bar\nDamage: 0"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": "168",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Kaio Ken x20 kamehame ha",
+          "description": "Special A. No listed effect.",
+          "damage": "40 to power/laughter       60 to knowledge",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A: Kaio Ken x20 kamehame ha \nEffects: no\nDamage:  40 to power/laughter       60 to knowledge"
+        },
+        {
+          "input": "X",
+          "name": "Kaio Ken",
+          "description": "Special B. No listed additional effect, but can hit up to 5 times by pressing the X button (mash-extend).",
+          "damage": "36 to power/laughter        54 to knowledge",
+          "hits": "up to 5",
+          "properties": ["mash-extend", "multi-hit"],
+          "quote": "Special B: Kaio Ken\nEffects: none, can hit up to 5 times by pressing the X button\nDamage:  36 to power/laughter        54 to knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": "184",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Chou kamehameha",
+          "description": "Special A. No listed effect.",
+          "damage": "43 to power/laughter       64 to knowledge",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A: Chou kamehameha\nEffects: no\nDamage:  43 to power/laughter       64 to knowledge"
+        },
+        {
+          "input": "X",
+          "name": "Genki Dama",
+          "description": "Special B. Attack power increases by the number of characters in your deck.",
+          "damage": "50-70 to power/laughter       75-105  to knowledge",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "Special B: Genki Dama\nEffects: Attack increases by the number of characters in your deck\nDamage:  50-70 to power/laughter       75-105  to knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "power",
+      "hp": "200",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Warping chou kamehameha",
+          "description": "Special A. Press forward or back to teleport before firing. The guide notes the Super Saiyan transformation delays this kamehameha a bit, making him harder to combo with in some cases.",
+          "damage": "56 to power/laughter       84 to knowledge",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A: Warping chou kamehameha\nEffects: press forward or back to teleport before firing\nDamage:  56 to power/laughter       84 to knowledge"
+        },
+        {
+          "input": "X",
+          "name": "Genki Dama",
+          "description": "Special B. Attack power increases by the number of characters in your deck.",
+          "damage": "55-80 to power/laughter       82-120  to knowledge",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "Special B: Genki Dama\nEffects: Attack increases by the number of characters in your deck\nDamage:  55-80 to power/laughter       82-120  to knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": "power",
+      "hp": "216",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Warping Kamehame ha",
+          "description": "Special A. Tap any direction to teleport before firing (guide text has a typo, 'eleport').",
+          "damage": "72 to power/laughter       108 to knowledge",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A: Warping Kamehame ha\nEffects: Tap any direction to eleport before firing\nDamage:  72 to power/laughter       108 to knowledge"
+        },
+        {
+          "input": "X",
+          "name": "Vegetto Sword",
+          "description": "Special B. No listed effect; used in combos and strategy section as a fast hit good for edge-guarding and punishing.",
+          "damage": "50 to power/laughter       75  to knowledge",
+          "hits": null,
+          "properties": [],
+          "quote": "Special B: Vegetto Sword\nEffects: none\nDamage:  50 to power/laughter       75  to knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "First hit used to open essentially every combo in the guide (e.g. 'B, forward B, Up Y, kamehameha').",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Basic Combo:\nB, forward B, Up Y, kamehameha"
+    },
+    {
+      "input": "side B",
+      "name": "forward B",
+      "description": "Second hit used to extend combos after B in nearly every listed combo.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Basic Combo:\nB, forward B, Up Y, kamehameha"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Used as a combo opener/extender; the strategy section says it can be used to end combos early by teleporting up and away from opponents.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "-If you don't like blocking prematurely end combos with up Y while holding up. This will teleport you up and safe from them"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Standard combo hit used after B strings, e.g. 'B, Up B, Y, Forward Y'.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Basic combo 2:\nB, Up B, Y, Forward Y"
+    },
+    {
+      "input": "side Y",
+      "name": "forward Y",
+      "description": "Used to gain space/distance and keep enemies far; also useful for edge-guarding by keeping opponents from hanging on a ledge. Can be repeated (e.g. 3 times) in combos.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "-forward Y is your friend, use it to gain some space and keep enemies far"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Rising attack used mid-combo to launch/juggle the opponent before following up with a kamehameha or special; holding up while using it can teleport Goku up and away, ending combos safely.",
+      "damage": null,
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Notes: from the up Y rising attack combo the kamehameha however you have to summon kurapica between those 2 attacks, the result of the combo is an attack sealed opponent"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Not described anywhere in the guide.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": null
+    },
+    {
+      "input": "air Y",
+      "name": "aerial Y",
+      "description": "Recommended as a first attack when jumping in, especially in sudden death.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "-start jumping, nothing works better than using aerial Y as a first attack"
+    },
+    {
+      "input": "air B",
+      "name": "aerial B",
+      "description": "Used for edge-guarding; sends opponents into a quick knockdown/away from the ledge, though riskier if used near an occupied ledge.",
+      "damage": null,
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "-take advantage of forward Y and the aerial B attack when edge guarding. The first will keep them from hanging of a ledge while the second one will send them into a quick them, although with more risks if you are about to go into an occupied ledge use Aerial B to send them away from your ledge"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Not described anywhere in the guide as a forced-switch attack.",
+      "damage": null,
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": null
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Hold Select to recover SP gradually (base Goku entry under Ally Boosts/passives).",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action: Hold Select to Recover SP Gradually"
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "The guide's combos consistently chain B then forward B as the opening string before Y attacks or specials.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B, forward B, Up Y, kamehameha"
+    }
+  ],
+  "combos": [
+    "Basic Combo: B, forward B, Up Y, kamehameha",
+    "Basic combo 2: B, Up B, Y, Forward Y",
+    "Can't touch this: Equip 2 koma kurapica(hunterXhunter), B, forward B, up Y, activate kurapica, kamehameha",
+    "Shield shatter: Equip 2 koma Keigo Atobe(prince of tennis), B, forward B, Up Y, activate keigo, kamehameha",
+    "Sudden Death special: B, forward B, Y, Forward Y 3 times",
+    "Motionless pain: Equip 3 koma shun(saint seiya), B, Up B, activate shun, Y, X",
+    "BoBo kill: Have 7 koma Bo-bobo and gyro zeppelin 2 koma(jojo's bizarre adventure), B, forward B, Y, activate gyro, dream combo starting with bo-bobo",
+    "Ultimate Breaker: Equip 3 koma mello(death note), B, forward B, Y, activate mello, Forward Y, X",
+    "4 koma Goku - SP Drain Combo 1: Equip 3 koma shun or 2 koma nube, B, Up B, Up Y, shun/nube, Up X, repeat",
+    "4 koma Goku - SP Drain Combo 2: B, forward B, Up Y, Activate Shun/nube, Up X, repeat",
+    "5 koma Goku - Kaio Ken combo: Equip 2 koma Rei(hokuto no ken), B, Forward B, Forward Y(3 times), Up X(do the 5 hits), activate Rei(hokuto no ken)",
+    "5 koma Goku - Abyss Death: Equip 2 koma nube(jigoku sensei nube), B, Forward B, Y, activate nube, Up X(do the 5 hits), Up X(5x)",
+    "6 koma Goku: Refer to 7 koma goku Combos",
+    "7 koma Goku - Genki Dama finisher: Equip 3 koma shun(saint seiya), B, forward B, Y, activate shun, Up X",
+    "7 koma Goku - Critical Genki Dama: Equip 2 koma nube(jigoku sensei nube), B, forward B, Y, activate nube, Up X",
+    "7/8 koma Goku - Ultimate kame hame ha: Equip 3 koma seto kaiba(yu-gi-oh), B, forward B, Forward Y(3x), Activate seto kaiba, X(teleporting forward)",
+    "7 koma Goku - No escape: Equip 2 koma nube(jigoku sensei nube), B, Forward B, Forward Y(3x), activate nube, X, X",
+    "8 koma vegetto - Maniatic swing: B, forward B, Up X",
+    "8 koma vegetto - Up and Away: B, forward B, Up Y, Up X",
+    "8 koma vegetto - Ultimate Breaker: Equip 3 koma mello(death note), B, forward B, Y, activate mello, Forward Y, Up+X"
+  ],
+  "unresolved": [
+    "The guide's 'Goku's Evolution Chart' and 'Goku's Komas' sections use a single character label 'Goku' across the whole evolution line, but per docs/research/chr_b-Complete-Mapping.md these are actually THREE distinct chr_b rows: base Goku = chr_b 0 (db_b_01, 4-koma), Super Saiyan Goku = chr_b 1 (db_b_02, 5/6/7-koma), and Vegetto = chr_b 11 (db_b_12 per the E0 roster pin 2026-10-18, 8-koma, a fusion of Goku and Vegeta, not Goku himself). This file's top-level chr_b/koma array follows the guide's own presentation (one continuous progression) rather than splitting into three files; treat the 6/7/8-koma entries as describing chr_b 1 and chr_b 11 respectively, not chr_b 0.",
+    "The 4-koma entry lists 'Type: Laughter and Power' and gives dual damage numbers ('to power/laughter' vs 'to knowledge'), suggesting the damage varies by the koma's own nature rather than by two natures simultaneously; the guide's phrasing is ambiguous about whether 'power/laughter' means the move deals that damage when Goku's koma nature is power OR laughter, or something else. Recorded verbatim rather than resolved.",
+    "The 5-8 koma entries state 'Type: Power' only, but damage lines still list a 'to power/laughter' figure alongside 'to knowledge' — same ambiguous nature/damage relationship as the 4-koma entry, unresolved.",
+    "No down B, down Y, or down+B forced-switch move is described anywhere in the guide despite the schema expecting them; recorded as null/missing rather than invented.",
+    "The guide never gives an HP value for the 2-koma or 3-koma support entries (Kamehame ha / Warp kamehame ha), only damage.",
+    "Ally boosts and passives sections are split by form name ('Son Goku', 'Super Saiyan Son Goku', 'Vegetto') rather than by koma size, so passives/support effects/ally boosts per exact koma number (5 vs 6 vs 7) cannot be individually attributed beyond what's captured under 'Ally Boosts and passive abilities' — only the base Goku Ultimate Action ('Hold Select to Recover SP Gradually') was placed on the koma/moves entries; the SSJ passive ('Gain more SP when Health is low', 'max SP gauge increases on KO') and Vegetto passive ('Gain SP energy when blocking') are not attached to specific koma sizes in this file.",
+    "The guide describes a 'paralysis glitch' exploit (hitting with a multi-hit move right as paralysis would land keeps the opponent paralyzed after) that doesn't map to any single move/special field in the schema; noted here only.",
+    "Combos reference many support/help koma characters (Hanamichi Sakuragi, Shun, Trunks, Toki, Kurapica, Allen, Keigo Atobe, Inui Sadaharu, Nube, Ryota Miyagi, Usopp, Rei, Mello, Seto Kaiba, Gyro Zeppelin, Bo-bobo, Sanosuke) that are not Goku koma themselves; their effects are summarized under 'Supports' in the guide but are out of scope for this Goku-only moves/koma extraction beyond appearing in the combos list verbatim.",
+    "FAQ section is mostly joke/non-informational Q&A (e.g. 'Does goku smell good?') with no moveset content; skipped for extraction as it does not fit the schema.",
+    "Guide gives no separate description or numbers for 'B' and 'side B' alone outside of combo strings — description/damage for these two moves is inferred only from their consistent use as combo openers, not from a standalone move writeup; the guide never describes them in isolation."
+  ]
+}

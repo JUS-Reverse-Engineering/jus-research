@@ -1,0 +1,266 @@
+{
+  "character": "Rukia",
+  "series": "Bleach",
+  "chr_b": 41,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {
+    "file": "46229-rukia.txt",
+    "gamefaqs_id": 46229,
+    "author": "Shiroiame",
+    "version": null
+  },
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "Immunity to Freeze Status Effect"
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Kaizoukonpaku-Kon (Modsoul Kon)",
+          "description": "Rukia and Kon appear, and after a half second wait, Rukia kicks Kon forward (at the same speed as you would run with Speed Boost) for roughly 3/4 the length of the stage. Kon stops and kicks the first battle character he runs into, dealing damage and knocking them down.",
+          "damage": "20(30)",
+          "hits": null,
+          "properties": ["knockdown"],
+          "quote": "Rukia and Kon appear, and after a half second wait, Rukia kicks Kon forward (at the same speed as you would run with Speed Boost) for roughly 3/4 the length of the stage. Kon stops and kicks the first battle character he runs into, dealing damage and knocking them down."
+        }
+      ],
+      "support_effect": "Kicks Kon forward roughly 3/4 the length of the stage; Kon kicks the first battle character he runs into, dealing damage and knocking them down."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Gikongan-Chappi (Righteous Soul Pill-Chappy)",
+          "description": "Rukia appears and stands for half a second, then grabs whatever enemy is in front of her, and leaps half a screen's distance away. Good for Ring Outs since she doesn't let go until she lands on the ground.",
+          "damage": "0",
+          "hits": null,
+          "properties": ["forced switch"],
+          "quote": "Rukia appears and stands for half a second, then grabs whatever enemy is in front of her, and leaps half a screens distance away. The best use for this is obviously Ring Outs, especially since she doesn't let go until she lands on the ground."
+        }
+      ],
+      "support_effect": "Grabs the enemy in front of her and leaps half a screen's distance away, useful for Ring Outs; doesn't let go until she lands."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 128,
+      "passives": [
+        "Ability: sodenoshirayuki (Sleeve of White Snow) - Enables Air Dash and gives an immunity to Freeze effect. Also recovers SP when attacking with Support Koma."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hadounosanjuusan-Soukatsui (Destructive Teachings 31-Falling Pale Fire)",
+          "description": "After roughly a 1/3 second startup, Rukia fires a large blast forward, dealing damage and knocking the enemy away and down. Reaches roughly a full half screen; the enemy needs half their body on screen to be hit.",
+          "damage": "25(37)",
+          "hits": null,
+          "properties": ["projectile", "knockdown"],
+          "quote": "After roughly a 1/3 second startup, Rukia fires a large blast forward, dealing damage and knocks them awayand down. It can roughly reach a full half screen, the enemy needs one half of their body to be on screen and it should be able to hit them."
+        },
+        {
+          "input": "up X",
+          "name": "Sodenoshirayuki (Sleeve of White Ice)",
+          "description": "Rukia's Shinigami outfit appears, she pulls her sword back, then slices sideways, causing a quick spread of ice on the floor that freezes anything on the ground roughly 2/3 of a full screen outwards from Rukia. There is roughly a 3/4 second startup, and it can spread to any other platform within range/on the same level of height.",
+          "damage": "5-20(7-30)",
+          "hits": null,
+          "properties": ["status:freeze", "charge"],
+          "quote": "Rukia's Shinigami outfit appears, she pulls her sword back, then slices sideways, causing a quick spread of ice on the floor that Freezes anything on the ground roughly 2/3 of a full screen outwards from Rukia. There is roughly a 3/4 second until Rukia actually does the attack itself, and it can spread to any other platform within range/on the same level of height."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 144,
+      "passives": [
+        "Ability: sodenoshirayuki (Sleeve of White Snow) - Enables Air Dash and gives an immunity to Freeze effect. Also recovers SP when attacking with Support Koma."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hadounosanjuusan-Soukatsui (Way of Destruction 31-Falling Pale Fire)",
+          "description": "Same as 4 Koma Rukia's, but she jumps into the air (allowing an Air Dash, jump away, another attack, or a drop) and can charge it. Charging doesn't increase damage; instead she leaps forward until she contacts an enemy, the ground/platform, or you let go, in which case she fires automatically. Useful for diving into a group of enemies from another platform or a moderate distance.",
+          "damage": "32(48)",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "The same as 4 Koma Rukia's, however there are two notable differences, the first being that she jumps into the air (from there you can Air Dash, jump away, attack again, or simply drop). The next difference is that she can charge it, although, this doesn't increase damage as her other charge attacks do, she merely leaps forward until she comes in contact with an enemy, the ground/platform, or you let go in which case, she'll automatically fire."
+        },
+        {
+          "input": "up X",
+          "name": "Sodenoshirayuki (Sleeve of White Ice)",
+          "description": "Same as 4 Koma Rukia's except it does more damage and it can reach across the screen.",
+          "damage": "8-24(12-36)",
+          "hits": null,
+          "properties": ["status:freeze", "charge"],
+          "quote": "Same as 4 Koma Rukia's except that it does more damage and it can reach across the screen."
+        }
+      ]
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 160,
+      "passives": [
+        "Ability: sodenoshirayuki (Sleeve of White Snow) - Enables Air Dash and gives an immunity to Freeze effect. Also recovers SP when attacking with Support Koma."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Bakudouichi-Sai (Way of Binding One-Obstruction)",
+          "description": "Rukia quickly dashes forward and paralyzes whoever's in front of her. No damage. Good Ringout move since Rukia moves and knocks them back a distance you can repeat; combos with 3 Koma Hitsugaya, and can be chained into a semi-infinite with (Forward+)B, Y, X plus SP recovery boosting Help Koma.",
+          "damage": "0",
+          "hits": null,
+          "properties": ["status:paralysis", "mash-extend"],
+          "quote": "Rukia quickly dashes forward and paralyzes whoever's in front of her. No damage though."
+        },
+        {
+          "input": "up X",
+          "name": "Sodenoshirayuki-Somenomai [Tsukishiro] (Sleeve of White Ice-First Dance [White Moon])",
+          "description": "Same range as the 5 Koma version, but now the iced floor itself doesn't freeze; instead a blast upwards from the ice that follows does the freezing, and can send the enemy flying upwards.",
+          "damage": "3-15(5-22), 4-16(6-24)",
+          "hits": 2,
+          "properties": ["status:freeze", "charge"],
+          "quote": "It has the same range as the 5 Koma Rukia's, however now the iced floor doesn't do the freezing, the blast upwards from the ice that follows, does. The blast can also send them flying upwards."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Weak attack, universal to all Rukia battle koma.",
+      "damage": "7(10)",
+      "hits": null,
+      "properties": [],
+      "quote": "B - 7(10)"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Upwards weak attack, universal to all Rukia battle koma.",
+      "damage": "7(10)",
+      "hits": null,
+      "properties": [],
+      "quote": "Up+B - 7(10)"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Force Character Change Attack, universal to all Rukia battle koma.",
+      "damage": "7(10)",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Down+B - 7(10)"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Forward weak attack, universal to all Rukia battle koma.",
+      "damage": "8(12)",
+      "hits": null,
+      "properties": [],
+      "quote": "Left/Right+B - 8(12)"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Aerial weak attack, universal to all Rukia battle koma.",
+      "damage": "8(12)",
+      "hits": null,
+      "properties": [],
+      "quote": "Midair B - 8(12)"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Strong attack, universal to all Rukia battle koma.",
+      "damage": "10(15)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y - 10(15)"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Upwards strong attack, universal to all Rukia battle koma. Chargeable; second value pair is the fully-charged damage.",
+      "damage": "3-21(4-31) ; 6-36(9-54)",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "Up+Y - 3-21(4-31) ; 6-36(9-54)"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Guard Break attack, universal to all Rukia battle koma.",
+      "damage": "14(21)",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down+Y - 14(21)"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Forward strong attack, universal to all Rukia battle koma. Chargeable; second value pair is the fully-charged damage.",
+      "damage": "3-21(4-31) ; 6-36(9-54)",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "Left/Right+Y - 3-21(4-31) ; 6-36(9-54)"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Aerial strong attack, universal to all Rukia battle koma. Chargeable; second value pair is the fully-charged damage.",
+      "damage": "3-21(4-31) ; 6-36(9-54)",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "Midair Y - 3-21(4-31) ; 6-36(9-54)"
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Rukia breathes out. It counts as a hit, though it deals no damage, and recovers 1/5 of a full SP bar.",
+      "damage": "0",
+      "hits": 1,
+      "properties": [],
+      "quote": "Select - Breathes out, causing one hit, no damage, and recovers 1/5 SP bar."
+    }
+  ],
+  "combos": [
+    "(Forward+)B, Y, X, run a little, repeat - semi-infinite with 6 Koma Rukia given enough SP recovery rate Help Koma",
+    "Activate 3 Koma Hitsugaya then instantly follow up with 6 Koma Rukia's X (paralysis dash) before Hitsugaya's attack starts, to send the opponent a good distance while still being able to Dash in before the freeze runs out",
+    "Freeze with 3 Koma Hitsugaya, then dive in with Rukia's 5 Koma Up+X, or Dash in and follow up with 6 Koma Rukia's X",
+    "Dash into combos, using 5 Koma Special attack (X) or Left/Right+Y (if not enough SP) as a combo ender"
+  ],
+  "unresolved": [
+    "Guide gives no explicit source 'version' number in the header/credits; only author name and email are stated.",
+    "Section KR5 intro states 'the number in brackets are against characters weak to the nature of the attack' but KR4 states the bracketed number is 'the 50% damage boost from hitting an opponent of a weaker nature' - both describe the same bracket mechanic, listed here for completeness since phrasing differs slightly between sections.",
+    "The Koma Evolution Chart price table (Red/Green/White gem costs for koma sizes 2-6) does not fit the schema and is omitted from structured fields.",
+    "Compatible Koma (Health Boost) list - Abarai Renji, Kuchiki Byakuya, Kon - does not fit the schema's move/koma fields and is omitted.",
+    "Deck-building recommendations (KR6) for Help/Support/Battle Koma partners are guide commentary/opinion, not Rukia's own moves or koma stats, and are omitted from structured fields.",
+    "General character evaluation text in KR7 (below average health, average damage, relies on speed/Air Dash) is prose commentary not tied to a specific move stat, so it is only partially reflected via the combos list.",
+    "4 Koma X evaluation explicitly says it's outclassed by 5 Koma's Up+X for being 'seemingly faster, more damaging' - this cross-koma comparison/contradiction in usefulness is noted here rather than forced into a single move entry."
+  ]
+}

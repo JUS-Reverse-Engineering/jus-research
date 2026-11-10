@@ -1,0 +1,217 @@
+0214DBCC  f8b5      push    {r3, r4, r5, r6, r7, lr}
+0214DBCE  061c      adds    r6, r0, #0
+0214DBD0  7348      ldr     r0, [pc, #0x1cc]
+0214DBD2  0168      ldr     r1, [r0]
+0214DBD4  491c      adds    r1, r1, #1
+0214DBD6  0160      str     r1, [r0]
+0214DBD8  7249      ldr     r1, [pc, #0x1c8]
+0214DBDA  5a20      movs    r0, #0x5a
+0214DBDC  0b68      ldr     r3, [r1]
+0214DBDE  8000      lsls    r0, r0, #2
+0214DBE0  1a5e      ldrsh   r2, [r3, r0]
+0214DBE2  002a      cmp     r2, #0
+0214DBE4  5ad0      beq     #0x214dc9c
+0214DBE6  011d      adds    r1, r0, #4
+0214DBE8  595c      ldrb    r1, [r3, r1]
+0214DBEA  0029      cmp     r1, #0
+0214DBEC  4ed0      beq     #0x214dc8c
+0214DBEE  0021      movs    r1, #0
+0214DBF0  001d      adds    r0, r0, #4
+0214DBF2  1954      strb    r1, [r3, r0]
+0214DBF4  0120      movs    r0, #1
+0214DBF6  35f70cee  blx     #0x2083810
+0214DBFA  6a48      ldr     r0, [pc, #0x1a8]
+0214DBFC  0168      ldr     r1, [r0]
+0214DBFE  4120      movs    r0, #0x41
+0214DC00  8000      lsls    r0, r0, #2
+0214DC02  0858      ldr     r0, [r1, r0]
+0214DC04  15f088e8  blx     #0x2162d18
+0214DC08  6648      ldr     r0, [pc, #0x198]
+0214DC0A  0168      ldr     r1, [r0]
+0214DC0C  1120      movs    r0, #0x11
+0214DC0E  0001      lsls    r0, r0, #4
+0214DC10  0858      ldr     r0, [r1, r0]
+0214DC12  1df032e8  blx     #0x216ac78
+0214DC16  6348      ldr     r0, [pc, #0x18c]
+0214DC18  0168      ldr     r1, [r0]
+0214DC1A  4320      movs    r0, #0x43
+0214DC1C  8000      lsls    r0, r0, #2
+0214DC1E  0858      ldr     r0, [r1, r0]
+0214DC20  1bf054e8  blx     #0x2168ccc
+0214DC24  604d      ldr     r5, [pc, #0x180]
+0214DC26  0024      movs    r4, #0
+0214DC28  0127      movs    r7, #1
+0214DC2A  1ce0      b       #0x214dc66
+0214DC2C  5f4a      ldr     r2, [pc, #0x17c]
+0214DC2E  381c      adds    r0, r7, #0
+0214DC30  8a5c      ldrb    r2, [r1, r2]
+0214DC32  a040      lsls    r0, r4
+0214DC34  0242      tst     r2, r0
+0214DC36  0ed0      beq     #0x214dc56
+0214DC38  0543      orrs    r5, r0
+0214DC3A  a000      lsls    r0, r4, #2
+0214DC3C  0818      adds    r0, r1, r0
+0214DC3E  dc30      adds    r0, #0xdc
+0214DC40  0168      ldr     r1, [r0]
+0214DC42  6a20      movs    r0, #0x6a
+0214DC44  8000      lsls    r0, r0, #2
+0214DC46  0858      ldr     r0, [r1, r0]
+0214DC48  5949      ldr     r1, [pc, #0x164]
+0214DC4A  0069      ldr     r0, [r0, #0x10]
+0214DC4C  c06d      ldr     r0, [r0, #0x5c]
+0214DC4E  426b      ldr     r2, [r0, #0x34]
+0214DC50  1140      ands    r1, r2
+0214DC52  4163      str     r1, [r0, #0x34]
+0214DC54  06e0      b       #0x214dc64
+0214DC56  a000      lsls    r0, r4, #2
+0214DC58  0818      adds    r0, r1, r0
+0214DC5A  dc30      adds    r0, #0xdc
+0214DC5C  0068      ldr     r0, [r0]
+0214DC5E  391c      adds    r1, r7, #0
+0214DC60  09f084e9  blx     #0x2156f6c
+0214DC64  641c      adds    r4, r4, #1
+0214DC66  4f48      ldr     r0, [pc, #0x13c]
+0214DC68  0168      ldr     r1, [r0]
+0214DC6A  5620      movs    r0, #0x56
+0214DC6C  8000      lsls    r0, r0, #2
+0214DC6E  0858      ldr     r0, [r1, r0]
+0214DC70  8442      cmp     r4, r0
+0214DC72  dbdb      blt     #0x214dc2c
+0214DC74  0520      movs    r0, #5
+0214DC76  8001      lsls    r0, r0, #6
+0214DC78  0858      ldr     r0, [r1, r0]
+0214DC7A  291c      adds    r1, r5, #0
+0214DC7C  4068      ldr     r0, [r0, #4]
+0214DC7E  e3f632ed  blx     #0x20316e4
+0214DC82  4848      ldr     r0, [pc, #0x120]
+0214DC84  0022      movs    r2, #0
+0214DC86  0168      ldr     r1, [r0]
+0214DC88  4848      ldr     r0, [pc, #0x120]
+0214DC8A  0a54      strb    r2, [r1, r0]
+0214DC8C  4548      ldr     r0, [pc, #0x114]
+0214DC8E  0268      ldr     r2, [r0]
+0214DC90  5a20      movs    r0, #0x5a
+0214DC92  8000      lsls    r0, r0, #2
+0214DC94  115e      ldrsh   r1, [r2, r0]
+0214DC96  491e      subs    r1, r1, #1
+0214DC98  1152      strh    r1, [r2, r0]
+0214DC9A  48e0      b       #0x214dd2e
+0214DC9C  421d      adds    r2, r0, #5
+0214DC9E  9a5c      ldrb    r2, [r3, r2]
+0214DCA0  002a      cmp     r2, #0
+0214DCA2  44d0      beq     #0x214dd2e
+0214DCA4  0022      movs    r2, #0
+0214DCA6  441d      adds    r4, r0, #5
+0214DCA8  1a55      strb    r2, [r3, r4]
+0214DCAA  0b68      ldr     r3, [r1]
+0214DCAC  1a52      strh    r2, [r3, r0]
+0214DCAE  0c68      ldr     r4, [r1]
+0214DCB0  c31c      adds    r3, r0, #3
+0214DCB2  e254      strb    r2, [r4, r3]
+0214DCB4  0c68      ldr     r4, [r1]
+0214DCB6  031d      adds    r3, r0, #4
+0214DCB8  e254      strb    r2, [r4, r3]
+0214DCBA  431d      adds    r3, r0, #5
+0214DCBC  0c68      ldr     r4, [r1]
+0214DCBE  2838      subs    r0, #0x28
+0214DCC0  e254      strb    r2, [r4, r3]
+0214DCC2  0968      ldr     r1, [r1]
+0214DCC4  0858      ldr     r0, [r1, r0]
+0214DCC6  511e      subs    r1, r2, #1
+0214DCC8  4068      ldr     r0, [r0, #4]
+0214DCCA  e3f60ced  blx     #0x20316e4
+0214DCCE  0020      movs    r0, #0
+0214DCD0  35f79eed  blx     #0x2083810
+0214DCD4  3348      ldr     r0, [pc, #0xcc]
+0214DCD6  0168      ldr     r1, [r0]
+0214DCD8  4120      movs    r0, #0x41
+0214DCDA  8000      lsls    r0, r0, #2
+0214DCDC  0858      ldr     r0, [r1, r0]
+0214DCDE  15f024e8  blx     #0x2162d28
+0214DCE2  3048      ldr     r0, [pc, #0xc0]
+0214DCE4  0168      ldr     r1, [r0]
+0214DCE6  1120      movs    r0, #0x11
+0214DCE8  0001      lsls    r0, r0, #4
+0214DCEA  0858      ldr     r0, [r1, r0]
+0214DCEC  1cf0d8ef  blx     #0x216aca0
+0214DCF0  2c48      ldr     r0, [pc, #0xb0]
+0214DCF2  0168      ldr     r1, [r0]
+0214DCF4  4320      movs    r0, #0x43
+0214DCF6  8000      lsls    r0, r0, #2
+0214DCF8  0858      ldr     r0, [r1, r0]
+0214DCFA  1af0f2ef  blx     #0x2168ce0
+0214DCFE  5627      movs    r7, #0x56
+0214DD00  0024      movs    r4, #0
+0214DD02  284d      ldr     r5, [pc, #0xa0]
+0214DD04  bf00      lsls    r7, r7, #2
+0214DD06  07e0      b       #0x214dd18
+0214DD08  a000      lsls    r0, r4, #2
+0214DD0A  0818      adds    r0, r1, r0
+0214DD0C  dc30      adds    r0, #0xdc
+0214DD0E  0068      ldr     r0, [r0]
+0214DD10  0021      movs    r1, #0
+0214DD12  09f02ce9  blx     #0x2156f6c
+0214DD16  641c      adds    r4, r4, #1
+0214DD18  2968      ldr     r1, [r5]
+0214DD1A  c859      ldr     r0, [r1, r7]
+0214DD1C  8442      cmp     r4, r0
+0214DD1E  f3db      blt     #0x214dd08
+0214DD20  edf660eb  blx     #0x203b3e4
+0214DD24  8830      adds    r0, #0x88
+0214DD26  0068      ldr     r0, [r0]
+0214DD28  0021      movs    r1, #0
+0214DD2A  00f024eb  blx     #0x214e374
+0214DD2E  1d48      ldr     r0, [pc, #0x74]
+0214DD30  0068      ldr     r0, [r0]
+0214DD32  01f009fe  bl      #0x214f948
+0214DD36  0028      cmp     r0, #0
+0214DD38  0dd0      beq     #0x214dd56
+0214DD3A  1a48      ldr     r0, [pc, #0x68]
+0214DD3C  0068      ldr     r0, [r0]
+0214DD3E  01f0fbfd  bl      #0x214f938
+0214DD42  1848      ldr     r0, [pc, #0x60]
+0214DD44  0068      ldr     r0, [r0]
+0214DD46  d430      adds    r0, #0xd4
+0214DD48  0068      ldr     r0, [r0]
+0214DD4A  00f04cee  blx     #0x214e9e4
+0214DD4E  7068      ldr     r0, [r6, #4]
+0214DD50  1849      ldr     r1, [pc, #0x60]
+0214DD52  daf618eb  blx     #0x2028384
+0214DD56  00f0c9f8  bl      #0x214deec
+0214DD5A  39f7e4ec  blx     #0x2087724
+0214DD5E  0228      cmp     r0, #2
+0214DD60  01d1      bne     #0x214dd66
+0214DD62  0120      movs    r0, #1
+0214DD64  00e0      b       #0x214dd68
+0214DD66  0020      movs    r0, #0
+0214DD68  0028      cmp     r0, #0
+0214DD6A  17d0      beq     #0x214dd9c
+0214DD6C  0d48      ldr     r0, [pc, #0x34]
+0214DD6E  0022      movs    r2, #0
+0214DD70  0168      ldr     r1, [r0]
+0214DD72  4b69      ldr     r3, [r1, #0x14]
+0214DD74  05e0      b       #0x214dd82
+0214DD76  9000      lsls    r0, r2, #2
+0214DD78  0818      adds    r0, r1, r0
+0214DD7A  c06c      ldr     r0, [r0, #0x4c]
+0214DD7C  0028      cmp     r0, #0
+0214DD7E  02d0      beq     #0x214dd86
+0214DD80  521c      adds    r2, r2, #1
+0214DD82  9a42      cmp     r2, r3
+0214DD84  f7db      blt     #0x214dd76
+0214DD86  9a42      cmp     r2, r3
+0214DD88  04da      bge     #0x214dd94
+0214DD8A  0b48      ldr     r0, [pc, #0x2c]
+0214DD8C  0168      ldr     r1, [r0]
+0214DD8E  9142      cmp     r1, r2
+0214DD90  00d0      beq     #0x214dd94
+0214DD92  0260      str     r2, [r0]
+0214DD94  0848      ldr     r0, [pc, #0x20]
+0214DD96  0068      ldr     r0, [r0]
+0214DD98  04f06ee9  blx     #0x2152078
+0214DD9C  f8bd      pop     {r3, r4, r5, r6, r7, pc}
+0214DD9E  c046      mov     r8, r8
+0214DDA0  100f      lsrs    r0, r2, #0x1c
+0214DDA2  0a02      lsls    r2, r1, #8
+0214DDA4  6029      cmp     r1, #0x60
+0214DDA6  1702      lsls    r7, r2, #8

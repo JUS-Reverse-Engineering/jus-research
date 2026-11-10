@@ -1,0 +1,225 @@
+{
+  "character": "Piccolo",
+  "series": "Dragon Ball",
+  "chr_b": 8,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46844-piccolo.txt", "gamefaqs_id": 46844, "author": "Yamcha", "version": "1.1"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Adds slow health regeneration to a battle character."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "special",
+          "name": "Nobiru ude",
+          "description": "Pulls the opponent towards you.",
+          "damage": "16 to Power, 24 to Knowledge, 16 to Laughter",
+          "hits": null,
+          "properties": [],
+          "quote": "Effect: Pulls the opponent towards you."
+        }
+      ],
+      "support_effect": "Pulls the opponent towards you.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "special",
+          "name": "Makonkosappo",
+          "description": "Piccolo fires his trademark move at the opposition in front of you.",
+          "damage": "5-23 to Power, 7-34 to Knowledge, 5-23 for Laughter",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Effect: Piccolo fires his trademark move at the opposition in front of you"
+        }
+      ],
+      "support_effect": "Piccolo fires his trademark move at the opposition in front of you.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 136,
+      "passives": ["Gradually Regain Health", "Gain more SP when fighting Laughter type opponents."],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Makankosappo",
+          "description": "A beam that drills through multiple enemies. Has a brief charge time before firing.",
+          "damage": "3-27 [P][L], 4-45 [K]",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "A beam that drills through multiple enemies. Has a brief charge time before firing."
+        },
+        {
+          "input": "up X",
+          "name": "Sai Sei - Rebirth",
+          "description": "Piccolo tears his arm off and to recover a substantial amount of health.",
+          "damage": "N/A",
+          "hits": null,
+          "properties": ["status:heal"],
+          "quote": "Piccolo tears his arm off and to recover a substantial amount of health."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 152,
+      "passives": ["Gradually Regain Health", "Gain more SP when fighting Laughter type opponents."],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Makankosappo",
+          "description": "The powered up version of his trademark move. Hold X to charge it up until the aura around his hand gets more powerful.",
+          "damage": "3-48 [P][L], 4-66 [K]",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "The powered up version of his trademark move. Hold X to charge it up until the aura around his hand gets more powerful."
+        },
+        {
+          "input": "up X",
+          "name": "Kakusanyudokodan - Homing Fireballs",
+          "description": "6 Fireballs are summoned and simultaneously close in on an adversary. They must be on your screen for all the fireballs to connect.",
+          "damage": "36 [P][K], 54 [L]",
+          "hits": null,
+          "properties": ["projectile", "multi-hit"],
+          "quote": "6 Fireballs are summoned and simultaneously close in on an adversary. They must be on your screen for all the fireballs to connect."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Arm Swing",
+      "description": "The basis for all combos, it is a simple short range starting move. Fast and effective to get the job done.",
+      "damage": "8 [Power][Knowledge], 12 [Laughter]",
+      "hits": null,
+      "properties": [],
+      "quote": "The basis for all combos, it is a simple short range starting move. Fast and effective to get the job done."
+    },
+    {
+      "input": "side B",
+      "name": "Kousengan - Eye Beam",
+      "description": "A nice fast move. You can use it as the next part of a combo after the idle B, or to poke an unexpecting adversary. There isn't too much lag time afterwards so it's a safe poking move to rely on.",
+      "damage": "8 [P][K], 12 [L]",
+      "hits": null,
+      "properties": [],
+      "quote": "A nice fast move. You can use it as the next part of a combo after the idle B, or to poke an unexpecting adversary. There isn't too much lag time afterwards so it's a safe poking move to rely on."
+    },
+    {
+      "input": "up B",
+      "name": "Upward Kick",
+      "description": "Piccolo's air launcher move. Use this when you want to kick someone upwards for an aerial combo. It's a very fast move so feel free to use it on its own or integrate it into a combo.",
+      "damage": "9 [P][K], 13 [L]",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Piccolo's air launcher move. Use this when you want to kick someone upwards for an aerial combo."
+    },
+    {
+      "input": "down B",
+      "name": "Quick Knee",
+      "description": "The character change move. Don't rely on this too much unless you really need to finish off a character that is almost dead.",
+      "damage": "8 [P][K], 12 [L]",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "The character change move. Don't rely on this too much unless you really need to finish off a character that is almost dead."
+    },
+    {
+      "input": "air B",
+      "name": "Aerial Arm Swing",
+      "description": "Combo filler to be used after the Up B. It has a short reach so you have to be close for it to connect.",
+      "damage": "8 [P][K], 12 [L]",
+      "hits": null,
+      "properties": [],
+      "quote": "Combo filler to be used after the Up B. It has a short reach so you have to be close for it to connect."
+    },
+    {
+      "input": "Y",
+      "name": "Bakurikimaha - Exploding Powerful Demon Wave",
+      "description": "This is Piccolo's hardest hitting attack. However it has significant lag time after it is used and knocks your opponent down, so it is best reserved for ending a combo. If you miss when using this move, Piccolo is wide open to a counterattack.",
+      "damage": "15 [P][K], 22 [L]",
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "This is Piccolo's hardest hitting attack. However it has significant lag time after it is used and knocks your opponent down, so it is best reserved for ending a combo."
+    },
+    {
+      "input": "side Y",
+      "name": "Nobiru ude - Expanding Arm",
+      "description": "Piccolo extends his arm forward to bring the fight to him. This is an excellent surprise attack, poke, and combo extender all in one package.",
+      "damage": "11 [P][K], 16 [L]",
+      "hits": null,
+      "properties": [],
+      "quote": "Piccolo extends his arm forward to bring the fight to him. This is an excellent surprise attack, poke, and combo extender all in one package."
+    },
+    {
+      "input": "up Y",
+      "name": "Kuchikarakikouha - Energy Wave from the Mouth",
+      "description": "An anti-air attack that fires at a 45-50 degree angle. This is an excellent move to ground those pesky airborne fighters.",
+      "damage": "15 [P][K], 22 [L]",
+      "hits": null,
+      "properties": [],
+      "quote": "An anti-air attack that fires at a 45-50 degree angle. This is an excellent move to ground those pesky airborne fighters like Lenalee, Eve, and Jaguar."
+    },
+    {
+      "input": "down Y",
+      "name": "Tsuno Beam - Antenna Beam",
+      "description": "The guard breaker move. Use it to help any shy turtlers get into the fight.",
+      "damage": "15 [P][K], 22 [L]",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "The guard breaker move. Use it to help any shy turtlers get into the fight."
+    },
+    {
+      "input": "air Y",
+      "name": "Delayed Air Fireball",
+      "description": "Piccolo leaves a purple fireball in the air. It will activate after either 2 seconds pass or an enemy approaches it.",
+      "damage": "8 [P][K], 12 [L]",
+      "hits": null,
+      "properties": ["projectile", "status:delayed detonation"],
+      "quote": "Piccolo leaves a purple fireball in the air. It will activate after either 2 seconds pass or an enemy approaches it. Just think of it as a mobile air mine."
+    }
+  ],
+  "combos": [
+    "B -> Forward B -> Y",
+    "B -> Forward B -> Forward Y -> Y",
+    "B -> Up B -> B",
+    "B -> Up B -> Y",
+    "B -> Up B -> B -> Y"
+  ],
+  "unresolved": [
+    "Guide does not give a SELECT Ultimate Action move description outside the koma's Ultimate Action line ('Hold Select to slowly regain SP energy' for both 4 and 5 koma) — recorded as a passive-adjacent koma detail rather than a top-level move, since the guide presents it under koma info, not the Controls and Moves section.",
+    "Koma section shows koma sizes as ASCII grids of brackets ([ ] layouts) for the 2, 3, 4, and 5 koma rather than a plain number; sizes recorded above (2, 3, 4, 5) are inferred from the koma piece count in the guide's title lines (e.g. 'Piccolo 2 Koma', 'Piccolo 4 Koma'), not measured from the bracket grids.",
+    "The 2 koma and 3 koma entries are listed under '~Help and Support Koma~' with 'Effect:' lines but the guide never explicitly labels them 'support' vs 'help' individually — both are grouped under one heading covering help and support; treated the Piccolo Help Koma line as the help koma and the 2/3 koma (which have damage values and Effect descriptions like specials) as support koma.",
+    "No explicit 'up X' input label is given for Rebirth/Homing Fireballs in the source text — the guide lists them as 'Up X (4 Koma)' and 'Up X (5 Koma)' headers, which is used directly as the input.",
+    "No down+B forced-switch damage distinction or explicit 'forced switch' wording is stated by the guide beyond 'The character change move' — property inferred from schema's own note that down+B is always the forced-switch move."
+  ]
+}

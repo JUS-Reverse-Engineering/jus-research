@@ -1,0 +1,322 @@
+{
+  "character": "Arale",
+  "series": "Dr. Slump",
+  "chr_b": 56,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; row: ds_b_01, Arale, Dr. Slump",
+  "source": {
+    "file": "47894-arale.txt",
+    "gamefaqs_id": 47894,
+    "author": "Kristian Inola aka. \"Summonmaster\"",
+    "version": "0.7"
+  },
+  "kit_type": "standard",
+  "natures_available": ["laughter", "power"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": ["Arale is naturally immune to the Judgment Status effect, so it would be a waste to link a help koma that grants immunity to judgment."],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Arale makes whoever her help koma is linked to invulnerable to the Judgment status effect (Countdown timer starting from 10 to KO)."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Arale 2 - Poo Toss. Exactly like her 5 Koma's Poo Toss, causing support seal and no damage upon hit. There is a bit more startup time in the support form of the move.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Arale 3 - N'Cha Beam: Arale fires a mouth beam that is laughter-based, very similar to her X attacks.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Arale is naturally immune to the Judgment Status effect.",
+        "Arale takes more damage from lightning attacks.",
+        "Arale is weak to Knowledge based attacks (except for her 6 Koma Power)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "N'Cha Cannon",
+          "description": "A plain beam-style attack; the weakest version of Arale's four beams (all her X attacks are her mouth beam). Used after a number of side Y attempts to break the opponent's guard.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Just a very plain old beam-style attack. Nothing noteworthy, except that this is the obviously the weakest version out of Arale's 4 beams (yes, all the X attacks are just Arale's mouth beam)."
+        },
+        {
+          "input": "up X",
+          "name": "Car Toss",
+          "description": "Pushes a blocking opponent toward guard break; comes out slowly and explodes briefly so dashing opponents can still be hit.",
+          "damage": null,
+          "hits": null,
+          "properties": ["guard break"],
+          "quote": "This is good for pushing your opponent to a point where his or her guard will soon be broken. ... Comes out slowly though. It also explodes for a very brief moment so dashing opponents may get damaged anyways."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Arale is naturally immune to the Judgment Status effect.",
+        "Arale takes more damage from lightning attacks.",
+        "Arale is weak to Knowledge based attacks (except for her 6 Koma Power)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "N'Cha Cannon",
+          "description": "More damage than the 4 Koma version of the beam. Used after a number of side Y attempts when the opponent's guard is close to breaking.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "More damage than the 4 Koma version of the beam. You'll usually use this after an arbitrary number of >+Y attempts in a row when the opponent's guard is close to breaking."
+        },
+        {
+          "input": "up X",
+          "name": "Poo Toss",
+          "description": "The giant pink poo Arale tosses causes Support Seal and drains 2 SP, but does no actual damage. Covers a large arc with some startup, lingers on screen, and ricochets off walls.",
+          "damage": "no actual damage",
+          "hits": null,
+          "properties": ["status:support seal", "status:SP drain"],
+          "quote": "The giant pink poo that Arale tosses causes Support Seal, as well as draining 2 SP. However, the poo does no actual damage. ... this giant poo also ricochets of off walls"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Arale is naturally immune to the Judgment Status effect.",
+        "Arale takes more damage from lightning attacks.",
+        "Arale is weak to Knowledge based attacks (except for her 6 Koma Power)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "N'Cha Cannon",
+          "description": "More damage than all previous versions of the beam; now thick and yellow. Used after a number of side Y attempts when the opponent's guard is close to breaking.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "More damage than all previous versions of the beam. Now quite thick and yellow, you'll usually use this after an arbitrary number of >+Y attempts in a row when the opponent's guard is close to breaking."
+        },
+        {
+          "input": "up X",
+          "name": "Earth Rate",
+          "description": "Takes a small chunk off a blocking opponent's guard threshold and hits both sides around Arale. Recommended only in 2v2/FFA due to startup time; considered inferior to similar moves.",
+          "damage": null,
+          "hits": null,
+          "properties": ["guard break"],
+          "quote": "It seems to take a chunk off of a blocking opponent's threshold, but not very much. As well, it hits both sides around Arale."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Arale is naturally immune to the Judgment Status effect.",
+        "Arale takes more damage from lightning attacks.",
+        "This Power-nature 6 Koma is the stated exception to Arale's weakness against Knowledge based attacks."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "N'Cha Cannon",
+          "description": "Guide does not separately describe the Power-nature 6 Koma's specials; it only notes this variant exists on the evolution chart and is the exception to Arale's Knowledge weakness.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "6 Koma (Power) -> Anytime after unlocking Arale's 6 Koma (Laughter) AND buying the evolution path on Obocchaman's evolution chart..."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Arale is naturally immune to the Judgment Status effect.",
+        "Arale takes more damage from lightning attacks.",
+        "Arale is weak to Knowledge based attacks (except for her 6 Koma Power)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "N'Cha Cannon",
+          "description": "The same as her other X specials, but the beam is very strong now, with Obocchaman firing a beam from his mouth and Gatchan shooting electricity to help. Does large damage.",
+          "damage": "large damage",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "The same as all of her other X specials, but the beam is very strong now, with Obocchaman firing a beam from his mouth, as well as Gatchan shooting electricity to help you too. This does large damage"
+        },
+        {
+          "input": "up X",
+          "name": "Everyone in Penguin Village Parade",
+          "description": "Comes out almost instantaneously, Arale's strongest point for this move; weak damage compared to most specials, used as a halting attack. Guaranteed to come out when used during invincibility frames after getting up without rolling from a knockdown. Tends to break guard if the opponent does not twitch block, and sometimes knocks them far away on a successful hit. Horrendous recovery time if it whiffs or is twitch blocked.",
+          "damage": null,
+          "hits": null,
+          "properties": ["guard break", "knockback"],
+          "quote": "This comes out almost instantaneously which is the strongest point of this move. It's pretty weak in comparison to almost any other damage dealing special of any character... Tends to break an opponent's guard if they do not twitch block from start to finish, and sometimes knocks them far away on a successful hit."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Arale turns around and smacks the opponent with her bum. Rather short range and slow; must be used point blank. Always chains to side B. Appears to have a degree of autoguard, canceling and clashing with a good amount of normal hits.",
+      "damage": null,
+      "hits": null,
+      "properties": ["counter"],
+      "quote": "Arale turns around and smacks you with her bum. - Rather short range. An abysmal B attack. The range sucks, and it's sort of slow. ... This always chains to >+B, making it one of the few true chain options Arale has."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Arale pokes the opponent twice with a stick. Good range, speed, and minimal startup/recovery. Primary poking attack; nothing chains after it unless a support is used.",
+      "damage": null,
+      "hits": 2,
+      "properties": [],
+      "quote": "Arale pokes you twice with a stick. - All right. A very nice poking attack, literally. ... Careful! Nothing chains after this unless you uses a support!"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Arale detaches her head at an upwards angle, hitting opponents at a 45 degree angle in the air. Mostly used to link into up Y. Bad recovery time; unsafe if whiffed or blocked.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Arale detaches her head at an upwards angle. - Good for linking into other attacks. Mostly used to link into ^+Y, which puts you in the air for more options."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Arale does a downwards spike with her hands. Short range, best used as a mix-up with air Y. Knocks the opponent down, is an instant ringout on stages with gaps or pits, and should also be used to manipulate air time.",
+      "damage": null,
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "Arale does a downwards spike with her hands. - The best way to use it is as a mix up along with air Y. ... this is obviously an instant ringout on stages with gaps or pits like the Yu-Gi-Oh and Naruto stages"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Arale pokes the opponent with poo on a stick. Adds a little more range and damage to the side B attack, sort of. Slower to come out and doesn't chain to or from anything. Unsafe unless covered by a Parade or supports; cancels some attacks if it connects.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Arale pokes you...with poo on a stick. - Adds a little more range and damage to the >+B attack, sort of. Obviously this comes out a lot slower. It doesn't chain to or from anything really."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Arale flings two pieces of poo forward in an arc-like motion. Called Arale's key move. Drains SP from the opponent (without giving it back to Arale). Safe from afar unless the opponent has a beam extension or fast/long dash; ricochets off walls, leading to natural guard breaks; lingers briefly on the ground. Has noticeable startup and end lag, making Arale punishable if the opponent closes the gap.",
+      "damage": null,
+      "hits": 2,
+      "properties": ["projectile", "status:SP drain"],
+      "quote": "Arale flings two pieces of poo forwards in an arc-like motion. - ***THIS IS ARALE'S KEY MOVE!*** ... The twin poos drain SP from the opponent (but don't give it back to you) ... As well, the poo ricochets off of walls!"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Arale launches herself into the air. Great to chain into air Y; can also be followed by air B or nothing (to cross up), or a fast fall. Usually chained from up B upon hit since it is risky on its own, especially if it misses. Disadvantageous if push blocked due to large recovery time.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Arale launches herself into the air. - Great to chain into air Y. ... If this is push blocked, then you are at a disadvantage since the recovery time is large"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Arale flings two piles of poo downwards at roughly a forty-five degree angle. Has the same SP-draining property as side Y and also ricochets off walls. Sets up the opponent to keep blocking, or for big damage on multiple hits. The opponent can dash under Arale during the startup, leaving her open. Poo disappears after a certain distance in the air but lingers on the ground if it hits.",
+      "damage": null,
+      "hits": null,
+      "properties": ["projectile", "status:SP drain"],
+      "quote": "Arale flings two piles of poo downwards at roughly a fourty-five degree angle. - Usually sets up the opponent to keep blocking, and best case, for big damage. ... It also has the SP draining property of the >+Y attack. These poo ricochet off of walls as well!"
+    },
+    {
+      "input": "down B",
+      "name": "Forced Switch",
+      "description": "Arale runs forward pretty far and fast. Good range and unexpected, with a degree of autoguard while running, and can cross up the opponent. Useful for distance manipulation and getting back to center stage from an edge; the opponent can switch back if not followed up properly.",
+      "damage": null,
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Arale runs forward pretty far and fast. - Arale's forced switch move. It has very good range and is rather unexpected. ... You have some degree of autoguard while she runs, and you can cross up the opponent with this move."
+    },
+    {
+      "input": "down Y",
+      "name": "Guard Break",
+      "description": "Arale shoots electricity horizontally forward, with Gatchan's help. A decent guard break: doesn't come out too sluggishly, has a nice hitbox covering jump-ins and a short distance in front of her, and can even hit a little behind her.",
+      "damage": null,
+      "hits": null,
+      "properties": ["guard break", "status:lightning"],
+      "quote": "Arale shoots electricity horizontally forward, with Gatchan as well. - This is actually quite a decent guard break. It doesn't come out as sluggishly as some other guard breaks, and it has a nice hitbox covering jump-ins, and a short distance in front of Arale."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Arale crouches and pokes a pink poo with a stick a short distance in front of her. The poking motion itself does not register as a hit; only the poo hitting the opponent counts, and it gives the opponent SP when it hits. Pressing select repeatedly can make the poo hit up to three times, and it can turn the opponent around if positioned behind them. Entirely misses if the opponent is point blank.",
+      "damage": null,
+      "hits": "up to 3",
+      "properties": ["mash-extend"],
+      "quote": "Pressing Select causes Arale to crouch and poke a pink poo with a stick a little distance in front of her. The pink poo actually gives the opponent sp when it hits, and the actual poking motion of the stick doesn't register as a hit! ... You can keep pressing select to have the poo hit up to three times, and in addition, it turns the opponent around if you position it so the poo appears behind them."
+    }
+  ],
+  "combos": [
+    "B -> side B (B always chains to side B)",
+    "B -> up B (as a setup for a support combo, lower chance of being broken out)",
+    "up B -> up Y -> air Y (or air B)",
+    "Guard break (down Y) -> N'Cha Cannon (X)",
+    "Multiple side Y throws -> X beam when opponent's guard is close to breaking",
+    "Guard break -> 7 Koma Parade (up X), for near-guaranteed ring out near stage edges (Instant Parade RO)"
+  ],
+  "unresolved": [
+    "The guide states in 'Playing as Arale' that B needs 'that extra 15 points of damage' to justify the risk, implying B's damage may be 15, but this number is not given in the NORMAL ATTACKS section itself and is not confirmed as an exact damage value for the move.",
+    "The guide never gives numeric damage or hit-count values for any X special, side B, up B, air B, Y, up Y, down B, or down Y — only comparative language ('more damage than the previous version', 'large damage', 'no actual damage').",
+    "The 6 Koma (Power) variant is only described via the evolution/gem-cost chart (HOW TO GET ARALE section); the SPECIAL ATTACKS section does not separately describe its X or up X specials, so its specials entry here reuses the Laughter 6 Koma's N'Cha Cannon description with a note, which is an assumption, not a guide statement.",
+    "No per-koma HP values are given anywhere in the guide.",
+    "The Table of Contents lists 'd+Y (Guard Break)' under NORMAL ATTACKS but the guide's own move list header for it is written as '| d+Y |' with description text, not a separate 'B string' entry; the guide never describes a distinct 'B string' as referenced in the schema notes, only the B -> side B chain.",
+    "Support koma sizes 2 and 3 are not assigned a stated 'nature' for the 2 Koma (Poo Toss) support; only the 3 Koma (N'Cha Beam) is explicitly called laughter-based.",
+    "Global passive traits (Judgment immunity, extra lightning damage taken, Knowledge weakness except 6 Koma Power) are described once in a MISCELLANEOUS section, not per-koma; they were duplicated onto every battle koma (4/5/6/7) here since the schema requires passives per koma entry, but the guide itself treats them as character-wide, not koma-specific.",
+    "Boost/passive info (Arale boosts Goku; is boosted by Norimaki Senbee, Obocchaman, Goku, +8 J-Soul) did not fit the schema's koma/move/support/help fields and is omitted from the structured data; noting it here for completeness.",
+    "Guard, Win Pose, and Lose Pose descriptions also did not fit the schema and are omitted: Guard = 'Arale uses her fingers to plug her ears' (does not block guard breaks); Win Pose = 'puts on her cat ear hood and smiles cheerfully'; Lose Pose = 'something explodes and Arale is burnt, sighing out a puff of air.'"
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "character": "Naruto",
+  "series": "Naruto",
+  "chr_b": 20,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md, row chr_b[20] = na_b_01 Naruto, the base/standard Naruto. Table also lists chr_b[21] Sasuke, chr_b[22] Sakura, chr_b[23] Kakashi, chr_b[24] Kyuubi Naruto in the same series, but these are distinct characters, not variants of this Naruto entry, so no ambiguity in the pick itself (flagged in unresolved for completeness).",
+  "source": {
+    "file": "47526-naruto.txt",
+    "gamefaqs_id": 47526,
+    "author": "son1cwildfire",
+    "version": null
+  },
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "gives the ability to wall jump"
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Naruto's sexy no jutsu. Requires a little bit of start-up time, but stuns the enemy. Does no damage to the opponent.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Uzumaki Rendan",
+          "description": "Same move as the 4 koma's special B, used as a support attack.",
+          "damage": "30 damage to power/laughter, 45 damage to knowledge",
+          "hits": null,
+          "properties": [],
+          "quote": "The Naruto 3 Koma support is the 4 koma's special B, which is the Uzumaki Rendan. This support koma does 30 damage to characters of power/laughter nature and 45 damage to characters of knowledge nature."
+        }
+      ],
+      "support_effect": "Performs the Uzumaki Rendan; 30 damage to power/laughter characters, 45 damage to knowledge characters.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power/laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Rasengan",
+          "description": "Basic Rasengan special A; needs a little start-up time.",
+          "damage": "32 damage to power/laughter, 48 damage to knowledge",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "The super A is a basic Rasengan that needs a little start-up time... 4 Koma Power and Laughter / Special A (Rasengan) 32 damage / 48 damage against knowledge."
+        },
+        {
+          "input": "up X",
+          "name": "Uzumaki Rendan",
+          "description": "Special B; surprisingly stronger than the Rasengan.",
+          "damage": "36 damage to power/laughter, 54 damage to knowledge",
+          "hits": null,
+          "properties": [],
+          "quote": "the super B is the Uzumaki Rendan, which is surprisingly stronger than the Rasengan... Special B (Uzumaki Rendan) 36 damage against power/laughter / 54 damage against knowledge."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Rasengan",
+          "description": "Easier to combo into than the 4 koma version; begins with 2 kicks while the Rasengan is charging.",
+          "damage": "40 damage to power/laughter, 60 damage to knowledge",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "Naruto's super A now begins with 2 kicks while the Rasengan is charging, so it is easy to combo into... Special A (Rasengan) 40 damage / 60 damage against knowledge."
+        },
+        {
+          "input": "up X",
+          "name": "Shadow Clone Attack",
+          "description": "A shadow clone attack that can hit people within your view; used less often than the Rasengan.",
+          "damage": "32 damage to power/laughter, 48 damage to knowledge",
+          "hits": null,
+          "properties": [],
+          "quote": "Super B is a shadow clone attack that can hit people within your view... Special B (Shadow Clone Attack) 32 damage against power/laughter / 48 damage against knowledge."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Rasengan",
+          "description": "A powerful Rasengan that is held by 2 Narutos.",
+          "damage": "48 damage to power/laughter, 72 damage to knowledge",
+          "hits": null,
+          "properties": [],
+          "quote": "Naruto's special A is a powerful Rasengan that is held by 2 Narutos... Special A (Rasengan) 48 damage / 72 damage against knowledge."
+        },
+        {
+          "input": "up X",
+          "name": "Rasengan Combo",
+          "description": "Naruto first kicks the opponent up and summons shadow clones to hold the opponent down, then uses the Rasengan on the held opponent.",
+          "damage": "44 damage to power/laughter, 66 damage to knowledge",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "he first kicks the opponent up and summons some shadow clones to hold the opponent down. Naruto uses the Rasengan on his enemy while he/she/it is being held down by the shadow clones... Special B (Rasengan Combo) 44 damage / 66 damage against knowledge."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Basic B attack.",
+      "damage": "8 (P/L), 12 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "B  8  12"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Basic side B attack.",
+      "damage": "8 (P/L), 12 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "B>  8  12"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Basic up B attack.",
+      "damage": "8 (P/L), 12 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "B^  8  12"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Basic down B attack.",
+      "damage": "8 (P/L), 12 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "B-down  8  12"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Basic aerial B attack.",
+      "damage": "8 (P/L), 12 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial B  8  12"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Basic Y attack.",
+      "damage": "15 (P/L), 22 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y  15  22"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Basic side Y attack.",
+      "damage": "12 (P/L), 18 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y>  12  18"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Basic up Y attack.",
+      "damage": "16 (P/L), 24 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y^  16  24"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Basic down Y attack.",
+      "damage": "16 (P/L), 24 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y-down  16  24"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Basic aerial Y attack.",
+      "damage": "16 (P/L), 24 (K)",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial Y  16  24"
+    },
+    {
+      "input": "other",
+      "name": "Guard break",
+      "description": "Naruto's guard break is a ranged attack, which is good because most guard break attacks only work up close.",
+      "damage": null,
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Naruto's guard break is fortunately, a ranged attack. This is good because most guard break attacks only work if the opponent is right in front of you."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Lets Naruto absorb one hit for free while the wood icon in the bottom left corner is still showing. Best used against opponents with rapid-punching specials: get hit once, then teleport behind them and attack.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Naruto's ultimate action lets you get hit once if you get hit while the wood icon on the bottom left corner is still there. I only suggest using the ultimate action when you're opponent has a rapid punching special... If you get hit while they are punching you with X, teleport behind them and attack them from there."
+    }
+  ],
+  "combos": [
+    "B, B^, Y> = 28 (P/L), 42 (K)",
+    "B, B^, Y = 31 (P/L), 46 (K)",
+    "B, B^, Y^, B = 40 (P/L), 60 (K)",
+    "B, B^, Y^, Y = 48 (P/L), 72 (K)",
+    "4 Koma Power: B, B^, X^ = 52 (P/L), 78 (K)",
+    "4 Koma Laughter: B, B^, X^ = 60 (P), 70 (K), 52 (L)",
+    "5 Koma: B, B^, Y, X = 67 (P/L), 100 (K)",
+    "6 Koma: B, B^, X^ = 60 (P/L), 90 (K)",
+    "6 Koma: B, B^, X = 64 (P/L), 96 (K)",
+    "small characters like Hiei can escape after the B^ in the 6-koma combos; medium or larger characters should be hit",
+    "Support combo (4 koma, with Lucifer 3): B, B^, L, X^, B, B^, X^ = 136 (Power), 188 (Knowledge), 136 (Laughter)",
+    "Support combo (5 koma, with Zoro 3): B, B^, Y, Z, X^ = 95 (Power), 130 (Knowledge), 95 (Laughter)",
+    "Support combo (5 koma, with Zoro 3): B, B^, Y, Z, X^, B, B^, Y, X, Z = 198 (Power), 281 (Knowledge), 198 (Laughter)",
+    "Support combo (6 koma, with Piccolo 2 koma): B, B^, Y>, P, B, B^, X^ = 104 (Power), 156 (Knowledge), 104 (Laughter)",
+    "Support combo (6 koma, with Piccolo 2 koma): B, B^, Y>, P, B, B^, X, P, B, B^, X^ = 186 (Power), 276 (Knowledge), 186 (Laughter)",
+    "small characters like Hiei can escape after the second B^ in the 6-koma support combo; medium or larger characters should be hit"
+  ],
+  "unresolved": [
+    "The guide never mentions a down+B forced-switch attack for Naruto; omitted rather than guessed.",
+    "The guide describes a ranged 'guard break' but never states which input (B/Y/X direction) triggers it; recorded as input 'other' with no damage value.",
+    "The guide labels the koma-4/5/6 specials only as 'Special A' and 'Special B', never naming a button input. Inputs 'X' (Special A) and 'up X' (Special B) in this file are inferred from the combo notation ('B, B^, X^' and 'B, B^, X') in section III/V, not stated explicitly by the guide as button codes.",
+    "4 koma has two nature variants (power and laughter) with identical Special A/B base damage, but the laughter-version combo 'B, B^, X^' is listed as 60(P)/70(K)/52(L) -- a three-way split rather than the usual power/laughter-vs-knowledge split used everywhere else in the guide. Kept verbatim in combos; not reconciled.",
+    "No koma HP values are given anywhere in this guide.",
+    "No version number is stated for this FAQ; only a 2007 copyright year appears.",
+    "Ally boost section (Sakura, Gaara, Jiraiya) describes other characters' help/support effects as they apply to a Naruto deck, not Naruto's own moves; included here only as background, not as Naruto koma/move entries.",
+    "chr_b-Complete-Mapping.md table also lists chr_b[21] Sasuke, chr_b[22] Sakura, chr_b[23] Kakashi, and chr_b[24] Kyuubi Naruto under series 'Naruto', but these are separate characters (not alternate Naruto komas), so chr_b=20 for base Naruto was unambiguous; noting for completeness since the mapping doc's header calls out a related correction about chr_b[24]."
+  ]
+}

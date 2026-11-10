@@ -1,0 +1,318 @@
+{
+  "character": "Seiya",
+  "series": "Saint Seiya",
+  "chr_b": 63,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46807-seiya.txt", "gamefaqs_id": 46807, "author": "d3m0nsl4y3r", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": ["power"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Decreases damage done by special attacks when attached to a Battle Character.",
+      "quote": "Seiya's help koma, when attached to a Battle Character, decreases damage done by special attacks."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Heals your Battle Character a little and removes status effects.",
+      "help_effect": null,
+      "name": "Shield of Athena",
+      "quote": "Seiya's 2 koma(Shield of Athena) heals your Battle Character a little and removes status effects."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Seiya appears above you, launching a barrage of energy bullets down on the enemy. Often used to break chains or combos.",
+      "help_effect": null,
+      "name": "Pegasus Ryu Sei Ken",
+      "quote": "Seiya's 3 koma(Pegasus Ryu Sei Ken) causes him to appear above you, launching a barrage of energy bullets down on the enemy. This koma is often used to break chains or combos."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Help Koma Boost: Shiryu, Shun, Hyoga",
+        "J-Soul: 136"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Pegasus Ryu Sei Ken",
+          "description": "Fires a barrage of energy bullets. Fires a second barrage if tapping X repeatedly.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile", "mash-extend"],
+          "quote": "Special 1: Pegasus Ryu Sei Ken - Fires a barrage of energy bullets. Fires a second barrage if tapping X repeatedly."
+        },
+        {
+          "input": "X",
+          "name": "Pegasus Sui Sei Ken",
+          "description": "Fires a medium-sized energy bullet in the air.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special 2: Pegasus Sui Sei Ken - Fires a medium-sized energy bullet in the air."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Help Koma Boost: Shiryu, Shun, Hyoga",
+        "J-Soul: 152"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Pegasus Ryu Sei Ken",
+          "description": "Fires a barrage of energy bullets. Fires a large bullet after initial barrage if tapping X repeatedly.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile", "mash-extend"],
+          "quote": "Special 1: Pegasus Ryu Sei Ken - Fires a barrage of energy bullets. Fires a large bullet after initial barrage if tapping X repeatedly."
+        },
+        {
+          "input": "X",
+          "name": "Pegasus Sui Sei Ken",
+          "description": "Fires three medium-sized energy bullets into the air.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile", "multi-hit"],
+          "quote": "Special 2: Pegasus Sui Sei Ken - Fires three medium-sized energy bullets into the air."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Help Koma Boost: Shiryu, Shun, Hyoga",
+        "J-Soul: 168"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Pegasus Ryu Sei Ken 'BIG BANG'",
+          "description": "Fires a short barrage of energy bullets. If the initial barrage hits the opponent, tapping X repeatedly triggers an explosion after the barrage.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile", "mash-extend"],
+          "quote": "Special 1: Pegasus Ryu Sei Ken 'BIG BANG' - Fires a short barrage of energy bullets. If the initial barrage hits your opponent, tap X repeatedly for an explosion after the barrage."
+        },
+        {
+          "input": "X",
+          "name": "Pegasus Rolling Crush",
+          "description": "Seiya stands in one place and grabs the opponent, taking them up then smashing them into the ground.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Special 2: Pegasus Rolling Crush - Seiya stands in one place and grabs the opponent, taking them up then smashing them into the ground."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Help Koma Boost: Shiryu, Shun, Hyoga",
+        "J-Soul: 168"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Pegasus Ryu Sei Ken 'BIG BANG'",
+          "description": "Almost the same as the 6 koma Special 1 but the opponent does not need to be hit to activate the explosion. Tapping X repeatedly yields more hits.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile", "mash-extend"],
+          "quote": "Special 1: Pegasus Ryu Sei Ken 'BIG BANG' - This is almost the same as 6 koma Seiya's Special 1 but you do not need to hit the opponent to activate the explosion. Tapping X repeatedly will yield more hits."
+        },
+        {
+          "input": "X",
+          "name": "Pegasus Rolling Crush",
+          "description": "Almost identical to the 6 koma Special 2, but Seiya dashes forward a short distance when activated. This dash also blocks any frontal attacks.",
+          "damage": null,
+          "hits": null,
+          "properties": ["counter"],
+          "quote": "Special 2: Pegasus Rolling Crush - Again, almost identical to 6 koma Seiya's Special 2 but when this special is activated, Seiya dashes forward a short distance. This dash also blocks any frontal attacks."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Help Koma Boost: Athena, Mu, Ryotsu(Kochi Kame)",
+        "J-Soul: 200",
+        "Also called Gold Saint Seiya"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Pegasus Ryu Sei Ken 'BIG BANG'",
+          "description": "Different from the 6 and 7 koma versions in that there is no explosion at the end. Instead, Seiya releases a more straight-forward barrage of energy bullets after the initial barrage.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special 1: Pegasus Ryu Sei Ken 'BIG BANG' - This special is different from 7 koma and 6 koma in that there is no explosion at the end of the special. Instead, Seiya releases a more straight-forward barrage of energy bullets after the initial barrage."
+        },
+        {
+          "input": "X",
+          "name": "Saggitarius Arrow",
+          "description": "Seiya pulls out a bow and fires a straight beam of golden energy into the air.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special 2: Saggitarius Arrow - Seiya pulls out a bow and fires a straight beam of golden energy into the air."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Seiya does a simple forward punch. Fairly fast and good for starting combos.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B:Seiya does a simple forward punch. Fairly fast and good for starting combos."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Seiya steps forward while punching with energy surrounding his fist. Pretty decent, rather like Seiya's regular B attack.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B+right or B+left:Seiya steps forward while punching with energy surrounding his fist. Pretty decent, rather like Seiya's regular B attack."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Seiya performs an uppercut. Good for launching the enemy a short distance into the air.",
+      "damage": null,
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "B+up:Seiya performs an uppercut. Good for launching the enemy a short distance into the air."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Seiya makes a burst of energy around him. Changes the opponent's Battle Character if it hits.",
+      "damage": null,
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "B+down:Seiya makes a burst of energy around him. Changes the opponents Battle Character if it hits."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Seiya chops downwards. Decent spike attack.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B(aerial):Seiya chops downwards. Decent spike attack."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Seiya steps forward while releasing a burst of energy bullets from his fist. Tapping Y quickly yields more hits, up to 10 maximum. Good for edge-guarding and good for finishing combos.",
+      "damage": null,
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Y:Seiya steps forward while releasing a burst of energy bullets from his fist(Tapping Y quickly yields more hits, up to 10 maximum.) Good for edge-guarding and good for finishing combos."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Seiya steps forward while firing a large energy bullet out of his fist which travels a short distance.",
+      "damage": null,
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Y+right or Y+left:Seiya steps forward while firing a large energy bullet out of his fist which travels a short distance."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Seiya jumps while releasing a burst of energy bullets from his fist. Tapping Y quickly yields more hits, up to 13 maximum. Good for hitting opponents above you.",
+      "damage": null,
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Y+up:Seiya jumps while releasing a burst of energy bullets from his fist(Tapping Y quickly yields more hits, up to 13 maximum.) Good for hitting opponents above you."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Seiya punches the ground around him. Breaks enemy's guards.",
+      "damage": null,
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Y+down:Seiya punches the ground around him. Breaks enemy's guards."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Seiya kicks downwards at a 45 degree angle. Deals decent damage and is fairly fast.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Y(aerial):Seiya kicks downwards at a 45 degree angle. Deals decent damage and is fairly fast."
+    },
+    {
+      "input": "select",
+      "name": null,
+      "description": "Seiya does a pose while glowing blue. This recharges SP a little at a time, and should only be used if the SP bar is almost full.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Select:Seiya does a pose while glowing blue. This recharges SP a little at a time, and should only be used if your bar is almost full."
+    }
+  ],
+  "combos": [
+    "7 koma Seiya's special + Shishio 2 koma sends your opponent flying because of the explosion at the end of Seiya's special and leaves them with a burn effect because of Shishio. This combo can be done with all of Seiya's koma, but the damage output decreases as the koma size decreases."
+  ],
+  "unresolved": [
+    "The guide's evolution chart shows a separate 2/3-koma support branch ([S2]-[S3]) alongside the 4-8 battle-koma branch, both stemming from the free help koma [H]. The 8-koma form is explicitly labeled 'Gold Saint Seiya' in this guide's section heading, distinct from base bronze-cloth Seiya (4-7 koma) -- this may correspond to the separate 'Gold Seiya' character at chr_b 64 noted in docs/research/chr_b-Complete-Mapping.md, or it may just be this guide's label for Seiya's own 8-koma gold-cloth form. Top-level chr_b is set to 63 (base Seiya) per instructions; this 8-koma entry is included under that character's koma list as written by the guide, but the chr_b 63 vs 64 boundary for this specific koma is unresolved.",
+    "'J-Soul' values (136/152/168/168/200) are given per koma size but are not part of the schema (not hp as commonly understood, no explanit); recorded verbatim in each koma's passives array as raw text rather than interpreted as hp.",
+    "'Help Koma Boost' lists (Shiryu, Shun, Hyoga for koma 4-7; Athena, Mu, Ryotsu(Kochi Kame) for koma 8) describe which OTHER characters' help koma synergize with Seiya, not a self-passive in the usual sense; recorded verbatim in passives for lack of a better field.",
+    "Gem/evolution costs (Support 2/3, Battle 4-8, Athena unlock) are omitted per scope (economy/evolution costs excluded, battle-mechanics-only).",
+    "The guide never gives numeric damage or hit counts for any move or special -- all damage/hits fields are null throughout, per the guide simply not stating them (no numbers invented)."
+  ]
+}

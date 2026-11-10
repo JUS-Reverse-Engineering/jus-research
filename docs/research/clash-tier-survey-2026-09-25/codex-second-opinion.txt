@@ -1,0 +1,174 @@
+codex exec (OpenAI Codex v0.156.1, model gpt-6-luna, read-only sandbox, reasoning medium), session 01a0d8c1-6659-7100-9f8c-a848e4223823, 2026-09-25.
+Prompt: codex-prompt.txt. Final answer below, verbatim; the tool-call transcript is not kept.
+
+## Q1. Save-state RAM image
+
+The file is `19,285,389` bytes (`0x0126458D`). Its first 16 bytes contain:
+
+- `0x00`: `MELN`
+- `0x04`: version `14`
+- `0x08`: size `0x0126458D` (the file size)
+- `0x0C`: zero
+
+At `0x10` is the `NDSGO` marker, followed by header bytes through `0x23`. The main RAM image begins at **file offset `0x24`**, mapping file offset `0x24 + (address - 0x02000000)` to a DS main RAM address.
+
+This mapping is supported by comparing the bytes there with `arm9.bin`: many independent 16-byte samples match at the same `+0x24` displacement. The ARM9 file is `0xA9158` bytes; `659,394` bytes match at that displacement, with differences in runtime-modified locations. For example, the first ARM9 bytes match at state offset `0x24`, and the sample at ARM9 offset `0x10000` matches at state offset `0x10024`. So this is not a byte-for-byte comparison of the whole image, but the consistent alignment establishes the mapping.
+
+## Q2. Pointers and character record
+
+Using the mapping above, the three words are:
+
+| DS address | State file offset | Word |
+|---|---:|---:|
+| `0x02181B28` | `0x181B4C` | `0x022286E0` |
+| `0x021DEB1C` | `0x1DEB40` | `0x022286E0` |
+| `0x021DEB3C` | `0x1DEB60` | `0x00000000` |
+
+Starting with `P = 0x022286E0`:
+
+- `[P+0x1A8]`: address `0x02228888` contains `0x02206958`
+- `R = [0x02206958+0x10] = 0x0220FA94`
+- `[R+0x6C]`: address `0x0220FB00` contains `0x023DCA60`
+- `B = [0x023DCA60+0x0C] = 0x021BA240`
+
+At `B`, the state contains the full contents of **`na_b_04.bin`** (760 bytes). The byte at **`B+0` is `0x03`**.
+
+## Q3. Function `0x0207D440`
+
+Let `n` be the halfword loaded from `[r6+0x0E]` (`r6` is copied from `r1`). The function stores a pointer to `[r5+0x10]`.
+
+For `n >= 0x100`, the instructions at `0x0207D4B4–0x0207D4D4` compute:
+
+```text
+base = [[r4+0x6C]+0x0C]
+record = base + 0x14 * (n - 0x100)
+[r5+0x10] = record
+```
+
+For `n < 0x100`, `0x0207D570–0x0207D57C` compute:
+
+```text
+record = 0x0209FC2C + 0x14 * n
+[r5+0x10] = record
+```
+
+The disassembly uses `mla` with multiplier `0x14` in both paths. In the lower path, the literal at `0x0207D840` is `0x0209FC2C`. In the upper path, `r4+0x6C` and then offset `+0x0C` supply the base.
+
+The function initializes `[r5+0x14]` from `[r4+0x34]` and `[r5+0x18]` from `[r4+0x38]` (`0x0207D498–0x0207D4A4`).
+
+For `n >= 0x100`, `[r5+0x1C]` starts as `[r4+0x3C]` with bits `28–29` cleared (`bic #0x30000000`). It then reads `record[0]`:
+
+- If nonzero, it sets bit 28 of `[r5+0x14]`, clears bit 29, and, if bit 12 of the resulting word is set, sets bit 27 of `[r5+0x1C]`.
+- If zero, it sets bit 29, then ANDs with the literal mask `0xEFFFEFFF` at `0x0207D83C`. That mask clears bits 28 and 12 while retaining bit 29.
+- If bit 8 of `[r5+0x14]` is set, and bit 28 is also set, it ORs `0x09F0` and bit 28 into `[r5+0x1C]`.
+- If the low nibble of `[r5+0x1C]` is nonzero, that nibble is copied into bits 4–7.
+
+For `n < 0x100`, the function ORs table entries indexed by `n` into the three words:
+
+- `[r5+0x14]`: table at `0x0209FB84`
+- `[r5+0x18]`: table at `0x0209FBBC`
+- `[r5+0x1C]`: table at `0x0209FBF4`, ORed with `[r4+0x3C]`
+
+The literal addresses are `0x0207D844`, `0x0207D848`, and `0x0207D84C`, respectively. Entries `0–13` in those three tables are:
+
+```text
+n       +14 table   +18 table   +1C table
+0       20000000    00000000    488FC000
+1       10400000    00000000    58DF28FF
+2       40000000    00000000    48DF0800
+3       00000000    00000000    00000000
+4       20000000    00000001    08AFC200
+5       20000000    00000000    08AFC200
+6       00000800    00000000    00000000
+7       00010000    00000000    509FFFFF
+8       00010000    00000000    509FFFFF
+9       00020000    00000000    509EFFFF
+10      00040000    00000000    FFFFFFFF
+11      00080000    00000000    5FFFFFF0
+12      10800000    00000000    109EFFF0
+13      20000000    00000000    08AFC200
+```
+
+The function continues to add flags derived from the record’s word at `record+8`. At `0x0207D684–0x0207D6E8`, it tests each input bit `i` and ORs table entry `i` into `[r5+0x14]` and `[r5+0x18]`. The mask table begins at `0x0209FD44` (literal at `0x0207D854`); the `+0x18` masks begin `0x80` bytes later, at `0x0209FDC4`.
+
+These record bits can supply the following output bits:
+
+- `[r5+0x14]`: input word bits `0, 1, 12, 14` set output bits `26, 27, 24, 25`, respectively.
+- `[r5+0x18]`: input bits `5→0`, `6→3`, `7→4`, `8→1`, `9→2`, `10→6`, `11→7`, `13→9`, `17→10`, `18→12`, `19→13`, `20→16`, `21→17`, `22→18`.
+
+The input word is little-endian: input bits `0–7` are driven by record byte `+8`, bits `8–15` by `+9`, bits `16–23` by `+10`, and bits `24–31` by `+11`. Separately, `record[0]` drives the mutually exclusive bit-28/bit-29 behavior in the `n >= 0x100` path described above. I don’t see a record-byte contribution to `[r5+0x18]` outside the `record+8` word loop.
+
+Other literals used in this function include `0x0207D838 = 0x0214BE10` (global pointer), `0x0207D850 = 0x000010F0`, and `0x0207D854 = 0x0209FD44`.
+
+## Q4. Conditions before the compare at `0x0207FD08`
+
+The loop derives the nodes at `0x0207FC10–0x0207FC1C`:
+
+```text
+r7 = [[r4+0x0C]+0x1C]
+r6 = [[r4+0x08]+0x1C]
+```
+
+The byte compare at `0x0207FD08` is reached only when these preceding checks pass:
+
+| Address | Field tested | Required condition |
+|---|---|---|
+| `0x0207FBF0` | `[ [r5+8] + 0x34 ]` | Bits 11 and 19 clear. `sb` is loaded from literal `0x020801F4`, whose value is `0x00080800`. |
+| `0x0207FC08` | `[r4+0x10]`, byte | Bit 2 clear. |
+| `0x0207FC24` | `r7+0x14` | Bits 11 and 19 clear (`tst r3,sb`). |
+| `0x0207FC30–0x0207FC3C` | `r6+0x14` | Bit 28 set and bit 30 clear. |
+| `0x0207FC44` | `r7+0x1C` | Bit 28 clear. |
+| `0x0207FC50–0x0207FC58` | `[r7+0x0C]+0x40` (owner of node `r7`) | Bit 7 clear. |
+
+There is also a path condition at `0x0207FC5C–0x0207FC98`: if bit 27 of `r6+0x14` is set, then bit 12 of `r7+0x14` must be clear, and the byte at `[r6+0x10]` must be greater than or equal to `[r7+0x10]` to continue. If bit 27 is clear, this earlier byte-order gate is bypassed.
+
+## Q5. Calls at `0x02080120–0x020801D0`
+
+The bytes compared at `0x02080130` are:
+
+```text
+r2 = byte at [r5+0x10]
+r1 = byte at [r6+0x10]
+```
+
+Equality exits at `0x02080134`. For unequal bytes, the function first checks `r6+0x14` bit 30 at `0x02080138`.
+
+**Call to `0x020808C0`:**
+
+- With the saved owner word’s bit 2 set (`[r4+0x44]`, saved at `[sp]`), if `r6+0x14 & 0x00080800` is zero and `sl == 0`, it calls `0x020808C0` at `0x0208016C`. This route does not compare the two byte values for ordering.
+- With that saved bit 2 clear, it calls `0x020808C0` at `0x020801B4` if `r5+0x14` bit 30 is set, `r6+0x14` bit 29 is clear, and `sl == 0`. This route also does not compare byte ordering.
+
+**Call to `0x020809C8`:**
+
+- With the saved bit 2 set, if `r6+0x14 & 0x00080800` is nonzero, it reaches the comparison at `0x02080174`; it calls `0x020809C8` only when `r2 < r1` unsigned.
+- With the saved bit 2 clear, the `0x020801BC` comparison likewise calls `0x020809C8` only when `r2 < r1` unsigned, after the preceding node flag conditions at `0x02080190–0x020801A4`.
+
+Thus **the `0x020809C8` route depends on byte ordering**; `0x020808C0` does not.
+
+`0x020808C0` uses the pair/node passed in `r2`. If the owner flag word at `[r1+0x40]` has bit 14 set, it proceeds to the update; otherwise it proceeds only if the second node’s `+0x14` word has bit 26 set (`0x020808D8–0x020808F0`). It may clear bit 1 of the second owner’s byte at `+0x18` when the second node’s `+0x18` bit 0 is set (`0x020808F4–0x02080904`). It then writes a halfword at the first node’s `+0x20`, formed from that node’s existing halfword and the low 16 bits of the second node’s `+0x14` word (`0x02080908–0x0208091C`). Finally, it links the passed pair/node into the outer object’s `+0xD8` list: it stores the pair pointer at the new list entry’s `+8` (`0x02080920–0x0208093C`).
+
+## Q6. Setting and clearing bit `0x4` at record `+0x44`
+
+The setter is in `ov6.txt`:
+
+```text
+0x0215EAA0: bl     #0x020782AC
+0x0215EAA4: cmp    r0, #0
+0x0215EAA8: ldrne  r0, [r4, #0x1A8]
+0x0215EAAC: ldrne  r1, [r0, #0x10]
+0x0215EAB0: ldrne  r0, [r1, #0x44]
+0x0215EAB4: orrne  r0, r0, #4
+0x0215EAB8: strne  r0, [r1, #0x44]
+```
+
+It sets bit 2 of the word at `R+0x44`, where `R = [[r4+0x1A8]+0x10]`, only when `0x020782AC` returns nonzero.
+
+The clear is in `arm9.txt`, in a loop over records linked through `[r4]`:
+
+```text
+0x0207FAB4: ldr r0, [r4, #0x44]
+0x0207FAB8: bic r0, r0, #4
+0x0207FABC: str r0, [r4, #0x44]
+```
+
+The clear itself is unconditional for each non-null record `r4` reached by that loop (`0x0207FB38–0x0207FB40`).

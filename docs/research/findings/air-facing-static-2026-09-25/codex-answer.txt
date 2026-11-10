@@ -1,0 +1,222 @@
+The mechanism separates two effects:
+
+1. It selects a horizontal sign and writes the resulting acceleration input.
+2. Optionally, if the selected direction byte changed, it propagates that byte and installs a follow-up callback.
+
+The acceleration write does not depend on whether propagation occurs.
+
+1. `0x0215EFC0(obj, r1, r2)`
+
+It computes a direction selector `d`:
+
+- If input bit `0x08` is set, `d = 0`.
+- Else if input bit `0x04` is set, `d = 1`.
+- If neither horizontal bit is set, `d = 0x0215E91C(obj+0x1A8)`.
+- If both bits are set, `0x08` wins.
+
+It then writes:
+
+```text
+[M+0x5C]+0x2C = low16(r1)       if d == 0
+[M+0x5C]+0x2C = low16(-r1)      if d != 0
+```
+
+More precisely, the negation operates on the signed low halfword through `smulbb`, then truncates back to 16 bits.
+
+After the write, it calls:
+
+```text
+0x02083950(obj+0x1A8, d)
+```
+
+only if:
+
+- `r2 != 0`, and
+- `d` differs from a fresh `0x0215E91C(obj+0x1A8)` result.
+
+Thus `r2` enables change propagation. It does not enable the acceleration write.
+
+The instructions prove that `0x08` selects the positive sign and `0x04` the negative sign. If positive X is right, then `0x08` is Right and `0x04` is Left. The coordinate convention itself is not shown.
+
+Confidence: high for computation and call conditions; medium for physical left/right names.
+
+2. `0x0215E91C` and `0x02083950`
+
+For argument `x`, `0x0215E91C(x)` returns:
+
+```text
+1                                      if [x+8] == NULL
+byte at Q+0x48                         otherwise
+Q = [[[x+8]+4]+0x64]
+```
+
+The conditional loads all depend on the comparison of `[x+8]` with zero. There are no checks on the later intermediate pointers.
+
+`0x02083950(x, newByte)` does nothing if `[x+8]` is null. Otherwise it:
+
+1. Resolves the same `Q`.
+2. Calls `Q->vtable[0x5C](Q, newByte)`.
+3. If `[x+0x14]` is non-null, calls:
+   ```text
+   0x0207AA20([x+0x14], [x+8])
+   ```
+4. If `[x+0x20]` is non-null, calls:
+   ```text
+   0x0207506C([x+0x20], newByte)
+   ```
+
+This looks like a setter plus notification of related objects. The first virtual call is consistent with setting the byte at `Q+0x48`, but that assignment is inside an unseen callee.
+
+Confidence: high for exact data flow; medium for the setter/notification interpretation.
+
+3. What `0x0215EF58` adds
+
+`0x0215EF58(obj, amount)` wraps `0x0215EFC0` in eligibility checks:
+
+```text
+if 0x02159930(obj) != 0:
+    return 0
+
+if horizontal input is present:
+    apply
+
+else if 0x02159910(obj) != 0:
+    apply
+
+else if 0x021599D0(obj) != 0:
+    apply
+
+else:
+    return 0
+
+apply:
+    0x0215EFC0(obj, amount, 1)
+    return 1
+```
+
+So it always passes `r2 = 1`, enabling direction-byte propagation. The meanings of the three predicate functions cannot be determined from these excerpts.
+
+Confidence: high.
+
+4. Paths to `0x0215EF58` in state 6
+
+Both outcomes of the initial `0x0215D4E0` test can eventually reach `0x0215EF58`. When that test succeeds, the handler may change a state through `0x02157450` and writes `obj+0x1E7`, but then rejoins the common path.
+
+The handler reaches `0x0215EF58` only if none of these earlier checks returns:
+
+- `0x0215D904(obj+0x1A8)` succeeds. This writes `obj+0x1E6 = 1`, calls `0x0215D2E4`, and returns.
+- `0x0215E470(obj)` returns nonzero.
+- `0x0215E534(obj)` returns nonzero.
+- When `obj+0xDA < 2`, `0x02159D7C(obj,1)` returns nonzero. This also adds `12` to `obj+0xDB`.
+- `0x0215E0CC(obj)` returns nonzero.
+- `0x0215E1D0(obj)` returns nonzero.
+- `obj+0x128` has bit `8` and `0x0215D860(obj)` returns nonzero.
+
+Immediately before `0x0215EF58`, the handler examines `[M+0x5C]+0x34` bit `4` and signed byte `obj+0x1E7`. It may:
+
+- install state 5 and increment `obj+0x1E7`,
+- increment `obj+0x1E7`,
+- install state 6 and reset `obj+0x1E7`,
+- or do nothing.
+
+All of those branches converge on:
+
+```text
+0x0215EF58(obj, signed_halfword(obj+0xB8))
+```
+
+There is no delay between passing the gates and calling `0x02083950`. The `obj+0x1E7` counter-like processing runs first, but it does not postpone the call. If `0x0215EF58` and `0x0215EFC0` accept the operation, the acceleration write, comparison, and `0x02083950` call all occur in the same state-handler invocation.
+
+Confidence: high.
+
+5. Acceleration and momentum consequences
+
+The halfword written to `[M+0x5C]+0x2C` is no different based on whether `0x02083950` runs. The store occurs before:
+
+- the `r2` test,
+- the old/new byte comparison,
+- and the call.
+
+For identical inputs and selected direction, the written acceleration is identical.
+
+A direction change and an acceleration sign change will often occur together, but the instructions make their causes distinct:
+
+- The selected direction controls the acceleration sign.
+- A difference from the stored byte controls whether notification occurs.
+
+No shown instruction changes velocity or momentum specifically because the byte changed. `0x0206CEAC` contains an explicit vector negation, but it is a separate callback and is not on the shown `0x0215EFC0` path.
+
+The callees inside `0x02083950` are opaque, so these excerpts cannot prove that they never alter physics indirectly.
+
+Confidence: high for the visible behavior; medium for total runtime effects hidden inside callees.
+
+6. The second `0x0215EFC0` call site
+
+At `0x0215A2D0`:
+
+```text
+r1 = signed_halfword(obj+0xCC)
+r2 = byte(obj+0xF6)
+```
+
+The call is made only if `obj+0xCC` is nonzero.
+
+`obj+0xF7` supplies another gate:
+
+- If `obj+0xF7 == 0`, the call does not require horizontal input.
+- If `obj+0xF7 != 0`, input must contain `0x04` or `0x08`.
+
+Thus:
+
+- `obj+0xCC` is the signed acceleration amount and zero disables this site.
+- `obj+0xF6` controls whether a changed direction byte is propagated.
+- `obj+0xF7` controls whether live horizontal input is required.
+
+The defaults at `0x0215A130` are:
+
+```text
+obj+0xCC = 0
+obj+0xF6 = 1
+obj+0xF7 = 0
+```
+
+So the site starts disabled. If later given a nonzero amount without changing the flag defaults, propagation is enabled and neutral input is allowed. Neutral input causes `0x0215EFC0` to reuse the existing byte from `0x0215E91C`.
+
+`0x0215A968` writes all three fields. Its only shown caller is script-command case 22:
+
+```text
+obj+0xCC = r4
+obj+0xF6 = 1 if incoming r3 == 0, otherwise 0
+obj+0xF7 = 1 if incoming r6 == 0, otherwise 0
+```
+
+The script-level meanings of the incoming `r3` and `r6` values are not present, only their inverted zero-test encoding.
+
+Confidence: high.
+
+7. `obj+0x1D4`
+
+At `0x0215F040`, ARM-state PC semantics make the literal address:
+
+```text
+0x0215F040 + 8 + 4 = 0x0215F04C
+```
+
+The word stored at `obj+0x1D4` is therefore the literal at `0x0215F04C`, not the address `0x0215F04C` itself. Based on the prompt’s identification of Excerpt G as that target, the literal is:
+
+```text
+0x0215DA84
+```
+
+Strictly, Excerpt B omits the actual word at `0x0215F04C`, so the value depends on the supplied statement that Excerpt G is its target.
+
+`obj+0x1D4` holds a function pointer for a small callback state machine:
+
+- `0x0215DA84` calls `0x0215A824`. On success, it clears `obj+0x1DE` and replaces the pointer.
+- `0x0215DAB0` waits until neither horizontal input bit is held, then installs `0x0215DACC`.
+- `0x0215DACC` increments signed byte `obj+0x1DE`, performs further `0x0215A824` checks, and changes the pointer again.
+- At count 12, it installs `0x0215DA84` again.
+
+The exact dispatcher that invokes `obj+0x1D4`, its cadence, and the meaning of `0x0215A824` are not shown. The safe conclusion is that a propagated direction change installs or resets a follow-up per-object callback sequence. Excerpt H shows that the walk handler can initiate the same sequence through `0x0215EF58`.
+
+Confidence: medium for the literal because the literal word is omitted; high that `obj+0x1D4` is a callback/state-machine pointer.

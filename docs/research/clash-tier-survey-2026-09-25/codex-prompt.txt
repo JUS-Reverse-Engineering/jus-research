@@ -1,0 +1,46 @@
+Nintendo DS game (Jump Ultimate Stars), ARM946E-S, little-endian, ARM mode.
+Static reading only. Do not run an emulator. Do not modify any file.
+
+Files you may read (read-only):
+- Disassembly: jus_files/analysis/disasm/arm9.txt (arm9 at 0x02000000) and
+  jus_files/analysis/disasm/ov6.txt (overlay 6).
+- Raw arm9: jus_files/arm9/arm9.bin (loaded at 0x02000000).
+- Per-character 20-byte record files: jus_files/chrbin/chr/col/*.bin.
+- One melonDS save state (raw, not compressed):
+  "<STATES>/character-mappings/KAKASHI HATAKE/4.mln"
+
+Please answer each question from the code and bytes alone, showing the
+instructions or bytes you relied on. Where the code is ambiguous, say so.
+
+Q1. The .mln file. Where in the file does the DS main RAM image that maps to
+    address 0x02000000 begin, and how did you find it (describe the file's
+    header and section structure)? Check it against arm9.bin.
+
+Q2. In that state, read the 32-bit words at 0x02181B28, 0x021DEB1C and
+    0x021DEB3C (as mapped by your Q1 answer). Then, starting from the word at
+    0x021DEB1C as an object pointer P, follow R = [[P+0x1A8]+0x10], then
+    B = [[R+0x6C]+0x0C]. Report P, R, B. Does any col/*.bin file's full
+    contents appear at B? Which one(s)? What is the byte at B+0?
+
+Q3. Function 0x0207D440. For the path taken when the halfword at [r1+0xE]
+    is >= 0x100 and the path when it is < 0x100: how is the value stored to
+    [r5+0x10] computed, and how are [r5+0x14], [r5+0x18] and [r5+0x1C] built
+    (from which inputs, with which bit operations and conditions)? Give the
+    addresses and values of any tables or literals it uses. List every bit
+    of +0x14 and +0x18 that can come from the 20-byte record the +0x10
+    pointer points at, and which record bytes drive each one.
+
+Q4. Loop at 0x0207FBD0-0x0207FE50. Before the byte compare at 0x0207FD08,
+    which conditions must hold on the two objects' nodes (the r6 and r7
+    values) and on their owners? For each test, give the address, the field
+    offset, which node or owner it is on, and the bit.
+
+Q5. Loop at 0x0207FE54-0x020801E8, in particular 0x02080120-0x020801D0.
+    Under what conditions does it call 0x020808C0 and under what conditions
+    0x020809C8? Does either route depend on which side's byte (the values
+    compared at 0x02080130) is smaller? What does 0x020808C0 write, and to
+    which object, under what condition?
+
+Q6. Find the instructions in arm9.txt and ov6.txt that set and that clear
+    bit 0x4 of the word at +0x44 of the structures this code calls R above
+    (the 0x188-byte records). For each setter, what conditions guard it?

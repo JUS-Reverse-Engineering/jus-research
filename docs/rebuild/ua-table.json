@@ -1,0 +1,7740 @@
+{
+ "_generated_by": "python3 scripts/analysis/ua_table.py build",
+ "_schema": "docs/rebuild/ua-table.md",
+ "characters": [
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 47,
+     "name": "Bo-bobo"
+    }
+   ],
+   "prefix": "bb_b_01",
+   "scanned": {
+    "chr/bb_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b",
+    "chr/bb_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c",
+    "chr/bb_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88",
+    "chr/bb_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0 0xb1 0xb2"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 128,
+      "arg": 24,
+      "frame": 52,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 80 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 1280,
+      "arg": 24,
+      "frame": 64,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 05",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 96,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 116,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 52
+    },
+    "member": "chr/bb_b_01.aar",
+    "playhead": [
+     {
+      "frame": 63,
+      "kind": "loop",
+      "limit": 4,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 52,
+      "raw": "02 00 01 04",
+      "sub": 2
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x00084139",
+      "frame": 16,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       23
+      ],
+      "raw": "00 03 02 00 0b 00",
+      "row": 11
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Don Patch = bb_b_02, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 48,
+     "name": "Don Patch"
+    }
+   ],
+   "prefix": "bb_b_02",
+   "scanned": {
+    "chr/bb_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36",
+    "chr/bb_b_02_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65",
+    "chr/bb_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89",
+    "chr/bb_b_02_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 20,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 24,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 28,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 20
+    },
+    "member": "chr/bb_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 7,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 20,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 19,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Shinsetsu = bb_b_03, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 49,
+     "name": "Shinsetsu"
+    }
+   ],
+   "prefix": "bb_b_03",
+   "scanned": {
+    "chr/bb_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43",
+    "chr/bb_b_03_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6 0xc7 0xc8 0xc9"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 128,
+      "arg": 24,
+      "frame": 52,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 80 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 1280,
+      "arg": 24,
+      "frame": 64,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 05",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 96,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 116,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 52
+    },
+    "member": "chr/bb_b_03.aar",
+    "playhead": [
+     {
+      "frame": 63,
+      "kind": "loop",
+      "limit": 4,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 52,
+      "raw": "02 00 01 04",
+      "sub": 2
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x00084339",
+      "frame": 16,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       17
+      ],
+      "raw": "00 03 02 00 02 00",
+      "row": 2
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 50,
+     "name": "Super Patch"
+    }
+   ],
+   "prefix": "bb_b_04",
+   "scanned": {
+    "chr/bb_b_04.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2f 0x30 0x33 0x34 0x35 0x36"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 20,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 24,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 28,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 20
+    },
+    "member": "chr/bb_b_04.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 7,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 20,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 19,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column live-verified (move_records.KNOWN_REC0)",
+     "chr_b": 37,
+     "name": "Eve"
+    }
+   ],
+   "prefix": "bc_b_01",
+   "scanned": {
+    "chr/bc_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36",
+    "chr/bc_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 54,
+    "impulses": [
+     {
+      "frame": 42,
+      "raw": "03 01 00 1c",
+      "x_ev": 0,
+      "x_raw": 0,
+      "y_ev": 28,
+      "y_raw": -3528
+     }
+    ],
+    "markers": {},
+    "member": "chr/bc_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Train = bc_b_02, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 38,
+     "name": "Train"
+    }
+   ],
+   "prefix": "bc_b_02",
+   "scanned": {
+    "chr/bc_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e",
+    "chr/bc_b_02_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d 0x6e 0x6f 0x70",
+    "chr/bc_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e"
+   },
+   "status_effects": [],
+   "stored_jumps": [
+    {
+     "anim": "0x21",
+     "frame": 4,
+     "kind": "stored_jump",
+     "member": "chr/bc_b_02.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "bc_b_02",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 12,
+      "3": 59,
+      "4": 63
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 7,
+     "kind": "stored_jump",
+     "member": "chr/bc_b_02.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "bc_b_02",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 11,
+      "3": 60,
+      "4": 62
+     }
+    },
+    {
+     "anim": "0x27",
+     "frame": 6,
+     "kind": "stored_jump",
+     "member": "chr/bc_b_02.aar",
+     "move": "air Y",
+     "move_id": 10,
+     "prefix": "bc_b_02",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 12,
+      "3": 68,
+      "4": 73,
+      "5": 133
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 49,
+     "kind": "store",
+     "member": "chr/bc_b_02.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "bc_b_02",
+     "raw": "13 00 03 00",
+     "sub": 19,
+     "value": 3
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 67,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bc_b_02.aar",
+    "playhead": [
+     {
+      "frame": 49,
+      "kind": "store",
+      "raw": "13 00 03 00",
+      "sub": 19,
+      "value": 3
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x00074241",
+      "frame": 12,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": false,
+      "in_file": true,
+      "kb_recs": [],
+      "raw": "00 03 02 00 00 00",
+      "row": 0
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 39,
+     "name": "Ichigo"
+    }
+   ],
+   "prefix": "bl_b_01",
+   "scanned": {
+    "chr/bl_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 64,
+     "member": "chr/bl_b_01.aar",
+     "operand": 13,
+     "raw": "00 03 0a 00 0d 00",
+     "status_id": 14
+    },
+    {
+     "anim": "0x2c",
+     "frame": 64,
+     "member": "chr/bl_b_01.aar",
+     "operand": 24,
+     "raw": "00 03 0a 00 18 00",
+     "status_id": 24
+    },
+    {
+     "anim": "0x2e",
+     "frame": 51,
+     "member": "chr/bl_b_01.aar",
+     "operand": 6,
+     "raw": "00 03 0a 00 06 00",
+     "status_id": 7
+    }
+   ],
+   "stored_jumps": [
+    {
+     "anim": "0x21",
+     "frame": 9,
+     "kind": "stored_jump",
+     "member": "chr/bl_b_01.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "bl_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 66
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 9,
+     "kind": "stored_jump",
+     "member": "chr/bl_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "bl_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 69
+     }
+    },
+    {
+     "anim": "0x27",
+     "frame": 4,
+     "kind": "stored_jump",
+     "member": "chr/bl_b_01.aar",
+     "move": "air Y",
+     "move_id": 10,
+     "prefix": "bl_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 55,
+      "2": 92
+     }
+    },
+    {
+     "anim": "0x28",
+     "frame": 6,
+     "kind": "stored_jump",
+     "member": "chr/bl_b_01.aar",
+     "move": "id 12 (fighter+0xD1 set)",
+     "move_id": 12,
+     "prefix": "bl_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 53
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 37,
+     "kind": "store",
+     "member": "chr/bl_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "bl_b_01",
+     "raw": "13 00 01 00",
+     "sub": 19,
+     "value": 1
+    },
+    {
+     "anim": "0x1f",
+     "frame": 41,
+     "kind": "store",
+     "member": "chr/bl_b_01.aar",
+     "move": "Y",
+     "move_id": 2,
+     "prefix": "bl_b_01",
+     "raw": "13 00 01 00",
+     "sub": 19,
+     "value": 1
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 72,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bl_b_01.aar",
+    "playhead": [
+     {
+      "frame": 37,
+      "kind": "store",
+      "raw": "13 00 01 00",
+      "sub": 19,
+      "value": 1
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 40,
+     "name": "Bankai Ichigo"
+    }
+   ],
+   "prefix": "bl_b_02",
+   "scanned": {
+    "chr/bl_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2f",
+     "frame": 46,
+     "member": "chr/bl_b_02.aar",
+     "operand": 25,
+     "raw": "00 03 0a 00 19 00",
+     "status_id": 33
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": -64,
+      "arg": 23,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 c0 ff",
+      "units": "HP points = amount_raw / 64"
+     },
+     {
+      "amount_raw": 2560,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 0a",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 80,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bl_b_02.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 41,
+     "name": "Rukia"
+    }
+   ],
+   "prefix": "bl_b_03",
+   "scanned": {
+    "chr/bl_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b",
+    "chr/bl_b_03_4.aar": "0x60 0x61 0x62 0x63 0x64",
+    "chr/bl_b_03_5.aar": "0x80 0x81 0x82 0x83 0x84",
+    "chr/bl_b_03_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bl_b_03.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 42,
+     "name": "Renji"
+    }
+   ],
+   "prefix": "bl_b_04",
+   "scanned": {
+    "chr/bl_b_04.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36",
+    "chr/bl_b_04_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87",
+    "chr/bl_b_04_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1280,
+      "arg": 24,
+      "frame": 36,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 05",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 62,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bl_b_04.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 43,
+     "name": "Hitsugaya"
+    }
+   ],
+   "prefix": "bl_b_05",
+   "scanned": {
+    "chr/bl_b_05.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56",
+    "chr/bl_b_05_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a",
+    "chr/bl_b_05_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85",
+    "chr/bl_b_05_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 17,
+      "frame": 118,
+      "grade": "lead",
+      "kind": "op3_arg17",
+      "raw": "00 03 11 00 01 00"
+     }
+    ],
+    "ends": [],
+    "frames": 118,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bl_b_05.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 44,
+     "name": "Kazuki"
+    }
+   ],
+   "prefix": "bu_b_01",
+   "scanned": {
+    "chr/bu_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57",
+    "chr/bu_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b",
+    "chr/bu_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 23,
+      "frame": 80,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 00 01",
+      "units": "HP points = amount_raw / 64"
+     }
+    ],
+    "ends": [],
+    "frames": 120,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/bu_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 0,
+     "name": "Goku"
+    }
+   ],
+   "prefix": "db_b_01",
+   "scanned": {
+    "chr/db_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d",
+    "chr/db_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d",
+    "chr/db_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 16,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 26,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     30
+    ],
+    "frames": 30,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 26
+    },
+    "member": "chr/db_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 26,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 24,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 1,
+     "name": "Goku (SSJ)"
+    }
+   ],
+   "prefix": "db_b_02",
+   "scanned": {
+    "chr/db_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e",
+    "chr/db_b_02_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0 0xb1 0xb2 0xb3",
+    "chr/db_b_02_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6 0xc7 0xc8 0xc9 0xca 0xcb 0xcc 0xcd 0xce 0xcf 0xd0 0xd1 0xd2 0xd3 0xd4 0xd5"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 16,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 25,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     29
+    ],
+    "frames": 29,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 25
+    },
+    "member": "chr/db_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 25,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 23,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column live-verified (move_records.KNOWN_REC0)",
+     "chr_b": 2,
+     "name": "Vegeta"
+    }
+   ],
+   "prefix": "db_b_03",
+   "scanned": {
+    "chr/db_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42",
+    "chr/db_b_03_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 512,
+      "arg": 24,
+      "frame": 12,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 02",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 22,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 26,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 22
+    },
+    "member": "chr/db_b_03.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 22,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 20,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Vegeta (SSJ) = db_b_04, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 3,
+     "name": "Vegeta (SSJ)"
+    }
+   ],
+   "prefix": "db_b_04",
+   "scanned": {
+    "chr/db_b_04.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48",
+    "chr/db_b_04_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d",
+    "chr/db_b_04_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 512,
+      "arg": 24,
+      "frame": 12,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 02",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 22,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 26,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 22
+    },
+    "member": "chr/db_b_04.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 22,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 20,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Gohan (SSJ) = db_b_05, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 4,
+     "name": "Gohan (SSJ)"
+    }
+   ],
+   "prefix": "db_b_05",
+   "scanned": {
+    "chr/db_b_05.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43",
+    "chr/db_b_05_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6e 0x70"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 11,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 21,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     25
+    ],
+    "frames": 25,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 21
+    },
+    "member": "chr/db_b_05.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 21,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 19,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Gohan (SSJ2) = db_b_06, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 5,
+     "name": "Gohan (SSJ2)"
+    }
+   ],
+   "prefix": "db_b_06",
+   "scanned": {
+    "chr/db_b_06.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47",
+    "chr/db_b_06_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 60,
+     "member": "chr/db_b_06.aar",
+     "operand": 6,
+     "raw": "00 03 0a 00 06 00",
+     "status_id": 7
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 20,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 32,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 44,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     },
+     {
+      "arg": 4,
+      "frame": 48,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     48
+    ],
+    "frames": 48,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 44
+    },
+    "member": "chr/db_b_06.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 7,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 44,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 43,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Gotenks = db_b_07, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 6,
+     "name": "Gotenks"
+    }
+   ],
+   "prefix": "db_b_07",
+   "scanned": {
+    "chr/db_b_07.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47",
+    "chr/db_b_07_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d 0x6e 0x6f 0x70 0x71"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 4,
+      "frame": 26,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 30,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 26
+    },
+    "member": "chr/db_b_07.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 26,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 23,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Gotenks (SSJ) = db_b_08, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 7,
+     "name": "Gotenks (SSJ)"
+    }
+   ],
+   "prefix": "db_b_08",
+   "scanned": {
+    "chr/db_b_08.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47",
+    "chr/db_b_08_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90 0x91"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 4,
+      "frame": 26,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 30,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 26
+    },
+    "member": "chr/db_b_08.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 26,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 23,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Piccolo = db_b_09, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 8,
+     "name": "Piccolo"
+    }
+   ],
+   "prefix": "db_b_09",
+   "scanned": {
+    "chr/db_b_09.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40",
+    "chr/db_b_09_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b",
+    "chr/db_b_09_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90 0x91 0x92 0x93 0x94 0x95 0x96"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 50,
+     "member": "chr/db_b_09.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2a",
+     "frame": 58,
+     "member": "chr/db_b_09.aar",
+     "operand": 0,
+     "raw": "00 03 0a 00 00 00",
+     "status_id": 1
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 512,
+      "arg": 24,
+      "frame": 16,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 02",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 24,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 31,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 24
+    },
+    "member": "chr/db_b_09.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 24,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 23,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Frieza = db_b_10, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 9,
+     "name": "Frieza"
+    }
+   ],
+   "prefix": "db_b_10",
+   "scanned": {
+    "chr/db_b_10.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48",
+    "chr/db_b_10_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 16,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 27,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 35,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 27
+    },
+    "member": "chr/db_b_10.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 27,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 24,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Majin Buu = db_b_11, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 10,
+     "name": "Majin Buu"
+    }
+   ],
+   "prefix": "db_b_11",
+   "scanned": {
+    "chr/db_b_11.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47",
+    "chr/db_b_11_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2e",
+     "frame": 102,
+     "member": "chr/db_b_11.aar",
+     "operand": 20,
+     "raw": "00 03 0a 00 14 00",
+     "status_id": 38
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1280,
+      "arg": 24,
+      "frame": 70,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 05",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 89,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/db_b_11.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Vegetto = db_b_12, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 11,
+     "name": "Vegetto"
+    }
+   ],
+   "prefix": "db_b_12",
+   "scanned": {
+    "chr/db_b_12.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e",
+    "chr/db_b_12_8.aar": "0xe0 0xe1 0xe2 0xe3 0xe4 0xe5 0xe6 0xe7 0xe8 0xe9 0xea 0xeb 0xec 0xed"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 8,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 8,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 16,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 25,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     29
+    ],
+    "frames": 29,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 25
+    },
+    "member": "chr/db_b_12.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 25,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 23,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 45,
+     "name": "Allen"
+    }
+   ],
+   "prefix": "dg_b_01",
+   "scanned": {
+    "chr/dg_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53",
+    "chr/dg_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88",
+    "chr/dg_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 13,
+      "frame": 0,
+      "grade": "lead",
+      "kind": "op3_arg13",
+      "raw": "00 03 0d 00 03 00"
+     },
+     {
+      "arg": 14,
+      "frame": 0,
+      "grade": "lead",
+      "kind": "op3_arg14",
+      "raw": "00 03 0e 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 48,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/dg_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 46,
+     "name": "Lenalee"
+    }
+   ],
+   "prefix": "dg_b_02",
+   "scanned": {
+    "chr/dg_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36",
+    "chr/dg_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 50,
+    "impulses": [
+     {
+      "frame": 30,
+      "raw": "03 01 00 19",
+      "x_ev": 0,
+      "x_raw": 0,
+      "y_ev": 25,
+      "y_raw": -3150
+     }
+    ],
+    "markers": {},
+    "member": "chr/dg_b_02.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 56,
+     "name": "Arale"
+    }
+   ],
+   "prefix": "ds_b_01",
+   "scanned": {
+    "chr/ds_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51",
+    "chr/ds_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67",
+    "chr/ds_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87",
+    "chr/ds_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7",
+    "chr/ds_b_01_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6 0xc7 0xc8 0xc9 0xca 0xcb 0xcc 0xcd 0xce"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 72,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 84,
+    "impulses": [
+     {
+      "frame": 0,
+      "raw": "03 01 01 00",
+      "x_ev": 1,
+      "x_raw": 32,
+      "y_ev": 0,
+      "y_raw": 0
+     }
+    ],
+    "markers": {
+     "0": 0,
+     "1": 32,
+     "2": 52,
+     "3": 72
+    },
+    "member": "chr/ds_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 31,
+      "kind": "two_way",
+      "marker_false": 3,
+      "marker_false_frame": 72,
+      "marker_true": 1,
+      "marker_true_frame": 32,
+      "raw": "12 00 03 01 03 13 01 00",
+      "sub": 18,
+      "threshold": 1,
+      "window": 19
+     },
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 51,
+      "kind": "two_way",
+      "marker_false": 3,
+      "marker_false_frame": 72,
+      "marker_true": 2,
+      "marker_true_frame": 52,
+      "raw": "12 00 03 02 03 13 01 00",
+      "sub": 18,
+      "threshold": 1,
+      "window": 19
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x0005414c",
+      "frame": 12,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       15
+      ],
+      "raw": "00 03 02 00 03 00",
+      "row": 3
+     },
+     {
+      "art": "0x0005414c",
+      "frame": 32,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       15
+      ],
+      "raw": "00 03 02 00 03 00",
+      "row": 3
+     },
+     {
+      "art": "0x0005414c",
+      "frame": 52,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       15
+      ],
+      "raw": "00 03 02 00 03 00",
+      "row": 3
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 57,
+     "name": "Mashirito"
+    }
+   ],
+   "prefix": "ds_b_02",
+   "scanned": {
+    "chr/ds_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55",
+    "chr/ds_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86",
+    "chr/ds_b_02_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6 0xc7 0xc8 0xc9 0xca 0xcb"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 26,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 55,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 84,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 113,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 142,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 171,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 200,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [
+     38,
+     67,
+     96,
+     125,
+     154,
+     183,
+     212
+    ],
+    "frames": 212,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 10,
+     "2": 39,
+     "3": 68,
+     "4": 97,
+     "5": 126,
+     "6": 155,
+     "7": 184
+    },
+    "member": "chr/ds_b_02.aar",
+    "playhead": [],
+    "spawns": [
+     {
+      "art": "0x00054251",
+      "frame": 26,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       10,
+       31
+      ],
+      "raw": "00 03 02 00 02 00",
+      "row": 2
+     },
+     {
+      "art": "0x0005424e",
+      "frame": 55,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       31
+      ],
+      "raw": "00 03 02 00 03 00",
+      "row": 3
+     },
+     {
+      "art": "0x0005424f",
+      "frame": 84,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       31
+      ],
+      "raw": "00 03 02 00 04 00",
+      "row": 4
+     },
+     {
+      "art": "0x00054250",
+      "frame": 113,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       31
+      ],
+      "raw": "00 03 02 00 05 00",
+      "row": 5
+     },
+     {
+      "art": "0x00054252",
+      "frame": 142,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       31
+      ],
+      "raw": "00 03 02 00 06 00",
+      "row": 6
+     },
+     {
+      "art": "0x00054253",
+      "frame": 171,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       31
+      ],
+      "raw": "00 03 02 00 07 00",
+      "row": 7
+     },
+     {
+      "art": "0x00054254",
+      "frame": 200,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       11,
+       31
+      ],
+      "raw": "00 03 02 00 08 00",
+      "row": 8
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 58,
+     "name": "Caramelman"
+    }
+   ],
+   "prefix": "ds_b_03",
+   "scanned": {
+    "chr/ds_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b 0x5c 0x5d 0x5e",
+    "chr/ds_b_03_8.aar": "0xe0 0xe1 0xe2 0xe3 0xe4"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 24,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 64,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 12,
+     "2": 48
+    },
+    "member": "chr/ds_b_03.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 8,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 48,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 47,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 12,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column annotated in chr_b-Complete-Mapping.md, not a clean measured pin: dt_b_01 (E0 2026-10-18: ambiguous by byte join)",
+     "chr_b": 70,
+     "name": "Komaman Red"
+    }
+   ],
+   "prefix": "dt_b_01",
+   "scanned": {
+    "chr/dt_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 40
+    },
+    "member": "chr/dt_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 8,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 40,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 39,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column annotated in chr_b-Complete-Mapping.md, not a clean measured pin: dt_b_02 (unobserved in owner states)",
+     "chr_b": 71,
+     "name": "Komaman Green"
+    }
+   ],
+   "prefix": "dt_b_02",
+   "scanned": {
+    "chr/dt_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 40
+    },
+    "member": "chr/dt_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 8,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 40,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 39,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column annotated in chr_b-Complete-Mapping.md, not a clean measured pin: dt_b_03 (unobserved in owner states)",
+     "chr_b": 72,
+     "name": "Komaman Yellow"
+    }
+   ],
+   "prefix": "dt_b_03",
+   "scanned": {
+    "chr/dt_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 40
+    },
+    "member": "chr/dt_b_03.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 8,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 40,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 39,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 8,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column annotated in chr_b-Complete-Mapping.md, not a clean measured pin: dt_b_04 (unobserved in owner states)",
+     "chr_b": 73,
+     "name": "Taizo"
+    }
+   ],
+   "prefix": "dt_b_04",
+   "scanned": {
+    "chr/dt_b_04.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x33 0x34 0x35 0x36"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 8,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/dt_b_04.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 52,
+     "name": "Gintoki"
+    }
+   ],
+   "prefix": "gt_b_01",
+   "scanned": {
+    "chr/gt_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b 0x5c 0x5d",
+    "chr/gt_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a",
+    "chr/gt_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 95,
+     "member": "chr/gt_b_01.aar",
+     "operand": 20,
+     "raw": "00 03 0a 00 14 00",
+     "status_id": 38
+    },
+    {
+     "anim": "0x30",
+     "frame": 98,
+     "member": "chr/gt_b_01.aar",
+     "operand": 13,
+     "raw": "00 03 0a 00 0d 00",
+     "status_id": 14
+    },
+    {
+     "anim": "0x30",
+     "frame": 98,
+     "member": "chr/gt_b_01.aar",
+     "operand": 21,
+     "raw": "00 03 0a 00 15 00",
+     "status_id": 39
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 10,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 64,
+      "arg": 24,
+      "frame": 10,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 40 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 64,
+      "arg": 24,
+      "frame": 30,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 40 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 64,
+      "arg": 24,
+      "frame": 50,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 40 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 67,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 64,
+      "arg": 24,
+      "frame": 86,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 40 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 64,
+      "arg": 24,
+      "frame": 106,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 40 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 64,
+      "arg": 24,
+      "frame": 126,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 40 00",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [
+     71
+    ],
+    "frames": 198,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 10,
+     "2": 67,
+     "3": 81,
+     "4": 1
+    },
+    "member": "chr/gt_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 9,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 67,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 65,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 10,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x00018152",
+      "frame": 156,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       30
+      ],
+      "raw": "00 03 02 00 08 00",
+      "row": 8
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 53,
+     "name": "Kagura"
+    }
+   ],
+   "prefix": "gt_b_02",
+   "scanned": {
+    "chr/gt_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36",
+    "chr/gt_b_02_4.aar": "0x60 0x61 0x62 0x63 0x64",
+    "chr/gt_b_02_6.aar": "0xa0 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xab 0xad"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 59,
+     "member": "chr/gt_b_02.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2c",
+     "frame": 57,
+     "member": "chr/gt_b_02.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 13,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 32,
+      "arg": 23,
+      "frame": 19,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 20 00",
+      "units": "HP points = amount_raw / 64"
+     },
+     {
+      "arg": 5,
+      "frame": 25,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 4,
+      "frame": 41,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 13,
+     "2": 41
+    },
+    "member": "chr/gt_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 9,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 41,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 37,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 13,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 30,
+     "name": "Gon"
+    }
+   ],
+   "prefix": "hh_b_01",
+   "scanned": {
+    "chr/hh_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 8,
+     "member": "chr/hh_b_01.aar",
+     "operand": 6,
+     "raw": "00 03 0a 00 06 00",
+     "status_id": 7
+    },
+    {
+     "anim": "0x2c",
+     "frame": 24,
+     "member": "chr/hh_b_01.aar",
+     "operand": 16,
+     "raw": "00 03 0a 00 10 00",
+     "status_id": 17
+    },
+    {
+     "anim": "0x2e",
+     "frame": 8,
+     "member": "chr/hh_b_01.aar",
+     "operand": 10,
+     "raw": "00 03 0a 00 0a 00",
+     "status_id": 11
+    }
+   ],
+   "stored_jumps": [
+    {
+     "anim": "0x18",
+     "frame": 8,
+     "kind": "stored_jump",
+     "member": "chr/hh_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "hh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 20,
+      "2": 44,
+      "3": 60,
+      "4": 77
+     }
+    },
+    {
+     "anim": "0x29",
+     "frame": 0,
+     "kind": "stored_jump",
+     "member": "chr/hh_b_01.aar",
+     "move": "X (koma 4)",
+     "move_id": 13,
+     "prefix": "hh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 69,
+      "2": 130
+     }
+    },
+    {
+     "anim": "0x2b",
+     "frame": 1,
+     "kind": "stored_jump",
+     "member": "chr/hh_b_01.aar",
+     "move": "X (koma 5)",
+     "move_id": 13,
+     "prefix": "hh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 67,
+      "2": 132
+     }
+    },
+    {
+     "anim": "0x2d",
+     "frame": 1,
+     "kind": "stored_jump",
+     "member": "chr/hh_b_01.aar",
+     "move": "X (koma 6)",
+     "move_id": 13,
+     "prefix": "hh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 84,
+      "2": 162
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 20,
+     "kind": "store",
+     "member": "chr/hh_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "hh_b_01",
+     "raw": "13 00 01 00",
+     "sub": 19,
+     "value": 1
+    },
+    {
+     "anim": "0x18",
+     "frame": 44,
+     "kind": "store",
+     "member": "chr/hh_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "hh_b_01",
+     "raw": "13 00 02 00",
+     "sub": 19,
+     "value": 2
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 44,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 60,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 4,
+      "frame": 77,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     84
+    ],
+    "frames": 84,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 20,
+     "2": 44,
+     "3": 60,
+     "4": 77
+    },
+    "member": "chr/hh_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 4,
+      "marker_default_frame": 77,
+      "raw": "01 00 03 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 8,
+      "kind": "stored_jump",
+      "raw": "14 00 00 00",
+      "sub": 20,
+      "targets": {
+       "0": 0,
+       "1": 20,
+       "2": 44,
+       "3": 60,
+       "4": 77
+      }
+     },
+     {
+      "frame": 20,
+      "kind": "store",
+      "raw": "13 00 01 00",
+      "sub": 19,
+      "value": 1
+     },
+     {
+      "frame": 44,
+      "kind": "store",
+      "raw": "13 00 02 00",
+      "sub": 19,
+      "value": 2
+     },
+     {
+      "frame": 67,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 3,
+      "marker_frame": 60,
+      "raw": "02 00 03 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 31,
+     "name": "Killua"
+    }
+   ],
+   "prefix": "hh_b_02",
+   "scanned": {
+    "chr/hh_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36",
+    "chr/hh_b_02_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6e",
+    "chr/hh_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90 0x91 0x92"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 36,
+     "member": "chr/hh_b_02.aar",
+     "operand": 16,
+     "raw": "00 03 0a 00 10 00",
+     "status_id": 17
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 24,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 512,
+      "arg": 24,
+      "frame": 24,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 02",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 40,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     44
+    ],
+    "frames": 44,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 40,
+     "2": 24
+    },
+    "member": "chr/hh_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 23,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 1,
+      "marker_default_frame": 40,
+      "raw": "01 00 03 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 39,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 2,
+      "marker_frame": 24,
+      "raw": "02 00 02 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 61,
+     "name": "Kenshiro"
+    }
+   ],
+   "prefix": "hk_b_01",
+   "scanned": {
+    "chr/hk_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58",
+    "chr/hk_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64",
+    "chr/hk_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90",
+    "chr/hk_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6",
+    "chr/hk_b_01_8.aar": "0xe0 0xe1 0xe2 0xe3 0xe4 0xe5 0xe6 0xe7 0xe8 0xe9"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 58,
+     "member": "chr/hk_b_01.aar",
+     "operand": 6,
+     "raw": "00 03 0a 00 06 00",
+     "status_id": 7
+    },
+    {
+     "anim": "0x30",
+     "frame": 56,
+     "member": "chr/hk_b_01.aar",
+     "operand": 6,
+     "raw": "00 03 0a 00 06 00",
+     "status_id": 7
+    },
+    {
+     "anim": "0x30",
+     "frame": 56,
+     "member": "chr/hk_b_01.aar",
+     "operand": 21,
+     "raw": "00 03 0a 00 15 00",
+     "status_id": 39
+    },
+    {
+     "anim": "0x32",
+     "frame": 118,
+     "member": "chr/hk_b_01.aar",
+     "operand": 8,
+     "raw": "00 03 0a 00 08 00",
+     "status_id": 9
+    }
+   ],
+   "stored_jumps": [
+    {
+     "anim": "0x21",
+     "frame": 10,
+     "kind": "stored_jump",
+     "member": "chr/hk_b_01.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "hk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 18,
+      "10": 68,
+      "9": 66
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 4,
+     "kind": "stored_jump",
+     "member": "chr/hk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "hk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 17,
+      "10": 100,
+      "9": 87
+     }
+    },
+    {
+     "anim": "0x27",
+     "frame": 9,
+     "kind": "stored_jump",
+     "member": "chr/hk_b_01.aar",
+     "move": "air Y",
+     "move_id": 10,
+     "prefix": "hk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 13,
+      "10": 65,
+      "9": 57
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x1f",
+     "frame": 18,
+     "kind": "store",
+     "member": "chr/hk_b_01.aar",
+     "move": "Y",
+     "move_id": 2,
+     "prefix": "hk_b_01",
+     "raw": "13 00 09 00",
+     "sub": 19,
+     "value": 9
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 48,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/hk_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 62,
+     "name": "Raoh"
+    }
+   ],
+   "prefix": "hk_b_02",
+   "scanned": {
+    "chr/hk_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2d 0x2e 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57",
+    "chr/hk_b_02_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5",
+    "chr/hk_b_02_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5",
+    "chr/hk_b_02_8.aar": "0xe0 0xe1 0xe2 0xe3 0xe4 0xe5 0xe6 0xe7 0xe8 0xe9 0xea 0xeb 0xec"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2d",
+     "frame": 53,
+     "member": "chr/hk_b_02.aar",
+     "operand": 6,
+     "raw": "00 03 0a 00 06 00",
+     "status_id": 7
+    },
+    {
+     "anim": "0x32",
+     "frame": 119,
+     "member": "chr/hk_b_02.aar",
+     "operand": 8,
+     "raw": "00 03 0a 00 08 00",
+     "status_id": 9
+    }
+   ],
+   "stored_jumps": [
+    {
+     "anim": "0x21",
+     "frame": 11,
+     "kind": "stored_jump",
+     "member": "chr/hk_b_02.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "hk_b_02",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "9": 44
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 10,
+     "kind": "stored_jump",
+     "member": "chr/hk_b_02.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "hk_b_02",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 15,
+      "10": 65,
+      "9": 61
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x1f",
+     "frame": 10,
+     "kind": "store",
+     "member": "chr/hk_b_02.aar",
+     "move": "Y",
+     "move_id": 2,
+     "prefix": "hk_b_02",
+     "raw": "13 00 09 00",
+     "sub": 19,
+     "value": 9
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 128,
+      "arg": 24,
+      "frame": 20,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 80 00",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 5,
+      "frame": 28,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 28,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 40,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 20,
+     "2": 28
+    },
+    "member": "chr/hk_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 11,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 28,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 27,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 20,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 68,
+     "name": "Taikoubou"
+    }
+   ],
+   "prefix": "hs_b_01",
+   "scanned": {
+    "chr/hs_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x5f 0x60 0x61 0x62 0x63 0x64 0x65 0x66",
+    "chr/hs_b_01_4.aar": "0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d 0x6e 0x6f 0x70",
+    "chr/hs_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86",
+    "chr/hs_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 2048,
+      "arg": 24,
+      "frame": 56,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 08",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 92,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 68,
+     "2": 22
+    },
+    "member": "chr/hs_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 66,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 1,
+      "marker_default_frame": 68,
+      "raw": "01 00 03 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 67,
+      "kind": "loop",
+      "limit": 2,
+      "limit_unbounded": false,
+      "marker": 2,
+      "marker_frame": 22,
+      "raw": "02 00 02 02",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 28,
+     "name": "Jotaro"
+    }
+   ],
+   "prefix": "jj_b_01",
+   "scanned": {
+    "chr/jj_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e",
+    "chr/jj_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66",
+    "chr/jj_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1024,
+      "arg": 24,
+      "frame": 9,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 04",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 47,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 85,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [
+     27,
+     71
+    ],
+    "frames": 103,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 9,
+     "2": 47,
+     "3": 85,
+     "4": 39,
+     "5": 79
+    },
+    "member": "chr/jj_b_01.aar",
+    "playhead": [
+     {
+      "frame": 20,
+      "kind": "loop",
+      "limit": 2,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 9,
+      "raw": "02 00 01 02",
+      "sub": 2
+     },
+     {
+      "frame": 58,
+      "kind": "loop",
+      "limit": 2,
+      "limit_unbounded": false,
+      "marker": 2,
+      "marker_frame": 47,
+      "raw": "02 00 02 02",
+      "sub": 2
+     },
+     {
+      "frame": 96,
+      "kind": "loop",
+      "limit": 2,
+      "limit_unbounded": false,
+      "marker": 3,
+      "marker_frame": 85,
+      "raw": "02 00 03 02",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 29,
+     "name": "Dio"
+    }
+   ],
+   "prefix": "jj_b_02",
+   "scanned": {
+    "chr/jj_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53",
+    "chr/jj_b_02_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a",
+    "chr/jj_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87",
+    "chr/jj_b_02_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [
+     88,
+     128
+    ],
+    "frames": 168,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 95,
+     "2": 105,
+     "3": 145
+    },
+    "member": "chr/jj_b_02.aar",
+    "playhead": [
+     {
+      "disarm": false,
+      "frame": 8,
+      "kind": "counter_wait",
+      "marker": 1,
+      "marker_frame": 95,
+      "poll": "0x021564E8",
+      "queue_kind": 9,
+      "raw": "09 00 01 00",
+      "sub": 9
+     },
+     {
+      "disarm": true,
+      "frame": 80,
+      "kind": "counter_wait",
+      "marker": -1,
+      "marker_frame": null,
+      "poll": "0x021564E8",
+      "queue_kind": 9,
+      "raw": "09 00 ff 00",
+      "sub": 9
+     },
+     {
+      "frame": 96,
+      "frames_by_direction": [
+       145,
+       145,
+       145,
+       105,
+       105,
+       105,
+       105,
+       145
+      ],
+      "kind": "direction",
+      "marker_default": 3,
+      "marker_default_frame": 145,
+      "markers_by_direction": [
+       3,
+       3,
+       3,
+       2,
+       2,
+       2,
+       2,
+       3
+      ],
+      "raw": "17 00 03 03 03 03 02 02 02 02 03 00",
+      "sub": 23
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x0003824b",
+      "frame": 95,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": false,
+      "in_file": true,
+      "kb_recs": [],
+      "raw": "00 03 02 00 07 00",
+      "row": 7
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 51,
+     "name": "Ryotsu"
+    }
+   ],
+   "prefix": "kk_b_01",
+   "scanned": {
+    "chr/kk_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b",
+    "chr/kk_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90 0x91",
+    "chr/kk_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0 0xb1 0xb2"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 102,
+     "member": "chr/kk_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1024,
+      "arg": 24,
+      "frame": 44,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 04",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 60,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/kk_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 65,
+     "name": "Kinnikuman"
+    }
+   ],
+   "prefix": "kn_b_01",
+   "scanned": {
+    "chr/kn_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36",
+    "chr/kn_b_01_6.aar": "0xa0 0xa1 0xa6 0xa7 0xa8 0xa9 0xaa"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2f",
+     "frame": 24,
+     "member": "chr/kn_b_01.aar",
+     "operand": 2,
+     "raw": "00 03 0a 00 02 00",
+     "status_id": 3
+    },
+    {
+     "anim": "0x2f",
+     "frame": 24,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2f",
+     "frame": 66,
+     "member": "chr/kn_b_01.aar",
+     "operand": 2,
+     "raw": "00 03 0a 00 02 00",
+     "status_id": 3
+    },
+    {
+     "anim": "0x2f",
+     "frame": 66,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2f",
+     "frame": 66,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2f",
+     "frame": 116,
+     "member": "chr/kn_b_01.aar",
+     "operand": 2,
+     "raw": "00 03 0a 00 02 00",
+     "status_id": 3
+    },
+    {
+     "anim": "0x2f",
+     "frame": 116,
+     "member": "chr/kn_b_01.aar",
+     "operand": 2,
+     "raw": "00 03 0a 00 02 00",
+     "status_id": 3
+    },
+    {
+     "anim": "0x2f",
+     "frame": 116,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2f",
+     "frame": 116,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2f",
+     "frame": 116,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x2f",
+     "frame": 116,
+     "member": "chr/kn_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    },
+    {
+     "anim": "0x31",
+     "frame": 42,
+     "member": "chr/kn_b_01.aar",
+     "operand": 17,
+     "raw": "00 03 0a 00 11 00",
+     "status_id": 35
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 7,
+      "frame": 5,
+      "grade": "measured",
+      "kind": "invuln",
+      "raw": "00 03 07 00 12 00",
+      "ticks": 18
+     },
+     {
+      "arg": 5,
+      "frame": 19,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 51,
+    "impulses": [
+     {
+      "frame": 5,
+      "raw": "03 01 1e 00",
+      "x_ev": 30,
+      "x_raw": 960,
+      "y_ev": 0,
+      "y_raw": 0
+     },
+     {
+      "frame": 19,
+      "raw": "03 01 e2 00",
+      "x_ev": -30,
+      "x_raw": -960,
+      "y_ev": 0,
+      "y_raw": 0
+     }
+    ],
+    "markers": {},
+    "member": "chr/kn_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 59,
+     "name": "Muhyo"
+    }
+   ],
+   "prefix": "mr_b_01",
+   "scanned": {
+    "chr/mr_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56",
+    "chr/mr_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d 0x6e 0x6f 0x70",
+    "chr/mr_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90 0x91 0x92",
+    "chr/mr_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0 0xb1 0xb2 0xb3 0xb4 0xb5 0xb6 0xb7",
+    "chr/mr_b_01_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6 0xc7 0xc8 0xc9 0xca 0xcb 0xcc 0xcd 0xce 0xcf 0xd0 0xd1"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 2048,
+      "arg": 24,
+      "frame": 22,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 08",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 2048,
+      "arg": 24,
+      "frame": 66,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 08",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 104,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 38,
+     "2": 82
+    },
+    "member": "chr/mr_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 37,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 82,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 81,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 38,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column annotated in chr_b-Complete-Mapping.md, not a clean measured pin: na_b_01 (E0 2026-10-18: ambiguous by byte join)",
+     "chr_b": 20,
+     "name": "Naruto"
+    }
+   ],
+   "prefix": "na_b_01",
+   "scanned": {
+    "chr/na_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42",
+    "chr/na_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d 0x6e 0x6f 0x70 0x71",
+    "chr/na_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c",
+    "chr/na_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0 0xb1 0xb2 0xb3 0xb4 0xb5 0xb6 0xb7 0xb8 0xb9"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 9,
+      "decoy": 0,
+      "frame": 18,
+      "grade": "measured",
+      "kind": "arm_substitute",
+      "raw": "00 03 09 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 34,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 10
+    },
+    "member": "chr/na_b_01.aar",
+    "playhead": [
+     {
+      "frame": 17,
+      "kind": "loop",
+      "limit": 3,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 10,
+      "raw": "02 00 01 03",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column live-verified (move_records.KNOWN_REC0)",
+     "chr_b": 21,
+     "name": "Sasuke"
+    }
+   ],
+   "prefix": "na_b_02",
+   "scanned": {
+    "chr/na_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36",
+    "chr/na_b_02_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6 0xc7 0xc8 0xc9 0xca 0xcb 0xcc 0xcd"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 9,
+      "decoy": 0,
+      "frame": 38,
+      "grade": "measured",
+      "kind": "arm_substitute",
+      "raw": "00 03 09 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 58,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/na_b_02.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Sakura = na_b_03, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 22,
+     "name": "Sakura"
+    }
+   ],
+   "prefix": "na_b_03",
+   "scanned": {
+    "chr/na_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 30,
+     "member": "chr/na_b_03.aar",
+     "operand": 5,
+     "raw": "00 03 0a 00 05 00",
+     "status_id": 6
+    },
+    {
+     "anim": "0x2e",
+     "frame": 46,
+     "member": "chr/na_b_03.aar",
+     "operand": 2,
+     "raw": "00 03 0a 00 02 00",
+     "status_id": 3
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 9,
+      "decoy": 0,
+      "frame": 18,
+      "grade": "measured",
+      "kind": "arm_substitute",
+      "raw": "00 03 09 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 34,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 10
+    },
+    "member": "chr/na_b_03.aar",
+    "playhead": [
+     {
+      "frame": 17,
+      "kind": "loop",
+      "limit": 3,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 10,
+      "raw": "02 00 01 03",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column live-verified (move_records.KNOWN_REC0)",
+     "chr_b": 23,
+     "name": "Kakashi"
+    }
+   ],
+   "prefix": "na_b_04",
+   "scanned": {
+    "chr/na_b_04.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e",
+    "chr/na_b_04_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d 0x6e 0x6f 0x70",
+    "chr/na_b_04_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f 0x90 0x91 0x92 0x93 0x94 0x95 0x96",
+    "chr/na_b_04_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 9,
+      "decoy": 0,
+      "frame": 18,
+      "grade": "measured",
+      "kind": "arm_substitute",
+      "raw": "00 03 09 00 00 00"
+     }
+    ],
+    "ends": [
+     34
+    ],
+    "frames": 34,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 10
+    },
+    "member": "chr/na_b_04.aar",
+    "playhead": [
+     {
+      "disarm": false,
+      "frame": 6,
+      "kind": "counter_wait",
+      "marker": 2,
+      "marker_frame": null,
+      "poll": "0x021564E8",
+      "queue_kind": 9,
+      "raw": "09 00 02 00",
+      "sub": 9
+     },
+     {
+      "frame": 17,
+      "kind": "loop",
+      "limit": 3,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 10,
+      "raw": "02 00 01 03",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Kyuubi Naruto = na_b_05, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 24,
+     "name": "Kyuubi Naruto"
+    }
+   ],
+   "prefix": "na_b_05",
+   "scanned": {
+    "chr/na_b_05.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36",
+    "chr/na_b_05_8.aar": "0xe0 0xe1 0xe2 0xe3 0xe4 0xe5 0xe6 0xe7 0xe8 0xe9 0xea 0xeb"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 4,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 384,
+      "arg": 24,
+      "frame": 16,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 80 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 21,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 25,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 4,
+     "2": 21
+    },
+    "member": "chr/na_b_05.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 3,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 21,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 20,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 4,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 69,
+     "name": "Fuusuke"
+    }
+   ],
+   "prefix": "nk_b_01",
+   "scanned": {
+    "chr/nk_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a",
+    "chr/nk_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67",
+    "chr/nk_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87"
+   },
+   "status_effects": [],
+   "stored_jumps": [
+    {
+     "anim": "0x1f",
+     "frame": 2,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "Y",
+     "move_id": 2,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "9": 58
+     }
+    },
+    {
+     "anim": "0x21",
+     "frame": 2,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 29,
+      "10": 92,
+      "9": 67
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 52,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 74,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 96,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 118,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 140,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 162,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 184,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 206,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 36,
+      "10": 30,
+      "11": 218,
+      "12": 238,
+      "13": 258,
+      "14": 278,
+      "15": 298,
+      "16": 318,
+      "17": 338,
+      "18": 358,
+      "2": 58,
+      "3": 80,
+      "4": 102,
+      "5": 124,
+      "6": 146,
+      "7": 168,
+      "8": 190,
+      "9": 212
+     }
+    },
+    {
+     "anim": "0x24",
+     "frame": 4,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "down B",
+     "move_id": 7,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "9": 53
+     }
+    },
+    {
+     "anim": "0x25",
+     "frame": 3,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "down Y",
+     "move_id": 8,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "9": 62
+     }
+    },
+    {
+     "anim": "0x27",
+     "frame": 13,
+     "kind": "stored_jump",
+     "member": "chr/nk_b_01.aar",
+     "move": "air Y",
+     "move_id": 10,
+     "prefix": "nk_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "10": 47,
+      "9": 45
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 24,
+     "kind": "store",
+     "member": "chr/nk_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "nk_b_01",
+     "raw": "13 00 09 00",
+     "sub": 19,
+     "value": 9
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 32,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 18
+    },
+    "member": "chr/nk_b_01.aar",
+    "playhead": [
+     {
+      "frame": 22,
+      "kind": "loop",
+      "limit": 7,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 18,
+      "raw": "02 00 01 07",
+      "sub": 2
+     },
+     {
+      "frame": 24,
+      "kind": "store",
+      "raw": "13 00 09 00",
+      "sub": 19,
+      "value": 9
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 60,
+     "name": "Neuro"
+    }
+   ],
+   "prefix": "nn_b_01",
+   "scanned": {
+    "chr/nn_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b",
+    "chr/nn_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67",
+    "chr/nn_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 44,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 68,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 4,
+      "frame": 93,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 101,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 44,
+     "2": 93
+    },
+    "member": "chr/nn_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 43,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 93,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 91,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 44,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": [
+     {
+      "art": "0x00088141",
+      "frame": 44,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       17
+      ],
+      "raw": "00 03 02 00 08 00",
+      "row": 8
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Edajima = oj_b_01, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 66,
+     "name": "Edajima"
+    }
+   ],
+   "prefix": "oj_b_01",
+   "scanned": {
+    "chr/oj_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 16,
+      "arg": 23,
+      "frame": 38,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 10 00",
+      "units": "HP points = amount_raw / 64"
+     },
+     {
+      "amount_raw": 16,
+      "arg": 23,
+      "frame": 48,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 10 00",
+      "units": "HP points = amount_raw / 64"
+     },
+     {
+      "amount_raw": 16,
+      "arg": 23,
+      "frame": 58,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 10 00",
+      "units": "HP points = amount_raw / 64"
+     }
+    ],
+    "ends": [],
+    "frames": 94,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 43,
+     "2": 78
+    },
+    "member": "chr/oj_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 43,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 78,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 63,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 43,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column live-verified (move_records.KNOWN_REC0)",
+     "chr_b": 67,
+     "name": "Momotaro"
+    }
+   ],
+   "prefix": "oj_b_02",
+   "scanned": {
+    "chr/oj_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52",
+    "chr/oj_b_02_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6a 0x6b 0x6c 0x6d",
+    "chr/oj_b_02_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89",
+    "chr/oj_b_02_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 151,
+     "member": "chr/oj_b_02.aar",
+     "operand": 8,
+     "raw": "00 03 0a 00 08 00",
+     "status_id": 9
+    },
+    {
+     "anim": "0x2c",
+     "frame": 151,
+     "member": "chr/oj_b_02.aar",
+     "operand": 22,
+     "raw": "00 03 0a 00 16 00",
+     "status_id": 40
+    },
+    {
+     "anim": "0x2c",
+     "frame": 151,
+     "member": "chr/oj_b_02.aar",
+     "operand": 20,
+     "raw": "00 03 0a 00 14 00",
+     "status_id": 38
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1024,
+      "arg": 24,
+      "frame": 20,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 04",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 51,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/oj_b_02.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column annotated in chr_b-Complete-Mapping.md, not a clean measured pin: op_b_01 (E0 2026-10-18: ambiguous by byte join)",
+     "chr_b": 12,
+     "name": "Luffy"
+    }
+   ],
+   "prefix": "op_b_01",
+   "scanned": {
+    "chr/op_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 40,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 32,
+      "arg": 23,
+      "frame": 56,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 20 00",
+      "units": "HP points = amount_raw / 64"
+     },
+     {
+      "arg": 5,
+      "frame": 64,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 32,
+      "arg": 23,
+      "frame": 80,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 20 00",
+      "units": "HP points = amount_raw / 64"
+     },
+     {
+      "arg": 5,
+      "frame": 102,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [],
+    "frames": 104,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 64,
+     "2": 88
+    },
+    "member": "chr/op_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 63,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 88,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 87,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 64,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Zoro = op_b_02, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 13,
+     "name": "Zoro"
+    }
+   ],
+   "prefix": "op_b_02",
+   "scanned": {
+    "chr/op_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f",
+    "chr/op_b_02_4.aar": "0x60 0x61",
+    "chr/op_b_02_6.aar": "0xa0 0xa1 0xa2"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 64,
+      "arg": 23,
+      "frame": 52,
+      "grade": "measured",
+      "kind": "hp",
+      "raw": "00 03 17 00 40 00",
+      "units": "HP points = amount_raw / 64"
+     }
+    ],
+    "ends": [
+     91
+    ],
+    "frames": 91,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 20,
+     "2": 75
+    },
+    "member": "chr/op_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 16,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 75,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 71,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 20,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Sanji = op_b_03, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 14,
+     "name": "Sanji"
+    }
+   ],
+   "prefix": "op_b_03",
+   "scanned": {
+    "chr/op_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 47,
+     "member": "chr/op_b_03.aar",
+     "operand": 14,
+     "raw": "00 03 0a 00 0e 00",
+     "status_id": 15
+    },
+    {
+     "anim": "0x2e",
+     "frame": 54,
+     "member": "chr/op_b_03.aar",
+     "operand": 14,
+     "raw": "00 03 0a 00 0e 00",
+     "status_id": 15
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 32,
+      "frame": 44,
+      "grade": "lead",
+      "kind": "op3_arg32",
+      "raw": "00 03 20 00 00 0a"
+     },
+     {
+      "arg": 32,
+      "frame": 113,
+      "grade": "lead",
+      "kind": "op3_arg32",
+      "raw": "00 03 20 00 00 02"
+     },
+     {
+      "arg": 32,
+      "frame": 186,
+      "grade": "lead",
+      "kind": "op3_arg32",
+      "raw": "00 03 20 00 00 05"
+     }
+    ],
+    "ends": [
+     103,
+     172
+    ],
+    "frames": 245,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 110,
+     "2": 111,
+     "3": 185
+    },
+    "member": "chr/op_b_03.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 15,
+     "name": "Nami"
+    }
+   ],
+   "prefix": "op_b_04",
+   "scanned": {
+    "chr/op_b_04.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b",
+    "chr/op_b_04_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86"
+   },
+   "status_effects": [
+    {
+     "anim": "0x29",
+     "frame": 51,
+     "member": "chr/op_b_04.aar",
+     "operand": 21,
+     "raw": "00 03 0a 00 15 00",
+     "status_id": 39
+    },
+    {
+     "anim": "0x2a",
+     "frame": 57,
+     "member": "chr/op_b_04.aar",
+     "operand": 16,
+     "raw": "00 03 0a 00 10 00",
+     "status_id": 17
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 40,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/op_b_04.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Robin = op_b_05, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 16,
+     "name": "Robin"
+    }
+   ],
+   "prefix": "op_b_05",
+   "scanned": {
+    "chr/op_b_05.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x5f 0x61 0x62 0x63 0x64 0x65 0x66"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 128,
+      "arg": 24,
+      "frame": 56,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 80 00",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 85,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 24,
+     "2": 70
+    },
+    "member": "chr/op_b_05.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 18,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 70,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 64,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 24,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: Franky stores 3/6, side Y f10->f52/f103, air Y f11->f89/f158 = op_b_06 (feel-captures/2026-10-13-yusuke-ua S0; confirmed by E0 roster pin, roster_reconciled.json)",
+     "chr_b": 17,
+     "name": "Franky"
+    }
+   ],
+   "prefix": "op_b_06",
+   "scanned": {
+    "chr/op_b_06.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b 0x5c 0x5d 0x5e 0x5f",
+    "chr/op_b_06_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68",
+    "chr/op_b_06_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d"
+   },
+   "status_effects": [],
+   "stored_jumps": [
+    {
+     "anim": "0x18",
+     "frame": 0,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 67,
+      "2": 118,
+      "3": 187,
+      "4": 255,
+      "5": 314,
+      "6": 384,
+      "7": 460
+     }
+    },
+    {
+     "anim": "0x1f",
+     "frame": 0,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "Y",
+     "move_id": 2,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "3": 91,
+      "6": 188
+     }
+    },
+    {
+     "anim": "0x21",
+     "frame": 9,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "3": 52,
+      "6": 103
+     }
+    },
+    {
+     "anim": "0x23",
+     "frame": 4,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "3": 53,
+      "6": 102
+     }
+    },
+    {
+     "anim": "0x24",
+     "frame": 0,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "down B",
+     "move_id": 7,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "3": 51,
+      "6": 113
+     }
+    },
+    {
+     "anim": "0x25",
+     "frame": 30,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "down Y",
+     "move_id": 8,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "3": 75,
+      "6": 124
+     }
+    },
+    {
+     "anim": "0x27",
+     "frame": 10,
+     "kind": "stored_jump",
+     "member": "chr/op_b_06.aar",
+     "move": "air Y",
+     "move_id": 10,
+     "prefix": "op_b_06",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "3": 89,
+      "6": 158
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 97,
+     "kind": "store",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "13 00 03 00",
+     "sub": 19,
+     "value": 3
+    },
+    {
+     "anim": "0x18",
+     "frame": 217,
+     "kind": "store",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "13 00 03 00",
+     "sub": 19,
+     "value": 3
+    },
+    {
+     "anim": "0x18",
+     "frame": 289,
+     "kind": "store",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "13 00 06 00",
+     "sub": 19,
+     "value": 6
+    },
+    {
+     "anim": "0x18",
+     "frame": 345,
+     "kind": "store",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "13 00 03 00",
+     "sub": 19,
+     "value": 3
+    },
+    {
+     "anim": "0x18",
+     "frame": 418,
+     "kind": "store",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "13 00 06 00",
+     "sub": 19,
+     "value": 6
+    },
+    {
+     "anim": "0x18",
+     "frame": 487,
+     "kind": "store",
+     "member": "chr/op_b_06.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_06",
+     "raw": "13 00 06 00",
+     "sub": 19,
+     "value": 6
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [
+     57,
+     110,
+     173,
+     245,
+     306,
+     380,
+     453
+    ],
+    "frames": 522,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 67,
+     "2": 118,
+     "3": 187,
+     "4": 255,
+     "5": 314,
+     "6": 384,
+     "7": 460
+    },
+    "member": "chr/op_b_06.aar",
+    "playhead": [
+     {
+      "frame": 0,
+      "kind": "stored_jump",
+      "raw": "14 00 00 00",
+      "sub": 20,
+      "targets": {
+       "0": 0,
+       "1": 67,
+       "2": 118,
+       "3": 187,
+       "4": 255,
+       "5": 314,
+       "6": 384,
+       "7": 460
+      }
+     },
+     {
+      "frame": 97,
+      "kind": "store",
+      "raw": "13 00 03 00",
+      "sub": 19,
+      "value": 3
+     },
+     {
+      "frame": 217,
+      "kind": "store",
+      "raw": "13 00 03 00",
+      "sub": 19,
+      "value": 3
+     },
+     {
+      "frame": 289,
+      "kind": "store",
+      "raw": "13 00 06 00",
+      "sub": 19,
+      "value": 6
+     },
+     {
+      "frame": 345,
+      "kind": "store",
+      "raw": "13 00 03 00",
+      "sub": 19,
+      "value": 3
+     },
+     {
+      "frame": 418,
+      "kind": "store",
+      "raw": "13 00 06 00",
+      "sub": 19,
+      "value": 6
+     },
+     {
+      "frame": 487,
+      "kind": "store",
+      "raw": "13 00 06 00",
+      "sub": 19,
+      "value": 6
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: G2 Luffy stores 9 = op_b_07, the only op_b_* store of 9; value only (feel-captures/2026-10-13-yusuke-ua S0; confirmed by E0 roster pin, roster_reconciled.json)",
+     "chr_b": 18,
+     "name": "Gear 2 Luffy"
+    }
+   ],
+   "prefix": "op_b_07",
+   "scanned": {
+    "chr/op_b_07.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2f 0x30 0x31 0x32 0x33 0x34 0x35 0x36",
+    "chr/op_b_07_7.aar": "0xc0 0xc1 0xc2 0xc3 0xc4 0xc5 0xc6"
+   },
+   "status_effects": [],
+   "stored_jumps": [
+    {
+     "anim": "0x21",
+     "frame": 3,
+     "kind": "stored_jump",
+     "member": "chr/op_b_07.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "op_b_07",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "9": 65
+     }
+    },
+    {
+     "anim": "0x25",
+     "frame": 4,
+     "kind": "stored_jump",
+     "member": "chr/op_b_07.aar",
+     "move": "down Y",
+     "move_id": 8,
+     "prefix": "op_b_07",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "9": 83
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 110,
+     "kind": "store",
+     "member": "chr/op_b_07.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "op_b_07",
+     "raw": "13 00 09 00",
+     "sub": 19,
+     "value": 9
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 124,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/op_b_07.aar",
+    "playhead": [
+     {
+      "frame": 110,
+      "kind": "store",
+      "raw": "13 00 09 00",
+      "sub": 19,
+      "value": 9
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column measured: PCT Nami = op_b_08, full-file byte equality with the live col base (E0 roster pin, roster_reconciled.json, MEASURED)",
+     "chr_b": 19,
+     "name": "PCT Nami"
+    }
+   ],
+   "prefix": "op_b_08",
+   "scanned": {
+    "chr/op_b_08.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f",
+    "chr/op_b_08_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0 0xb1 0xb2 0xb3 0xb4 0xb5 0xb6 0xb7"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 40,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/op_b_08.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 55,
+     "name": "Jaguar"
+    }
+   ],
+   "prefix": "pj_b_01",
+   "scanned": {
+    "chr/pj_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50",
+    "chr/pj_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2a",
+     "frame": 142,
+     "member": "chr/pj_b_01.aar",
+     "operand": 1,
+     "raw": "00 03 0a 00 01 00",
+     "status_id": 2
+    },
+    {
+     "anim": "0x2a",
+     "frame": 142,
+     "member": "chr/pj_b_01.aar",
+     "operand": 19,
+     "raw": "00 03 0a 00 13 00",
+     "status_id": 37
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 2560,
+      "arg": 24,
+      "frame": 50,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 0a",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 90,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/pj_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 36,
+     "name": "Kenshin"
+    }
+   ],
+   "prefix": "rk_b_01",
+   "scanned": {
+    "chr/rk_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36",
+    "chr/rk_b_01_5.aar": "0x80 0x81 0x82 0x83",
+    "chr/rk_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 30,
+    "impulses": [
+     {
+      "frame": 8,
+      "raw": "03 01 9c 00",
+      "x_ev": -100,
+      "x_raw": -3200,
+      "y_ev": 0,
+      "y_raw": 0
+     }
+    ],
+    "markers": {},
+    "member": "chr/rk_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 25,
+     "name": "Yoh"
+    }
+   ],
+   "prefix": "sk_b_01",
+   "scanned": {
+    "chr/sk_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e",
+    "chr/sk_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 20,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 48,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 96,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 116,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     124
+    ],
+    "frames": 124,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 68,
+     "2": 116
+    },
+    "member": "chr/sk_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 67,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 116,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 115,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 68,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 26,
+     "name": "Yoh (White Swan)"
+    }
+   ],
+   "prefix": "sk_b_02",
+   "scanned": {
+    "chr/sk_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d",
+    "chr/sk_b_02_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 20,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 48,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "amount_raw": 256,
+      "arg": 24,
+      "frame": 96,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 01",
+      "units": "bars = amount_raw / 25600"
+     },
+     {
+      "arg": 4,
+      "frame": 116,
+      "grade": "lead",
+      "kind": "op3_arg4",
+      "raw": "00 03 04 00 00 00"
+     }
+    ],
+    "ends": [
+     124
+    ],
+    "frames": 124,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 68,
+     "2": 116
+    },
+    "member": "chr/sk_b_02.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 67,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 116,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 115,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 68,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 27,
+     "name": "Anna"
+    }
+   ],
+   "prefix": "sk_b_03",
+   "scanned": {
+    "chr/sk_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48",
+    "chr/sk_b_03_5.aar": "0x80 0x81 0x82 0x83"
+   },
+   "status_effects": [],
+   "stored_jumps": [
+    {
+     "anim": "0x23",
+     "frame": 11,
+     "kind": "stored_jump",
+     "member": "chr/sk_b_03.aar",
+     "move": "up Y",
+     "move_id": 6,
+     "prefix": "sk_b_03",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 15,
+      "2": 62,
+      "3": 90,
+      "4": 31
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 36,
+     "kind": "store",
+     "member": "chr/sk_b_03.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "sk_b_03",
+     "raw": "13 00 03 00",
+     "sub": 19,
+     "value": 3
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 52,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 4,
+     "2": 36
+    },
+    "member": "chr/sk_b_03.aar",
+    "playhead": [
+     {
+      "frame": 36,
+      "kind": "store",
+      "raw": "13 00 03 00",
+      "sub": 19,
+      "value": 3
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 63,
+     "name": "Seiya"
+    }
+   ],
+   "prefix": "ss_b_01",
+   "scanned": {
+    "chr/ss_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x2f 0x30 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46",
+    "chr/ss_b_01_4.aar": "0x60 0x61",
+    "chr/ss_b_01_5.aar": "0x80 0x81 0x82"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1280,
+      "arg": 24,
+      "frame": 46,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 05",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 62,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/ss_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 64,
+     "name": "Gold Seiya"
+    }
+   ],
+   "prefix": "ss_b_02",
+   "scanned": {
+    "chr/ss_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x31 0x32 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47",
+    "chr/ss_b_02_8.aar": "0xe0 0xe1 0xe2 0xe3 0xe4 0xe5 0xe6 0xe7 0xe8 0xe9 0xea 0xeb"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "amount_raw": 1280,
+      "arg": 24,
+      "frame": 46,
+      "grade": "measured",
+      "kind": "sp",
+      "raw": "00 03 18 00 00 05",
+      "units": "bars = amount_raw / 25600"
+     }
+    ],
+    "ends": [],
+    "frames": 62,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/ss_b_02.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 54,
+     "name": "Tsuna"
+    }
+   ],
+   "prefix": "tr_b_01",
+   "scanned": {
+    "chr/tr_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 60,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 16,
+     "2": 48
+    },
+    "member": "chr/tr_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 12,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 2,
+      "marker_default_frame": 48,
+      "raw": "01 00 03 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 24,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 1,
+      "marker_frame": 16,
+      "raw": "02 00 01 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 32,
+     "name": "Yusuke"
+    }
+   ],
+   "prefix": "yh_b_01",
+   "scanned": {
+    "chr/yh_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52",
+    "chr/yh_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66",
+    "chr/yh_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89",
+    "chr/yh_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab"
+   },
+   "status_effects": [],
+   "stored_jumps": [
+    {
+     "anim": "0x18",
+     "frame": 5,
+     "kind": "stored_jump",
+     "member": "chr/yh_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "yh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 8,
+      "2": 16,
+      "3": 24,
+      "4": 32,
+      "5": 49
+     }
+    },
+    {
+     "anim": "0x21",
+     "frame": 16,
+     "kind": "stored_jump",
+     "member": "chr/yh_b_01.aar",
+     "move": "side Y",
+     "move_id": 4,
+     "prefix": "yh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 60,
+      "3": 101
+     }
+    },
+    {
+     "anim": "0x27",
+     "frame": 16,
+     "kind": "stored_jump",
+     "member": "chr/yh_b_01.aar",
+     "move": "air Y",
+     "move_id": 10,
+     "prefix": "yh_b_01",
+     "raw": "14 00 00 00",
+     "sub": 20,
+     "targets": {
+      "0": 0,
+      "1": 58,
+      "3": 97,
+      "5": 10,
+      "6": 16
+     }
+    }
+   ],
+   "stores": [
+    {
+     "anim": "0x18",
+     "frame": 8,
+     "kind": "store",
+     "member": "chr/yh_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "yh_b_01",
+     "raw": "13 00 01 00",
+     "sub": 19,
+     "value": 1
+    },
+    {
+     "anim": "0x18",
+     "frame": 24,
+     "kind": "store",
+     "member": "chr/yh_b_01.aar",
+     "move": "id 11 (input 0x1000)",
+     "move_id": 11,
+     "prefix": "yh_b_01",
+     "raw": "13 00 03 00",
+     "sub": 19,
+     "value": 3
+    }
+   ],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 5,
+      "frame": 16,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 24,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 32,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     },
+     {
+      "arg": 5,
+      "frame": 49,
+      "grade": "lead",
+      "kind": "op3_arg5",
+      "raw": "00 03 05 00 00 00"
+     }
+    ],
+    "ends": [
+     43,
+     57
+    ],
+    "frames": 57,
+    "impulses": [],
+    "markers": {
+     "0": 0,
+     "1": 8,
+     "2": 16,
+     "3": 24,
+     "4": 32,
+     "5": 49
+    },
+    "member": "chr/yh_b_01.aar",
+    "playhead": [
+     {
+      "button": "SELECT",
+      "button_idx": 3,
+      "button_mask": 4096,
+      "frame": 4,
+      "hold_1": 0,
+      "hold_2": 0,
+      "hold_3": 0,
+      "hold_flag": 0,
+      "kind": "hold_release",
+      "marker_1": 0,
+      "marker_1_frame": null,
+      "marker_2": 0,
+      "marker_2_frame": null,
+      "marker_3": 0,
+      "marker_3_frame": null,
+      "marker_default": 5,
+      "marker_default_frame": 49,
+      "raw": "01 00 03 00 05 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "sub": 1
+     },
+     {
+      "frame": 5,
+      "kind": "stored_jump",
+      "raw": "14 00 00 00",
+      "sub": 20,
+      "targets": {
+       "0": 0,
+       "1": 8,
+       "2": 16,
+       "3": 24,
+       "4": 32,
+       "5": 49
+      }
+     },
+     {
+      "frame": 8,
+      "kind": "store",
+      "raw": "13 00 01 00",
+      "sub": 19,
+      "value": 1
+     },
+     {
+      "frame": 23,
+      "kind": "loop",
+      "limit": 2,
+      "limit_unbounded": false,
+      "marker": 2,
+      "marker_frame": 16,
+      "raw": "02 00 02 02",
+      "sub": 2
+     },
+     {
+      "frame": 24,
+      "kind": "store",
+      "raw": "13 00 03 00",
+      "sub": 19,
+      "value": 3
+     },
+     {
+      "frame": 39,
+      "kind": "loop",
+      "limit": -1,
+      "limit_unbounded": true,
+      "marker": 4,
+      "marker_frame": 32,
+      "raw": "02 00 04 ff",
+      "sub": 2
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 33,
+     "name": "Kurama"
+    }
+   ],
+   "prefix": "yh_b_02",
+   "scanned": {
+    "chr/yh_b_02.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [],
+    "ends": [],
+    "frames": 34,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/yh_b_02.aar",
+    "playhead": [],
+    "spawns": [
+     {
+      "art": "0x0009823d",
+      "frame": 16,
+      "grade": "measured bytes; kb join inferred (art low byte = anim id keyed to the record's collision id, review c4)",
+      "has_kb_record": true,
+      "in_file": true,
+      "kb_recs": [
+       16,
+       18
+      ],
+      "raw": "00 03 02 00 03 00",
+      "row": 3
+     }
+    ]
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 34,
+     "name": "Hiei"
+    }
+   ],
+   "prefix": "yh_b_03",
+   "scanned": {
+    "chr/yh_b_03.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b",
+    "chr/yh_b_03_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87"
+   },
+   "status_effects": [
+    {
+     "anim": "0x2c",
+     "frame": 112,
+     "member": "chr/yh_b_03.aar",
+     "operand": 18,
+     "raw": "00 03 0a 00 12 00",
+     "status_id": 36
+    }
+   ],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 7,
+      "frame": 17,
+      "grade": "measured",
+      "kind": "invuln",
+      "raw": "00 03 07 00 0c 00",
+      "ticks": 12
+     },
+     {
+      "frame": 17,
+      "grade": "lead",
+      "kind": "op3_sub2",
+      "raw": "02 03 01 00"
+     },
+     {
+      "frame": 26,
+      "grade": "lead",
+      "kind": "op3_sub2",
+      "raw": "02 03 00 00 19 83"
+     }
+    ],
+    "ends": [
+     16
+    ],
+    "frames": 29,
+    "impulses": [
+     {
+      "frame": 0,
+      "raw": "03 01 08 00",
+      "x_ev": 8,
+      "x_raw": 256,
+      "y_ev": 0,
+      "y_raw": 0
+     },
+     {
+      "frame": 8,
+      "raw": "03 01 f8 00",
+      "x_ev": -8,
+      "x_raw": -256,
+      "y_ev": 0,
+      "y_raw": 0
+     },
+     {
+      "frame": 20,
+      "raw": "03 01 3c 0c",
+      "x_ev": 60,
+      "x_raw": 1920,
+      "y_ev": 12,
+      "y_raw": -1512
+     }
+    ],
+    "markers": {
+     "0": 0,
+     "1": 4,
+     "2": 17
+    },
+    "member": "chr/yh_b_03.aar",
+    "playhead": [
+     {
+      "disarm": false,
+      "frame": 4,
+      "kind": "counter_wait",
+      "marker": 2,
+      "marker_frame": 17,
+      "poll": "0x021564E8",
+      "queue_kind": 9,
+      "raw": "09 00 02 00",
+      "sub": 9
+     },
+     {
+      "frame": 7,
+      "kind": "loop",
+      "limit": 14,
+      "limit_unbounded": false,
+      "marker": 1,
+      "marker_frame": 4,
+      "raw": "02 00 01 0e",
+      "sub": 2
+     },
+     {
+      "disarm": true,
+      "frame": 17,
+      "kind": "counter_wait",
+      "marker": -1,
+      "marker_frame": null,
+      "poll": "0x021564E8",
+      "queue_kind": 9,
+      "raw": "09 00 ff 00",
+      "sub": 9
+     }
+    ],
+    "spawns": []
+   }
+  },
+  {
+   "error": null,
+   "names": [
+    {
+     "basis": "File column not flagged",
+     "chr_b": 35,
+     "name": "Yugi"
+    }
+   ],
+   "prefix": "yo_b_01",
+   "scanned": {
+    "chr/yo_b_01.aar": "0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x13 0x14 0x15 0x16 0x17 0x18 0x19 0x1a 0x1e 0x1f 0x20 0x21 0x22 0x23 0x24 0x25 0x26 0x27 0x28 0x29 0x2a 0x2b 0x2c 0x2d 0x2e 0x33 0x34 0x35 0x36 0x38 0x39 0x3a 0x3b 0x3c 0x3d 0x3e 0x3f 0x40 0x41 0x42 0x43 0x44 0x45 0x46 0x47 0x48 0x49 0x4a 0x4b 0x4c 0x4d 0x4e 0x4f 0x50 0x51 0x52 0x53 0x54 0x55 0x56 0x57 0x58 0x59 0x5a 0x5b 0x5c 0x5d",
+    "chr/yo_b_01_4.aar": "0x60 0x61 0x62 0x63 0x64 0x65 0x66 0x67 0x68 0x69 0x6d 0x6e 0x6f 0x70",
+    "chr/yo_b_01_5.aar": "0x80 0x81 0x82 0x83 0x84 0x85 0x86 0x87 0x88 0x89 0x8a 0x8b 0x8c 0x8d 0x8e 0x8f",
+    "chr/yo_b_01_6.aar": "0xa0 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf 0xb0"
+   },
+   "status_effects": [],
+   "stored_jumps": [],
+   "stores": [],
+   "ua": {
+    "anim": "0x18",
+    "effects": [
+     {
+      "arg": 18,
+      "frame": 34,
+      "grade": "lead",
+      "kind": "op3_arg18",
+      "raw": "00 03 12 00 10 00"
+     }
+    ],
+    "ends": [],
+    "frames": 50,
+    "impulses": [],
+    "markers": {},
+    "member": "chr/yo_b_01.aar",
+    "playhead": [],
+    "spawns": []
+   }
+  }
+ ],
+ "code_facts": {
+  "air_reader_returns": [
+   9,
+   10
+  ],
+  "end_key": {
+   "handler": "0x0215693C",
+   "op": 3,
+   "sub": 1
+  },
+  "ground_reader_test": "0x0215A7D0",
+  "hp_raw_per_point": 64,
+  "init_site": "0x0215542C",
+  "mash": {
+   "button_held_mask": [
+    1024,
+    2048,
+    512,
+    8192
+   ],
+   "button_mask": [
+    128,
+    256,
+    64,
+    4096
+   ],
+   "button_table": "0x02171098",
+   "button_table_literal": "0x02171098",
+   "counter_offset": 162,
+   "direction_marker_table": [
+    "ldrb",
+    3
+   ],
+   "directions": [
+    8,
+    9,
+    1,
+    5,
+    4,
+    6,
+    2,
+    10
+   ],
+   "end_key": {
+    "flag": "0x10000000",
+    "flag_offset": 144,
+    "handler": "0x0215693C",
+    "op": 3,
+    "sub": 1,
+    "sub_table": "0x02172000"
+   },
+   "grounded_mask": 2,
+   "grounded_offset": 120,
+   "grounded_test": "0x021562E8",
+   "kind_handler": {
+    "2": "0x021562D8",
+    "4": "0x02156358"
+   },
+   "layout": {
+    "0": {
+     "button": [
+      "ldrb",
+      4
+     ],
+     "limit": [
+      "ldrsb",
+      3
+     ],
+     "marker": [
+      "ldrb",
+      2
+     ],
+     "threshold": [
+      "ldrb",
+      6
+     ],
+     "window": [
+      "ldrb",
+      5
+     ]
+    },
+    "1": {
+     "button": [
+      "ldrb",
+      2
+     ],
+     "hold_1": [
+      "ldrh",
+      8
+     ],
+     "hold_2": [
+      "ldrh",
+      12
+     ],
+     "hold_3": [
+      "ldrh",
+      16
+     ],
+     "hold_flag": [
+      "ldrb",
+      3
+     ],
+     "marker_1": [
+      "ldrh",
+      6
+     ],
+     "marker_2": [
+      "ldrh",
+      10
+     ],
+     "marker_3": [
+      "ldrh",
+      14
+     ],
+     "marker_default": [
+      "ldrh",
+      4
+     ]
+    },
+    "18": {
+     "button": [
+      "ldrb",
+      4
+     ],
+     "marker_false": [
+      "ldrb",
+      2
+     ],
+     "marker_true": [
+      "ldrb",
+      3
+     ],
+     "threshold": [
+      "ldrb",
+      6
+     ],
+     "window": [
+      "ldrb",
+      5
+     ]
+    },
+    "19": {
+     "value": [
+      "ldrsb",
+      2
+     ]
+    },
+    "2": {
+     "limit": [
+      "ldrsb",
+      3
+     ],
+     "marker": [
+      "ldrb",
+      2
+     ]
+    },
+    "20": {},
+    "23": {
+     "marker_default": [
+      "ldrb",
+      2
+     ]
+    },
+    "3": {
+     "marker": [
+      "ldrsb",
+      2
+     ]
+    },
+    "4": {
+     "marker": [
+      "ldrsb",
+      2
+     ]
+    }
+   },
+   "op0_handler": "0x02156188",
+   "op_index_byte": 1,
+   "op_table": "0x0217200C",
+   "op_table_pool": "0x0217200C",
+   "sites": {
+    "0": {
+     "button": "0x02155A38",
+     "limit": "0x02155A28",
+     "marker": "0x02155A74",
+     "threshold": "0x02155A54",
+     "window": "0x02155A40"
+    },
+    "1": {
+     "button": "0x02155B34",
+     "hold_1": "0x02155B5C",
+     "hold_2": "0x02155B64",
+     "hold_3": "0x02155B6C",
+     "hold_flag": "0x02155B3C",
+     "marker_1": "0x02155B44",
+     "marker_2": "0x02155B4C",
+     "marker_3": "0x02155B54",
+     "marker_default": "0x02155B28"
+    },
+    "18": {
+     "button": "0x02155AAC",
+     "marker_false": "0x02155AF0",
+     "marker_true": "0x02155AE4",
+     "threshold": "0x02155AC4",
+     "window": "0x02155AB0"
+    },
+    "19": {
+     "value": "0x021560EC"
+    },
+    "2": {
+     "limit": "0x021559C8",
+     "marker": "0x021559DC"
+    },
+    "20": {},
+    "23": {
+     "marker_default": "0x02155C6C"
+    },
+    "3": {
+     "marker": "0x02155CB0"
+    },
+    "4": {
+     "marker": "0x02155D04"
+    }
+   },
+   "slot_for_kind": [
+    6,
+    5,
+    0,
+    0,
+    0,
+    1,
+    2,
+    2
+   ],
+   "slot_table": "0x02172040",
+   "store_offset": 163,
+   "sub1_slot_handler": "0x021561E4",
+   "sub_handler": {
+    "0": "0x02155A04",
+    "1": "0x02155B04",
+    "14": "0x02155E90",
+    "18": "0x02155A84",
+    "19": "0x021560EC",
+    "2": "0x021559C0",
+    "20": "0x021560F8",
+    "23": "0x02155BA0",
+    "3": "0x02155CAC",
+    "4": "0x02155D00",
+    "5": "0x02155D3C",
+    "9": "0x02155DB8"
+   },
+   "sub_index_byte": 0,
+   "sub_table": "0x02172084",
+   "sub_table_literal": "0x02172084",
+   "unlimited_limit": -1,
+   "words": {
+    "0x021559C0": "0xE92D4038",
+    "0x021559C8": "0xE1D410D3",
+    "0x021559DC": "0xE5D42002",
+    "0x02155CAC": "0xE59FC008",
+    "0x02155CB0": "0xE1D120D2",
+    "0x02155CB4": "0xE3A01002",
+    "0x02155D00": "0xE59FC008",
+    "0x02155D04": "0xE1D120D2",
+    "0x02155D08": "0xE3A01004",
+    "0x021560EC": "0xE1D110D2",
+    "0x021560F0": "0xE5C010A3",
+    "0x021560F8": "0xE92D4010",
+    "0x02156100": "0xE1D42AD3",
+    "0x02156114": "0xEB000122",
+    "0x0215611C": "0xE5C400A3",
+    "0x021562E8": "0xE5900010",
+    "0x021562EC": "0xE5900078",
+    "0x021562F0": "0xE3100002",
+    "0x02156358": "0xE92D4008",
+    "0x02156360": "0xEBFFFFE0",
+    "0x0215693C": "0xE92D4010",
+    "0x02156954": "0xE3800201"
+   }
+  },
+  "move_id": 11,
+  "move_row": "0x0217133C",
+  "op1_impulse": "0x0215669C",
+  "op1_impulse_mvn": "0x021566F4",
+  "op3_cases": {
+   "10": "0x02157C5C",
+   "17": "0x02157D2C",
+   "18": "0x02157D38",
+   "2": "0x02157BB0",
+   "23": "0x02157DB8",
+   "24": "0x02157DC8",
+   "7": "0x02157C30",
+   "9": "0x02157C4C"
+  },
+  "sp_raw_per_bar": 25600,
+  "store_offset": 163,
+  "store_site": "0x021560EC",
+  "stored_jump_site": "0x021560F8"
+ },
+ "counts": {
+  "arm_substitute": {
+   "anims": 4,
+   "characters": 4,
+   "events": 4
+  },
+  "end_key": {
+   "anims": 19,
+   "characters": 19,
+   "events": 35
+  },
+  "hp": {
+   "anims": 6,
+   "characters": 6,
+   "events": 9
+  },
+  "impulse": {
+   "anims": 6,
+   "characters": 6,
+   "events": 9
+  },
+  "invuln": {
+   "anims": 2,
+   "characters": 2,
+   "events": 2
+  },
+  "lead": {
+   "anims": 34,
+   "characters": 34,
+   "events": 77
+  },
+  "sp": {
+   "anims": 34,
+   "characters": 34,
+   "events": 53
+  },
+  "spawn": {
+   "anims": 9,
+   "characters": 9,
+   "events": 17
+  },
+  "status": {
+   "anims": 0,
+   "characters": 0,
+   "events": 0
+  },
+  "store": {
+   "anims": 11,
+   "characters": 10,
+   "events": 18
+  },
+  "stored_jump": {
+   "anims": 35,
+   "characters": 10,
+   "events": 42
+  },
+  "ua_anims": {
+   "anims": 74,
+   "characters": 74,
+   "events": 74
+  }
+ },
+ "field_grades": {
+  "amount_raw": "measured",
+  "anim": "measured",
+  "art": "measured (u32 at byte 12 of the shot row, chr/shot/<prefix>.bin)",
+  "decoy": "measured",
+  "effect_class": "inferred (a summary of the kinds in the row)",
+  "ends": "measured",
+  "frame": "measured",
+  "frames": "measured",
+  "grade": "measured for decoded args; lead for every other op 3 arg",
+  "guide_check": "measured join: the GameFAQs select tag against the anim 0x18 rows of the mapped prefixes",
+  "has_kb_record": "inferred: kb_recs is non-empty (the art low byte = anim id join, review c4; see grade_notes.spawn)",
+  "kb_recs": "inferred: the knockback records whose collision track keys an anim equal to the art low byte (review c4)",
+  "kind": "inferred (the name of each op 3 arg, from the handler it calls)",
+  "markers": "measured",
+  "member": "measured",
+  "raw": "measured",
+  "row": "measured",
+  "targets": "measured",
+  "ticks": "measured",
+  "units": "inferred (HP raw / 64 per displayed HP; SP raw / 25600 per bar, uare2-findings §3)",
+  "value": "measured",
+  "x_ev": "measured",
+  "x_raw": "inferred (ev[2] * 32; the shift is read from the handler, review.md f1)",
+  "y_ev": "measured",
+  "y_raw": "inferred (ev[3] * -126; the multiplier is read from mvn r0,#0x7d at 0x021566F4)"
+ },
+ "grade_notes": {
+  "arm_substitute": "measured: arg 9 stores the decoy index (signed ev[4]) and arms the substitution (0x02157C4C -> 0x0215C034); behaviour is in uare2-findings §1",
+  "ends": "measured: op 3 sub 1 key frames (0x0215693C)",
+  "guide": "measured join: each GameFAQs select tag maps to the prefixes of mash_table.GUIDE_FILES",
+  "hp": "measured: arg 23 applies s16 ev[4..5] to the active koma's HP (0x02157DB8 -> 0x020783CC)",
+  "impulse": "measured bytes: op 1 sub 3 (table 0x02172020[3] = 0x0215669C); x = ev[2] * 32 and y = ev[3] * -126 are the handler's arithmetic, read statically",
+  "invuln": "measured: arg 7 stores s16 ev[4..5] to +0xCE (0x02157C30)",
+  "lead": "args 17 and 18 and any other op 3 arg: bytes measured, semantics not traced",
+  "sp": "measured: arg 24 applies s16 ev[4..5] to the team SP pool (0x02157DC8 -> 0x020781E4)",
+  "spawn": "measured bytes: the shot row (ev[4]) and its art (u32 at byte 12). kb join inferred: the art's low byte is an anim id, and kb_recs lists each knockback record whose collision track keys that anim (K.record_uses; review c4). Inferred, not proven, and it can be ambiguous: several records can match (ds_b_01 -> [11, 15]). has_kb_record is null only when the row is not in the file",
+  "status": "inferred (static only): arg 10 maps its u16 operand ev[4..5] through the byte table at 0x0217215C (26 bytes, pinned in code_facts) and calls 0x02158ED0(self, id) (0x02157C5C); the status lands on the acting fighter. No capture of the landing",
+  "store": "measured bytes: sub 19 writes ev[2] (signed) to the team register ctrl+0xA3 (0x021560EC); the register is -1 at init (0x0215542C) and survives switches and hits (review.md b3-b5)",
+  "stored_jump": "measured bytes: sub 20 reads ctrl+0xA3; if it is not -1 it queues a jump to that Marker and resets it to -1 (0x021560F8). `targets` lists every Marker of the anim",
+  "trigger": "measured: SELECT edge 0x1000 at 0x0215A7D0 (tst r0,#0x1000) returns move id 11 (anim 0x18, state 0x0C, no SP gate); the air reader returns only ids 9 and 10"
+ },
+ "guide_check": [
+  {
+   "character": "Allen Walker",
+   "file": "allen-walker",
+   "input": "select",
+   "name": "Timcanpi",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Arale",
+   "file": "arale",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Bankai Ichigo Kurosaki",
+   "file": "bankai-ichigo",
+   "input": "select",
+   "name": "Mask removal / SP regen",
+   "prefixes": [
+    "bl_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Dio",
+   "file": "dio",
+   "input": "select",
+   "name": "Dio's ultimate action",
+   "prefixes": [
+    "jj_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Don Patch",
+   "file": "don-patch",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "bb_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Eve",
+   "file": "eve",
+   "input": "select",
+   "name": "Super Jump",
+   "prefixes": [
+    "bc_b_01"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Frieza",
+   "file": "frieza",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "db_b_10"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Gintoki",
+   "file": "gintoki",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Gohan",
+   "file": "gohan",
+   "input": "select",
+   "name": "Ultimate Action - Regain SP",
+   "prefixes": [
+    "db_b_05",
+    "db_b_06"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Goku",
+   "file": "goku",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "db_b_01",
+    "db_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Gon Freaks",
+   "file": "gon-freaks",
+   "input": "select",
+   "name": "Nen Charge",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Gotenks",
+   "file": "gotenks",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "db_b_07",
+    "db_b_08"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Hiei",
+   "file": "hiei",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Hitsugaya",
+   "file": "hitsugaya",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Ichigo Kurosaki",
+   "file": "ichigo",
+   "input": "select",
+   "name": "Ultimate Action (Hollow mask)",
+   "prefixes": [
+    "bl_b_01"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Ichigo Kurosaki",
+   "file": "ichigo",
+   "input": "select",
+   "name": "Ultimate Action (shout)",
+   "prefixes": [
+    "bl_b_01"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Jaguar",
+   "file": "jaguar",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Jotaro",
+   "file": "jotaro",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "jj_b_01"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Kagura",
+   "file": "kagura",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "gt_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Kakashi",
+   "file": "kakashi",
+   "input": "select",
+   "name": null,
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Kazuki Mutou",
+   "file": "kazuki-mutou",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Kenshiro",
+   "file": "kenshiro",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "hk_b_01"
+   ],
+   "status": "no_events"
+  },
+  {
+   "character": "Killua",
+   "file": "killua",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Kurama",
+   "file": "kurama",
+   "input": "select",
+   "name": null,
+   "prefixes": [
+    "yh_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Lenalee",
+   "file": "lenalee",
+   "input": "select",
+   "name": "Super Jump",
+   "prefixes": [
+    "dg_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Lenalee Lee",
+   "file": "lenalee",
+   "input": "select",
+   "name": "Super Jump",
+   "prefixes": [
+    "dg_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Monkey D. Luffy",
+   "file": "luffy",
+   "input": "select",
+   "name": "Lunch Box",
+   "prefixes": [
+    "op_b_01",
+    "op_b_07"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Majin Buu",
+   "file": "majin-buu",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "db_b_11"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Dr. Mashirito",
+   "file": "mashirito",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Momotaro",
+   "file": "momotaro",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "oj_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Muhyo",
+   "file": "muhyo",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "mr_b_01"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Nami",
+   "file": "nami",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "op_b_04",
+    "op_b_08"
+   ],
+   "status": "no_events"
+  },
+  {
+   "character": "Naruto",
+   "file": "naruto",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Nico Robin",
+   "file": "nico-robin",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "op_b_05"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Raoh",
+   "file": "raoh",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Renji",
+   "file": "renji",
+   "input": "select",
+   "name": null,
+   "prefixes": [
+    "bl_b_04"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Rukia",
+   "file": "rukia",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "bl_b_03"
+   ],
+   "status": "no_events"
+  },
+  {
+   "character": "Sakura",
+   "file": "sakura",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "na_b_03"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Sanji",
+   "file": "sanji",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "op_b_03"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Sasuke",
+   "file": "sasuke",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Seiya",
+   "file": "seiya",
+   "input": "select",
+   "name": null,
+   "prefixes": [
+    "ss_b_01",
+    "ss_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Taikoubou",
+   "file": "taikoubou",
+   "input": "select",
+   "name": "Select Button (Taunt)",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Train Heartnet",
+   "file": "train-heartnet",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "bc_b_02"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Vegeta",
+   "file": "vegeta",
+   "input": "select",
+   "name": "Ultimate Action",
+   "prefixes": [
+    "db_b_03",
+    "db_b_04"
+   ],
+   "status": "ua_effects"
+  },
+  {
+   "character": "Yoh",
+   "file": "yoh",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Yugi",
+   "file": "yugi",
+   "input": "select",
+   "name": "Ultimate Action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  },
+  {
+   "character": "Yusuke",
+   "file": "yusuke",
+   "input": "select",
+   "name": "ultimate action",
+   "note": "no prefix mapping in mash_table.GUIDE_FILES",
+   "prefixes": [],
+   "status": "unmapped"
+  }
+ ]
+}

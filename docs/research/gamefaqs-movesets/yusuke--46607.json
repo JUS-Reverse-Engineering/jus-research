@@ -1,0 +1,268 @@
+{
+  "character": "Yusuke",
+  "series": "Yu Yu Hakusho",
+  "chr_b": 32,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; row '32 | yh_b_01 | Yusuke'",
+  "source": {"file": "46607-yusuke.txt", "gamefaqs_id": 46607, "author": "Matflipped / Brawlfan08", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter", "knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Special Gauge regenerates when you're on the field"
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Yusuke stands for about a sec, then starts comboing into a final punch that guard breaks. Damage: 26(power/laughter), 33(knowledge). Guide opinion: 'VERY USEFUL! this is a commonly used support by tons of people, the guard break can also give you time to use a special.'",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Yusuke charges his fist for approximently 2 sec, then fires out a spirit shotgun that shots forwards, up, and down (both up and down are shot at a 45 degree angle). Guide opinion: 'meh, to slow to combo break and your opponent will more than likely defend before it fires, i recomend the 2 koma still.'",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Spirit gun",
+          "description": "Yusuke fires a quick spirit gun.",
+          "damage": "28 (power/laughter), 42 (knowledge)",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "X: Yusuke fires a quick spirit gun."
+        },
+        {
+          "input": "up+X",
+          "name": "Super spirit punch",
+          "description": "Yusuke uses his spirit energy to punch anyone that's foolish enough to get in the way.",
+          "damage": "28 (power/laughter), 42 (knowledge)",
+          "hits": null,
+          "properties": [],
+          "quote": "up+X: Yusuke uses his spirit energy to punch anyone thats foolish enough to get in the way."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Spirit gun (hold X to charge)",
+          "description": "Yusuke fires a spirit gun, more powerful and chargeable.",
+          "damage": "32-44 (power/laughter), 48-66 (knowledge)",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "X: yusuke fires a spirit gun, more powerful and chargeable."
+        },
+        {
+          "input": "up+X",
+          "name": "Super spirit punch",
+          "description": "Yusuke uses his spirit energy to punch anyone that's in the way; this one is more powerful and chargeable.",
+          "damage": "34 (power/laughter), 51 (knowledge)",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "up+X: Yusuke uses his spirit energy to punch anyone thats in the way, this ones more powerful and chargeable."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Spirit gun (hold X to charge)",
+          "description": "Another Spirit gun attack, very powerful, but takes a while to fully charge.",
+          "damage": "46-56 (power/laughter), 69-84 (knowledge)",
+          "hits": null,
+          "properties": ["projectile", "charge"],
+          "quote": "X: Another Spirit gun attack, very powerful, but takes a while to fully charge."
+        },
+        {
+          "input": "up+X",
+          "name": "Demon combo",
+          "description": "Yusuke transforms into his demon form and does a quick combo, sending your opponent flying.",
+          "damage": "51 (power/laughter), 76 (knowledge)",
+          "hits": null,
+          "properties": ["multi-hit", "launcher"],
+          "quote": "up+X: Yusuke transforms into his demon form and does a quick combo, sending your opponent flying."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "punch",
+      "description": null,
+      "damage": "9 (power/laughter), 13 (knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "B -punch- - 9 - - 13 -"
+    },
+    {
+      "input": "side B",
+      "name": "kick",
+      "description": null,
+      "damage": "9 (power/laughter), 13 (knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "-> + B -kick- - 9 - - 13 -"
+    },
+    {
+      "input": "up B",
+      "name": "uppercut",
+      "description": null,
+      "damage": "9 (power/laughter), 13 (knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "up+B -uppercut- - 9 - - 13 -"
+    },
+    {
+      "input": "down B",
+      "name": "low punch",
+      "description": null,
+      "damage": "9 (power/laughter), 13 (knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "down+B -low punch- - 9 - - 13 -"
+    },
+    {
+      "input": "air B",
+      "name": "meteor punch",
+      "description": null,
+      "damage": "9 (power/laughter), 13 (knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "aerial B -meteor punch- - 9 - - 13 -"
+    },
+    {
+      "input": "Y",
+      "name": "spirit punch",
+      "description": null,
+      "damage": "19 (power/laughter), 28 (knowledge)",
+      "hits": null,
+      "properties": [],
+      "quote": "Y -spirit punch- - 19 - - 28 -"
+    },
+    {
+      "input": "side Y",
+      "name": "small spirit gun",
+      "description": null,
+      "damage": "16 (power/laughter), 24 (knowledge)",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "->+Y -small spirit gun- - 16 - - 24 -"
+    },
+    {
+      "input": "up Y",
+      "name": "spirit shotgun",
+      "description": null,
+      "damage": "20 (power/laughter), 30 (knowledge)",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "up+Y -spirit shotgun- - 20 - - 30 -"
+    },
+    {
+      "input": "down Y",
+      "name": "headbutt",
+      "description": "Guard breaker.",
+      "damage": "18 (power/laughter), 27 (knowledge)",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "down+Y -headbutt(guard breaker) - 18 - - 27 -"
+    },
+    {
+      "input": "air Y",
+      "name": "downward spirit gun",
+      "description": null,
+      "damage": "16 (power/laughter), 24 (knowledge)",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "aerial Y -downward spirit gun- - 16 - - 24 -"
+    },
+    {
+      "input": "select",
+      "name": "ultimate action",
+      "description": "Yusuke charges up (hold for a couple seconds). Y attacks will do more damage and his forward+Y attack will have more range.",
+      "damage": null,
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "select -ultimate action-Yusuke charges up(Hold for a couple seconds. Y attacks will do more damage and his forward + Y attack will have more range.)-"
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "Basic combo string examples given in the combos section: B, forward+B, Y; B, forward+B, Y, forward+Y; B, forward+B, up+Y; B, up+B, (aerial)B or (aerial)Y; B, forward+B, up+B, (aerial)Y.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B, forward+B, Y : a quick little combo, not much but still good."
+    },
+    {
+      "input": "other",
+      "name": "The Almighty Yusuke Combo",
+      "description": "B, Y, up+Y, then a blank finisher that is usually demon Yusuke, a spirit gun (special or non-special), or a support. Most of these combos can have a spirit gun (X button) at the end.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "The Almighty Yusuke Combo: B, Y, up+Y, ________(LOOK BELOW!) NOTE:the blank is usually, demon yusuke, a spirt gun(special/non special), or a support. *Most of these combos can have a spirit gun(X button) at the end."
+    }
+  ],
+  "combos": [
+    "B, forward+B, Y : a quick little combo, not much but still good.",
+    "B, forward+B, Y, forward+Y : just like the first one but with more oomph.",
+    "B, forward+B, up+Y : once again, just a quick combo",
+    "B, up+B, (aerial)B or (aerial)Y : this combo may not work out every time you use it so be aware of that.",
+    "B, forward+B, up+B, (aerial)Y : pretty good combo, but theres a short pause between the forward+B and up+B.",
+    "The Almighty Yusuke Combo: B, Y, up+Y, ________(LOOK BELOW!)",
+    "Dodge this!: you'll need Hien(SAKIGAKE!! OTOKOJUKU)- 3 koma, after using a basic combo activate this guy, takes a sec to start but he lands 4 hits, fourth hit giving the enemy the satus of paralyisis, the charge p a spirt gun and let 'er rip. this combo deals around 91-100 damage to pow/laugh and 150ish to knowledge.",
+    "Suppppppppper!: for this combo you'll need Franky(one piece)- 3 koma, again using a basic combo activate franky while using Y, while he swing s his arm use up+Y, leaving franky an open shot dealing a whooping 76 damage to pow/laugh/know",
+    "Yusuke Rendan: For this combo, you'll need naruto(naruto...duh)-3koma, just any b attacks leading to Y will work, when you hit Y use naruto and he'll ollow through. WARNING: this is a combo still in testing, somtimes naruto will not completly use naruto renden, be aware. Alsoif using yusuke's 4 koma somtimes you can hit the enemy with up+X while he's getting hit down"
+  ],
+  "unresolved": [
+    "The Basic Controls movelist table gives no damage for the down+B move in a separate line beyond the shared '9/13' row shown for B/side B/up B/down B/aerial B; the guide lists them all together with identical numbers, which may not reflect distinct per-move values (player-written table, not verified).",
+    "1-koma is listed as 'help' but the guide's koma section header says '--1 Koma(help)--' with no J-Soul, nature, or shape given, unlike battle komas.",
+    "2-koma and 3-koma support entries give no J-Soul, nature, or shape info, consistent with support/help komas generally lacking that data in this guide.",
+    "Deck Building section (VII) mentions other characters' koma effects (Kuwabara, Genkai, Neuro) which are not Yusuke moves; excluded from moves/koma but noted here since guide discusses them in context of Yusuke's deck.",
+    "'Other help and supports' section (Big 3, Dodge this! with Hien, Suppppppppper! with Franky, Yusuke Rendan with Naruto) describes combo interactions with other characters' support/help koma, not Yusuke's own koma; captured under combos since they involve Yusuke's attacks but they reference non-Yusuke characters' effects (e.g., Hien's paralysis on 4th hit, Franky's damage) which are not part of Yusuke's own kit.",
+    "Ultimate Action (SELECT) description says it boosts Y attacks broadly but only specifically calls out forward+Y range increase; unclear if all Y attacks get more range or just forward+Y.",
+    "Guide's B-string combo section is prose narrative rather than a strict formal 'B string' move definition; treated as closest schema fit under input 'B string' plus 'other' for the Almighty Yusuke Combo since it doesn't cleanly match a single input type.",
+    "No explicit passives are stated for any koma size (4/5/6); passives left as empty arrays rather than null since schema expects an array field."
+  ]
+}

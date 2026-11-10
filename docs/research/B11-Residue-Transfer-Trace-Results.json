@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-25",
+  "tracker item": "jus-m92n",
+  "session": {
+    "savestate": "g3_verified",
+    "lua_plan": "scripts/emu/plans/g3_hp_delta_seek.json",
+    "emulator_launches": 1,
+    "gdb_attaches": 1,
+    "positive_control": {
+      "address": "0x021DF7F0",
+      "before_raw": 9728,
+      "after_raw": 9472,
+      "hp_apply_hits": 4
+    }
+  },
+  "per_hit_order": [
+    {
+      "formula_oracle": "0x02082584",
+      "stage_1": {
+        "pc": "0x020812DC",
+        "term_raw": 384,
+        "r8_array_base": "0x0220FE68",
+        "scratch": "0x0220FDC4",
+        "index": 0,
+        "previous_term_raw": 0
+      },
+      "stage_5": {
+        "pc": "0x020821F8",
+        "value_before_store_raw": 384,
+        "array_base": "0x0220FE68",
+        "scratch": "0x0220FDC4",
+        "final_field": "0x0220FEF8",
+        "e8_raw": 0
+      },
+      "consumer": {
+        "pc": "0x0215AC08",
+        "scratch": "0x0220FDC4",
+        "pending_damage_raw": 384,
+        "e8_raw": 0,
+        "drain_call_return_address": "0x0215AC74"
+      },
+      "hp_apply": {
+        "pc": "0x02078488",
+        "delta_raw": -384,
+        "character": "0x021DF7D8",
+        "current_hp_before_raw": 9728,
+        "max_hp_raw": 9728
+      }
+    }
+  ],
+  "repetitions": 4,
+  "interpretation": {
+    "confirmed": "The stage-1 term store, stage-5 +0x134 store, ov6 +0x134 load, drain call, and negative HP delta occur in this order for the same repeated landed-hit stimulus.",
+    "negative_control": "scratch+0xE8 stayed zero at stage 5 and at the consumer.",
+    "instrument_note": "The supervisor timed out while interrupting the slowed GDB session. The raw GDB log still contains four complete ordered traces and the independent HP positive control."
+  }
+}

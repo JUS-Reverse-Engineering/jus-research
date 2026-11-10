@@ -1,0 +1,263 @@
+{
+  "character": "Vegeta",
+  "series": "Dragon Ball",
+  "chr_b": 2,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; the mapping table has a separate row (chr_b 3) for 'Vegeta (SSJ)'. The guide never mentions SSJ/Super Saiyan and covers base Vegeta's koma (4/5a/5b/6), so chr_b 2 (base Vegeta) was used. See unresolved.",
+  "source": {"file": "51174-vegeta.txt", "gamefaqs_id": 51174, "author": "AsdfYunsungfdsA", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": ["power", "knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": ["Increases SP gained while attacking/blocking when your health is low."],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Increases SP gained while attacking/blocking when your health is low."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Same move as Special A of the 4-koma (a large beam). Damage: 26.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Same move as Special B of the 5-koma (jumps into the air and fires a beam diagonally downwards). Damage: 36.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["All battle koma have the SP-gain-on-low-health ability naturally included."],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special A",
+          "description": "Vegeta fires a large beam. Standard DBZ-style beam, pretty quick and very 'tall' compared to most beams.",
+          "damage": "34",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A - Vegeta fires a large beam, 34 damage. This is the standard DBZ-style beam. It's pretty quick and it is very \"tall\" in comparison with most beams."
+        },
+        {
+          "input": "up X",
+          "name": "Special B",
+          "description": "Vegeta charges and pushes out his arms, knocking back anyone within a certain radius. This attack guard breaks, and is usually the strongest special of the 4-koma (unless the opponent is pinned against a wall, where the beam does more).",
+          "damage": "32",
+          "hits": null,
+          "properties": ["guard break"],
+          "quote": "Special B - Vegeta charges and pushes out his arms knocking back anyone within a certain radius. This attack guard breaks (that means it's very good) 32 damage."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["All battle koma have the SP-gain-on-low-health ability naturally included.", "Referred to by the guide as koma 'B5a'."],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special A",
+          "description": "Vegeta fires several Ki blasts; tap X many times for more blasts. The guide dislikes this special, saying it never gets more than 3 hits in before the opponent gets pushed too far away.",
+          "damage": "39",
+          "hits": null,
+          "properties": ["projectile", "mash-extend"],
+          "quote": "Special A - Vegeta fires several Ki blasts, tap x many times for more blasts. 39 damage. I really don't like this special, it never gets more than 3 hits in before the opponent gets pushed too far away."
+        },
+        {
+          "input": "up X",
+          "name": "Special B",
+          "description": "Vegeta jumps into the air and fires a beam diagonally downwards. Potentially amazing if the opponent is on a platform above (up to 56 damage, 48 if on equal level), but risky if it misses due to lag afterward.",
+          "damage": "56 (48 if opponent is on equal level)",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special B - Vegeta jumps into the air and fires a beam diagonally downwards. 56 damage. This is a potentially amazing special. If the opponent is on a platform above you and you use this, it can do up to 56 damage (48 if they're on equal level)."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "All battle koma have the SP-gain-on-low-health ability naturally included.",
+        "Referred to by the guide as koma 'B5b'; unlocked via an alternate path in Kaiou-sama's chart.",
+        "The guide describes Vegeta as 'primarily power based except for his B5b koma which is knowledge'."
+      ],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["All battle koma have the SP-gain-on-low-health ability naturally included."],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special A",
+          "description": "Vegeta fires a small ball of Ki that explodes. Good special; strong but with small range and large start and end lag.",
+          "damage": "52",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Special A - Vegeta fires a small ball of Ki that explodes. 52 damage. Good special. Strong but small range and large start and end lag."
+        },
+        {
+          "input": "up X",
+          "name": "Final Flash",
+          "description": "Vegeta 'explodes'. A strong special, but the guide advises against using it because it's too slow and costly.",
+          "damage": "80 but reduces health to 1",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "Special B - Final Flash. Vegeta \"explodes\". 80 damage but reduces health to 1. Strong special but too slow and costly, I don't advise using it."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A simple jab. The guide calls it a basic parrying attack (one that cancels an opponent's attack) and a basic combo starter.",
+      "damage": "10",
+      "hits": null,
+      "properties": ["counter"],
+      "quote": "B - A simple jab. 10 damage. Well, not much to say. This is your basic parrying (sp?) attack (attack that cancels an opponent's attack) and your basic combo starter."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Vegeta dashes and punches. Used to charge into the fray from a distance, but has pretty bad lag afterward if it misses or is guarded.",
+      "damage": "10",
+      "hits": null,
+      "properties": [],
+      "quote": ">B - Vegeta dashes and punches. 10 damage. This is an attack you can use to charge into the fray when you're a little distance away. Other than that, if the opponent guards it, you're in some deep sh*t. It has some pretty bad lag after it."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Vegeta hammers downward with both hands, switching the opponent's character. Fast, but the guide says it's rarely used except by accident or in missions requiring a character-change.",
+      "damage": "6",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "\\/B - Vegeta hammers downward with both hands, switches opponents character. 6 damage. It's a pretty fast \\/B but unless you're doing a mission that requires changing all of the opponents to the same char... you'll probably never use this move except maybe by accident."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "An upward kick that sends the opponent forward a little. Doesn't combo well with Vegeta's other moves, but allows an extended combo 'string' if you dash right after (B, up B, dash, side B, then continue a normal combo).",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "/\\B - An upward kick that sends the opponent forward a little. 9 damage. This attack doesn't combo well with Vegeta's other moves so most people don't use it. However, it does allow a sort of extended \"string\" of comboing if you dash right after you perform this move."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "A 'knee' that sends the opponent upward. Not a bad aerial attack, but not too good either; his air-Y is usually a better alternative unless recovering vertically to the stage.",
+      "damage": "9",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Aerial B - A \"knee\" that sends the opponent upward. 9 damage. Not a bad aerial attack, but not too good either. His air-Y is always a better alternative (unless you're trying to get back to the stage and need some vertical movement)."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Two kicks that knock the opponent down. A good, strong, long-lasting Y attack and a good support comboer because of its decent 'period' of attack, but if it misses the opponent can easily knock you off or combo you.",
+      "damage": "18 total",
+      "hits": "2",
+      "properties": ["knockdown"],
+      "quote": "Y - Two kicks that knock the opponent down. 18 total. Pretty good, strong and long lasting Y attack. It is a good support comboer because it has a decent \"period\" of attack."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Several Ki blasts; press Y many times for more blasts (up to 6). A good support comboer and can chain from Y against a wall, though the guide says it's too easy to see coming and block.",
+      "damage": "3 per blast, 6 blasts total",
+      "hits": "6",
+      "properties": ["projectile", "mash-extend", "multi-hit"],
+      "quote": ">Y - Several Ki blasts, press Y many times for more blasts. 3 per blast, 6 blasts total. Good support comboer and can be chained from his Y against a wall but I don't really like it because it's too easy to see coming and block it."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Vegeta points his hand out and explodes a bit of Ki, breaking the opponent's guard. An average guard break with decent range; the guide says Vegeta isn't really a guard-breaking kind of character.",
+      "damage": "19",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "\\/Y - Vegeta points his hand out and explodes a little bit of Ki, breaks opponents guard. 19 damage. Your average guard break. Decent range though. Vegeta isn't really a guard breaking kind of character."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "An uppercut with a second hit if Y is pressed twice. One of Vegeta's most important moves; can connect with his Air-Y if both hits land, and can chain from Y when pinning an opponent against a wall.",
+      "damage": "18 total (8 first hit, 10 second hit)",
+      "hits": "2",
+      "properties": [],
+      "quote": "/\\Y - An uppercut with a second hit if Y is pressed twice. 18 total (8 first hit, 10 second hit). Probably one of Vegeta's most important moves. It can connect with his Air-Y if you do the two hits."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Vegeta lunges forward and smashes the opponent downwards through the floor. A spike, usually only good in combos since the forward lunge telegraphs it when used alone.",
+      "damage": "18",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial Y - Vegeta lunges forward and smashes the opponent downwards through the floor. 18 damage. It's a spike, but it's usually only good in combos because he lunges forward first."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Vegeta begins charging energy, which slowly restores SP. Fairly quick but the guide says you likely won't have time to use it unless you've ringed out the opponent.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Select - Ultimate Action, Vegeta begins charging energy. This slowly restores SP. It's your typical DBZ UA. It's actually pretty quick but you won't have time to use it unless you ring out the opponent."
+    }
+  ],
+  "combos": [
+    "Combo 1: B >B /\\Y (with the second hit) Aerial Y. Fast and hits for decent damage, with potential ringout ability.",
+    "Combo 2: B /\\B >Y (all hits of >Y if possible). Unexpected because /\\B usually hits people out of combo range; with all hits of >Y the combo can inflict decent damage.",
+    "Combo 3: B >B Y. Knocks the opponent down; near the edge, a second Y disrupts the opponent's jump back to the stage for a likely RO.",
+    "Combo 4: B /\\B dash forward then Combo 1 or 3 (excluding the first B).",
+    "Combo 5: B /\\B X (Koma 6 only). A short, simple special combo, decent damage with few hits.",
+    "Combo 6: B /\\B /\\X or X (/\\X is 5-Komas only, X is for any Koma). Knocks the opponent slightly up and forward then sends them down with a beam; vulnerable after the Up X.",
+    "Support combo 1 (Allen 2): R and a split second later Combo 4. The first hits of combo 4 knock the opponent right in front of Allen as he shoots his 5 laser beams, all 5 hits connect for 30 damage.",
+    "Support combo 2 (Trunks 3): Same as Support combo 1 except perform /\\B before Trunks fires his Burning attack at the end.",
+    "Support combo 3 (Gotenks 2/3 or Hyoga 3): /\\B, R, *wait*, Combo 1. Very good if the opponent is against a wall.",
+    "Support combo (Joseph 2 or Shishio 2): B >B Y R /\\X or X. The /\\X is for 4 and 5 komas and the X is 4 or 6 koma."
+  ],
+  "unresolved": [
+    "chr_b ambiguity: the mapping table lists chr_b 2 = 'Vegeta' (base) and chr_b 3 = 'Vegeta (SSJ)'. The guide never distinguishes an SSJ form and describes koma 4, 5a (power), 5b (knowledge), and 6 all as one continuous 'Vegeta' evolution chart, so chr_b 2 was used for the whole file. It's possible the guide's higher koma (e.g. 6-koma, which learns 'Final Flash') actually corresponds in-game to the SSJ chr_b row, but the guide gives no naming cue to confirm this.",
+    "No HP values are given anywhere in the guide for any koma size (4/5a/5b/6); the guide only states help koma and battle koma share an SP-gain-on-low-health passive.",
+    "The 5b-koma (knowledge alignment, unlocked via Kaiou-sama's alternate path) is mentioned only in the deck-building section ('primarily power based except for his B5b koma which is knowledge') and the evolution chart; the guide gives no special-move data for this koma at all, so its specials list is empty.",
+    "Support koma S2 and S3 are described only as reusing Special A of koma 4 and Special B of koma 5 respectively, with slightly different damage numbers (26 and 36 vs. 34 and 56 for the battle specials); guide gives no further detail (no nature, no additional effect text) for these two support koma.",
+    "Deck-building section (V3) recommends other characters (Luffy, Kinnikuman, Piccolo, Trunks, Sasuke, Kakashi, Allen, Gotenks, Hyoga, Joseph, Shishio, Sakura, Yoh, Naruto, Seiya) as team synergy partners; these describe other characters' effects, not Vegeta's own moves, so they were omitted except where a support combo explicitly used Vegeta's own inputs (captured under 'combos').",
+    "The guide's Index (V1-V6) never actually surfaces a separate section for 'Koma effects' beyond the single sentence about the help koma and the battle koma SP-gain passive; captured as-is."
+  ]
+}

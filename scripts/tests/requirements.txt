@@ -1,0 +1,15 @@
+# Optional packages for scripts/tests (see _deps.py). Everything else the suite
+# uses is the standard library. A missing package makes the tests that need it
+# skip, with a reason on stderr; the rest still run.
+#
+#   python3 -m venv "$HOME/.venvs/jus-re" && . "$HOME/.venvs/jus-re/bin/activate"
+#   python -m pip install -r scripts/tests/requirements.txt
+#
+# numpy       art and sprite tooling
+# jsonschema  schema-validating tests
+# capstone    the ARM/Thumb decoding tests (fxo_initializers)
+# Pillow      the art renderers (native_art, effect_render), hitbox_strip PNGs
+numpy
+jsonschema
+Pillow
+capstone

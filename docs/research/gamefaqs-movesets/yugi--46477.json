@@ -1,0 +1,255 @@
+{
+  "character": "Yugi",
+  "series": "Yu-Gi-Oh!",
+  "chr_b": 35,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46477-yugi.txt", "gamefaqs_id": 46477, "author": "BalisticGeneral/SamSnake123", "version": "1.0"},
+  "kit_type": "summoner",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Increases battle characters' SP gauge when attacking or blocking Characters of the opposite nature."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Yugi draws 2 cards from his deck, one being Dark Magician and the other Dark Magician Girl. Both are summoned in front of Yugi and shoot a blast of energy in front of them. Damage: Power 26, Knowledge 26, Laughter 39.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Yugi draws 1 card from his deck, Monster Reborn. It is summoned and brings one of your characters back to life, but doesn't heal them. Does no damage. Note: this card does not bring back characters from survival matches.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "Gain SP Energy when using Support Characters.",
+        "Gain SP Energy when fighting Against Laughter characters.",
+        "Can See Invisible Battle Characters."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "4 Koma Special A",
+          "description": "Yugi summons the Winged Dragon of Ra, which shoots a yellow beam of energy straight forwards.",
+          "damage": "Approx. 24 Damage Against Power/Knowledge Characters; Approx. 36 Damage Against Laughter Characters",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Yugi Summons The Winged Dragon Of Ra, Which Shoots A Yellow Beam Of Energy Straight Fowards. Approx. 24 Damage Against Power/ Knowledge Characters Approx. 36 Damage Against Laughter Characters."
+        },
+        {
+          "input": "up X",
+          "name": "4 Koma Special B",
+          "description": "Exact same move as Yugi's Support Koma 2 (Monster Reborn: revives a fallen character, no healing, no damage).",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "-4 Koma Special B - Exact Same Move As Yugi's Support Koma 2."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "Gain SP Energy when using Support Characters.",
+        "Gain SP Energy when fighting Against Laughter characters.",
+        "Can See Invisible Battle Characters."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "5 Koma Special A",
+          "description": "Yugi summons Obelisk the Tormentor, which punches forward. The lightning from Obelisk being summoned also does damage; the lightning can connect with the punch for a combined hit. Opponent also gets knocked into the air.",
+          "damage": "5 Damage (Power/Knowledge, lightning); 48 Damage (Power/Knowledge, punch); lightning+punch connects for 53 Damage; 7 Damage (Laughter, lightning); 72 Damage (Laughter, punch); lightning+punch connects for 79 Damage",
+          "hits": 2,
+          "properties": ["launcher"],
+          "quote": "Yugi Summons Obelisk The Tormentor, Which Punches Foward. The Lightning From Obelisk Being Summoned Also Does Damage. 5 Damage Against Power/ Knowledge Characters From Lightning. 48 Damage Against Power/ Knowledge Characters From Punch. The lightning Can Connect With The Punch For A 53 Damage Attack. Oponent Also Gets Knocked Into The Air. 7 Damage Against Laughter Characters From Lightning. Oponent Gets Knocked Into The Air. 72 Damage Against Laughter Characters From Punch. The lightning Can Connect With The Punce For A 79 Damage Attack."
+        },
+        {
+          "input": "up X",
+          "name": "5 Koma Special B",
+          "description": "Yugi summons a large sword which appears over all opponents. Also causes Support Seal effect.",
+          "damage": "36 Damage Against Power/Knowledge Characters; 54 Damage Against Laughter Characters",
+          "hits": null,
+          "properties": ["status:support seal"],
+          "quote": "Yugi Summons A Large Sword, Which Appears Over All Opponents. Also Causes Support Seal Effect. 36 Damage Against Power/ Knowledge Characters. 54 Damage Against Laughter Characters."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [
+        "Gain SP Energy when using Support Characters.",
+        "Gain SP Energy when fighting Against Laughter characters.",
+        "Can See Invisible Battle Characters."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "6 Koma Special A",
+          "description": "Yugi summons Slifer the Sky Dragon, which shoots a beam of energy straight forward from its mouth. Also deals damage from being summoned (lightning), but if the enemy gets hit by the lightning, the beam won't connect with them.",
+          "damage": "Approx. 32 Damage to Power/Knowledge Characters from Beam; 5 Damage to Power/Knowledge Characters from Lightning; Approx. 48 Damage to Laughter Characters from Beam; 7 Damage to Laughter Characters from Lightning",
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Yugi Summons Slifer The Sky Dragon, Which Shoots A Beam Of Energy Straight Foward From It's Mouth. Also Deals Damage From Being Summoned, But If The Enemy Gets Hit By The Lightning, The Beam Won't Connect With them."
+        },
+        {
+          "input": "up X",
+          "name": "6 Koma Special B",
+          "description": "Yugi plays Spellbinding Circle, which appears over all opponents and drains all of their SP. Does no damage.",
+          "damage": "no damage",
+          "hits": null,
+          "properties": ["status:SP drain"],
+          "quote": "Yugi Plays Spellbinding Circle, Which Appears Over All Opponents, And Drains All Of Their SP. Does No Damage."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Yugi summons Celtic Guardian, which slashes in front of him with his sword.",
+      "damage": "10 Damage Against Power/Knowledge Characters; 15 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": [],
+      "quote": "B - Yugi Summons Celtic Guardian, Which Slashes In Front Of Him With His Sword. 10 Damage Against Power/ Knowledge Characters. 15 Damage Against Laughter Characters."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Yugi rolls a pair of Dungeon Dice in front of him. Hits anywhere from 1-5 times, and stuns the opponent while being attacked.",
+      "damage": "2 Damage Against Power/Knowledge Characters; 3 Damage Against Laughter Characters",
+      "hits": "1-5",
+      "properties": ["multi-hit", "status:stun"],
+      "quote": "B+Left/Right - Yugi Rolls A Pair Of Dungeon Dice In Front Of Him. 2 Damage Against Power/ Knowledge Characters. 3 Damage Against Laughter Characters. This Attack Hits Anywhere From 1-5 Times, and stuns the opponent while being attacked."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Yugi throws down a capsule, and a monster that resembles Yugi pops out and punches upwards. If the capsule from this attack hits the opponent, it will stun them for about half a second.",
+      "damage": "10 Damage Against Power/Knowledge Characters; 15 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["status:stun"],
+      "quote": "B+Up - Yugi Throws Down A Capsule, And A Monster That Resembles Yugi Pops Out And Punches Upwards. 10 Damage Against Power/ Knowledge Characters. 15 Damage Against Laughter Characters. If The Capsule From This Attack Hits The Opponent, It Will Stun Them For About Half A Second."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Yugi summons Gaia the Fierce Knight, which lunges forward. Also forces opponent's character to change.",
+      "damage": "10 Damage Against Power/Knowledge Characters; 15 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "B+Down - Yugi Summons Gaia The Fierce Knight, Which Lunges Foward. Also Forces Opponent's Character To Change. 10 Damage Against Power/ Knowledge Characters. 15 Damage Against Laughter Characters."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Yugi summons Winged Guardian of the Fortress, which shoots a ball of flames from its mouth diagonally downwards. Also knocks the opponent down.",
+      "damage": "8 Damage Against Power/Knowledge Characters; 12 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["projectile", "knockdown"],
+      "quote": "B While In The Air - Yugi Summons Winged Guardian Of The Fortress, Which Shoots A Ball Of Flames From It's Mouth Diagonally Downwards. 8 Damage Against Power/ Knowledge Characters. 12 Damage Against Laughter Characters. This Attack Also Knocks The Opponent Down."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Yugi summons Buster Blader, which swings his sword and spreads fire straight forward on the ground.",
+      "damage": "4-6 Damage Against Power/Knowledge Characters; 6-24 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Y: Yugi Summons Buster Blader which swings his sword, and spreads fire straight foward on the ground. 4-6 Damage Against Power/ Knowledge Characters 6-24 Damage Againt Laugter Characters."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Yugi summons Dark Magician Girl, which shoots out a ball of energy from her staff.",
+      "damage": "20 Damage Against Power/Knowledge Characters; 30 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Y+Left/Right - Yugi Summons Dark Magician Girl, Which Shoots Out A Ball Of Energy From Her Staff. 20 Damage Against Power/ Knowledge Characters 30 Damage Against Laughter Characters."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Yugi summons Dark Paladin, which points a ball of energy at the top of his staff upwards.",
+      "damage": "20 Damage Against Power/Knowledge Characters; 30 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Y+Up - Yugi Summons Dark Paladin, Which Points A Ball Of Energy At The Top Of His Staff Upwards. 20 Damage Against Power/ Knowledge Characters 30 Damage Against Laugter Characters."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Yugi summons Dark Magician, which explodes a ball of energy in front of him. Also guard breaks.",
+      "damage": "20 Damage Against Power/Knowledge Characters; 30 Damage Against Laughter Characters",
+      "hits": null,
+      "properties": ["guard break", "projectile"],
+      "quote": "Y+Down - Yugi Summons Dark Magician, which Explodes A Ball Of Energy In Front Of Him. Also Guard Breaks. 20 Damage Against Power/ Knowledge Characters. 30 Damage Against Laughter Characters."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Yugi plays Swords of Revealing Light, which shoots downwards. Also stuns the opponent for about half a second.",
+      "damage": "11-21 Damage Against Power/Knowledge Characters; 16-31 Damage Against Knowledge Characters",
+      "hits": null,
+      "properties": ["projectile", "status:stun"],
+      "quote": "Y+While In The Air - Yugi Plays Swords Of Revealing Light, Which Shoots Downwards. Also Stuns The Opponent For About Half A Second. 11 - 21 Damage Against Power/ Knowledge Characters. 16 - 31 Damage Against Knowledge Characters."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Yugi switches with another of your battle characters.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action: Yugi Switches With Another Of Your Battle Characters."
+    }
+  ],
+  "combos": [
+    "B, B+Up, Y+Up.",
+    "B, B+Forward, Y+Forward.",
+    "B, Y, Y+Forward."
+  ],
+  "unresolved": [
+    "For air Y, the guide states damage 'Against Power/Knowledge Characters' as 11-21, then immediately restates a second, higher figure of 16-31 'Against Knowledge Characters' — this is an internal contradiction (Knowledge is listed in both brackets with different numbers) and is preserved verbatim rather than resolved.",
+    "The 5 Koma Special A description gives separate lightning and punch damage figures plus a 'connects for X' combined figure; recorded together in one damage string with hits:2, since the schema doesn't have a clean way to represent lightning+punch as two fully separate sub-hits with their own hit counts.",
+    "Guide never states koma HP values for any of Yugi's koma.",
+    "Sections YM4 (evolution/gem costs) are deck-building/economy content omitted per scope. YM4 also mentions a 'Question Koma (Q)' on Yugi's evolution chart that is never described anywhere else in the guide (no stats, effects, or unlock info given) — flagging this gap here.",
+    "YM5 describes several non-Yugi character koma (Kaiba Help/Support 1/2, Jonouchi Katsuya Help, Hiroto Honda Help, Anzu Mazaki Help) as part of Yugi's 'friends' section — these are other characters' koma, not Yugi's own, so they are omitted from the koma array per scope (Yugi-only extraction), even though the guide presents them in the same section.",
+    "YM7/YM8 (strategy commentary, e.g., recommending Daijiro Ohara from Kochi Kame as a synergy partner, or edge-guarding tips) is qualitative advice not tied to a specific move stat and is not modeled as a move.",
+    "The Introduction (YM1) and Game Basics (YM2) sections are generic control-scheme text, not specific to Yugi's actual move data, and are used only to confirm input naming conventions."
+  ]
+}

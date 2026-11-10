@@ -1,0 +1,278 @@
+{
+  "character": "Kazuki Mutou",
+  "series": "Busou Renkin",
+  "chr_b": 44,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md, row chr_b=44, bu_b_01, Busou Renkin",
+  "source": {"file": "46549-kazuki-mutou.txt", "gamefaqs_id": 46549, "author": "bitsquall", "version": "2.0"},
+  "kit_type": "standard",
+  "natures_available": ["power"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Health Recovers slowly.",
+      "quote": "1 Block (Help Koma):    Health Recovers slowly."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Kazuki is summoned above you and flies upward damaging anything in his path. Does 26 Damage to Power, 39 Damage to Knowledge, 26 Damage to Laughter.",
+      "help_effect": null,
+      "quote": "2 Block (Support Koma): Kazuki is summoned above you and flies upward damaging anything in his path. Does 26 Damage to Power Does 39 Damage to Knowledge Does 26 Damage to Laughter"
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Kazuki is summoned in front of you and stands there for a bit to wrap his Sash around the Sunlight Heart. Then he rushes forward in a burst of energy screaming something in Japanese. Does 28 Damage to Power, 42 Damage to Knowledge, 28 Damage to Laughter.",
+      "help_effect": null,
+      "quote": "3 Block (Support Koma): Kazuki is summoned in front of you and stand there for a bit to wrap his Sash around the Sunlight Heart. Then he rushes forward in a burst of energy screaming something in Japanese. Does 28 Damage to Power Does 42 Damage to Knowledge Does 28 Damage to Laughter"
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Kazuki pulls out a second Lance and rushes forward with a burst of energy pointing both Lances in front of him and goes about half a screen's distance capable of damaging anything in its way.",
+          "damage": "28",
+          "hits": null,
+          "properties": [],
+          "quote": "X 28 Kazuki pulls out a second Lance and rushes forward with a burst of energy pointing both Lances in front of him and goes about half a screen's distance capable of damaging anything in its way."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Kazuki pulls his sash forward and releases a shining energy from it that blinds whatever it damages.",
+          "damage": "20",
+          "hits": null,
+          "properties": ["status:blind"],
+          "quote": "D-Pad Up + X 20 Kazuki pulls his sash forward and releases a shining energy from it that blinds whatever it damages."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "4 Block (Battle Koma):"
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Kazuki wraps his sash around his Lance and charges energy in 3 different Levels: Glowing, Glowing with an Arrow, Automatic Release.",
+          "damage": "32/40/52",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "X 32/40/52 Kazuki wraps his sash around his Lance and charges energy in 3 different Levels. Glowing - 32 Damage Glowing with an Arrow - 40 Damage Automatic Release - 52 Damage"
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Papillon appears and points and sends butterflies that either gather around the closest enemy character or halfway in/out the screen.",
+          "damage": "36",
+          "hits": null,
+          "properties": [],
+          "quote": "D-Pad Up + X 36 Papillon appears and points and sends butterflies that either gather around the closest enemy character or halfway in/out the screen."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "5 Block (Battle Koma):"
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Kazuki transforms along with his Lance and charges forward. Capable of doing more damage with the more Koma in your deck: 2-5 Koma - 40 Damage, 6-9 Koma - 48 Damage, 10+ Koma - 56 Damage.",
+          "damage": "40/48/56",
+          "hits": null,
+          "properties": [],
+          "quote": "X 40/48/56 Kazuki transforms along with his Lance and charges forward. Capable of doing more damage with the more Koma in your deck. 2-5 Koma - 40 Damage 6-9 Koma - 48 Damage 10+ Koma - 56 Damage"
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Tokiko appears and slashes with her Valkyrie Skirt 6 times.",
+          "damage": "2-46",
+          "hits": 6,
+          "properties": ["multi-hit"],
+          "quote": "D-Pad Up + X 2-46 Tokiko appears slashes with her Valkyrie Skirt 6 times. 1st-5th hit : 2 Damage Each 6th hit : 36 Damage"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "6 Block (Battle Koma):"
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Kazuki does a sideways slash.",
+      "damage": "7",
+      "hits": null,
+      "properties": [],
+      "quote": "B 7 Kazuki does a sideways slash."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Kazuki thrusts his lance upwards.",
+      "damage": "8",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Up + B 8 Kazuki thrusts his lance upwards."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Kazuki blows a kiss to the enemy capable of forcing them to switch Battle Characters.",
+      "damage": "8",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "D-Pad Down + B 8 Kazuki blows a kiss to the enemy capable of forcing them to switch Battle Characters."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Forward thrust.",
+      "damage": "8",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Forward + B 8 Forward thrust"
+    },
+    {
+      "input": "other",
+      "name": "Double-tap forward + B",
+      "description": "Forward Dash + Forward Thrust.",
+      "damage": "8",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Forward (2x) + B 8 Forward Dash + Forward Thrust"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Kazuki swings his Lance downward.",
+      "damage": "8",
+      "hits": null,
+      "properties": [],
+      "quote": "A + B 8 Kazuki swings his Lance downward."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Downward Swing.",
+      "damage": "16",
+      "hits": null,
+      "properties": [],
+      "quote": "Y 16 Downward Swing."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Kazuki bursts upward after releasing energy from his Lance in a two-part attack.",
+      "damage": "8-16",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "D-Pad Up + Y 8-16 Kazuki bursts upward after releasing energy from his Lance in a two-part attack."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Kazuki sets the bottom of his Lance on the ground and releases energy from his sash in all directions. Capable of Guard Break.",
+      "damage": "16",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "D-Pad Down + Y 16 Kazuki sets the bottom of his Lance on the ground and releases energy from his sash in all directions. Capable of Guard Break."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Kazuki bursts forward after releasing energy from his Lance in a two-part attack.",
+      "damage": "8-16",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "D-Pad Forward + Y 8-16 Kazuki bursts forward after releasing energy from his Lance in a two-part attack."
+    },
+    {
+      "input": "other",
+      "name": "Double-tap forward + Y",
+      "description": "Forward Dash + Two part attack.",
+      "damage": "8-16",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "D-Pad Forward (2x) + Y 8-16 Forward Dash + Two part attack."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Kazuki bursts forward after releasing energy from his Lance in a two-part attack (aerial version).",
+      "damage": "8-16",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "A + Y 8-16 Kazuki bursts forward after releasing energy from his Lance in a two-part attack."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Kazuki's Lance dissipates and he pulls out a Milk carton, which he drinks, restoring some HP.",
+      "damage": "0",
+      "hits": null,
+      "properties": [],
+      "quote": "Select 0 Ultimate Action. Kazuki's Lance dissipates and he pulls out a Milk carton, which he drinks, restoring some HP."
+    }
+  ],
+  "combos": [
+    "B, Up B, Y - Kazuki knocks the opponent into the air and back down. Damage : 31 Damage to Power, 46 to Knowledge, 31 to Laughter",
+    "B, Forward B, Y - Kazuki Slashes the opponent, pierces, then pulls his Lance downward. Damage : 31 Damage to Power, 46 to Knowledge, 31 to Laughter",
+    "B, Up B, Forward Y - Kazuki knocks the opponent into the air, and instead of doing Y, he does his two-part attack, the opponent has a chance to block the last attack, but they barely have a split second to block. Damage : 31 Damage to Power, 46 to Knowledge, 31 to Laughter",
+    "B, Up B/Forward B, Y, Up Y - Kazuki attacks the enemy and them bursts upwards, good for escaping because the enemy is also stunned and only can move after you're already in the air. Damage : 31 Damage to Power, 46 to Knowledge, 31 to Laughter",
+    "B, Up/Forward B, Y, Forward Y - Very low chance to hit with the final hit, but if you do, you can manage some nice damage. Damage : 47 Damage to Power, 70 to Knowledge, 47 to Laughter",
+    "Forward B, Forward Y - A new combo I noticed that pierces them with Forward B and should stun them long enough to hit them with Forward Y if you did it fast enough. Damage : 24 Damage to Power, 36 to Knowledge, 24 to Laughter",
+    "Extra Combo : Use a quick support the moment they're open from a Guard Break. Example - Down+Y, L/R.",
+    "4-Koma - B, Forward B, Y, Up X - Causes Blind. Damage : 51 to Power, 76 to Knowledge, 51 to Laughter",
+    "4-Koma - Down Y, Up X - Guard Breaks, Causes Blind. Damage : 36 to Power, 54 to Knowledge, 36 to Laughter",
+    "4-Koma - B, Up B, X - Damage : 43 to Power, 66 to Knowledge, 43 to Laughter",
+    "5-Koma - B, Up B, X - Damage : 47 to Power, 70 to Knowledge, 47 to Laughter",
+    "6-Koma - B, Up B, Up X - Damage : 61 to Power, 91 to Knowledge, 61 to Laughter"
+  ],
+  "unresolved": [
+    "Guide's own button legend does not define an explicit 'air B'/'air Y' term; the A+B and A+Y table rows are inferred to be aerial versions of B and Y because A is the jump button (per the Controls section), but the guide never labels them that way directly.",
+    "The B and Y attack tables (B, up B, down B, side B, double-tap-forward B, air B, Y, up Y, down Y, side Y, double-tap-forward Y, air Y) are printed identically, with identical damage numbers, in the 4-Koma, 5-Koma, and 6-Koma sections of part V. They were treated here as shared top-level moves rather than duplicated per koma size, since the guide gives no koma-specific variation for them.",
+    "Guide states 'all of Kazuki's Koma is Power-based' (part II, Terminology), so nature 'power' was applied to every koma size including the 1-Koma help koma and 2-3 Koma support komas, though the guide never states a nature for those specifically.",
+    "No HP values are given anywhere in the guide for any koma size; all hp fields are null.",
+    "The Strategy/Strengths section (part VI-B) says Kazuki has an 'Auto-HP Regen' passive strength, and the 1-Koma entry separately says 'Health Recovers slowly' -- these may be the same underlying passive described twice, or two different things (a base regen plus a help-koma effect). The guide does not clarify, so no passives were added to the 4-6 Koma battle entries beyond what's explicitly tied to them (none stated).",
+    "Table of contents numbering is inconsistent/garbled: 'Koma Deck Support' and 'Koma Opinions' are both labeled 'VII.' in the body text, and the numbering skips/misaligns with the listed contents (VIII, IX) versus what's actually in the document body.",
+    "The intro line 'he's the only Battle...AND Support Komas' suggests kit_type could arguably be considered unusual (both battle and support koma forms), but the guide never uses item-creator/summoner/other wording, so kit_type was left as 'standard' per the schema's default rule.",
+    "2-Koma and 3-Koma support damage is given per opposing Koma affinity (Power/Knowledge/Laughter) rather than as a single base number; these three values were folded into the support_effect text as written since the schema has no dedicated per-affinity damage field for support koma.",
+    "5-Koma Koma Opinions section says the X attack 'doing only 32 Damage at minimum' and 'fully charged it does 52 Damage', consistent with the moveset table's 32/40/52, but never separately mentions the 40 middle value in that prose -- treated as consistent, not a contradiction, since the table is explicit."
+  ]
+}

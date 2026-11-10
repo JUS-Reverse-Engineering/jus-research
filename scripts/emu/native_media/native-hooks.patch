@@ -1,0 +1,503 @@
+diff --git a/src/ARM.cpp b/src/ARM.cpp
+index 3937a99..8157e90 100644
+--- a/src/ARM.cpp
++++ b/src/ARM.cpp
+@@ -589,6 +589,13 @@ void ARM::CheckGdbIncoming()
+     GdbCheckA();
+ }
+ 
++void ARMv5::CheckCallHook()
++{
++    u32 pc = R[15] - ((CPSR & 0x20) ? 2 : 4);
++    if (std::binary_search(NDS.ARM9CallPCs.begin(), NDS.ARM9CallPCs.end(), pc))
++        NDS.ARM9CallObserver(pc, (CPSR & 0x20) ? (NextInstr[0] & 0xFFFF) : NextInstr[0], R);
++}
++
+ template <CPUExecuteMode mode>
+ void ARMv5::Execute()
+ {
+@@ -661,6 +668,8 @@ void ARMv5::Execute()
+             {
+                 if constexpr (mode == CPUExecuteMode::InterpreterGDB)
+                     GdbCheckC();
++                if (!NDS.ARM9CallPCs.empty()) [[unlikely]]
++                    CheckCallHook();
+ 
+                 // prefetch
+                 R[15] += 2;
+@@ -677,6 +686,8 @@ void ARMv5::Execute()
+             {
+                 if constexpr (mode == CPUExecuteMode::InterpreterGDB)
+                     GdbCheckC();
++                if (!NDS.ARM9CallPCs.empty()) [[unlikely]]
++                    CheckCallHook();
+ 
+                 // prefetch
+                 R[15] += 4;
+diff --git a/src/ARM.h b/src/ARM.h
+index 88f970b..b9d2049 100644
+--- a/src/ARM.h
++++ b/src/ARM.h
+@@ -251,6 +251,8 @@ public:
+     template <CPUExecuteMode mode>
+     void Execute();
+ 
++    void CheckCallHook();
++
+     // all code accesses are forced nonseq 32bit
+     u32 CodeRead32(u32 addr, bool branch);
+ 
+diff --git a/src/NDS.h b/src/NDS.h
+index 9455d47..473e189 100644
+--- a/src/NDS.h
++++ b/src/NDS.h
+@@ -270,6 +270,11 @@ public: // TODO: Encapsulate the rest of these members
+ 
+     u32 NumFrames;
+     u32 NumLagFrames;
++
++    // Native recorder call log (interpreter only): sorted ARM9 instruction addresses,
++    // and the observer told (pc, opcode, R[0..15]) just before one executes.
++    std::vector<u32> ARM9CallPCs;
++    std::function<void(u32, u32, const u32*)> ARM9CallObserver;
+     bool LagFrameFlag;
+ 
+     // no need to worry about those overflowing, they can keep going for atleast 4350 years
+diff --git a/src/frontend/qt_sdl/EmuThread.cpp b/src/frontend/qt_sdl/EmuThread.cpp
+index 689dd66..994df7c 100755
+--- a/src/frontend/qt_sdl/EmuThread.cpp
++++ b/src/frontend/qt_sdl/EmuThread.cpp
+@@ -336,13 +336,20 @@ void EmuThread::run()
+                                 [nds](uint32_t p) { return nds->ARM9Read8(p); });
+                             std::vector<uint8_t> ram;
+                             for (const auto& value : values) ram.insert(ram.end(), value.bytes.begin(), value.bytes.end());
+-                            nativeCapture.frame(nds->NumFrames, nds->CaptureTimestamp(), committedMask,
+-                                static_cast<uint32_t*>(top), static_cast<uint32_t*>(bottom), ram, values);
++                            std::string hookError;
++                            if (nativeHooks.enabled() && !nativeHooks.frame(nativeCapture.sequence(), nds->NumFrames,
++                                    [nds](uint32_t p) { return nds->ARM9Read32(p); },
++                                    [nds](uint32_t p) { return nds->ARM9Read8(p); }, hookError))
++                                nativeCapture.fail(hookError.c_str());
++                            else
++                                nativeCapture.frame(nds->NumFrames, nds->CaptureTimestamp(), committedMask,
++                                    static_cast<uint32_t*>(top), static_cast<uint32_t*>(bottom), ram, values);
+                         }
+                         catch (const std::invalid_argument& error) { nativeCapture.fail(error.what()); }
+                         catch (const std::exception&) { nativeCapture.fail("watch_read_failed"); }
+                     }
+                 }
++                if (!nativeCapture.active() && nativeHooks.enabled()) releaseNativeHooks();
+             }
+ 
+             if (emuInstance->ndsSave)
+@@ -503,6 +510,13 @@ void EmuThread::waitAllMessages()
+         msgSemaphore.acquire();
+ }
+ 
++void EmuThread::releaseNativeHooks()
++{
++    if (emuInstance->nds) { emuInstance->nds->ARM9CallPCs.clear(); emuInstance->nds->ARM9CallObserver = {}; }
++    nativeHooks.close();
++    nativeHooks = NativeHooks();
++}
++
+ void EmuThread::handleMessages()
+ {
+     bool glborrow = false;
+@@ -542,6 +556,33 @@ void EmuThread::handleMessages()
+             }
+             try { replay.validate(); }
+             catch (const std::invalid_argument& error) { nativeError = error.what(); }
++            releaseNativeHooks();
++            NativeHooks hooks;
++            for (const auto& pc : config.value("calls").toList()) hooks.pcs.push_back(pc.toUInt());
++            for (const auto& item : config.value("lists").toList())
++            {
++                auto map = item.toMap();
++                NativeList list;
++                list.address = map.value("address").toUInt();
++                for (const auto& step : map.value("offsets").toList()) list.offsets.push_back(step.toInt());
++                list.next = map.value("next").toInt();
++                list.limit = map.value("limit").toUInt();
++                for (const auto& f : map.value("fields").toList())
++                {
++                    auto fm = f.toMap();
++                    NativeListField field;
++                    for (const auto& step : fm.value("path").toList()) field.path.push_back(step.toInt());
++                    field.length = fm.value("length").toUInt();
++                    field.optional = fm.value("optional").toBool();
++                    list.fields.push_back(std::move(field));
++                }
++                hooks.lists.push_back(std::move(list));
++            }
++            if (nativeError.isEmpty())
++            {
++                try { hooks.validate(); }
++                catch (const std::invalid_argument& error) { nativeError = error.what(); }
++            }
+             if (nativeError.isEmpty() && (!nds || !nds->IsRunning() || emuStatus != emuStatus_Running
+                 || nds->IsJITEnabled() || !nds->GPU.GetFramebuffers(&top, &bottom) || !top || !bottom))
+                 nativeError = "capture_requires_running_software_without_jit";
+@@ -584,6 +625,16 @@ void EmuThread::handleMessages()
+                 audioOptions << options[0] << '\t' << options[1] << '\t' << options[2] << '\t' << options[3] << '\n';
+                 audioOptions.close();
+                 if (!spec || !schema || !schedule || !audioOptions) { nativeCapture.fail("io_error"); nativeError = "io_error"; }
++                if (nativeError.isEmpty() && hooks.enabled())
++                {
++                    nativeHooks = std::move(hooks);
++                    if (!nativeHooks.start(directory)) { nativeCapture.fail("io_error"); nativeError = "io_error"; releaseNativeHooks(); }
++                    else
++                    {
++                        nds->ARM9CallObserver = [this](u32 pc, u32 insn, const u32* r) { nativeHooks.hit(pc, insn, r); };
++                        nds->ARM9CallPCs = nativeHooks.pcs;
++                    }
++                }
+             }
+             nativeAck.release();
+             break;
+@@ -594,6 +645,7 @@ void EmuThread::handleMessages()
+             break;
+         case msg_CaptureStop:
+             nativeCapture.stop();
++            releaseNativeHooks();
+             nativeBoundaryFrame = emuInstance->nds ? emuInstance->nds->NumFrames : 0;
+             if (emuInstance->nds) emuInstance->nds->SPU.NativeAudioObserver = {};
+             nativeAck.release();
+diff --git a/src/frontend/qt_sdl/EmuThread.h b/src/frontend/qt_sdl/EmuThread.h
+index 9177953..c70d505 100755
+--- a/src/frontend/qt_sdl/EmuThread.h
++++ b/src/frontend/qt_sdl/EmuThread.h
+@@ -32,6 +32,7 @@
+ #include <list>
+ 
+ #include "NativeCapture.h"
++#include "NativeHooks.h"
+ #include "NDSCart.h"
+ #include "GBACart.h"
+ 
+@@ -174,6 +175,8 @@ private:
+     void handleMessages();
+     NativeCapture nativeCapture;
+     NativeReplayPlan nativeReplay;
++    NativeHooks nativeHooks;
++    void releaseNativeHooks();
+     uint32_t nativeFallbackMask = 4095;
+     QSemaphore nativeAck;
+     QString nativeError;
+diff --git a/src/frontend/qt_sdl/NativeHooks.h b/src/frontend/qt_sdl/NativeHooks.h
+new file mode 100644
+index 0000000..7a61527
+--- /dev/null
++++ b/src/frontend/qt_sdl/NativeHooks.h
+@@ -0,0 +1,223 @@
++#pragma once
++// Per-capture execution hooks for the native recorder.
++//  - Call log: a list of ARM9 instruction addresses. Each time the interpreter is
++//    about to execute one, the core reports (pc, opcode, r0-r15); the hit is held
++//    until the frame row is written and then appended to calls.tsv with that row's
++//    sequence and nds_frame.
++//  - List walks: bounded linked-list reads taken once per completed frame, after the
++//    watches, into list-frames.tsv and list-nodes.tsv.
++// Both only read emulator state. Formats are documented in scripts/emu/README.md.
++#include <algorithm>
++#include <cstdint>
++#include <filesystem>
++#include <fstream>
++#include <iomanip>
++#include <sstream>
++#include <stdexcept>
++#include <string>
++#include <vector>
++
++struct NativeListField
++{
++    std::vector<int32_t> path;   // node+path[0], then each later entry: pointer hop, add
++    uint32_t length = 0;
++    bool optional = false;       // a null hop marks the field absent instead of failing
++};
++
++struct NativeList
++{
++    uint32_t address = 0;        // head chain: address, then pointer hop + offset per entry;
++    std::vector<int32_t> offsets; // the word at the final address is the first node
++    int32_t next = 0;            // node offset of the next-node pointer
++    uint32_t limit = 0;          // nodes walked per frame
++    std::vector<NativeListField> fields;
++};
++
++struct NativeCallHit { uint32_t pc, insn, r[8], lr; };
++
++class NativeHooks
++{
++    std::vector<NativeCallHit> pending;
++    std::ofstream calls, frames, nodes;
++    bool overflow = false;
++
++    static bool ram(int64_t address, uint32_t length, bool aligned = false)
++    {
++        return address >= 0x02000000 && address + length <= 0x02400000 && (!aligned || address % 4 == 0);
++    }
++    static bool code(uint32_t pc)
++    {
++        return pc % 2 == 0 && ((pc >= 0x01FF8000 && pc < 0x02000000) || (pc >= 0x02000000 && pc < 0x02400000));
++    }
++    static std::string join(const std::vector<int32_t>& values)
++    {
++        std::ostringstream out;
++        for (size_t i = 0; i < values.size(); ++i) { if (i) out << ','; out << values[i]; }
++        return out.str();
++    }
++
++public:
++    static constexpr size_t MaxPCs = 64, MaxLists = 4, MaxLimit = 32, MaxFields = 16, MaxNodeBytes = 128;
++    static constexpr size_t MaxHitsPerFrame = 4096;
++    std::vector<uint32_t> pcs;   // sorted by validate()
++    std::vector<NativeList> lists;
++
++    bool enabled() const { return !pcs.empty() || !lists.empty(); }
++    bool watching(uint32_t pc) const { return std::binary_search(pcs.begin(), pcs.end(), pc); }
++
++    void validate()
++    {
++        std::sort(pcs.begin(), pcs.end());
++        if (pcs.size() > MaxPCs || std::adjacent_find(pcs.begin(), pcs.end()) != pcs.end()
++            || !std::all_of(pcs.begin(), pcs.end(), code))
++            throw std::invalid_argument("invalid_call_pcs");
++        if (lists.size() > MaxLists) throw std::invalid_argument("list_budget");
++        for (const auto& list : lists)
++        {
++            uint32_t bytes = 0;
++            if (!list.limit || list.limit > MaxLimit || list.fields.empty() || list.fields.size() > MaxFields
++                || list.offsets.size() > 8 || !ram(list.address, 4, true))
++                throw std::invalid_argument("invalid_list_recipe");
++            for (const auto& field : list.fields)
++            {
++                bytes += field.length;
++                if (!field.length || field.path.empty() || field.path.size() > 9
++                    || (field.optional && field.path.size() < 2))
++                    throw std::invalid_argument("invalid_list_recipe");
++            }
++            if (bytes > MaxNodeBytes) throw std::invalid_argument("invalid_list_recipe");
++        }
++    }
++
++    // The capture directory already exists; writes the registration files and opens the logs.
++    bool start(const std::filesystem::path& directory)
++    {
++        if (!std::filesystem::is_directory(directory)) return false;
++        pending.clear(); overflow = false;
++        std::ofstream spec(directory / "hooks.json");
++        spec << "{\"version\":1,\"call_pcs\":" << pcs.size() << ",\"lists\":" << lists.size() << "}\n";
++        bool ok = bool(spec);
++        if (!pcs.empty())
++        {
++            std::ofstream list(directory / "call-pcs.tsv");
++            list << "pc\n";
++            for (auto pc : pcs) list << pc << '\n';
++            calls.open(directory / "calls.tsv");
++            calls << "sequence\tnds_frame\tpc\tinsn\tr0\tr1\tr2\tr3\tr4\tr5\tr6\tr7\tlr\n";
++            ok = ok && list && calls;
++        }
++        if (!lists.empty())
++        {
++            std::ofstream list(directory / "lists.tsv");
++            list << "list\taddress\toffsets\tnext\tlimit\tfields\n";
++            for (size_t i = 0; i < lists.size(); ++i)
++            {
++                const auto& l = lists[i];
++                list << i << '\t' << l.address << '\t' << join(l.offsets) << '\t' << l.next << '\t' << l.limit << '\t';
++                for (size_t j = 0; j < l.fields.size(); ++j)
++                    list << (j ? ";" : "") << join(l.fields[j].path) << ':' << l.fields[j].length << ':' << l.fields[j].optional;
++                list << '\n';
++            }
++            frames.open(directory / "list-frames.tsv");
++            frames << "sequence\tnds_frame\tlist\tpresent\tcount\ttruncated\thead_path\n";
++            nodes.open(directory / "list-nodes.tsv");
++            nodes << "sequence\tnds_frame\tlist\tnode\taddress\tnext\tfield_present\tfield_addresses\tdata_hex\n";
++            ok = ok && list && frames && nodes;
++        }
++        return ok;
++    }
++
++    // Called from the ARM9 interpreter, before the instruction at pc executes.
++    void hit(uint32_t pc, uint32_t insn, const uint32_t* r)
++    {
++        if (pending.size() >= MaxHitsPerFrame) { overflow = true; return; }
++        NativeCallHit h{pc, insn, {}, r[14]};
++        std::copy(r, r + 8, h.r);
++        pending.push_back(h);
++    }
++
++    // After the frame row is written: flush this frame's hits and walk the lists.
++    template <typename Read32, typename Read8>
++    bool frame(uint32_t sequence, uint32_t ndsFrame, Read32 read32, Read8 read8, std::string& error)
++    {
++        if (overflow) { error = "call_log_overflow"; pending.clear(); return false; }
++        for (const auto& h : pending)
++        {
++            calls << sequence << '\t' << ndsFrame << '\t' << h.pc << '\t' << h.insn;
++            for (auto value : h.r) calls << '\t' << value;
++            calls << '\t' << h.lr << '\n';
++        }
++        pending.clear();
++        for (size_t index = 0; index < lists.size(); ++index)
++        {
++            const auto& list = lists[index];
++            std::ostringstream path;
++            int64_t address = list.address;
++            bool present = true;
++            auto hop = [&](int64_t location) -> uint32_t {
++                if (!ram(location, 4, true)) throw std::invalid_argument("list_pointer_unreachable");
++                uint32_t value = read32(uint32_t(location));
++                path << (path.tellp() > 0 ? "," : "") << location << ':' << value;
++                return value;
++            };
++            std::vector<std::string> rows;
++            uint32_t count = 0, node = 0;
++            try
++            {
++                for (auto offset : list.offsets)
++                {
++                    uint32_t pointer = hop(address);
++                    if (!pointer) { present = false; break; }
++                    address = int64_t(pointer) + offset;
++                }
++                if (present) node = hop(address);
++                while (present && node && count < list.limit)
++                {
++                    if (!ram(node, 4, true)) throw std::invalid_argument("list_pointer_unreachable");
++                    std::string flags, addresses, data;
++                    for (const auto& field : list.fields)
++                    {
++                        int64_t at = int64_t(node) + field.path[0];
++                        bool here = true;
++                        for (size_t k = 1; k < field.path.size(); ++k)
++                        {
++                            if (!ram(at, 4, true)) throw std::invalid_argument("list_pointer_unreachable");
++                            uint32_t pointer = read32(uint32_t(at));
++                            if (!pointer)
++                            {
++                                if (!field.optional) throw std::invalid_argument("required_list_field_absent");
++                                here = false; break;
++                            }
++                            at = int64_t(pointer) + field.path[k];
++                        }
++                        if (here && !ram(at, field.length)) throw std::invalid_argument("list_pointer_unreachable");
++                        std::ostringstream hex;
++                        for (uint32_t b = 0; b < field.length; ++b)
++                            hex << std::hex << std::setw(2) << std::setfill('0') << unsigned(here ? read8(uint32_t(at + b)) : 0);
++                        flags += here ? '1' : '0';
++                        addresses += (flags.size() > 1 ? "," : "") + std::to_string(here ? at : 0);
++                        data += hex.str();
++                    }
++                    int64_t link = int64_t(node) + list.next;
++                    if (!ram(link, 4, true)) throw std::invalid_argument("list_pointer_unreachable");
++                    uint32_t next = read32(uint32_t(link));
++                    std::ostringstream row;
++                    row << sequence << '\t' << ndsFrame << '\t' << index << '\t' << count << '\t' << node << '\t'
++                        << next << '\t' << flags << '\t' << addresses << '\t' << data << '\n';
++                    rows.push_back(row.str());
++                    node = next; ++count;
++                }
++            }
++            catch (const std::invalid_argument& e) { error = e.what(); return false; }
++            frames << sequence << '\t' << ndsFrame << '\t' << index << '\t' << present << '\t' << count << '\t'
++                   << (present && node ? 1 : 0) << '\t' << path.str() << '\n';
++            for (const auto& row : rows) nodes << row;
++        }
++        calls.flush(); frames.flush(); nodes.flush();
++        if ((calls.is_open() && !calls) || (frames.is_open() && !frames) || (nodes.is_open() && !nodes))
++        { error = "io_error"; return false; }
++        return true;
++    }
++
++    void close() { pending.clear(); calls.close(); frames.close(); nodes.close(); }
++};
+diff --git a/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp b/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp
+index 793ef9c..a9d50dc 100644
+--- a/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp
++++ b/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp
+@@ -4,6 +4,75 @@
+ std::vector<luaL_Reg> nativeCaptureFunctions;
+ LuaLibrary nativeCaptureLibrary("capture", &nativeCaptureFunctions);
+ 
++static QVariantList IntegerList(lua_State* L, int index, const char* name, size_t limit)
++{
++    QVariantList out;
++    lua_getfield(L, index, name);
++    if (!lua_isnil(L, -1))
++    {
++        luaL_checktype(L, -1, LUA_TTABLE);
++        auto count = lua_rawlen(L, -1);
++        if (count > limit) luaL_error(L, "too many %s", name);
++        for (size_t i = 1; i <= count; ++i)
++        {
++            lua_geti(L, -1, i); auto value = luaL_checkinteger(L, -1); lua_pop(L, 1);
++            if (value < INT32_MIN || value > UINT32_MAX) luaL_error(L, "invalid %s", name);
++            out.append(value < 0 ? QVariant(int(value)) : QVariant(uint(value)));
++        }
++    }
++    lua_pop(L, 1);
++    return out;
++}
++
++// Optional sixth argument: {calls={pc,...}, lists={{address=, offsets={}, next=, limit=,
++// fields={{path={...}, length=, optional=}}}}}. Bounds are checked by NativeHooks::validate.
++static void ParseHooks(lua_State* L, int index, QVariantMap& config)
++{
++    luaL_checktype(L, index, LUA_TTABLE);
++    config["calls"] = IntegerList(L, index, "calls", 64);
++    QVariantList lists;
++    lua_getfield(L, index, "lists");
++    if (!lua_isnil(L, -1))
++    {
++        luaL_checktype(L, -1, LUA_TTABLE);
++        auto count = lua_rawlen(L, -1);
++        if (count > 4) luaL_error(L, "too many lists");
++        int listsIndex = lua_gettop(L);
++        for (size_t i = 1; i <= count; ++i)
++        {
++            lua_geti(L, listsIndex, i); luaL_checktype(L, -1, LUA_TTABLE);
++            int item = lua_gettop(L);
++            QVariantMap list;
++            lua_getfield(L, item, "address"); list["address"] = uint(luaL_checkinteger(L, -1)); lua_pop(L, 1);
++            lua_getfield(L, item, "next"); list["next"] = int(luaL_checkinteger(L, -1)); lua_pop(L, 1);
++            lua_getfield(L, item, "limit"); list["limit"] = uint(luaL_checkinteger(L, -1)); lua_pop(L, 1);
++            list["offsets"] = IntegerList(L, item, "offsets", 8);
++            QVariantList fields;
++            lua_getfield(L, item, "fields"); luaL_checktype(L, -1, LUA_TTABLE);
++            int fieldsIndex = lua_gettop(L);
++            auto fieldCount = lua_rawlen(L, fieldsIndex);
++            if (fieldCount > 16) luaL_error(L, "too many list fields");
++            for (size_t j = 1; j <= fieldCount; ++j)
++            {
++                lua_geti(L, fieldsIndex, j); luaL_checktype(L, -1, LUA_TTABLE);
++                int f = lua_gettop(L);
++                QVariantMap field;
++                field["path"] = IntegerList(L, f, "path", 9);
++                lua_getfield(L, f, "length"); field["length"] = uint(luaL_checkinteger(L, -1)); lua_pop(L, 1);
++                lua_getfield(L, f, "optional");
++                if (!lua_isnil(L, -1) && !lua_isboolean(L, -1)) luaL_error(L, "optional must be boolean");
++                field["optional"] = bool(lua_toboolean(L, -1)); lua_pop(L, 2);
++                fields.append(field);
++            }
++            lua_pop(L, 2);
++            list["fields"] = fields;
++            lists.append(list);
++        }
++    }
++    lua_pop(L, 1);
++    config["lists"] = lists;
++}
++
+ static int CaptureStart(lua_State* L)
+ {
+     QVariantMap config;
+@@ -62,6 +131,7 @@ static int CaptureStart(lua_State* L)
+         }
+         config["masks"] = masks;
+     }
++    if (!lua_isnoneornil(L, 6)) ParseHooks(L, 6, config);
+     auto instance = get_bundle(L)->getEmuInstance();
+     if (!instance) return luaL_error(L, "no emu instance");
+     QString error = instance->getEmuThread()->captureStart(config);

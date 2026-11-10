@@ -1,0 +1,10 @@
+{
+  "source": "clean training-mode savestate (stage 596) with regeneration off and the setup crate removed",
+  "source_sha256": "48d4175453f64ba3bcd77f75d7e5748a06a1269cf06c2eeda92cffff81bf349c",
+  "expected_layout": "test-play",
+  "words": {
+    "35134248": 35817184,
+    "35515164": 35817184,
+    "35708352": 35711028
+  }
+}

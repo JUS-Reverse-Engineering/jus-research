@@ -1,0 +1,524 @@
+diff --git a/src/GPU.h b/src/GPU.h
+index b0e1faf..02ae7d0 100644
+--- a/src/GPU.h
++++ b/src/GPU.h
+@@ -19,6 +19,7 @@
+ #ifndef GPU_H
+ #define GPU_H
+ 
++#include <functional>
+ #include <memory>
+ 
+ #include "GPU2D.h"
+@@ -638,6 +639,13 @@ public:
+     alignas(u64) u8 Palette[2*1024] {};
+     alignas(u64) u8 OAM[2*1024] {};
+ 
++    // Native recorder GPU-media observers (software 2D renderer, capture only; empty otherwise).
++    // Sprite: (engine, output line, OAM bank, OBJ VRAM flat copy, its size, 12 register bytes),
++    // called when DrawSprites reads them. Compose: (engine, line, OBJ palette, OBJ extended
++    // palette, 36 register bytes), called when DrawScanline composites. Layouts: NativeGpuMedia.h.
++    std::function<void(u32, u32, const u8*, const u8*, u32, const u8*)> NativeSpriteObserver;
++    std::function<void(u32, u32, const u8*, const u8*, const u8*)> NativeComposeObserver;
++
+     alignas(u64) u8 VRAM_A[128*1024] {};
+     alignas(u64) u8 VRAM_B[128*1024] {};
+     alignas(u64) u8 VRAM_C[128*1024] {};
+diff --git a/src/GPU2D_Soft.cpp b/src/GPU2D_Soft.cpp
+index 5adc545..7d77095 100644
+--- a/src/GPU2D_Soft.cpp
++++ b/src/GPU2D_Soft.cpp
+@@ -114,6 +114,38 @@ u32 SoftRenderer2D::ColorComposite(int i, u32 val1, u32 val2) const
+     return val1;
+ }
+ 
++// Native recorder GPU-media observation: packs the registers the native stream versions
++// and hands the consumed bytes to GPU.Native*Observer. Read-only.
++static void PutLE(u8* out, u32 value, int bytes) { for (int i = 0; i < bytes; i++) out[i] = u8(value >> (8 * i)); }
++
++void SoftRenderer2D::NotifySprites(u32 line)
++{
++    if (!GPU.NativeSpriteObserver) [[likely]] return;
++    u8 regs[12] = {};
++    PutLE(regs, GPU2D.DispCnt, 4);
++    regs[4] = GPU2D.OBJEnable; regs[5] = GPU2D.Enabled;
++    // mosaic latch as a distance back from the drawn line: constant while OBJMosaicSize[1] is 0, so it does not split spans
++    PutLE(regs + 8, (line - GPU2D.OBJMosaicLine) & 0xFF, 4);
++    u8* objvram; u32 objvrammask;
++    GPU2D.GetOBJVRAM(objvram, objvrammask);
++    GPU.NativeSpriteObserver(GPU2D.Num, line, &GPU.OAM[GPU2D.Num ? 0x400 : 0], objvram, objvrammask + 1, regs);
++}
++
++void SoftRenderer2D::NotifyCompose(u32 line)
++{
++    if (!GPU.NativeComposeObserver) [[likely]] return;
++    u8 regs[36] = {};
++    PutLE(regs, GPU2D.DispCnt, 4);
++    regs[4] = GPU2D.LayerEnable; regs[5] = GPU2D.ForcedBlank; regs[6] = GPU2D.Enabled; regs[7] = GPU.ScreenSwap;
++    PutLE(regs + 8, GPU2D.BlendCnt, 2); PutLE(regs + 10, GPU2D.BlendAlpha, 2);
++    regs[12] = GPU2D.EVA; regs[13] = GPU2D.EVB; regs[14] = GPU2D.EVY; regs[15] = GPU2D.Win0Active;
++    for (int i = 0; i < 4; i++) { regs[16 + i] = GPU2D.Win0Coords[i]; regs[20 + i] = GPU2D.Win1Coords[i]; regs[24 + i] = GPU2D.WinCnt[i]; }
++    regs[28] = GPU2D.Win1Active; regs[29] = GPU2D.OBJMosaicSize[0]; regs[30] = GPU2D.OBJMosaicSize[1];
++    PutLE(regs + 32, GPU2D.Num ? GPU.MasterBrightnessB : GPU.MasterBrightnessA, 2);
++    GPU.NativeComposeObserver(GPU2D.Num, line, &GPU.Palette[GPU2D.Num ? 0x600 : 0x200],
++                              reinterpret_cast<const u8*>(GPU2D.GetOBJExtPal()), regs);
++}
++
+ void SoftRenderer2D::DrawScanline(u32 line)
+ {
+     u32* dst = Parent.Output2D[GPU2D.Num];
+@@ -126,6 +158,7 @@ void SoftRenderer2D::DrawScanline(u32 line)
+         for (int i = 0; i < 256; i++)
+             dst[i] = fillcolor;
+ 
++        NotifyCompose(line);
+         return;
+     }
+ 
+@@ -135,6 +168,7 @@ void SoftRenderer2D::DrawScanline(u32 line)
+         for (int i = 0; i < 256; i++)
+             dst[i] = 0xFF3F3F3F;
+ 
++        NotifyCompose(line);
+         return;
+     }
+ 
+@@ -157,6 +191,8 @@ void SoftRenderer2D::DrawScanline(u32 line)
+         GPU.MakeVRAMFlat_BOBJExtPalCoherent(objExtPalDirty);
+     }
+ 
++    NotifyCompose(line);
++
+     // render BG layers and sprites
+     DrawScanline_BGOBJ(line, dst);
+ }
+@@ -1025,7 +1061,10 @@ void SoftRenderer2D::DrawSprites(u32 line)
+ {
+     // the OBJ buffers don't get updated at all if the 2D engine is disabled
+     if (!GPU2D.Enabled)
++    {
++        NotifySprites(line);
+         return;
++    }
+ 
+     if (GPU2D.Num == 0)
+     {
+@@ -1038,6 +1077,8 @@ void SoftRenderer2D::DrawSprites(u32 line)
+         GPU.MakeVRAMFlat_BOBJCoherent(objDirty);
+     }
+ 
++    NotifySprites(line);
++
+     NumSprites = 0;
+     memset(OBJLine, 0, sizeof(OBJLine));
+     memset(OBJWindow, 0, sizeof(OBJWindow));
+diff --git a/src/GPU2D_Soft.h b/src/GPU2D_Soft.h
+index 548efe1..30ce7cb 100644
+--- a/src/GPU2D_Soft.h
++++ b/src/GPU2D_Soft.h
+@@ -34,6 +34,8 @@ public:
+ 
+     void DrawScanline(u32 line) override;
+     void DrawSprites(u32 line) override;
++    void NotifySprites(u32 line);
++    void NotifyCompose(u32 line);
+     void VBlank() override {}
+     void VBlankEnd() override {};
+ 
+diff --git a/src/frontend/qt_sdl/EmuThread.cpp b/src/frontend/qt_sdl/EmuThread.cpp
+index 994df7c..3dffb11 100755
+--- a/src/frontend/qt_sdl/EmuThread.cpp
++++ b/src/frontend/qt_sdl/EmuThread.cpp
+@@ -341,6 +341,8 @@ void EmuThread::run()
+                                     [nds](uint32_t p) { return nds->ARM9Read32(p); },
+                                     [nds](uint32_t p) { return nds->ARM9Read8(p); }, hookError))
+                                 nativeCapture.fail(hookError.c_str());
++                            else if (nativeGpuEnabled && !nativeGpuFrame(hookError))
++                                nativeCapture.fail(hookError.c_str());
+                             else
+                                 nativeCapture.frame(nds->NumFrames, nds->CaptureTimestamp(), committedMask,
+                                     static_cast<uint32_t*>(top), static_cast<uint32_t*>(bottom), ram, values);
+@@ -350,6 +352,7 @@ void EmuThread::run()
+                     }
+                 }
+                 if (!nativeCapture.active() && nativeHooks.enabled()) releaseNativeHooks();
++                if (!nativeCapture.active() && nativeGpuEnabled) releaseNativeGpu();
+             }
+ 
+             if (emuInstance->ndsSave)
+@@ -517,6 +520,23 @@ void EmuThread::releaseNativeHooks()
+     nativeHooks = NativeHooks();
+ }
+ 
++void EmuThread::releaseNativeGpu()
++{
++    if (emuInstance->nds) { emuInstance->nds->GPU.NativeSpriteObserver = {}; emuInstance->nds->GPU.NativeComposeObserver = {}; }
++    nativeGpu.close();
++    nativeGpuEnabled = false;
++}
++
++bool EmuThread::nativeGpuFrame(std::string& error)
++{
++    auto& gpu = emuInstance->nds->GPU;
++    uint8_t regs[NativeGpuMedia::PostRegBytes] = {};
++    for (int i = 0; i < 9; ++i) regs[i] = gpu.VRAMCNT[i];
++    regs[9] = gpu.ScreenSwap;
++    for (int i = 0; i < 4; ++i) { regs[10 + i] = uint8_t(gpu.GPU2D_A.DispCnt >> (8 * i)); regs[14 + i] = uint8_t(gpu.GPU2D_B.DispCnt >> (8 * i)); }
++    return nativeGpu.frame(nativeCapture.sequence(), emuInstance->nds->NumFrames, gpu.OAM, gpu.Palette, regs, error);
++}
++
+ void EmuThread::handleMessages()
+ {
+     bool glborrow = false;
+@@ -583,6 +603,9 @@ void EmuThread::handleMessages()
+                 try { hooks.validate(); }
+                 catch (const std::invalid_argument& error) { nativeError = error.what(); }
+             }
++            releaseNativeGpu();
++            uint32_t gpuMedia = config.value("gpu").toUInt();
++            if (nativeError.isEmpty() && gpuMedia > NativeGpuMedia::Version) nativeError = "invalid_gpu_media";
+             if (nativeError.isEmpty() && (!nds || !nds->IsRunning() || emuStatus != emuStatus_Running
+                 || nds->IsJITEnabled() || !nds->GPU.GetFramebuffers(&top, &bottom) || !top || !bottom))
+                 nativeError = "capture_requires_running_software_without_jit";
+@@ -635,6 +658,18 @@ void EmuThread::handleMessages()
+                         nds->ARM9CallPCs = nativeHooks.pcs;
+                     }
+                 }
++                if (nativeError.isEmpty() && gpuMedia)
++                {
++                    if (!nativeGpu.start(directory, nativeReplay.frames)) { nativeCapture.fail("io_error"); nativeError = "io_error"; releaseNativeHooks(); }
++                    else
++                    {
++                        nativeGpuEnabled = true;
++                        nds->GPU.NativeSpriteObserver = [this](u32 engine, u32 line, const u8* oam, const u8* vram, u32 size, const u8* regs)
++                            { nativeGpu.sprites(engine, line, oam, vram, size, regs); };
++                        nds->GPU.NativeComposeObserver = [this](u32 engine, u32 line, const u8* pal, const u8* ext, const u8* regs)
++                            { nativeGpu.compose(engine, line, pal, ext, regs); };
++                    }
++                }
+             }
+             nativeAck.release();
+             break;
+@@ -646,6 +681,7 @@ void EmuThread::handleMessages()
+         case msg_CaptureStop:
+             nativeCapture.stop();
+             releaseNativeHooks();
++            releaseNativeGpu();
+             nativeBoundaryFrame = emuInstance->nds ? emuInstance->nds->NumFrames : 0;
+             if (emuInstance->nds) emuInstance->nds->SPU.NativeAudioObserver = {};
+             nativeAck.release();
+diff --git a/src/frontend/qt_sdl/EmuThread.h b/src/frontend/qt_sdl/EmuThread.h
+index c70d505..477b180 100755
+--- a/src/frontend/qt_sdl/EmuThread.h
++++ b/src/frontend/qt_sdl/EmuThread.h
+@@ -33,6 +33,7 @@
+ 
+ #include "NativeCapture.h"
+ #include "NativeHooks.h"
++#include "NativeGpuMedia.h"
+ #include "NDSCart.h"
+ #include "GBACart.h"
+ 
+@@ -177,6 +178,10 @@ private:
+     NativeReplayPlan nativeReplay;
+     NativeHooks nativeHooks;
+     void releaseNativeHooks();
++    NativeGpuMedia nativeGpu;
++    bool nativeGpuEnabled = false;
++    void releaseNativeGpu();
++    bool nativeGpuFrame(std::string& error);
+     uint32_t nativeFallbackMask = 4095;
+     QSemaphore nativeAck;
+     QString nativeError;
+diff --git a/src/frontend/qt_sdl/NativeGpuMedia.h b/src/frontend/qt_sdl/NativeGpuMedia.h
+new file mode 100644
+index 0000000..3358913
+--- /dev/null
++++ b/src/frontend/qt_sdl/NativeGpuMedia.h
+@@ -0,0 +1,257 @@
++#pragma once
++// GPU-media side stream for the native recorder (vispilot-d1 unit V2).
++//
++// The software 2D renderer reports what it consumes, on the emulator thread:
++//  - sprites(): called from SoftRenderer2D::DrawSprites(line) after the OBJ VRAM
++//    flat copy is coherent. That call reads OAM and OBJ tile/bitmap bytes for
++//    output scanline `line`. melonDS pre-renders sprites one scanline ahead, so
++//    output line 0 is consumed at VCount 262 of the *previous* RunFrame. This
++//    class carries that line into the next frame.
++//  - compose(): called from SoftRenderer2D::DrawScanline(line) after the OBJ
++//    extended palette copy is coherent. Compositing reads the OBJ palettes and
++//    the blend/window/brightness registers then.
++//  - frame(): called once per completed RunFrame, before NativeCapture::frame,
++//    with the post-frame OAM and palette RAM.
++// Consecutive scanlines with identical consumed bytes form one span. A frame
++// whose content changes mid-frame keeps one span per version.
++// Content is stored once (exact-byte dedup) in gpu-blobs.bin with a CRC-32 per
++// blob. OBJ VRAM is stored as 1 KiB pages; a VRAM set lists the page blob of
++// every page of that engine's OBJ VRAM.
++// This class only reads the bytes it is given. Formats: scripts/emu/README.md.
++#include <array>
++#include <cstdint>
++#include <cstring>
++#include <filesystem>
++#include <fstream>
++#include <iomanip>
++#include <sstream>
++#include <string>
++#include <unordered_map>
++#include <vector>
++
++class NativeGpuMedia
++{
++public:
++    static constexpr uint32_t Version = 1, Lines = 192, OamBytes = 1024, PalBytes = 512, ExtPalBytes = 8192;
++    static constexpr uint32_t PageBytes = 1024, SpriteRegBytes = 12, ComposeRegBytes = 36, PostRegBytes = 18;
++    static constexpr uint32_t VramBytes[2] = {256 * 1024, 128 * 1024};
++    // Budgets. Exceeding one fails the capture; nothing is dropped silently.
++    uint64_t blobBudget = 128ull << 20;  // unique content bytes per capture
++    uint32_t spanBudget = Lines;         // spans per frame, engine and stream
++
++private:
++    struct Span { uint32_t first, last; bool observed; uint32_t a, b; std::string regs; };
++    struct SpriteState { bool have = false; std::vector<uint8_t> oam, vram, regs; uint32_t oamBlob = 0, set = 0; std::vector<uint32_t> pages; };
++    struct ComposeState { bool have = false; std::vector<uint8_t> pal, ext, regs; uint32_t palBlob = 0, extBlob = 0; };
++
++    std::filesystem::path directory;
++    std::ofstream blobs, blobIndex, sets, spans, post, frames;
++    std::unordered_map<std::string, uint32_t> blobIds, setIds;
++    uint64_t blobBytes = 0;
++    uint32_t blobCount = 0, setCount = 0, frameCount = 0, frameLimit = 0;
++    bool running = false;
++    std::string error;
++    SpriteState sprite[2];
++    ComposeState comp[2];
++    std::vector<Span> building[2], next[2], composing[2];
++
++    static uint32_t crc32(const uint8_t* data, size_t length)
++    {
++        static const auto table = [] {
++            std::array<uint32_t, 256> t{};
++            for (uint32_t i = 0; i < 256; ++i)
++            {
++                uint32_t c = i;
++                for (int k = 0; k < 8; ++k) c = (c & 1) ? 0xEDB88320u ^ (c >> 1) : c >> 1;
++                t[i] = c;
++            }
++            return t;
++        }();
++        uint32_t c = 0xFFFFFFFFu;
++        for (size_t i = 0; i < length; ++i) c = table[(c ^ data[i]) & 0xFF] ^ (c >> 8);
++        return c ^ 0xFFFFFFFFu;
++    }
++    static std::string hex(const uint8_t* data, size_t length)
++    {
++        std::ostringstream out;
++        for (size_t i = 0; i < length; ++i) out << std::hex << std::setw(2) << std::setfill('0') << unsigned(data[i]);
++        return out.str();
++    }
++    void failWith(const char* code) { if (error.empty()) error = code; }
++    uint32_t blob(char kind, const uint8_t* data, size_t length)
++    {
++        std::string key(1, kind);
++        key.append(reinterpret_cast<const char*>(data), length);
++        auto found = blobIds.find(key);
++        if (found != blobIds.end()) return found->second;
++        if (blobBytes + length > blobBudget) { failWith("gpu_blob_overflow"); return 0; }
++        static const char* names[] = {"oam", "pal", "extpal", "page"};
++        const char* name = kind == 'o' ? names[0] : kind == 'p' ? names[1] : kind == 'e' ? names[2] : names[3];
++        blobIndex << blobCount << '\t' << name << '\t' << blobBytes << '\t' << length << '\t' << crc32(data, length) << '\n';
++        blobs.write(reinterpret_cast<const char*>(data), std::streamsize(length));
++        blobBytes += length;
++        blobIds.emplace(std::move(key), blobCount);
++        return blobCount++;
++    }
++    uint32_t vramSet(unsigned engine, const std::vector<uint32_t>& pages)
++    {
++        std::ostringstream list;
++        for (size_t i = 0; i < pages.size(); ++i) { if (i) list << ','; list << pages[i]; }
++        std::string key = std::to_string(engine) + ':' + list.str();
++        auto found = setIds.find(key);
++        if (found != setIds.end()) return found->second;
++        sets << setCount << '\t' << engine << '\t' << list.str() << '\n';
++        setIds.emplace(std::move(key), setCount);
++        return setCount++;
++    }
++    bool append(std::vector<Span>& target, uint32_t line, uint32_t a, uint32_t b, const std::string& regs)
++    {
++        if (!target.empty())
++        {
++            auto& last = target.back();
++            if (last.observed && last.a == a && last.b == b && last.regs == regs) { last.last = line; return true; }
++        }
++        if (target.size() >= spanBudget) { failWith("gpu_span_overflow"); return false; }
++        target.push_back({line, line, true, a, b, regs});
++        return true;
++    }
++    static bool same(const std::vector<uint8_t>& held, const uint8_t* data, size_t length)
++    {
++        return held.size() == length && !std::memcmp(held.data(), data, length);
++    }
++    void writeSpans(uint32_t sequence, uint32_t ndsFrame, unsigned engine, const char* stream, const std::vector<Span>& list)
++    {
++        for (const auto& s : list)
++        {
++            spans << sequence << '\t' << ndsFrame << '\t' << engine << '\t' << stream << '\t' << s.first << '\t' << s.last
++                  << '\t' << (s.observed ? 1 : 0) << '\t';
++            bool obj = stream[0] == 'o';
++            if (!s.observed) spans << "-\t-\t-\t-\t-\n";
++            else if (obj) spans << s.a << '\t' << s.b << "\t-\t-\t" << s.regs << '\n';
++            else spans << "-\t-\t" << s.a << '\t' << s.b << '\t' << s.regs << '\n';
++        }
++    }
++    static bool covers(const std::vector<Span>& list, uint32_t first)
++    {
++        uint32_t expect = first;
++        for (const auto& s : list) { if (s.first != expect || s.last < s.first) return false; expect = s.last + 1; }
++        return expect == Lines;
++    }
++
++public:
++    bool active() const { return running; }
++    const std::string& pendingError() const { return error; }
++
++    // The capture directory already exists. Writes gpu-media.json and opens the logs.
++    bool start(const std::filesystem::path& path, uint32_t captureFrames)
++    {
++        if (running || !captureFrames || !std::filesystem::is_directory(path)) return false;
++        auto blobLimit = blobBudget; auto spanLimit = spanBudget;
++        *this = NativeGpuMedia{};
++        blobBudget = blobLimit; spanBudget = spanLimit;
++        directory = path; frameLimit = captureFrames;
++        std::ofstream spec(directory / "gpu-media.json");
++        spec << "{\"version\":" << Version << ",\"frames\":" << captureFrames << ",\"page_bytes\":" << PageBytes
++             << ",\"vram_pages\":[" << VramBytes[0] / PageBytes << ',' << VramBytes[1] / PageBytes
++             << "],\"sprite_reg_bytes\":" << SpriteRegBytes << ",\"compose_reg_bytes\":" << ComposeRegBytes
++             << ",\"post_reg_bytes\":" << PostRegBytes << "}\n";
++        blobs.open(directory / "gpu-blobs.bin", std::ios::binary);
++        blobIndex.open(directory / "gpu-blobs.tsv");
++        blobIndex << "blob\tkind\toffset\tlength\tcrc32\n";
++        sets.open(directory / "gpu-vram-sets.tsv");
++        sets << "set\tengine\tpages\n";
++        spans.open(directory / "gpu-spans.tsv");
++        spans << "sequence\tnds_frame\tengine\tstream\tfirst_line\tlast_line\tobserved\toam\tvram_set\tpal\textpal\tregs_hex\n";
++        post.open(directory / "gpu-post.bin", std::ios::binary);
++        frames.open(directory / "gpu-frames.tsv");
++        frames << "sequence\tnds_frame\tpost_crc32\tpost_regs_hex\n";
++        running = bool(spec) && blobs && blobIndex && sets && spans && post && frames;
++        return running;
++    }
++
++    // SoftRenderer2D::DrawSprites(line): OAM bank, OBJ VRAM flat copy, sprite registers.
++    void sprites(unsigned engine, uint32_t line, const uint8_t* oam, const uint8_t* vram, uint32_t vramBytes, const uint8_t* regs)
++    {
++        if (!running || !error.empty()) return;
++        if (engine > 1 || line >= Lines || vramBytes != VramBytes[engine] || !oam || !vram || !regs)
++        { failWith("gpu_bad_observation"); return; }
++        auto& target = line == 0 ? next[engine] : building[engine];
++        bool ordered = line == 0 ? target.empty()
++            : (!target.empty() && target.back().last == line - 1)
++              || (target.empty() && line == 1 && frameCount == 0);
++        if (!ordered) { failWith("gpu_scanline_order"); return; }
++        auto& st = sprite[engine];
++        bool vramChanged = !st.have || !same(st.vram, vram, vramBytes);
++        if (vramChanged)
++        {
++            uint32_t pages = vramBytes / PageBytes;
++            if (!st.have) { st.vram.assign(vram, vram + vramBytes); st.pages.assign(pages, 0); }
++            for (uint32_t p = 0; p < pages; ++p)
++            {
++                const uint8_t* page = vram + p * PageBytes;
++                if (!st.have || std::memcmp(st.vram.data() + p * PageBytes, page, PageBytes))
++                {
++                    std::memcpy(st.vram.data() + p * PageBytes, page, PageBytes);
++                    st.pages[p] = blob('g', page, PageBytes);
++                }
++            }
++            st.set = vramSet(engine, st.pages);
++        }
++        if (!st.have || !same(st.oam, oam, OamBytes))
++        { st.oam.assign(oam, oam + OamBytes); st.oamBlob = blob('o', oam, OamBytes); }
++        if (!st.have || !same(st.regs, regs, SpriteRegBytes)) st.regs.assign(regs, regs + SpriteRegBytes);
++        st.have = true;
++        if (!error.empty()) return;
++        append(target, line, st.oamBlob, st.set, hex(regs, SpriteRegBytes));
++    }
++
++    // SoftRenderer2D::DrawScanline(line): OBJ standard palette, OBJ extended palette, compose registers.
++    void compose(unsigned engine, uint32_t line, const uint8_t* pal, const uint8_t* ext, const uint8_t* regs)
++    {
++        if (!running || !error.empty()) return;
++        if (engine > 1 || line >= Lines || !pal || !ext || !regs) { failWith("gpu_bad_observation"); return; }
++        auto& target = composing[engine];
++        if (!(target.empty() ? line == 0 : target.back().last == line - 1)) { failWith("gpu_scanline_order"); return; }
++        auto& st = comp[engine];
++        if (!st.have || !same(st.pal, pal, PalBytes)) { st.pal.assign(pal, pal + PalBytes); st.palBlob = blob('p', pal, PalBytes); }
++        if (!st.have || !same(st.ext, ext, ExtPalBytes)) { st.ext.assign(ext, ext + ExtPalBytes); st.extBlob = blob('e', ext, ExtPalBytes); }
++        st.have = true;
++        if (!error.empty()) return;
++        append(target, line, st.palBlob, st.extBlob, hex(regs, ComposeRegBytes));
++    }
++
++    // After RunFrame, before the frames.tsv row. oam/pal are the full 2 KiB OAM and palette RAM.
++    bool frame(uint32_t sequence, uint32_t ndsFrame, const uint8_t* oam, const uint8_t* pal, const uint8_t* regs, std::string& failure)
++    {
++        if (!running) { failure = "gpu_not_running"; return false; }
++        if (error.empty() && sequence != frameCount) failWith("gpu_sequence_mismatch");
++        if (error.empty())
++            for (unsigned e = 0; e < 2; ++e)
++                if (!covers(building[e], frameCount == 0 ? 1 : 0) || !covers(composing[e], 0))
++                    failWith("gpu_scanline_coverage");
++        if (!error.empty()) { failure = error; close(); return false; }
++        for (unsigned e = 0; e < 2; ++e)
++        {
++            if (frameCount == 0) building[e].insert(building[e].begin(), Span{0, 0, false, 0, 0, ""});
++            writeSpans(sequence, ndsFrame, e, "obj", building[e]);
++            writeSpans(sequence, ndsFrame, e, "compose", composing[e]);
++            building[e] = std::move(next[e]);
++            next[e].clear(); composing[e].clear();
++        }
++        uint8_t record[4096];
++        std::memcpy(record, oam, 2048); std::memcpy(record + 2048, pal, 2048);
++        post.write(reinterpret_cast<const char*>(record), sizeof record);
++        frames << sequence << '\t' << ndsFrame << '\t' << crc32(record, sizeof record) << '\t' << hex(regs, PostRegBytes) << '\n';
++        ++frameCount;
++        blobs.flush(); blobIndex.flush(); sets.flush(); spans.flush(); post.flush(); frames.flush();
++        if (!blobs || !blobIndex || !sets || !spans || !post || !frames) { failure = "io_error"; close(); return false; }
++        if (frameCount == frameLimit) close();
++        return true;
++    }
++
++    void close()
++    {
++        running = false;
++        blobs.close(); blobIndex.close(); sets.close(); spans.close(); post.close(); frames.close();
++    }
++};
+diff --git a/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp b/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp
+index a9d50dc..ebc28ec 100644
+--- a/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp
++++ b/src/frontend/qt_sdl/lua/libs/LuaNativeCapture.cpp
+@@ -25,7 +25,8 @@ static QVariantList IntegerList(lua_State* L, int index, const char* name, size_
+ }
+ 
+ // Optional sixth argument: {calls={pc,...}, lists={{address=, offsets={}, next=, limit=,
+-// fields={{path={...}, length=, optional=}}}}}. Bounds are checked by NativeHooks::validate.
++// fields={{path={...}, length=, optional=}}}}, gpu=1}. Bounds are checked by NativeHooks::validate;
++// gpu=1 turns on the NativeGpuMedia.h stream (0 or nil: off).
+ static void ParseHooks(lua_State* L, int index, QVariantMap& config)
+ {
+     luaL_checktype(L, index, LUA_TTABLE);
+@@ -71,6 +72,14 @@ static void ParseHooks(lua_State* L, int index, QVariantMap& config)
+     }
+     lua_pop(L, 1);
+     config["lists"] = lists;
++    lua_getfield(L, index, "gpu");
++    if (!lua_isnil(L, -1))
++    {
++        auto version = luaL_checkinteger(L, -1);
++        if (version < 0 || version > 1) luaL_error(L, "invalid gpu");
++        config["gpu"] = uint(version);
++    }
++    lua_pop(L, 1);
+ }
+ 
+ static int CaptureStart(lua_State* L)

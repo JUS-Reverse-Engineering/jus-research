@@ -1,0 +1,263 @@
+{
+  "character": "Gon Freaks",
+  "series": "Hunter x Hunter",
+  "chr_b": 30,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md (Index column; id_name hh_b_01)",
+  "source": {"file": "49032-gon-freaks.txt", "gamefaqs_id": 49032, "author": "Dylan Neumann AKA Zero EXE", "version": "1.00"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge", "laughter"],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "neutral/forward X",
+          "name": "Jajaken: Rock",
+          "description": "Gon charges up his fist and punches the enemy with all his might.",
+          "damage": "35 (54)",
+          "hits": "1",
+          "properties": [],
+          "quote": "Part of Gon's Hatsu, Jajaken, he charges up his fist and punches the enemy with all his might. The startup lag is a bit too much to combo into, but it hurts, especially when boosted by his taunt."
+        },
+        {
+          "input": "up X",
+          "name": "Ren",
+          "description": "Gon boosts attack power with Ren.",
+          "damage": "None",
+          "hits": "None",
+          "properties": [],
+          "quote": "Gon boosts attack power with Ren. Basic power-up."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "neutral/forward X",
+          "name": "Jajaken: Rock",
+          "description": "Gon steps forward twice and hits the enemy with a stronger version of Rock.",
+          "damage": "40 (60)",
+          "hits": "1",
+          "properties": ["knockdown"],
+          "quote": "Gon steps forward twice and hits the enemy with a stronger version of Rock."
+        },
+        {
+          "input": "up X",
+          "name": "Zetsu",
+          "description": "Gon surrounds himself with a Nen Aura and turns invisible with Zetsu.",
+          "damage": "None",
+          "hits": "None",
+          "properties": [],
+          "quote": "Gon surrounds himself with a Nen Aura and turns invisble with Zetsu."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "neutral/forward X",
+          "name": "Jajaken: Rock",
+          "description": "The strongest version of Jajaken: Rock; Gon charges his fist with a massive amount of Nen and punches the enemy with full force. Breaks guards.",
+          "damage": "44 (66)",
+          "hits": "1",
+          "properties": ["knockdown", "guard break"],
+          "quote": "The strongest version of Jajaken: Rock, Gon charges his fist with a massive amount of Nen and punches the enemy with full force. This attack will break guards, so use it when people like to turtle."
+        },
+        {
+          "input": "up X",
+          "name": "Ken",
+          "description": "Gon boosts his defense with Ken.",
+          "damage": "None",
+          "hits": "None",
+          "properties": [],
+          "quote": "True to the reinforcement type, Gon boosts his defense with Ken."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "SP Gauge regenerates when in battle."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Archangel Ibuki",
+          "description": "Gon appears and places a card in a book. An angel then appears and heals you.",
+          "damage": "None",
+          "hits": "None",
+          "properties": [],
+          "quote": "Gon appears and places a card in a book. An angel then appears and heals you. A good healer, as it will heal you from wherever you place it on the field, but it also makes an easy target."
+        }
+      ],
+      "support_effect": "A good healer, heals from wherever placed on the field, but is an easy target.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Jail and Jajaken: Rock",
+          "description": "After hiding out with Jail for 10 seconds, Gon will suddenly appear and hits the opponent with Rock.",
+          "damage": "82 (123)",
+          "hits": "1",
+          "properties": ["knockdown"],
+          "quote": "After hiding out with Jail for 10 seconds, Gon will suddenly appear and hits the opponent with Rock. Crushing amounts of damage, but it's still hard to connect and seals the rest of your supports while you wait for him to pop up."
+        }
+      ],
+      "support_effect": "Crushing damage but hard to connect; seals the rest of your supports while waiting for him to appear.",
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Straight",
+      "description": "A basic punch. Good for interrupting, combo starting, etc.",
+      "damage": "9 (13)",
+      "hits": "1",
+      "properties": [],
+      "quote": "A basic punch. Good for interrupting, combo starting, etc."
+    },
+    {
+      "input": "side B",
+      "name": "Dash Kick",
+      "description": "Gon launches forward and plants his boot in the enemy's face. Launches Gon into the air afterward.",
+      "damage": "9 (13)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gon launches forward and plants his boot in the enemy's face. Launches Gon into the air afterward, be aware when using this."
+    },
+    {
+      "input": "up B",
+      "name": "Nen Kick",
+      "description": "Gon flips into the air with a charged kick. A good launcher, taking you into the air with it.",
+      "damage": "9 (13)",
+      "hits": "1",
+      "properties": ["launcher"],
+      "quote": "Gon flips into the air with a charged kick. A good launcher, taking you into the air with it."
+    },
+    {
+      "input": "down B",
+      "name": "Palm Thrust",
+      "description": "Gon steps forward and jabs his palm into the enemy. Forces a character switch, if the foe has another to use.",
+      "damage": "9 (13)",
+      "hits": "1",
+      "properties": ["forced switch"],
+      "quote": "Gon steps forward and jabs his palm into the enemy. Forces a character switch, if the foe has another to use."
+    },
+    {
+      "input": "air B",
+      "name": "Pole Smash",
+      "description": "Gon smashes the enemy downward with his fishing pole. A good follow-up to Forward B or Up B.",
+      "damage": "9 (13)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gon smashes the enemy downward with his fishing pole. A good follow-up to Foward B or Up B."
+    },
+    {
+      "input": "Y",
+      "name": "Jajaken: Scissors",
+      "description": "Part of Gon's Hatsu, Jajaken; he dashes forward and cuts in an upward arc with a sword made of Nen. Quick start up and good range, hard to follow up with something else.",
+      "damage": "12 (16)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Part of Gon's Hatsu, Jajaken, he dashes forward and cuts in an upward arc with a sword made of Nen. Quick start up and good range, hard to follow up with something else."
+    },
+    {
+      "input": "side Y",
+      "name": "Jajaken: Paper",
+      "description": "Part of Gon's Hatsu, Jajaken; Gon fires a ball of Nen from his palm. Travels a half screen before disappating.",
+      "damage": "18 (26)",
+      "hits": "1",
+      "properties": ["projectile"],
+      "quote": "Part of Gon's Hatsu, Jajaken, Gon fires a ball of Nen from his palm. Travels a half screen before disappating."
+    },
+    {
+      "input": "up Y",
+      "name": "Lure Cast",
+      "description": "Gon takes out his fishing pole and casts the line, bringing back the enemy to him. Nice range, places the foe in the air, and can be followed up with a good support move. Hold Y to increase range.",
+      "damage": "1 (2)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gon takes out his fishing pole and casts the line, bringing back the enemy to him. Very nice range, places the foe in the air, and can be followed up with a good support move. Hold Y to increase range."
+    },
+    {
+      "input": "down Y",
+      "name": "Headbutt Dash",
+      "description": "Gon's guard breaker; he dashes forward and aerial headbutts the enemy. An okay Guard Breaker, but nothing really spectacular.",
+      "damage": "18 (26)",
+      "hits": "1",
+      "properties": ["guard break"],
+      "quote": "Gon's guard breaker, he dashes forward and aerial headbutts the enemy. An okay Guard Breaker, but nothing really spectacular."
+    },
+    {
+      "input": "air Y",
+      "name": "Air Lure Cast",
+      "description": "Gon casts his line downward in a 45 degree angle, reeling in the opponent. Basically the same as the ground version, with no charge effect.",
+      "damage": "1 (2)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gon casts his line downward in a 45 degree angle, reeling in the opponent. Basically the same as the ground version, with no charge effect."
+    },
+    {
+      "input": "select",
+      "name": "Nen Charge",
+      "description": "Increases the power of his X move the longer you hold the button. Two levels of damage increase.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Effect: Increases the power of his X move the longer you hold the button. Two levels of damage increase."
+    }
+  ],
+  "combos": [
+    "Launch combo: B, Up B, Aerial B.",
+    "Corner Combo: B, Forward B, Aerial B.",
+    "Jajaken combo: Y, Forward Y, 4 Koma X."
+  ],
+  "unresolved": [
+    "Guide labels the Taunt entry as 'Nen Charge' with a button description matching the schema's 'select' input (SELECT Ultimate Action), but the guide itself calls it 'Taunt' rather than SELECT; mapped to input 'select' per schema instructions about the Ultimate Action, but this may actually be a taunt-button mechanic distinct from a true Select Ultimate Action.",
+    "No B string is described anywhere in the guide; omitted since the guide does not describe one.",
+    "The guide's Table of Contents lists section headers out of order/mislabeled (e.g. two 'E)' headings for both 5 Koma and 6 Koma, and the numbered section list skips '6.' going from '5. Koma Setups' to '7. FAQs', and repeats '7.' for 'Legal Information' after using it for 'FAQs'). These are the guide's own numbering errors, not extraction errors.",
+    "Passive traits listed in the Description section ('Gains SP from breaking Treasure Chests.' and 'Solid Stance. Makes it hard to knock Gon around with attacks.') are character-wide passives, not tied to a specific koma size, so they could not be placed in the per-koma 'passives' field without guessing a size; they are recorded here instead.",
+    "The guide states Gon has a 'Laughter weakness' in the Battle Koma section of Koma Setups, implying Laughter is a nature Gon is weak against, but the character's own natures_available (knowledge/laughter, inferred from 'Use a knowledge character to offset Gon's Laughter weakness') are not explicitly stated as Gon's own nature anywhere; this is an inference from that single sentence, not a direct statement of Gon's nature.",
+    "4-koma section header 'C) 4 Koma [4Kom]' is followed later by a mislabeled 'E) 5 Koma [5Kom]' (skipping D), and then another 'E) 6 Koma [6Kom]' -- duplicate letter E used for both 5 Koma and 6 Koma sections in the guide's own source text.",
+    "Support/Help Koma Setups section (section 5) lists many additional support and help koma choices (Killua, Kurapica, Hisoka, and a long list of ally-boost/passive-granting characters) that are general deckbuilding recommendations for OTHER characters' koma, not Gon's own koma stats, so they were not added as koma entries -- only Gon's own koma (4/5/6 battle, 1/2/3 support/help) from sections 2C-3C were extracted as koma objects."
+  ]
+}

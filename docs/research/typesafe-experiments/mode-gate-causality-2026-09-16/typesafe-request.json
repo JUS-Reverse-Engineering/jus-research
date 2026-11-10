@@ -1,0 +1,62 @@
+{
+  "state": {
+    "claim": "Byte 0x0217296D is the mode-12 discriminator for per-mode handler installation: it is nonzero in modes that install, zero in mode 12, and its zero branch prevents mode 12 from installing.",
+    "static_path": [
+      "0x0214DB24 loads byte 0x0217296D.",
+      "0x0214DB26-0x0214DB2A compares the byte with zero and branches around the install path when it is zero.",
+      "The fall-through reaches a path that calls installer 0x0214F91C."
+    ],
+    "rest_state": [
+      "Mode 0: byte 0 to 1; root+0xC8 = 1; per-mode handler installed.",
+      "Mode 1: byte 0 to 1; root+0xC8 = 1; per-mode handler installed.",
+      "Mode 2: byte 0 to 1; root+0xC8 = 1; per-mode handler installed.",
+      "Mode 12: byte remains 0; root+0xC8 = 0; default handler remains."
+    ],
+    "ordering_attempt": "Sampling about every 40 frames placed the mode-2 byte transition and install transition in the same interval, frames 4114 through 4194.",
+    "breakpoint_run": {
+      "session": "One healthy GDB session ran mode 2 first, then loaded mode 12 with the same breakpoints. There was no error or detach.",
+      "mode_2": [
+        "The 0x0214DB24 check fired 114 times.",
+        "It read zero on 113 hits, then one on hit 114.",
+        "The installer fired immediately after hit 114."
+      ],
+      "mode_12": [
+        "The 0x0214DB24 breakpoint recorded zero hits.",
+        "The installer breakpoint recorded zero hits.",
+        "The populated battle root recorded mode 12, root+0xC8 = 0, and the default handler."
+      ]
+    },
+    "review_rule": "Separate a rest-state correlation from evidence that the failing mode evaluated the proposed decision point. Preserve narrower path facts and runtime observations if the mode-specific explanation fails."
+  },
+  "model": "jev-latest",
+  "questions": {
+    "causal_status": {
+      "type": "choice",
+      "instructions": "What is the strongest status supported for the claim that byte 0x0217296D caused mode 12 to miss installation?",
+      "criteria": {
+        "supported": "Mode 12 reached the byte check, read zero there, and followed its skip branch.",
+        "underdetermined_missing_execution": "The states correlate, but the packet does not show mode 12 executing the proposed byte check.",
+        "contradicted": "Mode 12 executed the check with a nonzero byte or the packet establishes a different cause.",
+        "invalid_run": "The no-hit observation lacks a healthy same-session control."
+      }
+    },
+    "primary_issue": {
+      "type": "choice",
+      "instructions": "What is the most important evidentiary issue in calling this byte the mode-12 discriminator?",
+      "criteria": {
+        "failing_mode_did_not_reach_check": "The failing mode recorded no execution of the check whose branch is proposed as its cause.",
+        "too_few_repetitions": "Both modes executed the causal check, but there were too few trials.",
+        "invalid_instrument": "The session or positive control failed, so the breakpoint results are unusable.",
+        "no_material_issue": "The packet establishes the byte as the mode-12 discriminator."
+      }
+    },
+    "preserves_observations": {
+      "type": "noul",
+      "instructions": "If the mode-12 causal explanation is rejected, do the rest-state values, static branch, and mode-2 poll behavior remain supported?",
+      "criteria": {
+        "true": "Those direct observations and the narrower mode-2 path remain valid.",
+        "false": "Rejecting the explanation requires rejecting the recorded observations."
+      }
+    }
+  }
+}

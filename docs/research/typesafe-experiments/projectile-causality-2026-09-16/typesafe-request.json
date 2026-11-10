@@ -1,0 +1,84 @@
+{
+  "state": {
+    "review_task": "Assess whether the claimed cause follows from the recorded probe evidence. Preserve direct observations even if the explanation is unsupported.",
+    "claim_under_review": {
+      "text": "Kind 0x00 has an early hit-driven teardown condition. Two instances were destroyed within two update checks of creation while lifetime remained about 29-31.",
+      "claimed_status": "CONFIRMED_LIVE for the two-trigger conclusion; the proposed contact gate was described as plausible"
+    },
+    "observations": [
+      {
+        "instance": "A",
+        "events": [
+          "CREATE elem=0x226bcc8 kind=0x00 lifetime=32",
+          "DESPAWN_CHECK elem=0x226bcc8 kind=0x00 lifetime=32",
+          "DESPAWN_CHECK elem=0x226bcc8 kind=0x00 lifetime=31",
+          "immediately following DESTRUCT_FIRE lr=0x216f9cc"
+        ]
+      },
+      {
+        "instance": "B",
+        "events": [
+          "CREATE elem=0x2289234 kind=0x00 lifetime=30",
+          "DESPAWN_CHECK elem=0x2289234 kind=0x00 lifetime=30",
+          "DESPAWN_CHECK elem=0x2289234 kind=0x00 lifetime=29",
+          "immediately following DESTRUCT_FIRE lr=0x216f9cc"
+        ]
+      },
+      {
+        "comparison": "Other kind 0x00 instances showed a lifetime countdown followed by teardown near lifetime zero."
+      }
+    ],
+    "probe_coverage": {
+      "breakpoints": [
+        "ObjShot creation dispatch",
+        "three candidate update/despawn-check function entries",
+        "shared pooled-entity destructor"
+      ],
+      "logged_fields": [
+        "creation: element pointer, kind byte, lifetime, owner pointer",
+        "update check: element pointer, kind byte, lifetime",
+        "destructor: argument 0 and return address",
+        "monotonic breakpoint sequence number"
+      ],
+      "limitations": [
+        "The destructor argument is not guaranteed to equal the ObjShot element, so destructor adjacency is a heuristic teardown signal rather than direct per-element attribution.",
+        "The probe has no frame counter; update-check counts are only a proxy for elapsed frames.",
+        "The probe did not watch the proposed elem+0x26 bit 0x80 change.",
+        "The probe recorded no collision breakpoint, contact marker, hit event, damage event, or knockback event."
+      ]
+    },
+    "candidate_code_read": "The original report described tests of bits 0x4/0x8 and a write to elem+0x26 bit 0x80 as a plausible hit/contact path, but the live probe did not record those values or their changes.",
+    "review_rule": "Judge whether the recorded variables establish the proposed causal link. A small sample and a missing causal variable are different failure modes."
+  },
+  "model": "jev-latest",
+  "questions": {
+    "causal_support": {
+      "type": "choice",
+      "instructions": "What is the strongest status supported for the claim that a hit caused the two early kind-0x00 teardowns?",
+      "criteria": {
+        "supported": "The recorded observations establish a contact or hit and connect it in time or control flow to each early teardown.",
+        "underdetermined_missing_causal_observation": "The observations establish early teardown but do not record contact, a hit marker, or another event that distinguishes hit causation from other causes.",
+        "contradicted": "The recorded observations show that no hit or contact occurred or establish a different cause.",
+        "inconclusive_other": "The claim cannot be judged for a reason other than the absence of a causal contact observation."
+      }
+    },
+    "primary_failure_mode": {
+      "type": "choice",
+      "instructions": "What is the most important evidentiary problem in calling the early teardowns hit-driven?",
+      "criteria": {
+        "missing_causal_variable": "The probe never measured contact, hit state, or the proposed flag, so it cannot connect the observed teardown to the proposed cause.",
+        "too_few_repetitions": "The probe measured the variables needed for causation, but repeated too few trials to support the claim.",
+        "teardown_not_observed": "The packet does not establish that teardown occurred early.",
+        "no_material_problem": "The evidence supports the hit-driven explanation as written."
+      }
+    },
+    "preserves_early_termination": {
+      "type": "noul",
+      "instructions": "After withholding the hit-driven explanation, does the packet still directly support that the two instances terminated early while their lifetimes remained positive?",
+      "criteria": {
+        "true": "The event sequences directly show creation, only two positive-lifetime checks, and an adjacent teardown signal for both instances.",
+        "false": "Rejecting hit causation also requires rejecting the observed early-termination pattern."
+      }
+    }
+  }
+}

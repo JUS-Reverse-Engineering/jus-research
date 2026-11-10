@@ -1,0 +1,277 @@
+{
+  "character": "Yoh",
+  "series": "Shaman King",
+  "chr_b": 25,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; Yoh = 25, Yoh (White Swan) = 26",
+  "forms": {
+    "Yoh": 25,
+    "Yoh (White Swan)": 26
+  },
+  "forms_note": "This guide never actually mentions Yoh (White Swan) by name anywhere in its text, despite the source filename/scope implying both forms. Every koma, move, and deck described is for regular Yoh only. All entries below are labeled \"form\": \"Yoh\" because that is the only form the guide covers. See unresolved.",
+  "source": {"file": "46755-yoh.txt", "gamefaqs_id": 46755, "author": "Danoh1989 (Daniel Adamic)", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge", "laughter"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "form": "Yoh",
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Attack up when health is low.",
+      "quote": "Effect:  Attack up when health is low."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "form": "Yoh",
+      "passives": [],
+      "specials": [],
+      "support_effect": "Yoh appears, and slashes with his sword. A wind blade will continue to travel forwards until colliding with something. Damage: 22 against Power and Knowledge characters, 33 against Laughter Characters.",
+      "help_effect": null,
+      "quote": "Yoh appears, and slashes with his sword.  A wind blade will continue to travel forwards until colliding with something."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "form": "Yoh",
+      "passives": [],
+      "specials": [],
+      "support_effect": "Yoh appears, along with Amidamaru as an orange ball. Yoh grabs Amidamaru and throws him, causing movement down upon impact. Damage: 20 against Knowledge and Laughter characters, 30 against Power characters.",
+      "help_effect": null,
+      "quote": "Yoh appears, along with Amidamaru as an orange ball.  Yoh grabs Amidamaru and throws him, causing movement down upon impact."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge or laughter",
+      "hp": null,
+      "form": "Yoh",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X (Special Attack A)",
+          "name": "Special Attack A",
+          "description": "Yoh thrusts his sword forward kind of like his forward + B attack, only it damages more. Knowledge based damage.",
+          "damage": "32 to power and knowledge. 48 to laughter.",
+          "hits": null,
+          "properties": [],
+          "quote": "Yoh thrusts his sword forward kind of like his forward + B attack, only it damages more.  Knowledge based damage."
+        },
+        {
+          "input": "X (Special Attack B)",
+          "name": "Special Attack B",
+          "description": "Yoh grabs Amidamaru who appears as an orange ball and throws him, causing movement down upon impact. Disappears when it hits the end of the screen. Laughter based damage.",
+          "damage": "20 to knowledge and laughter. 30 to power.",
+          "hits": null,
+          "properties": [],
+          "quote": "Yoh grabs Amidamaru who appears as an orange ball and throws him, causing movement down upon impact.  Disappears when it hits the end of the screen. Laughter based damage."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "ultimate_action": "Yoh lays on the ground and goes to sleep. Recovers SP veeeeeeeeeeeeeeeeeeeeery slowly.",
+      "j_soul": 152,
+      "boosted_by": ["Anna", "Manta", "Joseph (Jojo's Bizarre Adventure)"]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "form": "Yoh",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X (Special Attack A)",
+          "name": "Special Attack A",
+          "description": "Yoh holds his hands above his head and summons a huge sword. He slashes with it vertically, and makes a large shockwave. It disappears at the end of the screen, and goes through enemies while damaging them.",
+          "damage": "32 to Power and Knowledge. 48 to laughter.",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "It can also hit a few enemies at once.  It even goes through a blocking enemy."
+        },
+        {
+          "input": "X (Special Attack B)",
+          "name": "Special Attack B",
+          "description": "Yoh's sword suddenly decides to become a power pole and extends far beyond its normal length straight outwards. A multi-hit attack.",
+          "damage": "36 to power and knowledge (Max). 54 to laughter (Max).",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Yoh's sword suddenly decides to become a power pole and extends far beyond its normal length straight outwards.  A multi-hit attack."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "ultimate_action": "Yoh lays on the ground and goes to sleep. Recovers SP veeeeeeeeeeeeeeeeeeeeery slowly.",
+      "j_soul": 168,
+      "boosted_by": ["Anna", "Manta", "Joseph (Jojo's Bizarre Adventure)"]
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "form": "Yoh",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X (Special Attack A)",
+          "name": "Special Attack A",
+          "description": "Yoh thrusts his sword forward. If this strike hits, then he jumps up diagonally for another strike, bringing his opponent with him. If the second midair strike hits, your opponent is blinded.",
+          "damage": "If hit once: 10 to power and knowledge, 15 to laughter. If hit twice: 34 to power and knowledge, 51 to laughter.",
+          "hits": 2,
+          "properties": ["status:blind", "multi-hit"],
+          "quote": "If the second midair strike hits, your opponent is blinded."
+        },
+        {
+          "input": "X (Special Attack B)",
+          "name": "Special Attack B",
+          "description": "Another multi-hitter. Summons other people who the guide's author didn't recognize to attack. Five hit combo if done right, and it sends the opponent back towards you for insane set-up possibilities.",
+          "damage": "48 to power and knowledge (Max). 72 to laughter (Max).",
+          "hits": 5,
+          "properties": ["multi-hit"],
+          "quote": "Five hit combo if done right, and it sends the opponent back towards you for insane set-up possibilities."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "ultimate_action": "Yoh lays on the ground and goes to sleep. Recovers SP veeeeeeeeeeeeeeeeeeeeery slowly.",
+      "j_soul": 184,
+      "boosted_by": ["Anna", "Hao", "Amidamaru"],
+      "note": "Different sprite from 4/5 koma: armguard looks more awesome, sword has more reach."
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "form": "Yoh",
+      "description": "Quick horizontal slash.",
+      "damage": "8 to power and knowledge, 12 to laughter. OR (for alt 4 koma): 8 to knowledge and laughter, 12 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "Quick horizontal slash."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh steps forward into a thrust, traveling forward a little.",
+      "damage": "8 to power and knowledge, 12 to laughter. OR (for alt 4 koma): 8 to knowledge and laughter, 12 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "Yoh steps forward into a thrust, traveling forward a little."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh thrusts upwards with his sword.",
+      "damage": "8 to power and knowledge, 12 to laughter. OR (for alt 4 koma): 8 to knowledge and laughter, 12 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "Yoh thrusts upwards with his sword."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh has green/yellow lines surround him for a little bit, then slashes forward with his sword, moving himself forward an insignificant amount. Forces a character switch.",
+      "damage": "8 to power and knowledge, 12 to laughter. OR (for alt 4 koma): 8 to knowledge and laughter, 12 to power.",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Forces a character switch, which is advantageous in certain situations."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "form": "Yoh",
+      "description": "A simple midair horizontal slash.",
+      "damage": "8 to power and knowledge, 12 to laughter. OR (for alt 4 koma): 8 to knowledge and laughter, 12 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "A simple midair horizontal slash."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh slashes vertically, knocking back an unguarded opponent a little bit.",
+      "damage": "16 to power and knowledge, 24 to laughter. OR (for alt 4 koma): 16 to knowledge and laughter, 24 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "Yoh slashes vertically, knocking back an unguarded opponent a little bit."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh slashes with his sword. A wind blade will continue to travel forwards until colliding with something. This is Yoh's two koma attack. Disappears when it crosses edge of screen.",
+      "damage": "15 to power and knowledge, 22 to laughter. OR (for alt 4 koma): 15 to knowledge and laughter, 22 to power.",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "A wind blade will continue to travel forwards until colliding with something.  This IS Yoh's two koma attack.  Disappears when it crosses edge of screen."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh jumps and slashes with his sword, doing a 360 in midair.",
+      "damage": "16 to power and knowledge, 24 to laughter. OR (for alt 4 koma): 16 to knowledge and laughter, 24 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "Yoh jumps and slashes with his sword, doing a 360 in midair."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh is surrounded with red lines, jumps forward, and slashes down. One of the quicker guard breaks.",
+      "damage": "16 to power and knowledge, 24 to laughter. OR (for alt 4 koma): 16 to knowledge and laughter, 24 to power.",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "One of the quicker guard breaks."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "form": "Yoh",
+      "description": "Yoh dive-bombs diagonally with his sword outstretched.",
+      "damage": "16 to power and knowledge, 24 to laughter. OR (for alt 4 koma): 16 to knowledge and laughter, 24 to power.",
+      "hits": null,
+      "properties": [],
+      "quote": "Yoh dive-bombs diagonally with his sword outstretched."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "form": "Yoh",
+      "description": "Yoh lays on the ground and goes to sleep. Recovers SP veeeeeeeeeeeeeeeeeeeeery slowly. (Listed identically for the 4, 5, and 6 koma.)",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Yoh lays on the ground and goes to sleep.  Recovers SP veeeeeeeeeeeeeeeeeeeeery slowly."
+    }
+  ],
+  "combos": [
+    "Y into Forward + Y nullifies Y's ending lag.",
+    "Yoh's two aerial attacks (air B, air Y) combo into each other fairly quickly."
+  ],
+  "unresolved": [
+    "The guide's scope (implied by covering GameFAQs ID 46755 for 'Yoh') never mentions Yoh (White Swan) at all -- no separate moveset, koma, or section for that form appears anywhere in the source text. chr_b=26 for White Swan is asserted only from docs/research/chr_b-Complete-Mapping.md, not from this guide. Treat White Swan as entirely unattested by this source.",
+    "Basic B/Y move damage values are given as two parallel number sets ('OR (For alt 4 koma)') without the guide explaining exactly which koma sizes/natures use which set beyond the 4-koma alt note; captured verbatim rather than resolved.",
+    "The guide states 'The only person that receives a boost from Yoh is Anna' but this is about Yoh boosting others, not a Yoh passive/support-effect on his own koma -- kept out of koma passives since it's not a per-koma effect.",
+    "Innate battle koma abilities apply guide-wide, not to one specific koma size: 'Cannot be moved while guarding' and 'Using supports related to Yoh raises SP.' Not assigned to a single koma entry since the guide lists them under a general 'Battle Koma' header before koma-size breakdown.",
+    "No X special or B-string content is described beyond the two X specials (Special Attack A/B) per battle koma size; no separate 'B string' section exists in this guide.",
+    "Guide gives no HP values for any koma.",
+    "This is a version 1.0 guide (Jan 25) described by its own author as possibly incomplete ('some things may be a bit skewed')."
+  ]
+}

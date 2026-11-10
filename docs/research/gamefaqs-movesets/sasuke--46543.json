@@ -1,0 +1,257 @@
+{
+  "character": "Sasuke",
+  "series": "Naruto",
+  "chr_b": 21,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md (row: chr_b=21, na_b_02, Sasuke, Naruto; E0 roster pin 2026-10-18)",
+  "source": {"file": "46543-sasuke.txt", "gamefaqs_id": 46543, "author": "Danexedas", "version": "1/16/07 update"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge", "power"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Decreases damage taken by special attacks.",
+      "quote": "Equip Effect: Decreases damage taken by special attacks."
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 176,
+      "passives": [
+        "Can Wall jump",
+        "Can see invisible opponents",
+        "Take less damage from special attacks",
+        "Ally boosted by: Naruto(Naruto), Orochimaru(Naruto), Ayame(Gintama)",
+        "Ally boosts: Frieza(DBZ)"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Chidori",
+          "description": "After a very short charging time, Sasuke rushes forward and zaps the opponent with a ball of lightning. Causes a shock status effect on contact.",
+          "damage": "40 neutral / 60 dominant",
+          "hits": "3",
+          "properties": ["charge", "status:shock"],
+          "quote": "Neutral Damage: 40 Dominant Damage: 60 Hits: 3 ... Special Effect: Hold X to charge and causes shock effect. --Description: After a very short charging time, Sasuke rushes forward and zaps the opponent with a ball of lightning. Causes a shock status effect on contact."
+        },
+        {
+          "input": "up + X",
+          "name": "Koukana Kisote",
+          "description": "Sasuke hits the opponent upward into the air, breaking his guard and making a lightning effect, then follows into the air dealing three more hits before finishing with a fire jutsu. Inflicts burn status.",
+          "damage": "44 / 66 dominant",
+          "hits": "5",
+          "properties": ["guard break", "status:burn"],
+          "quote": "First, Sasuke hits the opponent upward into the air, breaking his guard and making a lightning effect. After, Sasuke follows into the air and deals three more hits with his lightning charged weapon before finishing with his fire jutsu. Inflicts burn status effect as well."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "J-Soul: 176 Nature: Knowledge"
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 192,
+      "passives": [
+        "Can Wall jump",
+        "Can see invisible opponents",
+        "Take less damage from special attacks",
+        "Ally boosted by: Naruto(Naruto), Orochimaru(Naruto), Ayame(Gintama)",
+        "Ally boosts: Frieza(DBZ)"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Chidori",
+          "description": "The same as the 7-koma Chidori, except with extra damage. Unlike 7-koma Sasuke, 8-koma Sasuke can change the launching direction by holding the desired direction.",
+          "damage": "48 / 72 dominant",
+          "hits": "3",
+          "properties": ["charge", "status:shock"],
+          "quote": "Damage: 48 Dominant Damage: 72 Hits: 3 ... --Description: The same as the other chidori, except extra damage."
+        },
+        {
+          "input": "X",
+          "name": "Chidori Nagashi",
+          "description": "A giant chidori that attacks in all directions around Sasuke about half a screen wide.",
+          "damage": "40 / 60 dominant",
+          "hits": "7",
+          "properties": ["multi-hit", "status:shock"],
+          "quote": "Damage: 40 Dominant Damage: 60 Hits: 7 ... Special Effects: All around directional attack and causes shock effect. --Description: Pretty much a giant chidori that attacks in all directions around Sasuke about half a screen wide."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "--8 Koma(battle) 1-- J-Soul: 192 Nature: Knowledge"
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": "power",
+      "hp": 192,
+      "passives": [
+        "Can Wall jump",
+        "Can see invisible opponents",
+        "Take less damage from special attacks",
+        "Ally boosted by: Naruto(Naruto), Orochimaru(Naruto), Ayame(Gintama)",
+        "Ally boosts: Frieza(DBZ)"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Chidori",
+          "description": "The same as the 7-koma Chidori, except with extra damage. Unlike 7-koma Sasuke, 8-koma Sasuke can change the launching direction by holding the desired direction.",
+          "damage": "48 / 72 dominant",
+          "hits": "3",
+          "properties": ["charge", "status:shock"],
+          "quote": "Damage: 48 Dominant Damage: 72 Hits: 3 ... --Description: The same as the other chidori, except extra damage."
+        },
+        {
+          "input": "X",
+          "name": "Chidori Nagashi",
+          "description": "A giant chidori that attacks in all directions around Sasuke about half a screen wide.",
+          "damage": "40 / 60 dominant",
+          "hits": "7",
+          "properties": ["multi-hit", "status:shock"],
+          "quote": "Damage: 40 Dominant Damage: 60 Hits: 7 ... Special Effects: All around directional attack and causes shock effect. --Description: Pretty much a giant chidori that attacks in all directions around Sasuke about half a screen wide."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "--8 Koma(battle) 2-- J-Soul: 192 Nature: Power. Extra notes about Sasuke's power 8 koma: Sasuke will take much extra damage when using his power eight koma from laughter characters. This can pose a threat. That is, if Sasuke's specials weren't knowledge based. In short, Sasuke has no real nature weekness."
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A simple punch.",
+      "damage": "7 neutral / 10 dominant",
+      "hits": "1",
+      "properties": [],
+      "quote": "B             A simple punch            1          7            10"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "A kick followed by a kick from the other leg.",
+      "damage": "7 neutral / 10 dominant",
+      "hits": "2",
+      "properties": [],
+      "quote": "B+forward     A kick followed by        2          7            10 a kick from the other leg"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "A heel kick to the air, followed by another heel kick by the other leg.",
+      "damage": "7 neutral / 10 dominant",
+      "hits": "2",
+      "properties": [],
+      "quote": "B+up          A heel kick to the air,   2          7            10 followed by another heel kick by the other leg."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "A spiking heel kick.",
+      "damage": "7 neutral / 10 dominant",
+      "hits": "1",
+      "properties": [],
+      "quote": "B+in the air  Spicking heel kick        1          7            10"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Waves a no-no finger and Sharingan activates. This is the forced switch attack; using it on a low-health opponent forces a character switch.",
+      "damage": "8 neutral / 12 dominant",
+      "hits": "1",
+      "properties": ["forced switch"],
+      "quote": "B+Down        Waves a no-no finger      1          8            12 and Sharingan activates"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "A slash of his sword.",
+      "damage": "13 neutral / 19 dominant",
+      "hits": "1",
+      "properties": [],
+      "quote": "Y             A slash of his sword      1          13           19"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Four flashy, rapid slashes to the opponent.",
+      "damage": "15 neutral / 22 dominant",
+      "hits": "4",
+      "properties": ["multi-hit"],
+      "quote": "Y+forward     Four flashy, rapid        4          15           22 slashes to the opponent"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Two flying kicks into the air.",
+      "damage": "14 neutral / 21 dominant",
+      "hits": "2",
+      "properties": [],
+      "quote": "Y+Up          Two flying kicks into     2          14           21 the air"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Fly downwards with sword positioned to stab target in the head. Has lag time after the attack whether it hits or misses.",
+      "damage": "14 neutral / 21 dominant",
+      "hits": "1",
+      "properties": [],
+      "quote": "Y+in the air  Fly downwards with sword  1          14           21 positioned to stab target in the head"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Grab ahold of sword, charging it with lightning before hitting the opponent.",
+      "damage": "14 neutral / 21 dominant",
+      "hits": "1",
+      "properties": ["charge"],
+      "quote": "Y+Down        Grab ahold of sword,      1          14           21 charging it with lightning before hitting the opponent"
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Does a seal with fingers and uses the replacement jutsu that lasts for 3-4 seconds. Upon getting hit within that time, Sasuke will be replaced with a log, unharmed. He will reappear right after, with a half-a-second invincibility effect.",
+      "damage": null,
+      "hits": null,
+      "properties": ["counter"],
+      "quote": "Ultimate Action(Press select): Does a seal with fingers and uses the replacement jutsu that lasts for 3-4 seconds. Upon getting hit within that time, Sasuke will be replaced with a log, unharmed. He will reappear right after, with a half-a-second invincibility effect."
+    },
+    {
+      "input": "B string",
+      "name": "Basic Combo",
+      "description": "B, B+forward, Y, Y+forward. A good combo for Sasuke that does 8 hits total.",
+      "damage": "42 neutral / 63 dominant",
+      "hits": "8",
+      "properties": ["multi-hit"],
+      "quote": "B, B+forward, Y, Y+forward is a good combo for Sasuke that does 8 hits and 42 damage total."
+    }
+  ],
+  "combos": [
+    "B, B+forward, Y, Y+forward. 8 hits for 42 damage. Dominant: 63",
+    "B, Y+up, B. 4 hits for 28 damage. Dominant: 42",
+    "Up+B, B. 3 hits for 14 damage. Dominant: 21",
+    "Select, X. 3 hits for 48 damage. Dominant: 72",
+    "Down+Y, Up+X(8 koma). 8 hits for 54 damage. Dominant: 81",
+    "Down+B, Up+X(8 koma). 7 hits for 40 damage. Dominant: 60.",
+    "Up+B, X. 3 hits for 48 damage. Dominant: 64"
+  ],
+  "unresolved": [
+    "The guide splits the 8-koma battle piece into '8 Koma(battle) 1' (Nature: Knowledge, 4-row shape) and '8 Koma(battle) 2' (Nature: Power, 2-row shape) but lists only one shared pair of specials (Chidori and Chidori Nagashi, both marked Nature: Knowledge) after both. It is unclear whether this represents one physical 8-koma piece with two nature sides or two distinct 8-koma pieces; this JSON models it as two koma entries sharing the same specials, per the guide's ambiguous layout.",
+    "Both '-Special Attack A(Normal X)-' and '-Special Attack B(Normal X)-' are labeled with the same input 'Normal X' for the 8-koma, which cannot both be correct since they are different moves (Chidori vs Chidori Nagashi); the combos section implies Chidori Nagashi is activated via 'Up+X(8 koma)', contradicting the 'Normal X' label given in the specials section.",
+    "The Down+Y basic attack ('Grab ahold of sword, charging it with lightning before hitting the opponent') is distinct from the 7-koma special 'Koukana Kisote' (Up+X) despite similar flavor text about lightning/charging; the guide does not clarify if these are related or how they differ mechanically.",
+    "The guide states 'none of Sasuke's basic ground attacks causes the opponent to fall to the ground' (Weaknesses section), yet the combo 'B, Y+up, B' is described as making 'the opponent will not only fly into the air, but will also find their face on the ground' -- a possible contradiction depending on whether Y+up counts as a basic ground attack.",
+    "Extra note on the power 8-koma: it takes extra damage from laughter characters even though the guide says Sasuke's specials are knowledge-based and he 'has no real nature weekness' -- kept as written since it's the guide's own claim, not resolved into a single properties/nature field.",
+    "Ultimate Action is described as full invincibility/replacement during the 3-4 second window ('unharmed... he will reappear... with a half-a-second invincibility effect'), which reads as two different durations (3-4 seconds vs half-a-second) without clarifying how they relate; kept verbatim in quote."
+  ]
+}

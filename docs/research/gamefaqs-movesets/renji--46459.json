@@ -1,0 +1,253 @@
+{
+  "character": "Renji",
+  "series": "Bleach",
+  "chr_b": 42,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46459-renji.txt", "gamefaqs_id": 46459, "author": "MasterTurtle (aka Hyperslasher)", "version": "2.0"},
+  "kit_type": "standard",
+  "natures_available": ["power"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Increases the SP gauge when attacking or blocking with a battle character."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Renji appears and stabs Zabimaru into the ground. A second later, Zabimaru stabs out of the ground at a random nearby enemy, dealing 24 damage. You have to be fairly close to the enemy for it to work.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Renji appears; after you choose a target on the touch screen (or he auto-picks one), he uses Higa Zekkou, causing six blades to hover around an enemy then converge, dealing 36 damage. Can hit regardless of range. Damage may be slightly less if some blades get blocked.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Air dash ability", "Warp dash ability (lets you dash through other targets without slowing down)"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special attack A",
+          "description": "After about .5 seconds of charge time, Renji swings Zabimaru forward in a wide arc. Knocks enemies through thin floors and can hit targets on edges.",
+          "damage": "36 damage to nearby enemies and 24 damage to enemies a bit further away",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "After about .5 seconds of charge time, Renji swings Zabimaru forward in a wide arc, dealing 36 damage to nearby enemies and 24 damage to enemies a bit further away."
+        },
+        {
+          "input": "up X",
+          "name": "Special attack B",
+          "description": "After about .5 seconds of charging time, Renji swings Zabimaru around him in a circle repeatedly, slashing nearby enemies. Hitting X repeatedly prolongs the attack. Knocks back when the attack is finished.",
+          "damage": "18 to 42 damage, depending on how many times it hits",
+          "hits": null,
+          "properties": ["charge", "mash-extend", "multi-hit", "knockdown"],
+          "quote": "Renji swings Zabimaru around him in a circle repeatedly, slashing nearby enemies. Hitting X repeatedly prolongs the attack. Deals between 18 and 42 damage, depending on how many times it hits, and knocks back when the attack is finished."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Air dash ability", "Warp dash ability (lets you dash through other targets without slowing down)"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special attack A",
+          "description": "After a short charge time, Renji slashes enemies in front of him multiple times, knocking them back when the attack is finished. Hitting X repeatedly extends the attack. Enemies further away may not take the full damage.",
+          "damage": "19 to 43 damage, depending on how many times it hits",
+          "hits": null,
+          "properties": ["charge", "mash-extend", "multi-hit", "knockdown"],
+          "quote": "Renji slashes enemies in front of him multiple times, knocking them back when the attack is finished. Hitting X repeatedly extends the attack. Deals between 19 and 43 damage, depending on how many times it hits."
+        },
+        {
+          "input": "up X",
+          "name": "Special attack B",
+          "description": "Renji uses the Higa Zekkou technique, creating six blades that converge on the enemy. Has limited range (need to be fairly close) but automatically targets.",
+          "damage": "42 if all the blades hit",
+          "hits": null,
+          "properties": [],
+          "quote": "Renji uses the Higa Zekkou technique, creating six blades that converge on the enemy... this one has slightly higher damage (42 if all the blades hit)."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Air dash ability", "Warp dash ability (lets you dash through other targets without slowing down)"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Special attack A (Bankai)",
+          "description": "After about 1.5 seconds of charge time, Renji calls out his Bankai form, a giant snakelike monster that surges forward, damaging and pushing back all enemies. Excellent for pushing opponents off ledges. In both Bankai attacks, the snake coils behind him count as hits if the enemy touches them, but deal no damage.",
+          "damage": "50 damage or more if an enemy is caught for the whole duration",
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "Renji calls out his Bankai form, a giant snakelike monster that surges forward, damaging and pushing back all enemies... it's extremely powerful (50 damage or more if an enemy is caught for the whole duration) and is excellent for pushing opponents off ledges."
+        },
+        {
+          "input": "up X",
+          "name": "Special attack B (Bankai, upward)",
+          "description": "Renji unleashes his Bankai form after about 1.5 seconds of charge time, just like his first special, but goes upwards instead of to the right, making it slightly less useful overall (can't get ringouts by pushing people upwards; tends to deal less damage).",
+          "damage": null,
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "Renji unleashes his Bankai form after about 1.5 seconds of charge time, just like his first special. The difference is that this one goes upwards instead of to the right, making it slightly less useful overall... plus this one tends to deal less damage."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A slash with Renji's sword.",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "B - A slash with Renji's sword.  Does 9 damage.  Not much to say about this one, it's your average B attack."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Renji dashes forward a bit and slashes.",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "B + side - Renji dashes forward a bit and slashes.  Does 9 damage."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "A quick upwards slash; knocks enemies into the air, setting them up for Renji's up Y.",
+      "damage": "9",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "B + up - A quick upwards slash, it and knocks enemies into the air, setting them up for Renji's up Y.  Does 9 damage."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Renji charges for a second, then releases energy, forcing enemies to switch characters. The range is actually a bit shorter than it looks.",
+      "damage": "9",
+      "hits": null,
+      "properties": ["forced switch", "charge"],
+      "quote": "B + down - Renji charges for a second, then releases energy, forcing enemies to switch characters.  The range on this one is actually a bit shorter than it looks like.  Deals 9 damage."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "A quick slash in the air. Good to use if someone else is in the air right next to you; knocks enemies into the air, setting them up for Renji's up Y.",
+      "damage": "9",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "B aerial - A quick slash in the air.  Good to use if someone else is in the air right next to you, and knocks enemies into the air, setting them up for Renji's up Y.  Deals 9 damage."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Renji attacks multiple times with Zabimaru, holding the opponent in place for a few seconds. Excellent for pulling off a slower support, or as a follow-up to B attacks. Renji steps forward slightly during the attack and can fall off edges.",
+      "damage": "each hit only does 3 damage",
+      "hits": "up to six times",
+      "properties": ["multi-hit"],
+      "quote": "Renji attacks multiple times with Zabimaru.  Each hit only does 3 damage, but it hits up to six times, and holds the opponent in place for a few seconds."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Renji extends Zabimaru, attacking enemies in a line. Decent range, but there's windup and recovery time. Damage varies slightly depending on distance.",
+      "damage": "usually does 16-18 damage",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Y + side - Renji extends Zabimaru, attacking enemies in a line... The damage varies slightly depending on how close you are, but it usually does 16-18 damage."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Renji spins Zabimaru in a circle above his head, knocking nearby enemies into the air. Pressing Y multiple times causes the attack to hit more. Essential to pulling off his 4 koma's up X attack, but the direction it tosses enemies in seems random. Can hit most opponents on the ground but will miss some short people (like Don Patch).",
+      "damage": "between 10 and 22 damage, depending on how long you hit an enemy with it",
+      "hits": null,
+      "properties": ["launcher", "mash-extend"],
+      "quote": "Renji spins Zabimaru in a circle above his head, knocking nearby enemies into the air.  Pressing Y multiple times causes the attack to hit more.  Deals between 10 and 22 damage, depending on how long you hit an enemy with it."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Renji charges for a second, then jumps forward and slams Zabimaru into the ground. Can break guard. Slow, and doesn't hit an enemy if they're right next to you.",
+      "damage": "18",
+      "hits": null,
+      "properties": ["guard break", "charge"],
+      "quote": "Y + down - Renji charges for a second, then jumps forward and slams Zabimaru into the ground.  Can break guard... Does 18 damage."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Renji extends Zabimaru downwards at an angle, damaging enemies. Good range and can go through floors, unlike some projectiles. Makes a good edgeguard since it hits people on ledges.",
+      "damage": "damage greatly varies depending on how many times it hits, although the most I've seen is 20",
+      "hits": null,
+      "properties": ["projectile", "multi-hit"],
+      "quote": "Renji extends Zabimaru downwards at an angle, damaging enemies... Damage greatly varies depending on how many times it hits, although the most I've seen is 20."
+    },
+    {
+      "input": "select",
+      "name": null,
+      "description": "Renji taunts the opponent, restoring a small portion of his special bar.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Select - Renji taunts the opponent, restoring a small portion of his special bar."
+    }
+  ],
+  "combos": [
+    "B, Side B, Y: A decent regular combo, and a good start for using supports. You can substitute up B for side B. 36 damage.",
+    "B, up B, up Y: Another decent combo, more damage than the last one but harder (more like impossible) to use with supports. 40 damage.",
+    "B aerial, Y aerial: Renji's not a big aerial character, but you can use his aerial Y after his aerial B. Damage varies.",
+    "B, Side B, Y, Okita 3: Okita's a great support to use with Renji, since Renji's Y covers up his long startup time. Okita deals 40 laughter damage. 76 damage.",
+    "B, Side B, Y, Inui 3: Inui has a different effect, but needs your opponent to be further away. Inui deals 18 or 26 knowledge damage, depending on how he hits. 62 (or 54) damage.",
+    "Up B, Up Y, Up X (4 koma): An excellent combo, one of the best on any 4 koma. Will miss if there's a thin floor above you. 73 damage.",
+    "B, Up B, Up Y, Up X (4 koma): Same combo as the last one but with another attack; only works if pretty close to your opponent. 82 damage.",
+    "B, Up B, X (4 koma): The only way to reliably combo into Renji's X with regular attacks. Inferior damage to the other combo, but knocks opponents through thin floors. 54 damage.",
+    "Up B, Up Y, Up X, Okita 3 (4 koma): Tricky and relies on luck since the direction Renji's up Y throws the target is random. Okita deals 40 laughter damage. 113 damage.",
+    "Up B, Up Y, Up X, Inui 3 (4 koma): Similar to the above, but Inui hits further away so timing is much harder. Inui deals 26 (or 18, depending on exactly where he hits) knowledge damage. 99 damage (8 less if Inui's first hit misses).",
+    "B, Side B, Y, any beam support, X (5 koma): Simple and good for ringouts. Arale 3 is fast and deals laughter damage, Train 3 inflicts shock. Damage varies.",
+    "B, Side B, Y, Gotenks 3, X (6 koma): One of the ways to get Renji's Bankai off. Gotenks deals 32 laughter damage. 113 damage (can vary depending on how much Bankai hits).",
+    "B, side B, Y, Shishio 2, X (6 koma): Another combo with Renji's Bankai; timing is pretty tight, use Bankai right after Renji's Y attack finishes. 114 damage (can vary).",
+    "Team combo 'Energy whips' (Naruto 5, Gyro 2, Renji 4): Start with Naruto: B, up B, Y, X (starts Rasengan with kick beforehand). When Rasengan starts to hit, use Gyro 2, switch to Renji, step forward slightly, use Renji's up B, up Y, up X combo. 156 damage.",
+    "B, side B, Y, Kagura 3, any strong but slow special: Kagura 3 holds anyone for a large amount of time, good for pulling off strong but slow specials like Taikoubou 6's X."
+  ],
+  "unresolved": [
+    "Renji is described as a 'power type character' whose abilities deal 1.5x regular damage against knowledge-type opponents (stated in both RJ2 and RJ4/RJ7) — this nature-advantage multiplier is not captured per-move since the guide states it as a blanket rule rather than per-move numbers.",
+    "The guide never gives HP values for any of Renji's koma.",
+    "RJ3 (evolution gem costs) is deck-building/economy content and was omitted per scope.",
+    "RJ5 (good supporters/allies) lists many other characters' Koma effects (Byakuya, Kanda, Yusuke, Josuke, Satsuki, Orihime, Shishio, Okita, Inui Sadaharu, Gyro Zeppeli, help-Koma passives like triple jump/damage reduction/regen/guard strength) as synergy notes for Renji, not as Renji's own moves — omitted except where referenced inside 'combos'.",
+    "RJ6 contains qualitative strategy commentary (e.g., beam specials dealing bonus damage against a wall or a guarding opponent near an edge, being able to break guard through damage alone near edges) that is a general mechanic note rather than tied to one specific move; not modeled as a discrete move property since it's described as a general game mechanic ('this is true for all beam type specials'), not a Renji-specific one."
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "state": {
+    "review_task": "Review each causal claim independently at its stated scope. Preserve directly observed teardown behavior even if an explanation is not supported.",
+    "cases": {
+      "case_a": {
+        "claim": "Contact with another fighter caused the two early kind-0x00 projectile teardowns.",
+        "observations": [
+          "Element 0x226bcc8 was created at lifetime 32, checked at lifetimes 32 and 31, then followed immediately by DESTRUCT_FIRE with lr=0x216f9cc.",
+          "Element 0x2289234 was created at lifetime 30, checked at lifetimes 30 and 29, then followed immediately by DESTRUCT_FIRE with lr=0x216f9cc.",
+          "Other kind-0x00 instances showed a longer lifetime countdown before the same wrapper return address."
+        ],
+        "probe": [
+          "Breakpoints covered creation, three update/predicate function entries, and the shared destructor.",
+          "Creation logged element, kind, lifetime, and owner. Update checks logged element, kind, and lifetime. The destructor logged argument 0 and return address.",
+          "The destructor argument is not guaranteed to equal the ObjShot element, so adjacency is the available live attribution.",
+          "No breakpoint or logged field recorded collision, contact, hit, damage, knockback, or the proposed elem+0x26 flag."
+        ]
+      },
+      "case_b": {
+        "claim": "Within the projectile-family pooled-entity subsystem, reaching the age threshold in the 0x0216C958 path can cause teardown through the shared destructor.",
+        "observations": [
+          "Static control flow in 0x0216C958 tests a 16-bit age counter at entity+0x04 against threshold 0x20, subject to a suppression bit.",
+          "The age-threshold branch calls shared destructor 0x02083648; its return address is 0x216ca90.",
+          "The live destructor probe recorded return address 0x216ca90, confirming that this internal age branch executed and reached the destructor.",
+          "Recovered module evidence places 0x0216C958 in BattleObjShot.cpp, the projectile object subsystem."
+        ],
+        "scope_limits": [
+          "The live call-site observation confirms the branch at subsystem scope.",
+          "The probe did not connect that destructor call to one named kind or element, so the claim does not make a per-element attribution."
+        ]
+      }
+    },
+    "review_rule": "A temporal sequence alone is correlation. A causal claim can be supported when the candidate variable is tested in control flow leading to teardown and the same branch is observed live at the claim's stated scope."
+  },
+  "model": "jev-latest",
+  "questions": {
+    "case_a_status": {
+      "type": "choice",
+      "instructions": "For case_a, what is the strongest causal status supported at the scope stated in its claim?",
+      "criteria": {
+        "supported": "The candidate cause is measured and linked to teardown at the stated scope.",
+        "supported_with_scope_caveat": "The causal mechanism is supported only at a narrower scope than the claim.",
+        "underdetermined_missing_causal_observation": "Teardown is observed, but the candidate cause or a decisive distinguishing state is not measured.",
+        "contradicted": "The candidate cause is recorded absent or a different cause is established.",
+        "inconclusive_other": "The evidence cannot be judged for another reason."
+      }
+    },
+    "case_a_basis": {
+      "type": "choice",
+      "instructions": "For case_a, what is the main evidentiary basis for that status?",
+      "criteria": {
+        "direct_variable_to_teardown_link": "A measured variable or state is connected by control flow to teardown and observed at the stated scope.",
+        "missing_causal_variable": "The outcome is measured, but the variable needed to distinguish the proposed cause is absent.",
+        "correlation_only": "The proposed cause and outcome are observed near each other without a direct link.",
+        "contradictory_observation": "A direct observation conflicts with the cause."
+      }
+    },
+    "case_a_preserves_teardown": {
+      "type": "noul",
+      "instructions": "For case_a, does the packet still establish the recorded early teardown pattern regardless of the causal verdict?",
+      "criteria": {"true": "The recorded create, positive-lifetime checks, and adjacent destructor events remain observations.", "false": "Rejecting the explanation requires rejecting the recorded teardown pattern."}
+    },
+    "case_a_scope": {
+      "type": "choice",
+      "instructions": "For case_a, what causal scope does the evidence justify?",
+      "criteria": {"named_elements": "The proposed cause is linked to the two named elements.", "kind_or_family": "The proposed cause is supported only for the kind or family.", "subsystem_only": "The mechanism is supported only somewhere in the subsystem.", "no_causal_scope": "The proposed cause is unsupported at every listed scope."}
+    },
+    "case_b_status": {
+      "type": "choice",
+      "instructions": "For case_b, what is the strongest causal status supported at the scope stated in its claim?",
+      "criteria": {
+        "supported": "The candidate cause is measured in control flow leading to teardown, and that branch is observed live at the stated subsystem scope.",
+        "supported_with_scope_caveat": "The mechanism is supported, but only at a narrower scope than the claim.",
+        "underdetermined_missing_causal_observation": "Teardown is observed, but the candidate cause or decisive state is not measured.",
+        "contradicted": "The packet conflicts with the proposed cause.",
+        "inconclusive_other": "The evidence cannot be judged for another reason."
+      }
+    },
+    "case_b_basis": {
+      "type": "choice",
+      "instructions": "For case_b, what is the main evidentiary basis for that status?",
+      "criteria": {
+        "direct_variable_to_teardown_link": "A tested variable controls a static branch to the destructor and that call site is observed live at the stated scope.",
+        "missing_causal_variable": "The outcome is measured, but the causal variable is absent.",
+        "correlation_only": "Only temporal or population correlation connects cause and outcome.",
+        "contradictory_observation": "A direct observation conflicts with the cause."
+      }
+    },
+    "case_b_preserves_teardown": {
+      "type": "noul",
+      "instructions": "For case_b, does the packet directly establish that the age-threshold branch reached the shared destructor at subsystem scope?",
+      "criteria": {"true": "Static control flow identifies the call site and the live return address confirms that call site fired.", "false": "The packet contains no live evidence for the identified call site."}
+    },
+    "case_b_scope": {
+      "type": "choice",
+      "instructions": "For case_b, what causal scope does the evidence justify?",
+      "criteria": {"named_element": "The age path is tied to one named element.", "kind_or_family": "The path is tied to a specific kind or family.", "projectile_subsystem": "The path is live in the projectile subsystem without per-element attribution.", "no_causal_scope": "The age-driven cause is unsupported."}
+    }
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "character": "Gintoki",
+  "series": "Gintama",
+  "chr_b": 52,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46732-gintoki.txt", "gamefaqs_id": 46732, "author": "Demon-Inuyasha", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": ["laughter", "power"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "His help koma cause whichever character you attached him to, to have their special gauge increase when they block at the last moment.",
+      "quote": "His help koma cause whichever character you attached him to, to have their special gauge increase when they block at the last moment."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Oi Oi, Abune Jyaneka ( Counter-attack )",
+          "description": "Gintoki hides in a trash can and when hit bursts out and hits his opponent, causing attack seal.",
+          "damage": "0",
+          "hits": "1",
+          "properties": ["counter", "status:attack seal"],
+          "quote": "Gintoki will be hiding in a trash can and when hit he burst out and hits his opponent causing attack seal."
+        }
+      ],
+      "support_effect": "Counter-attack: Gintoki hides in a trash can and bursts out on being hit, causing attack seal.",
+      "quote": "Name: Oi Oi, Abune Jyaneka ( Counter-attack )"
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Temakakesasenjaneyo!!",
+          "description": "Gintoki appears on his scooter and hits his opponent twice.",
+          "damage": "37 (power); 25 (laughter); 25 (knowledge)",
+          "hits": "2",
+          "properties": [],
+          "quote": "Gintoki will appear on his scooter and hit his opponent twice."
+        }
+      ],
+      "support_effect": "Gintoki appears on his scooter and hits his opponent twice.",
+      "quote": "Name: Temakakesasenjaneyo!!"
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": ["-None"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Temakakesasenjaneyo!!",
+          "description": "Gintoki appears on his scooter and hits his opponent twice.",
+          "damage": "46 (power); 25 (laughter); 25 (knowledge)",
+          "hits": "2",
+          "properties": [],
+          "quote": "Gintoki will appear on his scooter and hit his opponent twice."
+        },
+        {
+          "input": "X",
+          "name": "MY PARFAIT!! ( Counter attack )",
+          "description": "Gintoki pulls out some parfait and if struck he will attack his opponent.",
+          "damage": "46 (power); 31 (laughter); 31 (knowledge)",
+          "hits": "3",
+          "properties": ["counter"],
+          "quote": "Gintoki pulls out some parfait and if struck he will attack his opponent."
+        }
+      ],
+      "quote": "Overall: Pretty good not bad as some other 4 komas."
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Okaayy Neexxt!!",
+          "description": "Gintoki rushes forward and starts swinging his bokuto left and right. It creates somewhat of a vacuum effect.",
+          "damage": "63 (power); 42 (laughter); 42 (knowledge)",
+          "hits": "6",
+          "properties": [],
+          "quote": "Gintoki will rush forwards and will start swinging his bokuto left and right. It creates somewhat of a vaccum effect."
+        },
+        {
+          "input": "X",
+          "name": "Tansuika Futsutoaino!! ( Counter Attack/Heal )",
+          "description": "Gintoki pulls out some sweets and if hit he will pummel his opponent; if not hit, he will heal.",
+          "damage": "43 (power); 31 (laughter); 31 (knowledge)",
+          "hits": "4",
+          "properties": ["counter", "status:heal"],
+          "quote": "Gintoki will pull out some sweets and if hit he will pummel his opponent, if not he will heal."
+        }
+      ],
+      "quote": "Overall: Very good. His best Koma, his Special A is really fast and does good damage."
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Kiyaaaaaa!!",
+          "description": "Gintoki gets on his scooter and jets forward and his scooter explodes, causing massive damage.",
+          "damage": "76 (power); 47 (laughter); 47 (knowledge)",
+          "hits": "9",
+          "properties": [],
+          "quote": "Gintoki gets on his scooter and jets forward and his scooter explodes causing massive damage."
+        },
+        {
+          "input": "X",
+          "name": "AAAAAA!!",
+          "description": "Gintoki gets on his scooter but instead of going forward he goes straight up.",
+          "damage": "72 (power); 48 (laughter); 48 (knowledge)",
+          "hits": "7",
+          "properties": [],
+          "quote": "Gintoki gets on his scooter but instead of going forward he goes straight up."
+        }
+      ],
+      "quote": "Overall: Pretty good in team battle. But 1 on 1 not too good."
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Kiyaaaaaa!!",
+          "description": "Gintoki gets on his scooter and jets forward and his scooter explodes, causing massive damage.",
+          "damage": "47 (power); 47 (laughter); 76 (knowledge)",
+          "hits": "9",
+          "properties": [],
+          "quote": "Gintoki gets on his scooter and jets forward and his scooter explodes causing massive damage."
+        },
+        {
+          "input": "X",
+          "name": "AAAAAA!!",
+          "description": "Gintoki gets on his scooter but instead of going forward he goes straight up.",
+          "damage": "48 (power); 48 (laughter); 72 (knowledge)",
+          "hits": "7",
+          "properties": [],
+          "quote": "Gintoki gets on his scooter but instead of going forward he goes straight up."
+        }
+      ],
+      "quote": "Overall: Pretty good in team battle. But 1 on 1 not too good."
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Sadaharu, Sanbo no Jikanda",
+          "description": "Gintoki gets on Sadaharu and rides him; if he gets near his opponent, Sadaharu will ram them 3 times and then Gintoki will hit them after.",
+          "damage": "82 (power); 55 (laughter); 55 (knowledge)",
+          "hits": "4",
+          "properties": [],
+          "quote": "Gintoki gets on Sadaharu and rides him and if he gets near his opponent Sadaharu will ram them 3 times and then Gintoki will hit them after."
+        },
+        {
+          "input": "X",
+          "name": "... Butsutakiru ( Gain some SP and gain Deck Power )",
+          "description": "Gintoki says some stuff and then gains some SP and gains deck power.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Gintoki will say some stuff and then he will gain some sp and gain deck power."
+        }
+      ],
+      "quote": "Overall: Pretty good, this koma does alot of damage."
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Foot Thrust",
+      "description": "A plain foot thrust, can be used for starting combos.",
+      "damage": "10 or 7 (power); 7 (laughter); 7 or 10 (knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Just a plain foot thrust, can be used for starting combos."
+    },
+    {
+      "input": "side B",
+      "name": "Forward Swing",
+      "description": "Gintoki steps forward and swings his bokuto. Can be used for combos.",
+      "damage": "12 or 8 (power); 8 (laughter); 8 or 12 (knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gintoki steps forward and swings his bokuto. Can be used for combos."
+    },
+    {
+      "input": "up B",
+      "name": "Bomb in MY face!!!!",
+      "description": "Gintoki pulls out a bomb and it explodes in his face. Good surprise move.",
+      "damage": "13 or 9 (power); 9 (laughter); 9 or 13 (knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gintoki pulls out a bomb and it explodes in his face. Good suprise move."
+    },
+    {
+      "input": "down B",
+      "name": "Word Bubble ( Force Change )",
+      "description": "Gintoki turns around and says something making a word bubble appear which counts as a hit.",
+      "damage": "10 or 7 (power); 7 (laughter); 7 or 10 (knowledge)",
+      "hits": "1",
+      "properties": ["forced switch"],
+      "quote": "Gintoki turns around and says something making a word bubble appear which counts as a hit."
+    },
+    {
+      "input": "air B",
+      "name": "Side Swing",
+      "description": "Gintoki swings his bokuto in the air.",
+      "damage": "10 or 7 (power); 7 (laughter); 7 or 10 (knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gintoki swings his bokuto in the air."
+    },
+    {
+      "input": "Y",
+      "name": "Construction Worker ( Can hit on both sides )",
+      "description": "Gintoki quickly turns around with some lumber on his shoulder. Good range.",
+      "damage": "28 or 19 (power); 19 (laughter); 19 or 28 (knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gintoki quickly turns around with some lumber on his shoulder. Good range."
+    },
+    {
+      "input": "side Y",
+      "name": "Bokuto Throw",
+      "description": "Gintoki throws his bokuto and if it connects it will go straight up in the air then coming back down. Really good pressure and keep away move.",
+      "damage": "19+7 or 13+4 (power); 13+4 (laughter); 13+4 or 19+7 (knowledge)",
+      "hits": "3+5",
+      "properties": ["multi-hit"],
+      "quote": "Gintoki throws his bokuto and if it connects it will go straight up in the air then coming back down. Really good pressure and keep away move."
+    },
+    {
+      "input": "up Y",
+      "name": "Bomb Toss",
+      "description": "Gintoki throws a bomb over his shoulder. Good edge guarding move.",
+      "damage": "21 or 13 (power); 13 (laughter); 13 or 21 (knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Gintoki throws a bomb over his shoulder. Good edge guarding move."
+    },
+    {
+      "input": "down B",
+      "name": "Headbutt ( Breaks Guard )",
+      "description": "Gintoki will swing back and thrust forward with his head.",
+      "damage": "24 or 16 (power); 16 (laughter); 16 or 24 (knowledge)",
+      "hits": "1",
+      "properties": ["guard break"],
+      "quote": "Gintoki will swing back and thrust forward with his head."
+    },
+    {
+      "input": "air Y",
+      "name": "Mini Bombs",
+      "description": "Gintoki throws mini bombs and they explode soon after.",
+      "damage": "7+19 or 5+13 (power); 5+13 (laughter); 5+13 or 7+19 (knowledge)",
+      "hits": "1+1",
+      "properties": ["multi-hit"],
+      "quote": "Gintoki throws mini bombs and explodes soon after."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Gintoki stops and pulls out his Jump Magazine and starts to read, sometimes falling to the floor looking depressed. Also regains his SP.",
+      "damage": null,
+      "hits": null,
+      "properties": ["status:SP regain"],
+      "quote": "Gintoki stops and pulls out his Jump Magazine and starts to read, sometimes he will fall to the floor looking depressed. Also this regains his SP."
+    }
+  ],
+  "combos": [
+    "COMBO #1: Neutral B, then Forward+B, then Neutral+B. Short but good damage, especially on the last hit.",
+    "COMBO #2: Neutral B, then Up+B, then Neutral+B. Good and damaging like the first.",
+    "COMBO #3 (Only with 5 Koma): Neutral B, then Forward+B (can be replaced with Up+B) as a basic combo starter, then Neutral+Y to hit with wood, then instantly Special A. Easy, fast, does a lot of damage, and has a possibility of a ring out."
+  ],
+  "unresolved": [
+    "The FAQ's title banner reads 'KENSHIRO CHARACTER FAQ' even though the entire document is about Gintoki; likely a copy-paste error by the author.",
+    "The guide lists a move labeled 'Down+B: Headbutt ( Breaks Guard )' appearing after Up+Y in the B-string move list, which conflicts with the earlier 'Down+B: Word Bubble ( Force Change )' entry — both are labeled Down+B. The Headbutt entry's position in the list (between Up+Y and Jump+Y) suggests it may actually be intended as Down+Y, but the guide's text explicitly says 'Down+B' for both, so both are recorded here as written under input 'down B'.",
+    "The 6-koma appears twice with identical move names/hit counts/descriptions but with power and laughter/knowledge damage numbers swapped between the two entries (one nature 'Laughter', one nature 'Power') — recorded as two separate koma entries per the guide.",
+    "Section 5 ('Getting Gintoki') is vague/uncertain: 'You start off with Gintama's help support I think.' — the guide author is unsure.",
+    "Combos section is explicitly marked incomplete: 'WILL UPDATE WITH MORE COMBOS ASAP ( Just need to train with him some more )'.",
+    "The guide gives evolution/cost data (koma tree, yellow/white/red/blue point costs) which is economy data and out of scope per battle-mechanics-only extraction rules; omitted from this JSON.",
+    "Support koma recommendations from other characters (Shishio, Trunks, Seiya, Hitsugaya, Sena, Satsuki, Gotenks) are general strategy notes about pairing, not Gintoki's own moves/koma, so not included as Gintoki koma entries."
+  ]
+}

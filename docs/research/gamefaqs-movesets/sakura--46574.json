@@ -1,0 +1,269 @@
+{
+  "character": "Sakura",
+  "series": "Naruto",
+  "chr_b": 22,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md, row chr_b=22, na_b_03, Sakura, Naruto series; E0 roster pin 2026-10-18",
+  "source": {"file": "46574-sakura.txt", "gamefaqs_id": 46574, "author": "SMW", "version": "2.1"},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter", "knowledge"],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": "128",
+      "passives": ["Status time is reduced", "can Wall Jump"],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sakura punches the ground. The explosion after the hit also does damage",
+          "damage": "36/54",
+          "hits": null,
+          "properties": null,
+          "quote": "Sakura punches the ground. The explosion after the hit also does damage. Effect:Damage Damage:36/54 Times it takes to break a Wall:1 Times it takes to break a guard:2/2 Delay: End"
+        },
+        {
+          "input": "X up",
+          "name": null,
+          "description": "Sakura makes a pink orb, dashes a few feet forward and ends attack, hitting for a combo of 3. Makes enemy confused.",
+          "damage": "23/34",
+          "hits": "3",
+          "properties": ["status:confused"],
+          "quote": "Sakura makes a pink orb, dash a few feet forward and ends attack. Hits for a combo of 3. Effect:Damage Damage:23/34 Makes Enemy Confused Times it takes to break a Wall:3 Times it takes to break a guard:3/4 Delay: Beginning/Slightly at end"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": "Sakura reduces time for some status effects"
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": "144",
+      "passives": ["Status time is reduced", "can Wall Jump"],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sakura jumps up and does a giant kick. Explosion does damage. Can commit suicide.",
+          "damage": "44/66",
+          "hits": null,
+          "properties": null,
+          "quote": "Sakura jumps up and does a giant kick. Explosion does damage. Can commit Suicide. Effect:Damage Damage:44/66 Times it takes to break a Wall:2 Times it takes to break a guard:3/2 Delay: During Jump"
+        },
+        {
+          "input": "X up",
+          "name": null,
+          "description": "Sakura kneels and makes a blue orb, healing about a half bar.",
+          "damage": null,
+          "hits": null,
+          "properties": null,
+          "quote": "Sakura kneels and makes a blue orb. Effect:Heals about a half bar. Delay: Beginning"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": "Sakura reduces time for some status effects"
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": "160",
+      "passives": ["Status time is reduced", "can Wall Jump"],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sakura summons her Inner Sakura to punch high and low. Damage is the same whether the enemy is above you or at ground level. You can tap X to increase hits and damage.",
+          "damage": "38-57/57-98",
+          "hits": null,
+          "properties": ["mash-extend"],
+          "quote": "Sakura summons her Inner Sakura to punch high and low. The damage is the no matter if the enemy is above you or at ground level. Effect:Damage, You can tap X to increase hits and Damage. Damage: 38-57/57-98. Times it takes to break a Wall:2 (also breaks two walls) (data from Base X). Times it takes to break a guard:3/3(Data from Base X). Delay: End"
+        },
+        {
+          "input": "X up",
+          "name": null,
+          "description": "Sakura makes a blue orb, healing about a quarter of an ally's bar.",
+          "damage": null,
+          "hits": null,
+          "properties": null,
+          "quote": "Sakura makes a blue orb. Effect:Heals about a quarter of an allies bar. Delay: Beginning"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": "Sakura reduces time for some status effects"
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": "160",
+      "passives": ["Status time is reduced", "can Wall Jump"],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sakura summons her Inner Sakura to punch high and low. Damage is the same whether the enemy is above you or at ground level. You can tap X to increase hits and damage.",
+          "damage": "38-57/57-98",
+          "hits": null,
+          "properties": ["mash-extend"],
+          "quote": "Both 6's do same specials. X Type:Laughter Description: Sakura summons her Inner Sakura to punch high and low. The damage is the no matter if the enemy is above you or at ground level. Effect:Damage, You can tap X to increase hits and Damage. Damage: 38-57/57-98"
+        },
+        {
+          "input": "X up",
+          "name": null,
+          "description": "Sakura makes a blue orb, healing about a quarter of an ally's bar.",
+          "damage": null,
+          "hits": null,
+          "properties": null,
+          "quote": "Both 6's do same specials. X up Type:Knowledge Description: Sakura makes a blue orb. Effect:Heals about a quarter of an allies bar. Delay: Beginning"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": "Sakura reduces time for some status effects"
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Summons Sakura in front of you, then she punches forwards. Requires a small distance away from enemy. Has a long setup, and has medium to short range. It is Power Based. Deals 28 damage to Power and Laughter Types, 42 damage to Knowledge Types. Shape: [][]",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Summons Sakura behind user. Makes a blue orb and stands there for about 1 second. The first person to touch the orb gets healed. If user doesn't move he gets healed automatically when used. Shape: [][] / []",
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Sakura sends a kunai in a diagonal upward direction.",
+      "damage": "8/12",
+      "hits": null,
+      "properties": null,
+      "quote": "B Up: Description:Sakura sends a Kunai is a diagonal upward direction. Damage:8/12. Times it takes to break a wall:7. Times it takes to break a guard: 10/7. Delay:No"
+    },
+    {
+      "input": "B",
+      "name": null,
+      "description": "Sakura punches forward.",
+      "damage": "9/13",
+      "hits": null,
+      "properties": null,
+      "quote": "B: Description:Sakura punches forward. Damage:9/13. Times it takes to break a wall:6. Times it takes to break a guard: 9/6. Delay: No"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Sakura throws a shuriken forward.",
+      "damage": "7/10",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "B Forward: Description:Sakura throws a Shuriken forward. Damage:7/10. Times it takes to break a wall:8. Times it takes to break a guard: 11/11. Delay: No"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Sakura charges up then punches in an up to down arc.",
+      "damage": "12/18",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "B Down: Description:Sakura charges up then punches in an up to down arc. Damage:12/18. Times it takes to break a wall:5. Times it takes to break a guard: 7/5. Delay: Beginning"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Sakura does a heal kick.",
+      "damage": "10/15",
+      "hits": null,
+      "properties": null,
+      "quote": "Air B: Description:Sakura does a heal kick. Damage:10/15. Times it takes to break a wall:5. Times it takes to break a guard: 8/6. Delay No"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Sakura does a 360 spinning kick that sends the opponent into the air. Does 3 hits.",
+      "damage": "14/21",
+      "hits": "3",
+      "properties": ["launcher", "multi-hit"],
+      "quote": "Y Up: Description:Sakura does a 360 spinning kick that sends opponent into the air. Does 3 hits. Damage: 14/21. Times it takes to break a wall:4. Times it takes to break a guard: 6/5. Delay:No"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Sakura punches downwards. Careful: the attack sends you forward and may cause you to jump off the cliff if too close to the edge.",
+      "damage": "18/27",
+      "hits": null,
+      "properties": null,
+      "quote": "Y: Description:Sakura punches downwards. Damage:18/27. Times it takes to break a wall:3. Times it takes to break a guard: 5/4. Delay:Beginning/End. Extra:Becareful, attack send you forward and may cause you to jump off the cliff if too close to the edge. ~numberOneRookie"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Sakura throws 1 shuriken then 3 shuriken while pushing backwards.",
+      "damage": "3-12/4-18",
+      "hits": null,
+      "properties": ["projectile", "multi-hit"],
+      "quote": "Y Forward: Description:Sakura throws 1 shuriken then 3 shuriken while pushing backwards. Damage: 3-12/4-18. Times it takes to break a wall:5-6. Times it takes to break a guard: 7/4. Delay: Beginning/End"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Picks up a rock and throws it forwards.",
+      "damage": "18/27",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Y Down: Description:Picks up a rock and throws is forwards. Damage:18/27. Times it takes to break a wall:3. Times it takes to break a guard: 1/1. Delay:Beginning/End"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Sakura comes crashing down with a punch. Damage is still given if the dust hits. If you miss ground, you will die.",
+      "damage": "10/15",
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "Air Y: Description:Sakura comes crashing down with a punch. Damage is still given if the dust hits. If you miss ground, you will die. Damage:10/15. Times it takes to break a wall:5. Times it takes to break a guard: 4/3. Delay: End"
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Uses a Substitution Jutsu: if hit while active, a log replaces you and you're free to attack. Takes 1 second to activate, and you're open to attack while activating. Stays active for 2 seconds. If caught in a multi-hit, you can still be hit; the first punches activate the log, but if not dodged, the rest can still hit you. Hold a direction on the D-pad when hit to dodge the rest of the attack and end up in that direction. The UA can be used again while the first substitution is still in use, allowing repeated use and near-immunity while pressing select.",
+      "damage": null,
+      "hits": null,
+      "properties": ["counter"],
+      "quote": "Ultimate action: Uses a Substitution Jutsu, which if hit while active a log replaces you and your free to attack. Takes 1 second to activate. Open to attack while activating. Stays active for 2 seconds. If you are caught in a multi hit, you can still be hit. The first punches will activate the log, but if not dodged, then the rest of the punches can hit you. To dodge the rest of the attack, you can hold a direction on the D-pad when hit to end up in that direction. You can use the UA while the first substitution justsu is in use. This leads to the ability to use it repeatedly and therefore unable to be hit while pressing select."
+    }
+  ],
+  "combos": [
+    "Y up->B",
+    "Y up->Air b->Air Y (requires a wall that the enemy is being hit into)",
+    "Y up->Y",
+    "B->Y up->Any of the above combos",
+    "B down->Y",
+    "B down->Up Y->Above",
+    "B up->Y foward",
+    "B up->Y->->Y foward",
+    "B up->Y->Y up->Air Y"
+  ],
+  "unresolved": [
+    "Guide does not describe a down+B forced-switch move for Sakura; only B, side B, up B, down B, and air B basics are given, with no forced-switch attack mentioned anywhere in the guide.",
+    "Koma 4 has no explicit HP number given directly next to it; HP values (128,144,160) are given as a set for the 4/5/6 koma in the Battle Koma section, and the Ally Boost section separately lists per-koma HP progressions (4 Koma: 128->136->144->152->160, 5 Koma: 144->152->160->168->176, 6 Koma: 160->168->176->184->192) which confirm base HP of 128/144/160 for koma 4/5/6 respectively.",
+    "The guide states koma 6 is Laughter type ('the fourth is a Laughter Type') but the X-up special for koma 6 is separately labeled 'Type:Knowledge' in the Specials section, so koma 6's X-up special has a different nature (Knowledge) than the koma's own listed nature (Laughter). Recorded nature at koma level as 'laughter' per the Battle Koma section, and the X-up special's own Knowledge typing is preserved in its section header context but not encoded as a separate field since schema doesn't support per-special nature override cleanly.",
+    "Ally Boost section is somewhat garbled: 'Sakura's HP increases by eight per bonus, and if leader gains an additional 8' is an incomplete/unclear sentence about leader bonus stacking; exact mechanic unclear.",
+    "The guide gives no separate name for most moves/specials (guide uses only input labels like 'B', 'X up', etc.), so 'name' is null throughout.",
+    "Section numbering in table of contents (xx5a Help/Support Koma, xx5b Specials) does not match the actual section headers used later in the body (xx4: Help/Support Koma appears again reusing number 4; xx5a: Battle Koma; xx5b: Specials) — the guide's own internal numbering is inconsistent/duplicated (two 'xx4' sections).",
+    "Guide credits multiple version contributors (numberOneRookie, MasterTurtle, Dabula) inline within move descriptions and strategy sections; these are guide commentary/tips rather than strict move data, included in quotes/support notes where directly tied to a move or support synergy.",
+    "The 'Extra' section at the end mentions a 'sprite Glitch' with Gintoki's koma using the X up special from koma 5 or 6 — this is a glitch/exploit note, not a standard move property, so left out of the moves list and only noted here."
+  ]
+}

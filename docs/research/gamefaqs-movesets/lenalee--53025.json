@@ -1,0 +1,230 @@
+{
+  "character": "Lenalee Lee",
+  "series": "D.Gray-man",
+  "chr_b": 46,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "53025-lenalee-wong.txt", "gamefaqs_id": 53025, "author": "Wong Yeang Chiong", "version": "2.0"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "Allows a character to perform wall jumping.",
+      "quote": "Lenalee's Help Koma allows a character to perform wall jumping."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Onkyou no Tougi - Otokase: Lenalee is summoned and picks either the user or the opponent, carrying them flying up to an extremely high area. Direction faced determines the direction carried. Can be used while in midair.",
+      "quote": "Lenalee will be summoned when you use this Koma, using her ability, Onkyou no Tougi - Otokase, she will pick either you or your opponent and is sent flying up to an extremely high area. ... It can be used while you are in midair."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Lenalee performs Enbu Kirikaze, stirring up a whirlwind with her Dark Boots that will easily ring out any opponent near the edge of the arena. Cannot be summoned while in mid-air (unlike the 2-Blocks support koma).",
+      "quote": "Upon being summoned, Lenalee will perform her special, Enbu Kirikaze. Stirring up a whirlwind with her Dark Boots, her move will easily ring out any opponent near the edge of the arena. Unlike her other Support Koma, she cannot be summoned while you are in mid-air."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 128,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Enbu Kirikaze",
+          "description": "Lenalee kicks out a whirlwind conjured by her Dark Boots, sending caught opponents flying. Useful for pushing opponents away or saving herself from a ring out near the edge; also good for punishing opponents trying to jump back onto the arena.",
+          "damage": "2 to 36 (normal), 3 to 54 (laughter)",
+          "hits": "1 to 6",
+          "properties": ["knockback"],
+          "quote": "Lenalee kicks out a whirlwind which her Dark Boots conjure. This will send any opponents flying if they are caught in your special."
+        },
+        {
+          "input": "up X",
+          "name": "Enbu Kuroshizuku",
+          "description": "Lenalee performs a forward somersault before striking downward toward the ground, damaging and pushing opponents in her way; she descends all the way to the ground. Useful for pushing opponents away or scoring a ring out at the edge, but risky since a bad estimation can ring the user out instead.",
+          "damage": "2 to 28 (normal), 3 to 42 (laughter)",
+          "hits": "1 to 2",
+          "properties": ["ground to aerial to ground"],
+          "quote": "Lenalee will perform a forward somersault before striking downwards towards the ground, damaging and pushing any opponents in her way. This move will cause Lenalee to descend all the way down to the ground."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 144,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Onkyou no Tougi: Otakase",
+          "description": "Dashing forward, Lenalee starts a combo with a swift kick to the face before going aerial on the opponent. Especially useful if the opponent is at the edge of the arena; can also be used to escape a tight situation. The final attack kicks the opponent down and, used outside the arena, is an instant ring out.",
+          "damage": "2 to 42 (normal), 3 to 63 (laughter)",
+          "hits": "up to 4",
+          "properties": ["ground to aerial"],
+          "quote": "Dashing forward, Lenalee will start off her combo with a swift kick in the face before going all aerial on your opponent. ... Its final attack kicks your opponent down, sending them hitting the platform / ground. When used outside of the arena, this turns into an instant ring out."
+        },
+        {
+          "input": "up X",
+          "name": "Shittsui no Tougi: Tetsukase",
+          "description": "Like Enbu Kuroshizuku but much more powerful. Lenalee jumps straight up vertically before striking downward vertically, crashing into enemies below her. The maximum damage comes not from a direct attack but from blades conjured on the sides of her Dark Boots as she strikes down, so the user should position slightly further than usual and on a platform above the opponent.",
+          "damage": "2 to 46 (normal), 3 to 69 (laughter)",
+          "hits": 1,
+          "properties": ["ground to aerial to ground"],
+          "quote": "Lenalee will jump straight up vertically before she strikes downwards...vertically, crashing all her enemies below her. ... Her maximum damage from her invocation, Shittsui no Tougi: Tetsukase, isn't caused by a DIRECT attack. ... The real damage is dealt from the blades at the side conjured by Lenalee's Dark Boots."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Reverse Heel Kick",
+      "description": "A basic ground attack; Lenalee does a Reverse Heel Kick on the enemy.",
+      "damage": "7 (normal), 10 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "A basic attack, Lenalee does a Reverse Heel Kick on the enemy."
+    },
+    {
+      "input": "Y",
+      "name": "Flying Kick (Heavy)",
+      "description": "A flying kick that advances toward the opponent, near to mid range; can be used to move toward the opponent while damaging them, but it penetrates the enemy, causing Lenalee to fly past them.",
+      "damage": "15 (normal), 22 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "A flying kick. ... this attack penetrates your enemy, which causes you to fly pass your enemy instead."
+    },
+    {
+      "input": "other",
+      "name": "Dash",
+      "description": "Tap left or right twice to dash from one point to another quickly on the ground; if an opponent is in the way, Lenalee is slowed until passing through them, sometimes causing a double-dash.",
+      "damage": "0",
+      "hits": 0,
+      "properties": [],
+      "quote": "This allows you to get from one point to another pretty quickly."
+    },
+    {
+      "input": "select",
+      "name": "Super Jump",
+      "description": "A high jump that takes a while to start; Lenalee can jump up to 2 platforms high. Consumes one of her jumps.",
+      "damage": "0",
+      "hits": 0,
+      "properties": [],
+      "quote": "This is a high jump. Takes awhile before she jumps, she can jump up to 2 platforms high. This move will take away one of her jumps"
+    },
+    {
+      "input": "down B",
+      "name": "Enbu Kirikaze (Minor)",
+      "description": "A pretty slow ground move; a successful strike leaves the opponent vulnerable to the next attack. Guide suggests summoning a Support Koma via hotkey right after landing this.",
+      "damage": "7 (normal), 10 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "This move is pretty slow, but a successful strike will leave your oppoent vulnerable to your next attack."
+    },
+    {
+      "input": "side B",
+      "name": "Flying Kick (Minor)",
+      "description": "Unlike the heavy version, this causes Lenalee to stop right in front of the target on a landed hit, allowing a follow-up attack, Support Koma use, or retreat. Can be used for a normal combo after a B attack.",
+      "damage": "6 (normal), 9 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "Unlike the stronger version, this causes Lenalee to stop right in front of your target if you managed to land a hit."
+    },
+    {
+      "input": "up B",
+      "name": "Crescent Kick",
+      "description": "Can be comboed from the basic B attack; pushes the opponent slightly further to allow a follow-up move.",
+      "damage": "8 (normal), 12 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "This is something you can use to combo from your basic 'B' attack. It pushes your opponent slightly further enough for you to execute your next move."
+    },
+    {
+      "input": "down Y",
+      "name": "Advancing Crescent Kick",
+      "description": "Useful for kicking away item boxes/items toward the opponent; requires correct distance to avoid consuming the item instead. This move can Guard Break.",
+      "damage": "14 (normal), 21 (laughter)",
+      "hits": 1,
+      "properties": ["guard break"],
+      "quote": "This move can Guard Break, so your opponent who is blocking ends up receiving damage."
+    },
+    {
+      "input": "side Y",
+      "name": "Whirlwind Kick",
+      "description": "Ground-to-aerial move; repeatedly pressing Y continues the attack for a mashable combo. Useful for ringing out opponents or escaping; a 3-hit combo does 15 damage (normal) by repeated Y presses, and a successful combo can send the opponent up a platform, evolving into an aerial attack.",
+      "damage": "2 to 13 (normal), 3 to 21 (laughter); a 3-hit chain does 15 (normal)",
+      "hits": "1 to 5",
+      "properties": ["mash-extend", "launcher"],
+      "quote": "By repeatedly pressing Y, Lenalee will continue to attack your opponent. ... You can even do a 3-hit combo that does 15 damage (Normal) by repeatingly hitting the Y button. It further develops a combo that will evolve into an aerial attack, a successful combo ends your opponent up a platform."
+    },
+    {
+      "input": "up Y",
+      "name": "Reversed Crescent Kick",
+      "description": "Useful for extending a combo; can be followed with a B attack. Pushes the opponent down, useful for edge ring outs.",
+      "damage": "15 to 23 (normal), 22 to 34 (laughter)",
+      "hits": "1 to 2",
+      "properties": [],
+      "quote": "This move is useful when you want to further your combo. ... This pushes your opponent down and is extremely useful when you use it at the edge of the arena for a ring out."
+    },
+    {
+      "input": "other",
+      "name": "Quick Landing",
+      "description": "Aerial move (Down + A) that lands Lenalee faster; useful for escaping mid-air pressure, but she may land right in front of the enemy so blocking after landing is advised.",
+      "damage": "0",
+      "hits": 0,
+      "properties": [],
+      "quote": "This allows you to hit the ground faster."
+    },
+    {
+      "input": "other",
+      "name": "Air Dash",
+      "description": "Tap left or right twice in mid-air to dash, passing through the opponent (unlike the ground dash). Useful for escaping charged attacks.",
+      "damage": "0",
+      "hits": 0,
+      "properties": [],
+      "quote": "Lenalee allows her to do a dash in mid-air. Unlike her ground dash, this allows her to pass through her opponent."
+    },
+    {
+      "input": "air B",
+      "name": "Aerial Crescent Kick",
+      "description": "Best used near the edge of the arena against an opponent who can be ring-outed; quick move.",
+      "damage": "8 (normal), 12 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "This move is best used when you are near the edge of the arena with a monkey for an opponent, or simply anyone whom you think you can ring out."
+    },
+    {
+      "input": "air Y",
+      "name": "Aerial Advancing Crescent Kick",
+      "description": "Can ascend or descend (with up or down directional input) or advance toward the opponent while kicking; sends the opponent crashing down. Useful near the edge of the map for maximum advantage, for clearing a path, for escaping a ring out with a final jump, or for stopping opponents from jumping around when descending from a higher platform.",
+      "damage": "14 (normal), 21 (laughter)",
+      "hits": 1,
+      "properties": [],
+      "quote": "This kick will send your opponent crashing down. Use this when your opponent is near the edge of the map for the maximum advantage."
+    }
+  ],
+  "combos": [],
+  "unresolved": [
+    "Guide's damage-analysis legend defines 'Normal' as the damage dealt to Power and Knowledge type characters, and 'Laughter' as the (1.5x) damage dealt to Laughter type opponents, since Lenalee is Knowledge type; damage fields in this file use the guide's own 'Normal'/'Laughter' labels rather than schema's knowledge/laughter/power labels used in other files, to avoid inventing numbers not stated.",
+    "The guide does not label any move with 'name: null' inputs as belonging to a specific koma size beyond the general 'Basic Moves' section (Part 1: The Moves) that applies to all of Lenalee's battle komas; it is unclear whether Basic/Advance/Aerial moves differ between her 4-koma and 5-koma forms, but the guide presents them once, before discussing the 4 and 5 Koma specials, implying they are shared.",
+    "The guide's Dash, Super Jump, Quick Landing, and Air Dash entries are traversal/utility moves with 0 damage and no attack input in the schema's move-input vocabulary; input was set to 'other' for these.",
+    "Guide never gives Lenalee's Help/Support koma's own HP; that field is left null for those koma entries per schema (HP is only for battle koma)."
+  ]
+}

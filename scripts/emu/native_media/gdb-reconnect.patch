@@ -1,0 +1,11 @@
+--- a/src/debug/GdbStub.cpp
++++ b/src/debug/GdbStub.cpp
+@@ -160,6 +160,8 @@
+ {
+ 	DelAllBpWp();
+ 	Stat = TgtStatus::None;
+ 	StatFlag = false;
++	NoAck = false;
++	RecvBufferFilled = 0;
+ 	if (ConnFd > 0) closesocket(ConnFd);
+ 	ConnFd = 0;

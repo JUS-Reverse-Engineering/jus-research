@@ -1,0 +1,239 @@
+{
+  "character": "Jaguar",
+  "series": "Pyuu to Fuku! Jaguar",
+  "chr_b": 55,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; row '55 | pj_b_01 | Jaguar'",
+  "source": {"file": "46575-jaguar.txt", "gamefaqs_id": 46575, "author": "shadowboyz", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": [],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": ["Immunity to battle and support seal effects."],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Immunity to battle and support seal effects."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Sends out a flying man who stays near the ground. If the opponent is hit their attacks are sealed off.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Summons Jaguar in sleeping position. If hit by the enemy he gets up and does a large slash with his recorder for 54 damage.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": "144",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Jaguar Fart",
+          "description": "Lags for a while, then hits enemies directly in front and back of him.",
+          "damage": "54 power, 36 knowledge/laughter",
+          "hits": "1",
+          "properties": [],
+          "quote": "Lags for a while, then hits enemies directly in front and back of him 1 time. 54 damage to power, 36 damage to knowledge/ laughter."
+        },
+        {
+          "input": "up X",
+          "name": "Jaguar healing dance",
+          "description": "Heals around 1/4 of Jaguar's HP after a long delay.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Heals around 1/4 of jaguar's hp after a long delay."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": "160",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Jaguar Dash Attack",
+          "description": "Jaguar dashes forward for a short while, and if he hits an opponent he grabs them, headbutts them, and then two white creatures appear on both sides of the opponent and shout, launching the opponent sky high.",
+          "damage": "60 power, 40 knowledge/laughter",
+          "hits": "2",
+          "properties": ["launcher"],
+          "quote": "Jaguar dashes forward for a short while, and if he hits an opponent he grabs them, headbutts them, and then two white creatures appear on both sides of the opponent and shout, launching the opponent sky high. 2 hits. 60 damage to power. 40 to knowledge/ laughter."
+        },
+        {
+          "input": "up X",
+          "name": "Jaguar Dance",
+          "description": "Does a LONG dance, at the end of which either 3 bombs or three J-Coins appear. Guide calls it worthless.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Does a LONG dance, at the end of which either 3 bombs or three J-Coins appear. Worthless."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": null,
+      "hp": "176",
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Summon Drummer",
+          "description": "Summons a kid with drums who moves forward slowly, hitting enemies with his drumsticks.",
+          "damage": "69 power, 46 knowledge/laughter",
+          "hits": "12",
+          "properties": ["multi-hit"],
+          "quote": "Summons a kid with drums who moves forward slowly, hitting enemies with his drumsticks. 12 hits. 69 damage to power. 46 damage to knowledge/ laughter."
+        },
+        {
+          "input": "up X",
+          "name": "Summon drooler",
+          "description": "Summons a kid who drools onto the platforms below Jaguar. Causes speed down on enemy.",
+          "damage": "120 power, 80 knowledge/laughter",
+          "hits": "4",
+          "properties": ["status:speed down"],
+          "quote": "Summons a kid who drools onto the platforms below jaguar. Causes speed down on enemy. 4 hits. 120 to power, 80 to knowledge/ laughter."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Regain a small amount of your SP bar.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action (Select) Regain a small amount of your SP bar."
+    },
+    {
+      "input": "B",
+      "name": "Recorder Jab",
+      "description": "Hits opponent with his recorder, has a 45 degree range.",
+      "damage": "12 power, 8 knowledge/laughter",
+      "hits": "1",
+      "properties": [],
+      "quote": "Hits opponent with his recorder, has a 45 degree range. Hits 1 time. Does 12 damage to power types and 8 to knowledge/ laughter."
+    },
+    {
+      "input": "side B",
+      "name": "Stumble",
+      "description": "Falls and hits opponent. Decent knockback.",
+      "damage": "6 power, 4 knowledge/laughter",
+      "hits": "1",
+      "properties": [],
+      "quote": "Falls and hits opponent 1 time. Decent knockback. Does 6 damage to power, 4 to knowledge/ laughter."
+    },
+    {
+      "input": "up B",
+      "name": "Extending recorder",
+      "description": "Recorder extends upward, knocking opponents a few inches off the ground if it hits.",
+      "damage": "12 power, 8 knowledge/laughter",
+      "hits": "1",
+      "properties": ["pop"],
+      "quote": "Recorder extends upward, knocking opponents a few inches off the ground if it hits. 1 hit, 12 damage power, 8 knowledge/ laughter."
+    },
+    {
+      "input": "down B",
+      "name": "Recorder Puff",
+      "description": "Blows on recorder. Causes opponent to switch characters if it connects.",
+      "damage": "12 power, 8 knowledge/laughter",
+      "hits": "1",
+      "properties": ["forced switch"],
+      "quote": "Blows on recorder. Causes opponent to switch characters if it connects. 1 hit. Does 12 damage to power, 8 to knowledge/ laughter."
+    },
+    {
+      "input": "air B",
+      "name": "Jaguar swimming",
+      "description": "Swims on air using his recorders. Good for dodging beam attacks.",
+      "damage": "12 power, 8 knowledge/laughter",
+      "hits": "8",
+      "properties": ["multi-hit"],
+      "quote": "Swims on air using his recorders.   Good for dodging beam attacks. 8 hits,12 damage to power, 8 to knowledge/ laughter."
+    },
+    {
+      "input": "Y",
+      "name": "Ramen Dump!",
+      "description": "Drops a bowl of hot ramen on the enemy. Good for wall breaking.",
+      "damage": "24 power, 16 knowledge/laughter",
+      "hits": "1",
+      "properties": [],
+      "quote": "Drops a bowl of hot ramen on the enemy.  Good for wall breaking. 1 hit. 24 damage to power.  16 damage to knowledge/ laughter."
+    },
+    {
+      "input": "side Y",
+      "name": "Jaguar submerged swimming",
+      "description": "Does a land version of Jaguar swimming. Can turn around and hits opponent with oxygen tank at the end for knockdown.",
+      "damage": "39 power, 26 knowledge/laughter",
+      "hits": "7",
+      "properties": ["knockdown", "multi-hit"],
+      "quote": "Does a land version of Jaguar swimming.  Can turn around and hits opponent with  oxygen tank at the end for knockdown.  7 hits.  39 damage to power.  26 damage to knowledge/ laughter."
+    },
+    {
+      "input": "up Y",
+      "name": "Jaguar kick",
+      "description": "Uses recorder to propel off the ground and kick the opponent.",
+      "damage": "18 power, 12 knowledge/laughter",
+      "hits": "1",
+      "properties": [],
+      "quote": "Uses recorder to propel off the ground and kick the opponent.  1 hit.  18 damage to power. 12 to knowledge/ laughter."
+    },
+    {
+      "input": "down Y",
+      "name": "Jaguar text balloon",
+      "description": "Puts on white suit and speaks a huge text bubble.",
+      "damage": "24 power, 16 knowledge/laughter",
+      "hits": "1",
+      "properties": [],
+      "quote": "Puts on white suit and speaks a huge text bubble.  1 hit. 24 damage to power. 16 damage to knowledge/ laughter."
+    },
+    {
+      "input": "air Y",
+      "name": "Jaguar Ramen Swirl",
+      "description": "In the air Jaguar pulls ramen out of a bowl and swirls it below him, propelling him upward and catching the enemy. Can be comboed to up Y attack.",
+      "damage": "34 power, 23 knowledge/laughter",
+      "hits": "9",
+      "properties": ["multi-hit"],
+      "quote": "In the air Jaguar pulls ramen out of a bowl and swirls it below him, propelling  him upward and catching the enemy.  9 hits.  34 damage to power.  23 damage to knowledge/ laughter."
+    }
+  ],
+  "combos": [
+    "Up Y + Jump Y - Knocks opponent into the air, then you can hit them with two (or 3 if you have a triple jump help koma equipped) ramen swirls for around 100 damage."
+  ],
+  "unresolved": [
+    "Passive abilities listed under 'Jaguar's basic attacks' (JR3) apply to Jaguar overall, not to a specific koma: 'Immunity to Confusion' and 'Immunity to Paralysis'.",
+    "Boost koma: Piyohiko, Hammer and Hamii each give Jaguar an 8 J-soul boost; these are 1/2/3-block boost koma, not standard help/support/battle koma, so they are not represented in the koma array.",
+    "Guide's strategy section (JR5) recommends support koma from other characters (Trunks 3 koma, Seiya 3 koma, Satsuki 2 koma/Ichigo 100%, Sena 3 koma) as synergy picks for Jaguar; not Jaguar's own koma, so omitted from the koma array.",
+    "Guide states Jaguar 'should never use Jaguar's specials' as a strategy note, seemingly at odds with describing the X specials as usable moves — kept as-is since this is guide commentary, not a contradiction in the move data itself.",
+    "Guide is incomplete/unfinished: JR5 ends with 'More supports, combos, and a better strategy coming when the weather isn't 40 degrees farenheight where I live.' -- no B string is described anywhere in the guide."
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "character": "Jotaro",
+  "series": "JoJo's Bizarre Adventure",
+  "chr_b": 28,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46754-jotaro.txt", "gamefaqs_id": 46754, "author": "Evil.Soldier.347", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["power", "knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Jotaro lessens damage taken from special attacks directed at characters that the little arrow on the Deck Construction screen is pointed to.",
+      "quote": "Jotaro lessens damage taken from special attacks directed at characters that the little arrow on the Deck Construction screen is pointed to."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Jotaro strikes a cool pose while Star Platinum charges forward, fist raised. If he catches someone, he charges a tiny amount forward with them, and then punches them with his other fist. Damage: 24 to Power Characters, 36 to Knowledge characters and 24 to Laughter characters. Star Platinum holds the target briefly, allowing any follow-up attack to hit without knocking the opponent down.",
+      "help_effect": null,
+      "quote": "Jotaro strikes a cool pose while Star Platinum charges forward, fist raised. If he catches someone, he charges a tiny amount forward with them, and then punches them with his other fist. ... Damage: 24 to Power Characters, 36 to Knowledge characters and 24 to Laughter characters. ... Also, as Star Platinum holds the target, there's a small time frame where you can launch ANY attack and the enemy will not be knocked down."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Jotaro points forward, and Star Platinum flings a small Chihuahua (Named Iggy) forward as a projectile. If it touches anyone, Iggy holds the opponent in place while its stand delivers a blow that inflicts the BATTLE SEAL status. Damage: 34 to Power Characters, 34 to Knowledge characters and 45 to Laughter characters.",
+      "help_effect": null,
+      "quote": "Jotaro points forward, and Star Platinum flings a small Chihuahua (Named Iggy) forward. The projectile goes on for decent length until it disappears. If it touches anyone, Iggy will hold the opponent in place while its stand delivers a blow that delivers the BATTLE SEAL status. ... Damage: 34 to Power Characters, 34 to Knowledge characters and 45 to Laughter characters."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes less damage from special attacks", "Does the same damage to characters of opposing Nature"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "ORAAA!",
+          "description": "Jotaro poses and Star Platinum charges forward, grabs the enemy and punches them, like the 2 koma support version but stronger. Holds the opponent down for a few seconds.",
+          "damage": "40 to Power and Laughter characters, 60 (!!!) to Knowledge characters",
+          "hits": null,
+          "properties": [],
+          "quote": "Jotaro poses and Star Platinum charges forward, grabs the enemy and punches them, just like his 2 koma. Except this one packs a wallop. Damage: 40 to Power and Laughter characters, 60 (!!!) to Knowledge characters. ... this special holds the opponent down for a few seconds."
+        },
+        {
+          "input": "X",
+          "name": "Crossfire Hurricane Special",
+          "description": "Avdol with his stand, Red Magician, appears and quickly fires 3 burning crosses that fly forward for a decent distance, traveling close together. Afflicts burn status.",
+          "damage": "30 to Power and Laughter characters, 54 to Knowledge characters",
+          "hits": null,
+          "properties": ["projectile", "status:burn"],
+          "quote": "Avdol with his stand, Red Magician appears and quickly fires 3 burning crosses that fly forward for a decent distance. They travel close together. Afflicts burn status. Damage:30 to Power and Laughter characters, 54 to Knowledge characters."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes less damage from special attacks", "Does the same damage to characters of opposing Nature"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Star Platinum & Silver Chariot",
+          "description": "Polnareff and his stand, Silver Chariot, appears behind Jotaro, and both of them unleash a barrage of attacks with their stands. Press repeatedly for more hits.",
+          "damage": "13-34 to Power and Laughter, 19-42 to Knowledge",
+          "hits": null,
+          "properties": ["mash-extend", "multi-hit"],
+          "quote": "Polnareff and his stand, Silver Chariot, appears behind Jotaro, and both of them unleash a barrage of attacks with their stands. Damage- 13-34 to Power and Laughter, 19-42 to Knowledge (press repeatedly for more hits)"
+        },
+        {
+          "input": "X",
+          "name": "Emerald Splash",
+          "description": "Kakyoin and his stand, Hierophant Green, appears and fires dozens of emeralds in a wide pattern, both above, below and forward. Max damage numbers are close-range hits where all emeralds connect.",
+          "damage": "14-52 to Power and Laughter, 21-84 to Knowledge",
+          "hits": null,
+          "properties": ["projectile", "multi-hit"],
+          "quote": "Kakyion and his stand, Hierophant Green appears, and fires dozens of emeralds in a wide pattern, both above, below and forward. Damage- 14-52 to Power and Laughter, 21-84 to Knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes less damage from special attacks", "Does the same damage to characters of opposing Nature"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Ora Ora of Anger!",
+          "description": "Star Platinum delivers a barrage of fists that eventually aim upwards and knock the opponent away and upwards at a 45 degree angle. Jotaro strikes a cool pose after the attack is over for half a second. Press repeatedly for more hits.",
+          "damage": "26-49 for Power and Laughter characters, 39-73 for Knowledge characters",
+          "hits": null,
+          "properties": ["launcher", "mash-extend", "multi-hit"],
+          "quote": "Star Platinum delivers a barrage of fists, that eventually aim upwards and knock the opponent away and upwards at a 45 degree angle. Jotaro strikes a cool pose after the attack is over for half a second. Damage: 26-49 for Power and Laughter characters, 39-73 for Knowledge characters. (press repeatedly for more hits)"
+        },
+        {
+          "input": "X",
+          "name": "Star Platinum The World (a.k.a. Za Warudo)",
+          "description": "Jotaro is engulfed in a purple aura for about one real life second, then time stops on the stage for about 3 real life seconds: opponents, all supports and projectiles cease moving while Jotaro is still free to move and attack. Attacks dealt during the freeze are not 'felt' until time resumes.",
+          "damage": "None",
+          "hits": null,
+          "properties": ["status:time stop", "charge"],
+          "quote": "Jotaro is engulfed in a purple aura for about one real life second, and then time stops on the stage. Meaning opponents, all supports and projectiles cease moving. This effect lasts for about 3 real life seconds. Of course, Jotaro is still free to move and attack. Damage: None."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "A quick hook punch.",
+      "damage": "8",
+      "hits": null,
+      "properties": [],
+      "quote": "B- A quick hook punch, 8 damage"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Jotaro slides forward and delivers a low kick.",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "fwdB- Jotaro slides forward and delivers a low kick, 9 damage"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Star Platinum stabs upwards with his Star Finger.",
+      "damage": "10",
+      "hits": null,
+      "properties": [],
+      "quote": "upB- Star Platinum stabs upwards with his Star Finger, 10 damage"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Star Platinum charges for a moment and then punches, switching characters.",
+      "damage": "10",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "dwnB- Star Platinum charges for a moment and then punches, 10 damage and switches characters"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Star Platinum performs an uppercut.",
+      "damage": "10",
+      "hits": null,
+      "properties": [],
+      "quote": "airB- Star Platinum performs an uppercut, 10 damage"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Star Platinum performs a Barrage of punches. Press repeatedly for more hits.",
+      "damage": "12-21",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Y- Star Platinum performs a Barrage of punches. Press repeatedly for more hits, 12-21 damage"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Star Platinum charges forward and does an overhead punch.",
+      "damage": "18",
+      "hits": null,
+      "properties": [],
+      "quote": "fwdY- Star Platinum charges forward and does an overhead punch, 18 damage"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Star Platinum directs a barrage of punches upwards at a 45 degree angle.",
+      "damage": "12-21",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "upY- Star Platinum directs a barrage of punches upwards at a 45 degree angle, 12-21 damage"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Star Platinum charges for a moment, and then pounds the ground with his fist.",
+      "damage": "20",
+      "hits": null,
+      "properties": [],
+      "quote": "dwnY- Star Platinum charges for a moment, and then pounds the ground with his fist, 20 damage"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Star Platinum directs a barrage of punches downwards at a 45 degree angle. Guide notes it spikes.",
+      "damage": "12-21",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "airY- Star Platinum directs a barrage of punches downwards at a 45 degree angle, 12-21 damage"
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Jotaro strikes a kick-arse pose, then regains a small amount of SP.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action - Kick arse pose and then small SP regain"
+    }
+  ],
+  "combos": [
+    "Hotkey Terryman to L or R and use Jotaro 4 koma. As soon as you press X, press the hotkey. Star Platinum will hold the enemy, and in that brief second, Terryman will nail the enemy, and then Star Platinum will sock him with a punch. Does around 80 damage on average.",
+    "Terryman can also be used at the end of 5 koma or 6 koma's Special A, activated at the end of the attack, so Terryman brings the enemy back down with his knee. Deals anywhere between 70-90 damage, and leaves the enemy wide open for another attack.",
+    "Trap the opponent with Jotaro's Y attack (or 5/6 koma Special A for more damage at the cost of an extra SP bar), then use 3 koma Okita as soon as the attack begins; the opponent gets trapped by Jotaro's barrage and then nailed by the beetle's smash as the hits finish. Highest recorded was 134 damage.",
+    "It is possible to catch an opponent hit by 3 koma Takeshi Yamamoto's slash circle with 4 koma Jotaro's Special A while they are in the air right after being hit, or catch them with a Y barrage.",
+    "Rouji (2 koma) can halt a charging opponent or drain an SP bar from a spammer; trap the opponent in a Y attack to guarantee a hit, or stop them and launch off the edge with a forward Y.",
+    "Combining 4 koma's Special A with 3 koma Gotenks or 3 koma Zoro hotkeyed and triggered right after pressing X can usually rack up 115 damage."
+  ],
+  "unresolved": [
+    "5 koma section says: 'Jotaro has an alternate version of this with Knowledge nature. To figure out the damage output, simply replace the extra damage against Knowledge to Laughter.' This implies a Knowledge-nature 5 koma variant exists with different damage splits, but no concrete numbers are given for it; only the Power-nature 5 koma damage values are recorded above.",
+    "Guide states damages for the shared Battle Koma moveset (B, side B, up B, down B, air B, Y, side Y, up Y, down Y, air Y) were 'taken using Jotaro's 6 Koma' — these numbers may not apply identically to the 4 or 5 koma battle versions.",
+    "Guide is incomplete/in-progress: sections on Support Komas and Battle Strategies both say 'More to come soon!' / 'Working on new ones...', so the support koma and strategy lists are not exhaustive.",
+    "No numeric HP values are given anywhere in the guide for any koma size.",
+    "Guide credits 'Genroh's FAQ' for the Acquiring Jotaro section (mission-unlock table), which is reproduced content rather than the author's own analysis; kept out of moves/koma extraction as it's unlock info, not moveset."
+  ]
+}

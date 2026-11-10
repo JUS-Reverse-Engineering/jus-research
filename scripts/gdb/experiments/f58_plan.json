@@ -1,0 +1,8 @@
+{
+ "name": "f58_routes",
+ "segments": [
+  {"from": 0, "to": 2, "buttons": ["START"]},
+  {"from": 11, "to": 13, "buttons": ["START"]}
+ ],
+ "tail_frames": 10
+}

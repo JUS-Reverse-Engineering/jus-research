@@ -1,0 +1,23 @@
+# Toolchain for jus_re — install with `mise install` from the repo root.
+# Same file works on macOS and Linux; this is the portable half of the setup.
+#
+# mise cannot provide C libraries or GUI apps. Those stay on the system
+# package manager — see README.md "Tooling" for the list (Qt6, SDL2, enet,
+# faad2, libarchive, zstd, pkg-config, arm-none-eabi-gdb, Ghidra).
+
+[tools]
+# All scripts/ tooling (analysis, decomp, emu harness). pip deps on top:
+# capstone (scripts/analysis), pyghidra (scripts/ghidra). See README.md.
+# macOS window screenshots use a compiled CoreGraphics helper, not PyObjC.
+python = "3.12"
+
+# melonDS-lua fork build dep + `lua5.4` CLI for scripts/emu/tests/.
+# NOTE: scripts/emu/build_melonds_lua.sh still hardcodes the Homebrew
+# lua@5.4 paths — rework it before dropping the brew copy.
+lua = "5.4"
+
+# Ghidra / PyGhidra (needs JDK 21+).
+java = "temurin-21"
+
+# melonDS fork build.
+cmake = "4"

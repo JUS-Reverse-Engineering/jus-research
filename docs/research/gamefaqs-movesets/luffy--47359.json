@@ -1,0 +1,268 @@
+{
+  "character": "Monkey D. Luffy",
+  "series": "One Piece",
+  "chr_b": 12,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; base Luffy only. Gear Second Luffy is a separate chr_b (18) and is NOT represented in this file's koma/moves arrays -- see unresolved.",
+  "source": {"file": "47359-luffy.txt", "gamefaqs_id": 47359, "author": "Dylan Neumann AKA Zero EXE", "version": "1.01"},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter"],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "neutral/forward X",
+          "name": "Gomu Rush",
+          "description": "Luffy nails the enemy with a Gatling, a Bullet, then two Bazookas in rapid succession.",
+          "damage": "20, 20 (30, 30)",
+          "hits": "10, 1",
+          "properties": ["knockdown"],
+          "quote": "Luffy flies into a fury and nails the enemy with a Gatling, a Bullet, then two Bazookas in rapid succession. This is a great crowd clearer and also has uses for knocking people off the side."
+        },
+        {
+          "input": "up X",
+          "name": "Gomu Gomu no Storm",
+          "description": "Luffy kicks the opponent into the air, inflates himself, and exhales downward to follow up with a barrage of punches.",
+          "damage": "36 (54)",
+          "hits": 23,
+          "properties": ["knockdown", "mash-extend"],
+          "quote": "After kicking the opponent into the air, Luffy inflates himself and exhales downward, propelling himself after the enemy. He follows up with a barrage of punches, obliterating his target. ... Keep tapping X to raise the number of hits."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "neutral/forward X",
+          "name": "Gomu Gomu no Golden Rifle",
+          "description": "Luffy performs a Rifle with a giant gold orb stuck to his arm, causing extra knockback and damage.",
+          "damage": "40 (60)",
+          "hits": 1,
+          "properties": ["knockdown"],
+          "quote": "Luffy performs a Rifle, but with a giant Gold Orb stuck to his arm. This causes a lot of knockback and damage, with little penalty in terms of lag. It can even be comboed into."
+        },
+        {
+          "input": "up X",
+          "name": "Gomu Gomu no Golden Peony",
+          "description": "Luffy jumps into the air and swings the gold orb stuck to his arm around him, making melee attacks worthless against him for the duration.",
+          "damage": "36 (54)",
+          "hits": 7,
+          "properties": ["knockdown"],
+          "quote": "Luffy jumps into the air and crazily swings around the gold orb stuck to his arm. Oh, what a wonderful move this is. Anti-Air and Crowd Clearer all in one. Not to mention all melee moves are worthless against you for the duration."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power or laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "neutral/forward X",
+          "name": "Gomu Gomu no Cannon",
+          "description": "A powerful version of Gatling, rushing ahead while punching furiously; Luffy becomes 'Afro Luffy' during this move.",
+          "damage": "41 (62)",
+          "hits": 26,
+          "properties": ["knockdown", "mash-extend"],
+          "quote": "Luffy does a very powerful version of Gatling, rushing ahead while punching furiously. Keep tapping X to raise the number of hits."
+        },
+        {
+          "input": "up X",
+          "name": "Gomu Gomu no Flail",
+          "description": "Luffy slacks his arm and whirls it above his head before tossing it at the target; powerful but slow and easily avoided.",
+          "damage": "56 (74)",
+          "hits": 1,
+          "properties": ["knockdown", "charge"],
+          "quote": "Luffy slacks his arm and whirls it above his head before tossing it at the unlucky target. This move is powerful, but it's slow and easily avoided. ... Keep holding X to charge the power."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Reduces punch and kick damage."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Gomu Gomu no Hanabi",
+          "description": "Luffy jumps into the air and fires a burst of punches and kicks around him. A decent but not top-tier support against jumpers.",
+          "damage": "25 (38)",
+          "hits": 1,
+          "properties": ["knockdown"],
+          "quote": "Luffy jumps into the air and fires a burst of punches and kicks around him. This is a decent support, although there are better, so I wouldn't bother unless jumpers are giving you severe problems and this is all you have."
+        }
+      ],
+      "support_effect": "Anti-air burst of punches and kicks around Luffy.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Gomu Gomu no Storm",
+          "description": "Luffy uses Storm on any enemies above him; a better anti-air support than Hanabi, but only hits enemies above him.",
+          "damage": "36 (54)",
+          "hits": 12,
+          "properties": ["knockdown"],
+          "quote": "Luffy uses Storm on any enemies above him. Another Anti-Air, this one is better than Hanabi, even though it only hits enemies above you."
+        }
+      ],
+      "support_effect": "Anti-air Storm barrage on enemies above Luffy.",
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Punch",
+      "description": "Luffy's basic unaided punch. Good for halting attacks and leading into combos, but has minimal range.",
+      "damage": "6 (9)",
+      "hits": 1,
+      "properties": [],
+      "quote": "Luffy's basic punch, unaided by his Rubber Body. Good for halting others attacks and leading up into combos, but not much else."
+    },
+    {
+      "input": "side B",
+      "name": "Gomu Gomu no Rifle",
+      "description": "Luffy stretches his arm behind him and releases it in a long-range punch that combos into almost anything.",
+      "damage": "6 (9)",
+      "hits": 1,
+      "properties": [],
+      "quote": "Luffy shows off his stretching powers with this move, twisting his arm behind him, then releasing it. The punch goes pretty far, about 3 body lengths and can be comboed out of into almost anything."
+    },
+    {
+      "input": "up B",
+      "name": "Gomu Gomu no Stamp",
+      "description": "Luffy kicks his leg at a 45 degree angle to attack above enemies; a good anti-air with less lag than Pistol/Shotgun.",
+      "damage": "8 (12)",
+      "hits": 1,
+      "properties": [],
+      "quote": "Luffy kicks his leg at a 45 degree angle, stretching his foot out to attack above enemies. This is a good anti-air move, with less lag than Pistol/Shotgun."
+    },
+    {
+      "input": "down B",
+      "name": "Gomu Gomu no Ballon",
+      "description": "Luffy inflates his body to attack from both sides; not great against people, but launches items.",
+      "damage": "8 (12)",
+      "hits": 1,
+      "properties": ["knockdown"],
+      "quote": "Luffy inflates his body to attack from both sides. This isn't a very good move to use on people, although it launches items."
+    },
+    {
+      "input": "air B",
+      "name": "Gomu Gomu no Spear",
+      "description": "Luffy stretches both legs down to strike like a spear; good for hitting directly below, including through floors.",
+      "damage": "8 (12)",
+      "hits": 1,
+      "properties": [],
+      "quote": "Luffy stretches both his legs down to strike like a spear. This move is good for attacking directly below you, but not much else. ... You can hit people through floors for easy KOs or to keep them away from an item."
+    },
+    {
+      "input": "Y",
+      "name": "Gomu Gomu no Gatling",
+      "description": "A barrage of fast punches; handy for most situations, and mashing Y increases the number of hits.",
+      "damage": "15 (22)",
+      "hits": 7,
+      "properties": ["knockdown", "mash-extend"],
+      "quote": "Luffy barrages his opponent with blurringly fast punches. This is handy for most situations. Keep pressing Y to increase the amount of hits."
+    },
+    {
+      "input": "side Y",
+      "name": "Gomu Gomu no Bazooka",
+      "description": "A super strong double-palm strike after stretching both arms back; Luffy's main combo finisher and primary Ring Out tool.",
+      "damage": "16 (24)",
+      "hits": 1,
+      "properties": ["knockdown"],
+      "quote": "Luffy stretches both his arms back, before snapping them forward to create a super strong double palm strike. This is Luffy's main combo finisher and it's also how he gets a lot of his KOs, via Ring Out."
+    },
+    {
+      "input": "up Y",
+      "name": "Gomu Gomu no Pistol/Shotgun",
+      "description": "Luffy punches up at a 45 degree angle to hit airborne foes; the anti-air version of Gatling, and mashing Y adds a multi-hit flail follow-up, but missing leaves Luffy wide open.",
+      "damage": "15 (22)",
+      "hits": 11,
+      "properties": ["knockdown", "mash-extend"],
+      "quote": "Luffy punches up at a 45 degree angle, stretching his arm out to reach foes at a higher level. This is the anti-air version of Gatling. If you keep pressing Y, Luffy will flail his arm after he punches, causing multiple hits. The problem is that, if you miss, you'll usually be left wide open."
+    },
+    {
+      "input": "down Y",
+      "name": "Gomu Gomu no Axe",
+      "description": "Luffy kicks his leg up then brings it down for a guard-breaking impact, but it is slow and telegraphed, and the initial kick whiffs.",
+      "damage": "16 (24)",
+      "hits": 1,
+      "properties": ["guard break"],
+      "quote": "Luffy kicks his leg up vertically, then brings it down for a thunderous impact. This is his guard-breaker, although it's not that great. You can see it coming a mile away, so it's hard to connect before they interrupt you. Also, the initial kick doesn't hit anything, so don't try to use this for Anti-Air."
+    },
+    {
+      "input": "air Y",
+      "name": "Diving Headbutt",
+      "description": "Luffy dives from above to plant his face into the opponent at a diagonal; a fairly quick lead-in, but he can't attack immediately after landing.",
+      "damage": "16 (24)",
+      "hits": 1,
+      "properties": [],
+      "quote": "Luffy dives from above to plant his face into things. This is a fairly quick move and it hits at a diagonal. This makes it a decent lead in to other moves, although you can't hit immediately after landing."
+    },
+    {
+      "input": "select",
+      "name": "Lunch Box",
+      "description": "Luffy's taunt, which increases his HP while held.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Taunt: Lunch Box. Effect: Increases HP while held."
+    }
+  ],
+  "combos": [
+    "Ring Out Combo 1: B, Forward B, Forward Y",
+    "Ring Out Combo 2: B, Up B, Forward Y",
+    "Anti-Air Combo 1: B, Up B, Up Y",
+    "Special Combo 1: B, Forward B, Forward/Neutral X",
+    "Special Combo 2: Up B, Up Y, Golden Peony/Storm (Horizontal)",
+    "Trunks Ring-Out 1: B, Forward B, 3 Koma Trunks, Forward Y",
+    "Trunks Ring-Out 2: B, Forward B, 2 Koma Trunks, Storm (Horizontal)"
+  ],
+  "unresolved": [
+    "The guide describes a second, separate character progression, 'Gear Second' Luffy (chr_b 18 per docs/research/chr_b-Complete-Mapping.md), presented as sections 3.A-3.D immediately after base Luffy, with its own Basic Moves (B set), a taunt ('Air Pump'), and 7/8 Koma specials. Per task instructions this file's top-level chr_b/koma/moves cover base Luffy (chr_b 12) ONLY; Gear Second content is summarized here rather than mixed into the koma/moves arrays, to avoid conflating two different chr_b entries. Gear 2 Basic Moves as written: Neutral B Punch 9 (14) x1; Forward B Gomu Gomu no JET Pistol 10 (15) x1; Upward B Gomu Gomu no JET Stamp 10 (15) x1; Downward B Gomu Gomu no Ballon 8 (12) x1 (knockdown yes, less lag than base); Aerial B Gomu Gomu no JET Spear 10 (15) x1; Neutral Y Gomu Gomu no JET Gatling 20 (30) x7 (mash-extend); Forward Y Gomu Gomu no JET Bazooka 16 (24) x1; Upward Y Gomu Gomu no JET Shotgun 16 (24) x11 (mash-extend, 'increase the number of hits and damage'); Downward Y Gomu Gomu no Axe 16 (24) x1 (same as base); Aerial Y Missile Headbutt 18 (27) x1; Taunt 'Air Pump' increases Forward+Y and Down+Y damage from 16 to 20 and makes Forward+Y a guard-breaking attack.",
+    "Gear Second 7 Koma (J-Soul 192, Power): the guide explicitly notes 'Luffy's specials in 7 Koma are actually moves he uses while not using Gear 2.' Neutral/Forward X Gomu Gomu no Storm (Horizontal) 62 (93) x24 hits, mash-extend, knockdown yes -- risk of falling off ledges near the edge. Upward X Gomu Gomu no Volcano 63 (93) x2 hits, knockdown yes, only hits enemies directly above.",
+    "Gear Second 8 Koma (J-Soul 208, Power): guide states these are Gear 3 moves ('Gigant' in the name); after using Gear 3, Luffy temporarily shrinks for a duration equal to how long Gear 3 was used. Neutral/Forward X Gomu Gomu no Gigant Gatling 64 (96) x28, mash-extend, knockdown yes, Luffy moves forward slowly and is vulnerable from behind. Upward X Gomu Gomu no Gigant Axe 50 (75) x2, knockdown yes, does more damage when the opponent is nearby and level with Luffy (kick-up combos into kick-down).",
+    "The guide's section lettering is garbled/duplicated: after '4 Koma [4Kom]' content, the next header reads 'E) 6 Koma [6Kom]' but its content (Gomu Gomu no Golden Rifle / Golden Peony, J-Soul 160) is structurally the 5 Koma tier per the table of contents ('D) 5 Koma [5Kom]' is listed but its own header never appears in the body). A second 'E) 6 Koma [6Kom]' header immediately follows with the Cannon/Flail content (J-Soul 176), which matches the actual 6 Koma tier. This file treats the first mislabeled block as 5 Koma and the second as 6 Koma, per the J-Soul progression (144, 160, 176) and power-koma layouts, not per the guide's literal (duplicated) headers.",
+    "No down+B forced switch move or a distinct SELECT Ultimate Action are described for Luffy beyond the Lunch Box taunt (mapped to 'select' above); the guide does not document a forced-switch attack separately from the taunt/support system.",
+    "Section numbering after Combos is also garbled: two separate blocks are both headed '6. Koma Setups [Koma]' (one containing actual koma-deck-building advice, the other containing a Q&A/mailing-rules section that logically belongs under 'FAQs'); the subsequent header reads '7. FAQs [FAQs]' but its content is legal/copyright text that the table of contents assigns to section 8 ('Legal Information [SueU]'); the table of contents' section 8 header never appears verbatim in the body, and the final header jumps straight to '9. Credits [Thnx]'. None of this affects move/koma data and was left out of the structured fields.",
+    "Passive traits and Support Boost characters (Usopp, Shanks, Cobra) are listed once for base Luffy under Description; Gear 2's Support Boost differs slightly (Usopp, Robin, Cobra) per its own Description section, with passives stated as 'Same as Normal Luffy.' Both are noted here rather than duplicated per-koma, since the guide states them at the character level, not per koma size.",
+    "Koma Setups section notes Luffy is a Power character (except one 6 Koma variant which can be Laughter) and is thus weak to Laughter characters; this is deck-building meta commentary, not a move/koma stat, so it is not represented in the structured fields."
+  ]
+}

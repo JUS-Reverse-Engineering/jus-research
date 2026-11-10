@@ -1,0 +1,238 @@
+{
+  "character": "Franky",
+  "series": "One Piece",
+  "chr_b": 17,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "51204-franky.txt", "gamefaqs_id": 51204, "author": "Kira93", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["laughter", "power"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": ["Decreases damage taken from blades."],
+      "specials": [],
+      "help_effect": "He decreases damage taken from blades.",
+      "quote": "Effect: He decreases damage taken from blades."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Franky appears slightly in front of the character and, like his Down B, throws a circular table with 3 objects on it; if the table hits, it forcibly switches the opponent's character (about a 1 second delay).",
+      "quote": "Franky appears slightly in front of your character and like his Down B he throws a circular table, but this time he has 3 objects on the table. Also, if the table itself hits, it forcibly changes the opponents character."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Franky appears almost directly in front of the character and, after a chargeable .5-1.5 second load, charges the enemy with a punch; charge time increases distance and damage (no guard break).",
+      "quote": "after loading up for about .5 seconds – 1.5 seconds (depending on how long you hold down the button for him) he charges at the enemy and delivers a strong punch. The longer the button is held affects the overall distance and damage of the punch."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Take less damage from blades.",
+        "Take more damage from lightning attacks.",
+        "Gain SP when being attacked by opponents."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Coup de Vent",
+          "description": "He loads up air in his arms and shoots it forward with much velocity; decent sized, decent damage, moves him back a bit after launching, and has great knock back.",
+          "damage": "30 to knowledge/laughter, 45 to power",
+          "hits": null,
+          "properties": [],
+          "quote": "He loads up air in his arms and shoots it forward with much velocity. It’s a decent sized special with decent damage. Also, it moves him back a bit after he launches it and has great knock back."
+        },
+        {
+          "input": "up X",
+          "name": "Ultimate Hammer",
+          "description": "He cracks his knuckles for .75 seconds and jumps forward diagonally (compared to Ichigo's Up X, but slower), grabs the opponent, and punches them down from the air.",
+          "damage": "52 to knowledge, 35 to power/laughter",
+          "hits": null,
+          "properties": [],
+          "quote": "He cracks his knuckles for .75 seconds and jumps forward diagonally (comparable to B. Ichigo’s Up X, but slower). He grabs the opponent and the punches them down from the air."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Take less damage from blades.",
+        "Take more damage from lightning attacks.",
+        "Gain SP when being attacked by opponents."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Coup de Vent",
+          "description": "Same move as the 4-koma version, just bigger and deals more damage. Great for ring outs, but has a slight startup.",
+          "damage": "40 to knowledge/laughter, 60 to power",
+          "hits": null,
+          "properties": [],
+          "quote": "Exact same as 4 koma, just bigger and deals more damage."
+        },
+        {
+          "input": "up X",
+          "name": "Chaser Bullet",
+          "description": "Franky dislocates his shoulders to reveal holes and shoots multiple bullets while chasing the enemy; takes a second to start up, but is powerful and good for edge guarding since he can't run off stage while using it.",
+          "damage": "each hit 1 to knowledge/laughter (40 hits max = 40 total); each hit 1 or 2 to power (40 hits = 60 total)",
+          "hits": "40 (max)",
+          "properties": ["multi-hit"],
+          "quote": "He then shoots multiple bullets while chasing the enemy. ... Each hit deals 1 damage to knowledge/laughter and with 40 hits (max hits), its 40 damage total."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [
+        "Take less damage from blades.",
+        "Take more damage from lightning attacks.",
+        "Gain SP when being attacked by opponents."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Coup de Vent",
+          "description": "Guide says same as the laughter variant.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Special A: Same as before."
+        },
+        {
+          "input": "up X",
+          "name": "Chaser Bullet",
+          "description": "Guide says same as the laughter variant.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Special B: Same as before."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Regular B",
+      "description": "A head butt that moves him forward a bit. A close range move.",
+      "damage": "8 to knowledge/laughter, 12 to power",
+      "hits": null,
+      "properties": [],
+      "quote": "A head butt that moves him forward a bit. A close range move."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "A simple straight punch that moves him forward a bit. A close range move.",
+      "damage": "9 to knowledge/laughter, 13 to power",
+      "hits": null,
+      "properties": [],
+      "quote": "A simple strait punch that moves him forward a bit. A close range move."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "He bends down, picks up a circular table, and throws it at the enemy; decent range, almost travels all the way across the screen.",
+      "damage": "10 to knowledge/laughter, 15 to power",
+      "hits": null,
+      "properties": [],
+      "quote": "He bends down and picks up a circular table and throws it at the enemy, has decent range and almost travels all the way across your screen."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Shoots fire from his mouth aimed diagonally into the air; direction depends on facing. A close range move.",
+      "damage": "8 to knowledge/laughter, 12 to power",
+      "hits": null,
+      "properties": [],
+      "quote": "Shoots fire from his mouth aimed at the air diagonally, direction depends on which way you’re facing. A close range move."
+    },
+    {
+      "input": "air B",
+      "name": "Jump B",
+      "description": "He jumps up and hits an opponent down with both hands (a double axe handle) and moves forward slightly. Rather close range, but the slight forward movement adds a bit more range.",
+      "damage": "9 to knowledge/laughter, 13 to power",
+      "hits": null,
+      "properties": [],
+      "quote": "He jumps up and hits an opponent down with both hands (a double axe handle) and moves forward slightly."
+    },
+    {
+      "input": "Y",
+      "name": "Regular Y",
+      "description": "He goes into a boxer stance and punches the enemy a few times; the number of hits rises after each Ultimate Action use. A close ranged move.",
+      "damage": "16 to knowledge/laughter, 24 to power; after 1 UA 27/40; after 2 UA 36/54",
+      "hits": null,
+      "properties": ["mash-extend"],
+      "quote": "He will go into a stance like a boxer and punch the enemy a few times. The amount of hits rises after each UA."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "The tip of his finger flips up and he shoots a bullet that travels to the end of the screen. After 1 UA he shoots 3 cannon balls, after 2 UA a big cannon ball.",
+      "damage": "14 to knowledge/laughter, 21 to power; after 1 UA 24/36; after 2 UA 33/49",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "The tip of his finger flips up and he shoots a bullet that travels till the end of your screen. After 1 UA he shoots 3 cannon balls and after 2 he shoots a big cannon ball."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "He stays still for 1 second then attacks with his right hand, a straight punch, staying in place. After 1 UA the punch detaches and flies further; after 2 UA it flies to the end of the screen.",
+      "damage": "14 to knowledge/laughter, 21 to power; after 1 UA 21/31; after 2 UA 36/54",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "He will stay still for 1 second and then attack with his right hand. It’s a straight punch only and he stays in the same place. After 1 UA his punch detaches and flies further and after 2 it flies to the end of the screen."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "He loads for about half a second, fills his butt with gas, and propels himself into the air diagonally depending on facing; decent range, about twice the range of up B, and UA use increases the range a lot.",
+      "damage": "16 to knowledge/laughter, 24 to power; after 1 UA 24/36; after 2 UA 30/45",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "He loads up for about half a second and fills his butt with gas and then fart/propels himself into the air in a diagonal line depending on which way you’re facing."
+    },
+    {
+      "input": "air Y",
+      "name": "Jump Y",
+      "description": "He jumps and breathes fire at a downward diagonal angle, much like Up B but from the air and facing down, with slightly more range; damage depends on number of hits connected (max 6). UA use raises max damage, not max hit count.",
+      "damage": "1 hit 2/3 up to 6 hits 16/24; after 1 UA 1 hit 4/6 up to 5 hits 20/30; after 2 UA 1 hit 6/9 up to 5 hits 32/48",
+      "hits": "up to 6 (up to 5 after UA)",
+      "properties": ["multi-hit"],
+      "quote": "He jumps and breathes fire at a downwards diagonal angle... The damage of the move is hard to judge seeing as it depends on how many hits you connect (max of 6)."
+    }
+  ],
+  "combos": [
+    "B, -> B, Y, -> Y: 47 to knowledge/laughter, 70 to power. Can't use UA with this because the first Y sends the opponent flying.",
+    "B, Up B, Up Y, B: 41 to knowledge/power (as written), 61 to power. UA won't work because of extra distance.",
+    "After UA, B, -> B, Y: after 1 UA 44/66; after 2 UA 53/79.",
+    "After UA, B, Up B, -> Y: after 1 UA 40/60; after 2 UA 49/73 (best for ring outs after 2 UA).",
+    "After 2 UA, B, ? B, Y + Shishio 2 (used about halfway through), X: 4-koma 125 to knowledge/laughter, 152 to power; 5-koma 135/167.",
+    "After 2 UA, B, Up B, ? Y + Shishio 2, X: 4-koma 121/144; 5-koma 131/161."
+  ],
+  "unresolved": [
+    "The combo 'B, Up B, Up Y, B' is written with damage '41 damage to knowledge/power' in the source, which looks like a typo for 'knowledge/laughter' given the pattern elsewhere; kept as written.",
+    "Guide states the 5-koma power variant is 'the exact same' as the laughter 5-koma except nature, so special descriptions/damage for the power variant were not independently given."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "state": {
+    "claim": "Landing lag is the unplayed tail of the airborne animation: lag = animation_length - obj+0x72_at_landing + 1. Two runs reported this as a mechanic after matching 12/12 and 11/11 rows.",
+    "within_run_results": [
+      "Run 2 matched 12/12 rows after animation length was taken from the same run's no-input probe.",
+      "Run 9 matched 11/11 rows using the same procedure."
+    ],
+    "measurement_method": {
+      "landing_frame": "the frame M+0x78 equals 0x02",
+      "elapsed_value": "obj+0x72 at the landing frame",
+      "animation_length": "obj+0x72 on the frame the state returned to zero in a separate no-input probe from the same run",
+      "lag": "first frame obj+0x18 equals 1 with RIGHT held, minus the landing frame"
+    },
+    "cross_run_test": {
+      "method": "Use animation lengths recorded in prior runs to preregister predictions for fresh runs.",
+      "summary": "6 of 21 predictions matched exactly; 15 of 21 missed.",
+      "hits": [
+        "Kenshin plain jump: predicted 13, measured 13",
+        "Kenshin fast-fall: predicted 13, measured 13",
+        "Kenshin mashed air B: predicted 25, measured 25",
+        "Yusuke air B late: predicted 25, measured 25",
+        "Kakashi air B late: predicted 25, measured 25"
+      ],
+      "misses": [
+        "Kenshin double jump: predicted 19, measured 22",
+        "Kenshin one air B: predicted 26, measured 25",
+        "Kenshin double jump plus air B: predicted 7, measured 34",
+        "Yusuke air Y late: predicted 21, measured 25",
+        "Kakashi air Y late: predicted 21, measured 25"
+      ]
+    },
+    "probe_coverage": [
+      "The probe records landing state, obj+0x72, obj+0x110, the state path, and movement return.",
+      "The content-level animation length was not read independently from ROM or another source.",
+      "The no-input probe's state path includes the frame when control returns."
+    ],
+    "review_rule": "Separate direct measurements, values derived from the same outcome, and independent predictions. Do not treat sample size as the only possible weakness."
+  },
+  "model": "jev-latest",
+  "questions": {
+    "claim_status": {
+      "type": "choice",
+      "instructions": "What is the strongest status supported for the formula as a general mechanic?",
+      "criteria": {
+        "supported_general_mechanic": "The formula uses an independently established input and predicts fresh runs successfully.",
+        "unsupported_within_run_fit": "The within-run matches are valid, but the proposed input was derived from the same run's outcome and does not establish a general mechanic.",
+        "contradicted_by_holdout": "The cross-run prediction result materially conflicts with the proposed general mechanic.",
+        "inconclusive": "The packet lacks enough measurements to evaluate the formula."
+      }
+    },
+    "primary_issue": {
+      "type": "choice",
+      "instructions": "What is the most important evidentiary issue in promoting the within-run matches to a mechanic?",
+      "criteria": {
+        "input_not_independent": "Animation length was derived from the same run's control-return observation rather than known before the target outcome.",
+        "too_few_repetitions": "The inputs are independent and predictive, but there are too few trials.",
+        "landing_not_measured": "The packet does not establish the landing or movement-return outcomes.",
+        "no_material_issue": "The packet establishes the formula as a general mechanic."
+      }
+    },
+    "preserves_measurements": {
+      "type": "noul",
+      "instructions": "If the general mechanic is rejected, do the 12/12 and 11/11 numerical matches and their recorded landing measurements remain valid observations?",
+      "criteria": {
+        "true": "Rejecting the generalization does not invalidate the recorded values or within-run arithmetic matches.",
+        "false": "Rejecting the formula requires discarding those measurements."
+      }
+    }
+  }
+}

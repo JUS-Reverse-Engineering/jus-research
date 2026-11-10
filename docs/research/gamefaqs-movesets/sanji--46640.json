@@ -1,0 +1,316 @@
+{
+  "character": "Sanji",
+  "series": "One Piece",
+  "chr_b": 14,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md, row '14 | op_b_03 | Sanji'",
+  "source": {"file": "46640-sanji.txt", "gamefaqs_id": 46640, "author": "bitsquall", "version": null},
+  "kit_type": "standard",
+  "natures_available": ["power", "laughter"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Gain more Health from Food."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Sanji appears holding out food. Heals any character that touches him, even enemies. Heals a small amount of HP. Heals girl characters more.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": null,
+          "description": "Sanji is summoned in front of you and runs a fair distance forward doing a 4-hit combo.",
+          "damage": "1st hit - 7 Damage to Power/Laughter (10 to Knowledge); 2nd hit - 7 Damage to Power/Laughter (11 to Knowledge); 3rd hit - 7 Damage to Power/Laughter (10 to Knowledge); 4th hit - 18 Damage to Power/Laughter (27 to Knowledge); Total - 39 Damage to Power/Laughter (58 to Knowledge)",
+          "hits": 4,
+          "properties": [],
+          "quote": "Sanji is summoned in front of you and runs a fair distance forward doing a 4-hit combo."
+        }
+      ],
+      "support_effect": "Sanji is summoned in front of you and runs a fair distance forward doing a 4-hit combo, dealing 39 Damage total to Power/Laughter (58 to Knowledge).",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sanji kicks two times in multiples of threes for 1 damage each hit while slowly moving forward, then switches into a four-hit combo of two damage each hit and ends it with a 10 damage kick.",
+          "damage": "1-24",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Sanji kicks two times in multiples of threes for 1 damage each hit while slowly moving forward, then switches into a four-hit combo of two damage each hit and ends it with a 10 damage kick."
+        },
+        {
+          "input": "up+X",
+          "name": null,
+          "description": "Sanji leaps into the air forward while spinning and heads straight down going through any platforms in the way. Sanji hits for 6 damage each hit, capable of doing more damage the closer the opponent is and the further away from the ground you are; once he hits the ground the impact does 10 damage, so you subtract one from the number of hits for that impact hit and add the 10 damage.",
+          "damage": "6 x Number of Hits -1 + 10",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Basically, Sanji hits for 6 Damage each hit, capable of doing more damage the closer the opponent is, and the further away from the ground you are. However, once he hits the ground the impact does 10 damage. Which is why you subtract one from the number of hits because of that impact hit and add the 10 damage."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sanji kicks the enemy 6 times doing two damage per hit and ends the attack with a tornado kick, Mutton Shoot, which does 5 consecutive hits of two Damage except the 5th does 32 Damage.",
+          "damage": "2-32",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Sanji kicks the enemy 6 times doing two damage per hit and ends the attack with a tornado kick, Mutton Shoot. Which does 5 consecutive hits of two Damage except the 5th does 32 Damage."
+        },
+        {
+          "input": "up+X",
+          "name": "Mellorine",
+          "description": "Sanji spins around for about 3 seconds maximum and stops spinning when 3 seconds pass or if he runs into an unguarded opponent. If the character is male-type, Sanji kicks them for 30 Damage. If it is a female character, Sanji gets the Mellorine Status Effect which increases his damage per female character in his deck.",
+          "damage": "30/0",
+          "hits": null,
+          "properties": ["status:mellorine", "charge"],
+          "quote": "Sanji then does two different actions depending on the character. If the character is a male-type character, Sanji kicks them for 30 points of Damage. If it is a female character, Sanji the Mellorine Status Effect which increases his damage per female character in your deck."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sanji kicks the enemy 6 times doing two damage per hit and ends the attack with a tornado kick, Mutton Shoot, which does 5 consecutive hits of two Damage except the 5th does 32 Damage.",
+          "damage": "2-32",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "Sanji kicks the enemy 6 times doing two damage per hit and ends the attack with a tornado kick, Mutton Shoot. Which does 5 consecutive hits of two Damage except the 5th does 32 Damage."
+        },
+        {
+          "input": "up+X",
+          "name": "Mellorine",
+          "description": "Sanji spins around for about 3 seconds maximum and stops spinning when 3 seconds pass or if he runs into an unguarded opponent. If the character is male-type, Sanji kicks them for 30 Damage. If it is a female character, Sanji gets the Mellorine Status Effect which increases his damage per female character in his deck.",
+          "damage": "30/0",
+          "hits": null,
+          "properties": ["status:mellorine", "charge"],
+          "quote": "Sanji then does two different actions depending on the character. If the character is a male-type character, Sanji kicks them for 30 points of Damage. If it is a female character, Sanji the Mellorine Status Effect which increases his damage per female character in your deck."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "unresolved_note": "This is the Alternate 5-Koma, called out as Laughter-typed while all other Sanji koma are Power-typed. Its move text is identical to the standard 5-Koma in the guide."
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Sanji kicks seven times in multiples of four damage per hit while slowly moving forward. On the seventh hit Sanji knocks the enemy into the air and does an eighth kick of 8 Damage.",
+          "damage": "4-40",
+          "hits": 8,
+          "properties": ["multi-hit", "launcher"],
+          "quote": "Sanji kicks seven times in multiples of four damage per hit while slowly moving forward. On the Seventh hit Sanji knocks the enemy into the air and does an eigth kick of 8 Damage."
+        },
+        {
+          "input": "up+X",
+          "name": "Mellorine",
+          "description": "Sanji gets the Mellorine Status Effect and damage increases per female Koma in his deck.",
+          "damage": "0",
+          "hits": null,
+          "properties": ["status:mellorine"],
+          "quote": "Sanji gets the Mellorine Status Effect and damage increases per female Koma in your deck."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "other",
+      "name": "A+B tap attack",
+      "description": "Sanji spins clockwise and kicks in a downward direction. Can push enemies through platforms.",
+      "damage": "7 (4-Koma/6-Koma); 10 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": [],
+      "quote": "Sanji spins clockwise and kicks in a downward direction. Can push enemies through platforms."
+    },
+    {
+      "input": "other",
+      "name": "A+Y tap attack",
+      "description": "Sanji starts spinning at a 45 degree angle doing damage in multiples of 2 (4-Koma/6-Koma) or 3 (5-Koma/Alternate 5-Koma) until he hits the ground/platform or is hit.",
+      "damage": "2 x Number of hits (4-Koma/6-Koma); 3 x Number of hits (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "Sanji starts spinning at a 45 degree angle doing damage in multiples of 2 until he hits the ground/platform or is hit."
+    },
+    {
+      "input": "B",
+      "name": null,
+      "description": "Kick angled upwards.",
+      "damage": "7 (4-Koma/6-Koma); 10 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": [],
+      "quote": "Kick angled upwards."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Kick hit at a 90 degree angle.",
+      "damage": "7 (4-Koma/6-Koma); 10 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": [],
+      "quote": "Kick hit at a 90 degree angle."
+    },
+    {
+      "input": "down B",
+      "name": "Mellorine Mode",
+      "description": "Sanji spins in his 'Mellorine Mode' capable of forcing them to switch Battle Characters.",
+      "damage": "4 x Number of hits (4-Koma/6-Koma); 6 x Number of hits (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["forced switch", "multi-hit"],
+      "quote": "Sanji spins in his 'Mellorine Mode' capable of forcing them to switch Battle Characters."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Sanji kicks his shoe off like a projectile.",
+      "damage": "7 (4-Koma/6-Koma); 10 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Sanji kicks his shoe off like a projectile."
+    },
+    {
+      "input": "side B",
+      "name": "Forward Dash + Projectile Shoe",
+      "description": "Forward Dash (double-tap forward) + Projectile Shoe.",
+      "damage": "7 (4-Koma/6-Koma); 10 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Forward Dash + Projectile Shoe"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Sanji goes on his hands and starts kicking rapidly for a maximum of 12 hits. Press Y repeatedly for more hits.",
+      "damage": "1 x Number of Hits (4-Koma/6-Koma); 1-2 x Number of Hits (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Sanji goes on his hands and starts kicking rapidly for a maximum of 12 hits. Press Y repeatedly for more hits."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Sanji kicks upwards at a 90 degree angle into the air, capable of bringing the opponent into the air along with himself.",
+      "damage": "15 (4-Koma/6-Koma); 22 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Sanji kicks upwards at a 90 degree angle into the air, capable of bringing the opponent into the air along with himself."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Sanji starts spinning around on one hand for about a second and does a Guard Break in the direction he was facing.",
+      "damage": "14 (4-Koma/6-Koma); 21 (5-Koma/Alternate 5-Koma)",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Sanji starts spinning around on one hand for about a second and does a Guard Break in the direction he was facing."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Sanji kicks forward in a drop kick-like style that is 3 quick hits.",
+      "damage": "3-14, First - 3, Second - 3, Third - 8 (4-Koma/6-Koma); 4-21, First - 4, Second - 5, Third - 12 (5-Koma/Alternate 5-Koma)",
+      "hits": 3,
+      "properties": ["multi-hit"],
+      "quote": "Sanji kicks forward in a drop kick-like style that is 3 quick hits."
+    },
+    {
+      "input": "side Y",
+      "name": "Forward Dash + Drop Kick",
+      "description": "Forward Dash (double-tap forward) + Drop Kick.",
+      "damage": "3-14 (4-Koma/6-Koma); 4-21 (5-Koma/Alternate 5-Koma)",
+      "hits": 3,
+      "properties": ["multi-hit"],
+      "quote": "Forward Dash + Drop Kick."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Sanji pulls out an empty plate and spins around a bit. When he's done there will be food on the plate which heals every OTHER Battle Character in your Deck's HP. Sandwiches heal the least, Parfaits heal average, and the Chicken heals the most.",
+      "damage": "0",
+      "hits": null,
+      "properties": [],
+      "quote": "His Ultimate Action. Sanji pulls out an empty plate and spins around a bit. When's he's done there will be food on the plate which heals every OTHER Battle Character in your Deck's HP. Sandwiches heal the least. Parfaits heal average. And the Chicken heals the most."
+    }
+  ],
+  "combos": [
+    "B, Up B, Y - Damage: 26 Damage to Power, 39 to Knowledge, 26 to Laughter",
+    "B, Up B, Y, Forward Y - Damage: 40 Damage to Power, 60 to Knowledge, 40 to Laughter",
+    "B, Up B, Y, Up Y - Can only be done when the enemy is backed up against something (Wall). Damage: 41 Damage to Power, 61 to Knowledge, 41 to Laughter",
+    "B, Up B, Y, Up Y, B - Can only be done when the enemy is backed up against something. Damage: 48 Damage to Power, 71 to Knowledge, 48 to Laughter",
+    "B, Up B, Y, Up Y, Y - Can only be done when the enemy is backed up against something. Damage: 55 Damage to Power, 82 to Knowledge, 55 to Laughter",
+    "B, Forward B, Y - Damage: 26 Damage to Power, 39 to Knowledge, 26 to Laughter",
+    "B, Forward B, Y, Forward Y - Damage: 40 Damage to Power, 60 to Knowledge, 40 to Laughter",
+    "B, Forward B, Y, Up Y - Can only be done when the enemy is backed up against something (Wall). Damage: 41 Damage to Power, 61 to Knowledge, 41 to Laughter",
+    "B, Forward B, Y, Up Y, B - Can only be done when the enemy is backed up against something. Damage: 48 Damage to Power, 71 to Knowledge, 48 to Laughter",
+    "B, Forward B, Y, Up Y, Y - Can only be done when the enemy is backed up against something. Damage: 55 Damage to Power, 82 to Knowledge, 55 to Laughter",
+    "B, Up Y, B - Damage: 22 Damage to Power, 33 to Knowledge, 22 to Laughter",
+    "B, Up Y, Y - Damage differs if not directly on the ground. Damage: 25 Damage to Power, 37 to Knowledge, 25 to Laughter",
+    "4-Koma: B, Forward B, Y, X - Damage: 50 Damage to Power, 75 to Knowledge, 50 to Laughter",
+    "4-Koma: B, Up B, Up X - Damage differs if not directly on the ground. Damage: 28 Damage to Power, 42 to Knowledge, 28 to Laughter",
+    "5-Koma: B, Forward B, Y, Up X - Causes Confusion/Gives Heart Status. Male Damage: 56 Damage to Power, 84 to Knowledge, 56 to Laughter. Female Damage: 26 Damage to Power, 39 to Knowledge, 26 to Laughter",
+    "5-Koma: B, Up B, X - Damage: 46 Damage to Power, 69 to Knowledge, 46 to Laughter",
+    "6-Koma: B, Forward B, Y, X - Damage: 66 Damage to Power, 99 to Knowledge, 66 to Laughter"
+  ],
+  "unresolved": [
+    "Guide's basic B/Y/tap-attack moves are koma-size dependent (7 damage for 4-Koma/6-Koma, 10 for 5-Koma/Alternate 5-Koma) rather than a single universal value; the schema's 'moves' array assumes one value per input, so this file records both values together in the 'damage' field rather than inventing an average or picking one.",
+    "The guide's tap attacks (A+B, A+Y) do not map cleanly onto the schema's input vocabulary (B/side B/up B/down B/air B/Y/side Y/up Y/down Y/air Y/select/B string/other); they were filed under input:'other' since they are launched by tapping the character on the field per the Controls section, not a directional B/Y input.",
+    "Alternate 5-Koma's move text (B/Y/X/Up X sections) is presented as byte-for-byte identical to the standard 5-Koma's in the guide; only the intro note ('5 Koma... Alternate 5-Koma, which IS Laughter') distinguishes them by nature. No separate numbers are given for the Alternate 5-Koma.",
+    "4-Koma X is not described as ending in a launch/knockdown explicitly (unlike 6-Koma X, which explicitly knocks the enemy into the air on the 7th hit) — treated as a plain multi-hit rather than a launcher, per the guide's wording.",
+    "Guide's Controls section states the B button 'is capable of being canceled into either Y or Forward B' and Y 'is usually capable of being cancelled into a Forward Y' — general cancel rules, not tied to a specific move, so not captured as a move entry.",
+    "Guide gives no version number in its header; only the author (bitsquall) is stated.",
+    "5-Koma Up+X quote is garbled in the source ('Sanji then does two different actions... Sanji the Mellorine Status Effect' — missing a verb like 'gets'); reproduced as written in the quote field, paraphrased for clarity in description.",
+    "Koma opinions section (VIII) states 5-Koma's Up X 'can't' be used to ring out female characters, and describes ringout/mind-game strategy for 4-, 5-, and 6-Koma, plus a Koma Deck Support section (Nami/Zoro/Bianchi ally boosts, recommended Help/Support/Both abilities) — these are strategy commentary, not moves, and are omitted from the structured move/koma data."
+  ]
+}

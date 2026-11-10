@@ -1,0 +1,12 @@
+{
+ "_about": "The characters anim_timing.py and vfx_sfx_build.py write into docs/rebuild/anim-timing.json and vfx-sfx.json, in output order. Any other character is passed on the command line (--char NAME --chr-b N [--prefix P]) and is not written here. sound_seqarc: the SDAT sequence archive whose sounds vfx-sfx.json renders for that character (absent: none; null: unknown).",
+ "characters": {
+  "kakashi": {"chr_b": 23, "prefix": "na_b_04", "sound_seqarc": "SEQ_NA_B_04"},
+  "yusuke": {"chr_b": 32, "prefix": "yh_b_01"},
+  "eve": {"chr_b": 37, "prefix": "bc_b_01"},
+  "train": {"chr_b": 38, "prefix": "bc_b_02"},
+  "taikoubou": {"chr_b": 68, "prefix": "hs_b_01"},
+  "komamen": {"chr_b": 70, "prefix": "dt_b_01"},
+  "kenshin": {"chr_b": 36, "prefix": "rk_b_01", "sound_seqarc": null}
+ }
+}

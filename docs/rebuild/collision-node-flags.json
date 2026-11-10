@@ -1,0 +1,259 @@
+{
+  "schema": "collision-node-flags/v1",
+  "source": {
+    "table": "0x0209FD44",
+    "literal": "0x0207D854",
+    "loop": "0x0207D684..0x0207D6E8",
+    "stride": 128
+  },
+  "bits": [
+    {
+      "bit": 0,
+      "w14": 67108864,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 1,
+      "w14": 134217728,
+      "w18": 0,
+      "w1c": 1755119360
+    },
+    {
+      "bit": 2,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 268435456
+    },
+    {
+      "bit": 3,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 536870912
+    },
+    {
+      "bit": 4,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 805306368
+    },
+    {
+      "bit": 5,
+      "w14": 0,
+      "w18": 1,
+      "w1c": 0
+    },
+    {
+      "bit": 6,
+      "w14": 0,
+      "w18": 8,
+      "w1c": 0
+    },
+    {
+      "bit": 7,
+      "w14": 0,
+      "w18": 16,
+      "w1c": 0
+    },
+    {
+      "bit": 8,
+      "w14": 0,
+      "w18": 2,
+      "w1c": 0
+    },
+    {
+      "bit": 9,
+      "w14": 0,
+      "w18": 4,
+      "w1c": 0
+    },
+    {
+      "bit": 10,
+      "w14": 0,
+      "w18": 64,
+      "w1c": 0
+    },
+    {
+      "bit": 11,
+      "w14": 0,
+      "w18": 128,
+      "w1c": 0
+    },
+    {
+      "bit": 12,
+      "w14": 16777216,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 13,
+      "w14": 0,
+      "w18": 512,
+      "w1c": 0
+    },
+    {
+      "bit": 14,
+      "w14": 33554432,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 15,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 16,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 17,
+      "w14": 0,
+      "w18": 1024,
+      "w1c": 0
+    },
+    {
+      "bit": 18,
+      "w14": 0,
+      "w18": 4096,
+      "w1c": 0
+    },
+    {
+      "bit": 19,
+      "w14": 0,
+      "w18": 8192,
+      "w1c": 1792
+    },
+    {
+      "bit": 20,
+      "w14": 0,
+      "w18": 65536,
+      "w1c": 0
+    },
+    {
+      "bit": 21,
+      "w14": 0,
+      "w18": 131072,
+      "w1c": 0
+    },
+    {
+      "bit": 22,
+      "w14": 0,
+      "w18": 262144,
+      "w1c": 0
+    },
+    {
+      "bit": 23,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 24,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 25,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 26,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 27,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 28,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 29,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 30,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    },
+    {
+      "bit": 31,
+      "w14": 0,
+      "w18": 0,
+      "w1c": 0
+    }
+  ],
+  "node_classes": [
+    {
+      "source": "record",
+      "w14_or_class": "undecoded",
+      "cite": "0x0207D498..0x0207D51C; inherits owner word, priority chooses attack/body class"
+    },
+    {
+      "source": "body",
+      "w14_or_class": "undecoded",
+      "cite": "0x0207D570..0x0207D618; built-in classes depend on collision id"
+    },
+    {
+      "source": "shot",
+      "w14_or_class": "undecoded",
+      "cite": "0x0216D1D8..0x0216D218;0x0216E084..0x0216E0B8; owner word inherited with0x1000"
+    }
+  ],
+  "predicates": {
+    "broadphase_exclusion": {
+      "rule": "(a.w1c & b.class) != 0 -> skip",
+      "cite": "0x0207B848..0x0207B854",
+      "direction": "A exclusion word tests B classification word"
+    },
+    "counter_pair": {
+      "latch": "pair",
+      "priority_ge_own": true,
+      "gates": [
+        "node14&0x00080800 clear",
+        "node1c&0x10000000 clear",
+        "ColPrm40&0x80 clear",
+        "incoming node14&0x1000 clear",
+        "incoming node14 intersects own exclusion mask -> broadphase skip",
+        "pair10&4 clear",
+        "own node14&0x10000000 set",
+        "own node14&0x40000000 clear"
+      ],
+      "on_latch": {
+        "seek_marker": 1
+      },
+      "cite": "0x0207FC04..0x0207FCF4;0x021564E8"
+    },
+    "forced_switch": {
+      "target": "victim_team",
+      "select": "first_eligible_from_head",
+      "skip": [
+        "unavailable",
+        "flag_0x1000",
+        "current"
+      ],
+      "timing": "inside_receive_before_damage_sp",
+      "old_entry_clear": "0xFFFFF000",
+      "callback": "shared_manual_kind1",
+      "damage_target": "incoming",
+      "cite": "0x020817D0..0x020817E4;0x0215AC38..0x0215AC70;0x02078660"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "unsupported_inference", "preserved_observations", "missing_evidence", "next_test"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["supported", "contradicted", "unsupported_within_run_fit", "inconclusive"]},
+    "unsupported_inference": {"type": "string"},
+    "preserved_observations": {"type": "array", "items": {"type": "string"}},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "next_test": {"type": "string"}
+  }
+}

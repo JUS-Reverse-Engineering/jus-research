@@ -1,0 +1,122 @@
+{
+  "character": "Muhyo",
+  "series": "Muhyo",
+  "chr_b": 59,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; null if the character is not in the table",
+  "source": {"file": "47061-muhyo-yamcha.txt", "gamefaqs_id": 47061, "author": "Yamcha", "version": "1.1"},
+  "kit_type": "summoner",
+  "natures_available": ["knowledge", "laughter", "power"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Attack strength goes up when health is low."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [{"input": "X", "name": "Kin no Maku", "description": "Grants invisibility for a short time.", "damage": null, "hits": null, "properties": ["status:invisibility"], "quote": "Muhyo 2 Koma [Knowledge] - Kin no Maku. Effect: Grants invisibilty for a short time."}],
+      "support_effect": "Grants invisibility for a short time. Cost: 50 Green, 5 White.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [{"input": "X", "name": "Kin no Yoroi", "description": "Grants invincibility for a short time.", "damage": null, "hits": null, "properties": ["status:invincibility"], "quote": "Muhyo 3 Koma [Knowledge] - Kin no Yoroi. Effect: Grants invincibilty for a short time."}],
+      "support_effect": "Grants invincibility for a short time. Cost: 100 Green, 10 White.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "128",
+      "passives": ["Unknown"],
+      "specials": [
+        {"input": "X", "name": "Meiou no Bansan no Kei", "description": "A monster's mouth appears from the ground and swallows anyone caught in it. Leaves you open when used. Best used after a Neutral Y attack.", "damage": "40 [P][K], 60 [L]", "hits": null, "properties": [], "quote": "A monster's mouth appears from the ground and swallows anyone that gets caught in it. This move leaves you open whenever you use it. To ensure a higher success rate, this is best used after your Neutral Y attack."},
+        {"input": "up X", "name": "Mazukan no Kei", "description": "A large spellbook appears overhead and its pages flip to damage enemies. Difficult to set up for full damage.", "damage": "33 [P][K], 49 [L]", "hits": null, "properties": [], "quote": "A large spellbook appears overhead and the pages start flipping to damage enemies. It is difficult to set this up just right to get full damage."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "144",
+      "passives": ["Unknown"],
+      "specials": [
+        {"input": "X", "name": "Maretsusha no Kei", "description": "A train appears behind Muhyo and rushes forward to hit anyone in front of you.", "damage": "40 [P][K], 60 [L]", "hits": null, "properties": [], "quote": "A train appears behind Muhyo and rushes forward to hit anyone in front of you."},
+        {"input": "up X", "name": "Yuurishoukan", "description": "A grey monster appears and swirls upwards, creating a small vortex that catches people around him. Use the control pad to change his vertical direction.", "damage": "48 [P][K], 72 [L]", "hits": null, "properties": [], "quote": "A grey monster appears and swirls upwards. It creates a small vortex that catches people around him. Use the control pad to change his vertical direction."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "160",
+      "passives": ["Unknown"],
+      "specials": [
+        {"input": "X", "name": "Makensui no Kei", "description": "A knight(?) on horseback is summoned and charges forward. Powerful, but can be easily blocked by enemy supports occupying the field.", "damage": "~50 [P][K], ~72 [L]", "hits": null, "properties": [], "quote": "A knight(?) on horseback is summoned and charges forward. This special is powerful but can easily be blocked by enemy supports that are occupying space on the field."},
+        {"input": "up X", "name": "Yuurisoukan Hontou no Sugata", "description": "An improved and more powerful version of the regular Yuurisoukan; a larger spinning monster with a bigger vortex area that can catch two fighters. Use the control pad to change direction.", "damage": "~56 [P][K], ~84 [L]", "hits": null, "properties": [], "quote": "An improved and more powerful version of the regular Yuurisoukan. A larger spinning monster appears and does the same thing. This guy has a bigger vortex area so you can easily catch two fighters in this special. Use the control pad to change his direction."}
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": "176",
+      "passives": ["Unknown"],
+      "specials": [
+        {"input": "X", "name": "Meiouruararieshoukan Touato no Yari", "description": "An extremely slow but powerful attack; a giant monster is summoned to throw a lance ahead of you. Best used in a free-for-all when everyone else is busy, out of their field of view.", "damage": "52 [P][K], 78 [L]", "hits": null, "properties": [], "quote": "An extremely slow but powerful attack. A giant monster is summoned to throw a lance ahead of you. This move is best used in a free for all when everyone else is busy. Move out of their field of view, then use the special and hope no one sees you."},
+        {"input": "up X", "name": "Meiouruararieshoukan Senpen no Shita", "description": "Another big monster is summoned that tosses a flurry of punches in front of you. Has some edge-guarding potential if timed correctly. Press X for more hits.", "damage": "64 [P][K], 96 [L]", "hits": null, "properties": ["mash-extend", "multi-hit"], "quote": "Another big monster is summoned, but this time he tosses a flurry of punches in front of you. This move has some edge guarding potential if you can time it correctly. Press X for more hits."}
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "note": "Guide: 'Muhyo is the only Knowledge nature in the game with a 7 Koma.' This path must be unlocked in Page's Chart."
+    }
+  ],
+  "moves": [
+    {"input": "B", "name": "Book Smack", "description": "Muhyo's combo starting move; a fast, short-ranged attack.", "damage": "6 [Power][Knowledge], 9 [Laughter]", "hits": null, "properties": [], "quote": "B - Book Smack. Damage: 6 [Power][Knowledge], 9 [Laughter]. Description: Muhyo's combo starting move. A fast, short ranged attack."},
+    {"input": "side B", "name": "Ghost Attacker", "description": "A small monster slashes at opponents in front of you. Minimal downtime, so it's a safe poke to use often. Hold B to increase the range.", "damage": "9 [P][K], 13 [L]", "hits": null, "properties": ["charge"], "quote": "Forward B - Ghost Attacker. Damage: 9 [P][K], 13 [L]. Description: A small monster slashes at opponents in front of you. The downtime after the attack is minimal so it's a safe poke to use often. Hold B to increase the range."},
+    {"input": "up B", "name": "Spike Summon", "description": "The air launcher; fairly fast, sends the opponent upwards. Used to start air combos.", "damage": "9 [P][K], 13 [L]", "hits": null, "properties": ["launcher"], "quote": "Up B - Spike Summon. Damage: 9 [P][K], 13 [L]. Description: The air launcher. Fairly fast and sends the opponent upwards. This is the move you'll use to start your air combos. Muhyo has a lot of good anti-air moves to utilize afterwards."},
+    {"input": "down B", "name": "Palm Thrust", "description": "A standard character-change move. Activates quickly but has lag time afterward. Cannot be integrated into combos.", "damage": "7 [P][K], 10 [L]", "hits": null, "properties": ["forced switch"], "quote": "Down B - Palm Thrust. Damage: 7 [P][K], 10 [L]. Description: Just a standard character change move. It activates very quickly but has some lag time afterwards. This move can't be integrated into any combos."},
+    {"input": "air B", "name": "Aerial Ghost Attacker", "description": "Somehow hits harder than its ground counterpart. A good air poke to encourage others to keep their distance.", "damage": "10 [P][K], 15 [L]", "hits": null, "properties": [], "quote": "Jump B - Aerial Ghost Attacker. Damage: 10 [P][K], 15 [L]. Description: Somehow this move hits harder than its ground counterpart. A good air poke to encourage others to keep their distance."},
+    {"input": "Y", "name": "Satan's Shadow", "description": "A purple monster pops out of the ground and drags the opponent away if it connects. Significant lag afterward whether it hits or misses; don't use it alone or if someone is behind you. Can't go through walls, and ordinarily can't go off platforms/ledges unless it grabs someone near a ledge. Hold Y to extend range.", "damage": "16 [P][K], 24 [L]", "hits": null, "properties": ["charge"], "quote": "Y - Satan's Shadow. Damage: 16 [P][K], 24 [L]. Description: A purple monster pops out of the ground and drags the opponent away if it connects. There is significant lag afterwards regardless if it connects or misses. Don't use it if someone is behind you, because you are wide open. Also do NOT use this move on its own. The safest way to ensure this move connects is to use it from a combo. THe monster can't go through walls. Ordinarily it also can't go off of platforms or ledges on its own. However if it grabs someone near a ledge then it can drag them off the stage. Hold Y to extend the range."},
+    {"input": "side Y", "name": "Giant Fork Summon", "description": "Launches people upwards; quick, but use in moderation because it becomes predictable. If the near side of the fork connects, the enemy launches toward you; if the far side connects, they launch away. Directly after Neutral Y, the latter happens. Hold Y to extend range.", "damage": "20 [P][K], 30 [L]", "hits": null, "properties": ["launcher", "charge"], "quote": "Forward Y - Giant Fork Summon. Damage: 20 [P][K], 30 [L]. Description: A great move that launches people upwards. While it is quick, use it in moderation because it can become predictable. This particular move has a strange trait. If the side of the fork closer to you connects, your enemy is launched toward you. If the side further from you connects, they are launched away. When you use this in a combo directly after the Neutral Y the latter will happen. Hold Y to extend the range."},
+    {"input": "up Y", "name": "Never Returning Owl", "description": "A quick anti-air attack. Best used as combo filler since it's hard to connect on its own; can also scare aerial fighters back to the ground.", "damage": "20 [P][K], 30 [L]", "hits": null, "properties": [], "quote": "Up Y - Never Returning Owl. Damage: 20 [P][K], 30 [L]. Description: A quick anti-air attack. Best used as combo filler as it is hard to connect on its own. You can also use this to scare aerial fighters into coming back to the ground."},
+    {"input": "down Y", "name": "Satan's Iron Hammer", "description": "A nice guard break that comes out quickly and can hit multiple blockers.", "damage": "First Hit: 8 [P][K], 12 [L]; Both Hits: 18 [P][K], 27 [L]", "hits": 2, "properties": ["guard break", "multi-hit"], "quote": "Down Y - Satan's Iron Hammer. Damage: First Hit: 8 [P][K], 12 [L] / Both Hits: 18 [P][K], 27 [L]. Description: A nice guard break that comes out quickly and has the potential to hit multiple blockers."},
+    {"input": "air Y", "name": "Shadow Blobs", "description": "Three shadow things emerge from the ground and explode in mid-air. Useful for hitting unsuspecting crowds underneath you.", "damage": "7 [P][K], 10 [L] per hit", "hits": 3, "properties": ["multi-hit"], "quote": "Jump Y - Shadow Blobs. Damage per hit: 7 [P][K], 10 [L]. Description: Three shadow things emerge from the ground and explode in mid-air. It's very useful for hitting unsuspecting crowds underneath you."}
+  ],
+  "combos": [
+    "B -> Y -> Forward Y",
+    "B -> Forward B -> Y -> Forward Y",
+    "B -> Up B -> Up Y",
+    "B -> Forward B -> Y -> X [Applicable to 4, 5, 6 Koma]",
+    "B -> Up B -> Up X [Applicable to 5, 6 Koma]",
+    "B -> Forward B -> Forward Y -> Up X [5, 6 Koma]"
+  ],
+  "unresolved": [
+    "Passive Effects are listed as literally 'Unknown' for every battle koma size (4, 5, 6, 7) in the guide's own Koma Information section — not a gap in extraction, the guide itself doesn't know them.",
+    "No down+B'forced switch' distinct damage/description beyond what's given for Palm Thrust; the guide calls it 'a standard character change move' so it is tagged 'forced switch' here.",
+    "No SELECT Ultimate Action combat description beyond 'Hold Select to sleep and regain SP' repeated for every koma size — treated as a shared passive-like SP regen action rather than a per-koma move since it doesn't vary.",
+    "Guide states 'All moves are of the Knowledge nature except where noted' but then gives three parallel damage numbers per move labeled [Power][Knowledge] and [Laughter] with no explanation of when a player would be in Power vs Knowledge vs Laughter nature; natures_available includes all three seen in damage brackets, but the guide never clarifies how nature is chosen or switched.",
+    "No X-string / B-string is described anywhere in this guide.",
+    "'Guide title mentions Yamcha but the guide is entirely about Muhyo; Yamcha is confirmed as only the author's screen name, not a second character."
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "character": "Kenshiro",
+  "series": "Hokuto no Ken",
+  "chr_b": 61,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md; row chr_b=61, hk_b_01, Kenshiro, Hokuto no Ken",
+  "source": {"file": "46478-kenshiro.txt", "gamefaqs_id": 46478, "author": "Demon-Inuyasha", "version": "1.1"},
+  "kit_type": "standard",
+  "natures_available": ["power"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "cause whichever character you attached him to, to have their special gauge regenerate when they are on the field",
+      "quote": "His help koma cause whichever character you attached him to, to have their special gauge regenerate when they are on the field."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Hokuto Gokin Bundan Kyaku",
+          "description": "Kenshiro performs 2 kicks to the opponent, inflicting damage and speed down status.",
+          "damage": "20 / 20 / 30",
+          "hits": "2",
+          "properties": ["status:speed down"],
+          "quote": "Kenshiro will perform 2 kicks to the opponent. Inflicting damage and speed down status on them."
+        }
+      ],
+      "support_effect": "2 kicks dealing damage and inflicting speed down status; Type: Power",
+      "help_effect": null,
+      "quote": "Name: Hokuto Gokin Bundan Kyaku Type: Power Number of Hits: 2"
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support",
+          "name": "Hokuto Hyakuretsu Ken",
+          "description": "Kenshiro performs 11 punches, inflicting damage and additional damage afterwards; if the opponent is standing on a breakable floor, they fall through.",
+          "damage": "23+2+4 (Power/Laughter) / 34+3+6 (Knowledge)",
+          "hits": "11",
+          "properties": ["multi-hit"],
+          "quote": "Kenshiro will perform 11 punches to the opponent inflicting damage and additional damage afterwards. When opponent is standing on breakable floor the opponent will fall through."
+        }
+      ],
+      "support_effect": "11 punches with additional follow-up damage; breaks breakable floor; Type: Power",
+      "help_effect": null,
+      "quote": "Name: Hokuto Hyakuretsu Ken Type: Power Number of Hits: 11"
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes Less Damage from Special Attacks", "Gain SP Energy when blocking"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hokuto Hyakuretsu Ken (Additional Damage Follows)",
+          "description": "Kenshiro performs 17 punches, inflicting damage and additional damage afterwards; repeated presses of X add more damage; if opponent is on breakable floor they fall through.",
+          "damage": "26+10 (Power/Laughter) / 39+15 (Knowledge)",
+          "hits": "17",
+          "properties": ["multi-hit", "mash-extend"],
+          "quote": "Kenshiro will perform 17 punches to the opponent. Inflicting damage and additional damage afterwards. Repeated press X for more damage. When opponent is standing on breakable floor opponent will fall through."
+        },
+        {
+          "input": "X",
+          "name": "Hokuto Shin Ken Tenryu Kokyu Ho",
+          "description": "Kenshiro gains Attack-boost status.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:attack-boost"],
+          "quote": "Kenshiro gains Attack-boost status."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "4 Koma: [][] [][] Type: Power ... Overall: One of the best 4 Komas in the game, his Special attack A is just so good and combos easily."
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes Less Damage from Special Attacks", "Gain SP Energy when blocking"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hokuto Senju Kai Ken",
+          "description": "Kenshiro performs 13 punches starting with 3 jabs then 10 fury punches; additional damage follows afterwards; if opponent is on breakable floor they fall through.",
+          "damage": "32+14 (Power/Laughter) / 48+21 (Knowledge)",
+          "hits": "13",
+          "properties": ["multi-hit"],
+          "quote": "Kenshiro will perform 13 punches starting with 3 jabs. Then rushing with 10 fury punches. Additional damage will follow afterwards. When opponent is standing on breakable floor opponent will fall through."
+        },
+        {
+          "input": "X",
+          "name": "Suieishin",
+          "description": "Kenshiro spreads his arms out then slides forward quickly.",
+          "damage": "33 / 33 / 49",
+          "hits": "1",
+          "properties": [],
+          "quote": "Kenshiro will spread his arms out then slide forward quickly."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "5 Koma: [][][] [][] Type: Power ... Overall: Very good. Kenshiro can combo both his specials and both of them do a ton of damage"
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes Less Damage from Special Attacks", "Gain SP Energy when blocking"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Tenha Katsusatsu",
+          "description": "Kenshiro waves his arm in a circle and shoots a blue cloud, causing damage and inflicting speed down status.",
+          "damage": "40 / 40 / 60",
+          "hits": "1",
+          "properties": ["status:speed down", "projectile"],
+          "quote": "Kenshiro will wave his arm in a circle and shoot a blue cloud. Causing damage and inflicting speed down status on his opponent."
+        },
+        {
+          "input": "X",
+          "name": "Hiko - Jinchukyoku",
+          "description": "Kenshiro slides forward a little and throws a jab; if it connects he performs 9 hits, damaging and inflicting Judgement status.",
+          "damage": "34 / 34 / 51",
+          "hits": "9",
+          "properties": ["multi-hit", "status:Judgement"],
+          "quote": "Kenshiro will slide forward alittle bit and throw a jab. If it connects then he will perform 9 hits,damaging and inflicting Judgement status to his opponent."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "6 Koma: [][][] [][][] Type: Power ... Overall: Not too good but decent in my opinion."
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes Less Damage from Special Attacks", "Gain SP Energy when blocking"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Oraa!",
+          "description": "Kenshiro surrounds himself with a circular blue aura, which then explodes damaging any opponent nearby.",
+          "damage": "62 / 62 / 93",
+          "hits": "1",
+          "properties": [],
+          "quote": "Kenshiro will surround himself with a circular blue aura. Then the aura will explode damaging any opponent nearby."
+        },
+        {
+          "input": "X",
+          "name": "Tomo no Saoku",
+          "description": "Kenshiro is surrounded by 2 people on each side who then merge together with him; Kenshiro then gains some SP energy and Attack-Boost status.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:attack-boost"],
+          "quote": "Kenshiro will be surrounded with 2 people on each side then will merge together with Kenshiro. Kenshiro will then gain some SP energy and Attack-Boost status."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "7 Koma: [][] [][] [][] [] Type: Power ... Overall: Better than his 6 Koma but does not rival 4 and 5 Koma"
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": ["Takes Less Damage from Special Attacks", "Gain SP Energy when blocking"],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Tensho Honretsu",
+          "description": "Kenshiro surrounds himself with a blue aura then thrusts both arms forward, shooting a blue beam.",
+          "damage": "55 / 55 / 67",
+          "hits": "8-10",
+          "properties": ["projectile", "multi-hit"],
+          "quote": "Kenshiro will surround himself with a blue aura. Then he will thrust both his arms forward shooting a blue beam."
+        },
+        {
+          "input": "X",
+          "name": "Musou Tensei",
+          "description": "If Kenshiro is hit, he makes afterimages of himself, then inflicts massive damage and gains invincibility for a short time.",
+          "damage": "74 / 74 / 111",
+          "hits": "3",
+          "properties": ["counter", "multi-hit"],
+          "quote": "If Kenshiro is hit he will make afterimages of himself then it will inflict massive damage as well as giving Kenshiro invinciblity for a short time."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null,
+      "quote": "8 Koma: [][] [][][] [][][] Type: Power ... Overall: Counters are really good in this game and Kenshiro's is one of the best."
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Jab",
+      "description": "A plain jab, can be used for starting combos.",
+      "damage": "9 (Power) / 9 (Laughter) / 13 (Knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Info: Just a plain jab, can be used for starting combos."
+    },
+    {
+      "input": "side B",
+      "name": "Forward Jab",
+      "description": "Kenshiro slides forward and throws a punch; can be used for combos.",
+      "damage": "10 (Power) / 10 (Laughter) / 15 (Knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Info: Kenshiro slides forward and throws a punch. Can be used for combos."
+    },
+    {
+      "input": "up B",
+      "name": "Lift Kick",
+      "description": "Kenshiro quickly kicks upwards, sending the opponent airborne. Great for juggling and combos.",
+      "damage": "10 (Power) / 10 (Laughter) / 15 (Knowledge)",
+      "hits": "1",
+      "properties": ["launcher"],
+      "quote": "Info: Kenshiro quickly kicks upwards sending his opponent airbourne. Great for juggling and combos."
+    },
+    {
+      "input": "down B",
+      "name": "Blue Aura",
+      "description": "Kenshiro surrounds himself with a blue aura, causing the opponent to switch character.",
+      "damage": "10 (Power) / 10 (Laughter) / 15 (Knowledge)",
+      "hits": "1",
+      "properties": ["forced switch"],
+      "quote": "Down+B: Blue Aura ( Cause opponent to switch character ) ... Info: Kenshiro will surrond himself with a blue aura."
+    },
+    {
+      "input": "air B",
+      "name": "Karate Chop",
+      "description": "Kenshiro does a quick chop in the air.",
+      "damage": "10 (Power) / 10 (Laughter) / 15 (Knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Info: Kenshiro does a quick chop in the air"
+    },
+    {
+      "input": "Y",
+      "name": "Blue Aura",
+      "description": "Kenshiro stops and surrounds himself with a blue aura, hitting anything near, and increases the amount of hits for his Y attacks.",
+      "damage": "15 (Power) / 15 (Laughter) / 22 (Knowledge)",
+      "hits": "1",
+      "properties": [],
+      "quote": "Neutral+Y: Blue Aura (Increases the amount of hits for his Y attacks) ... Info: Kenshiro will stop and surround himself with a blue aura hitting anything near."
+    },
+    {
+      "input": "side Y",
+      "name": "Rapid Kick",
+      "description": "Kenshiro slides forward a little and kicks rapidly in front of him; repeatedly tap Y for more hits. Great range and good offense move.",
+      "damage": "16 (Power) / 16 (Laughter) / 24 (Knowledge)",
+      "hits": "13",
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Forward+Y: Rapid Kick ( Repeatly tap Y for more hits ) ... Info: Kenshiro slides forward alittle and kicks rapidly in front of him. Great range and good offense move."
+    },
+    {
+      "input": "up Y",
+      "name": "Nun-Chuck Beatdown",
+      "description": "Kenshiro gets out a pair of Nun-Chucks and swings them around his body; repeatedly tap Y for more hits. Great for people over you on platforms and great for juggling for combos.",
+      "damage": "17 (Power) / 17 (Laughter) / 25 (Knowledge)",
+      "hits": "14",
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Up+Y: Nun-Chuck Beatdown ( Repeatly tap Y for more hits ) ... Info: Kenshiro will get out a pair of Nun-Chucks and swing them around his body. Great for people over you on platforms and great for juggling them for combos."
+    },
+    {
+      "input": "down Y",
+      "name": "Gakuchu",
+      "description": "Kenshiro points his finger and, if it hits, breaks the opponent's guard.",
+      "damage": "20 (Power) / 20 (Laughter) / 30 (Knowledge)",
+      "hits": "1",
+      "properties": ["guard break"],
+      "quote": "Down+B: Gakuchu ( Breaks Guard ) ... Info: Kenshiro will point his finger and if it hits it will break your opponent's guard."
+    },
+    {
+      "input": "air Y",
+      "name": "Rapid Kick Aerial",
+      "description": "Kenshiro rapidly kicks below him at an angle; repeatedly tap Y for more hits. Great pressure move and for edgeguarding since it has a great spike effect.",
+      "damage": "14 (Power) / 14 (Laughter) / 21 (Knowledge)",
+      "hits": "7",
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "Jump+Y: Rapid Kick Aerial ( Repeatly tap Y for more hits ) ... Info: Kenshiro will rapidly kick below him in an angle. Great pressure move and for edgeguarding since it has a great spike effect."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Kenshiro stops and points ahead saying \"Omae wa mo shindeiru\", and the opponent will stop for a brief second.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action: Kenshiro stops and points ahead saying \" Omae wa mo shindeiru \" and your opponent will stop for a brief second."
+    }
+  ],
+  "combos": [
+    "COMBO #1: up+B to send opponent in the air, then up+Y (repeat for more hits), then before up+Y finishes, use a special with a big hit box to connect. Recommended specials per koma: 4 Koma Special A (can open with Special B first for more damage); 5 Koma Special A or B; 6 Koma Special B only (Special A has slow start-up); 7 Koma Special A (tap up+Y once, skip extra hits, then Special A due to slow start-up); 8 Koma Special A (same approach as 7 Koma due to huge start-up time). Advanced (4,5,6 koma only): summon a support during the special hit portion, e.g. Hitsugaya to freeze and repeat the combo.",
+    "COMBO #2: B into up+B, or just up+B, then quickly neutral Y (counts as a hit), then Forward+Y repeated for kicks. Works with any Kenshiro version.",
+    "COMBO #3: neutral+B then quickly forward+B (2 quick punches), then forward+Y kicks to finish. Advanced (4 koma only): finish with Special Attack A instead of forward+Y. Advanced (5 koma only): finish with Special Attack B instead of forward+Y."
+  ],
+  "unresolved": [
+    "The guide lists two different 'Down+B' moves: one at line 91 ('Blue Aura', causing opponent to switch character) and another at line 143 ('Gakuchu', breaks guard). Given the guide's own pattern (neutral/forward/up/down/air for B, then neutral/forward/up/[down]/air for Y), the second 'Down+B' almost certainly should be 'Down+Y' -- it appears between Up+Y and Jump+Y in the move list and no down+Y is otherwise listed. Recorded here as 'down Y' but the guide's own text literally says 'Down+B' for Gakuchu; this is a contradiction in the source, not a typo we corrected silently.",
+    "The Table of Contents lists section order as Help/Support Koma before Battle Koma, and section 8 is 'Combos' -- both present and consistent, no other TOC mismatches found.",
+    "Special Attack B entries for 4, 6 (Hiko-Jinchukyoku has damage/hits so not applicable), and 7 Koma ('Hokuto Shin Ken Tenryu Kokyu Ho' and 'Tomo no Saoku') have no stated damage or hit count in the guide -- left null per schema rather than inferring 'status-only' moves have zero damage.",
+    "The guide's general 'Passive Effect' (less damage from specials, gain SP when blocking) is stated once under the '7. Battle Koma' section header before any koma-specific entries; it isn't explicitly repeated per koma. We applied it to all five battle koma (4-8) since the guide gives no indication it's koma-specific and no koma states a different passive.",
+    "No standalone 'B string' move is described; combo write-ups (e.g. Combo #3 chaining neutral+B into forward+B) are guide-described sequences, not a discrete 'B string' input, so no such move entry was created.",
+    "Guide credits another author (Genroh) for 'amazing faq with tons of info which I got from' -- suggests this guide's data may partially derive from a second source guide (46478 may overlap with a separate Genroh Kenshiro FAQ), but this guide gives no further detail to resolve any resulting discrepancies."
+  ]
+}

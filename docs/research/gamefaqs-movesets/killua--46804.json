@@ -1,0 +1,230 @@
+{
+  "character": "Killua",
+  "series": "Hunter x Hunter",
+  "chr_b": 31,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "46804-killua.txt", "gamefaqs_id": 46804, "author": "Adam Miller (AKA Actawesome)", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": [],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Takes a gem quickly out of the opponent, but goes to the opposite side of the side that hits the opponent.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "X - Takes a gem quickly out of the oppenent, but goes to the opposite side of the side that hits the opponent. One of the best for escaping the edge."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Powers up Killua quickly, then makes him blind for about 5 seconds; while blind you can do massive damage, but don't attack its weak point.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Up+X - Powers up Killua quickly, and then allows him to be blind for about 5 seconds. With this you can do massive damage. (But don’t attack its weak point.)"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Creates clones of himself while walking forward; if someone is in the path it blasts them with lightning and they can't recover until they land.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:lightning", "knockdown"],
+          "quote": "X - Ah one of the best. Creates clones of himself, while walking forward. If someone is in your path it blasts them with lightning and they can’t recover until they land. Good for hitting people off the edge of the stage."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Quickly jumps up and shoots an energy beam down at the person below.",
+          "damage": null,
+          "hits": null,
+          "properties": ["projectile"],
+          "quote": "Up+X - Quickly jumps up and shoots an energy beam down at the poor person who is below. Great for surprises."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support special",
+          "name": null,
+          "description": "A quick version of his 5 Koma Up+X special; useful when blocking and someone is a little ways away.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Two Koma Support Special - In this special killua does a quick version of his 5 Koma Up+X special. This is very useful if you’re blocking and someone is a little ways away from you."
+        }
+      ],
+      "support_effect": "Quick version of the 5 Koma Up+X special.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "support special",
+          "name": null,
+          "description": "Risky: at the roll of a dice it can either take away life or give you life; best used when you have next to no health.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:random"],
+          "quote": "Three Koma Support Special - Very risky. It can either take away life, or give you life at the roll of a dice. I only use this when I have next to no health as it can help you then greatly."
+        }
+      ],
+      "support_effect": "Randomly takes away or gives life (dice roll).",
+      "help_effect": null
+    },
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Boosts Gon's strength and makes the player immune to lightning attacks."
+    }
+  ],
+  "moves": [
+    {
+      "input": "Y",
+      "name": "Strong Attack",
+      "description": "Sends Killua's yo-yos in a circular motion, comboing the enemy and allowing a second attack.",
+      "damage": null,
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "Y - Strong Attack: Sends Killua's yo-yos in a circular motion, comboing the enemy, and allowing you to do a second attack."
+    },
+    {
+      "input": "side Y",
+      "name": "Strong left/right attack",
+      "description": "Killua lunges at the enemy and claws them in the face; great for finishing combos and/or hitting people off the edge of the stage.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Left/Right+Y - Strong left/right attack: Killua lunges at the enemy and claws him/her in the face. Great for finishing combos and/or hitting people off the edge of the stage."
+    },
+    {
+      "input": "up Y",
+      "name": "Strong Up Attack",
+      "description": "Sends a yo-yo in the air, hitting the enemy above, then swings back to hit the enemy in front; good for multiple targets.",
+      "damage": null,
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "Up+Y - Strong Up Attack: Sends a yo-yo in the air, hitting the enemy above you, and then swings back to hit in enemy in front of you. Great for multiple targets."
+    },
+    {
+      "input": "down Y",
+      "name": "Guard Break",
+      "description": "Killua claws the enemy; a great guard break, though not the best.",
+      "damage": null,
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down+Y - Guard Break: Killua claws the enemy. Nothing else to say besides this is a great guard break, though not the best."
+    },
+    {
+      "input": "B",
+      "name": "Weak attack",
+      "description": "Merely hits the enemy; good for when they're right in front of you.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B - Weak attack: Merely hits the enemy, good for someone if they’re right in front of you."
+    },
+    {
+      "input": "side B",
+      "name": "Weak Side Attack",
+      "description": "Throws a yo-yo in whichever direction you point; not extremely strong but usually connects.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Left/Right+B - Weak Side Attack: Throws a yo-yo in whichever direction you point. Though this attack may not be extremely strong, it does usually hit the opponent."
+    },
+    {
+      "input": "up B",
+      "name": "Weak Up Attack",
+      "description": "Sends the yo-yo up in a quick motion; good for quick attacks, but one of Killua's worse attacks.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Up+B - Weak Up Attack: Sends the yo-yo up in a quick motion, good for quick attacks, but one of Killua’s worse attacks."
+    },
+    {
+      "input": "down B",
+      "name": "Guard Break",
+      "description": "Quick motion forward and lightning, stunning the enemy briefly and giving you enough time to do another special.",
+      "damage": null,
+      "hits": null,
+      "properties": ["guard break", "status:stun"],
+      "quote": "Down+B - Guard Break: Quick motion forward and lightning, stunning the enemy briefly, giving you enough time to do another special."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Yo-yo attack usable in the air; controllable to swing to a person diagonal to you after the first hit.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "ALWAYS remember to control his yo-yo. Most of Killua's attacks that use the yo-yo are controllable. Like for example his air Y attack is controllable to swing to a person who's diagnal to you, after the first attack."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Killua forms a power up position like he did in Greed Island, slowly but steadily increasing your special bar.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Select - Ultimate Action: Killua forms a power up position like he did in Greed Island, and this increases your special bar slowly, but steadily."
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "Best combo: side Y followed immediately by B; described as an instant kill on someone over the edge, working especially well on Naruto/One Piece pit levels.",
+      "damage": null,
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "One thing to note the best combo Killua has is Y to the side and then B immediately. As I said before, it's instant kill to someone who's over the edge."
+    }
+  ],
+  "combos": [
+    "Left/Right+Y to hit the opponent over the edge, then air Y (yo-yo in the air) to stun them as they try to get up.",
+    "Y rapid (yo-yo combo), then side+Y claw move, followed by B; described as a likely kill in sudden death."
+  ],
+  "unresolved": [
+    "Guide never states the koma count/size for the help koma (only its effect is described).",
+    "Guide title/date lines list version '1.0' dated 1/04/07, but the version-history section at the end refers to it as 'Version 1.1'; source metadata above uses the '1.0' header value.",
+    "ACT6 describes 'the yo-yo comboing technique, or Jump+Y' and 'in the air press y' as tactics text rather than a formal move entry; treated as equivalent to the air Y move above, not a separate move.",
+    "Guide states Killua's dash is 'one of the fastest in the game, and probably THE fastest of the ones that don't teleport' but gives no numeric or mechanical detail, so it isn't captured as a move or passive."
+  ]
+}

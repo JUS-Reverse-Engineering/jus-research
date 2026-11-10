@@ -1,0 +1,237 @@
+{
+  "character": "Kurama",
+  "series": "Yu Yu Hakusho",
+  "chr_b": 33,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {
+    "file": "46226-kurama.txt",
+    "gamefaqs_id": 46226,
+    "author": "Justin \"discoinferno84\" Boot",
+    "version": "1.0"
+  },
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "Regenerates your special move gauge if you don't change characters."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Sprays a mist to the direct right and left of where he stands, temporarily blinding any enemies."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Restores some health to your Battle Characters"
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Quick multi-hit whip combo.",
+          "damage": "15",
+          "hits": null,
+          "properties": ["multi-hit"],
+          "quote": "X                       15                    Quick multi-hit whip combo"
+        },
+        {
+          "input": "D-Pad + X",
+          "name": null,
+          "description": "Summon a barrage of vines.",
+          "damage": "19",
+          "hits": null,
+          "properties": [],
+          "quote": "D-Pad + X               19                    Summon a barrage of vines"
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Morph into Youko and summon a barrage of vines.",
+          "damage": "36",
+          "hits": null,
+          "properties": [],
+          "quote": "X                      36                     Morph into Youko and Summon a barrage of vines."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Morph into Youko and summon a group of man-eating plants.",
+          "damage": "38",
+          "hits": null,
+          "properties": [],
+          "quote": "D-Pad Up + X           38                     Moprh into Youko and Summon a group of man-eating plants."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Short-range aerial slash performed with A + B.",
+      "damage": "7",
+      "hits": null,
+      "properties": [],
+      "quote": "A + B                    7                    Short-range aerial slash"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Throws a rose down diagonally, performed with A + Y.",
+      "damage": "14",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "A + Y                   14                    Throws a rose down diagonally"
+    },
+    {
+      "input": "B",
+      "name": null,
+      "description": "Forward slash with the whip.",
+      "damage": "7",
+      "hits": null,
+      "properties": [],
+      "quote": "B                        7                    Forward Slash"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Upward slash.",
+      "damage": "7",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Up + B             7                    Upward Slash"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Summons a swirl of petals; at 4-Block this changes the enemy into another character, and at 5-Block it switches the enemy's active character. Also usable while defending, per the controls section, to swirl rose petals that switch a hit enemy to another character in their Koma Deck.",
+      "damage": "7",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "D-Pad Down + B           7                    Summons a swirl of petals and changes enemy into another. / While defending, press the B Button for Kurama to cause rose petals to swirl around him. If an enemy is hit by a petal, he or she will suddenly change into another character in its respective Koma Deck."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Forward thrust.",
+      "damage": "7",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Forward + B        7                    Forward thrust"
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "Forward dash into a forward thrust, performed by double-tapping forward then B.",
+      "damage": "7",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Forward (2x) + B   7                    Forward Dash + Forward Thrust"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Forward swing with the whip.",
+      "damage": "4",
+      "hits": null,
+      "properties": [],
+      "quote": "Y                        4                    Forward swing with the whip"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Upward swing with the whip; pressing Y repeatedly scores multiple hits.",
+      "damage": "4-10",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "D-Pad Up + Y            4-10                  Upward swing with the whip.Press Y Repeatedly to score multiple hits."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Throws a seed to temporarily stun the enemy.",
+      "damage": "12",
+      "hits": null,
+      "properties": ["projectile", "status:stun"],
+      "quote": "D-Pad Down + Y          12                    Throws a seed to temporarily stun enemy."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Forward swing with the whip; pressing Y repeatedly scores multiple hits.",
+      "damage": "4-14",
+      "hits": null,
+      "properties": ["mash-extend", "multi-hit"],
+      "quote": "D-Pad Forward + Y       4-14                  Forward swing with the whip.Press Y repeatedly to score multiple hits."
+    },
+    {
+      "input": "B string",
+      "name": null,
+      "description": "Forward dash into a forward whip swing.",
+      "damage": "4",
+      "hits": null,
+      "properties": [],
+      "quote": "D-Pad Forward (2x) + Y   4                    Forward Dash + Forward Swing"
+    },
+    {
+      "input": "other",
+      "name": null,
+      "description": "While defending, throws a seed projectile at the enemy (from the general controls section, distinct from the down Y seed listed in the koma-size movelist).",
+      "damage": null,
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "While defending, press the Y Button for Kurama to throw a seed projectile at his enemy."
+    },
+    {
+      "input": "select",
+      "name": null,
+      "description": "Plants a seed on the ground that will stun an enemy if stepped on. Listed only under the 5-Block moveset table.",
+      "damage": "0",
+      "hits": null,
+      "properties": ["status:stun"],
+      "quote": "Select                  0                     Plants a seed. Will stun an enemy if stepped on."
+    }
+  ],
+  "combos": [],
+  "unresolved": [
+    "The 4-Block and 5-Block tables both list nearly identical B moves (A+B, up B, down B, side B, B string) with the same 7 damage; these are treated as a single move set shared across koma sizes rather than duplicated, since the guide gives no size-specific damage differences for B attacks except Y and X.",
+    "Y damage differs between koma sizes: at 4-Block, plain Y does 4 damage; at 5-Block, plain Y does 11 damage. The guide does not explain this discrepancy or state it's a scaling effect from koma size explicitly for this move (though the introduction to koma size states 'a character will gain new moves' and power increases with size).",
+    "The up Y and side Y damage ranges also differ slightly between the 4-Block table (4-10 for up Y) and 5-Block table (4-14 for up Y), and side Y stays 4-14 in both tables.",
+    "The final side Y string entry in the 5-Block table ('D-Pad Forward (2x) + Y') is described as 'Forward swing with the whip' at 4 damage, identical wording to the 4-Block table's 'Forward Dash + Forward Swing' -- likely the same move, guide text is just abbreviated/inconsistent between the two tables.",
+    "Select (Ultimate Action, seed trap) is only listed in the 5-Block table, not the 4-Block table -- unclear if it's unavailable at 4-Block or just omitted by the guide.",
+    "The 5-Block X specials (36 and 38 damage) both describe morphing into Youko; the guide does not clarify if this is a temporary transformation state that persists or a single-hit special.",
+    "Guide states general controls (D-pad Up+X summons man-eating plants at any koma size) in the Controls section, but the actual per-koma tables only show up+X for the 5-Block koma; the 4-Block table has no up+X entry, so it's unclear if the plant-summon X move exists at 4-Block despite the controls section implying it's a base-game mechanic.",
+    "Version 1.0 of the guide explicitly states the Strategy/Tactics section is unfinished ('Still working on this; expect a more developed section in the next version'), so only one Tactic (Jump Canceling) and general Strengths/Weaknesses prose are present -- no additional move-specific combo strings were given beyond prose description of 'potential combos.'",
+    "Ally Boost / Koma Deck Support section lists Hiei, Kuwabara, and Shun as granting boosts to Kurama, and Kurama granting boosts to Hiei and Robin -- this is deck-support meta info, not a move, and doesn't fit the schema's move/koma structure, so it's noted here rather than modeled."
+  ]
+}

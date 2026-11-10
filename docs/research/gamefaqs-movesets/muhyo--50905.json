@@ -1,0 +1,288 @@
+{
+  "character": "Muhyo",
+  "series": "Muhyo tou Rouji no Mahou Rishitsusou Dan Jimusho",
+  "chr_b": 59,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {
+    "file": "50905-muhyo-lordlegacy.txt",
+    "gamefaqs_id": 50905,
+    "author": "Lord_Legacy (Andarel)",
+    "version": "0.7"
+  },
+  "kit_type": "summoner",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": ["Gives an increase in attack strength when health is low (<25%?)"],
+      "specials": [],
+      "help_effect": "Gives an increase in attack strength when health is low (<25%?)"
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Muhyo appears and grants invisibility for a short time. This support is a bit slow but has unlimited range."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Muhyo appears and grants invincibility for a short time. This variant is still slow, but as before has unlimited range."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 128,
+      "passives": ["Regain Sp when fighting Knowledge characters. Any others are unknown."],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Hades' Dinner Punishment",
+          "description": "Creates a mouth on the ground in front of Muhyo which eats the enemy and spits them out. Has limited range in front, and will not appear if Muhyo would summon it off the edge of a platform.",
+          "damage": "40(60)",
+          "hits": null,
+          "properties": [],
+          "quote": "Not a bad special for a 4-koma, it creates a mouth on the ground in front of Muhyo which eats the enemy and spits them out, dealing 40. Good for a 4-koma, but not his best special. Has limited range in front, will not appear if Muhyo would summon it off the edge of a platform."
+        },
+        {
+          "input": "up X",
+          "name": "Demonic Spellbook Punishment",
+          "description": "A spellbook appears above Muhyo and flips its pages, dealing damage. Mashable for more hits.",
+          "damage": "33(49)[1xhit + 20]",
+          "hits": "up to 13 (mash)",
+          "properties": ["mash-extend", "multi-hit"],
+          "quote": "A spellbook appears above Muhyo and flips its pages, dealing damage. As with Special A, it's not bad (especially for a 4-koma) but not remarkable. (Mash X for more hits, up to 13)"
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 144,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Magic Train Summon",
+          "description": "Muhyo calls the Magic Train to come forward and deal damage to anyone in front of him. The Train hits 6 times and character-changes on the last hit, carrying the opponent just past the edge of the screen in one direction.",
+          "damage": "40(60)",
+          "hits": 6,
+          "properties": ["forced switch", "multi-hit"],
+          "quote": "Muhyo calls the Magic Train to come forward and deal damage to anyone in front of him. The Train hits 6 times and character-changes on the last hit. Carries the opponent just past the edge of the screen in one direction. Damage dealt to second character is 20 out of the 40."
+        },
+        {
+          "input": "up X",
+          "name": "Secluded Plum - Summon",
+          "description": "Muhyo brings forward a small grey being surrounded by a whirlwind, which carries anything hit by it upwards before exploding and sending them flying. Combos out of his guard break at close range and out of Y>.",
+          "damage": "48(72)",
+          "hits": null,
+          "properties": ["launcher"],
+          "quote": "Muhyo brings forward a small grey being surrounded by a whirlwind, which will carry anything hit by it upwards before exploding and sending them flying. Notable because it combos out of his guard break at close range, and also because it is easier to get the full damage with but harder to correctly aim compared to his 6X. Not bad, especially because it combos out of Y>."
+        }
+      ]
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 160,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "The Great Demon General Summon",
+          "description": "Muhyo calls forth the Great Demon General to rush forward and slice any enemies he connects with. Hitting an energy blast, support, or blocking character will cancel this move. Sends very far and combos out of Y; hits slightly above Muhyo when summoned.",
+          "damage": "50 (75)",
+          "hits": null,
+          "properties": [],
+          "quote": "Muhyo calls forth the Great Demon General to rush forward and slice any enemies he connects with. Hitting an energy blast, support, or blocking character will cancel this move, so watch out. However, it sends very far and combos out of Y. It will hit slightly above you when summoned. An overall good special, but not incredible because it can't pressure guard."
+        },
+        {
+          "input": "up X",
+          "name": "Secluded Plum - Summon (True Form)",
+          "description": "A bigger version of the 5-Koma's up X, drawing enemies in and bringing them off the screen vertically before exploding and sending them flying. Larger and easier to hit with, but can no longer combo out of guard break and is slightly harder to get max damage on. Platforms above Muhyo make it impossible to combo into.",
+          "damage": "56(84)",
+          "hits": null,
+          "properties": ["launcher"],
+          "quote": "A bigger version of his 5-Koma X^ is summoned, drawing enemies in an bringing them off the screen vertically before exploding and sending them flying. It is larger and easier to hit with, but it can no longer combo out of guard break and is slightly harder to get the maximum damage on. Still quite good though. Platforms above Muhyo make it impossible to combo into."
+        }
+      ]
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 176,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Dark King Ruaire Summon - Douato Spear",
+          "description": "A terrible, atrociously slow special. Decent damage and good guard-breaking potential, but Muhyo is stuck in place for a long time. Only safe to use when Muhyo is away from the action.",
+          "damage": "52(78)",
+          "hits": null,
+          "properties": ["guard break"],
+          "quote": "Watch it, this terrible special really is atrociously slow. While the damage is decent and it has good guard breaking potential, Muhyo is stuck in place for quite a while. And I mean a while. Only use this if Muhyo is in a safe area away from the action, and even then..."
+        },
+        {
+          "input": "up X",
+          "name": "Dark King Ruaire Summon - Thousand Hit Tongue",
+          "description": "Sends down a globe of light that pops the enemy up into the air and then whips them with the summoned monster's tongue. Mashable for more hits. Very good with support assistance. Platforms above Muhyo make it impossible to combo into.",
+          "damage": "64(96)[2xhit + 4]",
+          "hits": "up to 30 (mash)",
+          "properties": ["pop", "mash-extend", "multi-hit"],
+          "quote": "Now that's more like it, the special that makes his 7-koma worth using. This sends down a globe of light that pops the enemy up into the air and then whips them with the summoned monster's tongue. Very good special with support assistance. Platforms above Muhyo make it impossible to combo into."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Muhyo puts on his urn disguise and goes to sleep, regaining SP.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Ultimate Action - Muhyo puts on his urn disguise and goes to sleep, regaining SP."
+    },
+    {
+      "input": "B",
+      "name": "Book Hit",
+      "description": "Decently fast B interrupter. Muhyo swings his book forwards, nothing special. Generic combo starter, but not very effective for Muhyo; only combos into his Y when used to interrupt.",
+      "damage": "6 (9)",
+      "hits": null,
+      "properties": [],
+      "quote": "Decently fast B interrupter. Muhyo swings his book forwards, nothing special. This is the generic combo starter, however it is not very effective for Muhyo. Only combos into his Y when it's used to interrupt."
+    },
+    {
+      "input": "side B",
+      "name": "Ghost Attacker",
+      "description": "A small ghost appears and dashes forwards, hitting and stunning for a moment. Very little lag after; combos flawlessly into Y (if close) or side Y. Can be held to increase range, and continues even if Muhyo is hit.",
+      "damage": "9 (13)",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "A small ghost appears and dashes forwards, hitting and stunning for a moment. Very little lag after attack, and combos flawlessly into Y (if close) or Y>. <B can be held to increase the range. Will continue even if Muhyo is hit.>"
+    },
+    {
+      "input": "up B",
+      "name": "Spikes",
+      "description": "Spikes appear from below Muhyo and knock the opponent upwards. Fast and a superb combo starter, with less range restriction than side B; also hits slightly behind Muhyo. Combos flawlessly into Y or up Y. Slight delay after use.",
+      "damage": "9 (13)",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Spikes appear from below Muhyo and knock the opponent upwards. This move is quite fast and is a superb combo starter, as it has less of a range restriction than Muhyo's B>. It also hits slightly behind you, which is useful as well. Can combo flawlessly into Y or Y^. Bit of a delay after use."
+    },
+    {
+      "input": "down B",
+      "name": "Palm Strike",
+      "description": "Muhyo steps forward slightly after a moment of charging, and palm strikes the opponent. Okay as a character change move, but nothing special; combos only into up Y.",
+      "damage": "7 (10)",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Muhyo steps forwards slightly after a moment of charging, and palm strikes the opponent. This move is okay, nothing special for a character change. It can combo only into Y^, strangely."
+    },
+    {
+      "input": "air B",
+      "name": "Ghost Attacker (Midair Version)",
+      "description": "Muhyo shoots off a small ghost to dash forward and hit in mid-air. Identical to side B in sprite, but its reach cannot be extended. Does slightly more damage, and is a fairly good aerial poke. Does not spike.",
+      "damage": "10 (15)",
+      "hits": null,
+      "properties": [],
+      "quote": "Muhyo shoots off a small ghost to dash forward and hit in mid-air. Identical to his B> in spriting, but its reach cannot be extended. Does slightly more damage, and is a fairly good aerial poke. Still, it does not spike."
+    },
+    {
+      "input": "Y",
+      "name": "Satan's Shadow (For the Crime of \"Illegal Inhabitance of an Object\")",
+      "description": "The Satan's Shadow summon comes out of the ground and grabs the opponent, dragging them forward. Slow with a lot of lag, but combos well out of side B or up B at certain ranges. Holds for a while, making it good for support combos. Cannot go through walls. Hold Y to increase range, though that range cannot go off ledges/platforms once grabbed it can. Can whiff and go into its \"grab mode\" without grabbing.",
+      "damage": "16 (24)",
+      "hits": null,
+      "properties": ["charge"],
+      "quote": "The Satan's Shadow summon comes out of the ground and grabs the opponent, dragging them forward. This move is slow and leaves a lot of lag, but combos well out of B> or B^ at certain ranges. It holds for a while, making Muhyo excellent for Support combos. The summon cannot go through walls. Hold Y to increase its range."
+    },
+    {
+      "input": "side Y",
+      "name": "The Devil's Pitchfork (For the Crime of \"Unauthorized Transformation\")",
+      "description": "Muhyo's ideal combo technique and one of the best moves he has. Hold Y to increase its range; it still goes off if Muhyo is hit; and its launch direction depends on which side hits it - the farther side launches away, the closer side launches towards Muhyo.",
+      "damage": "20 (30)",
+      "hits": null,
+      "properties": ["launcher", "charge"],
+      "quote": "Muhyo's ideal combo technique, this move is one of the best Muhyo has. It will be covered more thoroughly shortly on, but note that it has three effects - hold Y to increase its range, it will still go off if Muhyo is hit, and its direction of launching depends on which side of it hits - the farther side will launch away, while the closer side will launch towards Muhyo."
+      },
+    {
+      "input": "up Y",
+      "name": "Never-Returning Owl (For the Crime of \"Taking Another's Features\")",
+      "description": "Muhyo's best anti-air attack and one of the best in the game. A fast yellow owl rockets off from in front of him, grabbing anything in its path and dropping it for good damage. Leaves opponents unspinning in the air briefly, letting supports connect.",
+      "damage": "20 (30)",
+      "hits": null,
+      "properties": [],
+      "quote": "The Never-Returning Owl is Muhyo's best anti-air attack and one of the best in the game. A fast yellow owl rockets off from in front of him, grabbing anything in its path and dropping it for a good 20 damage. Supports work well out of this if they can hit in time, as it leaves them unspinning in the air for a bit."
+    },
+    {
+      "input": "down Y",
+      "name": "Satan's Iron Hammer (For the Crime of \"Attempted Murder\")",
+      "description": "A two-hit guard break that is fairly fast, has nice range, and can hit multiple blockers. Also spikes.",
+      "damage": "8(12)+10(15)",
+      "hits": 2,
+      "properties": ["guard break", "multi-hit"],
+      "quote": "A two-hit Guard Break that is fairly fast, has nice range, and can hit multiple blockers. It also spikes."
+    },
+    {
+      "input": "air Y",
+      "name": "Shadow Creatures",
+      "description": "A great sniping move that comes from the ground below (no matter how far below) and does good damage. Keeps Muhyo unmoving in the air while used, allowing potential dodging.",
+      "damage": "7(10) per hit, launches 3",
+      "hits": null,
+      "properties": ["launcher", "multi-hit"],
+      "quote": "A great move for sniping as it comes from the ground below (no matter how far below this may be) and does good damage. Will keep you in the air while it is used, unmoving, for potential dodging if needed."
+    }
+  ],
+  "combos": [
+    "B Y^ (27)",
+    "B Y> (27)",
+    "B B> Y> X^ (4/5/6-Koma)",
+    "B^ Y^ (29)",
+    "B^ Y Y^ (45)",
+    "B^ Y Y> (45)",
+    "B^ Y X (4/5/6-Koma)",
+    "B^ Y Y> X^ (4/5/6-Koma)",
+    "B> Y> (29)",
+    "B> Y Y> (45)",
+    "B> Y Y^ (45)",
+    "B> Y X (4/5/6-Koma)",
+    "B> Y X^ (5/6-Koma)",
+    "B> Y Y> X^ (4/5/6-Koma)",
+    "Bv Y^ (27) <Character changes>",
+    "B Y (B needs to counter for sufficient hitstun) (27+) - not flawless",
+    "B B> Y (only works at very close range) (35) - not flawless",
+    "B B^ Y (see above) (35) - not flawless",
+    "B^ Y Y> X (Unsure, only works sometimes if Y> knocks into X. 4/5/6<-easiest) - not flawless",
+    "Yv X^ (Needs to be close by, only works with 5-Koma) - not flawless",
+    "-- Y Y> Y^ (can be jumped out of) - not flawless",
+    "-- B> Y> B^ (reliable, but sometimes sends opponent too high) - not flawless",
+    "-- B> Y Y> X^ (7-Koma - needs correct angle to toss opponent into summon) - not flawless",
+    "B B> Y Y> X^ can do about a hundred in his higher Koma (45+48 for 93 in his 5-Koma, 45+54 for 99 in his 6-Koma)"
+  ],
+  "unresolved": [
+    "The guide describes Muhyo as summoner-type explicitly ('grouped with Yugi and Taikoubou... as summoner-type characters. This means that he calls out various spells to attack for him'), consistent with kit_type 'summoner' set per owner instruction. However, several of his named moves (Book Hit, Ghost Attacker, Spikes, Palm Strike) read as direct physical strikes rather than summons, even though flavor text ties them to ghosts/spells; only Y-series moves and X specials are clearly summon-based. Noting this mixed presentation in case it matters for kit_type taxonomy.",
+    "Series attribution: character field uses 'Muhyo' per instructions; series name given in guide is 'Muhyo tou Rouji no Mahou Rishitsusou Dan Jimusho' (his manga) - no simpler series name is given in the guide text.",
+    "Damage numbers throughout are given as 'X(Y)' pairs (e.g. '6 (9)') - guide does not explicitly label which number is which koma/context; format preserved as written, unresolved as to precise meaning of parenthetical value (likely blunt/character-specific multiplier per repo convention, but not stated in this guide).",
+    "1-Koma passive text ('Gives an increase in attack strength when health is low') is placed under both 'passives' and 'help_effect' since the guide presents it as the sole content of the 1-Koma help entry, with no separate stated support/help effect distinct from the passive.",
+    "2-Koma and 3-Koma sizes are presented in the guide only as support-type entries (invisibility, invincibility) with no koma HP, nature, or passives given - schema fields for these left null.",
+    "The guide's version header states 'Current Version - v0.7' but the changelog section (S09) refers to 'Original v0.9 created' - a contradiction in the guide's own versioning; source.version set to '0.7' per the top header as instructed to use the guide's own header value.",
+    "Deck section and playstyle section (S05-S07) contain extensive strategic prose (support combo pairings with Kanda 3, Rouji 3, Jelly Jiggler 3, Arystar Krory 3, Gotenks 3; sample decks) that does not map cleanly to the schema's move/koma/combo fields; support-combo pairings are not captured as discrete 'combos' entries since they involve external characters' supports rather than Muhyo's own inputs alone - summarized here instead.",
+    "Guide states Muhyo's boost relationships (boosted by Neuro, Page, Rouji; boosts Neuro) - no schema field exists for ally-boost relationships, so this is noted here rather than dropped silently."
+  ]
+}

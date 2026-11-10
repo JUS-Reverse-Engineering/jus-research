@@ -1,0 +1,303 @@
+{
+  "character": "Dr. Mashirito",
+  "series": "Dr. Slump",
+  "chr_b": 57,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "52262-dr-mashirito.txt", "gamefaqs_id": 52262, "author": "GoGoJirachi", "version": "1.0"},
+  "kit_type": "item-creator",
+  "natures_available": ["laughter", "knowledge"],
+  "koma": [
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Mash appears and shouts something twice. Each word bubble drains 1 SP.",
+      "quote": "Mash appears and shouts something twice. Each word bubble drains 1 SP."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Mash appears with a boom box and starts singing. All word bubbles cause paralysis and drain 1 SP to whatever they hit (except the user).",
+      "quote": "Mash appears with a boom box and starts singing. All word bubbles cause paralysis and drain 1 SP to whatever they hit (except you)."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": ["Gain more SP when KOing opponents of a weaker nature."],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Mash gets into his giant robot, which throws a big rock. The rock breaks after hitting something. Can be thrown into a FFA randomly, but not much other use.",
+          "damage": "36",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot, which throws a big rock. The rock breaks after hitting something."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Mash gets into his giant robot, which pounds the ground and creates a shockwave, damaging anyone hit by it.",
+          "damage": "28",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot, which pounds the ground and creates a shockwave. Damages anyone hit by the shockwave."
+        }
+      ]
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": ["Gain more SP when KOing opponents of a weaker nature."],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Alternative 4 Koma; guide states its specials are the same as the standard 4 Koma (still Laughter-based specials despite the koma being the Knowledge alternative).",
+          "damage": "36",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot, which throws a big rock. The rock breaks after hitting something."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Same shockwave attack as the standard 4 Koma.",
+          "damage": "28",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot, which pounds the ground and creates a shockwave. Damages anyone hit by the shockwave."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": ["Gain more SP when KOing opponents of a weaker nature."],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Mash gets into his giant robot, which throws a giant, explosive blue poo. High chance of overshooting a close opponent; effective at mid-range. Can be thrown into a FFA randomly.",
+          "damage": "44",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot, which throws a giant, explosive blue poo."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Mash gets into his giant robot, which makes a bigger shockwave than the 4 Koma version.",
+          "damage": "36",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot, which makes a bigger shockwave than his 4 Koma."
+        }
+      ]
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": ["Gain more SP when KOing opponents of a weaker nature."],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Mash gets into his giant robot, which shoots a laser (not really a beam); anyone hit is immediately moved to the edge of the screen and held there, pressured/damaged until the attack ends, even if guarding. If carried off the edge, it is an instant KO; the opponent is knocked down after the attack ends. Called arguably his best special.",
+          "damage": "42",
+          "hits": null,
+          "properties": ["guard break"],
+          "quote": "Mash gets into his giant robot, which shoots a laser... anyone hit by the laser will immediately be moved to the edge of your screen and is held in place there... Arguably his best Special."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Mash gets into his giant robot, which does a 5-hit combo ending with knocking the opponent upwards.",
+          "damage": "41",
+          "hits": 5,
+          "properties": ["multi-hit", "launcher"],
+          "quote": "Mash gets into his giant robot, which does a 5-hit combo. Ends with knocking the opponent upwards."
+        }
+      ]
+    },
+    {
+      "size": 7,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": ["Gain more SP when KOing opponents of a weaker nature."],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Mash gets into his giant robot. It charges, then fires a standard beam.",
+          "damage": "varies",
+          "hits": null,
+          "properties": [],
+          "quote": "Mash gets into his giant robot. It charges, then fires a standard beam."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Same attack as the 6 Koma up X, but after knocking the opponent up it fires the arm for an extra hit of damage; opponent can jump away to avoid the last hit.",
+          "damage": "33 + 22",
+          "hits": 2,
+          "properties": [],
+          "quote": "Mash gets into his giant robot and does the same attack as his 6 Koma ^X. However, after knocking the opponent up, it fires the arm, doing more damage."
+        }
+      ]
+    },
+    {
+      "size": 8,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Take more damage from Lightning-based attacks.",
+        "Gain more SP when KOing opponents of a weaker nature."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Caramelman J (8-koma final form) - the big robot charges up and fires a laser at the floor, raising debris; the laser itself deals a small amount, the debris deals the main damage and sends the opponent flying high. Guide notes Caramelman J's specials are Power-based (opposite of his basic attacks), doing more damage to Knowledge-based opponents.",
+          "damage": "laser 3, debris 80",
+          "hits": 2,
+          "properties": ["launcher"],
+          "quote": "The big robot charges up and fires a laser at the floor, raising up debris. The laser does 3 damage, and the debris does 80 damage and send the opponent flying high."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "The big robot grows legs and walks around; anyone touching it takes damage and is sent spinning away. Movement can be controlled but can't leave the current platform or jump. Guard breaks. If Caramel (not the robot) is attacked, he is knocked out of it; some attacks always knock him out of it (e.g. Dr. Mashirito's side Y, Luffy's up Y).",
+          "damage": "65",
+          "hits": null,
+          "properties": ["guard break"],
+          "quote": "The big robot grows legs and walks around. Anyone who touches any part of Caramelman J during this time will take damage and be sent spinning away... Guard breaks."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Mash hits the opponent twice with a piece of poo on a stick; cancels into all of his other attacks. If both hits land, the opponent is pushed too far back to chain from.",
+      "damage": "4 each hit",
+      "hits": 2,
+      "properties": [],
+      "quote": "Mash hits the opponent twice with a piece of poo on a stick. Cancels into all of his other attacks."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Mash farts on the opponent; the force pushes Mash back a bit and stuns the opponent on hit. Safe follow-up into Y since a dashing opponent will run into the chest; cancels into Y.",
+      "damage": "12",
+      "hits": null,
+      "properties": ["status:stun"],
+      "quote": "Mash farts on the opponent. The force of the fart pushes Mash back a bit, and stuns the opponent for a moment if it hits."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Mash presses a button and lightning strikes him, pushing the opponent back on hit. Extremely close-range; doesn't reliably chain from B.",
+      "damage": "9",
+      "hits": null,
+      "properties": [],
+      "quote": "Mash presses a button and lightning strikes him. Pushes the opponent back if it hits."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Mash rides a bicycle into the opponent, forcing them to change characters on hit if possible. Chains only into up Y.",
+      "damage": "7",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Mash rides on a bicycle and crashes into the opponent. Forces the opponent to change characters, if possible, upon hit."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Mash farts on the opponent, same as side B.",
+      "damage": "12",
+      "hits": null,
+      "properties": [],
+      "quote": "Mash farts on the opponent in exactly the same way as his >B."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Mash takes out a fake chest that explodes if touched, or explodes on its own after a while; only two chests can be out at once. Falls to the lower level if placed near an edge. Guide calls this Mashirito's best attack — high damage, definite knockdown, and strong for pressuring, edge guarding, or as a combo continuation from B (with up Y chaining afterward).",
+      "damage": "23",
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "Mash takes out a fake chest that explodes if an opponent touches it... This is Mashirito's best attack. First of all, because of the high damage and definite knockdown..."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Mash sends out a walking piece of poo that repeatedly hits anything in its path (a blocking opponent starts blocking after 2-3 hits), exploding after a certain time; still hits if it walks off the edge, including opponents hanging on the ledge. Poo-based attacks are noted as unstoppable by any hit, including going through 8-Koma Seiya's X or hitting Caramelman J out of his up X.",
+      "damage": "3 per hit, 15 from explosion",
+      "hits": null,
+      "properties": ["multi-hit", "projectile"],
+      "quote": "Mash sends out a walking piece of poo, repeatedly hitting anything in its path... After a certain amount of time, it will explode."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Mash shouts something; anyone hit by the word bubble is knocked higher into the air and loses some SP. Chains from Y and up B; good for hitting from mid-range.",
+      "damage": "8",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Mash shouts something. Anyone hit by the word bubble will be knocked (higher) in the air, and will lose some SP."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Mash takes out a bottle and sprays its contents; short range, decent speed, guard breaks. Guide advises against frequent use.",
+      "damage": "18",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Mash takes out a bottle and sprays the contents. Short range, decent speed, guard breaks."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Mash farts diagonally downward, the force shooting him higher into the air; this attack spikes the opponent through thin floors.",
+      "damage": "21",
+      "hits": null,
+      "properties": [],
+      "quote": "Mash farts diagonally downwards. The force of his fart shoots him higher into the air. Also, this attack spikes the opponent through thin floors!"
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Mash plants a fake food or coin item with an antenna sticking out on the field. Fake food deals damage on contact, fake coins drain SP.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Mash plants a fake food/coin, with an antenna sticking out. Fake food will do damage, while fake coins will drain SP."
+    }
+  ],
+  "combos": [],
+  "unresolved": [
+    "Owner's kit-type description: Ultimate Action leaves items on the field, Y makes exploding chests, side Y sends a walking object that explodes at path end. The guide's account matches this closely: SELECT plants a fake food/coin item, Y is an exploding chest, side Y is a walking poo that explodes after time or at the end of its path/off the edge. No contradiction found between the guide and the owner's description.",
+    "Caramelman J (8 Koma) full moveset (B, side B, up B, down B, air B, Y, side Y, up Y, down Y, air Y, select, X, up X) is included here even though it is described as a wholly separate moveset/character replacing Mashirito's when evolved to 8 Koma; only the two specials (X, up X) were placed in the koma entry per schema, while the rest of Caramelman J's basic-attack moveset (B 13 dmg, side B 5 dmg x hits boomerang, up B 15 dmg, down B 10 dmg forced switch, air B 15 dmg, Y 17-33 dmg mash-extend drill, side Y beam damage varies, up Y 28 dmg tornado, down Y 20 dmg guard break shock, air Y 9 dmg homing rockets, select restores SP slowly) is NOT captured in the 'moves' array because those are Caramelman J's moves, not Dr. Mashirito's base moveset the schema's 'moves' array is structured around. Recorded here so the data isn't lost.",
+    "Guide states Caramelman J's basic attacks are Laughter-based (1.5x to Power) but his Specials are Power-based (more damage to Knowledge) -- opposite typing within the same character."
+  ]
+}

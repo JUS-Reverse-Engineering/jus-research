@@ -1,0 +1,313 @@
+{
+  "character": "Kakashi",
+  "series": "Naruto",
+  "chr_b": 23,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {
+    "file": "46618-kakashi.txt",
+    "gamefaqs_id": 46618,
+    "author": "MasterTurtle (aka Hyperslasher)",
+    "version": "2.0"
+  },
+  "kit_type": "standard",
+  "natures_available": [
+    "knowledge",
+    "laughter"
+  ],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [
+        "Reduces the amount of damage taken by special attacks."
+      ],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Reduces the amount of damage taken from special attacks."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Kakashi appears in front of your current battle character, reading his Makeout Paradise magazine. If an enemy attacks him, he retaliates with a swift kick, dealing 28 damage of the laughter type.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Kakashi appears, dashes forward, and grabs an enemy. Then he summons a clone and performs the almighty Thousand Years of Pain technique! Knocks the enemy into the air, dealing 28 laughter damage and draining a special bar as well.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 136,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Kakashi uses a beam attack, similar to that of any DBZ character.",
+          "damage": "up to 30",
+          "hits": null,
+          "properties": [],
+          "quote": "Kakashi uses a beam attack, similar to that of any DBZ character. Though still pretty mediocore, this is one of his better specials, it deals up to 30 damage if the enemy is right next to you."
+        },
+        {
+          "input": "X",
+          "name": null,
+          "description": "Kakashi summons some of his ninja dogs, and they converge on a nearby enemy.",
+          "damage": "24",
+          "hits": null,
+          "properties": [],
+          "quote": "Kakashi summons some of his ninja dogs, and they converge on a nearby enemy. Deals 24 damage if all the dogs hit."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 152,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Raikiri",
+          "description": "Kakashi charges up chakra in his hand, then dashes forward and hits an enemy with it. The damage is always 36; how long you charge just changes the distance Kakashi dashes.",
+          "damage": "36",
+          "hits": null,
+          "properties": [
+            "charge"
+          ],
+          "quote": "It's Raikiri, a technique that should definitely ring a bell for all you Naruto fans out there. Kakashi charges up chakra in his hand, then dashes forward and hits an enemy with it. ... Note that the damage will always be 36, how long you charge it just changes the distance that Kakashi dashes."
+        },
+        {
+          "input": "X",
+          "name": null,
+          "description": "Kakashi summons his ninja dogs, just like his previous secondary special.",
+          "damage": "30",
+          "hits": null,
+          "properties": [],
+          "quote": "Kakashi summons his ninja dogs, just like his previous secondary special. This one deals 30 damage if all the dogs hit, though."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 168,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Chidori",
+          "description": "Chidori, again. This one deals 44 damage total.",
+          "damage": "44",
+          "hits": null,
+          "properties": [],
+          "quote": "Chidori, again. Hooray for recycled attacks. This one deals 44 damage total."
+        },
+        {
+          "input": "X",
+          "name": "Mangekyou Sharingan",
+          "description": "It creates a red eye that hovers in the air, damaging all enemies that come in contact with it. Useful for edgeguarding since you can control the path of the eye and it goes through walls.",
+          "damage": "48 total",
+          "hits": null,
+          "properties": [
+            "projectile"
+          ],
+          "quote": "The last of Kakashi's special attacks, Mangekyou Sharingan. ... It creates a red eye that hovers in the air, damaging all enemies that come in contact with it. While it's a strong move, dealing 48 damage total, it can be a bit hard to get off ... It is useful for edgeguarding ... since you can control the path of the eye and it goes through walls."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": 168,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Chidori",
+          "description": "Chidori, a third time. Though Kakashi is Laughter type in this Koma, Chidori still does knowledge type damage.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Chidori, a third time. Though Kakashi is Laughter type in this Koma, Chidori still does knowledge type damage."
+        },
+        {
+          "input": "X",
+          "name": "Mangekyou Sharingan",
+          "description": "Still Mangekyou Sharingan, and still Knowledge type.",
+          "damage": null,
+          "hits": null,
+          "properties": [
+            "projectile"
+          ],
+          "quote": "Yep, still Mangekyou Sharingan, and still Knowledge type. Having a battle koma with different type specials is nice, since you can inflict multiple types of damage with the same character."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Kakashi quickly slaps in front of him. Nice hitbox that hits both behind and in front, and it's fast.",
+      "damage": "8",
+      "hits": null,
+      "properties": [],
+      "quote": "B - Kakashi quickly slaps in front of him. Nice Hitbox (hits behind you as well as in front), fast, a pretty good B attack. Does 8 damage."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Kakashi dashes forward and slashes upwards with a kunai, then does an upwards kick. Unlike most side B attacks, this knocks enemies into the air, letting you combo into aerial attacks but not ground-based ones.",
+      "damage": "2 + 6",
+      "hits": 2,
+      "properties": [
+        "launcher"
+      ],
+      "quote": "Kakashi dashes forward and slashes upwards with a kunai, then does an upwards kick. Unlike most Side B attacks, this knocks enemies into the air, letting you combo into his aerial attacks but not his ground-based ones. ... First hit deals 2 damage, second hit deals 6."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Kakashi creates a clone of himself that kicks upwards. Not as useful as side B since it doesn't cover as much ground, but it doesn't knock the target up as high, leaving them open to some lower-hitting supports.",
+      "damage": "8",
+      "hits": null,
+      "properties": [
+        "launcher"
+      ],
+      "quote": "Kakashi creates a clone of himself that kicks upwards. ... it does have the advantage of not knocking the target up as high, leaving them open to some lower-hitting supports. ... Does 8 damage."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Kakashi charges for a brief time, then fires Pakkun, a small dog, at his enemies. Forces enemies to switch battle characters and has decent range.",
+      "damage": "8",
+      "hits": null,
+      "properties": [
+        "forced switch",
+        "charge"
+      ],
+      "quote": "Kakashi charges for a brief time, then fires Pakkun, a small dog, at his enemies. Does 8 damage, and forces enemies to switch battle characters. It's actually pretty good for a forced switch attack, since it has a bit of range."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Kakashi does a downward slash while in the air. Its main selling point is the ability to knock enemies downwards and through thin floors.",
+      "damage": "8",
+      "hits": null,
+      "properties": [
+        "knockdown"
+      ],
+      "quote": "Kakashi does a downward slash while in the air. It's main selling point is the ability to knock enemies downwards and through thin floors. 8 damage."
+    },
+    {
+      "input": "Y",
+      "name": "The Kakashi Triple Kick",
+      "description": "Kakashi creates 2 clones of himself that kick forward in some strange sort of gymnastics pyramid. Good range and great damage for a regular attack, but limited use in combos.",
+      "damage": "24 damage at close range, less if the target is further away",
+      "hits": 3,
+      "properties": [
+        "multi-hit"
+      ],
+      "quote": "A move I like to call \"The Kakashi Triple Kick\", Kakashi creates 2 clones of himself that kick forward in some strange sort of gymnastics pyramid. It has good range and great damage for a regular attack, but it's use in combos is limited. Does 24 damage at close range, less if the target is further away."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "Kakashi throws up to 6 shurikens in a line. Not a great attack, mainly because of the lag when Kakashi starts and finishes the attack, and the range isn't as good as you'd hope.",
+      "damage": "each shuriken does 3, for a total of 18 if they all hit",
+      "hits": null,
+      "properties": [
+        "projectile",
+        "multi-hit"
+      ],
+      "quote": "Kakashi throws up to 6 shurikens in a line. Each shuriken does 3 damage, for a total of 18 if they all hit. Not a great attack, mainly because of the lag when Kakashi starts and finishes the attack. Also, the range isn't as good as you'd hope."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Kakashi jumps into the air and does a punch, a slash, and a kick. This attack will not hit the opponent unless they're above you. One of Kakashi's most-used attacks; can be comboed out of with a little finesse.",
+      "damage": "the first two hits do 5 damage each, the third hit does 8",
+      "hits": 3,
+      "properties": [
+        "multi-hit"
+      ],
+      "quote": "Kakashi jumps into the air and does a punch, a slash, and a kick. This attack WILL NOT hit your opponent unless they're above you, so be aware. This is one of Kakashi's attacks that you're going to be using a lot - it does decent damage and with a little finesse it can be comboed out of as well. The first two hits do 5 damage each, the third hit does 8."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Kakashi charges for about half a second, then a huge dog jumps at his opponents. Breaks guard, has a huge hitbox, charges quickly, and doesn't leave you open for long, though Kakashi has a lot of difficulty comboing out of it without supports.",
+      "damage": "16",
+      "hits": null,
+      "properties": [
+        "guard break",
+        "charge"
+      ],
+      "quote": "Kakashi charges for about half a second, then a huge dog jumps at his opponents. Breaks guard and deals 16 damage. All things considered, it may not be the best guard break in the game since Kakashi has a lot of difficulty comboing out of it with supports (and can't combo out of it at all without them), but even so it's great. HUGE hitbox, it charges quickly, doesn't leave you open for long, and decent damage."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Kakashi throws a Kunai at a downward angle. Average Y aerial, okay for harassing opponents; also usable after up Y if not comboing out of it with a support.",
+      "damage": "12",
+      "hits": null,
+      "properties": [
+        "projectile"
+      ],
+      "quote": "Kakashi throws a Kunai at a downward angle, dealing 12 damage. Your average Y aerial, it's okay for harassing opponents. It's also usable after up Y if you're not comboing out of it with a support."
+    },
+    {
+      "input": "select",
+      "name": null,
+      "description": "Kakashi creates a tree stump that can be used to dodge an attack. If Kakashi is attacked during the next 4 seconds, the stump replaces him and the attack deals no damage. You can also move a short distance after Kakashi disappears.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Kakashi creates a tree stump that can be used to dodge an attack. If Kakashi is attacked during the next 4 seconds, the stump will replace him and the attack will deal no damage. You can also move a short distance after Kakashi disappears."
+    }
+  ],
+  "combos": [
+    "B, side B, up Y, (pause), aerial Y",
+    "B, up B, up Y, aerial Y",
+    "B, up B, Y, up Y, aerial Y",
+    "Side B, up Y, Gotenks 3, fastfall, dash, repeat",
+    "Side B, up Y, fastfall, Aya 2, repeat",
+    "Kakashi (any) and Kenshin (5): B, side B, up Y, switch to Kenshin, aerial Y, X"
+  ],
+  "unresolved": [
+    "Neutral B and down B are mentioned in HK6 as attacking options after a fast-fall, alongside side B and down Y, but no separate damage/description beyond the HK2 entries is given there.",
+    "Y (non-directional) is stated in a combo note to deal about 4 damage and keep the enemy in the combo when inserted between up B and up Y \u2014 this conflicts with the HK2 damage value of 24 (close range) for standalone Y; guide does not reconcile this, likely a different hit/positioning scenario.",
+    "5-koma and 6-koma (both variants) sections do not restate B/Y basic attacks or passives beyond the specials and J-Soul value; guide implies basics are shared across all koma sizes per HK2, but this is not explicitly restated per-koma.",
+    "Support/help koma 'size' (block count) for the help koma is not stated in the guide, only its shape '[]' which is ambiguous for exact block count; left null.",
+    "chr_b_note in schema example says 'null if character is not in the table' \u2014 Kakashi IS in the table at 23, so chr_b_note here documents the source rather than being null.",
+    "Guide states in HK1 Kakashi has 'probably the best guard break in the game' (down Y) but HK2/HK6 both note it's hard to combo out of without supports \u2014 not a contradiction, just a caveat repeated in both sections.",
+    "Passives 'Can Wall-Jump', 'Can see invisible opponents', 'Take less damage from Special Attacks' are listed in HK5 as innate Kakashi abilities (not tied to a specific koma size) \u2014 recorded here as general passives but not assigned to a specific koma entry since the guide doesn't specify which koma size(s) they apply to.",
+    "J-Soul is the guide's term for HP; used directly as 'hp' for battle koma (136/152/168/168)."
+  ]
+}

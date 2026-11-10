@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_a", "case_b"],
+  "properties": {
+    "case_a": {"$ref": "#/$defs/result"},
+    "case_b": {"$ref": "#/$defs/result"}
+  },
+  "$defs": {
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "basis", "preserved_observations", "scope", "next_check"],
+      "properties": {
+        "verdict": {"type": "string", "enum": ["supported", "supported_with_scope_caveat", "underdetermined", "contradicted"]},
+        "basis": {"type": "string"},
+        "preserved_observations": {"type": "array", "items": {"type": "string"}},
+        "scope": {"type": "string"},
+        "next_check": {"type": "string"}
+      }
+    }
+  }
+}

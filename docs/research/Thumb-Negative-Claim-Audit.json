@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "date": "2026-08-24",
+    "corpus": "Current docs/confirmed-facts and docs/research canon; findings and archive excluded",
+    "purpose": "Re-check active negative reachability and sole-producer claims through the G1 PyGhidra layer"
+  },
+  "claims": [
+    {
+      "id": "G2-01",
+      "claim": "ColPrm manager buckets 1 (+0x30) and 8 (+0x68) have no producers.",
+      "source": {"path": "docs/confirmed-facts/collision.md", "line": 48},
+      "also_at": ["docs/confirmed-facts/collision.md:202", "docs/confirmed-facts/INVENTORY.md:136", "docs/confirmed-facts/INVENTORY.md:162"],
+      "original_conclusion": "no producer",
+      "checks": [
+        {"query": "find_field_writes", "field": {"offset": "0x30"}, "expect": {"review": "G1 cannot prove the ColPrmMan base for every offset-only candidate; review slices for an attributable producer."}},
+        {"query": "find_field_writes", "field": {"offset": "0x68"}, "expect": {"review": "G1 cannot prove the ColPrmMan base for every offset-only candidate; review slices for an attributable producer."}}
+      ]
+    },
+    {
+      "id": "G2-02",
+      "claim": "ColPrm record +0x68 has no nonzero writer and is vestigial.",
+      "source": {"path": "docs/confirmed-facts/collision.md", "line": 74},
+      "also_at": ["docs/confirmed-facts/entities.md:259", "docs/confirmed-facts/INVENTORY.md:153"],
+      "original_conclusion": "no writer except zero-clear",
+      "checks": [
+        {"query": "find_field_writes", "field": {"offset": "0x68"}, "expect": {"review": "Separate ColPrm record candidates from unrelated +0x68 stores and distinguish zero-clear from nonzero writes."}}
+      ]
+    },
+    {
+      "id": "G2-03",
+      "claim": "Battle_MoveManCreate has exactly one direct caller.",
+      "source": {"path": "docs/confirmed-facts/moves.md", "line": 24},
+      "also_at": ["docs/confirmed-facts/INVENTORY.md:175"],
+      "original_conclusion": "sole caller at arm9 0x020833D0",
+      "checks": [{"query": "callers", "target": {"overlay": "arm9", "address": "0x02082a38"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-04",
+      "claim": "The first half of Battle_MoveManCreate is dead because a later memset unconditionally wipes it.",
+      "source": {"path": "docs/confirmed-facts/moves.md", "line": 28},
+      "also_at": ["docs/confirmed-facts/moves.md:38", "docs/confirmed-facts/INVENTORY.md:175"],
+      "original_conclusion": "dead initialization",
+      "checks": [{"query": "decompile", "target": {"overlay": "arm9", "address": "0x02082a38"}, "expect": {"review": "Confirm control-flow dominance and wipe size in the G1 decompilation."}}]
+    },
+    {
+      "id": "G2-05",
+      "claim": "The MoveMan element allocator has exactly one direct caller.",
+      "source": {"path": "docs/confirmed-facts/moves.md", "line": 63},
+      "also_at": ["docs/confirmed-facts/INVENTORY.md:176"],
+      "original_conclusion": "sole caller at arm9 0x0207CA08",
+      "checks": [{"query": "callers", "target": {"overlay": "arm9", "address": "0x02082c34"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-06",
+      "claim": "NoteTrack never issues commands 23/24; dispatcher cases 1-33 except 3 are unreachable.",
+      "source": {"path": "docs/confirmed-facts/moves.md", "line": 126},
+      "also_at": ["docs/confirmed-facts/moves.md:202", "docs/confirmed-facts/INVENTORY.md:185", "docs/research/Battle-Engine-Map.md:91"],
+      "original_conclusion": "commands never issued",
+      "checks": [
+        {"query": "decompile", "target": {"overlay": "ov6", "address": "0x02156520"}, "expect": {"review": "Enumerate constant command IDs and preserve variable-r2 sites as unresolved."}},
+        {"query": "decompile", "target": {"overlay": "ov6", "address": "0x02157a44"}, "expect": {"review": "Confirm dispatcher cases while treating variable command sources as inconclusive."}}
+      ]
+    },
+    {
+      "id": "G2-07",
+      "claim": "The 73-case NoteTrack dispatcher has no direct caller.",
+      "source": {"path": "docs/confirmed-facts/INVENTORY.md", "line": 185},
+      "original_conclusion": "zero direct callers; callback-installed",
+      "follow_up_item": "jus-ghidra-tooling-j4i2.3.1",
+      "downstream_impact": "Move spec ticket .8 is affected; no dependency found for .7, .9-.13.",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "ov6", "address": "0x02157a44"}, "expect": {"count": 0}},
+        {"query": "xrefs_to", "target": {"overlay": "ov6", "address": "0x02157a44"}, "expect": {"review": "Classify non-call references, including the callback installation."}}
+      ]
+    },
+    {
+      "id": "G2-08",
+      "claim": "Kind-2 abilities never append to the runtime ability list.",
+      "source": {"path": "docs/confirmed-facts/helpers.md", "line": 19},
+      "also_at": ["docs/confirmed-facts/helpers.md:52", "docs/confirmed-facts/INVENTORY.md:395"],
+      "original_conclusion": "kind-2 branch has no AddAbility call",
+      "checks": [{"query": "decompile", "target": {"overlay": "arm9", "address": "0x02077768"}, "expect": {"review": "Trace the kind branches and AddAbility calls in the G1 decompilation."}}]
+    },
+    {
+      "id": "G2-09",
+      "claim": "GrowMax has exactly one direct caller.",
+      "source": {"path": "docs/confirmed-facts/guard-sp.md", "line": 151},
+      "also_at": ["docs/research/Battle-Engine-Map.md:441", "docs/research/Battle-Engine-Map.md:609"],
+      "original_conclusion": "sole caller ov06 0x0215C73C",
+      "checks": [{"query": "callers", "target": {"overlay": "arm9", "address": "0x020784b8"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-10",
+      "claim": "ov06 0x02157208 is the only semantic writer assembling character +0x175.",
+      "source": {"path": "docs/confirmed-facts/nature.md", "line": 180},
+      "original_conclusion": "one semantic assembler among eight syntactic stores",
+      "checks": [{"query": "find_field_writes", "field": {"offset": "0x175", "overlay": "ov6"}, "expect": {"review": "Review G1 slices for the semantic assembler and distinguish unrelated structures."}}]
+    },
+    {
+      "id": "G2-11",
+      "claim": "The nature assembler at ov06 0x02157114 has zero static xrefs and is computed-called.",
+      "source": {"path": "docs/confirmed-facts/nature.md", "line": 192},
+      "original_conclusion": "zero static callers and xrefs",
+      "follow_up_item": "jus-ghidra-tooling-j4i2.3.2",
+      "downstream_impact": "Confirmed nature canon is affected; no direct dependency on .7-.13 identified.",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "ov6", "address": "0x02157114"}, "expect": {"count": 0}},
+        {"query": "xrefs_to", "target": {"overlay": "ov6", "address": "0x02157114"}, "expect": {"count": 0}}
+      ]
+    },
+    {
+      "id": "G2-12",
+      "claim": "bin/jpower.bin has one ROM reference site.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 132},
+      "also_at": ["docs/research/Battle-Engine-Map.md:144"],
+      "original_conclusion": "one source site at ov05 0x021652E8",
+      "follow_up_item": "jus-ghidra-tooling-j4i2.3.3",
+      "downstream_impact": "Helper/passive ticket .11 may depend on jpower provenance; no dependency found for .7-.10, .12, or .13.",
+      "checks": [{"query": "xrefs_from", "target": {"overlay": "ov5", "address": "0x021652e8"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-13",
+      "claim": "The chr_b +0 getter at ov05 0x0214E480 has only one located caller.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 350},
+      "also_at": ["docs/research/Battle-Engine-Map.md:359", "docs/research/GDB-Validation-Queue.md:111"],
+      "original_conclusion": "sole caller around ov05 0x02151B58",
+      "follow_up_item": "jus-ghidra-tooling-j4i2.3.4",
+      "downstream_impact": "Entity ticket .9 and helper/passive ticket .11 may use chr_b catalog assumptions; no dependency found for .7-.8, .10, or .12-.13.",
+      "checks": [{"query": "callers", "target": {"overlay": "ov5", "address": "0x0214e480"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-14",
+      "claim": "Effect-node +0x4 has one semantic pointer writer in ov06 0x02158ED0.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 462},
+      "original_conclusion": "one semantic writer at ov06 0x02158F18",
+      "checks": [{"query": "find_field_writes", "field": {"offset": "0x4", "overlay": "ov6", "function": "0x02158ed0"}, "where": {"store.address": "0x02158f18"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-15",
+      "claim": "ApplyDeltaToCurrent at arm9 0x02078488 has only one direct caller.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 1833},
+      "original_conclusion": "sole direct caller arm9 0x02078414",
+      "checks": [{"query": "callers", "target": {"overlay": "arm9", "address": "0x02078488"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-16",
+      "claim": "The chr_b cache routine at arm9 0x02077C0C has zero direct BL callers and is table-dispatched.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 557},
+      "original_conclusion": "zero direct callers",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x02077c0c"}, "expect": {"count": 0}},
+        {"query": "xrefs_to", "target": {"overlay": "arm9", "address": "0x02077c0c"}, "expect": {"review": "Classify the expected table/data reference separately from calls."}}
+      ]
+    },
+    {
+      "id": "G2-17",
+      "claim": "Both BattleParams getters have exactly one direct caller each.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 559},
+      "original_conclusion": "one ov11 caller site per getter",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x02078514"}, "expect": {"count": 1}},
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x0207853c"}, "expect": {"count": 1}}
+      ]
+    },
+    {
+      "id": "G2-18",
+      "claim": "The chr_b array pointer at 0x0214BD80 has an exhaustive singleton access census and one semantic initializer.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 553},
+      "also_at": ["docs/research/Battle-Engine-Map.md:562"],
+      "original_conclusion": "97 direct xrefs total: arm9 51, ov05 44, ov06 1, ov11 1",
+      "checks": [{"query": "xrefs_to", "target": {"overlay": "arm9", "address": "0x0214bd80"}, "expect": {"count": 97}}]
+    },
+    {
+      "id": "G2-19",
+      "claim": "The installer at ov06 0x0214F91C has exactly one Thumb BL caller.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 757},
+      "original_conclusion": "sole Thumb caller ov06 0x0214DA58",
+      "checks": [{"query": "callers", "target": {"overlay": "ov6", "address": "0x0214f91c"}, "where": {"mode": "thumb"}, "expect": {"count": 1}}]
+    },
+    {
+      "id": "G2-20",
+      "claim": "The per-character update at ov06 0x02156DDC has zero direct callers and is callback-installed.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 2902},
+      "also_at": ["docs/research/Battle-Engine-Map.md:2908"],
+      "original_conclusion": "zero direct callers",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "ov6", "address": "0x02156ddc"}, "expect": {"count": 0}},
+        {"query": "xrefs_to", "target": {"overlay": "ov6", "address": "0x02156ddc"}, "expect": {"review": "Classify the callback pointer load/install."}}
+      ]
+    },
+    {
+      "id": "G2-21",
+      "claim": "The collision pipeline callback at arm9 0x0207F480 has zero direct callers.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 3645},
+      "original_conclusion": "zero direct callers; callback data reference",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x0207f480"}, "expect": {"count": 0}},
+        {"query": "xrefs_to", "target": {"overlay": "arm9", "address": "0x0207f480"}, "expect": {"review": "Classify the expected data reference at arm9 0x0207C5E8."}}
+      ]
+    },
+    {
+      "id": "G2-22",
+      "claim": "The chr_b loader at arm9 0x02075FBC has zero direct callers and is callback-dispatched.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 3810},
+      "original_conclusion": "zero direct callers",
+      "follow_up_item": "jus-ghidra-tooling-j4i2.3.5",
+      "downstream_impact": "Entity ticket .9 and helper/passive ticket .11 are exposed; no dependency found for .7-.8, .10, or .12-.13.",
+      "checks": [
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x02075fbc"}, "expect": {"count": 0}},
+        {"query": "xrefs_to", "target": {"overlay": "arm9", "address": "0x02075fbc"}, "expect": {"review": "Classify callback data references."}}
+      ]
+    },
+    {
+      "id": "G2-23",
+      "claim": "No live-node insertion into character +0x558 was found.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 540},
+      "also_at": ["docs/research/GDB-Validation-Queue.md:170"],
+      "original_conclusion": "only zero-init, no proven live pointer store",
+      "checks": [{"query": "find_field_writes", "field": {"offset": "0x558"}, "expect": {"review": "Review G1 base slices for a live-node insertion; offset-only candidates cannot confirm the negative."}}]
+    },
+    {
+      "id": "G2-24",
+      "claim": "No immediate-offset list insertion into ColPrmMan +0x48 exists.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 3822},
+      "original_conclusion": "no proven list insertion",
+      "checks": [{"query": "find_field_writes", "field": {"offset": "0x48"}, "expect": {"review": "Distinguish manager-list insertion from unrelated clears, accumulators, and global stores."}}]
+    },
+    {
+      "id": "G2-25",
+      "claim": "No fixed-offset second gauge exists in the enumerated inbound graph.",
+      "source": {"path": "docs/research/Battle-Engine-Map.md", "line": 536},
+      "original_conclusion": "plausible but incomplete negative",
+      "checks": [
+        {"query": "decompile", "target": {"overlay": "arm9", "address": "0x020783b8"}, "expect": {"review": "Inspect the enumerated gauge accessor graph; this bounded G1 query cannot prove global absence."}},
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x020783cc"}, "expect": {"review": "Review all recovered ARM and Thumb callers for a distinct fixed-offset gauge."}},
+        {"query": "decompile", "target": {"overlay": "arm9", "address": "0x020783dc"}, "expect": {"review": "Inspect the sibling accessor."}},
+        {"query": "callers", "target": {"overlay": "arm9", "address": "0x02078488"}, "expect": {"review": "Inspect the HP-delta apply inbound graph without treating it as proof of absence."}}
+      ]
+    }
+  ],
+  "exclusions": [
+    {"source": "docs/research/HP-Struct-From-Disassembly.md:254", "reason": "Quoted lesson and explicitly superseded section, not an active claim."},
+    {"source": "docs/research/Battle-Engine-Map.md:225", "reason": "ObjShot zero-reference/dead conclusion is explicitly refuted by Thumb BLX calls."},
+    {"source": "docs/research/Battle-Engine-Map.md:387", "reason": "The sole-producer-implies-not-damage argument is explicitly superseded."},
+    {"source": "docs/research/Battle-Engine-Map.md:534", "reason": "Explicitly refuted or retracted negative."},
+    {"source": "docs/confirmed-facts/deck-editor.md:136", "reason": "Struck original-code archaeology explicitly waived by the current canon."},
+    {"source": "docs/research/Overlay-Map.md:93", "reason": "Aggregate no-caller statistic explicitly warns that it does not establish deadness."},
+    {"source": "docs/confirmed-facts/entities.md:42", "reason": "Warning about false zero-caller results, not an asserted negative."},
+    {"source": "docs/research/Battle-Engine-Map.md:816", "reason": "Hypothetical dead code under an explicitly corrected bad decode."},
+    {"source": "unbounded static research gaps", "reason": "Statements without a concrete address are not executable through the current G1 interface."},
+    {"source": "runtime/UI/gameplay prose", "reason": "Runtime zero-hit and ordinary-language dead/never statements are not static reachability claims."},
+    {"source": "text/data searches", "reason": "String-search negatives are non-code claims outside the G1 query layer."}
+  ]
+}

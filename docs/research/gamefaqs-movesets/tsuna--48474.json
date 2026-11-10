@@ -1,0 +1,275 @@
+{
+  "character": "Tsuna",
+  "series": "Katekyoo Hitman Reborn!",
+  "chr_b": 54,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md chr_b column (worker first read the charId column; corrected by the orchestrator)",
+  "source": {
+    "file": "48474-tsuna.txt",
+    "gamefaqs_id": 48474,
+    "author": "Felix Frenander // Neophos // Offensive_Altar",
+    "version": null
+  },
+  "kit_type": "standard",
+  "natures_available": [
+    "laughter",
+    "power"
+  ],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Any attack dealt to or by a support (while attached) gives you SP."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Reborn is summoned in a spiky costume and rolls around for a while. Starts up in front of you; the attack isn't instant, making it decent at best for combo breaking. Good for pressure, and can make for good combos with some battle characters. Deals laughter damage.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Reborn is summoned and goes to bed with grenades all around him. Due to low damage, slow startup, and still being 3 koma, this is not a good support; avoid. Deals power damage.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "laughter",
+      "hp": null,
+      "passives": [
+        "Takes less damage from specials (innate ability).",
+        "Immune to the blindness effect (innate ability).",
+        "Has auto-guard (innate ability)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "A three hit combo. The last hit hits them downwards, making it deadly on the edge. It's fast and decent pressure, although it's a pretty weak special.",
+          "damage": "26",
+          "hits": 3,
+          "properties": [
+            "multi-hit"
+          ],
+          "quote": "A three hit combo. The last hit hits them downwards, making it deadly on the edge. It's fast, it's decent pressure, although it's a pretty weak special, dealing only 26 damage to neutral natures."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "A splash attack, useful in FFAs/teams but otherwise a pretty bad special. Slow enough that most people can block, dash, or jump away on reaction. Pretty strong against power characters.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "The splash is useful in FFA's/teams, but otherwise, it's a pretty bad special. It's slow enough so that most people can block, dash or jump away on reaction. It's pretty strong against power characters, but you shouldn't bother to much with this."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [
+        "Takes less damage from specials (innate ability).",
+        "Immune to the blindness effect (innate ability).",
+        "Has auto-guard (innate ability)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "A nine hit combo. Against people who don't push block, a great pressure tool, especially with multihitting supports near the wall. The last hit is again a pseudo-spike, but earlier hits often push people off the edge, making the last, deadly hit miss unless spaced well.",
+          "damage": null,
+          "hits": 9,
+          "properties": [
+            "multi-hit"
+          ],
+          "quote": "A nine hit combo. Against people who doesn't push block, this is a great pressure tool, especially coupled with multihitting supports near the wall. The last hit is, again, a pseudo-spike, making it deadly. However, due to the nature of the attack, you often push people off of the edge with earlier hits, making the last, deadly hit miss."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Not very useful; the major range of this attack makes it hard to properly space since much of what it hits isn't visible from the starting position. Strong but rarely lands; can sometimes get you out of corner pressure.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Again, this isn't very useful. The major range of this attack makes it hard to properly space this, as the things the attack will hit often isn't visible from the starting position. It's strong, but you'll so very seldomly hit with it, so it isn't worth it. It can sometimes get you out of corner pressure though, so don't forget about it completly."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [
+        "Takes less damage from specials (innate ability).",
+        "Immune to the blindness effect (innate ability).",
+        "Has auto-guard (innate ability)."
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Generally Tsuna's best special. The final hit spikes them down, making it almost a guaranteed KO over an edge or on a stage with a lot of gaps. If near a wall, one of the hits will miss and the special deals a lot less damage. Deals a tremendous amount of damage to power characters.",
+          "damage": null,
+          "hits": null,
+          "properties": [
+            "multi-hit",
+            "spike"
+          ],
+          "quote": "Generally, Tsuna's best special. The final hit spikes them down, making it almost a guaranteed KO over an edge or on a stage with a lot of gaps. Although, if you're near a wall, one of the hits will miss, and the special will deal a lot less damage, so try to have a lot of open space when using this. It deals a tremendous amount of damage to power characters, so don't be afraid to waste a bar of SP by mixing up after you Y attack with this."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Tsuna's most powerful special. Deals near 100 damage on power characters, so a decent combo into it is almost always a guaranteed KO on most power characters. Has very slow startup, and neither impressive range nor a huge hitbox.",
+          "damage": "near 100 (on power characters)",
+          "hits": null,
+          "properties": [
+            "charge"
+          ],
+          "quote": "Tsuna's most powerful special. It deals near 100 damage on power characters, so a decent combo into it is almost always guaranteed KO on most power characters. However, it has very slow startup, and it has neither impressive range nor a huge hitbox."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "jab",
+      "description": "His jab. Fast, easy to combo from, can cancel into almost anything, decent range and safe enough. Poke on people two or three times to mix them up a bit.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "B - His jab. It's fast, it's easy to combo from, it can cancel into almost anything, it got decent range and it's safe enough. Poke on people two or three times to mix them up a bit."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Fast with good priority. Crosses up on block when close. Can combo into his Y with timing. A good poke. Has an almost ridiculous amount of invincibility frames, nearly from start to end, letting it counter almost any kind of move and bypass certain 'safe' walls. After the invincibility ends, the hitbox stays close to the ground for a short while.",
+      "damage": null,
+      "hits": null,
+      "properties": [
+        "counter"
+      ],
+      "quote": "fB - Fast and has good priority. Crosses up on block when close. Can combo into his Y with timing. A good poke. ... it's a much more important feature is the almost ridicolous amount of invincibility frames the attack possesses. It has invincibility almost from start to end, and using those frames right can make it able to counter almost any kind of move."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "His force change. Pretty slow, decent range, can hit characters on platforms above you. Not terribly useful.",
+      "damage": null,
+      "hits": null,
+      "properties": [
+        "forced switch"
+      ],
+      "quote": "dB - His force change. Pretty slow, decent range, can hit characters on platforms above you. Not terribly useful."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Can catch people by surprise if they're not used to it. On block, use to cross up (or cross up twice in one jump to mix it up). Follow with aerial B for pressure. On hit, can be repeated if the opponent doesn't move away, or followed by a Y or forward Y after a moment.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "uB - Can catch people by surprise if they're not used to it. On block, use this to cross up (or cross up twice in one jump to mix it up). His aerial B afterwards provides pressure. On hit, you can do another if they don't move away, or wait a moment and then catch them with a Y or fY."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Can be used to recover; clashes with a lot of edge guarding attacks. Can catch people after an up B, and can catch people running away on platforms. Useful, but becomes predictable if overused.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial B - Can be used to recover. Clashes with a lot of edge guarding attacks. Can catch people after a uB, and can catch people running away on platforms. It's useful, but don't overuse it, as it quickly becomes predictable."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Good range but slow startup. On hit, can combo into his X special regardless of koma, as long as the opponent doesn't anticipate it. The opponent can fast fall through it to make the special miss.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Y - It got good range, but it has slow startup. On hit, it can combo into his X attack, regardless of koma as long as the opponent doesn't anticipate it. Beware though, if you're not fast, they can fast fall through it to make you miss your special."
+    },
+    {
+      "input": "side Y",
+      "name": "the stumble",
+      "description": "Tsuna's best edge guarding option when used properly. Use it for pressure and combos, without getting predictable with the number of stumbles. Can be ended at any time, resulting in between 2 and 5 stumbles. Amazing priority, but very easy to escape on block if the opponent knows about it.",
+      "damage": null,
+      "hits": "between 2 and 5 (mash-extendable)",
+      "properties": [
+        "mash-extend",
+        "multi-hit"
+      ],
+      "quote": "fY - The stumble. It's Tsuna's best edge guarding option when used properly. Use it for pressure and combos, just don't get predictable with amount of stumbles. You can end the move at any time, resulting in between 2 and 5 stumbles. This move has amazing priority, but it's very easy to escape on block if your opponent knows about it."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Tsuna's guard break. Has range, but the hitbox is small. Decently fast, but the small hitbox and the chance of simply jumping over the opponent makes it rather useless.",
+      "damage": null,
+      "hits": null,
+      "properties": [
+        "guard break"
+      ],
+      "quote": "dY - Tsuna's guard break. It has range, but the hitbox is small. It's decently fast, but sadly, the small hitbox and the chance that you'll simply jump over the opponent makes it rather useless."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "A decent projectile (basketballs). Mix up between using one and both to keep the opponent guessing on when to stop blocking. Has rather bad priority and is easily destroyed by rapid hits.",
+      "damage": null,
+      "hits": null,
+      "properties": [
+        "projectile"
+      ],
+      "quote": "uY - A decent projectile. Try to mix up between using one and both basketballs to keep you opponent guessing on when to stop blocking. It has rather bad priority, and is easily destroyed by rapid hits, so don't try to outgun people with this."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Has less lag than it looks like, but still a laggy attack. Useful when unexpected, but shouldn't be overused. Impossible to cancel after using on the way down (beware of gaps), though the landing lag is special-cancelable.",
+      "damage": null,
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial Y - It has less lag then it looks like, but it's still a laggy attack. It useful when people aren't expecting it, but don't go overusing it. It's impossible to cancel after using, so beware of using it over gaps."
+    }
+  ],
+  "combos": [
+    "B, Y, Kagura 3 koma support (spaced/timed correctly) is an infinite combo; also infinite against a wall using a stumble then Kagura 3 on the fourth hit or so.",
+    "Y into X special, regardless of koma, if the opponent doesn't anticipate it.",
+    "6 koma uX can sometimes land after a finished stumble against the wall if the opponent doesn't jump away instantly.",
+    "Aerial Y landing lag is special-cancelable, so a special can follow an aerial Y."
+  ],
+  "unresolved": [
+    "The guide states Tsuna has 3 battle komas and one alternate, with Tsuna being laughter and the alternate being power, but only describes specials for 4/5/6 koma without stating which of those (or the alternate) correspond to the power nature; only the 4 koma is explicitly labeled laughter in this extraction based on the general statement 'Tsuna is a laughter character.' The 5 koma and 6 koma nature (laughter vs the power alternate) is not stated per-koma, so nature is null for those entries.",
+    "No SELECT Ultimate Action is described anywhere in the guide.",
+    "No explicit 'B string' section describing a chained basic-attack sequence beyond individual B/side B/up B/Y/side Y/up Y descriptions; treated as separate moves per the guide's own breakdown.",
+    "No koma HP values are given in the guide text itself (chr_b_note HP of 348 comes from the mapping table, not this guide).",
+    "Down B (force change) has no damage/hit count given in the guide.",
+    "The guide never explicitly labels its author 'version'; only a last-updated date of 19/06/2007 is given, and the closing credits list the author as 'Felix Frenander // Neophos // Offensive_Altar'.",
+    "Innate ability 'takes less damage from specials' is stated once in the battle koma intro, and it's unclear if this applies to all three battle koma sizes or only some; applied here to all listed battle koma (4/5/6) per the general framing 'Along with Tsuna's innate ability... he lives longer then most characters with his HP.'"
+  ]
+}

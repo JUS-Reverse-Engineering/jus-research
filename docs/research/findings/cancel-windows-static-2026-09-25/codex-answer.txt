@@ -1,0 +1,358 @@
+# codex exec -m gpt-5.6-sol (codex-cli 0.156.1), 2026-09-25, prompt: codex-prompt.txt. Final answer only; tool log trimmed.
+
+ARM PC-relative loads use `PC = instruction_address + 8`.
+
+## 1. Switch at `0x02157A44`
+
+At `0x02157A60`, the effective jump-table base is `0x02157A68` because ARM reads PC as `0x02157A68`. Thus entry `r2 = n` is the instruction at `0x02157A68 + 4n`.
+
+| `r2` | Jump-table entry | Target | Store |
+|---:|---:|---:|---|
+| 1 | `0x02157A6C` | `0x02157B8C` | `[r5,#0xF3] = 1` |
+| 21 | `0x02157ABC` | `0x02157B98` | `[r5,#0xF4] = 1` |
+| 29 | `0x02157ADC` | `0x02157BA4` | `[r5,#0xC8] = 0` |
+
+Supporting instructions: `addls pc,pc,r2,lsl #2` at `0x02157A60`, the three table branches, and the `mov`/`strb` pairs at `0x02157B8C-0x02157BA8`.
+
+Confidence: high.
+
+## 2. Reader return values
+
+Let:
+
+- `W = *(u32 *)(r4 + 0x6C)`
+- `D = *(u8 *)(r4 + 0xD1)`
+- `H = helper_02159990(r4)`, which returns true exactly when `*(u16 *)(r4+0xA0) == 0x1A`
+- `A = helper_0215A824(r4)`
+
+The conditions below are in execution priority order.
+
+### `0x0215A720`
+
+```text
+if !H:
+    if D != 0:
+        return 12
+
+    if A:
+        if W & 0x80:
+            return 3
+        if W & 0x100:
+            return 4
+    else:
+        if (W & 0x81) == 0x81:
+            return 5
+        if (W & 0x101) == 0x101:
+            return 6
+        if W & 0x80:
+            return 1
+        if W & 0x100:
+            return 2
+
+if W & 0x1000:
+    return 11
+
+if !H:
+    if (W & 0x41) == 0x41:
+        return 14
+    if W & 0x40:
+        return 13
+
+return 0
+```
+
+Possible returns are:
+
+```text
+0, 1, 2, 3, 4, 5, 6, 11, 12, 13, 14
+```
+
+Supporting instructions: branches and conditional returns at `0x0215A728-0x0215A818`; literal `0x00000101` at `0x0215A820`.
+
+### `0x0215A8C0`
+
+```text
+if !H:
+    if W & 0x80:
+        return 9
+    if W & 0x100:
+        return 10
+return 0
+```
+
+If both bits are set, `9` wins because its test occurs first.
+
+Possible returns are `0, 9, 10`.
+
+Supporting instructions: `0x0215A8C8-0x0215A8F4`.
+
+### `0x0215A8F8`
+
+```text
+if W & 0x1000:
+    return 11
+
+if !H:
+    if (W & 0x82) == 0x82:
+        return 7
+    if (W & 0x102) == 0x102:
+        return 8
+
+return 0
+```
+
+Possible returns are `0, 7, 8, 11`.
+
+Supporting instructions: `0x0215A900-0x0215A960`; the second mask comes from literal `0x00000102` at `0x0215A964`.
+
+Confidence: high.
+
+## 3. Block `0x0215A430-0x0215A638`
+
+### 3a. How `r5` is obtained
+
+The first call to `0x0215A708` selects the reader:
+
+- If `0x0215A708` returns nonzero, call `0x0215A720`; its return becomes `r5`.
+- If it returns zero and `[r6,#0xDA] < 2`, call `0x0215A8C0`; its return becomes `r5`.
+- If it returns zero and `[r6,#0xDA] >= 2`, neither reader is called. `r5` remains zero.
+
+Supporting instructions: `0x0215A43C-0x0215A468` and `0x0215A484-0x0215A4A8`.
+
+Confidence: high.
+
+### 3b. Byte placed in `r4`
+
+- `0x0215A720` path: `r4 = *(u8 *)(r6+0xF3)`.
+- `0x0215A8C0` path: `r4 = *(u8 *)(r6+0xF4)`.
+- No-reader path caused by `[r6,#0xDA] >= 2`: `r4` remains zero.
+
+Supporting instructions: `ldrb` at `0x0215A46C` and `0x0215A4A4`, plus the initialization at `0x0215A438`.
+
+Confidence: high.
+
+### 3c. When `r5` is written to `[r6,#0xC8]`
+
+At `0x0215A4CC`, the store occurs exactly when:
+
+1. `r5 != 0`, and
+2. bit `r5` is clear in the tested mask.
+
+The tested mask is:
+
+```text
+r5 == 12: [r6,#0xC0]
+otherwise: [r6,#0xC0] | [r6,#0xC4]
+```
+
+So the exact condition is:
+
+```text
+r5 != 0
+and
+(mask & (1 << r5)) == 0
+```
+
+Supporting instructions: `cmp r5,#0`, conditional `ldrne`/`orrne` at `0x0215A4B4-0x0215A4C0`, `tst` at `0x0215A4C8`, and `strbeq` at `0x0215A4CC`.
+
+Confidence: high.
+
+### 3d. Load at `0x0215A56C`
+
+For the `ldr r0,[pc,#0xE8]`:
+
+```text
+PC              = 0x0215A56C + 8 = 0x0215A574
+literal address = 0x0215A574 + 0xE8 = 0x0215A65C
+```
+
+The word at `0x0215A65C` is:
+
+```text
+0x021712BC
+```
+
+At `0x0215A570`, it loads:
+
+```c
+*(u32 *)(0x021712BC + 12 * current_C8)
+```
+
+This is the second word of the corresponding 12-byte record. It ORs that word into `[r6,#0xC4]` and stores the result back:
+
+```c
+[r6+0xC4] |= table[current_C8].word1;
+```
+
+Supporting instructions: `mul` at `0x0215A568`, literal load at `0x0215A56C`, indexed load at `0x0215A570`, and `orr`/`str` at `0x0215A574-0x0215A578`.
+
+Confidence: high.
+
+### 3e. Paths reaching `0x0215A624` with `r4 != 0`
+
+First, the flag byte loaded into `r4` must be nonzero. Let `x` be the current `[r6,#0xC8]` after the possible store at `0x0215A4CC`.
+
+- `x == 0`: rejected at `0x0215A4E4`.
+- `x == 11`: rejected by the switch entry at `0x0215A4FC`.
+- `x == 13` or `14`: the second call to `0x0215A708` and the call to `0x0207834C` must both return nonzero. Bit `x` in `[r6,#0xC4]` must also be clear. It then reaches `0x0215A624` with `r4 = x`.
+- Any other positive `x` except `12`: bit `x` in `[r6,#0xC4]` must be clear. It reaches `0x0215A624` with `r4 = x`.
+- `x == 12`: the second call to `0x0215A708` must return nonzero.
+  - If `[r6,#0x1CC] != [r6,#0x1D0]`, it reaches `0x0215A624` with `r4 = 12`.
+  - If those words are equal, `0x0207834C` must return nonzero. It then reaches `0x0215A624` with `r4 = 14` when `W & 1`, otherwise `r4 = 13`.
+  - If the second `0x0215A708` or required `0x0207834C` returns zero, it exits with `r4 = 0`.
+- `0x02078A70` is only called on a rejected `x == 12` path and does not lead to `0x0215A624`.
+
+Thus the listing permits `r4` values `1-10`, `12-255`, with `11` excluded, subject to the path-specific conditions above. Reader return ranges narrow the values in actual use.
+
+Supporting instructions: `0x0215A4D0-0x0215A58C` and the special `x == 12` path at `0x0215A590-0x0215A614`.
+
+Confidence: high.
+
+## 4. Function `0x02159D7C`
+
+The dispatch table load is:
+
+```text
+0x02159D94 + 8 + 0x12C = 0x02159EC8
+```
+
+Value there:
+
+```text
+0x02172178
+```
+
+Therefore `r1` selects:
+
+| Input `r1` | Function |
+|---:|---:|
+| 0 | `0x0215A720` |
+| 1 | `0x0215A8C0` |
+| 2 | `0x0215A8F8` |
+
+After the selected reader returns move value `m`:
+
+1. If bit `m` is set in `[r6,#0xC0]`, `m` is replaced with zero.
+2. `[r6,#0xC4]` is set to zero.
+3. If `m == 0`, the function returns zero without changing `[r6,#0xCA]`.
+4. For `m == 13` or `14`, failure of `0x0207834C` returns zero. Success first forces `[r6,#0xC4]` to `0xFFFFFFFF`.
+5. On the successful path, `[r6,#0xCA] = m`.
+6. It then ORs the record mask into `[r6,#0xC4]`:
+
+```c
+[r6+0xC4] |= *(u32 *)(0x021712BC + 12*m);
+```
+
+The second literal calculation is:
+
+```text
+0x02159E08 + 8 + 0xBC = 0x02159ECC
+value = 0x021712BC
+```
+
+The third is:
+
+```text
+0x02159E48 + 8 + 0x80 = 0x02159ED0
+value = 0x021712C0
+```
+
+`0x021712C0 + 12*m` addresses the signed byte in the third word of record `m`; `ldrsb` loads it for the call to `0x02157494`.
+
+For `m == 12`, the later code also forces `[r6,#0xC4]` to `0xFFFFFFFF`.
+
+Supporting instructions: `0x02159D94-0x02159DC0`, `0x02159DE8-0x02159E20`, and `0x02159E48-0x02159E84`.
+
+Confidence: high.
+
+## 5. Start of `0x02159EF8`
+
+At `0x02159F4C`:
+
+```text
+PC              = 0x02159F54
+literal address = 0x02159F54 + 0x6E8
+                = 0x0215A63C
+literal value   = 0x021712B8
+```
+
+The move value is the signed byte `[r6,#0xCA]`, loaded into `r4`. For values below 13, the code indexes 12-byte records at:
+
+```text
+0x021712B8 + 12*r4
+```
+
+It loads the first `u32` of that record and passes it to `0x02157450`.
+
+At `0x0215A030-0x0215A044`, it stores zero to all three bytes:
+
+```text
+[r6,#0xF4] = 0
+[r6,#0xF3] = 0
+[r6,#0xC8] = 0
+```
+
+Supporting instructions: `ldrsb` at `0x02159F24`, `mul` at `0x02159F48`, literal/indexed loads at `0x02159F4C-0x02159F54`, and the three `strb` instructions.
+
+Confidence: high.
+
+## 6. Allowed transitions
+
+I interpret `i` as the move value returned by the reader and stored at `[r6,#0xCA]`, not as the dispatch argument `r1`. A literal interpretation of `r1=i` for `i=3..10` cannot be resolved because only dispatch entries 0, 1, and 2 are shown.
+
+With `[r6,#0xC0] == 0`, starting move `i` gives `[r6,#0xC4]` these masks:
+
+| `i` | Mask |
+|---:|---:|
+| 1 | `0x002` |
+| 2 | `0x0AE` |
+| 3 | `0x0AA` |
+| 4 | `0x1FE` |
+| 5 | `0x0AA` |
+| 6 | `0x1FE` |
+| 7 | `0x0AA` |
+| 8 | `0x1FE` |
+| 9 | `0x3FE` |
+| 10 | `0x7FE` |
+
+A normal candidate `j` passes the mask checks exactly when bit `j` is clear. `j=11` never reaches `0x0215A624`, and `j=12` follows its special path.
+
+| Initial `i` | Allowed returns from `0x0215A720` | Allowed returns from `0x0215A8C0` |
+|---:|---|---|
+| 1 | 2, 3, 4, 5, 6, 12, 13, 14 | 9, 10 |
+| 2 | 4, 6, 12, 13, 14 | 9, 10 |
+| 3 | 2, 4, 6, 12, 13, 14 | 9, 10 |
+| 4 | 12, 13, 14 | 9, 10 |
+| 5 | 2, 4, 6, 12, 13, 14 | 9, 10 |
+| 6 | 12, 13, 14 | 9, 10 |
+| 7 | 2, 4, 6, 12, 13, 14 | 9, 10 |
+| 8 | 12, 13, 14 | 9, 10 |
+| 9 | 12, 13, 14 | 10 |
+| 10 | 12, 13, 14 | none |
+
+Conditions attached to that table:
+
+- `12` reaches `0x0215A624` with `r4 == 12` only if the second `0x0215A708` call is true and `[r6,#0x1CC] != [r6,#0x1D0]`.
+- `13` and `14` require the later `0x0215A708` and `0x0207834C` calls to return true.
+- The initial choice of reader still applies: `0x0215A720` requires the first `0x0215A708` call to be true; `0x0215A8C0` requires it to be false and `[r6,#0xDA] < 2`.
+- A nonzero flag byte at `0xF3` or `0xF4` is assumed, as stipulated.
+
+After an ordinary accepted transition:
+
+```text
+new [r6,#0xC4] = old mask | mask[j]
+```
+
+This update occurs at `0x0215A570-0x0215A578`. The accepted `j == 12`, `r4 == 12` special path bypasses that update, so `[r6,#0xC4]` remains unchanged.
+
+For `i=1`, the initial mask is `0x002`. After accepting `j=5`:
+
+```text
+0x002 | 0x0AA = 0x0AA
+```
+
+Bit 2, value `0x004`, is clear in `0x0AA`. Therefore index 2 would pass the mask checks afterward, assuming the reader and flag conditions needed to produce it.
+
+Supporting instructions: mask creation at `0x02159E04-0x02159E20`, tests at `0x0215A4B4-0x0215A4CC` and `0x0215A550-0x0215A560`, mask union at `0x0215A564-0x0215A578`, and the supplied record words.
+
+Confidence: high for the move-value interpretation; high confidence that the literal dispatch-argument interpretation is undecidable for indices 3 through 10 from the shown data.

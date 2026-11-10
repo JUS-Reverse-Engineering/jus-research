@@ -1,0 +1,271 @@
+{
+  "character": "Dio",
+  "series": "JoJo",
+  "chr_b": 29,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md chr_b column (worker first read the charId column; corrected by the orchestrator)",
+  "source": {
+    "file": "49230-dio.txt",
+    "gamefaqs_id": 49230,
+    "author": "Draconated",
+    "version": null
+  },
+  "kit_type": "standard",
+  "natures_available": [
+    "power",
+    "laughter",
+    "knowledge"
+  ],
+  "koma": [
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Muda Muda",
+          "description": "Dio unleashes five kicks to an opponent that is hit by the first kick. An okay combo ender but weaker than Muda Muda Muda; Dio's weakest special.",
+          "damage": "15 damage to power/laughter and 22 damage to knowledge",
+          "hits": 5,
+          "properties": [
+            "multi-hit"
+          ],
+          "quote": "Dio unleashes five kicks to an oppoent that is hit by the first kick. It's an okay combo ender, but fails when compaired to Muda Muda Muda(5+6 Koma Dio) and it's very weak, Dio's weakest special. 15 damage to power/laughter and 22 damage to knowledge"
+        },
+        {
+          "input": "X+up",
+          "name": "Circle Knives",
+          "description": "Dio takes out knives and teleports them around his opponent to hit them. Works well with long-distance combos, fairly good with a normal combo. The only worthwhile special of 4 Koma Dio.",
+          "damage": "30 damage to power/laughter and 45 damage to knowledge",
+          "hits": null,
+          "properties": [
+            "projectile"
+          ],
+          "quote": "Dio takes out knives and teleports them around his oppoent to hit them. A good special, it goes REALLY well with a longe distance combo, fairly good with a normal combo. The only worthwhile special of 4 Koma Dio. 30 damage to power/laughter and 45 damage to knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Muda Muda Muda",
+          "description": "The World comes out and rapidly hits his opponents with his fists; tap X rapidly for more hits. Dio's best combo ender, used as a crowd clearer, ringout move, and normal combo finisher.",
+          "damage": "19-43 damage to power/laughter and 28-64 damage to knowledge",
+          "hits": null,
+          "properties": [
+            "multi-hit",
+            "mash-extend"
+          ],
+          "quote": "X - Muda Muda Muda (Tap X rapidly for more hits) The World comes out and rapidly hits his oppoents with his fists. This is Dio's best combo ender, and an all around great move. Use this as a croud clearer, ringout move, and as a normal combo finisher. 19-43 damage to power/laughter and 28-64 damage to knowledge"
+        },
+        {
+          "input": "X+up",
+          "name": "Road Roller",
+          "description": "Dio finds a steam roller and crushes his foes with it, then bashes the roller until it explodes. A great surprise attack, pretty strong, but easy to dodge if seen coming; falls slowly and can kill the user if not careful. Also usable over a fall-through area to KO other opponents and yourself; only use it if Dio is not the last battle koma.",
+          "damage": "40 damage to power/laughter and 60 damage to knowledge",
+          "hits": null,
+          "properties": [],
+          "quote": "Dio finds a steam roller and crushes his foes with it, he than bashes the roller until it explodes. This move is a bit iffy. On one hand, it makes a great suprise attack, is pretty strong, and looks really cool. On the other hand, if you see it coming, it's VERY easy to dodge, it falls pretty slowly, and you can kill yourself with it if you're not carefull. It's okay by itself, but it holds nothing to The World(Dio Koma 6). It also has another great use, use it on a fall through are to ko other oppoents and youself. But, only use it if Dio is not your last battle koma, otherwise, you lose too ;_; 40 damage to power/laughter and 60 damage to knowledge"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Muda Muda Muda",
+          "description": "The same as 5 Koma Dio's Muda Muda Muda except it's a tad bit weaker. Still a great attack.",
+          "damage": "19-41 damage to power/laughter and 28-61 damage to knowledge",
+          "hits": null,
+          "properties": [
+            "multi-hit",
+            "mash-extend"
+          ],
+          "quote": "The same as 5 Koma Dio except it's a tad bit weaker. Still a great attack though. 19-41 damage to power/laughter and 28-61 damage to knowledge"
+        },
+        {
+          "input": "X+up",
+          "name": "The World",
+          "description": "Dio and The World use their ultimate attack, ZA WARUDO! Time freezes for about 2 seconds; the opponent cannot be moved by attacks but still takes damage, and any attack the opponent was mid-execution gets cancelled if hit. Enough room for one combo during frozen time, or spam Muda Muda Muda with SP. Can run away to heal (but cannot use supports or change character while time is frozen). Can also freeze time to run out the match timer for sudden death (the time gauge does not move while frozen). Opponents can hear The World activate and block to avoid damage, so it works better in 4v4 matches where opponents are too occupied to remember to block.",
+          "damage": null,
+          "hits": null,
+          "properties": [
+            "status:time stop"
+          ],
+          "quote": "Dio and The World use their ultimate attack, ZA WARUDO! Time is frozen! It takes a second to start, so it's faster than some specials(Wich means it can save you from damage). Once time is frozen, it stays frozen for about 2 seconds. During this time, Your oppoent will not be moved by any attack, but will still recieve damage. If your oppoent was in the middle of an attack, the attack will be cancelled if you damage them with any attack."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Flip Kick, causes a Blindness effect; a fairly useful koma, great as a surprise attack.",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Niku no Me, select target; a fairly decent support. He teleports, attacks, and that's it.",
+      "help_effect": null
+    },
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Regenerates the SP gauge if you don't change characters or use support characters. An okay effect overall; kinda useful for 1+ battle koma decks and REALLY useful for 1 battle koma decks."
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Dio uses a sideways punch, good for starting combos.",
+      "damage": "10 damage to power/laughter and 15 damage to knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "Dio uses a sideways punch, good for starting combos 10 damage to power/laughter and 15 damage to knowledge"
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Dio shoots a vampire laser beam. Makes a good end to combos, but it's hard to connect with most; use it when an opening is seen.",
+      "damage": "10 damage to power/laughter and 15 damage to knowledge",
+      "hits": null,
+      "properties": [
+        "projectile"
+      ],
+      "quote": "Dio shoots a vampire lazer beam(Jojo vampires just get cooler and cooler). It makes a good end to combos, but it's hard to connect with most. Just use it when you see an opening. 10 damage to power/laughter and 15 damage to knowledge"
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Dio does a backflip kick that launches him in the air. The perfect aerial combo starter and a good dodge move; use it often.",
+      "damage": "10 damage to power/laughter and 15 damage to knowledge",
+      "hits": null,
+      "properties": [
+        "launcher"
+      ],
+      "quote": "Dio does a backflip kick that launches him in the air. This is the perfect aerial combo starter and a good dodge move, use it often 10 damage to power/laughter and 15 damage to knowledge"
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "The World does a quick sideways punch. A good combo starter.",
+      "damage": "10 damage to power/laughter and 15 damage to knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "The world does a quick sideways punch. A good combo starter 10 damage to power/laughter and 15 damage to knowledge"
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "The World punches downwards. Good move if you're just randomly falling, okay for an aerial move.",
+      "damage": "10 damage to power/laughter and 15 damage to knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "The World punches downwards. Good move if you're just randomly falling, okay for an aerial move 10 damage to power/laughter and 15 damage to knowledge"
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "The World does a quick 1-2 punch in one attack. Strong and perfect for combos.",
+      "damage": "20 damage to power/laughter and 30 damage to knowledge",
+      "hits": 2,
+      "properties": [],
+      "quote": "The World does a quick 1-2-punch in one attack. Strong and perfect for combos 20 damage to power/laughter and 30 damage to knowledge"
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "The World rushes forward for a sweeping punch. With great strength and distance, this is his best combo move.",
+      "damage": "18 damage to power/laughter and 27 damage to knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "The World rushes foward for a sweeping punch. With great streangth and distance, this is his best combo move 18 damage to power/laughter and 27 damage to knowledge"
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "Dio jabs his hand into his opponent to steal blood. A great stand-alone move that recovers your health.",
+      "damage": "14 damage to power/laughter and 21 damage to knowledge",
+      "hits": null,
+      "properties": [
+        "status:heal"
+      ],
+      "quote": "Dio jabs his hand into his oppoent to steal blood. A great stand alone move that recovers your health 14 damage to power/laughter and 21 damage to knowledge"
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Dio rushes forward and turns around for The World to punch his opponent. Good strength, speed, and distance; use it often.",
+      "damage": "20 damage to power/laughter and 30 damage to knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "Dio rushes foward and turns around for The World to punch his oppoent. Good streangth, speed, and distance, use it often 20 damage to power/laughter and 30 damage to knowledge"
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Dio throws a knife at his opponent. A good aerial move; use its distance well.",
+      "damage": "15 damage to power/laughter and 22 damage to knowledge",
+      "hits": null,
+      "properties": [
+        "projectile"
+      ],
+      "quote": "Dio throws a knife at his oppoent. A good aerial move, use its distance well 15 damage to power/laughter and 22 damage to knowledge"
+    },
+    {
+      "input": "select",
+      "name": "Dio's ultimate action",
+      "description": "Dio pulls out a book, and if he is attacked while reading, he'll teleport behind the attacker. Not all that useful or easy to use; guide advises avoiding it.",
+      "damage": null,
+      "hits": null,
+      "properties": [
+        "counter"
+      ],
+      "quote": "Select - Dio's ultimate action. Dio pulls out a book, and if he is attacked while reading, he'll teleport behind the attacker. It's not all that useful or easy to use. Avoid using it."
+    }
+  ],
+  "combos": [],
+  "unresolved": [
+    "The guide never describes a down+B forced-switch attack for Dio; C4's 'B+down' entry is a standard basic attack (The World sideways punch), not a forced-switch move, so no 'down+B forced switch' move exists in this guide.",
+    "The guide never describes a dedicated 'B string' move; only the individual B, side B, up B, down B, and air B basics are given.",
+    "Support koma damage lines list 'power/knowledge' and 'laughter' groupings (e.g. '22 damage to power/knowledge and 33 damage to laughter' for the 2-koma support), which is the opposite grouping from every other move in the guide (which groups power/laughter vs knowledge). Copied exactly as written; likely a guide typo but not corrected here.",
+    "Support koma sizes/shapes are described as ASCII art in the source (e.g. '[ ][ ]' and an L-shape) rather than plain text; not captured beyond size and name since the schema has no field for koma shape diagrams.",
+    "The guide describes an 'Over twice' maneuver (a dash forward with a red aura) and an 'A' jump/double-jump input and 'A+down in air' jump-cancel input under 'Other Manuvers' in C4; these are universal engine mechanics, not Dio-specific moves, so they were left out of the moves list rather than forced into an input enum the schema doesn't cover.",
+    "Help koma section (C6) lists five separate 'Helpful help koma for Dio' (Giorno, Jonathan, Rohan, Gyro Zeppili, Taizo, Frieza) with their own effects, but these are OTHER characters' help koma, not Dio's own help koma entry; only Dio's own help koma effect was captured in the koma array, and the recommended-others list is omitted as it does not describe Dio himself.",
+    "No HP values are given anywhere in the guide for any koma size (battle, support, or help); all left null per instruction not to invent values.",
+    "Guide gives no version number for this FAQ."
+  ]
+}

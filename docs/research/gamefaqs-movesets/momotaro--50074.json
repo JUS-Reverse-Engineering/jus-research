@@ -1,0 +1,273 @@
+{
+  "character": "Momotaro",
+  "series": "Sakigake!! Otokojuku",
+  "chr_b": 67,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {
+    "file": "50074-momotaro.txt",
+    "gamefaqs_id": 50074,
+    "author": "Christian Fontanet / TheFenikkusu (Ryobit)",
+    "version": "1.0"
+  },
+  "kit_type": "standard",
+  "natures_available": ["power", "knowledge"],
+  "koma": [
+    {
+      "size": null,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "help_effect": "Provides the SP-regeneration effect: allows the SP gauge to very slowly regenerate while the character is out on the field."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Momotaro appears, lags for about 1 second, then shoots something that causes the Confusion effect. According to Genroh's FAQ this is called Shousyaousoutan."
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Momotaro appears and stays. If the opponent attacks him, Momotaro deals about 36 damage to enemies with a neutral nature."
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Lags a long time, leaving the user open for about 2 seconds afterward. Not usable without support setup.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Without supports I see no way to use his X, which lags like there's no tomorrow, and after that there's about 2 seconds where you become a sitting duck."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Takes several seconds to use; its only effect is to recover a little bit of SP energy.",
+          "damage": null,
+          "hits": null,
+          "properties": ["status:SP recovery", "charge"],
+          "quote": "It takes several seconds to use and it's only effect is to recover a little bit of SP-energy. So basically you're using 1 special bar to regain about 40-45% of one."
+        }
+      ]
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Much better than the 4-koma X but has just enough lag that it can't be combo'd into with just Momotaro's normal attacks. Good for ring-outs.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "This time his X is much better but it has just enough lag to make it so that it can't be comboed into with just Momos normal attacks... The big thing that 5 has over 4 is that his special is good for ring outs."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Takes so long it's pretty much worthless; makes the user invulnerable for about 2 seconds.",
+          "damage": null,
+          "hits": null,
+          "properties": ["counter", "charge"],
+          "quote": "His Up-X takes so long that it's pretty much worthless... It makes you invulnerable for about 2 seconds."
+        }
+      ]
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "power",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Very good for edge-guarding and catching opponents off-guard.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "His X is very good for edge-guarding and catching opponents off-guard."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Lags for about 1.5 seconds but works very well with supports.",
+          "damage": null,
+          "hits": null,
+          "properties": ["charge"],
+          "quote": "His Up-X lags for about 1.5 seconds but it works very well with supports."
+        }
+      ]
+    },
+    {
+      "size": 6,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [
+        {
+          "input": "X",
+          "name": null,
+          "description": "Pretty much the same as the Power type 6-koma X, but this koma is Knowledge nature.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Pretty much the same as the Power type but well...it's Knowledge."
+        },
+        {
+          "input": "up X",
+          "name": null,
+          "description": "Not separately described; guide treats this koma as functionally the same as the Power 6-koma.",
+          "damage": null,
+          "hits": null,
+          "properties": [],
+          "quote": "Pretty much the same as the Power type but well...it's Knowledge. I don't recommend using this one unless you got a big problem with Laughter types."
+        }
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": null,
+      "description": "Momotaro swings his sword in a downward arc.",
+      "damage": "10 neutral, 15 knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "B -------> Momotaro swings his sword in a downwar arc. Deals 10 damage to neutral types and 15 to knowledge types."
+    },
+    {
+      "input": "Y",
+      "name": null,
+      "description": "Momotaro unleashes a flurry of punches. Tap Y rapidly for extra damage.",
+      "damage": "max-33 knowledge, max-22 neutral",
+      "hits": null,
+      "properties": ["mash-extend"],
+      "quote": "Y -------> Momotaro unleashes a flurry of punches. Tap Y rapidly for extra damage. Deal max-33 damage to knowledge types and max-22 damage to neutral types."
+    },
+    {
+      "input": "side B",
+      "name": null,
+      "description": "Momotaro quickly kicks.",
+      "damage": "10 neutral, 15 knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "Side-B ---> Momotaro quickly kicks. Deals 10 damage to neutral types and 15 damage to knowledge types."
+    },
+    {
+      "input": "side Y",
+      "name": null,
+      "description": "After about a 0.5 second lag, Momotaro shoots a blue tiger from the tip of his sword. Good edge-guarding move; the panel can be touched repeatedly to keep shooting the blue tiger.",
+      "damage": "about 18 neutral, 27 knowledge",
+      "hits": null,
+      "properties": ["projectile"],
+      "quote": "Side-Y ---> After about a 0.5 second lag, Momotaro shoots a blue tiger from the tip of his sword. Deals about 18 damage to neutral types and 27 damage to knowledge types."
+    },
+    {
+      "input": "up B",
+      "name": null,
+      "description": "Momotaro removes his headband and whips it upwards diagonally, depending on which direction he is facing.",
+      "damage": "9 neutral, 13 knowledge",
+      "hits": null,
+      "properties": [],
+      "quote": "Up-B -----> Momotaro removes his head band and whips it upwards diagonally [depending on which direction you're facing] Deals 9 damage to neutral types and 13 damage to knowledge types."
+    },
+    {
+      "input": "up Y",
+      "name": null,
+      "description": "After about a 0.5 second lag, Momotaro throws his sword into the air, hitting the enemy several times. Useful for hitting enemies descending into the stage.",
+      "damage": "at least 4, at most 20 neutral; at least 6, at most 30 knowledge",
+      "hits": null,
+      "properties": ["multi-hit"],
+      "quote": "Up-Y -----> After about a o.5 second lag, Momotaro throws his sword into the air. Hitting the enemy several times. It deals at least 4 damage and at most 20 damage to neutral types and at least 6 damage and at most 30 damage to knowledge types."
+    },
+    {
+      "input": "air B",
+      "name": null,
+      "description": "Like his normal B only the arc is a bit bigger.",
+      "damage": "same as B",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial-B -> Like his normal B only the arc is a bit bigger. It deals the same damage that his B deals."
+    },
+    {
+      "input": "air Y",
+      "name": null,
+      "description": "Momotaro does a tornado-spin all the way to the ground.",
+      "damage": "same as up Y",
+      "hits": null,
+      "properties": [],
+      "quote": "Aerial-Y -> Momotaro does a tornado-spin all the way to the ground. Deals the same damage that his Up-Y deals."
+    },
+    {
+      "input": "down B",
+      "name": null,
+      "description": "Momotaro's force-switch attack. It's reasonably fast.",
+      "damage": "10 neutral, 15 knowledge",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Down-B ---> Momotaros force-switch. It's reasonably fast. it deals 10 damage to neutral types and 15 damage to knowledge types."
+    },
+    {
+      "input": "down Y",
+      "name": null,
+      "description": "Momotaro's guard-break. It's very fast but has poor range.",
+      "damage": "20 neutral, 30 knowledge",
+      "hits": null,
+      "properties": ["guard break"],
+      "quote": "Down-Y ---> Momotaros guard-break. It's very fast but has poor range. It deals 20 damage to neutral types and 30 damage to knowledge types."
+    },
+    {
+      "input": "select",
+      "name": "Ultimate Action",
+      "description": "Recovers a decent amount of SP, but the guide advises against using it unless absolutely necessary because Momotaro's built-in effect drains SP away while not fighting.",
+      "damage": null,
+      "hits": null,
+      "properties": ["status:SP recovery"],
+      "quote": "Unless absolutely necessary...forget about Momotaros Ultimate Action. It does recover a decent amount of SP however his built in effect means that when not fighting his SP is gonna slowly drain away."
+    }
+  ],
+  "combos": [
+    "B -> Side-B -> Y -> Side-Y: Deals about 44-48 damage against neutral types and 66-72 damage against knowledge types depending on how many times you tap Y.",
+    "B -> Up-B -> Side-Y: Deals 37 damage to neutral types and 55 damage to knowledge types.",
+    "B->Side-B->Y->Shishio-2->[run towards opponent]B->Y->Shishio 2: Rinse and repeat until you reach the limit. (Also works with Gotenks-3 and Bobobo-2 with slightly different timing.)",
+    "4-Koma: B -> Side-B -> Y -> Gotenks-3 -> X: Deals 108 damage to power types, 96 damage to laughter types, and 122 damage to knowledge types.",
+    "4-Koma: B -> Side-B -> Y -> Kagura-3 -> [wait until you hear the 5th smash...] -> X: Deals 113 damage to power types, 123 damage to knowledge types, and about 93 damage to laughter types.",
+    "5-Koma: B -> Side-B -> Y -> Kenshiro-3 -> X: Deals about 76 damage to neutral types and about 113 to Knowledge types.",
+    "5-Koma: B -> Side-B -> Y -> Kenshin-2 -> X: Only deals about 44 damage but the paralysis from Kenshin lasts long enough to repeat the combo; great for ring-outs.",
+    "6-Koma: B -> Side-B -> Y -> Naruto-3 -> Up-X: Deals 102 damage to neutral types and 162 damage to Knowledge types.",
+    "6-Koma: B -> Side-B -> Y -> Shishio-2 -> Up-X: Deals about 108 damage to neutral types and up to 165 damage against knowledge."
+  ],
+  "unresolved": [
+    "Guide's Table of Contents header is malformed/duplicate ('X. - Credits [CRDT]' appears alongside a section IX. Useful Info; content order followed as in the body text).",
+    "The guide gives damage numbers by nature type inconsistently: base moves are described only for 'neutral' and 'knowledge' types, while combo sections mix in 'power' and 'laughter' type damage numbers without explaining the relationship between 'neutral' and 'power' nature labels; left as written.",
+    "Help koma is described only by its SP-regeneration effect; the guide does not give it a numeric koma size.",
+    "Support koma sizes (2 and 3) are given but their nature is implied as 'power' only by omission/context; guide does not explicitly restate nature for the 3-koma support beyond listing it under 'Power'.",
+    "The 6-koma Knowledge battle koma's Up-X is not separately described in the text; guide only says the koma is 'pretty much the same as the Power type' overall, so Up-X details for this koma are assumed identical to the Power 6-koma but this is not explicitly stated.",
+    "Ally boosts are mentioned as 'terrible, with the exception of Edajima' but no move-level detail is given, so this is omitted from the moves/koma structure.",
+    "Section IX note I calls Momotaro's SELECT move the 'Ultimate Action' and says it recovers 'a decent amount' of SP, which is a different characterization than found for other characters' Ultimate Actions; kept as written, no numeric SP value given.",
+    "Guide credits list an 'Offensive_Altar' FAQ as a guideline and 'Genroh' as a primary source; no additional moveset data beyond what's in the main body was found in these credits."
+  ]
+}

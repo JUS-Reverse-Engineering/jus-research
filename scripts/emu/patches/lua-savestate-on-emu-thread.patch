@@ -1,0 +1,93 @@
+diff --git a/src/ARMJIT.cpp b/src/ARMJIT.cpp
+index 4c46eea4..27e9ecc7 100644
+--- a/src/ARMJIT.cpp
++++ b/src/ARMJIT.cpp
+@@ -240,6 +240,10 @@ void ARMJIT::Reset() noexcept
+ {
+     JitEnableWrite();
+     ResetBlockCache();
++    // Leave the calling thread able to execute JIT pages again. On Apple
++    // Silicon the write/execute toggle is per-thread, and if Reset() runs on
++    // the UI thread any later JIT'd code there (e.g. Qt's PCRE2) would fault.
++    JitEnableExecute();
+ 
+     Memory.Reset();
+ }
+diff --git a/src/ARMJIT_Memory.cpp b/src/ARMJIT_Memory.cpp
+index c64bad1f..bb0e2040 100644
+--- a/src/ARMJIT_Memory.cpp
++++ b/src/ARMJIT_Memory.cpp
+@@ -211,16 +211,22 @@ void ARMJIT_Memory::SigsegvHandler(int sig, siginfo_t* info, void* rawContext)
+ 
+     ucontext_t* context = (ucontext_t*)rawContext;
+ 
+-    FaultDescription desc {};
+-    u8* curArea = (u8*)(NDS::Current->CurCPU == 0 ? NDS::Current->JIT.Memory.FastMem9Start : NDS::Current->JIT.Memory.FastMem7Start);
++    // NDS::Current is thread_local and only set on the emu thread. A fault on
++    // any other thread (e.g. the Qt UI thread) is not ours; dereferencing the
++    // null pointer here would fault inside the handler and recurse forever.
++    if (NDS::Current)
++    {
++        FaultDescription desc {};
++        u8* curArea = (u8*)(NDS::Current->CurCPU == 0 ? NDS::Current->JIT.Memory.FastMem9Start : NDS::Current->JIT.Memory.FastMem7Start);
+ 
+-    desc.EmulatedFaultAddr = (u8*)info->si_addr - curArea;
+-    desc.FaultPC = (u8*)context->CONTEXT_PC;
++        desc.EmulatedFaultAddr = (u8*)info->si_addr - curArea;
++        desc.FaultPC = (u8*)context->CONTEXT_PC;
+ 
+-    if (FaultHandler(desc, *NDS::Current))
+-    {
+-        context->CONTEXT_PC = (u64)desc.FaultPC;
+-        return;
++        if (FaultHandler(desc, *NDS::Current))
++        {
++            context->CONTEXT_PC = (u64)desc.FaultPC;
++            return;
++        }
+     }
+ 
+     struct sigaction* oldSa;
+@@ -229,6 +235,13 @@ void ARMJIT_Memory::SigsegvHandler(int sig, siginfo_t* info, void* rawContext)
+     else
+       oldSa = &OldSaBus;
+ 
++    if ((oldSa->sa_flags & SA_SIGINFO) && oldSa->sa_sigaction == &SigsegvHandler)
++    {
++      // Never chain to ourselves (double registration); die cleanly instead.
++      signal(sig, SIG_DFL);
++      return;
++    }
++
+     if (oldSa->sa_flags & SA_SIGINFO)
+     {
+       oldSa->sa_sigaction(sig, info, rawContext);
+diff --git a/src/frontend/qt_sdl/Window.cpp b/src/frontend/qt_sdl/Window.cpp
+index 94c243a7..069b19f2 100755
+--- a/src/frontend/qt_sdl/Window.cpp
++++ b/src/frontend/qt_sdl/Window.cpp
+@@ -1565,9 +1565,7 @@ void MainWindow::onEjectGBACart()
+ 
+ void MainWindow::onLuaSaveState(const QString& filename)
+ {
+-    emuThread->emuPause();
+-    emuInstance->saveState(filename.toStdString());
+-    emuThread->emuUnpause();
++    emuThread->saveState(filename);
+ }
+ 
+ void MainWindow::onSaveState()
+@@ -1607,9 +1605,10 @@ void MainWindow::onSaveState()
+ 
+ void MainWindow::onLuaLoadState(const QString& filename)
+ {
+-    emuThread->emuPause();
+-    emuInstance->loadState(filename.toStdString());
+-    emuThread->emuUnpause();
++    // Must run on the emu thread, like the menu path. Running DoSavestate on
++    // the Qt main thread leaves that thread in JIT write mode (see
++    // ARMJIT::Reset), after which Qt's own JIT'd code (PCRE2) faults.
++    emuThread->loadState(filename);
+ }
+ 
+ void MainWindow::onLoadState()

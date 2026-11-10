@@ -1,0 +1,31 @@
+2026-09-16T22:03:29Z launch
+no melonDS running
+emulator claimed by 'unlabelled-38473' (pid 44618)
+bridge up after 3s: {"framecount":43,"state":"idle"}
+
+2026-09-16T22:04:18Z first load attempt
+TimeoutError: no ack for command 1 after 30.0s -- INDETERMINATE
+
+2026-09-16T22:04:24Z first health check
+state: dead
+heartbeat framecount: 43
+framecount 43, NOT ADVANCING
+
+2026-09-16T22:04:34Z documented health recovery
+emulator is not advancing frames (framecount 43) -- hung on a savestate load. Restarting.
+restarted and reloaded 'pc-kakashi-npc-jotaro-fightcpu'
+
+2026-09-16T22:04:48Z independent control after recovery
+HEARTBEAT CONTROL FAILED
+
+2026-09-16T22:04:52Z second health check
+state: dead
+heartbeat framecount: 24
+
+2026-09-16T22:05:03Z cleanup
+no melonDS running
+HOLDER=cleared
+
+These excerpts omit session identifiers and contain no credentials. The first
+launch output already reported frame 43, so the sequence does not prove that
+the state-load command caused the first session to stop.

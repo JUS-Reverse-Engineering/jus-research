@@ -1,0 +1,390 @@
+codex
+I use these conventions:
+
+- `S8`, `S16`: signed 8-bit and 16-bit interpretation.
+- `U8`, `U16`, `U32`: unsigned interpretation.
+- `W(x)`: low 32 bits, interpreted as signed where an `ASR` or signed comparison follows.
+- `H(x)`: low 16 bits stored by `strh`.
+- ARM arithmetic right shifts round toward negative infinity.
+
+## 1. Values added at `+0xA4` and `+0xA6`
+
+Let:
+
+```text
+p   = [r6+0x10]
+t   = U8(p[1])
+a   = S8(p[0xC])
+b   = S8(p[0xD])
+h   = S16([r8+0xCA])
+F   = U32([sp+0x18])
+G   = U32([[r5+0xC]+0x44])
+R14 = U32([r6+0x14])
+L14 = U32([r5+0x14])
+R18 = U32([r6+0x18])
+q   = result of 0x0206CF28
+```
+
+The scale is:
+
+```text
+if t == 6:
+    i = h ASR 6
+    scale = U32(*(0x0209FB64 + 4*i))
+else:
+    scale = 0x100
+```
+
+The PC-relative load at `0x02081800` reads the pointer at `0x02081A54`, which is `0x0209FB64`.
+
+Initial components:
+
+```text
+X = W(scale * W(a << 7)) ASR 8
+Y = W(scale * W((-158) * b)) ASR 8
+```
+
+`-158` comes from `mvn r2,#0x9D` at `0x0208181C`.
+
+If `[sp+0x18] != 0`:
+
+```text
+X = W(X << 1)
+Y = W(Y << 1)
+```
+
+For `t == 6`, apply these adjustments in order to both `X` and `Y`:
+
+```text
+if G & 0x80:
+    z = W(z - (z ASR 1))
+
+if G & 0x8000:
+    z = W(z + (z ASR 1))
+```
+
+Then:
+
+```text
+if R14 & 0x01000000:
+    X = 0
+    Y = 0
+
+if (R14 & 0x04000000) && (L14 & 0x700):
+    X = 0x300
+    Y = -0x500
+```
+
+The value added to `[r8,#0xA4]` is:
+
+```text
+if !(R18 & 4):
+    deltaA4 = (q != 0) ? -X : +X
+else:
+    A = S32([[[r6+0xC]+0x5C]+0xC])
+    B = S32([[[r5+0xC]+0x5C]+0xC])
+    deltaA4 = (A < B) ? +X : -X
+```
+
+The `R18 & 4` case therefore cannot be expressed solely from the variables listed in the question. It also needs that signed comparison.
+
+The value added to `[r8,#0xA6]` is always:
+
+```text
+deltaA6 = W(Y * 223) ASR 8
+```
+
+Each destination is read with `ldrsh`; the addition or subtraction is then performed, and `strh` stores the low 16 bits.
+
+Rounding occurs at:
+
+- `h ASR 6`, for the table index.
+- Each initial product `ASR 8`.
+- Each flag adjustment using `ASR 1`.
+- The final `Y * 223` followed by `ASR 8`.
+
+All are arithmetic shifts, so negative values round down. `mul`, `lsl`, additions, and subtractions have 32-bit ARM wrapping; `strh` then truncates to 16 bits.
+
+Support: `0x020817E8–0x02081888`, `0x0208188C–0x0208192C`, `0x02081968–0x02081978`.
+
+Confidence: high. The extra dependency in the `R18 & 4` branch is certain.
+
+## 2. Numerical records
+
+I interpret “every flag word above 0” as “every flag word above is 0.” If it literally means unspecified positive values, the answers are not determined because the relevant bits are unknown.
+
+With flags zero, `[sp,#0x18]=0`, and `0x0206CF28` returning zero:
+
+| Record | `[r8,#0xCA]` | Added to `+0xA4` | Added to `+0xA6` |
+|---|---:|---:|---:|
+| A | `0x100` | `+640` (`0x280`) | `+1789` (`0x06FD`) |
+| B | `0x100` | `+768` (`0x300`) | `+2752` (`0x0AC0`) |
+| C | `0x100` | `+3200` (`0x0C80`) | `-826` (`0xFCC6` as a halfword) |
+| C | `0x00A8` | `+4800` (`0x12C0`) | `-1239` (`0xFB29` as a halfword) |
+
+Details:
+
+```text
+A: a=5,  b=-13, scale=0x100
+   X=640, Y=2054
+   floor(2054*223/256)=1789
+
+B: a=6,  b=-20, scale=0x100
+   X=768, Y=3160
+   floor(3160*223/256)=2752
+
+C, CA=0x100:
+   index = 0x100 ASR 6 = 4
+   scale = table[4] = 0x100
+   a=25, b=6
+   X=3200, Y=-948
+   floor(-948*223/256)=-826
+
+C, CA=0xA8:
+   index = 0xA8 ASR 6 = 2
+   scale = table[2] = 0x180
+   X=4800, Y=-1422
+   floor(-1422*223/256)=-1239
+```
+
+Confidence: high under the zero-flags interpretation.
+
+## 3. When the new `[r8,#0xA6]` is positive
+
+The code reads it back as a signed halfword. If it is greater than zero:
+
+```text
+[[r5+0xC]+0x78] |= 0x00080000
+U8([[r5+0xC]+0x9E]) = 0
+```
+
+If it is zero or negative, neither write occurs.
+
+Support: `ldrsh/cmp/ble` at `0x0208197C–0x02081984`, then `orr/str/strb` at `0x02081988–0x020819A0`.
+
+Confidence: high.
+
+## 4. What `[sp,#0x18]` contains
+
+It contains exactly:
+
+```text
+[sp+0x18] = return_from_0x020823E4 & 1
+```
+
+Thus it is either zero or one. This comes from:
+
+```text
+ands r0,r0,#1
+str  r0,[sp,#0x18]
+```
+
+at `0x0208129C–0x020812A4`.
+
+Function `0x020823E4` returns `r6`. The visible code initializes `r6=0`. One visible path sets bit 0 when:
+
+```text
+[r4+0x40] & 0x02000000
+```
+
+is nonzero and:
+
+```text
+table[S16([r7+0xCA]) ASR 6]
+    & (result_of_0x02031070 >> 3)
+```
+
+is zero. This is the path through `0x0208242C–0x02082478`.
+
+The region `0x0208247C–0x0208265C` is not shown, so the complete necessary-and-sufficient condition for the returned bit 0 cannot be determined. The later `r1 == 2` path at `0x02082660–0x02082674` ORs bit 2 into `r6`; it does not itself change bit 0.
+
+Confidence: high for the stored value and visible setting path. A complete condition is undecidable from the excerpt.
+
+## 5. Record `+8` bit mappings
+
+For each set bit `i` in the record word at `+8`, the loop ORs table entry `i` into the element fields.
+
+The relevant mappings are:
+
+| Record bit | Record mask | Effect |
+|---:|---:|---|
+| 0 | `0x00000001` | Sets `0x04000000` in `[r5,#0x14]` |
+| 12 | `0x00001000` | Sets `0x01000000` in `[r5,#0x14]` |
+| 9 | `0x00000200` | Sets `0x00000004` in `[r5,#0x18]` |
+
+The first table starts at `0x0209FD44`; `[r5,#0x18]` uses the table at base plus `0x80`, namely `0x0209FDC4`.
+
+Separately, record bit 23 causes bit `0x100` in `[r5,#0x14]`, but that was not one of the requested results.
+
+Support: `0x0207D684–0x0207D6E8` and the supplied tables.
+
+Confidence: high.
+
+## 6. Halfword calculations and function selection
+
+Let:
+
+```text
+q = [[r4+0x1A8]+0x10]
+x = S16([q+0x148])
+y = S16([q+0x14A])
+```
+
+The code reaches these as `q+0x100`, followed by offsets `0x48` and `0x4A`.
+
+It stores:
+
+```text
+[r4+0x10A] = H((x * 100) / 100)
+[r4+0x10C] = H((y * 72)  / 100)
+```
+
+`smulbb` performs signed low-halfword multiplication. `0x0200D12C` performs signed integer division, so the quotient truncates toward zero. The first result is exactly `x`; the second is `y*72/100`, truncated toward zero.
+
+Support: `0x0215AF88–0x0215AFC4`.
+
+When `[[[r4+0x1A8]+0x10]+0x28] == 0`, the code uses:
+
+```text
+n = U16([r4+0x100])
+[r4+0xFC] = table[n]
+```
+
+The table is at `0x021721A0`. For the supplied entries:
+
+| `[r4,#0x100]` | Function pointer |
+|---|---|
+| 0, 1, 2, 7 | `0x0215B6A0` |
+| 3 | `0x0215B72C` |
+| 4 | `0x0215B7CC` |
+| 5 | `0x0215B870` |
+| 6 | `0x0215BA40` |
+| 8 | `0x0215B68C` |
+| 9, 10, 11 | `0x0215B568` |
+
+There is no bounds check in the shown code. Values outside 0 through 11 cannot be resolved from the supplied table words.
+
+Support: `0x0215AFC8–0x0215B008`, the PC-relative word at `0x0215B138`, and the supplied table.
+
+Confidence: high.
+
+## 7. Functions that add `+0x10A` and `+0x10C`
+
+Define:
+
+```text
+D = [[[r4+0x1A8]+0x10]+0x5C]
+```
+
+These functions perform:
+
+```text
+S16([D+0x30]) += S16([r4+0x10A])
+S16([D+0x32]) += S16([r4+0x10C])
+```
+
+and store the low halfwords:
+
+- `0x0215B6A0`
+- `0x0215B72C`
+- `0x0215B870`
+- `0x0215BA40`
+
+Support:
+
+- `0x0215B6B4–0x0215B6D4`
+- `0x0215B740–0x0215B764`
+- `0x0215B8B4–0x0215B8E0`
+- `0x0215BA54–0x0215BA78`
+
+`0x0215B7CC` and `0x0215B68C` do not perform these additions in their complete shown bodies.
+
+The displayed part of `0x0215B568`, through `0x0215B5A0`, does not perform them. That function continues beyond the excerpt, so whether it does so later cannot be decided.
+
+Confidence: high.
+
+## 8. Per-frame order for `+0x24` and `+0x26`
+
+For the requested flag path, the initial updates are:
+
+```text
+v24 = H(S16([lr+0x24])
+      + S16([lr+0x2C])
+      + S16([lr+0x30]))
+
+v26 = H(S16([lr+0x26])
+      + S16([lr+0x2E])
+      + S16([lr+0x32]))
+```
+
+Support: `0x02082F04–0x02082F30`.
+
+Next, each signed halfword is clamped to:
+
+```text
+limit = U8([lr+0x3E]) << 8
+```
+
+If its magnitude exceeds `limit`, it becomes `+limit` or `-limit` according to its original sign. The `-32768` absolute-value case has the usual 16-bit negation anomaly, so the instruction sequence at `0x02082F34–0x02082FA0` is the exact definition for that input.
+
+Because bit `0x800` is clear, drag is:
+
+```text
+drag24 = W((S16(v24) * U8([lr+0x3C])) << 8) ASR 16
+drag26 = W((S16(v26) * U8([lr+0x3D])) << 8) ASR 16
+
+v24 = H(S16(v24) - drag24)
+v26 = H(S16(v26) - drag26)
+```
+
+For the valid operand ranges, this is equivalent to:
+
+```text
+drag = floor(signed_velocity * drag_byte / 256)
+```
+
+Support: `0x02083030–0x0208306C`.
+
+Because bit 2 is clear, the code then does:
+
+```text
+v26 = H(S16(v26) + U16([r3+0x2C]))
+```
+
+Support: `0x02083070–0x02083084`.
+
+Later, it changes a velocity to zero when its signed value is in `[-16,15]`.
+
+Support: `0x020830E8–0x0208310C`.
+
+The requested numerical results are not uniquely determined because `[lr,#0x2E]` is also added before drag and its value was not supplied.
+
+Let:
+
+```text
+E = S16([lr+0x2E])
+v = S16(H(E + Y))
+```
+
+With no clamp, `[lr,#0x3D]=8`, and `[r3,#0x2C]=41`:
+
+```text
+result = H(v - floor(v/32) + 41)
+```
+
+followed by the `[-16,15]` dead-zone check.
+
+If the intended additional assumption is `[lr,#0x2E]=0`, the results are:
+
+| `Y` | Drag `floor(Y/32)` | Final `[lr,#0x26]` |
+|---:|---:|---:|
+| `-594` | `-19` | `-534` |
+| `-1288` | `-41` | `-1206` |
+| `+1981` | `61` | `+1961` |
+| `+1288` | `40` | `+1289` |
+
+None of these reaches the final dead zone.
+
+Confidence: high for the formula and the underdetermination; high for the table under the explicit additional assumption `[lr,#0x2E]=0`.
+hook: Stop
+hook: Stop

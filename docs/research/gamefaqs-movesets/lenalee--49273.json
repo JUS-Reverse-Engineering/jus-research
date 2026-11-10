@@ -1,0 +1,236 @@
+{
+  "character": "Lenalee",
+  "series": "D.Gray-man",
+  "chr_b": 46,
+  "chr_b_note": "from docs/research/chr_b-Complete-Mapping.md",
+  "source": {"file": "49273-lenalee-vicevirtuoso.txt", "gamefaqs_id": 49273, "author": "Vicevirtuoso", "version": "1.0"},
+  "kit_type": "standard",
+  "natures_available": ["knowledge"],
+  "koma": [
+    {
+      "size": 1,
+      "role": "help",
+      "nature": null,
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": null,
+      "help_effect": "Enables one Battle Character to perform a wall jump. Lenalee is one of only three characters with this Help effect, the others being Naruto and Fusuke from Ninku."
+    },
+    {
+      "size": 2,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Onkyou no Tougi: Otokase <Sound Stepping Skill: Sound Shackles>. Lenalee instantly appears behind your Battle character, rushes forward at an upward angle, and grabs the first Battle character she touches (friend or foe) and carries them with her. Can be used in the air. Damage: (N/A).",
+      "help_effect": null
+    },
+    {
+      "size": 3,
+      "role": "support",
+      "nature": "knowledge",
+      "hp": null,
+      "passives": [],
+      "specials": [],
+      "support_effect": "Enbu: Sarikaze <Waltz: Misty Wind>. Lenalee appears and kicks a small cyclone in front of her, dealing damage and knocking the enemy back. Damage: 32/48 (5 hits). A quicker, shorter-range version of her 4-Koma Neutral-X special that does solid damage, with a long untechable time good for ringouts.",
+      "help_effect": null
+    },
+    {
+      "size": 4,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 128,
+      "passives": [
+        "Boosts: All from D.Gray-man: Kanda (samurai bishie), Allen (white haired main character), Komui (guy with glasses).",
+        "Ability: Dark Boots (allows for triple jump and air dash)"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Enbu: Kirikaze <Waltz: Misty Wind>",
+          "description": "Lenalee kicks so hard that she creates a horizontal wind tunnel in front of her that hits enemies caught in it up to five times. Slow and does not combo without support, but good for edge-guarding; hits opponents hanging from a ledge.",
+          "damage": "36/54",
+          "hits": null,
+          "properties": ["knockdown"],
+          "quote": "Neutral-X: Enbu: Kirikaze <Waltz: Misty Wind> Nature: Knowledge Damage: 36/54 Speed: Slow Range: Moderate Effect: Knocks enemy back. Lenalee kicks so hard that she creates a horizontal wind tunnel in front of her that hits enemies caught in it up to five times."
+        },
+        {
+          "input": "up X",
+          "name": "Enbu: Kuroshizuku <Waltz: Black Droplets>",
+          "description": "Lenalee flips forward (the flip can hit for a tiny bit of damage), then falls forward with a vertical split kick surrounded by a purple aura. Her only special that can be comboed without support, but the damage sucks (reduced damage on an air hit). When falling, Lenalee does not stop until she hits the ground floor, and will fall through and die if the ground floor is a platform and not a solid floor. Lenalee is airborne for the duration of the move.",
+          "damage": "2/3 (flip), 28/42 (ground hit), 20/30 (air hit) (all assuming the attack is from the same elevation as opponent)",
+          "hits": null,
+          "properties": ["launcher"],
+          "quote": "Up-X: Enbu: Kuroshizuku <Waltz: Black Droplets> Nature: Knowledge Damage: 2/3 (flip), 28/42 (ground hit), 20/30 (air hit) ... Effect: Knocks enemy back. Knockback and damage greatly increased as Lenalee falls further. *IF THE GROUND FLOOR IS A PLATFORM AND NOT A SOLID FLOOR, SHE WILL FALL THROUGH IT AND DIE!*"
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    },
+    {
+      "size": 5,
+      "role": "battle",
+      "nature": "knowledge",
+      "hp": 144,
+      "passives": [
+        "Boosts: All from D.Gray-man: Kanda (samurai bishie), Allen (white haired main character), Komui (guy with glasses).",
+        "Ability: Dark Boots (allows for triple jump and air dash)"
+      ],
+      "specials": [
+        {
+          "input": "X",
+          "name": "Onkyou no Tougi: Otokase <Sound Stepping Skill: Sound Shackles>",
+          "description": "Lenalee backflips, pushes off of a wall made of sound waves, then dashes forward with a kick. If the kick connects, she then performs another three dashing kicks. Good damage, but cannot be comboed into and is easy to see coming. Lenalee is airborne for the duration of the move.",
+          "damage": "40/60 (3 hits), 42/69 (4 hits)",
+          "hits": "3 or 4",
+          "properties": ["launcher"],
+          "quote": "Neutral-X: Onkyou no Tougi: Otokase <Sound Stepping Skill: Sound Shackles> Nature: Knowledge Damage: 40/60 (3 hits), 42/69 (4 hits) Speed: Slow Range: Long Effect: Launches enemy on first hit, knocks them back on last hit."
+        },
+        {
+          "input": "up X",
+          "name": "Shittsui no Tougi: Tetsukase <Falling Stepping Skill: Iron Shackles>",
+          "description": "Lenalee floats up into the air, then falls to the ground floor, through any platforms. A slower, suckier version of her 4-Koma Up-X: for maybe 3 or 6 more damage, it is much slower, doesn't move forward, and has a tinier hitbox. Lenalee is airborne for the duration of the move.",
+          "damage": "2/3 (rising), 30/45 (falling) (all assuming the attack is from the same elevation as opponent)",
+          "hits": null,
+          "properties": ["launcher"],
+          "quote": "Up-X: Shittsui no Tougi: Tetsukase <Falling Stepping Skill: Iron Shackles> Nature: Knowledge Damage: 2/3 (rising), 30/45 (falling) ... Effect: Launches enemy on rising hit, but does not combo into falling hit. Damage and knockback increase the longer you fall."
+        }
+      ],
+      "support_effect": null,
+      "help_effect": null
+    }
+  ],
+  "moves": [
+    {
+      "input": "B",
+      "name": "Spinning Heel Kick",
+      "description": "Lenalee does a high, sweeping heel kick. A standard combo starter that combos into Up-B, Forward-B, Forward-Y, and 4-Koma Up+X.",
+      "damage": "7/10",
+      "hits": null,
+      "properties": [],
+      "quote": "Neutral-B: Spinning Heel Kick Damage: 7/10 Speed: Moderate-Fast Range: Close. Lenalee does a high, sweeping heel kick. Pretty standard Neutral-B attack. Your combo starter in nearly every case."
+    },
+    {
+      "input": "side B",
+      "name": "Dashing Side Kick",
+      "description": "Lenalee dashes forward with a jumping side kick. A great poking move with nice range, but doesn't combo into anything outside of a quick support.",
+      "damage": "6/9",
+      "hits": null,
+      "properties": [],
+      "quote": "Forward-B: Dashing Side Kick Damage: 6/9 Speed: Fast Range: Moderate-Far. Lenalee dashes forward with a jumping side kick. Great poking move, it comes out fast with nice range."
+    },
+    {
+      "input": "up B",
+      "name": "Crescent Axe Kick",
+      "description": "Lenalee does a spinning overhead kick. Used for close-range poking or combos, typically the second attack in combos. Unlike many other Up-B attacks, this does not launch the foe. Combos into Up-Y, Forward-Y, and 4-Koma Up-X.",
+      "damage": "8/12",
+      "hits": null,
+      "properties": [],
+      "quote": "Up-B: Crescent Axe Kick Damage: 8/12 Speed: Fast Range: Close ... Unlike many other Up-B attacks, this does not launch your foe."
+    },
+    {
+      "input": "down B",
+      "name": "Gust Side Kick",
+      "description": "Lenalee charges up for a split second, then does a side kick powered with a small burst of wind. Forces the opponent to switch characters on hit, if possible. Excellent with a support koma that inflicts the Battle Seal status. Also combos into Forward-Y.",
+      "damage": "7/10",
+      "hits": null,
+      "properties": ["forced switch"],
+      "quote": "Down-B: Gust Side Kick Damage: 7/10 Speed: Moderate-Slow Range: Close Other: Forces opponent to switch characters on hit, if possible."
+    },
+    {
+      "input": "Y",
+      "name": "Dropkick",
+      "description": "Lenalee backflips in place, then thrusts forward with both feet. Cannot be comboed into outside of supports, puts Lenalee in an airborne state, and is slow. Near the edge, combos into Air-B for a guaranteed ring-out.",
+      "damage": "15/22",
+      "hits": null,
+      "properties": [],
+      "quote": "Neutral-Y: Dropkick Damage: 15/22 Speed: Slow Range: Moderate-Far Other: Puts Lenalee in an airborne state. ... If you can hit the opponent near the edge or on a platform that can be knocked through, you can combo this into Air-B for a guaranteed ring-out."
+    },
+    {
+      "input": "side Y",
+      "name": "Rising Cyclone Kicks",
+      "description": "Tatsumaki Senpuu-Kyaku! Lenalee's signature move. Puts Lenalee in an airborne state; each kick makes her rise higher in the air. First hit launches opponent. Keep pressing Y for up to 5 hits. Her main combo tool, ending with Air-Y or occasionally Air-B for a ringout.",
+      "damage": "2/3 (first four hits), 5/7 (last hit), 13/19 total",
+      "hits": "up to 5",
+      "properties": ["launcher", "multi-hit", "mash-extend"],
+      "quote": "Forward-Y: Rising Cyclone Kicks Damage: 2/3 (first four hits), 5/7 (last hit), 13/19 total ... First hit launches opponent. Keep pressing Y for up to 5 hits."
+    },
+    {
+      "input": "up Y",
+      "name": "Somersault Kick",
+      "description": "Lenalee backflips into the air with a kick, moving up roughly 2/3 of a jump height and launching the opponent at roughly the same height. Excellent move that can be easily comboed into up close, then followed up with Air-B for a good combo.",
+      "damage": "15/22",
+      "hits": null,
+      "properties": ["launcher"],
+      "quote": "Up-Y: Somersault Kick Damage: 15/22 Speed: Moderate Range: Moderate Other: Puts Lenalee in an airborne state and moves her up roughly 2/3 of a jump height. Launches opponent at roughly the same height."
+    },
+    {
+      "input": "down Y",
+      "name": "Frontflip Axe Kick",
+      "description": "Lenalee crouches and charges her power, then flips forward with a slow kick, breaking the opponent's guard on hit if they are guarding. Not the best guard break; will whiff if the opponent is too close.",
+      "damage": "14/21",
+      "hits": null,
+      "properties": ["guard break", "charge"],
+      "quote": "Down-Y: Frontflip Axe Kick Damage: 14/21 Speed: Very Slow Range: Far Other: Breaks opponent's guard on hit, if they are guarding."
+    },
+    {
+      "input": "air B",
+      "name": "Aerial Axe Kick",
+      "description": "Lenalee flips in the air with a kick. Good aerial attack that knocks the enemy downwards when hit in the air; good ringout move and a preferred air combo ender because of its speed compared to Air-Y.",
+      "damage": "8/12",
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "Air-B: Aerial Axe Kick Damage: 8/12 Speed: Moderate-Fast Range: Moderate-Close Other: Knocks enemy downwards when hit in the air."
+    },
+    {
+      "input": "air Y",
+      "name": "Dash Aerial Axe Kick",
+      "description": "Lenalee dashes forward with a kick, knocking the enemy down on the ground and spiking the enemy in the air. Angle of dash can be controlled with Up or Down. A combo ender for most combos; outside of supports it will not actually combo, but is quite difficult to escape.",
+      "damage": "14/21",
+      "hits": null,
+      "properties": ["knockdown"],
+      "quote": "Air-Y: Dash Aerial Axe Kick Damage: 14/21 Speed: Moderate-Slow Range: Far Other: Knocks enemy down on the ground, and spikes enemy in the air."
+    },
+    {
+      "input": "other",
+      "name": "Triple Spinning Kick (Touch Screen / Dream Combo Attack)",
+      "description": "Lenalee does three of her Forward-Y kicks, but stays on the ground. Cannot be comboed into, and cannot be comboed out of except for other characters' Dream Combo attacks. Activated by touching Lenalee's koma when she is on the field.",
+      "damage": "6/9",
+      "hits": null,
+      "properties": [],
+      "quote": "Touch Screen (Dream Combo Attack): Triple Spinning Kick Damage: 6/9 Speed: Moderate-Fast Range: Moderate Other: Cannot be comboed into, and cannot be comboed out of except for other characters' Dream Combo attacks."
+    },
+    {
+      "input": "select",
+      "name": "Super Jump",
+      "description": "Lenalee crouches down, then jumps at a height slightly lower than the maximum triple jump height. After this super jump, she can still perform two air actions (airjump, airdash, or attack). Great for putting distance between her and opponents.",
+      "damage": "(N/A)",
+      "hits": null,
+      "properties": [],
+      "quote": "Select (Ultimate Action): Super Jump Damage: (N/A) Speed: Slow Range: (N/A). Lenalee crouches down, then jumps at a height slighly lower than the maximum triple jump height."
+    }
+  ],
+  "combos": [
+    "1. Neutral-B > Forward-B. Damage: 13/19. Range: Moderate-Far.",
+    "2. Neutral-B > Up-B > Up-Y > Air-B. Damage: 38/57. Range: Close. A superb combo, all 4 hits combo correctly.",
+    "3. Neutral-B > Forward-Y > Air-Y. Damage: depends on distance. Range: Moderate-Far.",
+    "4. Neutral-B > Up-B > Forward-Y > Air-Y. Damage: 28/42 (combo), 14/21 (Air-Y, which doesn't exactly combo). Range: Close.",
+    "5. Neutral-B > Forward-Y (2 hits) > Air-B. Damage: 22/33. Range: Moderate-Close.",
+    "6. Down-B > Forward-Y > Air-Y. Damage: 20/30 (combo), 14/21 (Air-Y). Range: Moderate. Other: Switches opponent's character. Forced-switch combo.",
+    "7. Neutral-Y > Air-B. Damage: 23/34. Range: Far.",
+    "8. Neutral-B > Up-X (4 Koma only). Damage: 9/13 (combo), 20/30 (falling hit). Range: Close. Only way to combo into a special without support.",
+    "Trunks (Dragon Ball) 3 Koma combo: Neutral-B > Up-B > Up-Y > Call Trunks + Air-B simultaneously. Done correctly, it's 12 hits for an impressive 69/103 damage.",
+    "Gyro Zeppelli (JoJo's Bizarre Adventure) 3 Koma combo: Neutral-B > Up-B > Call Gyro > Forward Y.",
+    "Ichigo (Bleach) 2 Koma combo: Neutral-B > Call Ichigo > Up-B > Forward-Y.",
+    "Fuji (Prince of Tennis) 2 Koma combo: Call Fuji + Neutral-B simultaneously > Up-B > Up-Y > Air-Y."
+  ],
+  "unresolved": [
+    "The guide states damage in an X/Y format where X is damage to Power and Knowledge characters and Y is damage to Laughter characters; this is preserved verbatim in each damage field rather than split, per the schema's 'copy as written' rule.",
+    "The guide explicitly says Lenalee has 'No alternate-alignment battle koma' and only one nature (Knowledge) across both battle koma, unlike many other characters who have a Power/Knowledge/Laughter split across koma.",
+    "Guide credits itself as having made up all normal move names ('I made up all of the names for the normals, by the way'), so 'name' fields for normals are guide-invented, not official.",
+    "3-Koma Support and 2-Koma Support koma shapes/graphics text include flavor quotes (e.g. 'Welcome home, Allen-kun') that were omitted from JSON as non-mechanical flavor text.",
+    "Deck-building recommendations (Allen Walker, Train Heartnet, Don Patch, Yuu Kanda, Sena, Trunks, Gyro Zeppelli, Gintoki, Ichigo, Sanji, Fuji, Light Yagami) describe OTHER characters and team synergy, not Lenalee's own moves/koma, so only combo lines that name a Lenalee input sequence were captured under 'combos'."
+  ]
+}

@@ -1,0 +1,20 @@
+--- a/src/debug/GdbProto.cpp
++++ b/src/debug/GdbProto.cpp
+@@ -196,0 +197 @@
++			if (receivedNum == 0) return ReadResult::Eof;
+--- a/src/debug/GdbStub.cpp
++++ b/src/debug/GdbStub.cpp
+@@ -160,0 +161,3 @@
++	DelAllBpWp();
++	Stat = TgtStatus::None;
++	StatFlag = false;
+@@ -285,0 +289 @@
++		Disconnect();
+@@ -320,2 +324 @@
+-			closesocket(ConnFd);
+-			ConnFd = 0;
++			Disconnect();
+@@ -406,2 +409 @@
+-		closesocket(ConnFd);
+-		ConnFd = 0;
++		Disconnect();
