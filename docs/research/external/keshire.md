@@ -46,11 +46,12 @@ The first intake took in these tracker items:
 | `jus-reaction-table-start-handlers-8l0w` | what the reaction pointer table holds |
 | `jus-speed-cap-fighter-scope-uhs4` | which elements the speed cap covers |
 | `jus-getup-invuln-store-site-gm12` | where the get-up invulnerability is stored |
+| `jus-vblank-wait-sdk-call-du3c` | how the main loop waits for vertical blank |
 | `jus-extract-jpower-fields-cleanup-ndty` | follow-up cleanup in the character extractor |
 
-Each tracker item names Keshire's work in its provenance line. Findings entries restate each one
-(the retraction, the price table, the reaction table, the speed cap and the get-up store)
-and link back to this page.
+Each tracker item names its sources in its provenance line. Findings entries restate six of them
+(the retraction, the price table, the reaction table, the speed cap, the get-up store and
+the vertical-blank wait); those that draw on Keshire's work link back to this page.
 
 ## How to cite
 
