@@ -7,6 +7,8 @@
 > arm9 `0x020823E4` - see `docs/confirmed-facts/damage.md` §2
 > [`jus-class-index-is-damageflags-mx5`].
 
+> **Retracted reading:** `jus-base-2-is-jpower-damage1-10-mse` (jpower `damage1 / 5` as base damage) is retracted by `jus-jpower-retraction-cguk`. jpower.bin is the koma price table; base damage is the chr/col `+4` byte. Any jpower damage teaching below is history.
+
 Complete classification of all 74 battle characters by jpower entry selection
 system.
 

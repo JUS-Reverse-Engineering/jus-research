@@ -16,7 +16,7 @@ Integrity), and Section 8 (Failure playbook) of
 
 - State file: `scripts/analysis/loop-state-phase0.json` (same schema; create
   from the unit catalog below on iteration 0).
-- Workspace: the EXISTING worktree `.claude/worktrees/battle-engine-atlas`,
+- Workspace: the EXISTING loop worktree,
   branch `loop/battle-engine-atlas`. If the session did not start there,
   enter it first (EnterWorktree with that path). Never work in the main
   checkout. `jus_files` is a symlink into the main checkout — expected.
@@ -32,9 +32,9 @@ Integrity), and Section 8 (Failure playbook) of
   (P1), editing it is not. Exception to the orchestration doc's
   "no edits to scripts/analysis tooling": P6 explicitly amends the tooling,
   guarded by gates.
-- Prior findings/verdicts live in `jus_files/analysis/findings/` (gitignored).
-  Read `critic.round1.json` for the B12/B14 specs and
-  `scripts/analysis/loop-state.json` (log) for full campaign context.
+- Prior findings/verdicts lived in `jus_files/analysis/findings/` (gitignored).
+  `critic.round1.json`, which held the B12/B14 specs, is not part of this export.
+  See `scripts/analysis/loop-state.json` (log) for full campaign context.
 
 ## Success criteria (DONE)
 
@@ -50,9 +50,8 @@ BLOCKED / safety stops: as per orchestration doc Section 1.
 ## Unit catalog
 
 **P1-export-collisions** (tool, priority 1, no deps)
-Run the repo CLI's `ExportAllCollisions` batch command
-(`src/JUS.CLI/JUS/CombatCommands.cs` — read it first to learn exact
-invocation; .NET SDK pinned via mise; build with `dotnet build` if needed)
+Run the C# CLI's `ExportAllCollisions` batch command (the CLI is not part
+of this export; it left the repo at the 2026-08-21 split)
 against the full character `.bin` set under
 `jus_files/ripped_jus_files/` (collision sources — locate via the command's
 own expectations). Output JSONs land next to the existing 4 in

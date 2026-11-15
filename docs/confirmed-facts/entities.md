@@ -1,9 +1,8 @@
 # JUS entities and projectiles reference
 
 > **Scope.** Static pool/ownership analysis, live kind/lifetime captures, and
-> labeled owner testimony. Spawn dispatch and sampled lifecycle behavior are
-> implementable; unmeasured kind predicates and early termination remain in GAPS.
-> Opaque projectile tokens do not prevent original content authoring.
+> labeled owner testimony. Unmeasured kind predicates and early termination
+> remain in GAPS. Projectile tokens remain opaque.
 
 Reference for the battle entity pool and projectile machinery in Jump
 Ultimate Stars (`jus.nds`, AJUJ). Backed by static disassembly of `arm9.bin`
@@ -283,6 +282,11 @@ Authoring-data field: **sbyte at collision-record offset `0x03`**
 (`src/JUS.Tool/Combat/Converters/Binary2Collision.cs:81`). Across all 2837
 records: 211 negative (contiguous band −18…−34, nothing in −1…−17),
 24 positive, 2602 zero.
+
+Consumer (`jus-chrcol-03-status-lanes-4exo`): `projectileId` is the exporter's label, not the byte's meaning. The hit handler reads it with `ldrsb`
+at arm9 `0x0208169C`. A positive value is stored to the struck fighter's work byte `+0x172` (`0x020816D0`) and a negative value to `+0x173`
+(`0x02081708`), both as the signed byte; a lane that is already set is replaced only by a lower signed value. The decoder calls it `statusRaw`
+(`scripts/analysis/move_records.py`). What the lane value selects is not read here, and the spawn-selector reading below stays unsettled.
 
 What IS confirmed
 ([projectileid-is-a-selector-not-an-index](../research/findings/projectileid-is-a-selector-not-an-index.md)):

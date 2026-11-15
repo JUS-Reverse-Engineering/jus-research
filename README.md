@@ -77,7 +77,8 @@ repository; without them their `check` prints `skipped` and verifies only what i
 Some source captures and historical research notes are not included. Documents sometimes cite
 raw capture directories (`feel-captures/`), tracker ids (`jus-xxxx`), per-character manifests
 (`kit/*.toml`) or specs that are not part of this repository. Those citations are provenance only: the
-claim they support is stated in the text, and the cited artefact is simply not included. Treat
+claim they support is stated in the text, and the cited artefact is simply not included. Cited
+paths that this repository does not contain live in a private working repository. Treat
 `OWNER-NOTES.md` (`docs/research/moveset-notes/`) as raw player observations, with some lines
 blanked; do not renumber it, because tables cite it by line.
 

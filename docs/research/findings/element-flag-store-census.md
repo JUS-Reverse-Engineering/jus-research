@@ -1,7 +1,7 @@
 # Element flag stores and the W3 LIST phase
 
-Amendment 27 Step 0, read-only investigation, 2026-11-03. No capture, new hook
-profile or admission replay was built. W3 remains refused at its two LIST-byte
+Read-only investigation, 2026-11-03. No capture, new hook
+profile or admission replay was built. The W3 hook still shows its two LIST-byte
 disagreements. This census identifies a clear writer, but does not establish
 global pointer closure or a sufficient hook set for full-byte replay.
 

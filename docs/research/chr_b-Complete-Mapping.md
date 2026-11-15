@@ -1,5 +1,9 @@
 # chr_b.bin Complete Reference
 
+> **Retracted reading (banner only; body kept as history):** the claim `jus-base-2-is-jpower-damage1-10-mse`
+> (a move's base damage = `jpower.damage1 / 5`) was retracted by `jus-jpower-retraction-cguk`.
+> jpower.bin is the koma evolution price table (`jus-jpower-koma-price-table-uh9o`); battle reads the base byte from chr/col `+4`.
+
 > **Provenance (E0, 2026-10-18).** The File column of rows 3-11, 22, 24, 48, 49 and 66 is corrected to the prefix measured by the E0 roster capture, bundle `docs/research/feel-captures/2026-10-18-e0-roster/` (`roster_reconciled.json`, grade **MEASURED**): each state's 1280-byte battle collision dump, read from raw saved states, equals the full `chr/col` archive it names, across 170 owner states. Rows 12, 20 and 70 stay ambiguous by byte join and rows 71-73 are unobserved in owner states; their File values are unchanged and annotated. The previous values for the corrected rows were predicted or sequential-within-prefix guesses.
 >
 > ### Cross-check 2026-08-14 (Loop-Atlas)
@@ -87,7 +91,7 @@ use these runtime IDs, especially Edajima `66`, Don Patch `48`, and Franky
 > colfile-audit-2026-09-12/RESULTS.md.
 > **Superseded by E0 (2026-10-18): the rows below for chr_b 3-11, 22, 24, 48, 49 and 66 are no longer predictions.** Measured values: 3-10 `db_b_04`..`db_b_11`, 11 `db_b_12`, 22 `na_b_03`, 24 `na_b_05`, 48 `bb_b_02`, 49 `bb_b_03`, 66 `oj_b_01` (see the table above and `feel-captures/2026-10-18-e0-roster/roster_reconciled.json`, grade MEASURED). The prediction text is kept as history; for those rows it is not current.
 > The sequential-within-prefix rule predicts each remaining row's likely
-> File value (**predicted, unmeasured** -- not applied to the table below (row 38 Train bc_b_02 applied in TR0, see below)):
+> File value (**predicted, unmeasured** -- not applied to the table below (row 38 Train bc_b_02 applied below)):
 > `db_b_04`(3) `db_b_05`(4) `db_b_06`(5) `db_b_07`(6) `db_b_08`(7)
 > `db_b_09`(8) `db_b_10`(9) `db_b_11`(10) `db_b_12`(11) . `op_b_02`(13)
 > `op_b_03`(14) `op_b_05`(16) `op_b_06`(17, measured) `op_b_07`(18, measured: store value 9 only) `op_b_08`(19) .
@@ -254,7 +258,7 @@ check, added this session, turned up four such pairs in total (each a
 row whose live-verified correction now collides with another row still
 carrying the old, stale File value): `chr_b` 66/67 (`oj_b_02`,
 Edajima/Momotaro), 22/23 (`na_b_04`, Sakura/Kakashi), 21/24 (`na_b_02`,
-Sasuke/Kyuubi Naruto), and 37/38 (`bc_b_01` Eve / `bc_b_02` Train, resolved in TR0). Each unmeasured
+Sasuke/Kyuubi Naruto), and 37/38 (`bc_b_01` Eve / `bc_b_02` Train, resolved below). Each unmeasured
 row in these pairs (Sakura, Kyuubi Naruto, Train) is annotated the same
 way as Edajima. `chr_b` 2/11 (Vegeta/Vegetto, both `db_b_03` in the
 table) are a fifth, different-shaped duplicate: not a stale-value
@@ -263,7 +267,7 @@ collision but a known shared-records case per the Refuter's finding that
 below the table with a `⚠ shared-records case` marker instead of
 `refuted`.
 
-**Train's File value (2026-10-12, TR0, static):** `chr_b` 38 now
+**Train's File value (2026-10-12, static):** `chr_b` 38 now
 reads `bc_b_02`, the value the sequential rule predicted. Still not a live
 measurement (no byte-for-byte rec 0 read for Train), so the row keeps its `⚠`
 marker and `move_records.py` still treats 38 as suspect. Static evidence, in
@@ -274,7 +278,7 @@ Eve's file (`bc_b_01`) does not. B 7, Y 15 (Eve's Y is 16, measured), down Y
 (the guide gives the 4-koma Rail Gun as 28 against Power). `chr/` holds two
 Black Cat fighter archives, `bc_b_01` (Eve, live-measured) and `bc_b_02`; a
 cast-art catalog lists `bc_b_02`, `bc_b_02_4` and `bc_b_02_5` as Train's native
-prefixes. RAM evidence: the col/bc_b_02.bin rec 0-3 bytes are resident in both TRAIN HEARTNET owner states' RAM, with bc_b_01's bytes absent in TRAIN HEARTNET/5.mln.gz, and bc_b_02's absent in EVE/4.mln.gz (TR0 refuter, state_identity reads). `chr_b[38]` itself:
+prefixes. RAM evidence: the col/bc_b_02.bin rec 0-3 bytes are resident in both TRAIN HEARTNET owner states' RAM, with bc_b_01's bytes absent in TRAIN HEARTNET/5.mln.gz, and bc_b_02's absent in EVE/4.mln.gz (refuter check, state_identity reads). `chr_b[38]` itself:
 nature 0 (Power), per-size HP 136 (4-koma) and 152 (5-koma).
 
 The other 22 rows the audit flagged as suspect and did not measure or

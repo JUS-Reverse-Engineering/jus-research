@@ -485,7 +485,10 @@ def build_character_json(
     character_name = CHARACTER_MAP[index][2]
     series = CHARACTER_MAP[index][3]
 
-    # Calculate jpower block index from classId
+    # Calculate jpower block index from classId.
+    # NOTE: jpower_block is not a damage link. jpower.bin is the koma evolution price
+    # table (jus-jpower-koma-price-table-uh9o); the old damage1/5 reading is retracted
+    # (jus-jpower-retraction-cguk). The key is kept for output compatibility.
     jpower_block = chr_b_entry.class_id & 0xFF
 
     result = {

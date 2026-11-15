@@ -508,7 +508,7 @@ if __name__ == "__main__":
 
 
 class DreamEntryFactsTest(unittest.TestCase):
-    """PF-31o: the two id-12 entry paths and every write of fighter+0xC4 (finding
+    """The two id-12 entry paths and every write of fighter+0xC4 (finding
     docs/research/findings/dream-cancel-c4-inheritance.md)."""
 
     @classmethod

@@ -1,5 +1,11 @@
 # Findings: the battle deck's add-entry path never succeeds
 
+> **Under re-check (banner only; body kept as history):** an external reading treats the block at [0x0214BD80] as
+> a manager holding four decks. In that reading the +0x30 and +0x18EC fields this entry looked for are
+> manager-level, so "no writer" may come from addressing the manager as if it were a deck. The claim is proposed
+> and has not been checked in code. See tracker item `jus-deck-block-is-manager-fdfr`, with credit to
+> pakoito's jus-online (private recompilation project).
+
 Loop-Atlas iteration 113. Static.
 
 Four independent routes to a deck pointer were enumerated. **None writes `deck+0x30`.**

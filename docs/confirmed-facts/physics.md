@@ -338,9 +338,10 @@ read `codex-0x110-second-opinion.txt` agrees with every store.
   `hitstun = clamp( M[0x171] + 20 + T[obj+0x18], 16, 60 )` frames,
 
   where `M = [[obj+0x1a8]+0x10]` is the victim's ColPrm scratch block
-  (`0x0220F494`), `M+0x171` is a byte cleared to 0 at the top of every
-  hit-receive frame (arm9 `0x02081308`) and set to 60 only on a guard break
-  (arm9 `0x02081754`, guard-sp.md §0.5), and `T = 0x02171488` is a signed-byte
+  (`0x0220F494`), `M+0x171` is a byte that the hit handler adds chr/col
+  `+7` into (signed, arm9 `0x02081300`-`0x02081308`) and adds `0x3C` to on a
+  guard break (arm9 `0x02081754`, guard-sp.md §0.5); where it is zeroed is not
+  read here, and `T = 0x02171488` is a signed-byte
   table indexed by **`obj+0x18`, the fighter's state code** (0 idle, 1 walk,
   3 guard, 4 jump start, 6 airborne, 8 hitstun, 9 attack, 13 landing; measured
   0 for Luffy, Nami and Franky alike, so it is not a character id).
@@ -548,7 +549,7 @@ The last `0x0a` byte is at `0x021713C8` (index 22):
   `runtime-report-3.md`: 4 Jotaro Y pops, 10 Kenshin X hits). The formula
   store lands 20 first; then the launched-state entry handler adds to it
   through ov6 `0x0215B4C4` (`byte += r1`, clamp 16..60; store `0x0215B4D0`).
-  The knockback-pop handler (pointer value `0x0215B910`, static label `0x0215B870`, call at `0x0215B8F8`) passes the
+  The knockback-pop handler (continuation `0x0215B910`, start handler `0x0215B870`, call at `0x0215B8F8`) passes the
   current byte, so **hitstun doubles: 20 → 40** (Codex neutral read agrees,
   `codex-launch-second-opinion.txt`). The launcher handler (call at
   `0x0215BA98`) passes twice the current byte, so **20 → 60** (Codex agrees, `codex-launchC-second-opinion.txt`). Grounded hits
@@ -612,10 +613,14 @@ ov6 `0x0215AD70` (inside the hit-receive routine `0x0215A978`), clamped to
 0, skipped while `obj+0x18 == 8`. At `0x0215AF5C` (`cmp acc, #0x258`) a hit
 reaching ≥ 600 zeroes it and rewrites `obj+0x100` through table
 `0x02171478` = `[4,4,4,4,4,6,6,4,4,-1×7]` (the 16 bytes just before the
-hitstun table `T` at `0x02171488`). Reaction 4's pointer is `0x0215B818`
-(chain `0x0215B84C → 0x0215BC44 → 0x0215BC8C`): state 8 for 51 frames,
-hitstun byte 6, and on the last frame ov6 `0x0215CCCC` writes the
-**invincibility timer `obj+0xCE` = 40**; hits land again at frame 131.
+hitstun table `T` at `0x02171488`). Reaction 4's table entry is the start handler `0x0215B7CC`, which
+stores the continuation `0x0215B818` in `obj+0xFC` (`jus-reaction-table-start-handlers-8l0w`;
+chain `0x0215B84C → 0x0215BC44 → 0x0215BC8C`): state 8 for 51 frames,
+hitstun byte 6, and on the last frame ov6 `0x0215BD00` (in handler `0x0215BC8C`) writes the
+**invincibility timer `obj+0xCE` = 40** (`jus-getup-invuln-store-site-gm12`; a second immediate-0x28 store to `obj+0xCE`, at `0x0215CCCC`, is in
+`0x0215CCB0`, the exit callback of state 25 (KO/ring-out respawn), installed by the call at `0x0215CACC`.
+It grants the respawn's 40 and is not on this path. `runtime-report-8-falldown.md` named that site
+before the handler was traced); hits land again at frame 131.
 Threshold is max-HP independent and damage-based (3.0 → +12, 8.0 → +32).
 Falsification: poke `obj+0x10E` to 682 and jab (compare 596, normal); 694
 (compare 608, falldown). Also: `obj+0xD7` is a combo *hit* counter (ov6
@@ -630,11 +635,21 @@ gapless ~150-damage combo is needed to see it unpoked.
 attackers incl. the Kenshin X / Jotaro up+X controls, `jus-launcher-move-spot-check-hiyh`,
 runtime-report-7):
 the value stored in `obj+0xFC` is **`0x0215B720` for types 1/2/7,
-`0x0215B910` for type 5, `0x0215BAB8` for type 6**, uniformly. The
-`0x0215B6A0` / `0x0215B870` / `0x0215BA40` addresses this section used
-earlier came from static reads and are labels inside or near those routines
-(e.g. the pop's hitstun call at `0x0215B8F8` still stands); **do not cite them
-as the table's pointer values.**
+`0x0215B910` for type 5, `0x0215BAB8` for type 6**, uniformly. Correction
+(`jus-reaction-table-start-handlers-8l0w`): the static table `0x021721A0` holds the
+**start handlers** `0x0215B6A0`/`72C`/`7CC`/`870`/`A40`/`68C`/`568`. Each stores its
+continuation into `obj+0xFC` and returns, and `0x0215B720`/`818`/`910`/`AB8` are those
+continuations. So `0x0215B6A0` / `0x0215B870` / `0x0215BA40` are the table's pointer
+values, and the runtime reads are their continuations (the pop's hitstun call at
+`0x0215B8F8` still stands). An earlier version of this note said the static
+addresses were not the table's pointer values; that was wrong.
+
+Table contents (`jus-reaction-table-start-handlers-8l0w`):
+
+- indices 0, 1, 2 and 7 hold `0x0215B6A0`; 3 holds `0x0215B72C`, 4 holds `0x0215B7CC`, 5 holds `0x0215B870`,
+  6 holds `0x0215BA40`, 8 holds `0x0215B68C`, and 9-15 hold `0x0215B568`.
+- reaction 3 installs `0x0215B784` (store at `0x0215B778`); reactions 8 and 9-15 install `0x0215B648`
+  (stores at `0x0215B690` and `0x0215B61C`).
 
 `obj+0x11E` is a **different field** (a signed byte read only at
 `0x0215B01C`/`0x0215B044`) — it read 0 on every hit in this and the prior
@@ -697,8 +712,8 @@ and Jotaro, all against the same Jotaro/Luffy victims run 1's controls used.
 
 ~~Open discrepancy, 2026-09-03: Kakashi's measured `obj+0xFC` values
 `0x0215B720` / `0x0215B910` vs this section's `0x0215B6A0` / `0x0215B870`~~
-— **resolved by run 7 (above): the measured values are the table's pointers
-on every character; the older addresses were static labels.**
+— **resolved by `jus-reaction-table-start-handlers-8l0w`: the table holds the start handlers, and the
+measured values are their continuations.**
 
 **Light jab (Kenshin B).** The hit sets the victim's horizontal velocity to
 **−448 raw = −1.75 px/frame** and it decays by exactly ×7/8 (measured 0.875,
@@ -984,8 +999,9 @@ Order matters because the logged values are the post-drag ones:
 
 1. `vx += accel_x` where `accel_x = element+0x2C + element+0x30` (s16 each),
    `vy += accel_y` from `+0x2E + +0x32`. Stores at `0x02082F18` / `0x02082F30`.
-2. Speed cap: `|v| ≤ element+0x3E << 8` (0x3E = 128 in every state, so
-   32768 raw; never reached).
+2. Speed cap: `|v| ≤ element+0x3E << 8` (0x3E = 128 on fighter elements, so
+   32768 raw; never reached by a fighter). Other elements keep the allocator's 0x20 (8192 raw, 32 px/frame)
+   unless their creator overrides it (`jus-speed-cap-fighter-scope-uhs4`).
 3. Drag: `v −= (k·v) >> 8` with `k = element+0x3C` for x (**32**, i.e. 1/8)
    and `element+0x3D` for y (**8**, i.e. 1/32). Stores `0x02083060` / `0x0208306C`.
 4. Gravity, unless bit 1 of `element+0x34` is set (`tst [E+0x34], #2` at
@@ -1074,7 +1090,7 @@ directions. The September raw independently contains two LEFT matches in
 differences without rescaling. After the burst, drag continues without added
 dash acceleration, even if the stick stays held. Running into the idle CPU
 (x ≈ 584 in these states) cuts the burst short (`mv05`), so measure dashes
-away from it. Tick 28's 43-raw onset step in K6 c60 remains UNVERIFIED; it is
+away from it. Tick 28's 43-raw onset step in capture c60 remains UNVERIFIED; it is
 outside the twelve-entry recurrence and adds no timing or tolerance rule.
 **Double-tap window (`jus-dash-input-window-mv1g`, `mv12`):** taps of 3–8 frames with a release gap of
 3–10 frames all dashed; gaps of 15 and 20 did not (plain walk). One-frame taps
@@ -1608,7 +1624,7 @@ Open items (not resolved by this measurement):
   still does not pin the frame boundary itself: it only relocates which
   static candidate calls the already-measured PAD/regen adjacency, and
   no VBlank-wait exists anywhere in the ARM9 disassembly corpus (`grep
-  swi` finds none) to anchor either candidate against a hardware frame.
+  swi` finds none) to anchor either candidate against a hardware frame (superseded: see `jus-vblank-wait-sdk-call-du3c`).
   Treat "the pad walk is the first action of each sim step" and "the
   step boundary sits before PAD" as still open — this run answers
   *which function calls the walk*, not *where the frame cuts*.** Codex's second opinion
@@ -1650,7 +1666,7 @@ Open items (not resolved by this measurement):
   establishes a 1:1 relationship with hardware VBlank — the wait/gating
   mechanism, if any, must sit above `0x02046BD8`'s own caller, in
   interrupt plumbing, or on the ARM7 side; none of that was traced this
-  session.
+  session (superseded: see `jus-vblank-wait-sdk-call-du3c`).
 - Steps per real frame: the accumulator is `0x020A0DC0` (20.12 fixed
   point, pool literal `0x020A0C34`); `N = acc >> 12` is the number of
   scheduler-pass iterations run per driver call, and the loop is
@@ -1670,7 +1686,7 @@ Open items (not resolved by this measurement):
   commit) were not exercised by either capture.
 - No VBlank-wait instruction was located inside `0x02034690` or its
   direct callees this session; the hardware vsync point relative to the
-  accumulator loop is still open (`jus-u7to` Gaps). **Checked again
+  accumulator loop is still open (`jus-u7to` Gaps) (superseded: see `jus-vblank-wait-sdk-call-du3c`). **Checked again
   2026-09-12** (RESULTS-driver.md):
   the ARM9 disassembly corpus contains zero `swi` instructions anywhere
   (no BIOS `IntrWait`/`VBlankIntrWait` call exists), and the three
@@ -1678,10 +1694,14 @@ Open items (not resolved by this measurement):
   (`0x04000006`) literal load in the corpus are a one-time IRQ-enable
   bit set, a fixed mode write, a masked read-modify-write, and a
   one-time VCOUNT read feeding a hash/seed — none is a poll/busy-loop.
-  There is no VBlank-wait or DISPSTAT/VCOUNT busy-loop anywhere in this
-  ROM's ARM9 code; the hardware vsync point cannot be found this way and
-  needs a different approach (e.g. tracing the interrupt vector table or
-  the ARM7 side).
+  That search was right about what it looked for (no `swi`, no
+  DISPSTAT/VCOUNT busy-loop in game code), but its conclusion that no VBlank
+  wait exists was wrong: the main loop's frame wait is `bl 0x020552A8`
+  (`OS_WaitVBlankIntr`) at `0x02042250`, which waits through `OS_WaitIrq`
+  (`0x02051B0C`). It is an SDK library call (`jus-vblank-wait-sdk-call-du3c`). `0x020552A8` first calls the
+  Thumb stub `0x020000EA`, which is `svc 3`, so the "zero `swi`" result holds only for the ARM-mode grep. The
+  vsync point is that call; where it sits relative to the accumulator loop follows
+  from the call order.
 
 ## GAPS
 

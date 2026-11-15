@@ -225,14 +225,14 @@ def build() -> dict:
     records_by_prefix = []
     roster_rows = json.loads(ROSTER.read_text(encoding="utf-8"))["rows"]
     from feature_status import FEATURE_STATUS
-    # M0 importer deferrals are semantic buckets over the census vocabulary.
-    # M0 deferrals in import_kit.py:143-154 name kit fields, not decoder families.
+    # The census buckets are semantic groups over the census vocabulary.
+    # They name kit fields, not decoder families.
     # These exact keys are evidence only: hold tiers (mash_table.py:89), body flag
     # (feature_status.py op3.sub2 entry), no-damage record kind (move_records.py:585),
     # held summon shot (feature_status.py shot.kind.0x0d entry), and ability effects
     # (feature_status.py op3.arg7/23/32 entries). No other buckets have evidence in
     # this census: their inputs are outside its decoders or the similarly named keys
-    # already map to implemented kit fields (import_kit.py:1194-1201, 1498-1502).
+    # already map to implemented kit fields.
     m0_feature_keys = {
         "charge": {"op0.sub1.hold_tiers"},
         "body": {"op3.sub2"},

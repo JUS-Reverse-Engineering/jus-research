@@ -41,8 +41,7 @@ isolate the writer PC. The macro is in `scripts/gdb/phase1_macros.gdb`.
 - [ ] JUS ROM + a save that boots into a free battle quickly, with Goku
   and/or Ichigo decks ready (best-documented kits → known `damage1`
   values for planted-value checks).
-- [ ] Terminal `cd`'d to the **worktree root**
-  (`.claude/worktrees/battle-engine-atlas`) — all paths in the macros are
+- [ ] Terminal `cd`'d to the **worktree root** — all paths in the macros are
   relative to it; `jus_files` is a symlink there and works.
 - [ ] A second Claude Code session open in the same worktree, primed with
   the companion prompt from Section 4.
@@ -435,8 +434,7 @@ Rules of thumb:
 
 ## 4. Live-helper protocol (companion Claude session)
 
-Open a Claude Code session in the worktree
-(`.claude/worktrees/battle-engine-atlas`) and paste this prompt:
+Open a Claude Code session in the worktree and paste this prompt:
 
 ```text
 You are the live hex-decoding assistant for the Phase-1 GDB discovery

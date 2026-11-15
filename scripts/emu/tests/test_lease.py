@@ -1,4 +1,4 @@
-"""Runner-owned emulator lease (P1.8a). Fakes only: scratch IPC dir, fake melonDS = copy of sleep.
+"""Runner-owned emulator lease. Fakes only: scratch IPC dir, fake melonDS = copy of sleep.
 
 Never touches /tmp/jus_emu or any process this test did not start.
 """
@@ -315,7 +315,7 @@ class ShellGuardTest(LeaseBase):
 
 
 class LockProtocolTest(LeaseBase):
-    """One lock order (P1.8a review): .lock serialises lease transitions and shell effects."""
+    """One lock order: .lock serialises lease transitions and shell effects."""
 
     run_sh = ShellGuardTest.run_sh
 

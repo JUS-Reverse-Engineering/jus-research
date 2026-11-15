@@ -238,7 +238,7 @@ class Refused(Exception):
 
 
 class TestOwnership(unittest.TestCase):
-    """P1.8b round 4: ack cleanup is ID-specific, and every mutation runs inside the client's guard."""
+    """Ack cleanup is ID-specific, and every mutation runs inside the client's guard."""
 
     def setUp(self):
         self.dir = tempfile.mkdtemp()

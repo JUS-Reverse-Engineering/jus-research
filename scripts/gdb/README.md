@@ -102,9 +102,9 @@ contact's order within its frame (`n=`), the victim's staged pair
 (`M+0x148` / `M+0x14A`) and the `M+0x16C` latch. The latch is the claim's
 `hit_type_latch`: a u16 running max per frame of the hit-type byte (moveData[+1]),
 cleared each frame at `0x02051864`. It is NOT hitstun frames, and a second same-frame
-contact can show another record's type. `scripts/kit/hit_records.py`
-turns the log into `<move>_hit_record_<j>` claims. The line shapes and the
-registers are in the script's header. It replaces `c4_contacts.gdb` in a
+contact can show another record's type. A claim converter, which is not
+part of this export, turns the log into `<move>_hit_record_<j>` claims. The
+registers are in the probe's header. It replaces `c4_contacts.gdb` in a
 driver's GDB launch; the committed Kakashi and Yusuke specials logs
 (`c1`/`c4` probes, no `base=`, `h16c=` or `STAGE`) parse too.
 
@@ -120,19 +120,7 @@ arm-none-eabi-gdb -q -nx \
 # wait for PROBE_ARMED in the log, then drive the trials
 ```
 
-Analyze (the anchor gfc is the battle frame counter of the trial's anchor row
-in the driver's frames file; `#START-END` is the trial's window from the marks
-file; `--hit-kb` is the attacker's KB prefix, `--hit-victim-m` the victim's M
-from the load row):
-
-```bash
-python3 scripts/kit/analyze.py --manifest kit/<id>.toml \
-  --hit-trial "<move>:<anchor_gfc>:<out>/gdb/gdb-<epoch>.log#<start>-<end>" \
-  --hit-kb <prefix> --hit-victim-m 0x<victim M> --out <claims.json>
-```
-
-`scripts/tests/test_kit_hit_records.py` runs the script under the real
-`arm-none-eabi-gdb` against a scripted GDB-stub server, with no emulator.
+The hit-trial analysis step and its test are not part of this export.
 
 ## Connect GDB
 
@@ -156,7 +144,7 @@ Start melonDS and load the JUS ROM. The game will run normally.
 ### 3. Connect GDB
 
 ```bash
-# From the jus_re checkout
+# From the jus-research checkout
 arm-none-eabi-gdb -x scripts/gdb/jus_gdb_watcher.py
 
 # Or on Linux with gdb-multiarch

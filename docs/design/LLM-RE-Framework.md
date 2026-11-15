@@ -4,6 +4,8 @@
 > trust model, document homes, promotion path, and ownership rules. The body below
 > preserves the earlier framework as history.
 
+> **Retracted reading:** `jus-base-2-is-jpower-damage1-10-mse` (jpower `damage1 / 5` as base damage) is retracted by `jus-jpower-retraction-cguk`. jpower.bin is the koma price table; base damage is the chr/col `+4` byte. Any jpower damage teaching below is history.
+
 This document captures reusable patterns for working with LLMs (Claude, GPT, etc.) to reverse engineer video games. Based on practical experience from the JUSToolkit project (Jump Ultimate Stars for Nintendo DS).
 
 ---

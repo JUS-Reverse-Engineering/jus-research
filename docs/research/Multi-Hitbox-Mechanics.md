@@ -1,5 +1,12 @@
 # Multi-Hitbox Mechanics
 
+> **Retracted reading (banner only; body kept as history):** the claim `jus-base-2-is-jpower-damage1-10-mse`
+> (a move's base damage = `jpower.damage1 / 5`) was retracted by `jus-jpower-retraction-cguk`.
+> jpower.bin is the koma evolution price table (`jus-jpower-koma-price-table-uh9o`); battle reads the base byte from chr/col `+4`.
+>
+> The exporter labels `projectileId`, `frameStart`, `durationMult` and `hitModifier` (chr/col `+3`/`+4`/`+5`/`+7`) are also stale: they are a signed lane value,
+> signed base damage, SP drain and a hitstun add. Current labels: [Combat-Formats.md](../formats/Combat-Formats.md). Body kept as history.
+
 How Jump Ultimate Stars implements variable damage and complex attack patterns.
 
 **Status:** CONFIRMED via in-game testing (2026-02-02)
@@ -206,6 +213,9 @@ old notes from git history if the WIP reasoning is wanted.
 ## Tools
 
 ### Full Extraction Workflow
+
+The `JUS.CLI` tool these steps run is not part of this export; it left the
+repo at the 2026-08-21 split.
 
 **Step 1:** Extract ChrBin.aar from ROM (contains collision files)
 

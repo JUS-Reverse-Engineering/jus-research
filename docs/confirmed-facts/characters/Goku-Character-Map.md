@@ -8,7 +8,7 @@
 > were deleted as placeholders. See `character-index.md`.
 
 
-> **Map status:** COMPLETE — full kit verified in-game (2026-01); remaining open item is the jpower entry-selection mechanism (damageFlags=0 Indirect lookup).
+> **Map status:** COMPLETE — full kit verified in-game (2026-01); the old jpower entry-selection question is moot: jpower is not battle data (`jus-jpower-retraction-cguk`).
 
 Deep dive analysis mapping Goku and Goku SSJ through all data files.
 
@@ -108,7 +108,7 @@ then 5 | ✓ | | down B | 10 | 7 × 1.5 = 10.5 → 10 | ✓ | | Y | 6+6+9 | 4 ×
 
 - db_b_01.bin: 25 entries
 - Contains hitbox data, knockback, frame timing
-- 2/25 entries have damage>0 (most reference jpower)
+- 2/25 entries have damage>0 (the "most reference jpower" note is moot: `jus-jpower-retraction-cguk`)
 
 **Deck komas:**
 
@@ -144,9 +144,11 @@ then 5 | ✓ | | down B | 10 | 7 × 1.5 = 10.5 → 10 | ✓ | | Y | 6+6+9 | 4 ×
 
 ### jpower Block 0 Structure
 
+> **Retracted:** the reading `damage1 / 5` (+ tier term) as a move's base damage (`jus-base-2-is-jpower-damage1-10-mse`) is retracted by `jus-jpower-retraction-cguk`. jpower.bin is the koma price table (`jus-jpower-koma-price-table-uh9o`); base damage is the chr/col `+4` byte.
+
 **9 attack entries (indices 0-8):**
 
-| Entry | jpower ID | d1  | d2  | d3  | Total | floor(d1÷5)+(tier-2) | hitstun |
+| Entry | jpower ID | d1  | d2  | d3  | Total | old damage1/5 reading (retracted) | hitstun |
 | ----- | --------- | --- | --- | --- | ----- | -------------------- | ------- |
 | 0     | 0         | 30  | 20  | 0   | 50    | 6                    | 5       |
 | 1     | 3         | 10  | 40  | 0   | 50    | 2                    | 0       |
@@ -160,11 +162,9 @@ then 5 | ✓ | | down B | 10 | 7 × 1.5 = 10.5 → 10 | ✓ | | Y | 6+6+9 | 4 ×
 
 > **DEBUNKED (historical):** This table originally carried "÷7" and "÷5 of
 > total" columns; both formulas summed d1+d2+d3 and were wrong. The confirmed
-> formula is `floor(damage1 / 5) + (tier - 2)` (../research/archive/Research-Status.md). Note none
-> of Goku's tested damages (B=8, fwd B=7, up Y=14) match Block 0 entries under
-> the confirmed formula — Goku's moves resolve to jpower entries OUTSIDE
-> Block 0 via the unknown Indirect (damageFlags=0) lookup, e.g. B=8 uses
-> `damage1=40` at global indices 146/195/218.
+> formula was `floor(damage1 / 5) + (tier - 2)`, now retracted (`jus-jpower-retraction-cguk`). None
+> of Goku's measured base bytes (B=8, DOWN+B=7) came from a jpower lookup: they are the
+> chr/col `+4` bytes, and the measured values still stand.
 
 ### Shared jpower Block
 
@@ -185,41 +185,22 @@ unknown).
 
 ### Missing Move Data
 
-**Moves not found in jpower Block 0** (required `damage1` per confirmed
-formula `floor(d1/5) + (tier-2)`, tier=2):
+> **Retracted:** the list below was framed as moves "not found in jpower Block 0" with a required `damage1` per the `floor(d1/5) + (tier-2)` formula.
+> That reading is retracted (`jus-jpower-retraction-cguk`), and the per-move "Required damage1" values are dropped. Kept as history: the move list only. Base damage is the chr/col `+4` byte.
 
 1. **B (8 damage)**
-   - Required damage1 = 40
-   - **FOUND outside Block 0:** global indices 146, 195, 218
-
 2. **up B hits (3 damage each)**
-   - Required damage1 = 15 each
-   - Not yet located
-
 3. **Y combo hits (4+4+6 damage)**
-   - Required damage1 = 20, 20, 30
-   - Not yet located
-
 4. **fwd Y projectiles (5 damage each)**
-   - Required damage1 = 25 each
-   - Not yet located
 
-**Possible explanations:**
-
-- These moves store damage in collision files directly
-- Multi-hit moves use nextId chains from base values
-- Different selection mechanism from jpower block
-- Damage calculated with modifiers we don't understand
+The "Possible explanations" list that followed is moot.
 
 ### Damage Formula Analysis (RESOLVED)
 
 > Superseded (2026-09-02): the `damage1/5 + (tier-2)` formula below is retracted. The measured arithmetic is in `../damage.md` §1 and §4 [`jus-reduction-is-quarter-multiplier-xk1`]; nature is additive, see `../nature.md` §2.1 [`jus-nature-is-read-in-damage-path-hbt`]. Kept as history.
 
-**Confirmed formula (../research/archive/Research-Status.md):**
-
-```
-damage = floor(jpower.damage1 / 5) + (tier - 2)
-```
+**Retired formula (`jus-jpower-retraction-cguk`):** `floor(jpower.damage1 / 5) + (tier - 2)` is not how base damage is
+obtained. It is kept in the history only; see `../damage.md` §1.
 
 - Uses `damage1` (first component) only — NOT the d1+d2+d3 total
 - tier 1 = -1 damage, tier 2 = 0, tier 3 = +1
@@ -267,25 +248,9 @@ Goku's statC=161 is above the slow threshold, giving normal walk speed.
 
 ### Collision-to-jpower Entry Mapping (Updated 2026-01-30)
 
-**KEY DISCOVERY: damageFlags is a jpower array index for some characters**
+> **Retracted:** the reading `damage1 / 5` (+ tier term) as a move's base damage (`jus-base-2-is-jpower-damage1-10-mse`) is retracted by `jus-jpower-retraction-cguk`. jpower.bin is the koma price table (`jus-jpower-koma-price-table-uh9o`); base damage is the chr/col `+4` byte.
 
-Comparing Goku vs Ichigo collision files reveals different patterns:
-
-| Character | damageFlags Pattern | Interpretation |
-|-----------|---------------------|----------------|
-| Ichigo | Non-zero values (2, 3, 5, 7, 8, etc.) | **Global jpower array indices** |
-| Goku | Almost all 0 | Different lookup mechanism |
-
-**Ichigo evidence (confirmed):**
-- Ichigo B collision: damageFlags=2 → jpower[2] has total=50 → 50/5=10 ✓
-- Ichigo uses damageFlags as **direct jpower array index**
-- Most Ichigo collision entries have non-zero damageFlags
-
-**Goku mystery (unresolved):**
-- Goku B collision: damageFlags=0, hitTier=2
-- All Goku subType=1 (B attacks) entries have damageFlags=0
-- damageFlags=0 does NOT simply mean jpower[0]
-- Goku B=8 requires jpower with damage1=40 (not in Block 0)
+`damageFlags` is the class index (`jus-class-index-is-damageflags-mx5`); jpower is not a damage link (`jus-jpower-retraction-cguk`).
 
 **collision subType distribution (Goku):**
 
@@ -295,11 +260,6 @@ Comparing Goku vs Ichigo collision files reveals different patterns:
 - 5: 2 entries (launcher)
 - 6: 1 entry (aerial, damageFlags=1)
 - 7: 1 entry (heavy/Y, projectile)
-
-**jpower Block 0:** 9 entries (indices 0-8) with total=50 or 100
-
-**Hypothesis:** When damageFlags=0, the game uses a different lookup mechanism
-(possibly subType, hitTier, or an ARM9 table) to find the jpower entry.
 
 ### battleParams Field Meaning (Updated from Ichigo Session)
 
@@ -360,10 +320,7 @@ weights (bytes 8-10) likely affect AI or battle calculations.
 **Damage formula status:**
 
 - `floor(damage1/5) + (tier-2)` was believed confirmed for all tested characters; retracted, see `../damage.md` §1
-- Goku B=8 requires damage1=40
-- jpower entries with damage1=40 exist (indices 146, 195, 218) but not in Block 0
-- **Resolution needed:** Determine which jpower entry Goku's B actually uses
-  (entry selection mechanism, not formula)
+- The jpower-entry search for Goku's B (damage1=40 at indices 146, 195, 218) and its "Resolution needed" note are moot under `jus-jpower-retraction-cguk`.
 
 **ARM9 findings from Ichigo session:**
 
@@ -377,44 +334,12 @@ weights (bytes 8-10) likely affect AI or battle calculations.
 
 ## Investigation Results (2026-01-30)
 
-### Collision damageFlags = Global jpower Index (Partial Confirmation)
+> **Retracted:** the reading `damage1 / 5` (+ tier term) as a move's base damage (`jus-base-2-is-jpower-damage1-10-mse`) is retracted by `jus-jpower-retraction-cguk`. jpower.bin is the koma price table (`jus-jpower-koma-price-table-uh9o`); base damage is the chr/col `+4` byte.
 
-**For Ichigo (bl_b_01):** CONFIRMED
-- damageFlags values (2, 3, 5, 7, 8, etc.) are **global jpower array indices**
-- Example: damageFlags=2 → jpower array[2] → ID=6, total=50 → 50/5=10 damage ✓
+### Collision damageFlags
 
-**For Goku (db_b_01):** UNRESOLVED
-- Most entries have damageFlags=0
-- damageFlags=0 does NOT mean jpower array[0] (that would give 50/5=10, not 8)
-- Goku B=8 requires jpower damage1=40, which exists at indices 146, 195, 218
+`damageFlags` is the class index (`jus-class-index-is-damageflags-mx5`); jpower is not a damage link (`jus-jpower-retraction-cguk`).
 
-**jpower entries with damage1=40:**
-
-| Index | ID | linkCategory | Used By |
-|-------|-----|--------------|---------|
-| 146 | 379 | 1 | Unknown |
-| 195 | 539 | 1 | Unknown |
-| 218 | 604 | 1 | Unknown |
-
-**Mystery remains:** How does Goku's collision (damageFlags=0) access index 146?
-
-### Possible Explanations
-
-1. **ARM9 lookup table:** A secondary table maps (chr_b_index, move_type) to jpower
-2. **Formula with chr_b_index:** e.g., chr_b_index + offset = jpower_index
-3. **damageFlags=0 special behavior:** Different lookup based on subType/hitTier
-4. **Block 0 not used for B move:** Goku's B might bypass block system entirely
-
----
-
-## Next Steps
-
-1. **Search ARM9 for jpower lookup table:** Might find mapping between characters and entries with damage1=40
-
-2. **Test more characters with damageFlags=0:** Find another character like Goku and verify their B damage
-
-3. **Examine entries 146, 195, 218:** What makes them special? linkCategory=1 is common to all three
-
-4. **Binary search ARM9 for values 146, 379, 40:** Might find the lookup mechanism
+Moot under `jus-jpower-retraction-cguk`: the jpower entries with damage1=40 (indices 146, 195, 218) and the "Resolution needed" note about Goku's B no longer apply.
 
 ~~5. **Find weight/speed data:**~~ **SOLVED** - statC field in chr_b.bin controls both

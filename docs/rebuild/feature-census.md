@@ -48,9 +48,9 @@ join; an ambiguous row never chooses one candidate.
 `feature_status.FEATURE_STATUS`. Cost sums occurrence counts for `unsupported` keys only; partial
 keys are retained in demand but contribute zero to cost. Repeated frames/rows add proportionally.
 This is a simple demand proxy, not an estimate of implementation hours. `cross_cast.records_per_mechanism`
-counts prefixes with each mechanism key. `cross_cast.m0_keys_by_demand` ranks M0 buckets by prefixes
-with a direct signal. These explicit key sets are grounded in the importer deferral definitions at
-`import_kit.py:143-154`, the hold-tier decoder at `mash_table.py:89`, body flag at
+counts prefixes with each mechanism key. `cross_cast.m0_keys_by_demand` ranks census buckets by prefixes
+with a direct signal. These explicit key sets are grounded in
+the hold-tier decoder at `mash_table.py:89`, body flag at
 `feature_status.py`'s `op3.sub2` entry, no-damage record kind at `scripts/kit/feature_status.py:453`, held-summon
 shot kind at the `shot.kind.0x0d` status entry, and ability effects at `op3.arg7/23/32`. Element
 hurtbox geometry, support assists, form-change state, cancel-carry metadata, and legacy mash fields
@@ -60,7 +60,7 @@ a broad proxy.
 The existing aggregate `version`, `keys`, and `characters` fields retain their original values and
 serialization. The new sections are additive.
 
-K7-a classifies shot features per occurrence. Only a decoded join on root
+The census classifies shot features per occurrence. Only a decoded join on root
 animation, authored frame, row and occurrence can retire a native shot key.
 An undecoded flag stays unsupported even when another occurrence of its kind
 is decoded. Counter and forced-switch mask readings use the ROM table in

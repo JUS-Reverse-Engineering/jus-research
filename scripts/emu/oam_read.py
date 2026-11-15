@@ -1,6 +1,6 @@
 """OAM (sprite attribute memory) entry reader for the JUS melonDS bridge.
 
-READER STEP (P0.6), pixel step for vis-v2. The decoder and the pixel
+READER STEP, pixel step for vis-v2. The decoder and the pixel
 renderer (obj_tile_offset, obj_pixels, obj_layer) are checked against synthetic
 buffers (tests/test_oam_read.py). On live GPU-media captures (consumed OAM, OBJ
 VRAM and palette per frame) obj_layer reproduces 99.52-99.96 % of the 2D-visible
@@ -276,7 +276,7 @@ def build_doc(buf, engine, source):
 
 def build_parser():
     p = argparse.ArgumentParser(prog="oam_read",
-                                description="Read and decode OAM entries (reader step, P0.6).")
+                                description="Read and decode OAM entries (reader step).")
     p.add_argument("--engine", choices=sorted(ENGINE_BASE), default="main")
     p.add_argument("--from-dump", metavar="FILE",
                    help="decode a raw 1 KiB OAM dump instead of reading the live bridge")

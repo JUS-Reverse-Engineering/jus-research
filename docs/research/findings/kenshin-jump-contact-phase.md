@@ -1,7 +1,7 @@
 # Kenshin jump contact phase and landing clamp
 
-A22/A24's independent PASS covers828 retained Kenshin rows and a fresh-capture
-preregistration. The atns41 integrator-entry position is the previous step's
+828 retained Kenshin rows and a fresh-capture
+preregistration support this: The atns41 integrator-entry position is the previous step's
 position, while Native contact bit0x02 reflects the current collision pass.
 Surface membership therefore agrees with the previous row's contact bit. The
 ROM clip proves ORR#2 at0x0207ECB4 and the store to M+0x78 at0x0207ECB8; full
@@ -22,11 +22,11 @@ rejects a one-row-shifted trajectory even when the general clamp rule passes.
 Eighteen independent Train sources establish floor180223/platform163839 and the
 clamp shape:12 steps78 after475 and6 steps187 after955, followed by stillness.
 Their row numbers46/94/143 are relative to anchor256, absolute302/350/399.
-Those samplers are one frame ahead of the K6 probe. They do not establish the
-K6 launch/contact predicates; all18 fail the K6 general checker as expected.
+Those samplers are one frame ahead of the contact probe. They do not establish the
+launch/contact predicates; all18 fail the general checker as expected.
 The stage-collision table and platform horizontal extent remain undecoded.
 
 The pinned physics.md was left unchanged. Qualification, sources and exact
-predictions are in the K6 operator jump-ground-v2-refute-qualification.json,
+predictions are in jump-ground-v2-refute-qualification.json,
 test-play-surfaces.json and jump-ground-v2-preregistration.json. The historical
 c31 capture remains diagnostic, with no retroactive admission.

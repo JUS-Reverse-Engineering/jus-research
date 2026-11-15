@@ -295,7 +295,7 @@ with §2, but it is not a confirmation of the dispatch either. Prompt and
 answer:
 [cancel-windows-static-2026-09-25/](cancel-windows-static-2026-09-25/).
 
-## Addendum (PF-31e, 2026-10-27): the other readers of the table
+## Addendum (2026-10-27): the other readers of the table
 
 Three points above are incomplete. `cancel_table.c4_readers()` re-reads each one
 from the ROM, and `test_cancel_table.CodeFactsTest` pins it.

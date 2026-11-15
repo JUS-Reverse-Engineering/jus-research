@@ -1,5 +1,9 @@
 # jpower.bin Block Pattern Analysis
 
+> **Retracted reading (banner only; body kept as history):** the claim `jus-base-2-is-jpower-damage1-10-mse`
+> (a move's base damage = `jpower.damage1 / 5`) was retracted by `jus-jpower-retraction-cguk`.
+> jpower.bin is the koma evolution price table (`jus-jpower-koma-price-table-uh9o`); battle reads the base byte from chr/col `+4`.
+
 > Superseded (2026-09-02): §1-2's Direct/Indirect damageFlags model is unverified
 > prose (bare CONFIRMED-style claims, no tracker item ids) flagged by INVENTORY as such.
 > `damageFlags` has a confirmed different meaning: it is the damage gates' class

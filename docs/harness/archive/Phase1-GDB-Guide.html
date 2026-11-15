@@ -438,7 +438,7 @@ footer .signoff{
   <ul class="checklist" id="prepList">
     <li><input type="checkbox" id="p1"><label for="p1"><code>brew install melonds arm-none-eabi-gdb</code> (or build melonDS with <code>-DENABLE_GDB_STUB=ON</code> per <code>scripts/gdb/README.md</code>).</label></li>
     <li><input type="checkbox" id="p2"><label for="p2">JUS ROM + a save that boots into a free battle quickly, with Goku and/or Ichigo decks ready (best-documented kits → known <code>damage1</code> values for planted-value checks).</label></li>
-    <li><input type="checkbox" id="p3"><label for="p3">Terminal <code>cd</code>'d to the <b style="color:var(--text)">worktree root</b> (<code>.claude/worktrees/battle-engine-atlas</code>) — all macro paths are relative to it; <code>jus_files</code> is a symlink there and works.</label></li>
+    <li><input type="checkbox" id="p3"><label for="p3">Terminal <code>cd</code>'d to the <b style="color:var(--text)">worktree root</b> — all macro paths are relative to it; <code>jus_files</code> is a symlink there and works.</label></li>
     <li><input type="checkbox" id="p4"><label for="p4">A second Claude Code session open in the same worktree, primed with the companion prompt from Section 4.</label></li>
     <li><input type="checkbox" id="p5"><label for="p5">Know your melonDS savestate hotkeys (default: Shift+F1 save, F1 load). Savestates are the single biggest quality multiplier here — savestate before every experiment so it's replayable.</label></li>
   </ul>
@@ -880,7 +880,7 @@ footer .signoff{
 
 <section id="helper">
   <h2 class="sec-title"><span class="n">4</span> Live-helper protocol</h2>
-  <p class="sec-desc">Open a Claude Code session in the worktree (<code>.claude/worktrees/battle-engine-atlas</code>)
+  <p class="sec-desc">Open a Claude Code session in the worktree
   and paste this prompt:</p>
 
   <div class="prompt-card">

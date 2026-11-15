@@ -15,7 +15,7 @@ Combat data is split across multiple files:
 |------|----------|----------|
 | `chr_b.bin` | `bin/` | Battle character stats (74 characters) |
 | `chr_s.bin` | `bin/` | Support character stats |
-| `jpower.bin` | `bin/` | Move/power parameters (311 entries) |
+| `jpower.bin` | `bin/` | Koma evolution price table (311 rows; `jus-jpower-koma-price-table-uh9o`) |
 | `*.bin` | `ChrBin.aar/chr/col/` | Per-character collision/hitbox data |
 | `*.bin` | `ChrBin.aar/chr/shot/` | Projectile parameters |
 | `*.bin` | `ChrBin.aar/chr/ai/` | AI behavior parameters (LZSS compressed AIPM) |
@@ -51,10 +51,11 @@ Combat data is split across multiple files:
 ### Notes
 
 - **classId → jpower block** (`jpower_block_index = classId & 0xFF`, high byte
-  1 or 2) is the exporter's static reading (`docs/research/jpower-Mapping.md`);
-  it is not runtime-verified. The runtime damage path reads the move's base
-  byte, which equals `jpower.damage1 / 5` (`damage.md` §1,
-  `jus-base-2-is-jpower-damage1-10-mse`).
+  1 or 2) was the exporter's reading (`docs/research/jpower-Mapping.md`) and is void:
+  jpower.bin is not battle data
+  (`jus-jpower-koma-price-table-uh9o`). The runtime damage path reads the base byte at chr/col `+4`
+  (`damage.md` §1); the reading `jpower.damage1 / 5` (`jus-base-2-is-jpower-damage1-10-mse`) is retracted by
+  `jus-jpower-retraction-cguk`.
 - Combat stat modifiers: 0=none, 256/257=type1, 512/514=type2
 - `textIds` reference strings in chr_b_t.bin (Shift-JIS encoded)
 - **battleParams does not contain weight or walk speed.** See the [current
@@ -76,11 +77,11 @@ Combat data is split across multiple files:
 | 0x00 | 1 | u8 | collisionType | See collision types below |
 | 0x01 | 1 | u8 | subType | Move/animation index |
 | 0x02 | 1 | u8 | extFlags | Extended flags (0-3) |
-| 0x03 | 1 | s8 | projectileId | Negative=spawn entity, 0=melee, positive=item ID |
-| 0x04 | 1 | u8 | frameStart | Frame when hitbox activates |
-| 0x05 | 1 | u8 | durationMult | Duration multiplier |
+| 0x03 | 1 | s8 | statusRaw | Signed lane value: positive is staged to work byte `+0x172`, negative to `+0x173` (arm9 `0x0208169C`). Exporter label was `projectileId`; the id's meaning is not established here (`jus-chrcol-03-status-lanes-4exo`) |
+| 0x04 | 1 | s8 | damage_raw | Signed base damage, read with `ldrsb` at arm9 `0x02082428` with no table lookup ([damage.md](../confirmed-facts/damage.md) §1 and §2.1). Exporter label was `frameStart`; it is not an activation frame |
+| 0x05 | 1 | s8 | spDrain | SP drain per contact, 1/100 bar; the byte `<< 8` is added into a per-cell sum (arm9 `0x020812A0`, [damage.md](../confirmed-facts/damage.md) `+0xEC`). Exporter label was `durationMult` |
 | 0x06 | 1 | u8 | reserved0 | Always 0 |
-| 0x07 | 1 | u8 | hitModifier | Hit property modifier |
+| 0x07 | 1 | s8 | hitstunAdd | Signed add into work byte `+0x171`, an add term of the hitstun formula `clamp(M[0x171] + 0x14 + table, 0x10, 0x3C)` (arm9 `0x02081300`; read at ov6 `0x0215AD34`, [physics.md](../confirmed-facts/physics.md) §4.5). Exporter label was `hitModifier` |
 | 0x08 | 1 | s8 | offsetX | Hitbox X position (signed) |
 | 0x09 | 1 | u8 | offsetY | Hitbox Y position |
 | 0x0A | 1 | u8 | positionFlags | Position modifiers |
@@ -93,7 +94,7 @@ Combat data is split across multiple files:
 | 0x11 | 1 | u8 | hitProperties | 0=default, 1=force blunt damage |
 | 0x12 | 2 | u8[2] | reserved | Always 0 |
 
-Only `+0x0C`, `+0x0D` and `+0x0E` above are runtime-confirmed; the rest are exporter
+Offsets `+0x03`, `+0x04`, `+0x05`, `+0x07`, `+0x0C`, `+0x0D` and `+0x0E` carry consumer-based labels; the rest are exporter
 labels. Roster-wide statistics and the live 20-byte dumps are in
 `docs/confirmed-facts/collision.md` (on-disk format bullet).
 
@@ -120,54 +121,33 @@ labels. Roster-wide statistics and the live 20-byte dumps are in
 
 ---
 
-## jpower.bin - Move/Power Parameters
+## jpower.bin - Koma Evolution Price Table
 
-**Block Size:** 304 bytes (0x130)
-**Total Blocks:** 311 entries
+Not battle data. Earlier revisions of this page read it as move/power parameters
+(`damage1` etc.); that reading is retracted by `jus-jpower-retraction-cguk`. Layout and provenance:
+`jus-jpower-koma-price-table-uh9o` (static; Keshire's `jus_formats/jpower.py`, cross-checked against our ROM).
+
+**Row Size:** 304 bytes (0x130)
+**Total Rows:** 311
 **Endianness:** Little-endian
+**Loader:** ov05 `0x02165314` (`JPowerData_Create`); readers per Keshire's trace, not re-read here: ov05 `0x021653AC` (cell address), `0x021646F4` (award dispatch), `0x02164458` (six resource costs). "Nothing in ARM9, ov06 or ov11 reads it" is inferred from the single loader.
 
-### Block Structure
+### Row Structure
 
 | Offset | Size | Section |
 |--------|------|---------|
-| 0x00-0x3F | 64 | Main record (attack definition) |
-| 0x40-0x7F | 64 | Modifier sub-record (optional, for buffed state) |
-| 0x80-0x12F | 176 | Extra data / padding |
+| 0x00 | 4 | root koma index |
+| 0x04-0x12F | 15 x 0x14 | 15 cells, grouped 5 x 3 slots (Keshire's grouping) |
 
-### Main Record (0x00-0x3F)
+(4 + 15 x 0x14 = 0x130 exactly.)
 
-| Offset | Size | Type | Field | Description |
-|--------|------|------|-------|-------------|
-| 0x00 | 2 | u16 | id | Record identifier |
-| 0x02 | 2 | u16 | reserved | Usually 0 |
-| 0x04 | 2 | u16 | type1 | 0=data-only, 1=attack |
-| 0x06 | 2 | u16 | type2 | Attack subtype |
-| 0x08 | 2 | u16 | nextId | Linked record reference |
-| 0x0A | 2 | u16 | reserved | Usually 0 |
-| 0x0C | 2 | u16 | damage1 | Punch/kick damage component |
-| 0x0E | 2 | u16 | damage2 | Energy/ki damage component |
-| 0x10 | 2 | u16 | damage3 | Blade damage component |
-| 0x12 | 4 | u16[2] | reserved | Usually 0 |
-| 0x16 | 2 | u16 | hitstun | Hitstun frames |
-| 0x18 | 2 | u16 | linkType | Link category type |
-| 0x1A | 2 | u16 | linkCategory | Category code |
-| 0x1C | 2 | u16 | linkFlags | Additional flags |
-| 0x1E | 2 | u16 | reserved | Usually 0 |
-| 0x20 | 16 | u8[16] | extendedData | Additional parameters |
+### Cell (0x14 bytes)
 
-### Modifier Sub-Record (0x40-0x7F)
+Words: `[kind, 1, koma id, 0, cost x6]`. The second word is usually 1, not always; the kind word takes values such as 6403 and 6146.
 
-Present when byte 0x40 = 0x02 (indicates buffed/powered state data):
+Example: row 146 (root koma 379) has cells for koma 380, 382, 381, 383, 384 and 385, with first non-zero costs 35, 150, 60, 300, 400 and 500: an evolution tree with rising prices.
 
-| Offset | Size | Type | Field | Description |
-|--------|------|------|-------|-------------|
-| 0x40 | 2 | u16 | marker | Always 0x0002 |
-| 0x42 | 2 | u16 | subMarker | Always 0x0001 |
-| 0x44 | 2 | u16 | modifierId | Usually mainId + 2 |
-| 0x46 | 2 | u16 | reserved | Always 0 |
-| 0x48 | 2 | u16 | modDamage1 | Modified damage1 (typically 2x base) |
-| 0x4A | 2 | u16 | modDamage2 | Modified damage2 |
-| 0x4C | 2 | u16 | modDamage3 | Modified damage3 |
+The old "main record / modifier sub-record / extra data" field tables (id, type1, damage1-3, hitstun, link fields) were a misparse of these rows and are removed.
 
 ---
 

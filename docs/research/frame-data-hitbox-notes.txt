@@ -1,3 +1,8 @@
+RETRACTED READING: jus-base-2-is-jpower-damage1-10-mse (jpower damage1 / 5 as base damage) is retracted by jus-jpower-retraction-cguk.
+jpower.bin is the koma price table; base damage is the chr/col +4 byte. Any jpower damage or startup guess below is history.
+The `frameStart` label (chr/col +4) is also stale: that byte is signed base damage (arm9 0x02082428 ldrsb), not an activation frame.
+The `Collision frameStart` column below therefore lists base damage values. See docs/formats/Combat-Formats.md for the current byte labels.
+
 JUS Frame Data & Hitbox Visualization Research Notes
 ====================================================
 

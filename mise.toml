@@ -1,4 +1,4 @@
-# Toolchain for jus_re — install with `mise install` from the repo root.
+# Toolchain for jus-research — install with `mise install` from the repo root.
 # Same file works on macOS and Linux; this is the portable half of the setup.
 #
 # mise cannot provide C libraries or GUI apps. Those stay on the system

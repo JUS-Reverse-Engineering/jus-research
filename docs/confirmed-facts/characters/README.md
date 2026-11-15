@@ -19,7 +19,7 @@ exactly the failure mode this project has been bitten by before.
 ## Rules
 
 - **Identity fields are usable; numbers are not.** `character-index.md` tells you which
-  `chr_b` entry, collision file and `jpower` block belong to a character. It contains no
+  `chr_b` entry, collision file belong to a character, and what its `jpower` column is (`classId & 0xFF`, which links to nothing). It contains no
   measurements and should never be cited as evidence for one.
 - **Nothing new goes in a character map without a tracker item.** If you measure a move, the claim
   lives in tracker items (a tracker entry) and the document cites the id. A bare

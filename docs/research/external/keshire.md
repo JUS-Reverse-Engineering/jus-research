@@ -24,7 +24,8 @@ support.
 
 ## Permission
 
-The jus_re owner has Keshire's permission to fold Keshire's work into jus_re. Material that
+The jus_re owner has Keshire's permission to fold Keshire's work into jus_re and to publish it
+in the JUS-Reverse-Engineering repositories. Material that
 jus_re takes in is restated in our own words and credited to this page, and each claim is
 checked against our ROM before a tracker item records it.
 

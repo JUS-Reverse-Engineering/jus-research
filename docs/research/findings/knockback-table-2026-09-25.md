@@ -1,5 +1,11 @@
 # Where JUS sets knockback (static, 2026-09-25)
 
+> **Superseded in part (banner only; body kept as history):** the statement that the speed cap byte (+0x3E) is 128
+> in every state holds for fighter elements only. Other elements get the allocator default of 32 px/frame.
+> The scoping tracker item is `jus-speed-cap-fighter-scope-uhs4`; see
+> [speed-cap-128-is-fighter-scope.md](speed-cap-128-is-fighter-scope.md) and the
+> [physics reference](../../confirmed-facts/physics.md).
+
 Which bytes decide how hard and which way a hit sends the victim, read from
 the game files for every battle character. No emulator was used. Capture
 spec for the next live check: `jus-yusuke-air-b-knockback-capture-3htm`.

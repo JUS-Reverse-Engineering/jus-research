@@ -40,10 +40,14 @@ cd scripts/emu
 python3 jusemu.py status                # state=idle, live framecount
 python3 jusemu.py selftest              # read_ok=true
 python3 jusemu.py peek 0x021DF1D4 2     # player HP, raw (divide by 64)
+python3 jusemu.py peek 0x021DEB3C 4 --state path/to/luffy_training.mln.gz  # offline, from a savestate file (no emulator)
 python3 jusemu.py run plans/damage_probe.json
 python3 jusemu.py run --timeout 180 plans/damage_probe.json  # slower GDB run
 bash stop_emu.sh                        # stop the melonDS recorded in HOLDER (only that pid)
 ```
+
+`peek --state` takes a savestate file path; a bare state name needs a state-store
+module that is not part of this export.
 
 `launch_emu.sh` records `JUS_EMU_HOLDER` in `/tmp/jus_emu/HOLDER`. It refuses
 to launch while a live holder owns melonDS. After that check, it clears a dead
@@ -98,9 +102,48 @@ pid N. Real guarantees:
   its pattern did not match); no script uses it and it can destroy another
   session's emulator.
 
-## Emulator lease (runner-owned, P1.8a)
+## Batch, resident client, inspected load errors and `info`
 
-`lease.py` is the runner-owned lease for unattended campaigns (plan section 2.3). The
+**`batch`: several ops, one command.** `jusemu.py batch steps.json` (or `-` for stdin) takes
+`[{"op": "poke", "args": {...}}, {"op": "peek", "args": {...}}]` (or `{"steps": [...]}`) and publishes ONE `batch`
+command: one id, one ack, one epoch and native-lock check. The bridge runs the steps in order inside one `_Update()`
+callback (`bridge_core.run_batch`, wired in `poll_commands`) and the ack's `result` is
+`{results: [{op, ok, result|error}], completed, failed_index}`.
+
+- A step that errors stops the batch. The ack is `ok:false`, `error` names the step (`step 1 (tail_stop): ...`) and
+  `result` keeps the results so far plus `failed_index` (0-based). `jusemu.py batch` exits 1 then.
+- `run_plan`, `state_load`, `state_save` and `batch` are refused with "not allowed in a batch". They are
+  multi-callback state machines (the bridge leaves `idle`; see the `load_state`-in-plan item under Known issues), so they
+  cannot finish inside one callback. Refusals, unknown ops and bad shapes are found before any step runs, so a refused
+  batch has executed nothing. At most 64 steps.
+- The native-capture lock is re-checked per step, so a `native_capture_start` step locks the steps after it. While a
+  native capture is active the whole batch is refused (`batch` is not `status`).
+- It is not frame-atomic. Lua runs on the GUI thread while the core free-runs (see "Frame counting"), so a batch
+  saves poll waits (one wait per sequence instead of one per verb); it does not freeze emulation between steps.
+- At-most-once as before: a timed-out batch has an unknown fate, its `pending.json` stays, and a second `batch` raises
+  until `abandon`. Nothing resends.
+
+**Resident client.** `jus_ipc.resident()` is the one long-lived `IpcClient` per IPC dir; `jus_ipc.batch(steps)`,
+`jus_ipc.state_load(slot)` and `IpcClient.call(op, args)` use it, and `l77m_fast.py` now imports it (same functions,
+plus `batch`). The client re-reads the heartbeat session before each call, so a bridge restart does not leave it sending
+a stale epoch. Existing verbs are unchanged.
+
+**Inspected load errors.** When `state load` (or `IpcClient.state_load`) returns `ok:false` (a settle timeout acks that) or
+times out, the Python side adds `inspection` and `hint`: the `.mln` header and version, whether the sidecar is present
+and parseable (and whether the bridge's own `"framecount_at_save":N` regex can read it), the sha256 against the archive's
+`<slot>.meta.json` when it lists one, the ROM on disk against `hashes.json`, and the last heartbeat framecount. It never
+changes bridge timing or the settle rule, and a dummy `framecount_at_save:0` still reads "did not settle"; the hint says to
+check the framecount and `[0x02181B28]` (see Harness hazards). The `.mln` version is read as `u16 major, u16 minor` at
+offset 4 of the header; that layout has been checked against a synthetic file only.
+
+**`jusemu.py info`.** Reports the bridge state (read-only: no client, no directories made), the ops this checkout's
+`agent_bridge.lua` dispatches, the build record (`build_info.json` and the native Linux record) and the ROM hash
+against `hashes.json`. The bridge has no op that lists its own ops, so `ops.source` is `bridge-file`: it says what the
+file dispatches, not what the running emulator loaded. With no bridge it prints `bridge.up: false` and the rest.
+
+## Emulator lease (runner-owned)
+
+`lease.py` is the runner-owned lease for unattended campaigns. The
 campaign runner process, not an agent, holds it. State lives in the IPC dir:
 `LEASE.json` (replaced only by atomic rename), `LEASE.epoch` (highest epoch ever issued;
 never goes backwards, even after release) and `.lock`, the one operation lock (flock) shared with `launch_emu.sh` / `stop_emu.sh`. A lease records
@@ -165,13 +208,13 @@ bumped, `LEASE.json` removed), so the old holder's `heartbeat()` / `assert_curre
 the safe set). From the repo root:
 `PYTHONPATH=scripts:scripts/tests:scripts/emu python -B -m unittest scripts.emu.tests.test_lease_safety -v`.
 
-**Runner API (what P1.8b builds on).**
+**Runner API.**
 
 ```python
 from scripts.emu import lease              # or run scripts/emu/lease.py standalone
 l = lease.acquire(campaign, token)         # LeaseHeld if a live fresh holder exists
 l.assert_current()                         # LeaseFenced if taken over / released
-owned.Owned(l).section()                   # lock + assert_current around every shared write (P1.8b)
+owned.Owned(l).section()                   # lock + assert_current around every shared write
 l.heartbeat(trial_index)                   # every trial
 lease.bridge_stale(max_age)                # True: stop new dispatch (heartbeat.json mtime)
 l.release()
@@ -248,136 +291,15 @@ output, same as the census tool. See
 `docs/research/feel-captures/projectile-conflict-2026-09-10/INSTRUMENT.md`
 for the manual recipe this automates.
 
-## Per-trial resume for the capture runner (P1.8b)
+## Per-trial resume for the capture runner
 
-`native_media/plans/trial_resume.py` (stdlib only; emulator work is injected) gives `case_batch.py`
-per-trial checkpoints. Tests: `plans/test_trial_resume.py` (fake drivers, scratch IPC root, a fake
-emulator that is a copy of `sleep` under the scratch dir) and `ResumeMain` in `plans/test_case_batch.py`.
-
-**Files** under `<out>/attempt-N/checkpoints/`: `campaign.json` (identity components and their sha256
-for `input` = manifest sha + rows glob + scheduled `(id, run)` list, `driver` = `driver_pins`, `state` =
-each state's sha256 and sram_sha256, `exec` = preflight's binary, build-info and config sha256; the epoch history; the
-reconcile log), `trial-NNNN.json`
-(`trial-checkpoint/v1`: outcome, the identity hashes, lease epoch, the run entry, this trial's identity-invalid
-records), `inflight.json` (the trial being run; left behind by a crash), `quarantine/`. Every write is
-tmp + fsync + `os.replace` + directory fsync (`atomic_write`); a torn trial file reads as absent.
-
-**Outcomes.** `accepted` and `rejected` (deterministic `[expect]` miss; the emulator is deterministic, so a
-rerun reproduces it) are final and kept on resume. `identity_invalid` (slot/chr_b change or HP 0 on all
-RETRY_CAP+1 attempts, which fails the batch as before) is not final: resume reruns that trial from scratch
-with a fresh budget. No checkpoint means the trial was interrupted: its raw folders (`base`, `.retryN`,
-`.probeN`) and kept files are renamed `*.quarantine-N`, then it reruns. A run that died after writing a trial's final
-checkpoint but before clearing `inflight.json` leaves both; that trial is reused on resume with its raw bundle and kept
-files in place (`trial_resume.reusable`; the checkpoint is written only after the trial's outputs are complete). Only a
-trial selected for rerun is quarantined.
-
-**Driver identity.** `driver_pins` (`case_batch.driver_pin_files`) is the manifest plus every local file the runner,
-its warm-up child and the bridge execute: `case_batch.py`, `cases.py`, `case_macros.py`, `native_events.py`,
-`trial_resume.py`, `fighter_layout.py`, `state_identity.py`, `build_state.py` (preflight runs its recipe loader),
-`owned.py` and `lease.py` (the ownership contract), `jus_ipc.py`, `jus_plan.py`, `jus_addresses.py`, `jusemu.py`,
-`agent_bridge.lua` with `bridge_core.lua` and `native_capture.lua`, `validate_capture.py` and `replay_plan.py`.
-Excluded, with the reason in `case_batch.PIN_EXCLUDED`: `nav.py`, `deck_editor.py` and `build_deck.py`, imported only
-inside `build_state.run_step` (the state-build path; the runner calls `build_state.load_recipe` alone). Not a local
-module and outside the repo: the SRAM extractor (`~/.local/share/jus-sav-recovery/extract_sram.py`, run under
-`python3 -I`); its output, each state's `sram_sha256`, is in the `state` identity. `plans/test_case_batch.py`
-`DriverIdentityClosure` derives the closure from static imports (module level and inside functions; absolute,
-top-level `NAME.py` only) and Lua `require("name")` calls, and fails on any file that is neither pinned nor excluded
-with a reason. It does not see dynamic imports (`__import__`, `importlib`), relative or package imports, scripts run
-as subprocesses, or other Lua load forms (`dofile`, `loadfile`, other `require` spellings); new loads of those kinds
-must be audited and pinned by hand.
-
-**Controls.** The first/last repeat runs are always rerun on resume (even if checkpointed) and compared
-file-by-file with the first run's checkpointed `file_sha256`; a difference raises `ControlMismatch`.
-
-**Refusals.** `--resume` needs an existing checkpoint set, refuses an attempt whose `batch.json` has
-`ok: true`, and refuses if the input, driver, state or exec hash differs (state and exec are checked after preflight).
-The exec hash covers the binary, `build_info.linux.json` and `config_identity_sha256`: a versioned, normalized set of
-the melonDS config keys that change what the emulator runs or what a capture records (`case_batch.CONFIG_IDENTITY`,
-`melonds-config-identity/v1`: emulation, BIOS/firmware, JIT, pacing, audio, mic, renderer, cheats, save path, RTC,
-battery, input mappings). The raw file hash `config_sha256` stays in `batch.json` as provenance only, because melonDS
-rewrites the whole file on close (window geometry), which must not block a resume.
-An unreadable (torn) `batch.json` is not a completed attempt: it is quarantined and the resume continues from
-the checkpoints. `batch.json` is published with `atomic_write`. On resume, the startup `probe-<state>` bundles of the
-interrupted run are quarantined (`*.quarantine-N`) before the layout probes rerun, since a capture refuses an
-existing folder. A regenerated repeat-control plan must match the retained first entry's `masks_sha256` and `presses`.
-Without `--resume` an existing attempt is refused as before. Without `--resume` the behaviour is functionally
-unchanged; the differences are `driver_pins` gains `trial_resume.py` and the transport files, `batch.json` gains
-`resumed: false`, and every new attempt writes checkpoints.
-
-**Lease (`--lease`, opt-in): owned sections.** The runner acquires the lease (`lease.acquire`), heartbeats once per
-dispatched trial (`LeaseFenced` stops it; never inside a section, since `heartbeat` takes the lock itself) and with
-`--bridge-max-age S` stops new dispatch when `bridge_stale(S)`. The rule: every mutation of shared state by a leased
-runner happens inside an owned section, `owned.Owned(lease).section()` (`scripts/emu/owned.py`). A section takes
-`$IPC_DIR/.lock` (`lease._Lock`, the same flock as acquire/heartbeat/release and the shell launch/stop) and calls
-`assert_current()` while holding it. A takeover's `acquire` takes the same lock, so it lands either before a section
-(the section raises `LeaseFenced` and writes nothing) or after the section's write is complete; there is no
-check-to-write window. Sections last milliseconds (file writes, renames, mkdir, small gzip), never wait (ack or
-status.json polling, subprocesses) and do not nest. `case_batch.OWNED` is `Owned(lease)` from the acquisition to
-`main`'s exit and `Owned(None)` (a no-op) otherwise. The owned writes:
-- IPC: `IpcClient(guard=OWNED.section)` guards directory setup and stale-epoch cleanup, `next_id`, `publish_command`
-  (capture start and stop), `request_stop` and ack consumption. `wait_ack` polls read-only, then removes its own ack
-  and `cmd/pending.json` only if that marker's id and epoch are its own; a foreign ack is left alone. `place_state`.
-- The warm-up child `jusemu.py --ipc-dir <IPC> run` gets `Lease.env()` and builds its own `Owned.from_env`, so its
-  client, run dir and `plan.lua` are owned the same way; the parent's wait holds no lock.
-- Attempt: the checkpoints (`trial_resume.Store(guard=...)`: begin, extend, note_epoch, reconcile, mark_inflight,
-  clear_inflight, write, set_aside), the kept files of a first run (one section), `batch.json`, and in the raw tree the
-  capture parent folder, the probe quarantine and the trial `discard` renames.
-- Scratch is never a fixed TMPDIR path: the warm-up plan and the SRAM extraction each use a fresh `tempfile.mkdtemp`
-  dir (invocation-private, removed after), so they need no section and a fenced runner touches nothing another runner
-  reads there.
-
-Only the current epoch holder writes `batch.json` (which records `lease: {token, epoch}`, null without `--lease`).
-A runner fenced at that write saves `<out>/attempt-N/fenced/epoch-<E>.json` instead: the same summary plus
-`fenced_by` (the `LEASE.json` that fenced it). That file is epoch-unique, written by nobody else and read by
-nothing (not the completed-attempt refusal, not the quarantine). A fenced runner changes nothing else shared.
-
-**Takeover order.** On a takeover (`lease.status()['took_over']` set) and on every `--resume --lease`,
-`case_batch.reconcile_takeover` runs right after `acquire` and before the new owner publishes anything: (1) the old runner's pending command: wait up to 30 s for its
-ack and consume it, else remove its `pending.json` and `inbox.lua` (both ID-matched, owned); (2) publish
-`native_capture_stop` and wait for its ack (not ok means no capture was live), so the bridge is idle; (3) record and
-clear `inflight.json`; (4) quarantine `batch.json` (refused instead if it says `ok`, re-read under the lock), the
-startup probes and the in-flight trial's raw folders and kept files (kept if its checkpoint is reused). Then warm-up,
-probes and trials. Steps 3-4 alone run on a `--resume` without `--lease`. When no heartbeat can be read, step 2 is
-skipped: the bridge writes its heartbeat atomically before it polls commands, so a missing one normally means no
-bridge, but `_read_heartbeat` also returns None on a read or parse error.
-When `client.state()` reports `BridgeState.DEAD` with a readable, stale heartbeat and no emulator process,
-step 1 immediately abandons the pending command through `client.abandon(id)` (ID-matched, owned), logging
-`pending-cleared`. Step 2 publishes nothing and logs `stop-skipped-dead`. For campaigns first executed on a commit
-containing this fix, a stale heartbeat left by a clean stop no longer blocks resume. Within the 5 s
-heartbeat-staleness window after a clean stop, the heartbeat is still fresh: one resume attempt may wait
-30 s for the stop acknowledgement and fail. A retry after that window clears the pending stop and continues.
-`PAUSED` means the heartbeat is stale but the emulator process is alive;
-it still requires the stop acknowledgement because a capture may remain live. Fresh states, state-check errors,
-and an unreadable heartbeat retain the existing protocol.
+The batch runner and its per-trial checkpoints live in tooling that this repository does not include.
 
 Liveness checks scan `/proc` for `melonds` in the process `comm` or executable basename, case-insensitively.
 Command arguments containing `melonDS` do not count. A live PID from the client's `emu.pid` or `HOLDER` line 2
 also counts, covering a renamed `$MELONDS` binary. An unlistable `/proc` or an unreadable or malformed PID
 record counts as alive. A reused PID can therefore conservatively keep the bridge `PAUSED`.
 `jusemu status` uses the same check with its selected IPC directory.
-
-The nativewatch campaign driver pin covers every tracked file under `scripts/emu`, plus the nativewatch
-`plans/*.py` sources and its other driver dependencies. Resume must use the identical commit as the campaign's
-first execution, with the same pins and original `--scratch` and `--runtime` paths. A landed change under
-those trees requires a new campaign. The nw7 pilots must be rerun as a new campaign on the final landed
-commit containing this fix; existing campaign pins are not migrated.
-
-**Stop timeout and retry.** If step 2's stop is not acknowledged within 30 s the runner raises `BatchError` and
-releases the lease, leaving the stop's `pending.json` (and `inbox.lua` if unconsumed) in place: nothing erases an
-unresolved command to allow a later publication. The reconciliation runs on every leased resume, not only after a
-takeover, so the next `--resume --lease` takes that marker as step 1. If the bridge has acked by then, the ack is
-consumed and the resume continues. If it is still alive but unresponsive, step 1 times out, the old marker is cleared (R3), a new
-stop is published, and when that one also times out the resume refuses again with its own marker left pending. No
-warm-up or trial is published while a stop is unacknowledged and the bridge may still be alive.
-
-**Accepted residual, exactly.** The bridge takes no lock, so a fenced runner's only remaining effects are those it
-published before the takeover: (R1) one command in `inbox.lua` or executing on the bridge; (R2) a native capture that
-command started, which keeps writing its raw folder until stopped. The new owner's steps 1-2 handle both before its
-own first command. (R3) Step 1's timeout cleanup of an unconsumed command can race the bridge consuming it: the
-at-most-once contract of `jus_ipc`. Nothing else has a window. A live campaign whose operator died keeps its lease:
-a second `acquire` raises `LeaseHeld`. Tests: `plans/test_case_batch.py` `Ownership` (closed-boundary filesystem
-snapshots, the round-3 regressions, reconciliation order), `plans/test_trial_resume.py`, `tests/test_owned.py`,
-`tests/test_jus_ipc.py`, `tests/test_jusemu.py`.
 
 ## Build
 
@@ -387,7 +309,7 @@ at commit `c26edf0e0d75364823856c9272a103fe39e03999`, with every patch in
 lacks the control and measurement behavior this harness requires.
 
 The current build script targets macOS with Homebrew. Its default source tree
-is `$HOME/src/melonDS-lua`, outside all three project repositories. The binary
+is `$HOME/src/melonDS-lua`, outside this repository. The binary
 lands at `$HOME/src/melonDS-lua/build/melonDS.app/Contents/MacOS/melonDS`.
 Use a disposable source checkout: the build script resets tracked files and
 removes untracked files in that tree before applying the project patches.
@@ -484,7 +406,7 @@ the negotiated-mode and buffered-input reset. j9q's own build and its
 binary/source hashes are retained with the qualification artifacts. Disabling
 no-ACK negotiation makes this memory-heavy probe too slow for the bridge start
 bound and is not the runtime fix.
-The 16g `baseline.json` hashes describe the historical source before these
+The `baseline.json` hashes describe the historical source before these
 layers. Keep them unchanged; the EOF fix records its final source hash separately.
 
 The repository record selects the reconnect-corrected executable, SHA-256
@@ -497,6 +419,10 @@ The repository record selects the reconnect-corrected executable, SHA-256
 clears breakpoints but retains negotiated no-ACK state on disconnect. The old executable at
 `<SRC>/melonDS-hooks/build/melonDS` has the GDB EOF stub defect and must
 not be used for GDB-attaching captures. Preserve it and the shared `build_info.json`.
+
+The build steps below need the Linux build record (`build_info.linux.json`),
+which is not part of this export: `prepare_hooks_build.py` and
+`prepare_gpu_build.py` both read it.
 
 To rebuild, choose an absent durable source directory and recreate it with
 `prepare_hooks_build.py`; this verifies hooks, EOF and reconnect layers.
@@ -512,26 +438,15 @@ jobq run --nice 15 -- cmake --build "$HOOKS_SOURCE/build" -j4
 sha256sum "$HOOKS_SOURCE/build/melonDS"
 ```
 
-Before starting a fresh campaign, update the record's `source_dir`,
-`source_recreation`, `app_path`, measured `binary_sha256`, `built_at`, `launch`
-and both fix flags set to true. Copy the completed Linux record beside the
-durable source as `build_info.linux.json`. Keep the EOF patch and source pins above.
-`case_batch.session()` reads `hooks_layer.app_path` and `binary_sha256` from
-the repository's Linux record; users of that runner must update those pins
-explicitly when adopting a different executable.
+The Linux build record (`build_info.linux.json`, not part of this export) pins
+the layer hashes; `prepare_hooks_build.py` and `prepare_gpu_build.py` need it.
+Keep the EOF patch and source pins above.
+The batch runner that reads `hooks_layer.app_path` and `binary_sha256` from
+the repository's Linux record is not part of this export.
 
-Run the focused offline regression with:
-
-```sh
-MELONDS_SOURCE_REPOSITORY="$HOME/src/melonDS-lua" \
-  python3 -B -m unittest discover -s scripts/emu/native_media/plans -p test_gdb_eof.py -v
-```
-
-It recreates the hash-checked hooks source and compiles its actual GDB stub.
-Socket-pair probes check idle/EAGAIN, interrupt packets, EOF with POLLIN without
-POLLHUP, bounded return from `Enter(true)`, and a later breakpoint and watchpoint
-hit after EOF, POLLHUP, direct disconnect, and a detach packet. No emulator runs. Missing C++17
-compilers or the source Git repository produce an explicit skip reason.
+The focused offline regression for these patches (it recreates the hash-checked
+hooks source and compiles its GDB stub; no emulator runs) is not part of this
+export either.
 
 Nativewatch downgrades a GDB kill fallback to `WARNING` only when its hash-pinned
 runtime build record names the running binary hash and asserts both fix flags.
@@ -597,7 +512,7 @@ limit and its validator are unchanged). It is pinned as `gpu_layer` in
 `prepare_hooks_build.py`, applies the patch, checks every changed-file sha256
 and that `NativeGpuMedia.h` equals the repo copy). The binary is
 `<SRC>/melonDS-gpu-gdbfix/build/melonDS` (sha256 `3778de26…`, built
-2026-10-28 by PF-05 over the hooks source with the GDB EOF, breakpoint and
+2026-10-28 over the hooks source with the GDB EOF, breakpoint and
 reconnect fixes). The 2026-10-19 binary at `<SRC>/melonDS-gpu/` predates
 those fixes; it stays on disk and is kept under `superseded`, and must not be
 used for GDB-attaching captures. The hooks binary stays the default campaign
@@ -981,12 +896,12 @@ the row in the pause menu.
 
 ### OAM entry reader (`oam_read.py`)
 
-Reader step (P0.6). The decoder is covered by synthetic-buffer tests
+Reader step. The decoder is covered by synthetic-buffer tests
 (`tests/test_oam_read.py`). The live main-engine OAM was measured against game state in
 `docs/research/feel-captures/2026-10-18-p06-oam-map/` (Taikoubou and Train, 3-4 repeats each):
 
-- Update (P0.6c, `docs/research/feel-captures/2026-10-18-p06c-fx-channel/RESULTS.md`): rendering channel identified: the effects in the two captured scenarios are drawn by the main 3D layer (BG0), class B drawables submitted as GX display lists, not OAM. Taikoubou object association is demonstrated for one summon/shot relationship and Train association is partial. Plans can carry `actions` (`poke`, `clrbits`, `scene`, `screendump`) for such probes, but only through the custom `plans/p06c_drive.py` driver: `jus_plan.validate_plan` drops the `actions` key (`jus_plan.py:66,110`), so the regular plan interface does not support them yet.
-- Historical (P0.6 only; see the P0.6c update above): this capture did not identify an FX/shot/summon channel in main OAM (it covers main OAM only: no sub OAM, BG or 3D;
+- Update (`docs/research/feel-captures/2026-10-18-p06c-fx-channel/RESULTS.md`): rendering channel identified: the effects in the two captured scenarios are drawn by the main 3D layer (BG0), class B drawables submitted as GX display lists, not OAM. Taikoubou object association is demonstrated for one summon/shot relationship and Train association is partial. Plans can carry `actions` (`poke`, `clrbits`, `scene`, `screendump`) for such probes, but only through a custom driver that is not included: `jus_plan.validate_plan` drops the `actions` key (`jus_plan.py:66,110`), so the regular plan interface does not support them yet.
+- Historical (see the update above): this capture did not identify an FX/shot/summon channel in main OAM (it covers main OAM only: no sub OAM, BG or 3D;
   the OBJ-off probe was not saved). Whether a direct channel exists there is unresolved.
 - Shadow OAM is `0x020A3C00` (manager `0x020A374C` + `0x4B4`; free-entry count at `0x020A3BF0`).
   Hardware OAM equals the shadow of the previous tick for 99.86 to 99.91 % of entries (pooled, dominated by unchanged
@@ -1044,7 +959,7 @@ Output JSON: `{"engine", "base", "source": "live"|"dump", "entries", "affine"}`.
   same 32-byte block watches runs fine once `load_state` is removed, and a
   standalone `state load` works repeatedly. **Workaround:** issue
   `jusemu.py state load <slot>` as its own command first, then run the plan.
-  Root cause not yet found; this is what plan Task 7 (spike S4/S5) is for.
+  Root cause not yet found.
 - Pointer chains through `0x023D2A74` resolve, but `+0x78` reads 0 in training
   mode where the notes expect `0x22` on the ground. Absolute addresses are
   reliable; treat chain-based watch specs as unverified.

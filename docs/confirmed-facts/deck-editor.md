@@ -410,8 +410,7 @@ runtime-report-4-lr-switch-taikoubou.md
 
 ## 7. Open items — triaged by relevance (tracker item `jus-map.16`)
 
-The deckbuilder is discrete logic; concept + the decoded data files suffice to
-recreate it (rationale in the tracker item). Remaining questions split:
+Remaining questions:
 
 ### Open
 

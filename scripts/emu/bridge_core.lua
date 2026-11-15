@@ -109,4 +109,64 @@ function M.new_settle_machine(target_fc, max_waits)
     return sm
 end
 
+-- Batch: one IPC command, `args.steps = {{op=, args=}, ...}`, run in one callback.
+-- The caller (agent_bridge.lua) does the epoch/native guard once for the whole batch and sends one ack.
+-- run_batch(steps, handlers, allow) -> ok, err, detail. `detail` is always
+--   {results = {{op, ok, result|error}, ...}, completed = n, failed_index = k | null}   (k is 0-based)
+-- Structural problems (refused or unknown op, bad shape, too many steps) are found before any step runs, so a
+-- refused batch has executed nothing. A runtime failure stops the batch and keeps the results so far.
+-- run_plan, state_load and state_save are multi-callback state machines (the bridge leaves "idle"), so they cannot run
+-- inside one callback; batch itself is refused so batches do not nest.
+M.BATCH_MAX = 64
+M.BATCH_REFUSED = { batch = true, run_plan = true, state_load = true, state_save = true }
+
+function M.run_batch(steps, handlers, allow)
+    local function fail(err, results, completed, index)
+        return false, err, M.obj({ results = results, completed = completed, failed_index = index })
+    end
+    if type(steps) ~= "table" then return fail("batch needs args.steps, a list", {}, 0, M.NULL) end
+    local n = #steps
+    for k in pairs(steps) do
+        if math.type(k) ~= "integer" or k < 1 or k > n then
+            return fail("batch steps must be a plain list", {}, 0, M.NULL)
+        end
+    end
+    if n > M.BATCH_MAX then
+        return fail(string.format("batch has %d steps; the limit is %d", n, M.BATCH_MAX), {}, 0, M.NULL)
+    end
+    for i = 1, n do
+        local st = steps[i]
+        local where = string.format("step %d", i - 1)
+        if type(st) ~= "table" or type(st.op) ~= "string" then
+            return fail(where .. ": a step needs a string op", {}, 0, i - 1)
+        end
+        if M.BATCH_REFUSED[st.op] then
+            return fail(string.format("%s (%s): not allowed in a batch (multi-callback state machine or nested batch; "
+                                      .. "run it as its own command)", where, st.op), {}, 0, i - 1)
+        end
+        if handlers[st.op] == nil then
+            return fail(string.format("%s (%s): unknown op", where, st.op), {}, 0, i - 1)
+        end
+        if st.args ~= nil and type(st.args) ~= "table" then
+            return fail(where .. " (" .. st.op .. "): args must be a table", {}, 0, i - 1)
+        end
+    end
+    local results = {}
+    for i = 1, n do
+        local st = steps[i]
+        local ok, r
+        if allow and not allow(st.op) then
+            ok, r = false, "native capture locks mutating commands"
+        else
+            ok, r = pcall(handlers[st.op], st.args or {})
+        end
+        if not ok then
+            results[i] = M.obj({ op = st.op, ok = false, error = tostring(r) })
+            return fail(string.format("step %d (%s): %s", i - 1, st.op, tostring(r)), results, i - 1, i - 1)
+        end
+        results[i] = M.obj({ op = st.op, ok = true, result = r })
+    end
+    return true, nil, M.obj({ results = results, completed = n, failed_index = M.NULL })
+end
+
 return M

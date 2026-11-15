@@ -1,5 +1,9 @@
 # Collision subType vs jpower selection — the doc's claim doesn't hold simply
 
+> **Retracted reading (banner only; body kept as history):** the claim `jus-base-2-is-jpower-damage1-10-mse`
+> (a move's base damage = `jpower.damage1 / 5`) was retracted by `jus-jpower-retraction-cguk`.
+> jpower.bin is the koma evolution price table (`jus-jpower-koma-price-table-uh9o`); battle reads the base byte from chr/col `+4`.
+
 Loop-Atlas iteration 37. One micro-hypothesis of mine refuted, one existing claim questioned.
 
 ## jpower ID lives at record +0x00

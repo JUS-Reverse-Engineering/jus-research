@@ -1,6 +1,6 @@
 # DREAM cancel window: C4 inheritance
 
-PF-31o. Static ov6 disassembly, checked against existing J6FIX raw frames. No
+Static ov6 disassembly, checked against existing J6FIX raw frames. No
 emulator run. Code: `cancel_table.dream_entry_facts`, `unnested_offers` and
 `dream_offers` (`scripts/analysis/cancel_table.py`), tested in
 `scripts/tests/test_cancel_table.py` (DreamEntryFactsTest, DreamOffersTest). Oracle:

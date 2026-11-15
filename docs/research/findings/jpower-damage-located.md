@@ -1,5 +1,9 @@
 # jpower move damage: damage1 = displayed damage × 5
 
+> **Retracted reading (banner only; body kept as history):** the claim `jus-base-2-is-jpower-damage1-10-mse`
+> (a move's base damage = `jpower.damage1 / 5`) was retracted by `jus-jpower-retraction-cguk`.
+> jpower.bin is the koma evolution price table (`jus-jpower-koma-price-table-uh9o`); battle reads the base byte from chr/col `+4`.
+
 Loop-Atlas iteration 34. Static. The per-move damage value is located — and most of it was already written down.
 
 ## Record layout confirmed

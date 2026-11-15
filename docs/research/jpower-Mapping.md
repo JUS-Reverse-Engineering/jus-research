@@ -1,5 +1,9 @@
 # jpower.bin Mapping
 
+> **Retracted reading (banner only; body kept as history):** the claim `jus-base-2-is-jpower-damage1-10-mse`
+> (a move's base damage = `jpower.damage1 / 5`) was retracted by `jus-jpower-retraction-cguk`.
+> jpower.bin is the koma evolution price table (`jus-jpower-koma-price-table-uh9o`); battle reads the base byte from chr/col `+4`.
+
 > **Superseded labels (E0 roster pin, 2026-10-18):** the chr_b -> file labels in this doc's tables predate the measured mapping (for example chr_b 2 is Vegeta on db_b_03, 3 Vegeta (SSJ) on db_b_04, 8 Piccolo on db_b_09, 9 Frieza on db_b_10, 11 Vegetto on db_b_12). Current pairing: `docs/research/feel-captures/2026-10-18-e0-roster/roster_reconciled.json`. Kept as recorded.
 
 ## chr_b.bin → jpower.bin Linkage (CONFIRMED)

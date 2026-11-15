@@ -88,7 +88,7 @@ class TestMain(unittest.TestCase):
 
 
 class TestLeasedRun(unittest.TestCase):
-    """P1.8b round 4: under the lease env (Lease.env(), passed by case_batch's warm-up) jusemu run owns its writes: the
+    """Under the lease env (Lease.env(), passed by case_batch's warm-up) jusemu run owns its writes: the
     client is guarded and the run dir + plan.lua are written in an owned section. Real IpcClient, scratch IPC root."""
 
     def setUp(self):

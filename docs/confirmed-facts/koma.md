@@ -82,9 +82,8 @@ nature semantics (damage-path use etc.): `docs/confirmed-facts/nature.md`.
 
 ## 2a. Support payload: chr_s.bin rows
 
-Reader: `scripts/kit/support_records.py` (`load_support_panels`, CLI
-`python -m scripts.kit.support_records [--json]`). Tests:
-`scripts/tests/test_support_records.py`. Source: the static decode in
+Reader: a support-record reader, not part of this export.
+Source: the static decode in
 `m14-decode-report.md` (external research note) ("Data and layout", "Worked records").
 
 `bin/chr_s.bin` is 3860 bytes = 193 rows × 20 bytes, loaded at resource-manager
@@ -111,9 +110,7 @@ panels over 193 rows; koma men support panels are 879, 880, 881, all 2k.
 
 ### 2a.1 Support program export (M14 J2)
 
-Exporter: `scripts/kit/support_programs.py` (`export_support_program(root, panel)`,
-`export_all(root)`, `summarize`; CLI `python scripts/kit/support_programs.py
-[--panel N] [--json]`). Tests: `scripts/tests/test_support_programs.py`. All
+Exporter: a support-program exporter, not part of this export. All
 fields below are STATIC (ROM bytes only; no emulator).
 
 - Archives: `chr/ChrArc.aar` (ALAR v3) holds `chr/<prefix>.aar` (shared effect
@@ -369,9 +366,7 @@ So for a reimplementation: battle loads `koma.bin`, `kshape.bin`, `chr_b.bin`,
 
 ## 7. Open items — triaged by relevance (tracker item `jus-map.16`)
 
-From INVENTORY §8 and the tracker items above; re-scoped per the deck-triage decision
-(deckbuilder = discrete logic; concept + data files suffice — rationale in the
-tracker item):
+Remaining questions:
 
 ### Open
 

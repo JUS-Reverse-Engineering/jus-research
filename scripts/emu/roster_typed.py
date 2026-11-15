@@ -1,4 +1,4 @@
-"""A23 typed support proof beside the unchanged stock roster guard.
+"""Typed support proof beside the unchanged stock roster guard.
 
 This establishes identity only. Cell admission and hit attribution are separate.
 Support id_byte is never interpreted as a battle chr_b.

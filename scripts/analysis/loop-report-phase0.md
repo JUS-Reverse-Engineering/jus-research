@@ -5,8 +5,7 @@ success criteria — iterations 0–9 (10 units total: `init`, P1–P6, and this
 P7-synthesis unit). Every unit in the queue reached `status: done`; no kill
 switch, no gate failure, `consecutive_failures = 0` throughout.
 
-**Branch:** `loop/battle-engine-atlas` (worktree
-`.claude/worktrees/battle-engine-atlas`). No commits made by this unit — the
+**Branch:** `loop/battle-engine-atlas`. No commits made by this unit — the
 orchestrator commits after reviewing this report.
 
 ## Per-Subsystem Results (Phase-0 scope)

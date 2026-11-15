@@ -948,7 +948,7 @@ function/xref/disassembly evidence concerns the original game.
 | [Getter research](../research/findings/0206cf28-is-a-boolean-getter.md) | Reuse the established pointer chain and virtual slot `+0x5C` call shape when checking nearby object layouts. |
 | [Overlay cross-check](../research/findings/jusdecomp-external-crosscheck.md), tracker item `jus-jusdecomp-crosscheck-x1cf` | Avoid upstream subsystem mislabeling: combat core is ARM9/ov6; ov11 is AI. |
 
-Run from the `jus_re` root:
+Run from the `jus-research` root:
 
 ```bash
 python3 scripts/analysis/query.py func 0x0202c4ac

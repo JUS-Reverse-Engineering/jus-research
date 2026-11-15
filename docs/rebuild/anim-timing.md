@@ -17,7 +17,7 @@ adds four specials: Kakashi's 4-koma X and up X and Yusuke's 6-koma X and up X
 Grades: **measured** (a live capture, cited), **static** (read from the game
 files), **inferred** (a rule, named), **TBD**.
 
-K7-a's Kenshin rows use the production texture/cell identity join. Every span
+The Kenshin rows use the production texture/cell identity join. Every span
 in `other[5,9,12,13,14,16]` carries `pick`, `strip_frames`, `texture_id`,
 `normalized_frame_ids` and `pick_source: texture_cell_identity` (87 spans).
 `other[21]` adds the AMT 131 terminal-effect role, its four cells and its
@@ -447,7 +447,7 @@ Moves whose idle return is not `frames + 3` (each needs an override):
 
 <!-- /generated:anim-timing eve -->
 
-Notes for Eve (E0 static pass; move rows from the E2/E3 captures, EV-6):
+Notes for Eve (static pass; move rows from the Eve captures):
 
 - The base ten and the four set moves are `MOVES` rows (`anim_rows.py`), each checked by the same box replay as Kakashi's
   and Yusuke's, on the facing-LEFT whiffs the kit exports: `2026-10-12-eve-base/geometry/L/*` for the base moves,
@@ -528,7 +528,7 @@ On another art file (TextureID is not the main sheet's, so the hand-cut strips c
 
 <!-- /generated:anim-timing train -->
 
-Notes for Train (TR0, static only):
+Notes for Train (static only):
 
 - Same as Eve: no capture ties an animation to a move yet, so the move rows are empty and every grade is `static`. The
   base-move anims are the move table's (`knockback-table.json` `bc_b_02`: ids 1-10 = anims 0x1e-0x27). The prefix is
@@ -606,7 +606,7 @@ On another art file (TextureID is not the main sheet's, so the hand-cut strips c
 
 <!-- /generated:anim-timing taikoubou -->
 
-Notes for Taikoubou (plan TK1, static only):
+Notes for Taikoubou (static only):
 
 - No capture and no kit file (`kit/taikoubou.toml` does not exist) ties an animation to a move yet, so the
   move rows are empty and every grade is `static`. The prefix `hs_b_01` is the mapping doc's (static match
@@ -787,7 +787,7 @@ Each record in `moves`, `states` and `other`:
 | `archive`, `koma_archive` | specials only (and `MOVES` rows with a `koma`): the archive holding the animation (the base `chr/<prefix>.aar`), and the koma archive (`chr/<prefix>_<koma>.aar`): its sprite list and tiles (`CHR/<prefix>_<koma>c.aar`) are what the cells index. vfx-sfx.json's `koma_archive` is the same archive, where the spawn ids resolve |
 | `plays` | specials only: one check per captured path (`path` names it), each with its `segments` and the check keys below. `check` is the first |
 | `hits` | specials only: `{record, what, source, grade}` for each col record the special's hits use. The record is the hit element's id − 0x100 (the moveData entry's address moves between loads, so pass 1's `0x021BA0E0` + 20 × record holds for C1 and C2 only; the entry bytes equal the static record). `grade` is `measured` when a capture read that element, or `inferred: …` with its rule (a track enables it, or its damage and type match a measured hit). The kind bytes are in vfx-sfx.json |
-| `levels`, `aliases` | specials only, optional: how levels and holds play the one animation; why X has no side X or down X rows (the owner's ruling) |
+| `levels`, `aliases` | specials only, optional: how levels and holds play the one animation; why X has no side X or down X rows (a maintainer ruling) |
 | `anim` | ALMT animation id, hex string |
 | `frames`, `rate`, `loop` | animation length in frames; the rate byte (60); the loop byte as a boolean |
 | `cells` | list of `{cell, start, len, strip_frames, pick}`: show `cell` from animation frame `start` for `len` frames; `strip_frames` are the strip frames that hold it; `pick` is the in-order choice or null. On a special, a null `pick` comes with `why` (the build refuses one without) |
@@ -971,10 +971,10 @@ indices and SHA-256s, no pixels. The sheets stay in `jus_files`.
 - **Anim strips** (`<move>_k<koma>`, no `@`) are the fighter's frames;
   **shots** (`<shot>@k<koma>`) are the effect frames. `file` is the key with
   `@` turned into `_`. Copy `box`, `frames`, `fps`, `loop` and `file` of
-  every `strips` entry into slice.py as they are.
+  every `strips` entry as they are.
 - `uncut` (pass 2) holds art that is on the sheet but that no box cuts
   cleanly, with the same fields as a strip plus `uncut`, the reason. It is
-  evidence, not a cut: don't copy it into slice.py. The one entry is
+  evidence, not a cut. The one entry is
   `eye@k6` (§8.4).
 - Each entry has `sheet` and `sheet_sha256`, `cells` (the koma cell each
   frame shows, in order), `source` (the anim or effect id and the archives
@@ -983,17 +983,17 @@ indices and SHA-256s, no pixels. The sheets stay in `jus_files`.
   frame's).
 - `boxes` replaces `box` and `frames` when a strip spans two sheet rows
   (Awakening): a list of `{box, pick}` in play order. **The join rule:**
-  cut each `box` as slice.py cuts one box (frames split on 4 or more empty
+  cut each `box` on its own (frames split on 4 or more empty
   columns), keep that box's `pick` frames in the order listed, then put
   the lists end to end. Frame k of the joined strip is `cells[k]`. (Not
   `parts`: the strips' sprites.json already uses that for
-  `{part: [start, end)}`. slice.py would need a multi-box form for that.)
+  `{part: [start, end)}`.)
 - Grades, from the cell drawn from the game's tiles against the sheet
   frame: `clean` (both colour covers 0.9+), `extra` (the cell is all there,
   plus other art), `palette` (the shape fits 0.9+, the colours don't),
   `near` (both shape covers 0.8+: a redraw), `part` (the cell's shape is
   all in the frame, which is bigger), `by eye`.
-- Frames are split on 4 or more empty columns, as slice.py's loop does.
+- Frames are split on 4 or more empty columns.
 - `fps` is 60 over the commonest cell length (ties go to the shorter);
   `loop` is the animation's or effect's loop byte. `fps` is one number for
   a strip whose cells play at different lengths, so it is not a real frame

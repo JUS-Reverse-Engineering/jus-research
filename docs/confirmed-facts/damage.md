@@ -79,9 +79,9 @@ Move-data block at `[elem+0x10]`:
 | `+0x0D` | s8 | **knockback Y base**; impulse = `kbY × (−158) × M × F × 223/256` raw (Kenshin X finisher kbY = 6) |
 | `+0x0E` | s8 | **class index**, packed byte: low 6 bits = class (range-checked 0..15 by the routine; `0x3F` is the "none" reset sentinel), bit 7 a separate flag ([p214](../research/findings/p214-class-index-is-a-packed-byte.md)). This byte is the collision damageFlags category (tracker item `jus-class-index-is-damageflags-mx5`). |
 
-The base byte is design-time data: `base = jpower.damage1 / 5` (damage1
-stores displayed×5), converging with the file-format formula
-([p210](../research/findings/p210-nature-tables-and-prediction-failure.md)).
+The base byte is design-time data read from chr/col `+4` (`ldrsb` at
+`0x02082428`), with no table lookup. The older `jpower.damage1 / 5` reading is
+retracted (`jus-jpower-retraction-cguk`); jpower.bin is the koma price table (`jus-jpower-koma-price-table-uh9o`).
 
 ### 2.2 The ColPrm scratch objects (`r4` = attacker side, `r8` = other side)
 
@@ -439,11 +439,10 @@ Luffy, evidence `research/feel-captures/weight-hunt-2026-09-01c/`). Bits
 - **Nature bypass:** bit 30 of either scratch's `+0x40` forces factor 1.0.
 - **Multi-contact moves:** the routine runs once per contact. Goku's UP+B
   is two contacts of base 3, summing to 4.500 displayed
-  (tracker item `jus-flat-refuted-with-attribution-doi`). A base-2 contact is
-  **never alone**: all 23 `jpower` entries with `damage1 = 10` pair with a
-  stronger partner (22 with base 8, one with base 18), so a before/after HP
-  diff on such a move sums two contacts. Log per frame and take the *first*
-  drop (tracker item `jus-base-2-is-jpower-damage1-10-mse`).
+  (tracker item `jus-flat-refuted-with-attribution-doi`). A before/after HP
+  diff on a multi-contact move sums the contacts. Log per frame and take the
+  *first* drop. (An earlier jpower-pairing argument for this, tracker item `jus-base-2-is-jpower-damage1-10-mse`,
+  is retracted by `jus-jpower-retraction-cguk`.)
 - **The formula only runs on landed hits** — 4 hits → 4 stops, 7 misses →
   0 stops; a breakpoint at `0x02082584` is a hit oracle
   (tracker item `jus-first-attributed-measurement-d6u`; the earlier contrary claim

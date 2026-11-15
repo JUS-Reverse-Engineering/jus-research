@@ -23,7 +23,7 @@ for a in "$@"; do
   esac
 done
 
-# ---- lease check (P1.8a) -----------------------------------------------------
+# ---- lease check -----------------------------------------------------
 # Launch needs either the runner lease token (JUS_EMU_LEASE_TOKEN, must match the
 # current lease) or an explicit legacy label (JUS_EMU_HOLDER), and the legacy path
 # is refused while a runner holds a live lease (the lease itself is checked below, under

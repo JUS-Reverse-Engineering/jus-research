@@ -7,7 +7,7 @@ real.
 ## What this is, and what it is not
 
 These are **identity and file-linkage fields**: which `chr_b` entry a character is, which
-collision file and `jpower` block belong to them, their `charId` / `classId`. That data was
+collision file belongs to them, their `charId` / `classId`, and the `jpower` column (= `classId & 0xFF`, which links to nothing). That data was
 extracted from the ROM and is generally reliable.
 
 **Nothing here is a measurement.** No move damages, no koma data, no frame data, no
@@ -25,7 +25,7 @@ read.
 
 **Six One Piece rows corrected (2026-10-13, chrbop):** Zoro, Sanji, Robin, Franky, Gear2-Luffy and
 PCT-Nami now carry the chr_b-row values from `chr_b-Complete-Mapping.md` (chr_b, charId, classId,
-jpower block, collision file). Their earlier values were the old file-number pairing. Franky (17)
+jpower column (`classId & 0xFF`, links to nothing), collision file). Their earlier values were the old file-number pairing. Franky (17)
 and Gear2-Luffy (18) were measured then. Zoro (13), Sanji (14), Robin (16) and PCT-Nami (19) were
 then sequential predictions; the E0 roster pin (2026-10-18) has since measured all four. Nami (15)
 and Luffy (12) were already on the corrected join.
@@ -74,7 +74,7 @@ git show <commit>^:docs/confirmed-facts/characters/Zoro-Character-Map.md
 
 ## The index
 
-| Character | Series | chr_b | charId | classId | tier | jpower | Collision file | Koma |
+| Character | Series | chr_b | charId | classId | tier | jpower (= classId & 0xFF; the jpower-block link is void, `jus-jpower-retraction-cguk`) | Collision file | Koma |
 |---|---|---|---|---|---|---|---|---|
 | Allen | D.Gray-man | 45 | 32 | 321 | — | 65 | dg_b_01.bin | — |
 | Anna | Shaman King | 27 | 6 | 535 | — | 23 | sk_b_03.bin | — |

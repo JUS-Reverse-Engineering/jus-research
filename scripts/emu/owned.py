@@ -1,4 +1,4 @@
-"""Owned sections: the one way a leased runner mutates shared state (P1.8b).
+"""Owned sections: the one way a leased runner mutates shared state.
 
 Rule: every mutation of a shared namespace (the IPC root, the attempt's checkpoints, batch.json, kept files and raw
 folders) by a leased runner happens inside `Owned.section()`. A section takes `$IPC_DIR/.lock` (lease._Lock, the same

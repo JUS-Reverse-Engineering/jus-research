@@ -1,6 +1,6 @@
 # Komamen form resource views
 
-PF-31i, static ROM evidence, no emulation. The native battle panels exported in
+Static ROM evidence, no emulation. The native battle panels exported in
 `kit.character.battle_panels` select chr_b 70, 71 and 72, prefixes dt_b_01,
 dt_b_02 and dt_b_03. Their `cite.refs` points to
 `prmdatainit-is-the-collision-loader.md:54`, the native name table selection.
@@ -39,7 +39,7 @@ is translated; the impulse bytes and remaining eight header bytes must
 match exactly. The resource byte therefore changes 81 -> 82 or 83.
 
 The complete decoded-row census is 23 per form, 46 total. The older memo's
-27 per form included UA raw-window copies removed by the landed PF-31g
+27 per form included UA raw-window copies removed by a later
 re-key. Current UA views use actual event coordinates. No differing decoded
 row is exempted. Tests enumerate all 46 and inject a separate tamper in each.
 
@@ -101,7 +101,7 @@ from neutral and each reachable chain entry. Retain reader PCs, input edges,
 attack anchor, animation ID/frame, state, C0/C4 and ground/air cancel flags.
 These three rows remain requirements; no waiver or stand-in was introduced.
 
-PF-31o closed them. The id-12 fire path (0x0215A590-0x0215A618) neither reads
+A later static pass closed them. The id-12 fire path (0x0215A590-0x0215A618) neither reads
 nor writes C4, and a neutral start makes C4 all ones. So [] is the neutral
 window's list, and a cancel entry inherits the cancelled window's offers. The
 kit says so with `cancel.inherit` (`dream-cancel-c4-inheritance.md`). The base

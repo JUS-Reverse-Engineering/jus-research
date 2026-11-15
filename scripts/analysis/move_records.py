@@ -197,7 +197,7 @@ def alar_v3_member(path: Path, want: str) -> bytes:
 # --------------------------------------------------------------------------- #
 # ALMT motion parsing
 # --------------------------------------------------------------------------- #
-# Bytes per key of a keyed track, by property name: u16 frame + the value. STATIC (PF-31m).
+# Bytes per key of a keyed track, by property name: u16 frame + the value. STATIC.
 # The ALMT loader gives a keyed track its property's own key reader ([prop+4], vtable+0x78)
 # or the generic reader 0x0201E1E4 (arm9 0x0201F598..0x0201F5E4). The generic reader steps
 # 2 * ((size + 1) // 2 + 1) bytes per key (0x0201E1FC..0x0201E220), size = the property's
@@ -441,7 +441,7 @@ class Almt:
 
         # Node 0's data runs to the next node's count block in the loader's own framing
         # (native_node_blocks). A legacy slot start sits hdr_end bytes earlier, which cut
-        # node 0's last track short (PF-31m). The node's "end" stays the legacy boundary:
+        # node 0's last track short. The node's "end" stays the legacy boundary:
         # the max node end is the animation end anim_events and effect_render walk to.
         end0 = accepted[0][0] if accepted else top_b
         try:
@@ -483,7 +483,7 @@ class Almt:
             yield idx, self.full_entry(a, b)
 
     def native_nodes(self, top_a: int, top_b: int) -> list[dict]:
-        """Every node of one animation entry in the loader's own framing (PF-31m).
+        """Every node of one animation entry in the loader's own framing.
 
         Nodes sit at native_node_blocks; a node's data runs to the next count block in
         address order, the last to `top_b`. Track offsets must lie past the node's offset
@@ -585,8 +585,8 @@ FIELDS = [
     (0x00, 1, "u", "kind",       "0=plain box (no damage), 3/4/5 seen on attacks"),
     (0x01, 1, "u", "type",       "arm9 0x020817EC: ==6 gates HP-band + weight scaling"),
     (0x02, 1, "u", "byte2",      "unattributed"),
-    (0x03, 1, "s", "statusRaw",  "arm9 0x02081698 ldrsb: staged status id. Negative: -raw to channel 1 (X+0x173); positive: raw to channel 0 (X+0x172); flushed at ov6 0x02158B34"),
-    (0x04, 1, "u", "frameStart", "authored frame; != in-game startup (-3..+5)"),
+    (0x03, 1, "s", "statusRaw",  "arm9 0x0208169C ldrsb: signed lane value, stored raw (replace-if-lower): positive to X+0x172 (0x020816D0), negative to X+0x173 (0x02081708); ov6 0x02158B34 reads +0x173 and negates it; meaning not established"),
+    (0x04, 1, "u", "frameStart", "legacy key; byte is signed base damage (arm9 0x02082428 ldrsb), read unsigned here; not a frame"),
     (0x05, 1, "s", "shakeScale", "arm9 0x020812A0: SP drain per contact, 1/100 bar (<< 8 into the struck owner's cell sums; ov6 0x0215AC5C applies -sum to the team pool); misnamed, not a shake"),
     (0x06, 1, "u", "byte6",      "unattributed"),
     (0x07, 1, "s", "hitstunAdd", "arm9 0x02081300: M+0x171 += this"),

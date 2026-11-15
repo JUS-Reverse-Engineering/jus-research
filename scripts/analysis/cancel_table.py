@@ -210,7 +210,7 @@ def c4_readers() -> dict:
     """Every reader of the masks the move table ORs into fighter+0xC4, and of its misc word.
     An immediate-offset load census of arm9 and every overlay finds three bit tests of a +0xC4
     word, the ones below; arm9's other +0xC4 loads are counters and vtable calls, and the
-    overlays that load at ov6's base never run with it. PF-31e's laws rest on these facts.
+    overlays that load at ov6's base never run with it. The cancel laws rest on these facts.
       latch_skip  state 9 latches reader id r5 only if bit r5 of C0 | C4 is clear
                   (0x0215A4C8), but `cmp r5,#imm; ldrne r0,[r6,#0xC4]` (0x0215A4B4-BC) leaves
                   C4 out for this id; its fire path (system_jump[1], 0x0215A590-0x0215A614)
@@ -771,7 +771,7 @@ def _touches(w: int, lo: int, hi: int, store: bool | None = None) -> bool:
 
 
 def dream_entry_facts() -> dict:
-    """The two ways move id 12 starts, and what each does to C4 (PF-31o).
+    """The two ways move id 12 starts, and what each does to C4.
       c4_stores   every ARM immediate store in ov6 that reaches fighter+0xC4..+0xC7
       neutral_*   0x02159D7C (a neutral reader's id): C4 = 0 (0x02159DB8), C4 |= mask[id]
                   (0x02159E1C-20), and for id 12 C4 |= ~0 (0x02159E68-84), with the active

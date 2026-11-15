@@ -94,7 +94,7 @@ Element fields (allocation-time init; size ≥ `0x3F`, stride `0x40` PLAUSIBLE):
 | `+0x0C`/`+0x10` | owner's **world position** x/y, read from the transform node `[[owner+4]+0x50]` `+0x0C/+0x10`, `asr #4`; default `0x10000` when no owner position is passed | CONFIRMED_STATIC |
 | `+0x14`/`+0x18` | previous-frame snapshot of `+0x0C`/`+0x10` — the allocator copies current→previous on every branch | CONFIRMED_STATIC |
 | `+0x34` | flags word. Set at alloc: bit `0x1` always, `0x200` if `[container+0x28]&1`, `0x8` before return. Bit **`0x100` = snapshot suppressor**, set only by the reposition function `0x020804E8` (skip one prev-snapshot after a teleport-style move). Bit `0x200` is cleared on projectile attach, and `0x0207EF1C` ORs `0x800` into it (this is the *element's* flags, not the ColPrm record's — a corrected aliasing trap) | CONFIRMED_STATIC |
-| `+0x3C`/`+0x3D`/`+0x3E` | init `0x20`, `8`, `0x20` — meaning unknown; `+0x3E` proves the element reaches at least `0x3F` bytes | CONFIRMED_STATIC (values) |
+| `+0x3C`/`+0x3D`/`+0x3E` | init `0x20`, `8`, `0x20` — x drag, y drag and speed cap (`jus-speed-cap-fighter-scope-uhs4`); `+0x3E` proves the element reaches at least `0x3F` bytes | CONFIRMED_STATIC (values) |
 
 ## 3. NoteTrack (the note/script track)
 
@@ -231,7 +231,7 @@ What survives the caveats as confirmed:
 
 Startup frames: collision-file `frameStart` ≠ in-game startup (offset −3..+5
 across 5 characters, manual video ±2–3 frames) — real startup likely lives in
-animation data or the jpower extra section `0x80–0x12F`
+animation data (jpower.bin is the koma price table, not a source: `jus-jpower-koma-price-table-uh9o`)
 (`frame-data-hitbox-notes.txt`).
 
 ## 6. Refuted hypotheses — do not resurrect
@@ -281,11 +281,9 @@ animation data or the jpower extra section `0x80–0x12F`
    fixed 32.0 scripted damage at Thumb `0x021518D6`, are open. Settle or
    waive.
 3. **Per-character damage tables beyond Goku** — §5 covers one attacker vs one
-   dummy. Static route exists (jpower `+0x0C` damage1 + tier, see
-   `damage.md`), but the mapping "which jpower entries does character X's
-   moveset actually use" is open (`../research/chr_b-Complete-Mapping.md`: shared blocks
-   are "template libraries, not complete movesets"). Settle via the jpower
-   join or waive per-move tables entirely.
+   dummy. The static route is the chr/col `+4` base byte (see
+   `damage.md`; the jpower damage1 route is retracted by
+   `jus-jpower-retraction-cguk`). The old question "which jpower entries does character X's moveset use" is moot. Settle by reading each character's chr/col `+4` bytes, or waive per-move tables.
 4. Element **stride `0x40`** — PLAUSIBLE only; one RAM read of two adjacent
    elements settles it (cheap settle).
 5. **`MoveMan+0x648`–`+0x2647`** semantics — the frame-snapshot pass is known;

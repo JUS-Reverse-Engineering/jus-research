@@ -471,7 +471,7 @@ def excerpt_receipt(path, banks=None):
     return receipt(window, arm7, clock, cell_of(json.loads((path / "cell.json").read_text())), MATRIX_BANKS if banks is None else banks)
 
 
-# SG-0453.1 named visual identities (Train T5 component numbers): id -> name
+# Named visual identities (Train T5 component numbers): id -> name
 NAMED = {0x074241: "gun (65)", 0x074280: "girl (128)", 0x07426E: "gold lines (110)", 0x07426F: "swirl (111)", 0x07428E: "swirl (142)"}
 REGISTER = "open: the register stays open until a downstream implementation and its checks exist"
 
@@ -486,11 +486,11 @@ def _drawn_facts(p):
 
 
 def claims(receipts, mirrors=()):
-    """Per-claim native evidence for SG-0304.8 and SG-0453.1/.2/.4 from the matrix receipts (one representative repeat per cell, the
+    """Per-claim native evidence for the four claims (shot sound, named visuals, x-mirror, retirements) from the matrix receipts (one representative repeat per cell, the
     facts of the other repeats being equal when agreement holds). Each claim: {evidence, gaps, native_evidence: complete|incomplete,
     register}. `gaps` names every ticket requirement a run did not meet; complete means no gap.
 
-    `mirrors` are receipts of runs recorded with the x-mirror byte (`mirror`, node+0x48). SG-0453.2's framebuffer-transform evidence
+    `mirrors` are receipts of runs recorded with the x-mirror byte (`mirror`, node+0x48). The x-mirror claim's framebuffer-transform evidence
     takes one per cell, accepted only when its digest equals the cell's agreed matrix digest (same facts, so the same presentation
     numbering); a cell without one is a named gap."""
     by = {}

@@ -1,5 +1,7 @@
 # Reverse Engineering Session Playbook
 
+> **Retracted reading:** `jus-base-2-is-jpower-damage1-10-mse` (jpower `damage1 / 5` as base damage) is retracted by `jus-jpower-retraction-cguk`. jpower.bin is the koma price table; base damage is the chr/col `+4` byte. Any jpower damage teaching below is history.
+
 Strategies and approaches for human+LLM collaborative reverse engineering
 sessions.
 
@@ -97,7 +99,7 @@ Convert player-facing descriptions into testable technical hypotheses.
 
 **Key files for JUS:**
 
-- `jpower.bin` - Damage/hitstun values
+- `jpower.bin` - koma price table (not battle data; `jus-jpower-koma-price-table-uh9o`)
 - `chr_b.bin` - Character parameters
 - `koma.bin` - Deck/koma data
 - `collision/` - Hitbox data

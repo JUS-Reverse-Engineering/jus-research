@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Runner-owned emulator lease with heartbeat and fenced takeover (P1.8a).
+"""Runner-owned emulator lease with heartbeat and fenced takeover.
 
 Standalone (stdlib only) so launch_emu.sh / stop_emu.sh can run it directly:
   python3 lease.py status

@@ -1,14 +1,16 @@
 """Fast, low-latency helper for jus-l77m timeout runs: one process, no
 per-call subprocess spawn (each jusemu.py invocation costs real wall-clock
 time, which the emulator free-runs through -- see scripts/emu/README.md
-"Frame counting"). Import and reuse the client instead.
+"Frame counting"). Import and reuse the client instead. The client is
+jus_ipc.resident(), the one long-lived IpcClient per IPC dir that any script
+can share; `batch` runs several ops as one command (one id, one ack).
 """
 import os, sys, json, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from jus_ipc import IpcClient
+import jus_ipc
 from jus_plan import validate_plan, plan_to_lua
 
-client = IpcClient()
+client = jus_ipc.resident()
 
 
 def peek(addr, length):
@@ -34,9 +36,12 @@ def poke_u32(addr, value):
 
 
 def state_load(slot):
-    cid = client.next_id()
-    client.publish_command("state_load", {"slot": slot}, cmd_id=cid)
-    return client.wait_ack(cid, timeout=30.0)
+    return client.state_load(slot, timeout=30.0)   # a failed ack carries `inspection` and `hint`
+
+
+def batch(steps, timeout=15.0):
+    """steps = [{"op": "poke", "args": {...}}, ...]; see jus_ipc.IpcClient.batch."""
+    return client.batch(steps, timeout=timeout)
 
 
 def run_plan(plan_dict, timeout=30.0):

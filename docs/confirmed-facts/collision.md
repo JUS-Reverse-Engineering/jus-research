@@ -617,7 +617,8 @@ statically before any emulator work.
 isTerminator as a per-move sub-list delimiter is untested (INVENTORY §2 open
 Q5). The old "jpower entry selection for damageFlags==0" question is closed as
 moot (`jus-9lp.1`): damageFlags is the class index, and a move's base damage
-is `jpower.damage1 / 5` (`jus-base-2-is-jpower-damage1-10-mse`).
+is the chr/col `+4` byte, not a jpower lookup (`jus-jpower-retraction-cguk`; the old jpower reading
+`jus-base-2-is-jpower-damage1-10-mse` is retracted).
 **If waived, invent:** the record-to-move grouping inside each collision file.
 **Risk: low-to-medium** — it's a data-pipeline question answerable later by
 cross-referencing extracted data ([collision-data-extracted.md](../research/findings/collision-data-extracted.md))

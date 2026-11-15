@@ -1,6 +1,6 @@
 # Taikoubou 6-koma X (anim 0x2d): contact and deck-count branches
 
-Static reverse engineering, 2026-10-15 (task tkre). No
+Static reverse engineering, 2026-10-15. No
 emulator. jus_files `548c5cd0`.
 
 Labels: **STATIC** = read from ROM bytes or disassembly in this session (address

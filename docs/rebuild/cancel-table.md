@@ -150,7 +150,7 @@ RESULTS,
   the J8 note
   identifies the unresolved geometry-capture identity.
 
-Static (Codex session `01a0da1d-d46b-7921-ba7a-61a23c870054`), not varied
+Static (Codex second opinion), not varied
 in this capture: the ground move-id reader returns 14 for up+X, 13 for X;
 the air reader has no X entry; neutral X gates on `+0xF5` and `+0xC0`
 (both read as expected on every row here, but neither was varied, so the

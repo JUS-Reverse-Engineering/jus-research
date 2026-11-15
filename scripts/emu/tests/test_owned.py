@@ -1,4 +1,4 @@
-"""owned.Owned (P1.8b round 4): the lease lock plus assert_current around every shared write. Scratch IPC roots and
+"""owned.Owned: the lease lock plus assert_current around every shared write. Scratch IPC roots and
 forked python children only; no emulator, no /tmp/jus_emu."""
 import os
 import tempfile

@@ -208,9 +208,7 @@ for (body, body) cannot be completed without that one bit's meaning, which this 
 Ran `codex exec -m gpt-5.6-sol --skip-git-repo-check` in the background with a neutrally-framed prompt (no
 mention of "EXIT_A..N" naming or any conclusion) asking it to read the raw disassembly of the gate chain
 `0x0207FC20`+ and the four helpers (`0x020808A4`, `0x020809C8`, `0x020808C0`, `0x02080660`, plus the newly
-found `0x02081AB0`) and state each branch's condition and bucket target in its own words. Full transcript:
-`<TMP>/claude-501/-Users-djdjo-Documents-mine-jus-re/2f62380a-34b8-403e-a227-962d69c2faa1/scratchpad/codex_result.txt`
-(not committed — scratchpad only, not a repo artifact).
+found `0x02081AB0`) and state each branch's condition and bucket target in its own words. The full transcript was not kept.
 
 **Agreement.** Codex's own trace of the `0x0207FC20`-`0x0207FD98` chain lines up address-for-address with
 every EXIT_A–EXIT_N test in the task background (same bit masks, same struct offsets, same drop-vs-continue

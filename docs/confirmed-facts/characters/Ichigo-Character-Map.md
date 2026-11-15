@@ -224,7 +224,7 @@ values!
 The damageFlags likely encodes:
 
 - A modifier type or index
-- A reference to jpower.bin entries
+- The class index (`jus-class-index-is-damageflags-mx5`); jpower is not a damage link (`jus-jpower-retraction-cguk`)
 - Some other effect parameter
 
 ### bl_b_01.bin Raw Data (20 Entries)
@@ -326,9 +326,8 @@ Ichigo's actual name (黒崎一護) is at chr_b_t.bin index **1014**, Bankai at
 
 > Superseded (2026-09-02): the `damage1/5 + (tier-2)` formula below is retracted. The measured arithmetic is in `../damage.md` §1 and §4 [`jus-reduction-is-quarter-multiplier-xk1`]; nature is additive, see `../nature.md` §2.1 [`jus-nature-is-read-in-damage-path-hbt`]. Kept as history.
 
-```
-actual_damage = floor(jpower.damage1 / 5)
-```
+Retired formula (`jus-jpower-retraction-cguk`): `actual_damage = floor(jpower.damage1 / 5)`. jpower.bin is the koma
+price table (`jus-jpower-koma-price-table-uh9o`); base damage is the chr/col `+4` byte.
 
 > **Correction note:** This was originally derived here as "jpower_total ÷ 5"
 > (total = d1+d2+d3). Cross-character testing later confirmed the divisor
@@ -343,19 +342,11 @@ actual_damage = floor(jpower.damage1 / 5)
 | 50             | 10  | Base Ichigo B moves ✓     |
 | 100            | 20  | Modified/buffed?          |
 
-**SOLVED:** The **tier** field in chr_b.bin applies a damage modifier!
-
-| tier | Count      | Damage Modifier | Example                   |
-| ---- | ---------- | --------------- | ------------------------- |
-| 1    | 11 entries | -1 (9 dmg)      | Bankai Ichigo (chr_b[40]) |
-| 2    | 56 entries | 0 (10 dmg)      | Base Ichigo (chr_b[39])   |
-| 3    | 7 entries  | +1 (11 dmg)?    | Untested                  |
+The tier-modifier derivation that stood here is void (`jus-jpower-retraction-cguk`).
 
 **Formula:**
 
-```
-base_damage = floor(jpower.damage1 ÷ 5) + (tier - 2)
-```
+Retired formula (`jus-jpower-retraction-cguk`): `base_damage = floor(jpower.damage1 / 5) + (tier - 2)`. The in-game damage numbers below are 2026-01 observations; their derivation from jpower and tier is void.
 
 - Base Ichigo (tier=2): 50 ÷ 5 + 0 = 10 ✓
 - Bankai (tier=1): 50 ÷ 5 - 1 = 9 ✓

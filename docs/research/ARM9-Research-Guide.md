@@ -231,7 +231,8 @@ Block 52 entries have total=50
 If jpower.damage1=50 and damage=10: divisor = 5
 If tier=1 reduces damage by 1: modifier = tier - 2
 
-Formula: damage = floor(jpower.damage1 / 5) + (tier - 2)
+Retired formula (`jus-jpower-retraction-cguk`): damage = floor(jpower.damage1 / 5) + (tier - 2).
+jpower.bin is the koma price table (`jus-jpower-koma-price-table-uh9o`); this derivation is history.
 ```
 
 **Step 5: Verify with Bankai**
@@ -725,8 +726,7 @@ From web research, battle passives include:
 
 ```
 jpower_block = chr_b.classId & 0xFF
-damage = floor(jpower.damage1 / 5) + (tier - 2)  // CONFIRMED, all tested characters
-                                                 // damage1 only - NOT d1+d2+d3 total!
+// base damage = chr/col +4 byte; the old jpower damage1/5 formula is retracted (jus-jpower-retraction-cguk)
 attack_boost = 1.2×  // Universal multiplier
 nature_advantage = 1.5×  // Type advantage multiplier
 

@@ -112,7 +112,7 @@ Each `records[]` row (one line in the file):
 |---|---|---|
 | `rec`, `id` | index in `chr/col/<prefix>.bin` and the hit id (index + 0x100) | measured |
 | `kind`, `type` | bytes +0 and +1; `type` is the reaction type | measured |
-| `status_raw` | byte +3 (signed), present only when nonzero: the staged status id (negative: `-raw` to channel 1; positive: `raw` to channel 0; arm9 0x02081698). Formerly "arbTag" | measured byte |
+| `status_raw` | byte +3 (signed), present only when nonzero: a signed lane value, stored raw to the struck fighter's work byte `+0x172` if positive or `+0x173` if negative (arm9 `ldrsb` at 0x0208169C; ov6 0x02158B34 negates the `+0x173` lane when it reads it; `jus-chrcol-03-status-lanes-4exo`). Formerly "arbTag" | measured byte |
 | `damage`, `hitstun_add` | byte +4 (signed); byte +7 (signed, added to `M+0x171` at arm9 0x02081300, per move_records.py) | measured bytes |
 | `kbX`, `kbY` | bytes +0xC and +0xD, signed | measured |
 | `mask` | propMask, word +8, hex | measured |
@@ -146,4 +146,5 @@ Each `records[]` row (one line in the file):
   `first_frame_air` and grounded hits with `first_frame_ground`.
 - The speed cap is element byte +0x3E = 128 in every state (32768 raw,
   [physics.md](../confirmed-facts/physics.md) §6.1; the Kakashi air B
-  capture reads 128 too). No table value reaches it.
+  capture reads 128 too). No table value reaches it. Fighters only; other elements
+  default to 32 px/frame (`jus-speed-cap-fighter-scope-uhs4`).

@@ -4,7 +4,7 @@ Static only, no emulator. Grades: STATIC (read from
 bytes or disassembly), INFERRED (follows from STATIC plus a stated assumption),
 UNMEASURED (no evidence either way).
 
-Setup for every command: `cd jus_re; source ~/.venvs/jus-re/bin/activate`, then
+Setup for every command: `cd jus-research; source ~/.venvs/jus-re/bin/activate`, then
 `jobq run -- python scripts/analysis/query.py ...` (abbreviated `Q` below).
 `--overlay ovN` only on `disasm`/`func`/`callers`; the CLI rejects `--overlay arm9`.
 

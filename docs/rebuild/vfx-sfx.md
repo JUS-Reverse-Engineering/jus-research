@@ -495,7 +495,7 @@ Renders: `jus_files/extracted/vfx-sfx/render/<source>/<effect id>.png`
 | Yusuke `0x098145` / `0x098148` | a burst then curved trails / an arc swoosh |
 | Yusuke `0x098146`, `0x09814e` | aura silhouettes |
 | Yusuke `0x09814a`, `0x09814b` / `0x09814c` / `0x09814d` | a big diagonal comet / a ground pillar / a white-and-black text effect |
-| Yusuke `0x098149` | not yet viewed. Since PF-31m it decodes cell 0 at frame 0 and cell 1 at frames 3 and 6 of texture `0x098141`. TextureID is constant; the cells come from BoundsIndex, its last track, which the old decoder clipped to no keys (before PF-31m: no drawable cells) |
+| Yusuke `0x098149` | not yet viewed. It now decodes cell 0 at frame 0 and cell 1 at frames 3 and 6 of texture `0x098141`. TextureID is constant; the cells come from BoundsIndex, its last track, which the old decoder clipped to no keys (before that fix: no drawable cells) |
 
 ## 7. Sound names (`SEQ_BATTLE`)
 
@@ -717,7 +717,7 @@ node also carries `parent_link`, `effect_flags` and `draw_prio` on its spawns.
 If the walk cannot run (v1 ALMT, boundary check fails) the legacy node is
 kept only when `full_entry` marked it `ok`; a node neither path can frame is
 listed in `undecoded_nodes`, and a node whose tracks fail while decoding adds
-a `node_errors` entry. Since PF-31m `full_entry` parses keyed tracks at the
+a `node_errors` entry. `full_entry` parses keyed tracks at the
 per-property widths in `move_records.KEY_STRIDE` (GenerateID, TextureID and the
 other 4-byte values at 6, CollisionRect at 10), and parses node 0's tracks up
 to the next node's native count block, not to that node's legacy start, so

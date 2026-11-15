@@ -1,5 +1,10 @@
 # P166 — Per-mode handler table: 31 × 12 bytes at `0x02170EAC`, plus two battle-root fields
 
+> **Explained in part (banner only; body kept as history):** the reason training lands on index 8 while its
+> settings byte reads 0 is that Battle_Add forces rule 8 for battle kinds 4 and 5 (training and deck-maker test
+> play) and ignores the setting. The menu's free battle passes kind 3. The rule index is not the rulemess index for
+> kinds 0 and 2. See tracker item `jus-battle-kind-rule-mapping-v3v6`, with credit to [Keshire](../external/keshire.md).
+
 Iteration 166. Static analysis, anchored by six runtime reference points. The runtime loop (tracker item `jus-hsc`) measured `root+0x000` across seven battles, one per rule mode, and got a different Thumb handler each time. This wake's job: find the static table those handlers live in.
 
 Found it. The indexing code is unambiguous.

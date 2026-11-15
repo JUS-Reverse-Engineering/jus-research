@@ -52,10 +52,11 @@ local function heartbeat()
         wallclock = os.time(), state = state })))
 end
 
-local function ack(id, ok, payload)
+local function ack(id, ok, payload, detail)
     if id == nil then return end
     local body = core.obj({ id = id, epoch = session, ok = ok })
-    if ok then body.result = payload else body.error = tostring(payload) end
+    -- `detail` rides on a failure as `result`: a failed batch still reports its partial results.
+    if ok then body.result = payload else body.error = tostring(payload); body.result = detail end
     write_atomic(IPC_DIR .. "/ack/" .. id .. ".json", core.jenc(body))
 end
 
@@ -217,7 +218,7 @@ local function start_plan(p)
 end
 
 
--- Scene-layer walk (P0.6c). Layer L holds a doubly linked draw list: tail sentinel = read32(L+0x94), each next node
+-- Scene-layer walk. Layer L holds a doubly linked draw list: tail sentinel = read32(L+0x94), each next node
 -- = read32(node+8), ended by 0. For every node the log gets hex dumps of the node (0x80 bytes), its owner
 -- (node+0x38, 0x70 bytes), the owner's transform node (owner+0x50, 0x70 bytes) and, for 3D sprite nodes
 -- (vtable 0x020960DC), the display list at node+0x64 (node+0x6C bytes). Static basis: see RESULTS.md.
@@ -267,7 +268,7 @@ local function scene_walk(layer, frame)
         act = "scene", f = frame, fc0 = fc0, fc1 = fc1, layer = layer, count = count, nodes = nodes }))
 end
 
--- Optional per-frame actions (P0.6c). plan.actions is a list of
+-- Optional per-frame actions. plan.actions is a list of
 --   {op="poke", from=F, to=T, addr=A, bytes={...}}  write bytes on every plan frame F..T (ARM9 bus, so IO registers too)
 --   {op="clrbits", from=F, to=T, addr=A, mask=M}      read-modify-write the 32-bit word at A, clearing mask bits, every frame F..T
 --   {op="scene", from=F, to=T, layer=L}              log the z-sorted draw list of scene layer L (list walk, see scene_walk)
@@ -557,6 +558,11 @@ local function poll_commands()
     end
     if cmd.op == "state_save" then
         begin_state_save(cmd.id, cmd.args.slot); return
+    end
+    if cmd.op == "batch" then   -- one id, one ack, one guard pass (above); steps run in this callback
+        local bok, err, detail = core.run_batch(cmd.args and cmd.args.steps, handlers, native.allow)
+        if bok then ack(cmd.id, true, detail) else ack(cmd.id, false, err, detail) end
+        return
     end
     local h = handlers[cmd.op]
     if h == nil then

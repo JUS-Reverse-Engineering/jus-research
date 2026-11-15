@@ -2,7 +2,7 @@
 
 **Outcome:** CAP-STOP (voluntary wind-down at iteration 39 of 40). All 9 target subsystems traced and documented; queue holds 7 next-campaign tracer specs (B10–B16) that could not complete a full trace+verify cycle within the iteration budget.
 
-**Branch:** `loop/battle-engine-atlas` (worktree `.claude/worktrees/battle-engine-atlas`). Every iteration committed; working tree clean.
+**Branch:** `loop/battle-engine-atlas`. Every iteration committed; working tree clean.
 
 ## Per-Subsystem Results
 
@@ -36,7 +36,7 @@
 
 - 7 coverage gaps: guard/block, SP gauge & specials, throws/grabs, support koma, character switch, combo scaling, ring-out (possibly nonexistent).
 - 7 ready tracer specs **B10–B16** in `jus_files/analysis/findings/critic.round1.json` + loop-state queue. Top three: B10 register-provenance callgraph (settles object identity across 4 subsystems), B11 MoveInfo populate-trace, B12 gauge-trampoline sibling sweep (cheap guard+SP coverage).
-- Tooling: run `ExportAllCollisions` (`src/JUS.CLI/JUS/CombatCommands.cs`) to close the 4/74 collision export gap; fix disasm-db `bx <reg>` function-boundary gap (merged two routines once).
+- Tooling: run `ExportAllCollisions` (in the C# CLI, which is not part of this export) to close the 4/74 collision export gap; fix disasm-db `bx <reg>` function-boundary gap (merged two routines once).
 
 ## Infrastructure Built (Stage A — reusable)
 
@@ -44,7 +44,7 @@
 
 ## Notes for the Human
 
-- Tracker items commit hook is broken (46 invalid issue records; `bd sync --flush-only` fails, pre bd->br migration; today's equivalent is `br sync --flush-only`) — all loop commits used `--no-verify`. Repair tracker items separately.
+- The tracker's commit hook was broken (46 invalid issue records), so all loop commits used `--no-verify`.
 - `jus_files` in the worktree is a symlink to the main checkout's copy.
 - Kill switch was never triggered; zero unit failures campaign-wide (consecutive_failures = 0).
 
